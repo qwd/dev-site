@@ -17,4 +17,4 @@ description: 和风天气城市列表，提供景点、环保部国控站点以�
 |中国国控站点城市|空气质量包含国控站点的城市列表|[下载](https://cdn.heweather.com/air_gov.xlsx)|
 |海外热门城市|海外热门城市名称、ID、坐标等信息|[下载](https://cdn.heweather.com/world-top-city-list.txt)|
 |中国景点地区|中国4A和5A级景点名称、ID等信息|[下载](https://cdn.heweather.com/china-scenic-list.txt)|
-|国家代码ISO-3166|全球[ISO-3166](/blog/iso-3166)二位字母的国家代码|[下载](https://cdn.heweather.com/iso3166.txt)|
+|国家代码ISO-3166|全球[ISO-3166](https://www.heweather.com/blog/iso-3166)二位字母的国家代码|[下载](https://cdn.heweather.com/iso3166.txt)|
