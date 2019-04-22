@@ -1,0 +1,10 @@
+doc-nav:
+  - title: 开发文档
+    link: /docs/getting-started/
+  - title: 示例代码
+    link: /docs/examples/
+  - title: 天气101
+    link: /docs/weather101/
+  - title: 最新
+    link: https://www.heweather.com/blog/
+

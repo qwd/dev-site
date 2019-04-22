@@ -1,0 +1,25 @@
+<header class="navbar-fixed-top">
+    <div>
+        <nav class='container-fluid' id='header-nav'>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <img src="/assets/images/brand.png" alt="logo" width="30">
+                </a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav navbar-left" id="header-nav-list">
+                    {% for item in site.data.nav.doc-nav %}
+                    <li {% if page.url == item.link %} class="active col-xs-3" {% endif %} class="col-xs-3">
+                        <a href="{{ item.link }}">
+                            {{ item.title }}
+                        </a></li>
+                    {% endfor %}
+                </ul>
+                <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
+                    <li><a class="console" href="https://console.heweather.com">控制台</a></li>
+                    <li><a href="https://console.heweather.com/register">注册</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

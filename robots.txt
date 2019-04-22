@@ -1,0 +1,8 @@
+User-agent: *
+Sitemap: https://dev.heweather.com/sitemap.xml
+Disallow: /redirect/
+Disallow: /redirect/*
+Disallow: /assets/
+Disallow: /assets/*
+Disallow: /*.css$
+Disallow: /*.js$

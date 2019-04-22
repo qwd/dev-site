@@ -1,0 +1,96 @@
+- group: 开始
+  url: /docs/getting-started/
+  docs-nav:
+    - title: 快速开始
+      link: /docs/getting-started/
+- group: API
+  url: /docs/api/
+  docs-nav:
+    - title: 常规天气数据
+      link: /docs/api/weather
+    - title: 格点天气数据
+      link: /docs/api/weather-gird
+    - title: 分钟级降水
+      link: /docs/api/weather-gird-minute-pcpn
+    - title: 空气质量数据
+      link: /docs/api/air
+    - title: 灾害预警
+      link: /docs/api/alarm
+    - title: 中国景区天气
+      link: /docs/api/weather-scenic
+    - title: 历史天气
+      link: /docs/api/weather-historical
+    - title: 太阳高度
+      link: /docs/api/solar-elevation
+    - title: 卫星云图
+      link: /docs/api/cloudmap
+- group: SDK
+  url: /docs/sdk/
+  docs-nav:
+    - title: iOS SDK
+      link: /docs/sdk/ios
+    - title: iOS 数据类属性
+      link: /docs/sdk/ios-entity
+    - title: Android SDK
+      link: /docs/sdk/android
+    - title: Android数据类属性
+      link: /docs/sdk/android-entity
+    - title: 下载和更新记录
+      link: /docs/sdk/release
+- group: 开源天气APP
+  url: /docs/app/
+  docs-nav:
+    - title: iOS 开发文档
+      link: /docs/app/owp-ios
+    - title: Android 开发文档
+      link: /docs/app/owp-android
+- group: 城市搜索
+  url: /docs/search/
+  docs-nav:
+    - title: 城市搜索
+      link: /docs/search/find
+    - title: 热门城市
+      link: /docs/search/top
+- group: 示例代码
+  url: /docs/examples/
+  docs-nav:
+    - title: JAVA
+      link: /docs/examples/java
+    - title: PHP
+      link: /docs/examples/php
+    - title: C#
+      link: /docs/examples/c-sharp
+    - title: C语言
+      link: /docs/examples/c
+    - title: 移动端
+      link: /docs/examples/mobile-app
+- group: 参考资料
+  url: /docs/refer/
+  docs-nav:
+    - title: API 地址
+      link: /docs/refer/api-url
+    - title: 城市代码
+      link: /docs/refer/city
+    - title: 天气代码和图标
+      link: /docs/refer/condition
+    - title: 状态码和错误码
+      link: /docs/refer/status-code
+    - title: 多语言
+      link: /docs/refer/i18n
+    - title: 调用数据频率
+      link: /docs/refer/qpm
+    - title: 加密签名认证方法
+      link: /docs/refer/sercet-authorization
+    - title: 度量衡单位
+      link: /docs/refer/unit
+    - title: 数据更新时间
+      link: /docs/refer/update-time
+    - title: 风力风向说明
+      link: /docs/refer/wind-level
+    - title: 生活指数等级
+      link: /docs/refer/lifestyle-level
+- group: 天气101
+  url: /docs/weather101/
+  docs-nav:
+    - title: 天气基础知识
+      link: /docs/weather101/
