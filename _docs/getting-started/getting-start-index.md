@@ -9,7 +9,7 @@ redirect_from: /docs/
 
 和风天气的天气数据开发是一个强大、现代化、开发友好的天气数据服务。如果你是第一次接触我们的天气数据，那么认真读完本片章内容即可快速上手使用了。
 
-以下内容我们假定你已经成功注册为和风天气用户，关于不同用户类型的区别可以参考[这里](https://www.heweather.comhttps://www.heweather.com/support/developer-type)
+以下内容我们假定你已经成功注册为和风天气用户，关于不同用户类型的区别可以参考[这里](https://www.heweather.com/support/developer-type)
 
 ### 创建应用
 使用和风天气数据API或SDK，首先要先创建一个应用，在这个应用下，你可以为这个应用不同的使用场景创建多个KEY。
