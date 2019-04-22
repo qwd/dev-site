@@ -8,7 +8,7 @@ description: 任意时间点的全球太阳高度及方位角接口，为安全�
 ---
 
 ## 接口介绍
-任意时间点的全球太阳高度及方位角接口，为安全和智能驾驶、房屋建设提供数据支持 [了解更多](/blog/solar_elevation_angle)
+任意时间点的全球太阳高度及方位角接口，为安全和智能驾驶、房屋建设提供数据支持 [了解更多](https://www.heweather.com/blog/solar_elevation_angle)
 
 > 仅限付费用户使用
 
