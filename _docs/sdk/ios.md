@@ -12,7 +12,7 @@ toc: true
 
 |版本号|更新日期|MD5||
 |---|---|---|:---:|
-|1.7.2 |2019-03-07| 9ebbd51db38aa0d73286bab775b0756c |[下载](https://cdn.heweather.com/sdk/HeWeather_iOS_SDK_Pub_V1.7.2.zip)|
+|2.0 |2019-04-29| 0cde2c66802c38096e05580aa877bd8d |[下载](https://cdn.heweather.com/sdk/HeWeather_iOS_SDK_Pub_V2.0.zip)|
 
 ## 适配版本
 iOS 8.0 及以上
@@ -27,7 +27,7 @@ iOS 8.0 及以上
 2. 点击Create Bridging Header，Xcode会自动创建一个头文件。这个头文件，就是Swift-OC的桥接文件
 3. 在Swift-OC桥接文件里将本framework类进行声明,即可以使用。
 
-sdk需要开启定位权限，请在工程plist.info文件中添加
+SDK需要开启定位权限，请在工程plist.info文件中添加
 ```
 NSLocationAlwaysAndWhenInUseUsageDescription
 ```
@@ -40,8 +40,10 @@ NSLocationWhenInUseUsageDescription
 ```
  AFNetworking (3.1.0+)
 ```
+
+### 注意事项
 ```
- YYModel  （1.0.4+）
+ 若产生崩溃unrecognized selector sent to ...，请在Build Settings中的Other Linker Flags里加上-ObjC
 ```
 
 ## 接口和数据类对照

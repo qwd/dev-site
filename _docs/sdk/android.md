@@ -12,7 +12,7 @@ toc: true
 
 |版本号|更新日期|MD5||
 |---|---|---|:---:|
-|2.4|2019-04-02| b9c6904e64f791b1f66b48e8f0d67472 |[下载](https://cdn.heweather.com/sdk/HeWeather_Public_Android_V2.4.jar)|
+|3.0|2019-04-29| 6203e13b119c7b128258f3c4d5a4f680 |[下载](https://cdn.heweather.com/sdk/HeWeather_Public_Android_V3.0.jar)|
 
 ## 适配版本
 Andorid 4.0及以上
@@ -37,7 +37,7 @@ Andorid 4.0及以上
   compile 'com.squareup.okhttp3:okhttp:3.9.0'  (3.9.0+)
   compile 'com.google.code.gson:gson:2.6.2'   (2.6.2+)
 ```
- 
+
 ###  混淆
 请在您的混淆文件中加入如下代码，请注意您引用的版本
 
@@ -57,23 +57,23 @@ Andorid 4.0及以上
 
 接口说明 | 接口代码 | 数据类
 --------- | ------------- | -----------
-城市查询 | getSearch | List&lt;Search&gt;
-3-10天天气预报 | getWeatherForecast | List&lt;Forecast&gt;
-实况天气 | getWeatherNow | List&lt;Now&gt;
-逐小时预报 | getWeatherHourly | List&lt;Hourly&gt;
-生活指数 | getWeatherLifeStyle | List&lt;Lifestyle&gt;
-常规天气数据集合 | getWeatherDateList | List&lt;Weather&gt;
+城市查询 | getSearch | Search
+3-10天天气预报 | getWeatherForecast | Forecast
+实况天气 | getWeatherNow | Now
+逐小时预报 | getWeatherHourly | Hourly
+生活指数 | getWeatherLifeStyle | Lifestyle
+常规天气数据集合 | getWeatherDateList | Weather
 格点实况天气 | getWeatherGridNow | GridNow
 格点7天预报 | getWeatherGridForecast | GridForecast
 格点逐小时预报 | getWeatherGirdHourly | GridHourly
 分钟级降雨（邻近预报） | getWeatherGirdMinute | GirdMinute
-天气灾害预警 | getAlarm | List&lt;Alarm&gt;
+天气灾害预警 | getAlarm | AlarmList
 天气灾害预警集合 | getAlarmAll | AlarmAll
-景点天气预报 | getScenic | List&lt;Scenic&gt;
-空气质量实况 | getAirNow | List&lt;AirNow&gt;
-空气质量7天预报 | getAirForecast | List&lt;AirForecast&gt;
-空气质量逐小时预报 | getAirHourly | List&lt;AirHourly&gt;
-空气质量数据集合 | getAir | List&lt;Air&gt;
+景点天气预报 | getScenic | Scenic
+空气质量实况 | getAirNow | AirNow
+空气质量7天预报 | getAirForecast | AirForecast
+空气质量逐小时预报 | getAirHourly | AirHourly
+空气质量数据集合 | getAir | Air
 卫星云图 | getMapCloudMap | Bitmap or File
 太阳高度 | getSolarElevationAngle | SolarElevationAngle
 日出日落 | getSolarSunriseSunset | List&lt;SolarSunriseSunset&gt;
@@ -84,11 +84,12 @@ Andorid 4.0及以上
 
 
 ##  数据访问代码
-* v1.x+ 版本，不在提供日志功能， 错误信息可由回调函数 OnError 中的 Throwable 对象提供
-* v1.x+ 版本，需提前进行账户初始化（全局执行一次即可）
-  
+* 不再提供日志功能，错误信息可由回调函数 OnError 中的 Throwable 对象提供
+* 使用 SDK 时，需提前进行账户初始化（全局执行一次即可）
+
 ```
     HeConfig.init("Your ID", "Your Key");
+    示例: HeConfig.init("HE1234567890", "237sbc65des7abc8ase0as0cb9c8c7");
 ```
 * 默认使用中国付费节点服务域名  `HeConfig.switchToCNBusinessServerNode();`
 * 个人开发者、企业开发者、普通用户等所有使用免费数据的用户需要切换到免费服务域名  `HeConfig.switchToFreeServerNode();`
@@ -105,22 +106,31 @@ Andorid 4.0及以上
  *
  * @param context  上下文
  * @param location 地址详解
- * @param lang       多语言，默认为简体中文
- * @param unit        单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener  网络访问回调接口
+ * @param lang     多语言，默认为简体中文
+ * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
+ * @param listener 网络访问回调接口
  */
-HeWeather.getWeatherNow(this, "CN101010100", Lang.CHINESE_SIMPLIFIED, Unit.METRIC,
-        new HeWeather.OnResultWeatherNowBeanListener() {
-            @Override
-            public void onError(Throwable e) {
-                Log.i("Log", "onError: ", e);
-            }
+HeWeather.getWeatherNow(MainActivity.this, "CN101010100", Lang.CHINESE_SIMPLIFIED , Unit.METRIC , new HeWeather.OnResultWeatherNowBeanListener() {
+    @Override
+    public void onError(Throwable e) {
+        Log.i(TAG, "Weather Now onError: ", e);
+    }
 
-            @Override
-            public void onSuccess(List<Now> dataObject) {
-                Log.i("Log", "onSuccess: " + new Gson().toJson(dataObject));
-            }
-        });
+    @Override
+    public void onSuccess(Now dataObject) {
+        Log.i(TAG, " Weather Now onSuccess: " + new Gson().toJson(dataObject));
+        //先判断返回的status是否正确，当status正确时获取数据，若status不正确，可查看status对应的Code值找到原因
+        if ( Code.OK.getCode().equalsIgnoreCase(dataObject.getStatus()) ){
+            //此时返回数据
+            NowBase now = dataObject.getNow();
+        } else {
+            //在此查看返回数据失败的原因
+            String status = dataObject.getStatus();
+            Code code = Code.toEnum(status);
+            Log.i(TAG, "failed code: " + code);
+        }
+    }
+});
 ```
 
 

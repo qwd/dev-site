@@ -8,32 +8,31 @@ description: 和风天气Android SDK 实体类属性对照表
 ---
 
 接口说明 | 接口代码 | 数据类
---------- | ------------- | ----------- 
+--------- | ------------- | -----------
 [城市查询](#城市查询) | getSearch | Search
-[3-10天天气预报](#3-10天天气预报) | getWeatherForecast | List&lt;Forecast&gt;
-[实况天气](#实况天气) | getWeatherNow | List&lt;Now&gt;
-[逐小时预报](#逐小时预报) | getWeatherHourly | List&lt;Hourly&gt;
-[生活指数](#生活指数) | getWeatherLifeStyle | List&lt;Lifestyle&gt;
-[常规天气数据集合](#常规天气数据集合) | getWeather | List&lt;Weather&gt;
+[3-10天天气预报](#3-10天天气预报) | getWeatherForecast | Forecast
+[实况天气](#实况天气) | getWeatherNow | Now
+[逐小时预报](#逐小时预报) | getWeatherHourly | Hourly
+[生活指数](#生活指数) | getWeatherLifeStyle | Lifestyle
+[常规天气数据集合](#常规天气数据集合) | getWeather | Weather
 [格点实况天气](#格点实况天气) | getWeatherGridNow | GridNow
 [格点7天预报](#格点7天预报) | getWeatherGridForecast | GridForecast
 [格点逐小时预报](#格点逐小时预报) | getWeatherGirdHourly | GridHourly
 [分钟级降雨（邻近预报）](#分钟级降雨（邻近预报）) | getWeatherGirdMinute | GridMinute
-[天气灾害预警](#天气灾害预警) | getAlarm | List&lt;Alarm&gt;
+[天气灾害预警](#天气灾害预警) | getAlarm | AlarmList
 [天气灾害预警集合](#天气灾害预警集合) | getAlarmAll | AlarmAll
 [景点天气预报](#景点天气预报) | getScenic | Scenic
-[空气质量实况](#空气质量实况) | getAirNow | List&lt;AirNow&gt;
-[空气质量7天预报](#空气质量7天预报) | getAirForecast | List&lt;AirForecast&gt;
-[空气质量逐小时预报](#空气质量逐小时预报) | getAirHourly | List&lt;AirHourly&gt;
-[空气质量数据集合](#空气质量数据集合) | getAir | List&lt;Air&gt;
+[空气质量实况](#空气质量实况) | getAirNow | AirNow
+[空气质量7天预报](#空气质量7天预报) | getAirForecast | AirForecast
+[空气质量逐小时预报](#空气质量逐小时预报) | getAirHourly | AirHourly
+[空气质量数据集合](#空气质量数据集合) | getAir | Air
 [卫星云图](#卫星云图) | getMapCloudMap | Bitmap or File
 [太阳高度](#太阳高度) | getSolarElevationAngle | SolarElevationAngle
 [日出日落](#日出日落) | getSolarSunriseSunset | List&lt;SolarSunriseSunset&gt;
 [历史数据](#历史数据) | getWeatherHistorical | Historical
 
-## 多语言代码对照表
-###  可调用枚举类 Lang
-
+# 多语言代码对照表
+## 可调用枚举类 Lang
 语言 | 语言代码 | 常量属性
 --------- | ------------- | ------------
 简体中文 | zh  | CHINESE_SIMPLIFIED
@@ -49,17 +48,17 @@ description: 和风天气Android SDK 实体类属性对照表
 印度语 | in | HINDI
 泰语 | th | THAI
 
-## 单位对照表
-###  可调用枚举类Unit
-
+# 单位对照表
+## 可调用枚举类Unit
 语言 | 语言代码 | 常量属性
 --------- | ------------- | ------------
 公制 | m | METRIC
 英制 | i | IMPERIAL
 
-### <span id="城市查询">城市查询</span>
-###  接口参数说明
-```java
+
+# <span id="城市查询">城市查询</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location (输入需要查询的城市名称，支持模糊搜索，可输入中文（至少一个汉字）、英文（至少2个字母）、IP地址、坐标（经度在前纬度在后，英文,分割）、ADCode
@@ -76,21 +75,19 @@ HeWeather.getSearch(Context context, String location, String group, int number, 
 
 HeWeather.getSearch(Context context, String location, String group, int number, final HeWeather.OnResultSearchBeansListener listener);
 
-HeWeather.getSearch(Context context, String group, int number, final HeWeather.OnResultSearchBeansListener listener);
-
 HeWeather.getSearch(Context context, int number, final HeWeather.OnResultSearchBeansListener listener);
 
 HeWeather.getSearch(Context context, final HeWeather.OnResultSearchBeansListener listener);
 ```
 
-###  Search的属性
+## Search的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getBasic | 基础信息 | List&lt;Basic&gt;
 getStatus | 接口状态 | ok
 
-####  Basic 基础信息
+### Basic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -103,9 +100,10 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-## <span id="3-10天天气预报">3-10天天气预报</span>
-###  接口参数说明
-```java
+
+# <span id="3-10天天气预报">3-10天天气预报</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
@@ -123,7 +121,7 @@ HeWeather.getWeatherForecast(Context context, Lang lang, Unit unit, final HeWeat
 HeWeather.getWeatherForecast(Context context, final HeWeather.OnResultWeatherForecastBeanListener listener);
 ```
 
-###  Forecast的属性
+## Forecast的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -132,7 +130,7 @@ getStatus | 接口状态 | ok
 getUpdate | 接口更新时间 | Update
 getDaily_forecast | 天气预报 | List&lt;ForecastBase&gt;
 
-####  Basic 基础信息
+### Basic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -145,14 +143,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  ForecastBase 天气预报
+### ForecastBase 天气预报
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -178,9 +176,9 @@ getPres | 大气压强 | 1018
 getUv_index | 紫外线强度指数 | 3
 getVis | 能见度，单位：公里 | 10
 
-## <span id="实况天气">实况天气</span>
-###  接口参数说明
-```java
+# <span id="实况天气">实况天气</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
@@ -198,7 +196,7 @@ HeWeather.getWeatherNow(Context context, Lang lang, Unit unit, final HeWeather.O
 HeWeather.getWeatherNow(Context context, final HeWeather.OnResultWeatherNowBeanListener listener);
 ```
 
-###  Now的属性
+## Now的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -207,7 +205,7 @@ getStatus | 接口状态 | ok
 getUpdate | 接口更新时间 | Update
 getNow | now 实况天气 | NowBase
 
-####  Basic 基础信息
+### Basic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -220,14 +218,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  UpdateBean 接口更新时间
+### UpdateBean 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  NowBean 实况天气
+### NowBean 实况天气
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -245,9 +243,9 @@ getPres | 大气压强 | 1020
 getVis | 能见度，默认单位：公里 | 10
 getCloud | 云量 | 23
 
-## <span id="逐小时预报">逐小时预报</span>
-###  接口参数说明
-```java
+# <span id="逐小时预报">逐小时预报</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
@@ -265,7 +263,7 @@ HeWeather.getWeatherHourly(Context context, Lang lang, Unit unit, final HeWeathe
 HeWeather.getWeatherHourly(Context context, final HeWeather.OnResultWeatherHourlyBeanListener listener);
 ```
 
-###  Hourly的属性
+## Hourly的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -274,7 +272,7 @@ getStatus | 接口状态 | ok
 getUpdate | 接口更新时间 | Update
 getHourly | hourly 逐小时天气 | List&lt;HourlyBase&gt;
 
-####  BasicBean 基础信息
+### BasicBean 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -287,14 +285,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  UpdateBean 接口更新时间
+### UpdateBean 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  HourlyBean 逐小时天气
+### HourlyBean 逐小时天气
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -312,9 +310,9 @@ getPop | 降水概率，百分比 | 30
 getDew | 露点温度 | 5
 getCloud | 云量，百分比 | 15
 
-## <span id="生活指数">生活指数</span>
-###  接口参数说明
-```java
+# <span id="生活指数">生活指数</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
@@ -332,7 +330,7 @@ HeWeather.getWeatherLifeStyle(Context context, Lang lang, Unit unit, final HeWea
 HeWeather.getWeatherLifeStyle(Context context, final HeWeather.OnResultWeatherLifeStyleBeanListener listener);
 ```
 
-###  Lifestyle的属性
+## Lifestyle的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -341,7 +339,7 @@ getStatus | 接口状态 | ok
 getUpdate | 接口更新时间 | Update
 getLifestyle | LifestyleBean 逐小时天气 | List&lt;Lifestyle&gt;
 
-####  Basic 基础信息
+### Basic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -354,14 +352,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  LifestyleBase 生活指数
+### LifestyleBase 生活指数
 
 属性 | 说明
 --------- | -------------
@@ -369,9 +367,9 @@ getBrf | 生活指数简介
 getTxt | 生活指数详细描述
 getType | 生活指数类型 comf：舒适度指数、cw：洗车指数、drsg：穿衣指数、flu：感冒指数、sport：运动指数、trav：旅游指数、uv：紫外线指数、air：空气污染扩散条件指数
 
-## <span id="常规天气数据集合">常规天气数据集合</span>
-###  接口参数说明
-```java
+# <span id="常规天气数据集合">常规天气数据集合</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
@@ -389,7 +387,7 @@ HeWeather.getWeatherDateList(Context context, Lang lang, Unit unit, final HeWeat
 HeWeather.getWeatherDateList(Context context, final HeWeather.OnResultWeatherDataListBeansListener listener);
 ```
 
-###  Weather的属性
+## Weather的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -401,7 +399,7 @@ getLifestyle | LifestyleBean 逐小时天气 | List&lt;LifestyleBase&gt;
 getHourly | hourly 逐小时天气 | List&lt;HourlyBase&gt;
 getNow | now 实况天气 | NowBase
 
-####  Basic 基础信息
+### Basic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -414,14 +412,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  ForecastBase 天气预报
+### ForecastBase 天气预报
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -447,7 +445,7 @@ getPres | 大气压强 | 1018
 getUv_index | 紫外线强度指数 | 3
 getVis | 能见度，单位：公里 | 10
 
-####  NowBase 实况天气
+### NowBase 实况天气
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -465,7 +463,7 @@ getPres | 大气压强 | 1020
 getVis | 能见度，默认单位：公里 | 10
 getCloud | 云量 | 23
 
-####  HourlyBase 逐小时天气
+### HourlyBase 逐小时天气
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -483,7 +481,7 @@ getPop | 降水概率，百分比 | 30
 getDew | 露点温度 | 5
 getCloud | 云量，百分比 | 15
 
-####  LifestyleBase 生活指数
+### LifestyleBase 生活指数
 
 属性 | 说明
 --------- | -------------
@@ -491,9 +489,9 @@ getBrf | 生活指数简介
 getTxt | 生活指数详细描述
 getType | 生活指数类型 comf：舒适度指数、cw：洗车指数、drsg：穿衣指数、flu：感冒指数、sport：运动指数、trav：旅游指数、uv：紫外线指数、air：空气污染扩散条件指数、ac：空调开启指数、ag：过敏指数、gl：太阳镜指数、mu：化妆指数、airc：晾晒指数、ptfc：交通指数、fsh：钓鱼指数、spi：防晒指数
 
-## <span id="格点实况天气">格点实况天气</span>
-###  接口参数说明
-```java
+# <span id="格点实况天气">格点实况天气</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location  (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)仅支持所查询的地区经纬度查询
@@ -511,7 +509,7 @@ HeWeather.getWeatherGridNow(Context context, Lang lang, Unit unit, final HeWeath
 HeWeather.getWeatherGridNow(Context context, final HeWeather.OnResultWeatherGirdNowBeanListener listener);
 ```
 
-###  GridNow的属性
+## GridNow的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -520,7 +518,7 @@ getStatus | 接口状态 | ok
 getUpdate | 接口更新时间 | Update
 getGrid_now | GridNowBase 格点实况天气 | GridNowBase
 
-####  GridBasic 基础信息
+### GridBasic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -531,14 +529,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  GridNowBase 格点实况天气
+### GridNowBase 格点实况天气
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -553,9 +551,9 @@ getPcpn | 1小时降水量 | 10
 getPcpn_10m | 10分钟降水量 | 10
 getPres | 大气压强 | 1030
 
-## <span id="格点7天预报">格点7天预报</span>
-###  接口参数说明
-```java
+# <span id="格点7天预报">格点7天预报</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location  (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)仅支持所查询的地区经纬度查询
@@ -573,7 +571,7 @@ HeWeather.getWeatherGridForecast(Context context, Lang lang, Unit unit, final He
 HeWeather.getWeatherGridForecast(Context context, final HeWeather.OnResultWeatherGirdForecastBeanListener listener);
 ```
 
-###  GridForecast的属性
+## GridForecast的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -582,7 +580,7 @@ getStatus | 接口状态 | ok
 getUpdate | 接口更新时间 | Update
 getGrid_forecast | GridForecastBase 格点实况天气 | List&lt;GridForecastBase&gt;
 
-####  GridBasic 基础信息
+### GridBasic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -593,14 +591,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  GridForecastBase 格点预报天气
+### GridForecastBase 格点预报天气
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -616,9 +614,9 @@ getWind_dir_n | 夜间风向 | 西北
 getWind_sc_d | 白天风力 | 3-4
 getWind_sc_n | 夜间风力 | 3-4
 
-## <span id="格点逐小时预报">格点逐小时预报</span>
-###  接口参数说明
-```java
+# <span id="格点逐小时预报">格点逐小时预报</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location  (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)仅支持所查询的地区经纬度查询
@@ -636,7 +634,7 @@ HeWeather.getWeatherGirdHourly(Context context, Lang lang, Unit unit, final HeWe
 HeWeather.getWeatherGirdHourly(Context context, final HeWeather.OnResultWeatherGirdHourlyBeanListener listener);
 ```
 
-###  GridHourly的属性
+## GridHourly的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -645,7 +643,7 @@ getStatus | 接口状态 | ok
 getUpdate | 接口更新时间 | Update
 getGrid_hourly | GridHourlyBase 格点实况天气 | List&lt;GridHourlyBase&gt;
 
-####  GridBasic 基础信息
+### GridBasic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -656,14 +654,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  GridHourlyBase 格点逐小时天气预报
+### GridHourlyBase 格点逐小时天气预报
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -676,9 +674,9 @@ getWind_sc | 风力 | 3-4
 getPcpn | 降水量 | 10
 
 
-## <span id="分钟级降雨（邻近预报）">分钟级降雨（邻近预报）</span>
-###  接口参数说明
-```java
+# <span id="分钟级降雨（邻近预报）">分钟级降雨（邻近预报）</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location  (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)仅支持所查询的地区经纬度查询
@@ -696,7 +694,7 @@ HeWeather.getWeatherGirdMinute(Context context, Lang lang, Unit unit, final HeWe
 HeWeather.getWeatherGirdMinute(Context context, final HeWeather.OnResultWeatherGirdMinuteBeanListener listener);
 ```
 
-###  GirdMinute的属性
+## GirdMinute的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -707,7 +705,7 @@ getPcpn_type | 降水类型，rain雨，snow雪 | GridMinutePcpnType
 getPcpn_5m | GridMinutePcpn5m 未来两小时5分钟降水量 | List&lt;GridMinutePcpn5m&gt;
 getGrid_minute_forecast | GridMinuteForecast 临近预报 | GridMinuteForecast
 
-####  GridBasic 基础信息
+### GridBasic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -718,36 +716,36 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  GridMinutePcpnType 降水类型
+### GridMinutePcpnType 降水类型
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getPcpn_type | rain雨，snow雪 | rain
 
-####  GridMinuteForecast 临近预报
+### GridMinuteForecast 临近预报
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getDate | 预报日期，格式yyyy-MM-dd HH:mm | 2013-12-30 20:35
 getTxt | 分钟降雨描述 | 未来2小时无降雨
 
-####  GridMinutePcpn5m 未来两小时5分钟降水量
+### GridMinutePcpn5m 未来两小时5分钟降水量
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getTime | 时间，格式yyyy-MM-dd HH:mm | 2013-12-30 20:35
 getPcpn | 降水量 | 10
 
-## <span id="天气灾害预警">天气灾害预警</span>
-###  接口参数说明
-```java
+# <span id="天气灾害预警">天气灾害预警</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
@@ -763,7 +761,15 @@ HeWeather.getAlarm(Context context, String location, final HeWeather.OnResultAla
 HeWeather.getAlarm(Context context, Lang lang, Unit unit, final HeWeather.OnResultAlarmBeansListener listener);
 ```
 
-###  Alarm的属性
+
+## AlarmList的属性
+
+属性 | 说明 | 示例值
+--------- | ------------- | ----------
+getStatus | 接口状态 | ok
+getAlarms | 灾害预警 | List&lt;Alarm&gt;
+
+## Alarm的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -772,7 +778,7 @@ getStatus | 接口状态 | ok
 getUpdate | 接口更新时间 | Update
 getAlarm | 灾害预警 | List&lt;AlarmBase&gt;
 
-####  Basic 基础信息
+### Basic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -785,14 +791,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  AlarmBase 预警信息
+### AlarmBase 预警信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -802,9 +808,9 @@ getLevel | 预警等级：蓝黄橙红白 | 黄色
 getType | 预警类型，全部类型参考本文简介 | 雷电
 getTxt | 预警详细信息 | 深圳市气象局于10月04日12时59分发布雷电黄色预警信号，请注意防御。
 
-## <span id="天气灾害预警集合">天气灾害预警集合</span>
-###  接口参数说明
-```java
+# <span id="天气灾害预警集合">天气灾害预警集合</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param listener 网络访问回调接口
@@ -812,7 +818,7 @@ getTxt | 预警详细信息 | 深圳市气象局于10月04日12时59分发布雷
 HeWeather.getAlarmAll(Context context, String key, String userId, final HeWeather.OnResultAlarmAllBeansListener listener);
 ```
 
-###  AlarmAll的属性
+## AlarmAll的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -820,14 +826,14 @@ getStatus | 接口状态 | ok
 getUpdate | 接口更新时间 | Update
 getAlarm_list | 灾害预警 | List&lt;AlarmAllBase&gt;
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  AlarmAllBase 预警信息
+### AlarmAllBase 预警信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -838,9 +844,9 @@ getLevel | 预警等级 | 黄色
 getType | 预警类型 | 雷电
 getTxt | 预警详细信息 | 深圳市气象局于10月04日12时59分发布雷电黄色预警信号，请注意防御。
 
-## <span id="景点天气预报">景点天气预报</span>
-###  接口参数说明
-```java
+# <span id="景点天气预报">景点天气预报</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location 景点天气仅支持使用景点ID获取数据
@@ -853,7 +859,7 @@ HeWeather.getScenic(Context context, String location, Lang lang, Unit unit, fina
 HeWeather.getScenic(Context context, String location, final HeWeather.OnResultSearchBeansListener listener);
 ```
 
-###  ScenicWeather的属性
+## ScenicWeather的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -862,7 +868,7 @@ getStatus | 接口状态 | ok
 getUpdate | 接口更新时间 | Update
 getDaily_forecast | 天气预报 | List&lt;ForecastBase&gt;
 
-####  Basic 基础信息
+### Basic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -875,14 +881,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  ForecastBase 逐天预报
+### ForecastBase 逐天预报
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -898,9 +904,9 @@ getCond_txt_n | 晚间天气状况描述 | 晴
 getWind_dir | 风向 | 东
 getWind_sc | 风力 | 2-3
 
-## <span id="空气质量实况">空气质量实况</span>
-###  接口参数说明
-```java
+# <span id="空气质量实况">空气质量实况</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询
@@ -916,7 +922,7 @@ HeWeather.getAirNow(Context context, String location, final HeWeather.OnResultAi
 HeWeather.getAirNow(Context context, Lang lang, Unit unit, final HeWeather.OnResultAirNowBeansListener listener)
 ```
 
-###  AirNow的属性
+## AirNow的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -926,7 +932,7 @@ getUpdate | 接口更新时间 | Update
 getAir_now_station | AQI站点实况 | List&lt;AirNowStation&gt;
 getAir_now_city | AQI城市实况 | AirNowCity
 
-####  Basic 基础信息
+### Basic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -939,14 +945,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  AirNowCity AQI城市实况
+### AirNowCity AQI城市实况
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -961,7 +967,7 @@ getSo2 | 二氧化硫 | 30
 getCo | 一氧化碳 | 33
 getO3 | 臭氧 | 20
 
-####  AirNowStation AQI站点实况
+### AirNowStation AQI站点实况
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -980,9 +986,9 @@ getSo2 | 二氧化硫 | 30
 getCo | 一氧化碳 | 33
 getO3 | 臭氧 | 20
 
-## <span id="空气质量7天预报">空气质量7天预报</span>
-###  接口参数说明
-```java
+# <span id="空气质量7天预报">空气质量7天预报</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询
@@ -998,7 +1004,7 @@ HeWeather.getAirForecast(Context context, String location, final HeWeather.OnRes
 HeWeather.getAirForecast(Context context, Lang lang, Unit unit, final HeWeather.OnResultAirForecastBeansListener listener);
 ```
 
-###  AirForecast的属性
+## AirForecast的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1007,7 +1013,7 @@ getStatus | 接口状态 | ok
 getUpdate | 接口更新时间 | Update
 getAir_forecast | 空气质量 AQI 7天预报 | List&lt;AirForecastBase&gt;
 
-####  Basic 基础信息
+### Basic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1020,14 +1026,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  AirForecastBase AQI城市实况
+### AirForecastBase AQI城市实况
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1042,9 +1048,9 @@ getSo2 | 二氧化硫 | 30
 getCo | 一氧化碳 | 33
 getO3 | 臭氧 | 20
 
-## <span id="空气质量逐小时预报">空气质量逐小时预报</span>
-###  接口参数说明
-```java
+# <span id="空气质量逐小时预报">空气质量逐小时预报</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
@@ -1060,7 +1066,7 @@ HeWeather.getAirHourly(Context context, String location, final HeWeather.OnResul
 HeWeather.getAirHourly(Context context, Lang lang, Unit unit, final HeWeather.OnResultAirHourlyBeansListener listener);
 ```
 
-###  AirHourly的属性
+## AirHourly的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1069,7 +1075,7 @@ getStatus | 接口状态 | ok
 getUpdate | 接口更新时间 | Update
 getAir_hourly | 空气质量 AQI 7天预报 | List&lt;AirHourlyBase&gt;
 
-####  Basic 基础信息
+### Basic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1082,14 +1088,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  AirHourlyBase AQI城市实况
+### AirHourlyBase AQI城市实况
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1104,9 +1110,9 @@ getSo2 | 二氧化硫 | 30
 getCo | 一氧化碳 | 33
 getO3 | 臭氧 | 20
 
-## <span id="空气质量数据集合">空气质量数据集合</span>
-###  接口参数说明
-```java
+# <span id="空气质量数据集合">空气质量数据集合</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
@@ -1122,7 +1128,7 @@ HeWeather.getAir(Context context, String location, final HeWeather.OnResultAirBe
 HeWeather.getAir(Context context, Lang lang, Unit unit, final HeWeather.OnResultAirBeanListener listener);
 ```
 
-###  Air的属性
+## Air的属性
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1134,7 +1140,7 @@ getAir_forecast | 空气质量 AQI 7天预报 | List&lt;AirForecastBase&gt;
 getAir_now_station | AQI站点实况 | List&lt;AirNowStation&gt;
 getAir_now_city | AQI城市实况 | AirNowCity
 
-####  Basic 基础信息
+### Basic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1147,14 +1153,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  AirNowCity AQI城市实况
+### AirNowCity AQI城市实况
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1169,7 +1175,7 @@ getSo2 | 二氧化硫 | 30
 getCo | 一氧化碳 | 33
 getO3 | 臭氧 | 20
 
-####  AirNowStation AQI站点实况
+### AirNowStation AQI站点实况
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1188,7 +1194,7 @@ getSo2 | 二氧化硫 | 30
 getCo | 一氧化碳 | 33
 getO3 | 臭氧 | 20
 
-####  AirForecastBase AQI城市逐天预报
+### AirForecastBase AQI城市逐天预报
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1203,7 +1209,7 @@ getSo2 | 二氧化硫 | 30
 getCo | 一氧化碳 | 33
 getO3 | 臭氧 | 20
 
-####  AirHourlyBase AQI城市逐小时预报
+### AirHourlyBase AQI城市逐小时预报
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1218,9 +1224,9 @@ getSo2 | 二氧化硫 | 30
 getCo | 一氧化碳 | 33
 getO3 | 臭氧 | 20
 
-## <span id="卫星云图">卫星云图</span>
-###  接口参数说明
-```java
+# <span id="卫星云图">卫星云图</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param listener 网络访问回调接口(返回bitmap)
@@ -1228,7 +1234,7 @@ getO3 | 臭氧 | 20
 HeWeather.getMapCloudMap(Context context, final HeWeather.OnResultBitmapListener listener);
 ```
 
-```java
+```js
 /**
  * @param context  上下文
  * @param fileName 文件名
@@ -1238,9 +1244,9 @@ HeWeather.getMapCloudMap(Context context, final HeWeather.OnResultBitmapListener
 HeWeather.getMapCloudMap(Context context, String fileName, String fileDir, final HeWeather.OnResultFileListener listener);
 ```
 
-## <span id="太阳高度">太阳高度</span>
-###  接口参数说明
-```java
+# <span id="太阳高度">太阳高度</span>
+## 接口参数说明
+```js
 /**
  * @param context  上下文
  * @param lat      所查询地区的纬度(纬度采用十进制格式，北纬为正，南纬为负)
@@ -1256,14 +1262,14 @@ HeWeather.getSolarElevationAngle(Context context, String lat, String lon, String
 HeWeather.getSolarElevationAngle(Context context, String alt, String date, String time, String tz, final HeWeather.OnResultSolarElevationAngleBeansListener listener);
 ```
 
-####  SolarElevationAngle 数据类
+### SolarElevationAngle 数据类
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getStatus | 接口状态 | ok
 getSolar_elevation_angle | 基础信息 | SolarElevationAngleBase
 
-####  SolarElevationAngleBase 基础信息
+### SolarElevationAngleBase 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1272,9 +1278,9 @@ getSolar_azimuth_angle | 太阳方位角，正北顺时针方向角度 | 190
 getSolar_hour | 太阳时 | 0923
 getHour_angle | 时角 | -45.5
 
-## <span id="日出日落">日出日落</span>
-###  接口参数说明
-```java
+# <span id="日出日落">日出日落</span>
+## 接口参数说明
+```js
 /**
  * @param location 可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
  *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
@@ -1285,7 +1291,7 @@ HeWeather.getSolarSunriseSunset(Context context, String location, Lang lang, fin
 HeWeather.getSolarSunriseSunset(Context context, String location, final HeWeather.OnResultSolarSunriseSunsetBeansListener listener);
 ```
 
-####  SolarSunriseSunset 数据类
+### SolarSunriseSunset 数据类
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1294,7 +1300,7 @@ getStatus | 接口状态 | ok
 getUpdate | 接口更新时间 | Update
 getSunrise_sunset | 日出日落信息 | List&lt;SolarSunriseSunsetBase&gt;
 
-####  Basic 基础信息
+### Basic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1307,14 +1313,14 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  Update 接口更新时间
+### Update 接口更新时间
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
 getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
 getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-####  SolarSunriseSunsetBase 基础信息
+### SolarSunriseSunsetBase 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1322,9 +1328,9 @@ getDate | 日期 | 1999-05-01
 getSr | 日出时间 | 05:34
 getSr | 日落时间 | 18:34
 
-## <span id="历史数据">历史数据</span>
-###  接口参数说明
-```java
+# <span id="历史数据">历史数据</span>
+## 接口参数说明
+```js
 /**
  * @param location 城市ID
  * @param date     日期
@@ -1333,7 +1339,7 @@ getSr | 日落时间 | 18:34
 HeWeather.getWeatherHistorical(Context context, String location, String date, final HeWeather.OnResultWeatherHistoricalBeanListener listener);
 ```
 
-####  Historical 数据类
+### Historical 数据类
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1342,7 +1348,7 @@ getStatus | 接口状态 | ok
 getDaily_weather | 当天概况 | List&lt;HistoricalDaily&gt;
 getHourly_weather | 当天逐小时数据 | List&lt;HistoricalHourly&gt;
 
-####  Basic 基础信息
+### Basic 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1355,7 +1361,7 @@ getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
 getCnty | 该地区／城市所属国家名称 | 中国
 getTz | 该地区／城市所在时区 | +8.00
 
-####  HistoricalDaily 基础信息
+### HistoricalDaily 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1370,7 +1376,7 @@ getHum | 相对湿度 | 37
 getPcpn | 降水量 | 0
 getPres | 大气压强 | 1018
 
-####  HistoricalHourly 基础信息
+### HistoricalHourly 基础信息
 
 属性 | 说明 | 示例值
 --------- | ------------- | ----------
@@ -1383,3 +1389,4 @@ getPres | 气压 | 1017
 getSc | 风力 | 3-4
 getSpd | 风速 | 20
 getTmp | 温度 | 15
+
