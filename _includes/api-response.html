@@ -1,0 +1,13 @@
+<div class="api-snippets">
+    {% for title in site.data.request-url[page.data]  %}
+    {% unless title.sample %}
+    <h4><a href="#{{ title.path }}" data-toggle="collapse">{{ title.data }}</a></h4>
+    <div class="collapse" id="{{ title.path }}">
+        {% assign code = site.snippets | where: "title", title.data %}
+        {% for sample in code %}
+        {{ sample.content | markdownify }}
+        {% endfor %}
+    </div>
+    {% endunless %}
+    {% endfor %} 
+</div>

@@ -1,25 +1,32 @@
 ---
 layout: html
 ---
-<div class="main-container container-fluid">
-    <div class="row" id='doc-main'>
+<div class="container">
+    <div class="row" id='docs-main'>
         {% include docs-sidebar.html %}
-        <section class="col-sm-9 col-md-8 col-lg-8 col-xs-12">
-            <div class="region-content">
-                <h1 class="page-header">{{ page.title}}</h1>
-                <div class="node-content" id='article-content'>
-                    <article id="{{ page.id}}" typeof="sioc:Item foaf:Document" class="article-content">
-                        {{ content }}
-                    </article>
+        {% if page.tag[0] != "faq" and page.toc %}
+        <section class="col-sm-9 col-md-7 col-lg-7 col-xs-12">
+            {% else %}
+            <section class="col-sm-9 col-md-9 col-lg-9 col-xs-12">
+                {% endif %}
+                <div class="docs-header">
+                    <h1>{{ page.title}}</h1>
+                    {% if page.update %}<p class="node-meta">{{ page.update | prepend: "更新于" | upcase }}</p>{% endif %}
                 </div>
-            </div>
-        </section>
-        {% if page.toc %}
-        <section class="col-md-2 col-lg-2 hidden-sm hidden-xs">
-            <div class="region-doc-toc">
-                {{ content | toc_only }}
-            </div>
-        </section>
-        {% endif %}
+                <article class="docs-content">
+                    {% if page.tag[0] =="faq" %}
+                    {{ content | toc }}
+                    {% else %}
+                    {{ content }}
+                    {% endif %}
+                </article>
+            </section>
+            {% if page.toc and page.tag[0] != "faq" %}
+            <section class="col-md-2 col-lg-2 hidden-sm hidden-xs">
+                <div class="region-doc-toc">
+                    {{ content | toc_only }}
+                </div>
+            </section>
+            {% endif %}
     </div>
 </div>

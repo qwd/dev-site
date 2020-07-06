@@ -1,25 +1,29 @@
+{% if page.version == "s6" %}
+<a class="new-alart navbar-fixed-top" href="/docs/api/">>{{ site.data.t[page.lang].s6warning }}</a>
+{% else %}
 <header class="navbar-fixed-top">
-    <div>
-        <nav class='container-fluid' id='header-nav'>
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">
-                    <img src="/assets/images/brand.png" alt="logo" width="30">
-                </a>
-            </div>
-            <div>
-                <ul class="nav navbar-nav navbar-left" id="header-nav-list">
-                    {% for item in site.data.nav.doc-nav %}
-                    <li {% if page.url == item.link %} class="active col-xs-3" {% endif %} class="col-xs-3">
-                        <a href="{{ item.link }}">
-                            {{ item.title }}
-                        </a></li>
-                    {% endfor %}
-                </ul>
-                <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
-                    <li><a class="console" href="https://console.heweather.com">控制台</a></li>
-                    <li><a href="https://console.heweather.com/register">注册</a></li>
-                </ul>
-            </div>
-        </nav>
+  <nav class="container" id="header-nav">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://dev.heweather.com">
+        <img src="/assets/images/logo-white.png?v={{ site.data.time.resource }}" alt="{{ site.data.t[page.lang].sitename }}">
+        <span>{{ site.data.t[page.lang].sitename }}</span>
+      </a>
     </div>
+    <ul class="nav navbar-nav navbar-left">
+      <li {% if page.url == "/" %}class="active"{% endif %}><a href="/">{{ site.data.t[page.lang]weatherapi }}</a></li>
+      <li {% if page.url == "/widget/" %}class="active"{% endif %}><a href="/widget/">{{ site.data.t[page.lang]widget }}</a></li>
+      <li {% if page.collection == "docs" %}class="active"{% endif %}><a href="/docs/start/">{{ site.data.t[page.lang]docs }}</a></li>
+      <li {% if page.url == "/price/" %}class="active"{% endif %}><a href="/price/">{{ site.data.t[page.lang]price }}</a></li>
+    </ul>
+    {% include nav-widget.html %}
+    <ul id="login" class="nav navbar-nav navbar-right hidden-xs">
+      <li><a class="console" href="https://id.heweather.com/login?redirect=https://console.heweather.com">{{ site.data.t[page.lang].console }}</a></li>
+      <li style="padding-right: 0"><a style="padding-right: 0" href="https://id.heweather.com/register?redirect=https://console.heweather.com">{{ site.data.t[page.lang].join }}</a></li>
+    </ul>
+    <ul id="logout" class="nav navbar-nav navbar-right hidden-xs" style="display: none">
+      <li><a class="console" href="https://console.heweather.com">{{ site.data.t[page.lang].console }}</a></li>
+      <li style="padding-right: 0"><a style="padding-right: 0" href="https://id.heweather.com/logout?redirect=https://dev.heweather.com">{{ site.data.t[page.lang].logout }}</a></li>
+    </ul>
+  </nav>
 </header>
+{% endif %}

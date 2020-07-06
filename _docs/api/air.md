@@ -1,163 +1,90 @@
 ---
 title: 空气质量
-book: API
-service: api
+tag: [api]
 data: air
-version: 6.1
-description: 本接口包含空气质量相关数据，包括空气质量实况数据、空气质量未来7天预报以及空气质量未来逐小时预报，有权限的用户可通过本接口一次性获取某一地区以上所有空气质量相关数据。
-toc: true
+version: v7
+description: 和风天气提供全国3240市县区及1500个监测站点的空气质量AQI接口。和风天气API支持空气质量AQI数据，空气质量实况数据、空气质量未来7天预报以及空气质量未来逐小时预报。
 ---
 
-## 数据介绍
-
-通过空气质量数据接口，可获取空气质量相关数据，包括空气质量实况数据、空气质量未来7天预报以及空气质量未来逐小时预报。
-
-## 获取方式
-
-HTTP GET
-
-## 数据格式
-
-JSON
+全国3240市县区及1500个监测站点的空气质量AQI接口，支持空气质量AQI数据，空气质量实况数据、空气质量未来7天预报。通过灵活的接口请求参数，你可以一次获取以上数据，也可以分别获取其中你需要的数据。
 
 ## 请求URL
 
-**商业版：**
-```
-https://api.heweather.net/s6/air/{air-type}?{parameters}
-```
-
-**免费版：**
-```
-https://free-api.heweather.net/s6/air/{air-type}?{parameters}
-```
-
-- `{air-type}`代表不同的天气数据类型，必选，请使用以下值替代：
-
-| air-type 值 | 描述                                       |授权|
-| -------- | ------------------------------------------ |---|
-| now      | 空气质量实况                               |商业/免费|
-| forecast | 未来3-7天空气质量预报                      |商业|
-| hourly   | 未来24小时逐小时空气质量预报               |商业|
-
-> 请注意：如果数据用于任何[商业行为](https://www.heweather.com/support/license)，必须[购买商业授权](https://console.heweather.com/app/price)；某些数据的[商业版和免费版有所不同](https://www.heweather.com/support/weather-pro-vs-lite)
-
-- `{parameters}`代表请求参数，包括必选和可选参数。所有请求参数均使用`&`进行分隔，参数值存在中文或特殊字符的情况，需要对参数进行 **url encode**。
-
-> 请注意，在替换`{air-type}`和`{parameters}`对应值的时候，URL中不要包含大括号`{}`
-
-### 请求URL示例
-
-```
-# 获取北京空气质量实况天气：
-https://api.heweather.net/s6/air/now?location=beijing&key=xxx
-```
+{% include request-url.html %}
 
 ## 请求参数
 
-| 参数     | 描述                                                         | 选择 | 示例值                                                       |
-| -------- | ------------------------------------------------------------ | ---- | ------------------------------------------------------------ |
-| location | 需要查询的城市或地区，可输入以下值：<br>1. 城市ID：[城市列表](/docs/refer/city)<br>2. 经纬度格式：经度,纬度（**经度在前纬度在后**，英文`,`分隔，十进制格式，北纬东经为正，南纬西经为负<br>3. 城市名称，支持中英文和汉语拼音<br>4. 城市名称，上级城市 或 省 或 国家，英文`,`分隔，此方式可以在重名的情况下只获取想要的地区的天气数据，例如 西安,陕西<br>5. IP<br> 6. 根据请求自动判断，根据用户的请求获取IP，通过 IP 定位并获取城市数据 | 必选 | 1. location=CN101010100<br>2. location=116.40,39.9<br>3. location=北京、 location=北京市、 location=beijing<br>4. location=朝阳,北京、 location=chaoyang,beijing<br>5. location=60.194.130.1<br>6. location=auto_ip |
-| lang     | 多语言，可以不使用该参数，默认为简体中文<br>详见[多语言参数](/docs/refer/i18n) | 可选 | lang=en                                                      |
-| unit     | 单位选择，公制（m）或英制（i），默认为公制单位<br>详见[度量衡单位参数](/docs/refer/unit) | 可选 | unit=i                                                       |
-| key      | 用户认证key，请参考[如何获取你的KEY](https://www.heweather.com/support/setup-app-key)<br>支持[数字签名](/docs/refer/sercet-authorization)方式进行认证，推荐使用 | 必选 | key=xxxxxxxxxxxxxx                                           |
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值，参数之间使用`&`进行分隔。
 
-## 返回参数和数值说明
+**location** {{ site.data.text.required }}
 
-空气质量数据接口将返回一些基本字段和不同空气质量类型的字段。
+需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docsgetting-started/glossary#coordinate)（十进制），LocationID可通过[城市搜索服务](/docs/api/geo)获取。例如：`location=101010100` 或 `location=116.41,39.92`
 
-返回的数据中，`basic`，`update`和`status`是基本参数，在不同数据类型中都会返回。
+**key** {{ site.data.text.required }}
 
-具体的空气质量数据，会根据你请求的`{air-type}`不同，将返回不同的空气质量数据。
+用户认证密钥，请参考[如何获取你的KEY](/docs/start/get-api-key)。支持[数字签名](/docs/faq/technical#signature-authentication)方式认证。例如：`key=12334567890ABC`
 
-### `basic` 基础信息
+**gzip** {{ site.data.text.optional }}
 
-基础信息包括所查询的城市/地区的一些基本信息，例如名称、ID、经纬度等
+对API接口进行压缩，可以极大的减少API接口访问延迟，减少缓存空间，提高接口连接成功率。**默认开启gzip**
 
-| 参数        | 描述                     | 示例值      |
-| ----------- | ------------------------ | ----------- |
-| location    | 地区／城市名称           | 卓资        |
-| cid         | 地区／城市ID             | CN101080402 |
-| lat         | 地区／城市纬度           | 40.89576    |
-| lon         | 地区／城市经度           | 112.577702  |
-| parent_city | 该地区／城市的上级城市   | 乌兰察布    |
-| admin_area  | 该地区／城市所属行政区域 | 内蒙古      |
-| cnty        | 该地区／城市所属国家名称 | 中国        |
-| tz          | 该地区／城市所在时区     | +8.0        |
+- `y` 使用gzip方式压缩，默认
+- `n` 不使用压缩
 
-### `update` 接口更新时间
+**lang** {{ site.data.text.optional }}
 
-接口更新时间为当前接口的更新时间，包括城市/地区所在地的当地时间和UTC时间。在一些接口中，其中一部分数据会单独更新，但此时`update`时间不会变更。
+多语言，**默认中文**。具体的语言参数值请参考[多语言参数](/docs/start/language)
 
-| 参数 | 描述                                     | 示例值           |
-| ---- | ---------------------------------------- | ---------------- |
-| loc  | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34 |
-| utc  | UTC时间，24小时制，格式yyyy-MM-dd HH:mm  | 2017-10-25 04:34 |
+## 返回数据
 
-### `satuts` 接口状态
+| 参数             | 描述                                                                                                                   | 示例值                 |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| code             | API状态码，具体含义请参考[状态码](/docs/start/status-code)                                                             | 200                    |
+| updateTime       | 当前[API的最近更新时间](/docs/start/glossary#updatetime)                                                     | 2013-12-30T01:45+08:00 |
+| fxLink           | 该城市的{{ page.title }}自适应网页，可嵌入网站或应用                                                                   | http://hfx.link/ae45   |
+| now.pubTime      | 实时空气质量数据发布时间                                                                                               | 2013-12-30T01:45+08:00 |
+| now.aqi          | 实时空气质量指数                                                                                                       | 74                     |
+| now.level        | 实时空气质量指数等级                                                                                                   | 2                      |
+| now.category     | 实时空气质量指数级别                                                                                                   | 良                     |
+| now.primary      | 实时空气质量的主要污染物，空气质量为优时，返回值为`NA`                                                                   | pm2.5                  |
+| now.pm10         | 实时 pm10                                                                                                              | 78                     |
+| now.pm2p5        | 实时 pm2.5                                                                                                             | 66                     |
+| now.no2          | 实时 二氧化氮                                                                                                          | 40                     |
+| now.so2          | 实时 二氧化硫                                                                                                          | 30                     |
+| now.co           | 实时 一氧化碳                                                                                                          | 33                     |
+| now.o3           | 实时 臭氧                                                                                                              | 20                     |
+| station.pubTime  | 监测站实时空气质量数据发布时间，仅在[国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回。                 | 2013-12-30T01:45+08:00 |
+| station.name     | 监测站名称，仅在[国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                       | 万寿西宫               |
+| station.id       | 监测站ID，仅在[国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                         | CNA110000              |
+| station.aqi      | 监测站实时空气质量指数，仅在[国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                           | 74                     |
+| station.level    | 监测站实时空气质量指数等级，仅在[国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                       | 2                      |
+| station.category | 监测站实时空气质量指数级别，仅在[国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                       | 良                     |
+| station.primary  | 监测站实时主要污染物，仅在[国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回。空气质量为优时，返回值为`NA` | pm25                   |
+| station.pm10     | 监测站实时 pm10，仅在[国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                  | 78                     |
+| station.pm2p5    | 监测站实时 pm2.5，仅在[国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                 | 66                     |
+| station.no2      | 监测站实时 二氧化氮，仅在[国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                              | 40                     |
+| station.so2      | 监测站实时 二氧化硫，仅在[国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                              | 30                     |
+| station.co       | 监测站实时 一氧化碳，仅在[国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                              | 33                     |
+| station.o3       | 监测站实时 臭氧，仅在[国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                  | 20                     |
+| daily.fxDate     | 空气质量逐天预报日期                                                                                                   | 2018-05-31             |
+| daily.aqi        | 空气质量逐天预报指数                                                                                                   | 74                     |
+| daily.level      | 逐天预报的空气质量指数等级                                                                                             | 2                      |
+| daily.category   | 逐天预空气质量指数级别                                                                                                 | 良                     |
+| daily.primary    | 空气质量逐天预报的主要污染物，空气质量为优时，返回值为`NA`                                                               | pm2.5                  |
+| refer.sources    | 原始数据来源，**可能为空**                                                                                             |                        |
+| refer.license    | 数据许可证                                                                                                           |                        |
 
-当前接口的状态，正常返回数据会返回`ok`，若未能返回数据，会给出具体的错误码，不同的错误码请参考[接口状态码及错误码](/docs/refer/status-code)
+## 空气质量指数等级
 
-| 参数   | 描述                                                         | 示例值 |
-| ------ | ------------------------------------------------------------ | ------ |
-| status | 接口状态，具体含义请参考[接口状态码及错误码](/docs/refer/status-code) | ok     |
+| 数值    | 等级 | 级别     | 级别颜色 |
+| ------- | ---- | -------- | -------- |
+| 0-50    | 一级 | 优       | 绿色     |
+| 51-100  | 二级 | 良       | 黄色     |
+| 101-150 | 三级 | 轻度污染 | 橙色     |
+| 151-200 | 四级 | 中度污染 | 红色     |
+| 201-300 | 五级 | 重度污染 | 紫色     |
+| >300    | 六级 | 严重污染 | 褐红色   |
 
-### `air_now_city` 空气质量实况（市县区级别）
+## 请求和返回示例
 
-中国3240个市县区的实时空气质量（AQI）数据，包含环保部300+国控站点所在的地级市。 [了解更多](https://www.heweather.com/blog/air-forecast)
-
-| 参数     | 描述                                                         | 示例             |
-| -------- | ------------------------------------------------------------ | ---------------- |
-| pub_time | 数据发布时间,格式yyyy-MM-dd HH:mm                            | 2017-03-20 12:30 |
-| aqi      | 空气质量指数，[AQI和PM25的关系](https://www.heweather.com/blog/aqi)                   | 74               |
-| main     | 主要污染物                                                   | pm25             |
-| qlty     | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看[计算方式](https://www.heweather.com/blog/aqi#qlty) | 良               |
-| pm10     | pm10                                                         | 78               |
-| pm25     | pm25                                                         | 66               |
-| no2      | 二氧化氮                                                     | 40               |
-| so2      | 二氧化硫                                                     | 30               |
-| co       | 一氧化碳                                                     | 33               |
-| o3       | 臭氧                                                         | 20               |
-
-### `air_now_station` 空气质量实况（站点级别）
-
-环保部1500+国控监测站点实时空气质量（AQI）数据。
-
-| 参数     | 描述                                                         | 示例             |
-| -------- | ------------------------------------------------------------ | ---------------- |
-| pub_time | 数据发布时间,格式yyyy-MM-dd HH:mm                            | 2017-03-20 12:30 |
-| air_sta  | 站点名称                                                     | 万寿西宫         |
-| asid     | 站点ID                                                       | CNA110000        |
-| lat      | 站点纬度                                                     | 116.405285       |
-| lon      | 站点经度                                                     | 39.904989        |
-| aqi      | 空气质量指数，[AQI和PM25的关系](https://www.heweather.com/blog/aqi)                   | 74               |
-| main     | 主要污染物                                                   | pm25             |
-| qlty     | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看[计算方式](https://www.heweather.com/blog/aqi#qlty) | 良               |
-| pm10     | pm10                                                         | 78               |
-| pm25     | pm25                                                         | 66               |
-| no2      | 二氧化氮                                                     | 40               |
-| so2      | 二氧化硫                                                     | 30               |
-| co       | 一氧化碳                                                     | 33               |
-| o3       | 臭氧                                                         | 20               |
-
-### `air_forecast` 空气质量预报
-
-结合环保部最新排放污染清单以及WRF-CHEM模型算法，和风天气推出了全国首家且唯一的未来7天空气质量预报数据，本数据接口可对未来7天全国3240个城市地区进行空气质量AQI预报。
-
-| 参数 | 描述                                                         | 示例       |
-| ---- | ------------------------------------------------------------ | ---------- |
-| date | 预报日期,格式yyyy-MM-dd                                      | 2017-08-09 |
-| aqi  | 空气质量指数，[AQI和PM25的关系](https://www.heweather.com/blog/aqi)                   | 74         |
-| main | 主要污染物                                                   | pm25       |
-| qlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看[计算方式](https://www.heweather.com/blog/aqi#qlty) | 良         |
-
-### `air_hourly` 空气质量逐小时预报
-
-全国3240个城市地区进行精确到每一小时的空气质量预报，最长达120小时
-
-| 参数 | 描述                                                         | 示例             |
-| ---- | ------------------------------------------------------------ | ---------------- |
-| time | 预报日期，格式yyyy-MM-dd HH:mm                               | 2017-08-09 14:00 |
-| aqi  | 空气质量指数，[AQI和PM25的关系](https://www.heweather.com/blog/aqi)                   | 74               |
-| main | 主要污染物                                                   | pm25             |
-| qlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看[计算方式](https://www.heweather.com/blog/aqi#qlty) | 良               |
+{% include api-response.html %}

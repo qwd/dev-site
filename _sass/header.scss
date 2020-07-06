@@ -1,0 +1,206 @@
+
+#header-slidebar {
+  &.navbar-default {
+    background: #fff;
+    border: none;
+  }
+}
+
+header {
+  top: 0;
+  width: 100%;
+  background-color: #070B1A;
+  z-index: 1000;
+  &.navbar-fixed-top {
+    border: none;
+  }
+
+  .navbar {
+    margin: 0;
+    border: none;
+  }
+
+  .navbar-brand {
+    padding: 16px 0;
+    display: block;
+    height: 60px;
+
+    img, span {
+      height: 25px;
+      line-height: 27px;
+      display: inline-block;
+      vertical-align: middle;
+      color: #fff;
+      font-size: 1.4rem;
+      margin-right: 7px;
+    }
+  }
+
+  .navbar-nav {
+    margin: 0 0 0 28px;
+
+    > li {
+      > .dropdown-menu {
+        border-radius: 0;
+      }
+    }
+  }
+
+  .navbar-toggle {
+    margin-right: 0;
+    padding: 14px 0;
+
+    .icon-bar {
+      color: #FFFFFF;
+      background-color: #FFFFFF;
+    }
+  }
+
+  .nav {
+    &.weather-widget {
+      margin-left: 0;
+      margin-top: 1px;
+    }
+
+    & > li {
+      padding: 12px 8px;
+
+      #he-plugin-simple {
+        margin: 5px 0 9px;
+        width: 70px;
+      }
+
+      &.active, &:hover {
+        > a {
+          color: #fff;
+          border-color: #fff;
+        }
+      }
+
+      > a {
+        border-bottom: 2px solid transparent;
+        padding: 7px;
+        font-size: 1.4rem;
+        color: #FFFFFF;
+        text-align: center;
+
+        &:focus, &:hover {
+          text-decoration: none;
+          background-color: transparent;
+          color: #fff;
+        }
+      }
+    }
+
+    &.navbar-right {
+      margin-left: 0;
+
+      > li {
+        &:first-child {
+          margin-right: 5px;
+        }
+
+        > a {
+          padding: 7px 36px;
+          font-size: 1.4rem;
+          border: none;
+          border-radius: 0;
+          color: #FFFFFF;
+          text-decoration: none;
+
+          &:focus, &:hover {
+            font-weight: normal;
+            color: #fff;
+          }
+
+          &.console {
+            color: #FFFFFF;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, .72);
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-collapse {
+    padding: 0;
+  }
+
+  .dropdown-menu {
+    background-color: rgba(5, 5, 6, .8);
+    padding: 5px 0;
+    border: 0;
+
+    > li {
+      > a {
+        padding: 5px 20px;
+        color: #eeeeee;
+        font-size: 16px;
+
+        &:hover {
+          background-color: rgba(200, 200, 200, .5);
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+}
+
+// herder responsive
+@media screen and (min-width: 760px) {
+  #header-slidebar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    header {
+      .nav {
+        > li {
+          > a {
+          }
+        }
+
+        &.navbar-right {
+          > li {
+            > a {
+              padding: 7px 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    .navbar-header {
+      .navbar-brand {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        height: auto;
+      }
+    }
+
+    .navbar-nav {
+      margin-left: 0;
+
+      > li {
+        float: left;
+        width: 25%;
+      }
+    }
+
+    .nav {
+      > li {
+        > a {
+          padding: 0 0 15px
+        }
+      }
+    }
+  }
+}

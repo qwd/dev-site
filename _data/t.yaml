@@ -1,0 +1,31 @@
+en:
+  weatherapi: Weather API
+  widget: Widget
+  price: Price
+  sitename: Developer.Heweather
+  console: Console
+  join: Register
+  logout: Logout
+  s6warning: Here is the Weather API version S6, which will be offline on June 1, 2021 and it is now unavailable for new users. Click to view the latest API service.
+  powered: Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>, code hosted by <a href="https://github.com/heweather" target="_blank">Github</a><br />Code licensed <a href="https://github.com/heweather/docs/blob/master/LICENSE" target="_blank">MIT</a>，content <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+  bizapi: For Business
+  devapi: For Developer
+  rp: parameters
+  docs: Documentation
+zh:
+  weatherapi: 天气API
+  widget: 天气插件
+  price: 价格
+  sitename: 和风天气开发者
+  console: 控制台
+  join: 注册
+  logout: 退出
+  s6warning: 这里是和风天气API S6版本，该版本将于2021年6月1日下线且不再提供技术支持，新用户现已无法使用，点击查看最新版本
+  powered: 这个网站使用<a href="https://jekyllrb.com/" target="_blank">Jekyll</a>创建，源代码托管在<a href="https://github.com/heweather" target="_blank">Github</a><br />代码采用<a href="https://github.com/heweather/docs/blob/master/LICENSE" target="_blank">MIT许可</a>，文字<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+  bizapi: 商业版
+  devapi: 开发版
+  rp: 请求参数
+  docs: 开发文档
+  more-calls: 如果你的企业或业务需要大规模的天气访问量，如日均超过100万次的，请发送邮件至<sales@heweather.com>，我们针对大规模应用提供了额外折扣和性能保证。
+  pkg-dec: <p>资源包是一种预付费产品，用于抵扣API按量计费和高性能服务的配置费用，相比按量计费的标准价格，资源包最多可降低70%的预算，适合于访问量较大的场景。</p><p>你可以在控制台首页选择购买需要的资源包。<a href="/docs/faq/buy#package">了解更多资源包的说明</a></p>
+  price-more: 请访问[商业数据和购买问题](/docs/faq/buy)

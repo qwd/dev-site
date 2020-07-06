@@ -1,198 +1,112 @@
 ---
-title: 常规天气数据
-book: API
-service: api
+title: 天气预报和实况
+tag: [api, bd]
 data: weather
-version: 6.1
-description: 本接口包含了3-10天天气预报、实况天气、逐小时天气预报以及生活指数，有对应权限的用户可通过访问此接口一次性获取某一地区的上述所有天气数据
-toc: true
-permalink: /docs/api/weather
+version: v7
+description: 和风天气实况、天气预报、逐小时天气预报API接口的开发文档。和风天气API支持全国4000+个市县区和海外15万个城市天气预报。
 ---
 
-## 数据介绍
-
-通过常规天气数据API，可以获取到3-10天天气预报、实况天气、逐小时天气预报以及生活指数。
-
-## 获取方式
-
-HTTP GET
-
-## 数据格式
-
-JSON
+城市级天气预报API，包括全球15万个城市或地区的1-15天天气预报、实况天气、逐小时天气预报以及日出日落、月升月落等数据。
 
 ## 请求URL
 
-**商业版：**
-```
-https://api.heweather.net/s6/weather/{weather-type}?{parameters}
-```
-
-**免费版：**
-```
-https://free-api.heweather.net/s6/weather/{weather-type}?{parameters}
-```
-
-- `{weather-type}` 代表不同的天气数据类型，必选，请使用以下值替代：
-
-| weather-type 值  | 描述                                       | 授权|
-| --------- | ------------------------------------------ |---|
-| now       | 实况天气                                   |商业/免费|
-| forecast  | 3-10天预报                                 |商业/免费|
-| hourly    | 逐小时预报                                 |商业/免费|
-| lifestyle | 生活指数                                   |商业/免费|
-
-> 请注意：如果数据用于任何[商业行为](https://www.heweather.com/support/license)，必须[购买商业授权](https://console.heweather.com/app/price)；某些数据的[商业版和免费版有所不同](https://www.heweather.com/support/weather-pro-vs-lite)
-
-- `{parameters}`代表请求参数，包括必选和可选参数。所有请求参数均使用 `&`进行分隔，参数值存在中文或特殊字符的情况，需要对参数进行 **url encode**。
-
-> 请注意，在替换`{weather-type}`和`{parameters}`对应值的时候，URL中不要包含大括号`{}`
-
-### 请求URL示例
-```
-# 获取北京实况天气
-https://api.heweather.net/s6/weather/now?location=beijing&key=xxx
-```
-
+{% include request-url.html %}
+  
 ## 请求参数
 
-| 参数     | 描述                                                         | 选择 | 示例值                                                       |
-| -------- | ------------------------------------------------------------ | ---- | ------------------------------------------------------------ |
-| location | 需要查询的城市或地区，可输入以下值：<br>1. 城市ID：[城市列表](/docs/refer/city)<br>2. 经纬度格式：经度,纬度（**经度在前纬度在后**，英文`,`分隔，十进制格式，北纬东经为正，南纬西经为负<br>3. 城市名称，支持中英文和汉语拼音<br>4. 城市名称，上级城市 或 省 或 国家，英文`,`分隔，此方式可以在重名的情况下只获取想要的地区的天气数据，例如 西安,陕西<br>5. IP<br> 6. 根据请求自动判断，根据用户的请求获取IP，通过 IP 定位并获取城市数据 | 必选 | 1. location=CN101010100<br>2. location=116.40,39.9<br>3. location=北京、 location=北京市、 location=beijing<br>4. location=朝阳,北京、 location=chaoyang,beijing<br>5. location=60.194.130.1<br>6. location=auto_ip |
-| lang     | 多语言，可以不使用该参数，默认为简体中文<br>详见[多语言参数](/docs/refer/i18n) | 可选 | lang=en                                                      |
-| unit     | 单位选择，公制（m）或英制（i），默认为公制单位<br>详见[度量衡单位参数](/docs/refer/unit) | 可选 | unit=i                                                       |
-| key      | 用户认证key，请参考[如何获取你的KEY](https://www.heweather.com/support/setup-app-key)<br>支持[数字签名](/docs/refer/sercet-authorization)方式进行认证，推荐使用 | 必选 | key=xxxxxxxxxxxxxx                                           |
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值，参数之间使用`&`进行分隔。
 
-## 返回参数和数值说明
+**location** {{ site.data.text.required }}
 
-常规天气数据接口将返回一些基本字段和不同天气类型的字段。
+需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)（十进制），LocationID可通过[城市搜索服务](/docs/api/geo)获取。例如： `location=101010100` 或 `location=116.41,39.92`
 
-返回的数据中，`basic`，`update`和`status`是基本参数，在不同数据类型中都会返回。
+**key** {{ site.data.text.required }}
 
-具体的天气数据，会根据你请求的`{weather-type}`不同，将返回不同的天气数据。
+用户认证密钥，请参考[如何获取你的KEY](/docs/start/get-api-key)。支持[数字签名](/docs/faq/technical#signature-authentication)方式认证。例如：`key=12334567890ABC`
 
-### `basic` 基础信息
+**gzip** {{ site.data.text.optional }}
 
-基础信息包括所查询的城市/地区的一些基本信息，例如名称、ID、经纬度等
+对接口进行压缩，可大幅节省网络消耗、减少接口获取延迟。**默认开启gzip**
 
-| 参数        | 描述                     | 示例值      |
-| ----------- | ------------------------ | ----------- |
-| location    | 地区／城市名称           | 卓资        |
-| cid         | 地区／城市ID             | CN101080402 |
-| lat         | 地区／城市纬度           | 40.89576    |
-| lon         | 地区／城市经度           | 112.577702  |
-| parent_city | 该地区／城市的上级城市   | 乌兰察布    |
-| admin_area  | 该地区／城市所属行政区域 | 内蒙古      |
-| cnty        | 该地区／城市所属国家名称 | 中国        |
-| tz          | 该地区／城市所在时区     | +8.0        |
+- `y` 使用gzip方式压缩，默认
+- `n` 不使用压缩
 
-### `update` 接口更新时间
+**lang** {{ site.data.text.optional }}
 
-接口更新时间为当前接口的更新时间，包括城市/地区所在地的当地时间和UTC时间。在一些接口中，其中一部分数据会单独更新，但此时`update`时间不会变更。
+多语言设置，支持31种语言，默认中文。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
 
-| 参数 | 描述                                     | 示例值           |
-| ---- | ---------------------------------------- | ---------------- |
-| loc  | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34 |
-| utc  | UTC时间，24小时制，格式yyyy-MM-dd HH:mm  | 2017-10-25 04:34 |
+**unit** {{ site.data.text.optional }}
 
-### `satuts` 接口状态
+[度量衡单位参数](/docs/start/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**
 
-当前接口的状态，正常返回数据会返回`ok`，若未能返回数据，会给出具体的错误码，不同的错误码请参考[接口状态码及错误码](/docs/refer/status-code)
+- `m` 公制单位，默认
+- `i` 英制单位
 
-| 参数   | 描述                                                         | 示例值 |
-| ------ | ------------------------------------------------------------ | ------ |
-| status | 接口状态，具体含义请参考[接口状态码及错误码](/docs/refer/status-code) | ok     |
+## 返回数据
 
-### `now`实况天气
+| 参数       | 描述              | 示例值    |
+| ---------- | ----------------- | --------- |
+| code          | API状态码，具体含义请参考[状态码](/docs/start/status-code)                     | 200                                                                        |
+| updateTime    | 当前[API的最近更新时间](/docs/start/glossary#updatetime)                | 2013-12-30T01:45+08:00                                                     |
+| fxLink | 该城市的{{ page.title }}自适应网页，可嵌入网站或应用 | http://hfx.link/ae45 |
+| now.obsTime    | 实况观测时间                                                                                            | 2013-12-30T01:45+08:00 |
+| now.temp        | 实况温度，默认单位：摄氏度                                                                                  | 21               |
+| now.feelsLike         | 实况体感温度，默认单位：摄氏度                                                                              | 23               |
+| now.icon   | 当前天气状况和图标的代码，图标可通过[天气状况和图标](/docs/start/icons)下载  | 100              |
+| now.text | 实况天气状况的文字描述，包括阴晴雨雪等天气状态的描述                                                                                      | 晴               |
+| now.wind360    | 实况风向360角度                                                                                             | 305              |
+| now.windDir    | 实况风向                                                                                                    | 西北             |
+| now.windScale     | 实况风力等级                                                                                                    | 3                |
+| now.windSpeed    | 实况风速，公里/小时                                                                                         | 15               |
+| now.humidity        | 实况相对湿度，百分比数值                                                                                    | 40               |
+| now.precip       | 实况降水量，默认单位：毫米                                                                                  | 1.2              |
+| now.pressure       | 实况大气压强，默认单位：百帕                                                                                | 1020             |
+| now.vis        | 实况能见度，默认单位：公里                                                                                  | 10               |
+| now.cloud      | 实况云量，百分比数值                                                                                        | 23               |
+| now.dew        | 实况露点温度                                                                                        | 12               |
+| daily.fxDate      | 预报日期                                                                                            | 2013-05-31 |
+| daily.sunrise          | 日出时间                                                                                            | 07:34      |
+| daily.sunset          | 日落时间                                                                                            | 17:21      |
+| daily.moonrise          | 月升时间                                                                                            | 16:09      |
+| daily.moonset          | 月落时间                                                                                            | 04:21      |
+| daily.moonPhase       | 月相名称                                                                                                |  满月          |
+| daily.tempMax      | 预报当天最高温度                                                                                            | 4          |
+| daily.tempMin      | 预报当天最低温度                                                                                            | -5         |
+| daily.iconDay   | 预报白天天气状况的图标代码，图标可通过[天气状况和图标](/docs/start/icons)下载 | 100        |
+| daily.textDay | 预报白天天气状况文字描述，包括阴晴雨雪等天气状态的描述                                                                                | 晴         |
+| daily.iconNight   | 预报夜间天气状况的图标代码，图标可通过[天气状况和图标](/docs/start/icons)下载 | 100        |
+| daily.textNight | 预报晚间天气状况文字描述，包括阴晴雨雪等天气状态的描述                                                                                | 晴         |
+| daily.wind360Day     | 预报白天风向360角度                                                                                         | 305        |
+| daily.windDirDay     | 预报白天风向                                                                                                | 西北       |
+| daily.windScaleDay      | 预报白天风力等级                                                                                                | 3-4        |
+| daily.windSpeedDay     | 预报白天风速，公里/小时                                                                                     | 15         |
+| daily.wind360Night     | 预报夜间风向360角度                                                                                         | 305        |
+| daily.WindDirNight     | 预报夜间当天风向                                                                                                | 西北       |
+| daily.windScaleNight      | 预报夜间风力等级                                                                                                | 3-4        |
+| daily.windSpeedNight     | 预报夜间风速，公里/小时                                                                                    | 15         |
+| daily.humidity         | 预报当天相对湿度，百分比数值                                                                                | 40         |
+| daily.precip        | 预报当天降水量，默认单位：毫米                                                                              | 1.2        |
+| daily.pressure        | 预报当天大气压强，默认单位：百帕                                                                            | 1020       |
+| daily.vis         | 预报当天能见度，默认单位：公里                                                                              | 10         |
+| daily.cloud       | 预报当天云量，百分比数值                                                                                    | 23         |
+| daily.uvIndex     | 预报当天紫外线强度指数                                                                                      | 3          |
+| hourly.fxTime     | 逐小时预报时间                                                                                        | 2013-12-30T13:00+08:00 |
+| hourly.temp        | 逐小时预报温度                                                                                            | 2                |
+| hourly.icon   | 逐小时预报天气状况图标代码，图标可通过[天气状况和图标](/docs/start/icons)下载  | 101              |
+| hourly.text | 逐小时预报天气状况文字描述，包括阴晴雨雪等天气状态的描述                                                                                | 多云             |
+| hourly.wind360    | 逐小时预报风向360角度                                                                                     | 305              |
+| hourly.windDir    | 逐小时预报风向                                                                                            | 西北             |
+| hourly.windScale     | 逐小时预报风力等级                                                                                            | 3                |
+| hourly.windSpeed    | 逐小时预报风速，公里/小时                                                                                 | 15               |
+| hourly.humidity        | 逐小时预报相对湿度，百分比数值                                                                            | 40               |
+| hourly.precip       | 逐小时预报降水量，默认单位：毫米                                                                          | 1.2              |
+| hourly.pop       | 逐小时预报降水概率，百分比数值，可能为空                                                                          | 5              |
+| hourly.pressure       | 逐小时预报大气压强，默认单位：百帕                                                                        | 1020             |
+| hourly.cloud      | 逐小时预报云量，百分比数值                                                                                | 23               |
+| hourly.dew        | 逐小时预报露点温度                                                                                        | 12               |
+| refer.sources | 原始数据来源，**可能为空**                             |                                                                            |
+| refer.license | 数据许可证                                 |                                                                            |
 
-实况天气即为当前时间点的天气状况以及温湿风压等气象指数，具体包含的数据：体感温度、实测温度、天气状况、风力、风速、风向、相对湿度、大气压强、降水量、能见度等。
+## 请求和返回示例
 
-| 参数      | 描述                       | 示例 |
-| --------- | -------------------------- | ---- |
-| fl        | 体感温度，默认单位：摄氏度 | 23   |
-| tmp       | 温度，默认单位：摄氏度     | 21   |
-| cond_code | 实况天气状况代码           | 100  |
-| cond_txt  | 实况天气状况描述           | 晴   |
-| wind_deg  | 风向360角度                | 305  |
-| wind_dir  | 风向                       | 西北 |
-| wind_sc   | 风力                       | 3-4  |
-| wind_spd  | 风速，公里/小时            | 15   |
-| hum       | 相对湿度                   | 40   |
-| pcpn      | 降水量                     | 0    |
-| pres      | 大气压强                   | 1020 |
-| vis       | 能见度，默认单位：公里     | 10   |
-| cloud     | 云量                       | 23   |
-
-### `daily_forecast` 天气预报
-
-3-10天天气预报数据，天气预报包含的数据：日出日落、月升月落、最高最低温度、天气白天和夜间状况、风力、风速、风向、相对湿度、大气压强、降水量、降水概率、露点温度、紫外线强度、能见度等数据
-
-| 参数         | 描述               | 示例值     |
-| ------------ | ------------------ | ---------- |
-| date         | 预报日期           | 2013-12-30 |
-| sr           | 日出时间           | 07:36      |
-| ss           | 日落时间           | 16:58      |
-| mr           | 月升时间           | 04:47      |
-| ms           | 月落时间           | 14:59      |
-| tmp_max      | 最高温度           | 4          |
-| tmp_min      | 最低温度           | -5         |
-| cond\_code_d | 白天天气状况代码   | 100        |
-| cond\_code_n | 晚间天气状况代码   | 100        |
-| cond\_txt_d  | 白天天气状况描述   | 晴         |
-| cond\_txt_n  | 晚间天气状况描述   | 晴         |
-| wind_deg     | 风向360角度        | 310        |
-| wind_dir     | 风向               | 西北风     |
-| wind_sc      | 风力               | 1-2        |
-| wind_spd     | 风速，公里/小时    | 14         |
-| hum          | 相对湿度           | 37         |
-| pcpn         | 降水量             | 0          |
-| pop          | 降水概率           | 0          |
-| pres         | 大气压强           | 1018       |
-| uv_index     | 紫外线强度指数     | 3          |
-| vis          | 能见度，单位：公里 | 10         |
-
-### `hourly` 逐小时预报
-
-未来24-168个小时，逐小时的天气预报数据数据，具体包含的数据：温度、天气状况、风力、风速、风向、相对湿度、大气压强、降水概率等。
-
-| 参数      | 描述                           | 示例             |
-| --------- | ------------------------------ | ---------------- |
-| time      | 预报时间，格式yyyy-MM-dd hh:mm | 2013-12-30 13:00 |
-| tmp       | 温度                           | 2                |
-| cond_code | 天气状况代码                   | 101              |
-| cond_txt  | 天气状况代码                   | 多云             |
-| wind_deg  | 风向360角度                    | 290              |
-| wind_dir  | 风向                           | 西北             |
-| wind_sc   | 风力                           | 3-4              |
-| wind_spd  | 风速，公里/小时                | 15               |
-| hum       | 相对湿度                       | 30               |
-| pres      | 大气压强                       | 1030             |
-| pop       | 降水概率，百分比               | 30               |
-| dew       | 露点温度                       | 12               |
-| cloud     | 云量                           | 23               |
-
-### `lifestyle` 生活指数
-
-生活指数和生活指数预报包括：穿衣、洗车、感冒、紫外线、运动、舒适度、旅游、空气污染扩散条件。
-
-> 目前生活指数仅支持中国地区
-
-| 参数 | 描述                                                         |
-| ---- | ------------------------------------------------------------ |
-| brf  | 生活指数简介                                                 |
-| txt  | 生活指数详细描述                                             |
-| type | 生活指数类型 comf：舒适度指数、cw：洗车指数、drsg：穿衣指数、flu：感冒指数、sport：运动指数、trav：旅游指数、uv：紫外线指数、air：空气污染扩散条件指数、ac：空调开启指数、ag：过敏指数、gl：太阳镜指数、mu：化妆指数、airc：晾晒指数、ptfc：交通指数、fsh：钓鱼指数、spi：防晒指数 |
-
-### `lifestyle_forecast` 生活指数预报
-
-生活指数预报提供最长未来3天的预报数据，包括：穿衣、洗车、感冒、紫外线、运动、舒适度、旅游、空气污染扩散条件。
-
->  目前生活指数预报仅支持中国地区
-
-| 参数 | 描述                                                         |
-| ---- | ------------------------------------------------------------ |
-| date | 预报日期，例如2017-12-30                                     |
-| brf  | 生活指数简介                                                 |
-| txt  | 生活指数详细描述                                             |
-| type | 生活指数类型 comf：舒适度指数、cw：洗车指数、drsg：穿衣指数、flu：感冒指数、sport：运动指数、trav：旅游指数、uv：紫外线指数、air：空气污染扩散条件指数、ac：空调开启指数、ag：过敏指数、gl：太阳镜指数、mu：化妆指数、airc：晾晒指数、ptfc：交通指数、fsh：钓鱼指数、spi：防晒指数 |
-
+{% include api-response.html %}

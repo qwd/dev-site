@@ -1,0 +1,24 @@
+---
+layout: html
+---
+<div class="container doc-legacy">
+    <div class="row" id='doc-main'>
+        <section class="col-md-10">
+            <div class="region-content">
+                <h1 class="page-header navbar-static-top">{{ page.title}}</h1>
+                <article class="docs-content">
+                    {{ content }}
+                </article>
+            </div>
+        </section>
+                {% if page.toc %}
+        <section class="col-md-2 col-lg-2 hidden-sm hidden-xs">
+            <div class="region-doc-toc">
+                {% toc | first %}
+            </div>
+        </section>
+        {% endif %}
+            </div>
+        </section>
+    </div>
+</div>

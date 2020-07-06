@@ -1,0 +1,742 @@
+@media (max-width: 1199px) {
+  .homepage {
+    .hp-weatherbg {
+      text-align: left;
+      color: #fff;
+      background: #02010C;
+
+      .container {
+        padding-left: 60px;
+        min-height: 480px;
+        background-size: auto 90%;
+      }
+
+      h1 {
+        margin-top: 100px;
+        font-size: 3.6rem;
+        line-height: 63px;
+        font-weight: normal;
+        color: #fff;
+      }
+
+      p {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
+    .middle {
+      .hp-data {
+        > .row {
+          div[class*="col-"] {
+            &:nth-child(4n) {
+              padding-left: 1%;
+              width: 24%;
+            }
+
+            &:nth-child(4n-1) {
+              padding-left: 1%;
+            }
+
+            &:nth-child(4n-2) {
+              padding-left: 3%;
+              width: 26%;
+            }
+          }
+        }
+      }
+
+
+      .hp-function {
+        margin-top: 70px;
+      }
+
+      .hp-moreinfo {
+        margin-top: 70px;
+        text-align: center;
+
+        > .row {
+          margin-left: -10px;
+          margin-right: -10px;
+
+          > div[class*="col-"] {
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+        }
+
+        .hp-moreinfo-content-container {
+          .hp-app, .hp-developer, .hp-price {
+            height: 300px;
+            padding: 30px 36px 0;
+            position: relative;
+
+            h2 {
+              & + p {
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 24px;
+                letter-spacing: 2px;
+
+                & + p {
+                  font-size: 16px;
+                  font-weight: 300;
+                  line-height: 24px;
+                  letter-spacing: 2px;
+                }
+              }
+            }
+
+            .btn-container {
+              bottom: 43px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .homepage {
+    .hp-weatherbg {
+      .container {
+        padding-left: 60px;
+        min-height: 400px;
+        background-size: auto 90%;
+      }
+
+      h1 {
+        margin-top: 60px;
+        font-size: 3.6rem;
+        line-height: 63px;
+        font-weight: normal;
+        color: #fff;
+      }
+
+      p {
+        margin-top: 30px;
+      }
+    }
+
+    .middle {
+      .hp-data {
+        h2 {
+          font-size: 30px;
+          line-height: 30px;
+        }
+
+        > .row {
+          margin-top: 25px;
+          background-position: center bottom;
+          background-size: auto 85%;
+          padding: 38px 0 20px;
+          font-size: 16px;
+          line-height: 20px;
+
+          div[class*="col-"] {
+            &:nth-child(4n) {
+              width: 23%;
+            }
+
+            &:nth-child(4n-1) {
+              padding-left: 1%;
+              width: 25%;
+            }
+
+            &:nth-child(4n-2) {
+              padding-left: 4%;
+              width: 27%;
+            }
+          }
+
+          .item-container {
+            padding: 9px 0;
+
+            span, img {
+              display: inline-block;
+              vertical-align: middle;
+            }
+
+            img {
+              width: 17px;
+              height: 17px;
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+
+
+      .hp-function {
+        margin-top: 70px;
+
+        .hpf-content {
+          max-width: 435px;
+
+          h2 {
+            margin: 30px 0 0;
+            font-size: 28px;
+            line-height: 28px;
+
+            & + p {
+              margin: 24px 0 30px;
+              font-size: 15px;
+              line-height: 22px;
+              color: rgba(38, 50, 56, .8);
+              letter-spacing: 2px;
+            }
+          }
+
+          a {
+            padding: 8px 16px;
+            border-radius: 4px;
+
+            > i {
+              font-size: 11px;
+              font-weight: lighter;
+            }
+          }
+        }
+
+        .tools {
+          text-align: center;
+
+          .row {
+            max-width: 460px;
+            margin: 0 auto;
+
+            > div[class*="col-"] {
+              padding-left: 5px;
+              padding-right: 5px;
+              margin-bottom: 10px;
+
+              .hpf-api {
+                display: block;
+                border: 1px solid transparent;
+                border-radius: 4px;
+                height: 116px;
+                text-align: center;
+
+                img {
+                  width: 48px;
+                  margin-top: 12px;
+                }
+
+                h3 {
+                  margin: 14px auto 0;
+                  font-size: 16px;
+                  line-height: 22px;
+                  color: #FFFFFF;
+                  font-weight: normal;
+
+                  &.android-sdk {
+                    margin: 6px auto 0;
+                  }
+
+                  &.plus {
+                    margin: 4px auto 0;
+                  }
+
+                  & + p {
+                    margin: 0;
+                    color: #FFFFFF;
+                    font-size: 12px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .hp-moreinfo {
+        margin-top: 70px;
+        text-align: center;
+
+        > .row {
+          margin-left: -7px;
+          margin-right: -7px;
+
+          > div[class*="col-"] {
+            padding-left: 7px;
+            padding-right: 7px;
+          }
+        }
+
+        .hp-moreinfo-content-container {
+          .hp-app, .hp-developer, .hp-price {
+            height: 230px;
+            padding: 10px 16px 0;
+            position: relative;
+
+            h2 {
+              font-size: 26px;
+              line-height: 30px;
+
+              & + p {
+                font-size: 15px;
+                font-weight: 300;
+                line-height: 20px;
+                letter-spacing: 1px;
+
+                & + p {
+                  font-size: 15px;
+                  font-weight: 300;
+                  line-height: 20px;
+                  letter-spacing: 1px;
+                }
+              }
+            }
+
+            .btn-container {
+              position: absolute;
+              width: 100%;
+              bottom: 30px;
+              left: 0;
+
+              .btn {
+                background-color: #FFFFFF;
+                margin-top: 24px;
+                border: none;
+                font-size: 14px;
+                padding: 8px 12px;
+                min-width: 130px;
+                color: #263238;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .homepage {
+    .hp-weatherbg {
+      .container {
+        padding-left: 0;
+        background: none;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 60px;
+        font-size: 3.6rem;
+        line-height: 63px;
+        font-weight: normal;
+        color: #fff;
+      }
+
+      p {
+        text-align: center;
+        margin-top: 30px;
+      }
+    }
+
+    .middle {
+      .hp-data {
+        h2 {
+          font-size: 30px;
+          line-height: 30px;
+        }
+
+        > .row {
+          margin-top: 25px;
+          background: transparent;
+          padding: 38px 0 20px;
+          font-size: 16px;
+          line-height: 20px;
+
+          div[class*="col-"] {
+            &:nth-child(4n) {
+              padding-left: 0;
+              width: 33.333%;
+            }
+
+            &:nth-child(4n-1) {
+              padding-left: 0;
+              width: 33.333%;
+            }
+
+            &:nth-child(4n-2) {
+              padding-left: 0;
+              width: 33.333%;
+            }
+          }
+
+          .item-container {
+            padding: 9px 0;
+            text-align: center;
+
+            .item {
+              margin: 0 auto;
+              padding-left: 30px;
+              max-width: 200px;
+              text-align: left;
+            }
+
+            span, img {
+              display: inline-block;
+              vertical-align: middle;
+            }
+
+            img {
+              width: 17px;
+              height: 17px;
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+
+
+      .hp-function {
+        margin-top: 50px;
+
+        .hpf-content {
+          max-width: 100%;
+          text-align: center;
+
+          h2 {
+            text-align: center;
+            margin: 10px 0 0;
+
+            & + p {
+              margin: 24px 0 0;
+              font-size: 15px;
+              line-height: 22px;
+              color: rgba(38, 50, 56, .8);
+              letter-spacing: 1px;
+            }
+          }
+
+          a {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 8px 12px 6px 16px;
+            border-radius: 4px;
+
+            > i {
+              font-size: 11px;
+              font-weight: lighter;
+            }
+          }
+        }
+      }
+
+      .hp-moreinfo {
+        margin-top: 70px;
+        text-align: center;
+
+        .hp-moreinfo-content-container {
+          .hp-app, .hp-developer, .hp-price {
+            margin: 0 auto 20px;
+            height: 440px;
+            max-width: 570px;
+            padding: 44px 26px 0;
+            position: relative;
+
+            h2 {
+              font-size: 30px;
+              line-height: 30px;
+              margin-top: 40px;
+
+              & + p {
+                font-size: 17px;
+                line-height: 28px;
+                letter-spacing: 1px;
+
+                & + p {
+                  font-size: 17px;
+                  line-height: 28px;
+                  letter-spacing: 1px;
+                }
+              }
+            }
+
+            .btn-container {
+              position: absolute;
+              width: 100%;
+              bottom: 100px;
+              left: 0;
+
+              .btn {
+                background-color: #FFFFFF;
+                margin-top: 24px;
+                border: none;
+                font-size: 14px;
+                padding: 8px 24px;
+                color: #263238;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .join-us {
+      margin-top: 50px;
+    }
+  }
+}
+
+
+@media (max-width: 555px) {
+  .homepage {
+    .middle {
+      .hp-data {
+        h2 {
+          font-size: 30px;
+          line-height: 30px;
+        }
+
+        > .row {
+          margin-top: 25px;
+          background: transparent;
+          padding: 38px 0 20px;
+          font-size: 16px;
+          line-height: 20px;
+
+          div[class*="col-"] {
+            &.col-xs-549 {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 539px) {
+  .homepage {
+    .middle {
+      .hp-data {
+        h2 {
+          font-size: 30px;
+          line-height: 30px;
+        }
+
+        > .row {
+          margin-top: 25px;
+          background: transparent;
+          padding: 38px 0 20px;
+          font-size: 16px;
+          line-height: 20px;
+
+          .item-container {
+            padding: 9px 0;
+            text-align: center;
+
+            .item {
+              margin: 0 auto;
+              padding-left: 20px;
+              max-width: 200px;
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      .hp-moreinfo {
+        .hp-moreinfo-content-container {
+          .hp-app, .hp-developer, .hp-price {
+            margin: 0 auto 20px;
+            height: 380px;
+            max-width: 100%;
+            padding: 44px 26px 0;
+            position: relative;
+
+            h2 {
+              font-size: 30px;
+              line-height: 30px;
+              margin-top: 20px;
+
+              & + p {
+                font-size: 17px;
+                line-height: 28px;
+                letter-spacing: 1px;
+
+                & + p {
+                  font-size: 17px;
+                  line-height: 28px;
+                  letter-spacing: 1px;
+                }
+              }
+            }
+
+            .btn-container {
+              position: absolute;
+              width: 100%;
+              bottom: 70px;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .join-us {
+      margin-top: 50px;
+    }
+  }
+}
+
+@media (max-width: 413px) {
+  .homepage {
+    .middle {
+      .hp-data {
+        > .row {
+          margin-top: 25px;
+          background: transparent;
+          padding: 38px 0 20px;
+          font-size: 16px;
+          line-height: 20px;
+
+          .item-container {
+            padding: 9px 0;
+            text-align: center;
+
+            .item {
+              margin: 0 auto;
+              max-width: 200px;
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      .hp-moreinfo {
+        .hp-moreinfo-content-container {
+          .hp-app, .hp-developer, .hp-price {
+            margin: 0 auto 20px;
+            height: 350px;
+            padding: 34px 26px 0;
+            position: relative;
+
+            h2 {
+              font-size: 30px;
+              line-height: 30px;
+              margin-top: 20px;
+
+              & + p {
+                font-size: 17px;
+                line-height: 28px;
+                letter-spacing: 1px;
+
+                & + p {
+                  font-size: 17px;
+                  line-height: 28px;
+                  letter-spacing: 1px;
+                }
+              }
+            }
+
+            .btn-container {
+              position: absolute;
+              width: 100%;
+              bottom: 70px;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .join-us {
+      margin-top: 50px;
+    }
+  }
+}
+
+
+@media (max-width: 374px) {
+  .homepage {
+    .middle {
+      padding: 50px 0;
+
+      .hp-data {
+        margin-top: 50px;
+
+        > .row {
+
+          .item-container {
+
+            .item {
+              padding-left: 0;
+            }
+          }
+        }
+      }
+
+      .hp-function {
+        margin-top: 50px;
+      }
+
+      .hp-moreinfo {
+        .hp-moreinfo-content-container {
+          .hp-app, .hp-developer, .hp-price {
+            margin: 0 auto 15px;
+            height: 320px;
+            padding: 30px 15px 0;
+
+            h2 {
+              font-size: 30px;
+              line-height: 30px;
+              margin-top: 10px;
+
+              & + p {
+                font-size: 17px;
+                font-weight: 300;
+                line-height: 28px;
+                letter-spacing: 1px;
+
+                & + p {
+                  font-size: 17px;
+                  font-weight: 300;
+                  line-height: 28px;
+                  letter-spacing: 1px;
+                }
+              }
+            }
+
+            .btn-container {
+              position: absolute;
+              width: 100%;
+              bottom: 40px;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .join-us {
+      margin-top: 0;
+      text-align: center;
+      padding: 32px 0;
+
+      p {
+        margin: 0;
+        font-size: 22px;
+        line-height: 24px;
+      }
+
+      .btn-join-us {
+        margin-top: 24px;
+        border: none;
+        font-size: 14px;
+        padding: 8px 24px;
+        min-width: 180px;
+      }
+    }
+  }
+}
+
+
+
+
+

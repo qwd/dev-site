@@ -1,33 +1,52 @@
-name: 和风天气开发者
-description: 和风天气强大、现代、易于使用的天气数据服务，包括天气API/SDK，开源天气APP，天气插件等
+name: 和风天气开发平台
+description: 提供商业和免费的天气API、天气SDK，开源天气APP，天气插件。
 timezone: Asia/Shanghai
 url: "https://dev.heweather.com"
 lang: zh_CN
 logo: "/assets/images/brand.png"
+attribution: heweather.com
+github: https://github.com/heweather
+icp:
+  number: 京ICP备14028982号-1
+  url: "http://www.beian.miit.gov.cn"
+webmaster_verifications:
+  google: 5mJlHKIddhky6OQT5qb7M2Uit2yzg4WGwG7JBxWQ6Cw
+  bing: EDFBFE217D2B905D82BE1D5A1BC9AB28
 
 defaults:
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "html"
-  -
-    scope:
-      path: "_docs"
-      type: "docs"
-    values:
-      layout: "docs-page"
-      seo:
-        type: "DigitalDocument"        
-
+- scope:
+    path: "pages"
+    type: "pages"
+  values:
+    layout: "html"
+    lang: zh
+- scope:
+    path: "_docs"
+    type: "docs"
+  values:
+    layout: "docs-page"
+    lang: zh
+    seo:
+      type: "DigitalDocument"
 collections:
   docs:
     permalink: "/docs/:path"
     output: true
-    
+  snippets:
+    permalink: "/snippets/:path"
+    output: true
+toc:
+  min_level: 2 # default: 1
+  max_level: 3 # default: 6
+sass:
+  sass_dir: _sass
+  style: compressed
+
 exclude:
+- .idea
+- .git
 - .gitignore
+- .sass-cache
 - .jekyll-cache
 - README.md
 

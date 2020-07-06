@@ -1,20 +1,32 @@
-<aside class="col-sm-3 col-md-2 col-lg-2 hidden-xs">
-  <div class="region-sidebar-doc">
-    <nav class="doc-nav">
-      {% for section in site.data.docs-sidebar %}
-      <div class="doc-nav-group">
-        <a class="doc-nav-title-link" href="{{ section.url}}" title="{{ section.group }}">{{ section.group }}</a>
-        <ul class="nav collapse {% if page.book == section.group %}in {% endif %}">
-          {% for item in section.docs-nav %}
-          <li {% if page.url == item.link %}class="active" {% endif %} id="{{ item.link }}">
-            <a class="doc-nav-item-link" href="{{ item.link }}">{{ item.title}}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endfor %}
-    </nav>
-  </div>
+<aside class="col-sm-3 col-md-3 col-lg-3 hidden-xs">
+  <nav class="navbar navbar-default nav-stacked doc-nav">
+
+    {% for section in site.data.nav.sidebar %}
+    {% assign group_slug = section.en | downcase %}
+
+    <div class="doc-nav-group">
+      <a class="doc-nav-title-link" href="/docs/{{ section.en | slugify }}/"
+        title="{{ section.[page.lang] }}">{{ section.[page.lang] }}</a>
+      <ul class="nav collapse {% if page.tag[0] == group_slug %}in {% endif %}">
+
+        {% for item in section.list %}
+        {% assign link = page.url | split: "/" | last %}
+        {% assign title = item.en | slugify %}
+        {% assign index_item = item.en | downcase %}
+
+        <li {% if link == title %}class="active" {% endif %}>
+          <a class="doc-nav-item-link" href="{% if index_item == group_slug %}
+          /docs/{{ section.en | slugify }}/
+          {% else %}
+          /docs/{{ section.en | slugify }}/{{ item.en | slugify  }}
+          {% endif %}">{{ item.[page.lang] }}</a>
+        </li>
+        {% endfor %}
+
+      </ul>
+    </div>
+    {% endfor %}
+  </nav>
 </aside>
 
 <!-- for mobile -->
@@ -29,19 +41,25 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">
-        开发文档
+        {{ site.data.t[page.lang].docs }}
       </a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        {% for section in site.data.docs-sidebar %}
+        {% for section in site.data.nav.sidebar %}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-            aria-expanded="false">{{ section.group }}<span class="caret"></span></a>
+            aria-expanded="false">{{ section.zh }}<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            {% for item in section.docs-nav %}
-            <li><a href="{{ item.link }}">
-                {{ item.title}}
+            {% for item in section.list %}
+            {% assign group_slug = section.en | downcase %}
+            {% assign index_item = item.en | downcase %}
+            <li><a href="{% if index_item == group_slug %}
+              /docs/{{ section.en | slugify }}/
+              {% else %}
+              /docs/{{ section.en | slugify }}/{{ item.en | slugify  }}
+              {% endif %}">
+                {{ item.[page.lang]}}
               </a></li>
             {% endfor %}
           </ul>

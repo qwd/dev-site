@@ -1,38 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        {% seo %}
-        {% if jekyll.environment == "production" %}
-        <link rel="stylesheet" href="/assets/css/bootstrap-3.3.7.min.css" />
-        <link rel="stylesheet" href="/assets/css/style.min.css" />
-        {% else %}
-        <link rel="stylesheet" href="/assets/css/bootstrap-3.3.7.css" />
-        <link rel="stylesheet" href="/assets/css/style.css" />
-        {% endif %}
-        <!-- HTML5 element support for IE6-8 -->
-        <!--[if lt IE 9]>
-    <script src="https://cdn.staticfile.org/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-    <![endif]-->
-
-        <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    </head>
-
-    <body>
-        {% include nav.html %}
-
-        {{ content }}
-
-        {% if page.name == "index.html" %}
-        {% include footer-index.html %}
-        {% else %}
-        {% include footer.html %}
-        {% endif %}
-
-        {% include js.html %}
-    </body>
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  {% seo %}
+  <meta name="apple-itunes-app" content="app-id=1461458147, app-argument=weather"/>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/assets/css/style.css?v={{ site.data.time.resource }}"/>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.11.0/dist/jquery.min.js"></script>
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+  <script
+    src="https://cdn.staticfile.org/html5shiv/3.7.3/html5shiv-printshiv.min.js?v={{ site.data.time.resource }}"></script>
+  <![endif]-->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+{% include nav.html %}
+{{ content }}
+{% include footer.html %}
+{% include js.html %}
+</body>
 </html>

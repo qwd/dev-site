@@ -1,1392 +1,1371 @@
 ---
-book: SDK
-version: 1.0
-service: sdk
-data: [air, weather, grid, alarm, map, solar]
 title: Android SDK 实体类属性
+tag: [sdk]
+version: v4
 description: 和风天气Android SDK 实体类属性对照表
+toc: true
 ---
 
-接口说明 | 接口代码 | 数据类
---------- | ------------- | -----------
-[城市查询](#城市查询) | getSearch | Search
-[3-10天天气预报](#3-10天天气预报) | getWeatherForecast | Forecast
-[实况天气](#实况天气) | getWeatherNow | Now
-[逐小时预报](#逐小时预报) | getWeatherHourly | Hourly
-[生活指数](#生活指数) | getWeatherLifeStyle | Lifestyle
-[常规天气数据集合](#常规天气数据集合) | getWeather | Weather
-[格点实况天气](#格点实况天气) | getWeatherGridNow | GridNow
-[格点7天预报](#格点7天预报) | getWeatherGridForecast | GridForecast
-[格点逐小时预报](#格点逐小时预报) | getWeatherGirdHourly | GridHourly
-[分钟级降雨（邻近预报）](#分钟级降雨（邻近预报）) | getWeatherGirdMinute | GridMinute
-[天气灾害预警](#天气灾害预警) | getAlarm | AlarmList
-[天气灾害预警集合](#天气灾害预警集合) | getAlarmAll | AlarmAll
-[景点天气预报](#景点天气预报) | getScenic | Scenic
-[空气质量实况](#空气质量实况) | getAirNow | AirNow
-[空气质量7天预报](#空气质量7天预报) | getAirForecast | AirForecast
-[空气质量逐小时预报](#空气质量逐小时预报) | getAirHourly | AirHourly
-[空气质量数据集合](#空气质量数据集合) | getAir | Air
-[卫星云图](#卫星云图) | getMapCloudMap | Bitmap or File
-[太阳高度](#太阳高度) | getSolarElevationAngle | SolarElevationAngle
-[日出日落](#日出日落) | getSolarSunriseSunset | List&lt;SolarSunriseSunset&gt;
-[历史数据](#历史数据) | getWeatherHistorical | Historical
+## 实况天气
 
-# 多语言代码对照表
-## 可调用枚举类 Lang
-语言 | 语言代码 | 常量属性
---------- | ------------- | ------------
-简体中文 | zh  | CHINESE_SIMPLIFIED
-繁体中文 | hk | CHINESE_TRADITIONAL
-英文 | en | ENGLISH
-德语 | de | GERMAN
-西班牙语 | es | SPANISH
-法语 | fr | FRENCH
-意大利语 | it | ITALIAN
-日语 | jp | JAPANESE
-韩语 | kr | KOREAN
-俄语 | ru | RUSSIAN
-印度语 | in | HINDI
-泰语 | th | THAI
+| 接口说明     | 接口代码      | 数据类         |
+| ------------ | ------------- | -------------- |
+| 实况天气数据 | getWeatherNow | WeatherNowBean |
 
-# 单位对照表
-## 可调用枚举类Unit
-语言 | 语言代码 | 常量属性
---------- | ------------- | ------------
-公制 | m | METRIC
-英制 | i | IMPERIAL
+#### 接口参数说明
 
+**location** {{ site.data.text.required }}
 
-# <span id="城市查询">城市查询</span>
-## 接口参数说明
-```js
-/**
- * @param context  上下文
- * @param location (输入需要查询的城市名称，支持模糊搜索，可输入中文（至少一个汉字）、英文（至少2个字母）、IP地址、坐标（经度在前纬度在后，英文,分割）、ADCode
- * @param group    城市查询分组，默认为全球城市，可按照任意国家范围进行查询，国家名称需使用[ISO 3166 所定义的国家代码](https://www.heweather.com/blog/iso-3166)
-特殊值：world，查询全球城市
-特殊值：scenic，查询中国4A和5A级景点地区
-特殊值：overseas，查询除中国以外的全部海外城市
-查询分组可最多设置20个值，多个值用英文,连接
- * @param number     搜索查询返回的数量，默认返回10个与查询城市或的确相关性最强的结果，可选1-20个，当使用IP地址或坐标查询时，仅返回一个结果
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param listener 网络访问回调接口
- */
-HeWeather.getSearch(Context context, String location, String group, int number, Lang lang, final HeWeather.OnResultSearchBeansListener listener);
+需要查询地区的LocationID或以逗号分隔的纬度/经度坐标（十进制），LocationID可通过城市搜索服务获取。例如： location=101010100 或 location=39.92,116.41
 
-HeWeather.getSearch(Context context, String location, String group, int number, final HeWeather.OnResultSearchBeansListener listener);
+**lang** {{ site.data.text.optional }} 
 
-HeWeather.getSearch(Context context, int number, final HeWeather.OnResultSearchBeansListener listener);
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
 
-HeWeather.getSearch(Context context, final HeWeather.OnResultSearchBeansListener listener);
+**unit** {{ site.data.text.optional }} 
+
+[度量衡单位参数](/docs/start/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**
+
+| 单位 | 常量属性 |
+| ---- | -------- |
+| 公制 | METRIC   |
+| 英制 | IMPERIAL |
+
+#### 示例代码
+
+```java
+HeWeather.getWeatherNow(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherNowListener listener) ;
+
+HeWeather.getWeatherNow(Context context, String location, HeWeather.OnResultWeatherNowListener listener);
 ```
 
-## Search的属性
+**WeatherNowBean的属性**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | List&lt;Basic&gt;
-getStatus | 接口状态 | ok
+| 属性     | 说明                       | 示例值      |
+| -------- | -------------------------- | ----------- |
+| getCode  | 接口状态                   | ok          |
+| getNow   | NowBean 实况天气           | NowBaseBean |
+| getRefer | Refer 数据来源以及数据授权 | Refer       |
+| getBasic | Basic 基础信息             | Basic       |
 
-### Basic 基础信息
+**Refer**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
 
+**Basic**
 
-# <span id="3-10天天气预报">3-10天天气预报</span>
-## 接口参数说明
-```js
+| 属性          | 说明                     | 示例值               |
+| ------------- | ------------------------ | -------------------- |
+| getUpdateTime | 接口更新时间             | 2017-10-25 04:34     |
+| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
+
+**NowBaseBean 实况天气**
+
+| 属性         | 说明                       | 示例值           |
+| ------------ | -------------------------- | ---------------- |
+| getObsTime   | 实况观测时间               | 2013-12-30 13:14 |
+| getFeelsLike | 体感温度，默认单位：摄氏度 | 23               |
+| getTemp      | 温度，默认单位：摄氏度     | 21               |
+| getIcon      | 实况天气状况代码           | 100              |
+| getText      | 实况天气状况代码           | 晴               |
+| getWind360   | 风向360角度                | 305              |
+| getWindDir   | 风向                       | 西北             |
+| getWindScale | 风力                       | 3-4              |
+| getWindSpeed | 风速，公里/小时            | 15               |
+| getHumidity  | 相对湿度                   | 40               |
+| getPrecip    | 降水量                     | 0                |
+| getPressure  | 大气压强                   | 1020             |
+| getVis       | 能见度，默认单位：公里     | 10               |
+| getCloud     | 云量                       | 23               |
+| getDew       | 实况云量                   | 23               |
+
+## 逐天预报
+
+| 接口说明         | 接口代码      | 数据类           |
+| ---------------- | ------------- | ---------------- |
+| 3天预报天气数据  | getWeather3D  | WeatherDailyBean |
+| 7天预报天气数据  | getWeather7D  | WeatherDailyBean |
+| 10天预报天气数据 | getWeather10D | WeatherDailyBean |
+| 15天预报天气数据 | getWeather15D | WeatherDailyBean |
+
+#### 接口参数说明
+
+**location**{{ site.data.text.required }} 
+
+需要查询地区的LocationID或以逗号分隔的纬度/经度坐标（十进制），LocationID可通过城市搜索服务获取。例如： location=101010100 或 location=39.92,116.41
+
+**lang** {{ site.data.text.optional }} 
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+**unit** {{ site.data.text.optional }} 
+
+[度量衡单位参数](/docs/start/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**
+
+| 单位 | 常量属性 |
+| ---- | -------- |
+| 公制 | METRIC   |
+| 英制 | IMPERIAL |
+
+#### 示例代码
+
+```java
 /**
- * @param context  上下文
- * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
+ * 获取3天预报数据
  */
-HeWeather.getWeatherForecast(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultWeatherForecastBeanListener listener);
+HeWeather.getWeather3D(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherDailyListener listener) ;
 
-HeWeather.getWeatherForecast(Context context, String location, final HeWeather.OnResultWeatherForecastBeanListener listener);
+HeWeather.getWeather3D(Context context, String location, HeWeather.OnResultWeatherDailyListener listener);
 
-HeWeather.getWeatherForecast(Context context, Lang lang, Unit unit, final HeWeather.OnResultWeatherForecastBeanListener listener);
+/**
+ * 获取7天预报数据
+ */
+HeWeather.getWeather7D(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherDailyListener listener) ;
 
-HeWeather.getWeatherForecast(Context context, final HeWeather.OnResultWeatherForecastBeanListener listener);
+HeWeather.getWeather7D(Context context, String location, HeWeather.OnResultWeatherDailyListener listener);
+
+/**
+ * 获取10天预报数据
+ */
+HeWeather.getWeather10D(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherDailyListener listener) ;
+
+HeWeather.getWeather10D(Context context, String location, HeWeather.OnResultWeatherDailyListener listener);
+
+/**
+ * 获取15天预报数据
+ */
+HeWeather.getWeather15D(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherDailyListener listener) ;
+
+HeWeather.getWeather15D(Context context, String location, HeWeather.OnResultWeatherDailyListener listener);
 ```
 
-## Forecast的属性
+**WeatherDailyBean的属性**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getDaily_forecast | 天气预报 | List&lt;ForecastBase&gt;
+| 属性     | 说明                       | 示例值                |
+| -------- | -------------------------- | --------------------- |
+| getCode  | 接口状态                   | ok                    |
+| getDaily | DailyBean 逐天天气         | List&lt;DailyBean&gt; |
+| getRefer | Refer 数据来源以及数据授权 | Refer                 |
+| getBasic | Basic 基础信息             | Basic                 |
 
-### Basic 基础信息
+**Refer**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
 
-### Update 接口更新时间
+**Basic**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+| 属性          | 说明                     | 示例值               |
+| ------------- | ------------------------ | -------------------- |
+| getUpdateTime | 接口更新时间             | 2017-10-25 04:34     |
+| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
 
-### ForecastBase 天气预报
+**DailyBean 天气预报**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期 | 2013-12-30
-getSr | 日出时间 | 07:36
-getSs | 日落时间 | 16:58
-getMr | 月升时间 | 04:47
-getMs | 月落时间 | 14:59
-getTmp_max | 最高温度 | 4
-getTmp_min | 最低温度 | -5
-getCond_code_d | 白天天气状况代码 | 100
-getCond_code_n | 晚间天气状况代码 | 100
-getCond_txt_d | 白天天气状况描述 | 晴
-getCond_txt_n | 晚间天气状况描述 | 晴
-getWind_deg | 风向360角度 | 310
-getWind_dir | 风向 | 西北风
-getWind_sc | 风力 | 1-2
-getWind_spd | 风速，公里/小时 | 14
-getHum | 相对湿度 | 37
-getPcpn | 降水量 | 0
-getPop | 降水概率 | 0
-getPres | 大气压强 | 1018
-getUv_index | 紫外线强度指数 | 3
-getVis | 能见度，单位：公里 | 10
+| 属性              | 说明                | 示例值     |
+| ----------------- | ------------------- | ---------- |
+| getFxDate         | 预报日期            | 2013-12-30 |
+| getSunrise        | 日出时间            | 07:36      |
+| getSunset         | 日落时间            | 16:58      |
+| getMoonRise       | 月升时间            | 04:47      |
+| getMoonSet        | 月落时间            | 14:59      |
+| getMoonPhase      | 月相名称            | 满月       |
+| getTempMax        | 最高温度            | 4          |
+| getTempMin        | 最低温度            | -5         |
+| getIconDay        | 白天天气状况代码    | 100        |
+| getIconNight      | 晚间天气状况代码    | 100        |
+| getTextDay        | 白天天气状况描述    | 晴         |
+| getTextNight      | 晚间天气状况描述    | 晴         |
+| getWind360Day     | 白天风向360角度     | 310        |
+| getWind360Night   | 夜间风向360角度     | 310        |
+| getWindDirDay     | 白天风向            | 西北风     |
+| getWindDirNight   | 夜间风向            | 西北风     |
+| getWindScaleDay   | 白天风力            | 1-2        |
+| getWindScaleNight | 夜间风力            | 1-2        |
+| getWindSpeedDay   | 白天风速，公里/小时 | 14         |
+| getWindSpeedNight | 夜间风速，公里/小时 | 14         |
+| getHumidity       | 相对湿度            | 37         |
+| getPrecip         | 降水量              | 0          |
+| getPressure       | 大气压强            | 1018       |
+| getCloud          | 当天云量            | 23         |
+| getUvIndex        | 紫外线强度指数      | 3          |
+| getVis            | 能见度，单位：公里  | 10         |
 
-# <span id="实况天气">实况天气</span>
-## 接口参数说明
-```js
+## 逐小时天气预报
+
+| 接口说明            | 接口代码       | 数据类            |
+| ------------------- | -------------- | ----------------- |
+| 24小时预报天气数据  | getWeather24H  | WeatherHourlyBean |
+| 72小时预报天气数据  | getWeather72H  | WeatherHourlyBean |
+| 168小时预报天气数据 | getWeather168H | WeatherHourlyBean |
+
+#### 接口参数说明
+
+**location** {{ site.data.text.required }}
+
+需要查询地区的LocationID或以逗号分隔的纬度/经度坐标（十进制），LocationID可通过城市搜索服务获取。例如： location=101010100 或 location=39.92,116.41
+
+**lang** {{ site.data.text.optional }}
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+**unit** {{ site.data.text.optional }}
+
+[度量衡单位参数](/docs/start/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**
+
+| 单位 | 常量属性 |
+| ---- | -------- |
+| 公制 | METRIC   |
+| 英制 | IMPERIAL |
+
+#### 示例代码
+
+```java
 /**
- * @param context  上下文
- * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
+ * 获取24小时预报数据
  */
-HeWeather.getWeatherNow(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultWeatherNowBeanListener listener);
+HeWeather.getWeather24Hourly(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherHourlyListener listener);
 
-HeWeather.getWeatherNow(Context context, String location, final HeWeather.OnResultWeatherNowBeanListener listener);
+HeWeather.getWeather24Hourly(Context context, String location, HeWeather.OnResultWeatherHourlyListener listener);
 
-HeWeather.getWeatherNow(Context context, Lang lang, Unit unit, final HeWeather.OnResultWeatherNowBeanListener listener);
+/**
+ * 获取72小时预报数据
+ */
+HeWeather.getWeather72Hourly(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherHourlyListener listener) ;
 
-HeWeather.getWeatherNow(Context context, final HeWeather.OnResultWeatherNowBeanListener listener);
+HeWeather.getWeather72Hourly(Context context, String location, HeWeather.OnResultWeatherHourlyListener listener);
+
+/**
+ * 获取168小时预报数据
+ */
+HeWeather.getWeather168Hourly(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherHourlyListener listener) ;
+
+HeWeather.getWeather168Hourly(Context context, String location, HeWeather.OnResultWeatherHourlyListener listener);
+
 ```
 
-## Now的属性
+**WeatherHourlyBean的属性**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getNow | now 实况天气 | NowBase
+| 属性      | 说明                       | 示例值                 |
+| --------- | -------------------------- | ---------------------- |
+| getCode   | 接口状态                   | ok                     |
+| getHourly | HourlyBean 逐小时天气      | List&lt;HourlyBean&gt; |
+| getRefer  | Refer 数据来源以及数据授权 | Refer                  |
+| getBasic  | Basic 基础信息             | Basic                  |
 
-### Basic 基础信息
+**Refer**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
 
-### UpdateBean 接口更新时间
+**Basic**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+| 属性          | 说明                     | 示例值               |
+| ------------- | ------------------------ | -------------------- |
+| getUpdateTime | 接口更新时间             | 2017-10-25 04:34     |
+| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
 
-### NowBean 实况天气
+**HourlyBean 逐小时天气**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getFl | 体感温度，默认单位：摄氏度 | 23
-getTmp | 温度，默认单位：摄氏度 | 21
-getCond_code | 实况天气状况代码 | 100
-getCond_txt | 实况天气状况代码 | 晴
-getWind_deg | 风向360角度 | 305
-getWind_dir | 风向 | 西北
-getWind_sc | 风力 | 3-4
-getWind_spd | 风速，公里/小时 | 15
-getHum | 相对湿度 | 40
-getPcpn | 降水量 | 0
-getPres | 大气压强 | 1020
-getVis | 能见度，默认单位：公里 | 10
-getCloud | 云量 | 23
+| 属性         | 说明                                     | 示例值           |
+| ------------ | ---------------------------------------- | ---------------- |
+| getFxTime    | 预报时间，格式yyyy-MM-dd HH:mm           | 2013-12-30 13:00 |
+| getTemp      | 温度                                     | 2                |
+| getIcon      | 天气状况代码                             | 101              |
+| getText      | 天气状况代码                             | 多云             |
+| getWind360   | 风向360角度                              | 290              |
+| getWindDir   | 风向                                     | 西北             |
+| getWindScale | 风力                                     | 3-4              |
+| getWindSpeed | 风速，公里/小时                          | 15               |
+| getHumidity  | 相对湿度                                 | 30               |
+| getPrecip    | 逐小时预报降水量，默认单位：毫米         | 1.2              |
+| getPop       | 逐小时预报降水概率，百分比数值，可能为空 | 5                |
+| getPressure  | 大气压强                                 | 1030             |
+| getDew       | 露点温度                                 | 5                |
+| getCloud     | 云量，百分比                             | 15               |
 
-# <span id="逐小时预报">逐小时预报</span>
+## 分钟降水
+
+| 接口说明   | 接口代码    | 数据类       |
+| ---------- | ----------- | ------------ |
+| 分钟级降雨 | getMinutely | MinutelyBean |
+
 ## 接口参数说明
-```js
-/**
- * @param context  上下文
- * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
- */
-HeWeather.getWeatherHourly(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultWeatherHourlyBeanListener listener);
 
-HeWeather.getWeatherHourly(Context context, String location, final HeWeather.OnResultWeatherHourlyBeanListener listener);
+**location** {{ site.data.text.required }} 
 
-HeWeather.getWeatherHourly(Context context, Lang lang, Unit unit, final HeWeather.OnResultWeatherHourlyBeanListener listener);
+需要查询地区的以逗号分隔的纬度/经度坐标（十进制）。例如： location=39.92,116.41
 
-HeWeather.getWeatherHourly(Context context, final HeWeather.OnResultWeatherHourlyBeanListener listener);
+**lang** {{ site.data.text.optional }}
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+#### 示例代码
+
+```java
+HeWeather.getMinuteLy(Context context, String location,HeWeather.OnResultMinutelyListener listener);
+
+HeWeather.getMinuteLy(Context context, String location, Lang lang, HeWeather.OnResultMinutelyListener listener);
 ```
 
-## Hourly的属性
+**MinutelyBean的属性**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getHourly | hourly 逐小时天气 | List&lt;HourlyBase&gt;
+| 属性            | 说明                       | 示例值               |
+| --------------- | -------------------------- | -------------------- |
+| getCode         | 接口状态                   | ok                   |
+| getSummary      | 分钟降水描述               | 未来2小时无降雨      |
+| getMinutelyList | 临近预报                   | List&lt;Minutely&gt; |
+| getRefer        | Refer 数据来源以及数据授权 | Refer                |
+| getBasic        | Basic 基础信息             | Basic                |
 
-### BasicBean 基础信息
+**Refer**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
 
-### UpdateBean 接口更新时间
+**Basic**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+| 属性          | 说明                     | 示例值               |
+| ------------- | ------------------------ | -------------------- |
+| getUpdateTime | 接口更新时间             | 2017-10-25 04:34     |
+| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
 
-### HourlyBean 逐小时天气
+**Minutely 未来两小时5分钟降水量**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTime | 预报时间，格式yyyy-MM-dd HH:mm | 2013-12-30 13:00
-getTmp | 温度 | 2
-getCond_code | 天气状况代码 | 101
-getCond_txt | 天气状况代码 | 多云
-getWind_deg | 风向360角度 | 290
-getWind_dir | 风向 | 西北
-getWind_sc | 风力 | 3-4
-getWind_spd | 风速，公里/小时 | 15
-getHum | 相对湿度 | 30
-getPres | 大气压强 | 1030
-getPop | 降水概率，百分比 | 30
-getDew | 露点温度 | 5
-getCloud | 云量，百分比 | 15
+| 属性      | 说明                       | 示例值           |
+| --------- | -------------------------- | ---------------- |
+| getFxTime | 时间，格式yyyy-MM-dd HH:mm | 2013-12-30 20:35 |
+| getPrecip | 降水量                     | 10               |
+| getType   | 降水类型                   | rain             |
 
-# <span id="生活指数">生活指数</span>
-## 接口参数说明
-```js
-/**
- * @param context  上下文
- * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
- */
-HeWeather.getWeatherLifeStyle(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultWeatherLifeStyleBeanListener listener);
+## 灾害预警
 
-HeWeather.getWeatherLifeStyle(Context context, String location, final HeWeather.OnResultWeatherLifeStyleBeanListener listener);
+| 接口说明     | 接口代码   | 数据类      |
+| ------------ | ---------- | ----------- |
+| 天气灾害预警 | getWarning | WarningBean |
 
-HeWeather.getWeatherLifeStyle(Context context, Lang lang, Unit unit, final HeWeather.OnResultWeatherLifeStyleBeanListener listener);
+#### 接口参数说明
 
-HeWeather.getWeatherLifeStyle(Context context, final HeWeather.OnResultWeatherLifeStyleBeanListener listener);
+**location** {{ site.data.text.required }} 
+
+需要查询地区的LocationID或以逗号分隔的纬度/经度坐标（十进制），LocationID可通过城市搜索服务获取。例如： location=101010100 或 location=39.92,116.41
+
+**lang** {{ site.data.text.optional }} 
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+#### 示例代码
+
+```java
+HeWeather.getWarning(Context context, String location, final HeWeather.OnResultWarningListener listener) ;
+
+HeWeather.getWarning(Context context, String location, Lang lang, final HeWeather.OnResultWarningListener listener) ;
+
 ```
 
-## Lifestyle的属性
+**WarningBean的属性**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getLifestyle | LifestyleBean 逐小时天气 | List&lt;Lifestyle&gt;
+| 属性            | 说明                       | 示例值                      |
+| --------------- | -------------------------- | --------------------------- |
+| getCode         | 接口状态                   | ok                          |
+| getBeanBaseList | 灾害预警                   | List&lt;WarningBeanBase&gt; |
+| getRefer        | Refer 数据来源以及数据授权 | Refer                       |
+| getBasic        | Basic 基础信息             | Basic                       |
 
-### Basic 基础信息
+**Refer**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
 
-### Update 接口更新时间
+**Basic**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+| 属性          | 说明                     | 示例值               |
+| ------------- | ------------------------ | -------------------- |
+| getUpdateTime | 接口更新时间             | 2017-10-25 04:34     |
+| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
 
-### LifestyleBase 生活指数
+**WarningBeanBase 预警信息**
 
-属性 | 说明
---------- | -------------
-getBrf | 生活指数简介
-getTxt | 生活指数详细描述
-getType | 生活指数类型 comf：舒适度指数、cw：洗车指数、drsg：穿衣指数、flu：感冒指数、sport：运动指数、trav：旅游指数、uv：紫外线指数、air：空气污染扩散条件指数
+| 属性         | 说明                               | 示例值                                                           |
+| ------------ | ---------------------------------- | ---------------------------------------------------------------- |
+| getId        | 预警id                             |
+| getPubTime   | 预警发布时间，格式yyyy-MM-dd HH:mm | 2017-10-25 12:03                                                 |
+| getTitle     | 预警信息标题                       | 广东省深圳市气象台发布雷电黄色预警                               |
+| getStartTime | 预警开始时间                       | 2017-10-25 12:03                                                 |
+| getEndTime   | 预警结束时间                       | 2017-10-25 12:03                                                 |
+| getStatus    | 预警状态                           | 预警中                                                           |
+| getLevel     | 预警等级：蓝黄橙红白               | 黄色                                                             |
+| getType      | 预警类型，全部类型参考本文简介     | 雷电                                                             |
+| getText      | 预警详细信息                       | 深圳市气象局于10月04日12时59分发布雷电黄色预警信号，请注意防御。 |
 
-# <span id="常规天气数据集合">常规天气数据集合</span>
-## 接口参数说明
-```js
-/**
- * @param context  上下文
- * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
- */
-HeWeather.getWeatherDateList(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultWeatherDataListBeansListener listener);
+## 灾害预警列表
 
-HeWeather.getWeatherDateList(Context context, String location, final HeWeather.OnResultWeatherDataListBeansListener listener);
+| 接口说明         | 接口代码       | 数据类          |
+| ---------------- | -------------- | --------------- |
+| 天气灾害预警集合 | getWarningList | WarningListBean |
 
-HeWeather.getWeatherDateList(Context context, Lang lang, Unit unit, final HeWeather.OnResultWeatherDataListBeansListener listener);
+#### 接口参数说明
 
-HeWeather.getWeatherDateList(Context context, final HeWeather.OnResultWeatherDataListBeansListener listener);
-```
+**Range** {{ site.data.text.optional }} 
 
-## Weather的属性
+选择指定的国家，使用ISO 3166 国家代码目前仅支持中国。
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getDaily_forecast | DailyForecast 逐小时天气 | List&lt;ForecastBase&gt;
-getLifestyle | LifestyleBean 逐小时天气 | List&lt;LifestyleBase&gt;
-getHourly | hourly 逐小时天气 | List&lt;HourlyBase&gt;
-getNow | now 实况天气 | NowBase
+**可调用枚举类Range**
 
-### Basic 基础信息
+| 数据类型                                                         | 常量属性 |
+| ---------------------------------------------------------------- | -------- |
+| 中国城市范围，可替换为其他国家的 ISO 3166 国家代码，例如range=us | CN       |
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
-
-### Update 接口更新时间
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
-
-### ForecastBase 天气预报
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期 | 2013-12-30
-getSr | 日出时间 | 07:36
-getSs | 日落时间 | 16:58
-getMr | 月升时间 | 04:47
-getMs | 月落时间 | 14:59
-getTmp_max | 最高温度 | 4
-getTmp_min | 最低温度 | -5
-getCond_code_d | 白天天气状况代码 | 100
-getCond_code_n | 晚间天气状况代码 | 100
-getCond_txt_d | 白天天气状况描述 | 晴
-getCond_txt_n | 晚间天气状况描述 | 晴
-getWind_deg | 风向360角度 | 310
-getWind_dir | 风向 | 西北风
-getWind_sc | 风力 | 1-2
-getWind_spd | 风速，公里/小时 | 14
-getHum | 相对湿度 | 37
-getPcpn | 降水量 | 0
-getPop | 降水概率 | 0
-getPres | 大气压强 | 1018
-getUv_index | 紫外线强度指数 | 3
-getVis | 能见度，单位：公里 | 10
-
-### NowBase 实况天气
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getFl | 体感温度，默认单位：摄氏度 | 23
-getTmp | 温度，默认单位：摄氏度 | 21
-getCond_code | 实况天气状况代码 | 100
-getCond_txt | 实况天气状况代码 | 晴
-getWind_deg | 风向360角度 | 305
-getWind_dir | 风向 | 西北
-getWind_sc | 风力 | 3-4
-getWind_spd | 风速，公里/小时 | 15
-getHum | 相对湿度 | 40
-getPcpn | 降水量 | 0
-getPres | 大气压强 | 1020
-getVis | 能见度，默认单位：公里 | 10
-getCloud | 云量 | 23
-
-### HourlyBase 逐小时天气
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTime | 预报时间，格式yyyy-MM-dd HH:mm | 2013-12-30 13:00
-getTmp | 温度 | 2
-getCond_code | 天气状况代码 | 101
-getCond_txt | 天气状况代码 | 多云
-getWind_deg | 风向360角度 | 290
-getWind_dir | 风向 | 西北
-getWind_sc | 风力 | 3-4
-getWind_spd | 风速，公里/小时 | 15
-getHum | 相对湿度 | 30
-getPres | 大气压强 | 1030
-getPop | 降水概率，百分比 | 30
-getDew | 露点温度 | 5
-getCloud | 云量，百分比 | 15
-
-### LifestyleBase 生活指数
-
-属性 | 说明
---------- | -------------
-getBrf | 生活指数简介
-getTxt | 生活指数详细描述
-getType | 生活指数类型 comf：舒适度指数、cw：洗车指数、drsg：穿衣指数、flu：感冒指数、sport：运动指数、trav：旅游指数、uv：紫外线指数、air：空气污染扩散条件指数、ac：空调开启指数、ag：过敏指数、gl：太阳镜指数、mu：化妆指数、airc：晾晒指数、ptfc：交通指数、fsh：钓鱼指数、spi：防晒指数
-
-# <span id="格点实况天气">格点实况天气</span>
-## 接口参数说明
-```js
-/**
- * @param context  上下文
- * @param location  (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)仅支持所查询的地区经纬度查询
- *                 经纬度格式：纬度,经度（英文,分隔，十进制格式，北纬东经为正，南纬西经为负）
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
- */
-HeWeather.getWeatherGridNow(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultWeatherGirdNowBeanListener listener);
-
-HeWeather.getWeatherGridNow(Context context, String location, final HeWeather.OnResultWeatherGirdNowBeanListener listener);
-
-HeWeather.getWeatherGridNow(Context context, Lang lang, Unit unit, final HeWeather.OnResultWeatherGirdNowBeanListener listener);
-
-HeWeather.getWeatherGridNow(Context context, final HeWeather.OnResultWeatherGirdNowBeanListener listener);
-```
-
-## GridNow的属性
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | GridBasic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getGrid_now | GridNowBase 格点实况天气 | GridNowBase
-
-### GridBasic 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
-
-### Update 接口更新时间
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
-
-### GridNowBase 格点实况天气
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTime | 预报时间，格式yyyy-MM-dd HH:mm | 2013-12-30 13:00
-getTmp | 温度 | 2
-getCond_code | 天气状况代码 | 101
-getCond_txt | 天气状况代码 | 多云
-getWind_dir | 风向 | 西北
-getWind_sc | 风力 | 3-4
-getHum | 相对湿度 | 30
-getPcpn | 1小时降水量 | 10
-getPcpn_10m | 10分钟降水量 | 10
-getPres | 大气压强 | 1030
-
-# <span id="格点7天预报">格点7天预报</span>
-## 接口参数说明
-```js
-/**
- * @param context  上下文
- * @param location  (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)仅支持所查询的地区经纬度查询
- *                 经纬度格式：纬度,经度（英文,分隔，十进制格式，北纬东经为正，南纬西经为负）
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
- */
-HeWeather.getWeatherGridForecast(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultWeatherGirdForecastBeanListener listener);
-
-HeWeather.getWeatherGridForecast(Context context, String location, final HeWeather.OnResultWeatherGirdForecastBeanListener listener);
-
-HeWeather.getWeatherGridForecast(Context context, Lang lang, Unit unit, final HeWeather.OnResultWeatherGirdForecastBeanListener listener);
-
-HeWeather.getWeatherGridForecast(Context context, final HeWeather.OnResultWeatherGirdForecastBeanListener listener);
-```
-
-## GridForecast的属性
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | GridBasic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getGrid_forecast | GridForecastBase 格点实况天气 | List&lt;GridForecastBase&gt;
-
-### GridBasic 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
-
-### Update 接口更新时间
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
-
-### GridForecastBase 格点预报天气
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期，格式yyyy-MM-dd | 2013-12-30
-getTmp_max | 最高温度 | 4
-getTmp_min | 最低温度 | -5
-getCond_code_d | 白天天气状况代码 | 100
-getCond_code_n | 晚间天气状况代码 | 100
-getCond_txt_d | 白天天气状况描述 | 晴
-getCond_txt_n | 晚间天气状况描述 | 晴
-getWind_dir_d | 白天风向 | 西北
-getWind_dir_n | 夜间风向 | 西北
-getWind_sc_d | 白天风力 | 3-4
-getWind_sc_n | 夜间风力 | 3-4
-
-# <span id="格点逐小时预报">格点逐小时预报</span>
-## 接口参数说明
-```js
-/**
- * @param context  上下文
- * @param location  (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)仅支持所查询的地区经纬度查询
- *                 经纬度格式：纬度,经度（英文,分隔，十进制格式，北纬东经为正，南纬西经为负）
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
- */
-HeWeather.getWeatherGirdHourly(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultWeatherGirdHourlyBeanListener listener);
-
-HeWeather.getWeatherGirdHourly(Context context, String location, final HeWeather.OnResultWeatherGirdHourlyBeanListener listener);
-
-HeWeather.getWeatherGirdHourly(Context context, Lang lang, Unit unit, final HeWeather.OnResultWeatherGirdHourlyBeanListener listener);
-
-HeWeather.getWeatherGirdHourly(Context context, final HeWeather.OnResultWeatherGirdHourlyBeanListener listener);
-```
-
-## GridHourly的属性
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | GridBasic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getGrid_hourly | GridHourlyBase 格点实况天气 | List&lt;GridHourlyBase&gt;
-
-### GridBasic 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
-
-### Update 接口更新时间
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
-
-### GridHourlyBase 格点逐小时天气预报
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTime | 预报时间，格式yyyy-MM-dd HH:mm | 2013-12-30 13:00
-getTmp | 温度 | 2
-getCond_code | 天气状况代码 | 101
-getCond_txt | 天气状况代码 | 多云
-getWind_dir | 风向 | 西北
-getWind_sc | 风力 | 3-4
-getPcpn | 降水量 | 10
-
-
-# <span id="分钟级降雨（邻近预报）">分钟级降雨（邻近预报）</span>
-## 接口参数说明
-```js
-/**
- * @param context  上下文
- * @param location  (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)仅支持所查询的地区经纬度查询
- *                 经纬度格式：纬度,经度（英文,分隔，十进制格式，北纬东经为正，南纬西经为负）
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
- */
-HeWeather.getWeatherGirdMinute(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultWeatherGirdMinuteBeanListener listener);
-
-HeWeather.getWeatherGirdMinute(Context context, String location, final HeWeather.OnResultWeatherGirdMinuteBeanListener listener);
-
-HeWeather.getWeatherGirdMinute(Context context, Lang lang, Unit unit, final HeWeather.OnResultWeatherGirdMinuteBeanListener listener);
-
-HeWeather.getWeatherGirdMinute(Context context, final HeWeather.OnResultWeatherGirdMinuteBeanListener listener);
-```
-
-## GirdMinute的属性
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | GridBasic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getPcpn_type | 降水类型，rain雨，snow雪 | GridMinutePcpnType
-getPcpn_5m | GridMinutePcpn5m 未来两小时5分钟降水量 | List&lt;GridMinutePcpn5m&gt;
-getGrid_minute_forecast | GridMinuteForecast 临近预报 | GridMinuteForecast
-
-### GridBasic 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
-
-### Update 接口更新时间
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
-
-### GridMinutePcpnType 降水类型
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getPcpn_type | rain雨，snow雪 | rain
-
-### GridMinuteForecast 临近预报
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期，格式yyyy-MM-dd HH:mm | 2013-12-30 20:35
-getTxt | 分钟降雨描述 | 未来2小时无降雨
-
-### GridMinutePcpn5m 未来两小时5分钟降水量
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTime | 时间，格式yyyy-MM-dd HH:mm | 2013-12-30 20:35
-getPcpn | 降水量 | 10
-
-# <span id="天气灾害预警">天气灾害预警</span>
-## 接口参数说明
-```js
-/**
- * @param context  上下文
- * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
- */
-HeWeather.getAlarm(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultAlarmBeansListener listener);
-
-HeWeather.getAlarm(Context context, String location, final HeWeather.OnResultAlarmBeansListener listener);
-
-HeWeather.getAlarm(Context context, Lang lang, Unit unit, final HeWeather.OnResultAlarmBeansListener listener);
-```
-
-
-## AlarmList的属性
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getStatus | 接口状态 | ok
-getAlarms | 灾害预警 | List&lt;Alarm&gt;
-
-## Alarm的属性
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getAlarm | 灾害预警 | List&lt;AlarmBase&gt;
-
-### Basic 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
-
-### Update 接口更新时间
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
-
-### AlarmBase 预警信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTitle | 预警信息标题 | 广东省深圳市气象台发布雷电黄色预警
-getStat | 预警状态 | 预警中
-getLevel | 预警等级：蓝黄橙红白 | 黄色
-getType | 预警类型，全部类型参考本文简介 | 雷电
-getTxt | 预警详细信息 | 深圳市气象局于10月04日12时59分发布雷电黄色预警信号，请注意防御。
-
-# <span id="天气灾害预警集合">天气灾害预警集合</span>
-## 接口参数说明
-```js
+```java
 /**
  * @param context  上下文
  * @param listener 网络访问回调接口
  */
-HeWeather.getAlarmAll(Context context, String key, String userId, final HeWeather.OnResultAlarmAllBeansListener listener);
+HeWeather.getWarningList(Context context, final HeWeather.OnResultWarningListListener listener);
 ```
 
-## AlarmAll的属性
+**WarningListBean的属性**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getAlarm_list | 灾害预警 | List&lt;AlarmAllBase&gt;
+| 属性           | 说明         | 示例值                      |
+| -------------- | ------------ | --------------------------- |
+| getCode        | 接口状态     | ok                          |
+| getUpdateTime  | 接口更新时间 | 2017-10-25 12:34            |
+| getWarningBean | 灾害预警     | List&lt;WarningListBean&gt; |
 
-### Update 接口更新时间
+**WarningListBeanBase 预警信息**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+| 属性          | 说明         | 示例值    |
+| ------------- | ------------ | --------- |
+| getLocationId | 地区／城市ID | 101280601 |
 
-### AlarmAllBase 预警信息
+## 生活指数
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getCid | 地区／城市ID | CN101280601
-getTitle | 预警信息标题 | 广东省深圳市气象台发布雷电黄色预警
-getStat | 预警状态 | 预警中
-getLevel | 预警等级 | 黄色
-getType | 预警类型 | 雷电
-getTxt | 预警详细信息 | 深圳市气象局于10月04日12时59分发布雷电黄色预警信号，请注意防御。
+| 接口说明    | 接口代码     | 数据类      |
+| ----------- | ------------ | ----------- |
+| 1天生活指数 | getIndices1D | IndicesBean |
+| 3天生活指数 | getIndices3D | IndicesBean |
 
-# <span id="景点天气预报">景点天气预报</span>
-## 接口参数说明
-```js
+#### 请求参数
+
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
+
+**location** {{ site.data.text.required }}
+
+需要查询地区的LocationID或以逗号分隔的纬度/经度坐标（十进制），LocationID可通过城市搜索服务获取。例如： location=101010100 或 location=39.92,116.41
+
+**IndicesType数组** {{ site.data.text.required }}
+   
+生活指数数据类型，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指
+数，多个类型请添加进同一数组。具体生活指数的类型`IndicesType`参数值如下：
+
+> `IndicesType.ALL`已包含所有生活指数的数据，请勿与别的参数一起传递
+
+| 数据类型             | 常量属性 |
+| -------------------- | -------- |
+| 全部指数             | ALL      |
+| 舒适度指数           | COMF     |
+| 洗车指数             | CW       |
+| 穿衣指数             | DRSG     |
+| 感冒指数             | FLU      |
+| 运动指数             | SPT      |
+| 旅游指数             | TRA      |
+| 紫外线指数           | UV       |
+| 空气污染扩散条件指数 | AP       |
+| 空调开启指数         | AC       |
+| 过敏指数             | AG       |
+| 太阳镜指数           | GL       |
+| 化妆指数             | MU       |
+| 晾晒指数             | DC       |
+| 交通指数             | PTFC     |
+| 钓鱼指数             | FIS      |
+| 防晒指数             | SPI      |
+
+#### 示例代码
+
+```java
 /**
- * @param context  上下文
- * @param location 景点天气仅支持使用景点ID获取数据
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
+ * 获取1天生活指数数据
  */
-HeWeather.getScenic(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultSearchBeansListener listener);
+HeWeather.get1DIndices(Context context, String location, Lang lang, List<IndicesType> types, HeWeather.OnResultIndicesListener listener);
 
-HeWeather.getScenic(Context context, String location, final HeWeather.OnResultSearchBeansListener listener);
-```
-
-## ScenicWeather的属性
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getDaily_forecast | 天气预报 | List&lt;ForecastBase&gt;
-
-### Basic 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
-
-### Update 接口更新时间
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
-
-### ForecastBase 逐天预报
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期 |
-getSr | 日出时间 | 04:50
-getSs | 日落时间 | 18:06
-getTmp_max | 最高温度 | 4
-getTmp_min | 最低温度 | -5
-getCond_code_d | 白天天气状况代码 | 100
-getCond_code_n | 晚间天气状况代码 | 100
-getCond_txt_d | 白天天气状况描述 | 晴
-getCond_txt_n | 晚间天气状况描述 | 晴
-getWind_dir | 风向 | 东
-getWind_sc | 风力 | 2-3
-
-# <span id="空气质量实况">空气质量实况</span>
-## 接口参数说明
-```js
 /**
- * @param context  上下文
- * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询
- *                 经纬度格式：纬度,经度（英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
+ * 获取3天生活指数数据
  */
-HeWeather.getAirNow(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultAirNowBeansListener listener)
-
-HeWeather.getAirNow(Context context, String location, final HeWeather.OnResultAirNowBeansListener listener)
-
-HeWeather.getAirNow(Context context, Lang lang, Unit unit, final HeWeather.OnResultAirNowBeansListener listener)
+HeWeather.get3DIndices(Context context, String location, Lang lang, List<IndicesType> types, HeWeather.OnResultIndicesListener listener) ;
 ```
 
-## AirNow的属性
+**IndicesBean的属性**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getAir_now_station | AQI站点实况 | List&lt;AirNowStation&gt;
-getAir_now_city | AQI城市实况 | AirNowCity
+| 属性         | 说明                       | 示例值                |
+| ------------ | -------------------------- | --------------------- |
+| getCode      | 接口状态                   | ok                    |
+| getDailyList | 生活指数逐天预报数据       | List&lt;DailyBean&gt; |
+| getRefer     | Refer 数据来源以及数据授权 | Refer                 |
+| getBasic     | Basic 基础信息             | Basic                 |
 
-### Basic 基础信息
+**Refer**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
 
-### Update 接口更新时间
+**Basic**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+| 属性          | 说明                     | 示例值               |
+| ------------- | ------------------------ | -------------------- |
+| getUpdateTime | 接口更新时间             | 2017-10-25 04:34     |
+| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
 
-### AirNowCity AQI城市实况
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getPub_time | 数据发布时间,格式yyyy-MM-dd HH:mm | 2017-03-20 12:30
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
+**DailyBean 当天生活指数**
 
-### AirNowStation AQI站点实况
+| 属性        | 说明                                                                                                                                                                                                                                           |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| getDate     | 预报日期，格式 yyyy-MM-dd                                                                                                                                                                                                                      |
+| getLevel    | 生活指数预报等级                                                                                                                                                                                                                               |
+| getCategory | 生活指数预报级别名称                                                                                                                                                                                                                           |
+| getName     | 生活指数类型                                                                                                                                                                                                                                   |
+| getType     | 生活指数类型 comf 舒适度指数,cw 洗车指数,drsg 穿衣指数,flu 感冒指数,spt 运动指数,trav 旅游指数,uv 紫外线指数,ap 空气污染扩散条件指数,ac 空调开启指数,ag 过敏指数,gl 太阳镜指数,mu 化妆指数,dc 晾晒指数,ptfc 交通指数,fis 钓鱼指数,spi 防晒指数 |
+| getText     | 生活指数详细描述                                                                                                                                                                                                                               |
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-pgetPub_time | 数据发布时间,格式yyyy-MM-dd HH:mm | 2017-03-20 12:30
-getAir_sta | 站点名称 | 万寿西宫
-getAsid | 站点ID，请参考所有站点ID | CNA110000
-getLat | 站点纬度 | 116.405285
-getLon | 站点经度 | 39.904989
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
 
-# <span id="空气质量7天预报">空气质量7天预报</span>
-## 接口参数说明
-```js
+## 景点实况天气
+
+| 接口说明     | 接口代码         | 数据类            |
+| ------------ | ---------------- | ----------------- |
+| 景点实况天气 | getWeatherPoiNow | WeatherPoiNowBean |
+
+#### 接口参数说明
+
+**location** {{ site.data.text.required }}
+
+需要查询景点的LocationID，LocationID可通过城市搜索服务获取。例如： location=101010100
+
+**lang** {{ site.data.text.optional }} 
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+**unit** {{ site.data.text.optional }} 
+
+[度量衡单位参数](/docs/start/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**
+
+| 单位 | 常量属性 |
+| ---- | -------- |
+| 公制 | METRIC   |
+| 英制 | IMPERIAL |
+
+#### 示例代码
+
+```java
+HeWeather.getWeatherPoiNow(Context context, String location, final HeWeather.OnResultPoiNowListener listener);
+
+HeWeather.getWeatherPoiNow(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultPoiNowListener listener) ;
+```
+
+**WeatherPoiNowBean的属性**
+
+| 属性     | 说明                       | 示例值  |
+| -------- | -------------------------- | ------- |
+| getCode  | 接口状态                   | ok      |
+| getNow   | NowBean 实况天气           | NowBean |
+| getRefer | Refer 数据来源以及数据授权 | Refer   |
+| getBasic | Basic 基础信息             | Basic   |
+
+**Refer**
+
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
+
+**Basic**
+
+| 属性          | 说明                     | 示例值               |
+| ------------- | ------------------------ | -------------------- |
+| getUpdateTime | 接口更新时间             | 2017-10-25 04:34     |
+| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
+
+**NowBean**
+
+| 属性         | 说明                       | 示例值           |
+| ------------ | -------------------------- | ---------------- |
+| getObsTime   | 实况观测时间               | 2013-12-30 13:14 |
+| getFeelsLike | 体感温度，默认单位：摄氏度 | 23               |
+| getTemp      | 温度，默认单位：摄氏度     | 21               |
+| getIcon      | 实况天气状况代码           | 100              |
+| getText      | 实况天气状况代码           | 晴               |
+| getWindDir   | 风向                       | 西北             |
+| getWindScale | 风力                       | 3-4              |
+| getHumidity  | 相对湿度                   | 40               |
+| getPrecip    | 降水量                     | 0                |
+| getPressure  | 大气压强                   | 1020             |
+
+
+## 景点天气预报
+
+| 接口说明        | 接口代码        | 数据类              |
+| --------------- | --------------- | ------------------- |
+| 景点7天天气预报 | getWeatherPoi7D | WeatherPoiDailyBean |
+
+#### 接口参数说明
+
+**location** {{ site.data.text.required }} 
+
+需要查询景点的LocationID，LocationID可通过城市搜索服务获取。例如： location=101010100
+
+**lang** {{ site.data.text.optional }} 
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+**unit** {{ site.data.text.optional }} 
+
+[度量衡单位参数](/docs/start/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**
+
+| 单位 | 常量属性 |
+| ---- | -------- |
+| 公制 | METRIC   |
+| 英制 | IMPERIAL |
+
+#### 示例代码
+
+```java
+HeWeather.getWeatherPoi7D(Context context, String location, final HeWeather.OnResultPoiDailyListener listener);
+
+HeWeather.getWeatherPoi7D(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultPoiDailyListener listener) ;
+```
+
+**WeatherPoiDailyBean的属性**
+
+| 属性     | 说明                       | 示例值                |
+| -------- | -------------------------- | --------------------- |
+| getCode  | 接口状态                   | ok                    |
+| getDaily | DailyBean 逐天天气         | List&lt;DailyBean&gt; |
+| getRefer | Refer 数据来源以及数据授权 | Refer                 |
+| getBasic | Basic 基础信息             | Basic                 |
+
+**Refer**
+
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
+
+**Basic**
+
+| 属性          | 说明                     | 示例值               |
+| ------------- | ------------------------ | -------------------- |
+| getUpdateTime | 接口更新时间             | 2017-10-25 04:34     |
+| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
+
+**DailyBean**
+
+| 属性              | 说明             | 示例值     |
+| ----------------- | ---------------- | ---------- |
+| getFxDate         | 预报日期         | 2013-12-30 |
+| getTempMax        | 最高温度         | 4          |
+| getTempMin        | 最低温度         | -5         |
+| getIconDay        | 白天天气状况代码 | 100        |
+| getIconNight      | 晚间天气状况代码 | 100        |
+| getTextDay        | 白天天气状况描述 | 晴         |
+| getTextNight      | 晚间天气状况描述 | 晴         |
+| getWindDirDay     | 白天风向         | 西北风     |
+| getWindDirNight   | 夜间风向         | 西北风     |
+| getWindScaleDay   | 白天风力         | 1-2        |
+| getWindScaleNight | 夜间风力         | 1-2        |
+
+## 空气质量实况
+
+| 接口说明         | 接口代码  | 数据类     |
+| ---------------- | --------- | ---------- |
+| 空气质量实况数据 | getAirNow | AirNowBean |
+
+#### 接口参数说明
+
+**location** {{ site.data.text.required }} 
+
+需要查询地区的LocationID或以逗号分隔的纬度/经度坐标（十进制），LocationID可通过城市搜索服务获取。例如： location=101010100 或 location=39.92,116.41
+
+**lang** {{ site.data.text.optional }} 
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+#### 示例代码
+
+```java
+HeWeather.getAirNow(Context context, String location, Lang lang,
+HeWeather.OnResultAirNowListener listener)
+```
+
+**AirNowBean的属性**
+
+| 属性                 | 说明                       | 示例值                        |
+| -------------------- | -------------------------- | ----------------------------- |
+| getCode              | 接口状态                   | ok                            |
+| getAirNowStationBean | AQI站点实况                | List&lt;AirNowStationBean&gt; |
+| getNow               | AQI城市实况                | NowBean                       |
+| getRefer             | Refer 数据来源以及数据授权 | Refer                         |
+| getBasic             | Basic 基础信息             | Basic                         |
+
+**Refer**
+
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
+
+**Basic**
+
+| 属性          | 说明                     | 示例值               |
+| ------------- | ------------------------ | -------------------- |
+| getUpdateTime | 接口更新时间             | 2017-10-25 04:34     |
+| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
+
+**NowBean AQI城市实况**
+
+| 属性        | 说明                              | 示例值           |
+| ----------- | --------------------------------- | ---------------- |
+| getPubTime  | 数据发布时间,格式yyyy-MM-dd HH:mm | 2017-03-20 12:30 |
+| getAqi      | 空气质量指数，AQI和PM25的关系     | 74               |
+| getPrimary  | 主要污染物                        | pm25             |
+| getLevel    | 实时空气质量指数等级              | 2                |
+| getCategory | 实时空气质量指数级别              | 良               |
+| getPm10     | pm10                              | 78               |
+| getPm2p5    | pm25                              | 66               |
+| getNo2      | 二氧化氮                          | 40               |
+| getSo2      | 二氧化硫                          | 30               |
+| getCo       | 一氧化碳                          | 33               |
+| getO3       | 臭氧                              | 20               |
+
+**AirNowStationBean AQI站点实况**
+
+| 属性        | 说明                              | 示例值           |
+| ----------- | --------------------------------- | ---------------- |
+| getPubTime  | 数据发布时间,格式yyyy-MM-dd HH:mm | 2017-03-20 12:30 |
+| getName     | 站点名称                          | 万寿西宫         |
+| getId       | 站点ID，请参考所有站点ID          | A110000          |
+| getAqi      | 空气质量指数，AQI和PM25的关系     | 74               |
+| getPrimary  | 主要污染物                        | pm25             |
+| getLevel    | 实时空气质量指数等级              | 2                |
+| getCategory | 实时空气质量指数级别              | 良               |
+| getPm10     | pm10                              | 78               |
+| getPm2p5    | pm25                              | 66               |
+| getNo2      | 二氧化氮                          | 40               |
+| getSo2      | 二氧化硫                          | 30               |
+| getCo       | 一氧化碳                          | 33               |
+| getO3       | 臭氧                              | 20               |
+
+## 空气质量逐天预报
+
+| 接口说明            | 接口代码 | 数据类       |
+| ------------------- | -------- | ------------ |
+| 空气质量5天预报数据 | getAir5D | AirDailyBean |
+
+#### 接口参数说明
+
+**location** {{ site.data.text.required }} 
+
+需要查询地区的LocationID或以逗号分隔的纬度/经度坐标（十进制），LocationID可通过城市搜索服务获取。例如： location=101010100 或 location=39.92,116.41
+
+**lang** {{ site.data.text.optional }} 
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+#### 示例代码
+
+```java
+
 /**
- * @param context  上下文
- * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询
- *                 经纬度格式：纬度,经度（英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
+ * 空气质量5天预报数据
  */
-HeWeather.getAirForecast(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultAirForecastBeansListener listener);
 
-HeWeather.getAirForecast(Context context, String location, final HeWeather.OnResultAirForecastBeansListener listener);
+HeWeather.getAir5D(Context context, String location, Lang lang, HeWeather.OnResultAirDailyListener listener)
 
-HeWeather.getAirForecast(Context context, Lang lang, Unit unit, final HeWeather.OnResultAirForecastBeansListener listener);
 ```
 
-## AirForecast的属性
+**AirDailyBean的属性**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getAir_forecast | 空气质量 AQI 7天预报 | List&lt;AirForecastBase&gt;
+| 属性        | 说明                       | 示例值                |
+| ----------- | -------------------------- | --------------------- |
+| getCode     | 接口状态                   | ok                    |
+| getAirDaily | 空气质量 AQI 7天预报       | List&lt;DailyBean&gt; |
+| getRefer    | Refer 数据来源以及数据授权 | Refer                 |
+| getBasic    | Basic 基础信息             | Basic                 |
 
-### Basic 基础信息
+**Refer**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
 
-### Update 接口更新时间
+**Basic**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+| 属性          | 说明                     | 示例值               |
+| ------------- | ------------------------ | -------------------- |
+| getUpdateTime | 接口更新时间             | 2017-10-25 04:34     |
+| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
 
-### AirForecastBase AQI城市实况
+**DailyBean AQI城市逐天预报**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期,格式yyyy-MM-dd | 2017-08-09
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
+| 属性        | 说明                          | 示例值     |
+| ----------- | ----------------------------- | ---------- |
+| getFxDate   | 预报日期,格式yyyy-MM-dd       | 2017-08-09 |
+| getAqi      | 空气质量指数，AQI和PM25的关系 | 74         |
+| getPrimary  | 主要污染物                    | pm25       |
+| getLevel    | 实时空气质量指数等级          | 2          |
+| getCategory | 实时空气质量指数级别          | 良         |
 
-# <span id="空气质量逐小时预报">空气质量逐小时预报</span>
-## 接口参数说明
-```js
-/**
- * @param context  上下文
- * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
- */
-HeWeather.getAirHourly(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultAirHourlyBeansListener listener);
 
-HeWeather.getAirHourly(Context context, String location, final HeWeather.OnResultAirHourlyBeansListener listener);
+## 历史天气
 
-HeWeather.getAirHourly(Context context, Lang lang, Unit unit, final HeWeather.OnResultAirHourlyBeansListener listener);
+| 接口说明     | 接口代码             | 数据类             |
+| ------------ | -------------------- | ------------------ |
+| 历史天气数据 | getWeatherHistorical | HistoryWeatherBean |
+
+#### 接口参数说明
+
+**location** {{ site.data.text.required }} 
+
+需要查询地区的LocationID或以逗号分隔的纬度/经度坐标（十进制），LocationID可通过城市搜索服务获取。例如： location=101010100 或 location=39.92,116.41
+
+**date** {{ site.data.text.required }} 
+
+选择获取历史的日期限度，最多可选择最近10天的数据，例如今天是7月5日，最多可获取6月25日至7月4日的历史数据。日期格式为yyyyMMdd，例如 date=20200531
+
+**lang** {{ site.data.text.optional }} 
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+**unit** {{ site.data.text.optional }} 
+
+[度量衡单位参数](/docs/start/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**
+
+| 单位 | 常量属性 |
+| ---- | -------- |
+| 公制 | METRIC   |
+| 英制 | IMPERIAL |
+
+#### 示例代码
+
+```java
+HeWeather.getHistoricalWeather(Context context, String location, String date, HeWeather.OnResultWeatherHistoricalBeanListener listener) ;
+
+HeWeather.getHistoricalWeather(Context context, String location, String date, Lang lang, Unit unit,HeWeather.OnResultWeatherHistoricalBeanListener listener)
 ```
 
-## AirHourly的属性
+**HistoryWeatherBean 数据类**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getAir_hourly | 空气质量 AQI 7天预报 | List&lt;AirHourlyBase&gt;
+| 属性           | 说明                       | 示例值                 |
+| -------------- | -------------------------- | ---------------------- |
+| getCode        | 接口状态                   | ok                     |
+| getDailyBean   | 当天概况                   | DailyBean              |
+| getHourlyBeans | 当天逐小时数据             | List&lt;HourlyBean&gt; |
+| getRefer       | Refer 数据来源以及数据授权 | Refer                  |
+| getBasic       | Basic 基础信息             | Basic                  |
 
-### Basic 基础信息
+**Refer**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
 
-### Update 接口更新时间
+**Basic**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+| 属性          | 说明                     | 示例值               |
+| ------------- | ------------------------ | -------------------- |
+| getUpdateTime | 接口更新时间             | 2017-10-25 04:34     |
+| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
 
-### AirHourlyBase AQI城市实况
+**DailyBean 基础信息**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTime | 预报日期，格式yyyy-MM-dd HH:mm | 2017-08-09 14:00
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
+| 属性         | 说明     | 示例值     |
+| ------------ | -------- | ---------- |
+| getDate      | 预报日期 | 2013-12-30 |
+| getSunrise   | 日出时间 | 07:36      |
+| getSunset    | 日落时间 | 16:58      |
+| getMoonRise  | 月升时间 | 04:47      |
+| getMoonSet   | 月落时间 | 14:59      |
+| getMoonPhase | 月相     | 满月       |
+| getTempMax   | 最高温度 | 4          |
+| getTempMin   | 最低温度 | -5         |
+| getHumidity  | 相对湿度 | 37         |
+| getPrecip    | 降水量   | 0          |
+| getPressure  | 大气压强 | 1018       |
 
-# <span id="空气质量数据集合">空气质量数据集合</span>
-## 接口参数说明
-```js
-/**
- * @param context  上下文
- * @param location (如果不添加此参数,SDK会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问回调接口
- */
-HeWeather.getAir(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultAirBeanListener listener);
+**HourlyBean 基础信息**
 
-HeWeather.getAir(Context context, String location, final HeWeather.OnResultAirBeanListener listener);
+| 属性         | 说明                                   | 示例值           |
+| ------------ | -------------------------------------- | ---------------- |
+| getTime      | 历史当天天气时间，格式yyyy-MM-dd HH:mm | 2013-12-30 13:00 |
+| getTemp      | 温度                                   | 2                |
+| getIcon      | 天气状况代码                           | 101              |
+| getText      | 天气状况代码                           | 多云             |
+| getWind360   | 风向360角度                            | 290              |
+| getWindDir   | 风向                                   | 西北             |
+| getWindScale | 风力                                   | 3-4              |
+| getWindSpeed | 风速                                   | 15               |
+| getHumidity  | 湿度                                   | 30               |
+| getPressure  | 大气压强                               | 1030             |
+| getPrecip    | 逐小时预报降水量，默认单位：毫米       | 1.2              |
 
-HeWeather.getAir(Context context, Lang lang, Unit unit, final HeWeather.OnResultAirBeanListener listener);
+## 历史空气质量
+
+| 接口说明         | 接口代码         | 数据类            |
+| ---------------- | ---------------- | ----------------- |
+| 历史空气质量数据 | getHistoricalAir | HistoricalAirBean |
+
+#### 接口参数说明
+
+**location** {{ site.data.text.required }} 
+
+需要查询地区的LocationID或以逗号分隔的纬度/经度坐标（十进制），LocationID可通过城市搜索服务获取。例如： location=101010100 或 location=39.92,116.41
+
+**date** {{ site.data.text.required }} 
+
+选择获取历史的日期限度，最多可选择最近10天的数据，例如今天是7月5日，最多可获取6月25日至7月4日的历史数据。日期格式为yyyyMMdd，例如 date=20200531
+
+**lang** {{ site.data.text.optional }} 
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+**unit** {{ site.data.text.optional }} 
+
+[度量衡单位参数](/docs/start/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**
+
+| 单位 | 常量属性 |
+| ---- | -------- |
+| 公制 | METRIC   |
+| 英制 | IMPERIAL |
+
+#### 示例代码
+
+```java
+HeWeather.getHistoricalAir(Context context, String location, String date, HeWeather.OnResultAirHistoricalBeanListener listener) ;
+
+HeWeather.getHistoricalAir(Context context, String location, String date, Lang lang, Unit unit,HeWeather.OnResultAirHistoricalBeanListener listener)
 ```
 
-## Air的属性
+**HistoricalAirBean 数据类**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getAir_hourly | 空气质量 AQI 7天预报 | List&lt;AirHourlyBase&gt;
-getAir_forecast | 空气质量 AQI 7天预报 | List&lt;AirForecastBase&gt;
-getAir_now_station | AQI站点实况 | List&lt;AirNowStation&gt;
-getAir_now_city | AQI城市实况 | AirNowCity
+| 属性              | 说明                       | 示例值                    |
+| ----------------- | -------------------------- | ------------------------- |
+| getCode           | 接口状态                   | ok                        |
+| getRefer          | Refer 数据来源以及数据授权 | Refer                     |
+| getBasic          | Basic 基础信息             | Basic                     |
+| getAirHourlyBeans | 当天逐小时空气质量数据     | List&lt;AirHourlyBean&gt; |
 
-### Basic 基础信息
+**Refer**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
 
-### Update 接口更新时间
+**Basic**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+| 属性          | 说明                     | 示例值               |
+| ------------- | ------------------------ | -------------------- |
+| getUpdateTime | 接口更新时间             | 2017-10-25 04:34     |
+| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
 
-### AirNowCity AQI城市实况
+**AirHourlyBean 历史当天逐小时空气质量数据**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getPub_time | 数据发布时间,格式yyyy-MM-dd HH:mm | 2017-03-20 12:30
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
+| 属性        | 说明                              | 示例值           |
+| ----------- | --------------------------------- | ---------------- |
+| getPubTime  | 数据发布时间,格式yyyy-MM-dd HH:mm | 2017-03-20 12:30 |
+| getAqi      | 空气质量指数，AQI和PM25的关系     | 74               |
+| getPrimary  | 主要污染物                        | pm25             |
+| getLevel    | 实时空气质量指数等级              | 2                |
+| getCategory | 实时空气质量指数级别              | 良               |
+| getPm10     | pm10                              | 78               |
+| getPm2p5    | pm25                              | 66               |
+| getNo2      | 二氧化氮                          | 40               |
+| getSo2      | 二氧化硫                          | 30               |
+| getCo       | 一氧化碳                          | 33               |
+| getO3       | 臭氧                              | 20               |
 
-### AirNowStation AQI站点实况
+## 太阳和月亮
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-pgetPub_time | 数据发布时间,格式yyyy-MM-dd HH:mm | 2017-03-20 12:30
-getAir_sta | 站点名称 | 万寿西宫
-getAsid | 站点ID，请参考所有站点ID | CNA110000
-getLat | 站点纬度 | 116.405285
-getLon | 站点经度 | 39.904989
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
+| 接口说明       | 接口代码   | 数据类      |
+| -------------- | ---------- | ----------- |
+| 太阳和月亮数据 | getSunMoon | SunMoonBean |
 
-### AirForecastBase AQI城市逐天预报
+#### 接口参数说明
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期,格式yyyy-MM-dd | 2017-08-09
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
+**location** {{ site.data.text.required }} 
 
-### AirHourlyBase AQI城市逐小时预报
+需要查询地区的LocationID或以逗号分隔的纬度/经度坐标（十进制），LocationID可通过城市搜索服务获取。例如： location=101010100 或 location=39.92,116.41
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTime | 预报日期，格式yyyy-MM-dd HH:mm | 2017-08-09 14:00
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
+**date** {{ site.data.text.required }} 
 
-# <span id="卫星云图">卫星云图</span>
-## 接口参数说明
-```js
-/**
- * @param context  上下文
- * @param listener 网络访问回调接口(返回bitmap)
- */
-HeWeather.getMapCloudMap(Context context, final HeWeather.OnResultBitmapListener listener);
+选择获取历史的日期限度，最多可选择最近10天的数据，例如今天是7月5日，最多可获取6月25日至7月4日的历史数据。日期格式为yyyyMMdd，例如 date=20200531
+
+**lang** {{ site.data.text.optional }} 
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+#### 示例代码
+
+```java
+HeWeather.getSunMoon(Context context, String location, String date, final OnResultSunMoonListener listener) ;
+
+HeWeather.getSunMoon(Context context, String location, Lang lang, String date, final OnResultSunMoonListener listener)                                
 ```
 
-```js
-/**
- * @param context  上下文
- * @param fileName 文件名
- * @param filedir  文件储存地址
- * @param listener 网络访问回调接口(返回本地文件)
- */
-HeWeather.getMapCloudMap(Context context, String fileName, String fileDir, final HeWeather.OnResultFileListener listener);
+**SunMoonBean 数据类**
+
+| 属性                 | 说明                       | 示例值                    |
+| -------------------- | -------------------------- | ------------------------- |
+| getCode              | 接口状态                   | ok                        |
+| getRefer             | Refer 数据来源以及数据授权 | Refer                     |
+| getSunMoonBean       | 日出日落                   | SunMoonBeanBase           |
+| getMoonPhaseBeanList | 月相信息                   | List&lt;MoonPhaseBean&gt; |
+
+**Refer**
+
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
+
+**Basic**
+
+| 属性          | 说明                     | 示例值               |
+| ------------- | ------------------------ | -------------------- |
+| getUpdateTime | 接口更新时间             | 2017-10-25 04:34     |
+| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
+
+**SunMoonBeanBase**
+
+| 属性        | 说明     | 示例值                 |
+| ----------- | -------- | ---------------------- |
+| getSunrise  | 日出时间 | 2013-12-30T05:44+08:00 |
+| getSunset   | 日落时间 | 2013-12-30T17:02+08:00 |
+| getMoonRise | 月升时间 | 2013-12-30T13:19+08:00 |
+| getMoonSet  | 月落时间 | 2013-12-31T23:31+08:00 |
+
+**MoonPhaseBean**
+
+| 属性            | 说明                   | 示例值                 |
+| --------------- | ---------------------- | ---------------------- |
+| getFxTime       | 月相逐小时预报时间     | 2013-12-31T23:31+08:00 |
+| getValue        | 月相数值               | 0.25                   |
+| getName         | 月相名字               | 上弦月                 |
+| getIllumination | 月亮照明度，百分比数值 | 30                     |
+
+## 城市信息查询
+
+| 接口说明 | 接口代码         | 数据类  |
+| -------- | ---------------- | ------- |
+| 城市查询 | getGeoGityLookup | GeoBean |
+
+#### 接口参数说明
+
+**location** {{ site.data.text.required }} 
+输入需要查询的城市名称，可使用中文、英文、坐标（经度在前纬度在后，英文,分割，请参考坐标的使用规范）、ADCode（仅限中国城市）。例如location=beijing， location=116.4,39.1
+当使用模糊搜索时，至少输入一个汉字或2个英文字母。
+
+**mode** {{ site.data.text.optional }} 
+
+搜索查询的方式。在使用名称搜索的时候，可选择模糊搜索或精准搜索，精准搜索最多返回1个结果，模糊搜索最多返回10个结果。默认精准搜索。
+
+**可调用枚举类Mode**
+
+| 数据类型       | 常量属性 |
+| -------------- | -------- |
+| 精准搜索，默认 | EXACT    |
+| 模糊搜索       | FUZZY    |
+
+**number** {{ site.data.text.optional }} 
+
+返回城市的数量，取值范围1-20，默认返回10个结果。
+
+**range** {{ site.data.text.optional }} 
+
+搜索范围，默认搜索全球城市。 可设定只在某个国家范围内进行搜索，国家名称需使用ISO 3166 所定义的国家代码。
+
+- `world` 全球城市范围，默认
+- `cn` 中国城市范围，可替换为其他国家的ISO 3166 国家代码，例如`range=us`
+
+**可调用枚举类Range**
+
+| 数据类型                                                         | 常量属性 |
+| ---------------------------------------------------------------- | -------- |
+| 全球城市范围，默认                                               | WORLD    |
+| 中国城市范围，可替换为其他国家的 ISO 3166 国家代码，例如`range=us` | CN       |
+
+**lang** {{ site.data.text.optional }} 
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+#### 示例代码
+
+```java
+HeWeather.getGeoCityLookup(Context context, String location, Mode mode, Range range, int number, Lang lang, final HeWeather.OnResultGeoListener listener);
+
+HeWeather.getGeoCityLookup(Context context, Mode mode, Range range, final HeWeather.OnResultGeoBeansListener listener) ;
+
+HeWeather.getGeoCityLookup(Context context, String location, final HeWeather.OnResultGeoBeansListener listener);
 ```
 
-# <span id="太阳高度">太阳高度</span>
-## 接口参数说明
-```js
-/**
- * @param context  上下文
- * @param lat      所查询地区的纬度(纬度采用十进制格式，北纬为正，南纬为负)
- * @param lon      所查询地区的经度(经度采用十进制格式，东经为正，西经为负)
- * @param alt      海拔高度，单位：米
- * @param date     查询日期，格式为yyyyMMdd
- * @param time     查询时间，格式为HHmm，24 时制
- * @param tz       查询地区所在时区
- * @param listener 接口回调
- */
-HeWeather.getSolarElevationAngle(Context context, String lat, String lon, String alt, String date, String time, String tz, final HeWeather.OnResultSolarElevationAngleBeansListener listener);
+**GeoBean的属性**
 
-HeWeather.getSolarElevationAngle(Context context, String alt, String date, String time, String tz, final HeWeather.OnResultSolarElevationAngleBeansListener listener);
+| 属性            | 说明     | 示例值                   |
+| --------------- | -------- | ------------------------ |
+| getCode         | 接口状态 | ok                       |
+| getLocationBean | 城市数据 | List&lt;LocationBean&gt; |
+
+
+**Refer**
+
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
+
+
+**LocationBean 基础信息**
+
+| 属性         | 说明                                                                    | 示例值               |
+| ------------ | ----------------------------------------------------------------------- | -------------------- |
+| getName      | 地区／城市名称                                                          | 卓资                 |
+| getId        | 地区／城市ID                                                            | 101080402            |
+| getLon       | 地区／城市经度                                                          | 112.577702           |
+| getLat       | 地区／城市纬度                                                          | 40.89576             |
+| getAdm2      | 该地区／城市的上级城市                                                  | 乌兰察布             |
+| getAdm1      | 该地区／城市所属行政区域                                                | 内蒙古               |
+| getCountry   | 该地区／城市所属国家名称                                                | 中国                 |
+| getTz        | 该地区／城市所在时区                                                    | +8.00                |
+| getUtcOffset | 该地区/城市目前与UTC时间偏移的小时数                                    | +08:00               |
+| getIsDst     | 该地区/城市是否当前处于夏令时,1 表示当前处于夏令时,0 表示当前不是夏令时 | 0                    |
+| getType      | 该地区／城市的属性                                                      | city                 |
+| getRank      | 该地区／城市评分                                                        | 10                   |
+| getFxLink    | 城市的天气预报网页链接                                                  | http://hfx.link/ae45 |
+
+## 热门城市查询
+
+| 接口说明     | 接口代码      | 数据类  |
+| ------------ | ------------- | ------- |
+| 热门城市查询 | getGeoTopCity | GeoBean |
+
+#### 接口参数说明
+
+**number** {{ site.data.text.optional }} 
+
+返回热门城市的数量，默认返回10个，可选1-20个
+
+**range** {{ site.data.text.optional }} 
+
+搜索范围，默认搜索全球城市。 可设定只在某个国家范围内进行搜索，国家名称需使用ISO 3166 所定义的国家代码。
+
+- `world` 全球城市范围，默认
+- `cn` 中国城市范围，可替换为其他国家的ISO 3166 国家代码，例如`range=us`
+
+**可调用枚举类Range**
+
+| 数据类型                                                         | 常量属性 |
+| ---------------------------------------------------------------- | -------- |
+| 全球城市范围，默认                                               | WORLD    |
+| 中国城市范围，可替换为其他国家的 ISO 3166 国家代码，例如`range=us` | CN       |
+
+**lang** {{ site.data.text.optional }} 
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+#### 示例代码
+
+```java
+HeWeather.getGeoTopCity(Context context, int number, Range range, Lang lang, final HeWeather.OnResultGeoBeansListener listener);
+
+HeWeather.getGeoTopCity(Context context, final HeWeather.OnResultGeoBeansListener listener);
 ```
 
-### SolarElevationAngle 数据类
+**GeoBean的属性**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getStatus | 接口状态 | ok
-getSolar_elevation_angle | 基础信息 | SolarElevationAngleBase
+| 属性            | 说明     | 示例值                   |
+| --------------- | -------- | ------------------------ |
+| getCode         | 接口状态 | ok                       |
+| getLocationBean | 城市数据 | List&lt;LocationBean&gt; |
 
-### SolarElevationAngleBase 基础信息
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getSolar_elevation_angle | 太阳高度角 | 89
-getSolar_azimuth_angle | 太阳方位角，正北顺时针方向角度 | 190
-getSolar_hour | 太阳时 | 0923
-getHour_angle | 时角 | -45.5
+**Refer**
 
-# <span id="日出日落">日出日落</span>
-## 接口参数说明
-```js
-/**
- * @param location 可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，可以不使用该参数，默认为简体中文，其他语言请参照多语言对照表
- * @param listener 接口回调
- */
-HeWeather.getSolarSunriseSunset(Context context, String location, Lang lang, final HeWeather.OnResultSolarSunriseSunsetBeansListener listener);
-HeWeather.getSolarSunriseSunset(Context context, String location, final HeWeather.OnResultSolarSunriseSunsetBeansListener listener);
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
+
+
+**LocationBean 基础信息**
+
+| 属性         | 说明                                                                    | 示例值               |
+| ------------ | ----------------------------------------------------------------------- | -------------------- |
+| getName      | 地区／城市名称                                                          | 卓资                 |
+| getId        | 地区／城市ID                                                            | 101080402            |
+| getLon       | 地区／城市经度                                                          | 112.577702           |
+| getLat       | 地区／城市纬度                                                          | 40.89576             |
+| getAdm2      | 该地区／城市的上级城市                                                  | 乌兰察布             |
+| getAdm1      | 该地区／城市所属行政区域                                                | 内蒙古               |
+| getCountry   | 该地区／城市所属国家名称                                                | 中国                 |
+| getTz        | 该地区／城市所在时区                                                    | +8.00                |
+| getUtcOffset | 该地区/城市目前与UTC时间偏移的小时数                                    | +08:00               |
+| getIsDst     | 该地区/城市是否当前处于夏令时,1 表示当前处于夏令时,0 表示当前不是夏令时 | 0                    |
+| getType      | 该地区／城市的属性                                                      | city                 |
+| getRank      | 该地区／城市评分                                                        | 10                   |
+| getFxLink    | 城市的天气预报网页链接                                                  | http://hfx.link/ae45 |
+
+## POI信息搜索
+
+| 接口说明    | 接口代码        | 数据类     |
+| ----------- | --------------- | ---------- |
+| POI信息搜索 | getGeoPoiLookup | GeoPoiBean |
+
+#### 接口参数说明
+
+**location** {{ site.data.text.required }} 
+
+输入需要查询的POI名称，可使用中文、英文。最少一个汉字或2个英文字母，返回结果将按照相关性和Rank值进行排列。例如*location=故宫*
+
+**type** {{ site.data.text.required }} 
+
+POI类型，可选择搜索某一类型的POI，目前仅限景点。例如CityType.SCENIC
+
+**number** {{ site.data.text.optional }} 
+
+返回热门城市的数量，默认返回10个，可选1-20个
+
+**city** {{ site.data.text.optional }} 
+
+选择POI所在城市，可设定只搜索在特定城市内的POI信息。城市名称可以是中文、英文或城市的LocationID。默认全世界范围。
+
+> 城市名称需要精准匹配，建议使用LocaitonID，如城市名称无法识别，则数据返回为空。
+
+**lang** {{ site.data.text.optional }} 
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+#### 示例代码
+
+```java
+HeWeather.getGeoPoiLookup(Context context, String location, String city, int number, CityType cityType, Lang lang, final OnResultGeoPoiListener listener);
+
+HeWeather.getGeoPoiLookup(Context context, String location,  CityType cityType,final HeWeather.OnResultGeoPoiListener listener);
 ```
 
-### SolarSunriseSunset 数据类
+**GeoPoiBean的属性**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getSunrise_sunset | 日出日落信息 | List&lt;SolarSunriseSunsetBase&gt;
+| 属性       | 说明     | 示例值          |
+| ---------- | -------- | --------------- |
+| getCode    | 接口状态 | ok              |
+| getPoiList | 城市数据 | List&lt;Poi&gt; |
 
-### Basic 基础信息
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+**Refer**
 
-### Update 接口更新时间
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
 
-### SolarSunriseSunsetBase 基础信息
+**Poi 基础信息**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 日期 | 1999-05-01
-getSr | 日出时间 | 05:34
-getSr | 日落时间 | 18:34
+| 属性         | 说明                                                              | 示例值    |
+| ------------ | ----------------------------------------------------------------- | --------- |
+| getName      | Poi名称                                                           | 南山区    |
+| getId        | PoiID                                                             | 101280604 |
+| getLon       | Poi经度                                                           | 22.53122  |
+| getLat       | Poi纬度                                                           | 113.92942 |
+| getAdm2      | 该Poi的上级行政区划名称                                           | 深圳市    |
+| getAdm1      | 该Poi所属一级行政区域                                             | 广东省    |
+| getCountry   | 该Poi所属国家名称                                                 | 中国      |
+| getTz        | 该Poi所在时区                                                     | +8.00     |
+| getUtcOffset | 该Poi目前与UTC时间偏移的小时数                                    | +08:00    |
+| getIsDst     | 该Poi是否当前处于夏令时,1 表示当前处于夏令时,0 表示当前不是夏令时 | 0         |
+| getType      | 该Poi的属性                                                       | city      |
+| getRank      | 地区评分                                                          | 10        |
 
-# <span id="历史数据">历史数据</span>
-## 接口参数说明
-```js
-/**
- * @param location 城市ID
- * @param date     日期
- * @param listener 接口回调
- */
-HeWeather.getWeatherHistorical(Context context, String location, String date, final HeWeather.OnResultWeatherHistoricalBeanListener listener);
+## POI范围搜索
+
+| 接口说明    | 接口代码       | 数据类     |
+| ----------- | -------------- | ---------- |
+| POI范围搜索 | getGeoPoiRange | GeoPoiBean |
+
+#### 接口参数说明
+
+**location** {{ site.data.text.required }} 
+
+输入需要查询的POI坐标，坐标以逗号分隔的经度/纬度坐标。例如
+*location=116.4,39.1*
+
+**type** {{ site.data.text.required }} 
+
+POI类型，可选择搜索某一类型的POI，目前仅限景点。例如CityType.SCENIC
+
+**number** {{ site.data.text.optional }} 
+
+返回热门城市的数量，默认返回10个，可选1-20个
+
+**radius** {{ site.data.text.optional }} 
+
+搜索范围，可设置搜索半径，取值范围1-50，单位：公里。*默认5公里*。
+
+**lang** {{ site.data.text.optional }} 
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+#### 示例代码
+
+```java
+HeWeather.getGeoPoiRange(Context context, String location, int radius, int number, CityType cityType, Lang lang, final OnResultGeoPoiListener listener);
+
+HeWeather.getGeoPoiRange(Context context, String location, int number, CityType cityType, Lang lang, final OnResultGeoPoiListener listener);
 ```
 
-### Historical 数据类
+**GeoPoiBean的属性**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getDaily_weather | 当天概况 | List&lt;HistoricalDaily&gt;
-getHourly_weather | 当天逐小时数据 | List&lt;HistoricalHourly&gt;
+| 属性       | 说明     | 示例值          |
+| ---------- | -------- | --------------- |
+| getCode    | 接口状态 | ok              |
+| getPoiList | 城市数据 | List&lt;Poi&gt; |
 
-### Basic 基础信息
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+**Refer**
 
-### HistoricalDaily 基础信息
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | Weather China      |
+| getLicenseList | 使用许可     | commercial license |
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期 | 2013-12-30
-getSr | 日出时间 | 07:36
-getSs | 日落时间 | 16:58
-getMr | 月升时间 | 04:47
-getMs | 月落时间 | 14:59
-getTmp_max | 最高温度 | 4
-getTmp_min | 最低温度 | -5
-getHum | 相对湿度 | 37
-getPcpn | 降水量 | 0
-getPres | 大气压强 | 1018
 
-### HistoricalHourly 基础信息
+**Poi 基础信息**
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBrief |  天气状况描述 | 晴
-getCode | 天气状况代码 | 100
-getDate | 时间 | 2014-05-01
-getDir | 风向 | 东风
-getHum | 湿度 | 52
-getPres | 气压 | 1017
-getSc | 风力 | 3-4
-getSpd | 风速 | 20
-getTmp | 温度 | 15
+| 属性         | 说明                                                              | 示例值    |
+| ------------ | ----------------------------------------------------------------- | --------- |
+| getName      | Poi名称                                                           | 南山区    |
+| getId        | PoiID                                                             | 101280604 |
+| getLon       | Poi经度                                                           | 22.53122  |
+| getLat       | Poi纬度                                                           | 113.92942 |
+| getAdm2      | 该Poi的上级行政区划名称                                           | 深圳市    |
+| getAdm1      | 该Poi所属一级行政区域                                             | 广东省    |
+| getCountry   | 该Poi所属国家名称                                                 | 中国      |
+| getTz        | 该Poi所在时区                                                     | +8.00     |
+| getUtcOffset | 该Poi目前与UTC时间偏移的小时数                                    | +08:00    |
+| getIsDst     | 该Poi是否当前处于夏令时,1 表示当前处于夏令时,0 表示当前不是夏令时 | 0         |
+| getType      | 该Poi的属性                                                       | city      |
+| getRank      | 地区评分                                                          | 10        |
+
 

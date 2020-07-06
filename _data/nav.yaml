@@ -1,10 +1,139 @@
-doc-nav:
-  - title: 开发文档
-    link: /docs/getting-started/
-  - title: 示例代码
-    link: /docs/examples/
-  - title: 天气101
-    link: /docs/weather101/
-  - title: 最新
-    link: https://www.heweather.com/blog/
+sidebar:
+  - group: 
+    zh: 开始
+    en: Start
+    list:
+      - zh: 快速开始
+        en: Start
+      - zh: 创建应用和KEY
+        en: Get API KEY
+      - zh: 错误状态码
+        en: Status Code
+      - zh: 多语言
+        en: Language
+      - zh: 天气图标
+        en: Icons
+      - zh: 常见城市列表
+        en: Location List
+      - zh: 单位
+        en: Unit
+      - zh: 名词解释
+        en: Glossary
+  - group:
+    zh: API
+    en: API
+    list:
+      - zh: 概述
+        en: Overview
+      - zh: 城市信息搜索
+        en: Geo
+      - zh: 天气预报和实况
+        en: Weather
+      - zh: 分钟级降水
+        en: Minutely
+      - zh: 空气质量
+        en: Air
+      - zh: 灾害预警
+        en: Warning
+      - zh: 生活指数
+        en: Indices
+      - zh: 景区天气
+        en: Weather POI
+      - zh: 历史数据
+        en: Historical
+      - zh: 太阳和月亮
+        en: Astronomy
+  - group:
+    zh: SDK
+    en: SDK
+    list:
+      - zh: 概述
+        en: SDK
+      - zh: iOS SDK
+        en: ios
+      - zh: iOS 数据类属性
+        en: ios Entity
+      - zh: Android SDK
+        en: Android
+      - zh: Android数据类属性
+        en: Android Entity
+      - zh: 下载和更新记录
+        en: Release
+  - group:
+    zh: 天气插件
+    en: Widget
+    list:
+      - zh: 概述
+        en: Widget
+      - zh: iOS天气插件
+        en: iOS Widget
+      - zh: Android天气插件
+        en: Android Widget
+      - zh: H5天气网页/频道页
+        en: Mobile Page
+      - zh: 网页标准插件
+        en: Standard Widget
+      - zh: 网页简约插件
+        en: Simple Widget
+  - group:
+    zh: 天气普拉斯
+    en: OWP
+    list:
+      - zh: 概述
+        en: Overview
+      - zh: iOS 开发文档
+        en: iOS
+      - zh: Android 开发文档
+        en: Android
+  - group: 
+    zh: 代码库
+    en: library
+    list:
+      - zh: 概述
+        en: library
+  - group: 
+    zh: 常见问题
+    en: faq
+    list:
+      - zh: 一般问题
+        en: General
+      - zh: 商业数据和购买
+        en: Buy
+      - zh: 技术和开发
+        en: Technical
+      - zh: 用户和账号
+        en: User
+footer:
+  - group: 开发文档
+    list:
+      - title: API
+        link: /docs/api
+      - title: iOS SDK
+        link: /docs/sdk/ios-sdk
+      - title: Android SDK
+        link: /docs/sdk/android-sdk
+      - title: 天气插件
+        link: /docs/widget
+      - title: 天齐普拉斯
+        link: /docs/ows
+  - group: 常见问题
+    list: 
+      - title: 一般问题
+        link: /docs/faq/general
+      - title: 商业使用和购买
+        link: /docs/faq/buy
+      - title: 技术和开发
+        link: /docs/faq/technical
+      - title: 用户账号
+        link: /docs/faq/user
+  - group: 更多信息
+    list: 
+      - title: 下载APP
+        link: https://www.heweather.com/app/
+      - title: 联系我们
+        link: https://www.heweather.com/contact
+      - title: 使用条款
+        link: https://www.heweather.com/terms/tos
+      - title: 隐私政策
+        link: https://www.heweather.com/terms/privacy
 

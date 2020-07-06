@@ -1,0 +1,115 @@
+---
+title: 价格
+description: 和风天气数据服务，包括天气API、**SDK**的使用价格。
+layout: html
+permalink: /price/
+---
+<div class="price">
+    <div class="price-detail">
+        <div class="price-intro">
+            <div class="container">
+                <h1>我们的定价</h1>
+                <p>非常简单，免费或者按实际使用付费</p>
+            </div>
+        </div>
+        <div class="container">
+            <div style="max-width: 870px;margin: 0 auto">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="price-box">
+                            <h2 class="free">
+                                <span>免费</span>
+                                <div class="line">&nbsp;</div>
+                            </h2>
+                            <p>
+                                1000次/天 <br>
+                                <span class="small">普通用户</span>
+                            </p>
+                            <p>16700次/天<br/><span class="small">开发者</span></p>
+                            <p>无限访问量<br/><span class="small">使用SDK</span></p>
+                            <p>非商业使用</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="price-box">
+                            <h2 class="bill">
+                                <span>按量付费</span>
+                                <div class="line">&nbsp;</div>
+                            </h2>
+                            <p>最低1元/1000次<br/><span class="small">标准定价</span></p>
+                            <p>最低0.3元/1000次<br/><span class="small">使用资源包</span></p>
+                            <p>可用于商业行为</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="price-more">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h2>你可能还想了解更多</h2>
+                <h3>
+                    <a href=#psg data-toggle="collapse">
+                        按量计费的标准价格
+                        <i class="glyphicon glyphicon-menu-up"></i>
+                        <i class="glyphicon glyphicon-menu-down"></i>
+                    </a>
+                </h3>
+                <div class="price-more-detail collapse" id="psg">
+                    <p>计费标准：元/1000次访问量</p>
+                    <table>
+                        {% for row in site.data.price-table.psg %}
+                        <thead>
+                        <tr>
+                            {% for item in row.head %}
+                            <th>
+                                {{ item }}
+                            </th>
+                            {% endfor %}
+                        </tr>
+                        </thead>
+                        {% tablerow item in row.td %}
+                        {{ item }}
+                        {% endtablerow %}
+                        {% endfor %}
+                    </table>
+                </div>
+                <h3>
+                    <a href=#pkg data-toggle="collapse">
+                        使用资源包
+                        <i class="glyphicon glyphicon-menu-up"></i>
+                        <i class="glyphicon glyphicon-menu-down"></i>
+                    </a>
+                </h3>
+                <div class="price-more-detail collapse" id="pkg">
+                    {{ site.data.t[page.lang].pkg-dec }}
+                </div>
+                <h3>
+                    <a href=#mc data-toggle="collapse">
+                        需要更多访问量
+                        <i class="glyphicon glyphicon-menu-up"></i>
+                        <i class="glyphicon glyphicon-menu-down"></i>
+                    </a>
+                </h3>
+                <div class="price-more-detail collapse" id="mc">
+                    {{ site.data.t[page.lang].more-calls | markdownify }}
+                </div>
+                <h3>
+                    <a href=#faq data-toggle="collapse">
+                        发票和更多购买帮助
+                        <i class="glyphicon glyphicon-menu-up"></i>
+                        <i class="glyphicon glyphicon-menu-down"></i>
+                    </a>
+                </h3>
+                <div class="price-more-detail collapse" id="faq">
+                    {{ site.data.t[page.lang].price-more | markdownify }}
+                </div>
+            </div>
+        </div>
+        <div class="price-join">
+            <a class="btn price-btn" href="https://id.heweather.com/register?redirect=https://console.heweather.com"
+               role="button">现在就免费注册吧</a>
+        </div>
+    </div>
+</div>

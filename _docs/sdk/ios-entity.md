@@ -1,1274 +1,1041 @@
 ---
-book: SDK
-version: 1.0
-service: sdk
-data: [air, weather, grid, alarm, map, solar]
 title: iOS SDK 实体类属性
+tag: [sdk]
+version: v4
 description: 和风天气iOS SDK 实体类属性对照表
+toc: true
 ---
 
-接口说明 | 接口代码（枚举） | 数据类
+## 天气预报和实况
+
+接口 | 接口代码（枚举） | 数据类
 --------- | ------------- | -----------
-[城市查询](#城市查询) | INQUIRE_TYPE_SEARCH | SearchBaseClass.h
-[3-10天天气预报](#3-10天天气预报) | INQUIRE_TYPE_WEATHER_FORECAST | WeatherForecastBaseClass.h
-[实况天气](#实况天气) | INQUIRE_TYPE_WEATHER_NOW | WeatherNowBaseClass.h
-[逐小时预报](#逐小时预报) | INQUIRE_TYPE_WEATHER_HOURLY | WeatherHourlyBaseClass.h
-[生活指数](#生活指数) | INQUIRE_TYPE_WEATHER_LIFESTYLE | WeatherLifestyleBaseClass.h
-[常规天气数据集合](#常规天气数据集合) | NQUIRE_TYPE_WEATHER | WeatherBaseClass.h
-[格点实况天气](#格点实况天气) | INQUIRE_TYPE_WEATHER_GRID_NOW | WeatherGridNowBaseClass.h
-[格点7天预报](#格点7天预报) | INQUIRE_TYPE_WEATHER_GRID_FORECAST | WeatherGridForecastBaseClass.h
-[格点逐小时预报](#格点逐小时预报) | INQUIRE_TYPE_WEATHER_GRID_HOURLY | WeatherGridHourlyBaseClass.h
-[分钟级降雨（邻近预报）](#分钟级降雨（邻近预报）) | INQUIRE_TYPE_WEATHER_GRID_MINUTE | WeatherGridMinuteBaseClass.h
-[天气灾害预警](#天气灾害预警) | INQUIRE_TYPE_ALARM | AlarmBaseClass.h
-[天气灾害预警集合](#天气灾害预警集合) | INQUIRE_TYPE_ALARM_ALL | AlarmAllBaseClass.h
-[景点天气预报](#景点天气预报) | INQUIRE_TYPE_SCENIC | ScenicBaseClass.h
-[空气质量实况](#空气质量实况) | INQUIRE_TYPE_AIR_NOW | AirNowBaseClass.h
-[空气质量7天预报](#空气质量7天预报) | INQUIRE_TYPE_AIR_FORECAST | AirForecastBaseClass.h
-[空气质量逐小时预报](#空气质量逐小时预报) | INQUIRE_TYPE_AIR_HOURLY | AirHourlyBaseClass.h
-[空气质量数据集合](#空气质量数据集合) | INQUIRE_TYPE_AIR | AirBaseClass.h
-[卫星云图](#卫星云图) | INQUIRE_TYPE_MAP_CLOUD_MAP | UIImage type
-[太阳高度](#太阳高度) | INQUIRE_TYPE_SOLAR_ELEVATION_ANGLR | SolarElevationAngleBaseClass.h
-[日出日落](#日出日落) | INQUIRE_TYPE_SOLAR_SUNRISE_SUNSET | SolarSunriseSunsetBaseClass.h
-[历史数据](#历史数据) | INQUIRE_TYPE_WEATHER_HISTORICAL | WeatherHistoricalBaseClass.h
+实况天气| INQUIRE_TYPE_WEATHER_NOW | WeatherBaseClass
+3天预报| INQUIRE_TYPE_WEATHER_3D | WeatherBaseClass
+7天预报| INQUIRE_TYPE_WEATHER_7D | WeatherBaseClass
+10天预报 | INQUIRE_TYPE_WEATHER_10D | WeatherBaseClass
+15天预报| INQUIRE_TYPE_WEATHER_15D | WeatherBaseClass
+24小时预报况 | INQUIRE_TYPE_WEATHER_24H | WeatherBaseClass
+72小时预报况 | INQUIRE_TYPE_WEATHER_72H | WeatherBaseClass
+168小时预报况 | INQUIRE_TYPE_WEATHER_168H | WeatherBaseClass
 
-# 请求接口代码对照表
-##  可调用枚举类 INQUIRE_TYPE
+#### 请求参数
 
-接口名称 | 接口代码 | 常量属性
---------- | ------------- | ------------
-3-10天天气预报 | getWeatherForecast  | INQUIRE_TYPE_WEATHER_FORECAST
-实况天气 | getWeatherNow | INQUIRE_TYPE_WEATHER_NOW
-逐小时预报 | getWeatherHourly | INQUIRE_TYPE_WEATHER_HOURLY
-生活指数 | getWeatherLifeStyle | INQUIRE_TYPE_WEATHER_LIFESTYLE
-常规天气数据集合 | getWeather | INQUIRE_TYPE_WEATHER
-分钟级降雨（邻近预报） | getWeatherGirdMinute | INQUIRE_TYPE_WEATHER_GRID_MINUTE
-格点实况天气 | getWeatherGridNow | INQUIRE_TYPE_WEATHER_GRID_NOW
-格点7天预报 | getWeatherGridForecast | INQUIRE_TYPE_WEATHER_GRID_FORECAST
-格点逐小时预报 | getWeatherGirdHourly | INQUIRE_TYPE_WEATHER_GRID_HOURLY
-天气灾害预警 | getAlarm | INQUIRE_TYPE_ALARM
-天气灾害预警集合 | getAlarmAll | INQUIRE_TYPE_ALARM_ALL
-景点天气预报 | getScenic | INQUIRE_TYPE_SCENIC
-空气质量实况 | getAirNow | INQUIRE_TYPE_AIR_NOW
-空气质量7天预报 | getAirForecast | INQUIRE_TYPE_AIR_FORECAST
-空气质量逐小时预报 | getAirHourly | INQUIRE_TYPE_AIR_HOURLY
-空气质量数据集合 | getAir | INQUIRE_TYPE_AIR
-历史天气 | getWeatherHistorical | INQUIRE_TYPE_WEATHER_HISTORICAL
-日出日落 | getSolarSunriseSunset | INQUIRE_TYPE_SOLAR_SUNRISE_SUNSET
-卫星云图 | getMapCloudMap | INQUIRE_TYPE_MAP_CLOUD_MAP
-太阳高度 | getSolarElevationAngle | INQUIRE_TYPE_SOLAR_ELEVATION_ANGLR
-城市查询 | getSearch | INQUIRE_TYPE_SEARCH
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-# 多语言代码对照表
-##  可调用枚举类 LANGUAGE_TYPE
+**location** {{ site.data.text.required }}
 
-语言 | 语言代码 | 常量属性
---------- | ------------- | ------------
-简体中文 | zh  | LANGUAGE_TYPE_ZH
-简体中文 | zhcn  | LANGUAGE_TYPE_ZHCN
-简体中文 | cn  | LANGUAGE_TYPE_CN
-繁体中文 | zhhk | LANGUAGE_TYPE_ZHHK
-繁体中文 | hk | LANGUAGE_TYPE_HK
-英文 | en | LANGUAGE_TYPE_EN
-德语 | de | LANGUAGE_TYPE_DE
-西班牙语 | es | LANGUAGE_TYPE_ES
-法语 | fr | LANGUAGE_TYPE_FR
-意大利语 | it | LANGUAGE_TYPE_IT
-日语 | jp | LANGUAGE_TYPE_JP
-韩语 | kr | LANGUAGE_TYPE_KR
-俄语 | ru | LANGUAGE_TYPE_RU
-印度语 | in | LANGUAGE_TYPE_IN
-泰语 | th | LANGUAGE_TYPE_TH
+需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docsgetting-started/glossary#coordinate)（十进制），LocationID可通过[城市搜索](#城市查询)服务获取。例如： location=101010100 或 location=39.92,116.41
 
-# 单位对照表
-##  可调用枚举类 UNIT_TYPE
+**appKey** {{ site.data.text.required }}
 
-语言 | 语言代码 | 常量属性
---------- | ------------- | ------------
-公制 | m | UNIT_TYPE_M
-英制 | i | UNIT_TYPE_I
+用户认证key，例如 `appKey=123456789ABC`
+ 
+**lang** {{ site.data.text.optional }}
 
-# framework 说明
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+**unit** {{ site.data.text.optional }}
+
+[度量衡单位参数](/docs/start/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**。
+
+| 语言 | 语言代码 | 常量属性    |
+| ---- | -------- | ----------- |
+| 公制 | m        | UNIT_TYPE_M |
+| 英制 | i        | UNIT_TYPE_I |
+
+#### 示例代码
 
 ```objc
-/**
- * 必选参数
- * @param userType      用户类型，分为 付费用户 普通用户
- * @param location      (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度（英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param date          获取制定日期的历史数据，格式为yyyy-mm-dd
- * @param time          查询时间，格式为HHmm，24 时制
- * @param tz            查询地区所在时区
- * @param lat           所查询地区的纬度,纬度采用十进制格式，北纬为正，南纬为负
- * @param lon           所查询地区的经度,经度采用十进制格式，东经为正，西经为负
- * @param alt           海拔高度，单位为米
- * @param unit          单位选择，公制（m）或英制（i），默认为公制单位
- *
- * 可选参数
- * @param lang          多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param languageType  多语言（枚举），默认为简体中文，其他语言请参照多语言对照表
- * @param unit          单位选择，公制（m）或英制（i），默认为公制单位
- * @param unitType      单位选择（枚举），公制（m）或英制（i），默认为公制单位
- */
+HeConfigInstance.publicID = @"publicID";
+HeConfigInstance.appKey = @"key";
+HeConfigInstance.appType = APP_TYPE_BIZ;
+HeConfigInstance.location = @"101010100";
+HeConfigInstance.lang = @"";
+HeConfigInstance.unit = @"";
+[HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_NOW WithSuccess:^(WeatherBaseClass  *responseObject) {
+        
+    NSLog(@"描述->%@",[responseObject description]);
+        
+} faileureForError:^(NSError *error) {
+    NSLog(@"error->%@",error);
+        
+}]; 
 ```
-具体使用方法请参考[iOS SDK文档](/docs/sdk/ios)
 
-# 各接口所需参数及返回数据
+#### 返回数据
 
-##  <span id="3-10天天气预报">3-10天天气预报</span>
-###  接口参数说明
+| 参数       | 描述              | 示例值    |
+| ---------- | ----------------- | --------- |
+| code          | 状态码，具体含义请参考[状态码](/docs/start/status-code)                    | 200                                                                        |
+| updateTime    | 当前[数据最近更新时间](/docs/getting-started/glossary#updatetime)              | 2013-12-30T01:45+08:00                                                     |
+| fxLink | 该城市的天气预报详情自适应网页，可嵌入网站或应用 | http://hfx.link/ae45 |
+| now.obsTime    | 实况观测时间                                                                                            | 2013-12-30T01:45+08:00 |
+| now.temp        | 实况温度，默认单位：摄氏度                                                                                  | 21               |
+| now.feelsLike         | 实况体感温度，默认单位：摄氏度                                                                              | 23               |
+| now.icon   | 当前天气状况和图标的代码，图标可通过[天气状况和图标](/docs/start/icons)下载  | 100              |
+| now.text | 实况天气状况的文字描述，包括阴晴雨雪等天气状态的描述                                                                                      | 晴               |
+| now.wind360    | 实况风向360角度                                                                                             | 305              |
+| now.windDir    | 实况风向                                                                                                    | 西北             |
+| now.windScale     | 实况风力等级                                                                                                    | 3                |
+| now.windSpeed    | 实况风速，公里/小时                                                                                         | 15               |
+| now.humidity        | 实况相对湿度，百分比数值                                                                                    | 40               |
+| now.precip       | 实况降水量，默认单位：毫米                                                                                  | 1.2              |
+| now.pressure       | 实况大气压强，默认单位：百帕                                                                                | 1020             |
+| now.vis        | 实况能见度，默认单位：公里                                                                                  | 10               |
+| now.cloud      | 实况云量，百分比数值                                                                                        | 23               |
+| now.dew        | 实况露点温度                                                                                        | 12               |
+| daily.fxDate      | 预报日期                                                                                            | 2013-05-31 |
+| daily.sunrise          | 日出时间                                                                                            | 07:34      |
+| daily.sunset          | 日落时间                                                                                            | 17:21      |
+| daily.moonrise          | 月升时间                                                                                            | 16:09      |
+| daily.moonset          | 月落时间                                                                                            | 04:21      |
+| daily.moonPhase       | 月相名称                                                                                                |  满月          |
+| daily.tempMax      | 预报当天最高温度                                                                                            | 4          |
+| daily.tempMin      | 预报当天最低温度                                                                                            | -5         |
+| daily.iconDay   | 预报白天天气状况的图标代码，图标可通过[天气状况和图标](/docs/start/icons)下载 | 100        |
+| daily.textDay | 预报白天天气状况文字描述，包括阴晴雨雪等天气状态的描述                                                                                | 晴         |
+| daily.iconNight   | 预报夜间天气状况的图标代码，图标可通过[天气状况和图标](/docs/start/icons)下载 | 100        |
+| daily.textNight | 预报晚间天气状况文字描述，包括阴晴雨雪等天气状态的描述                                                                                | 晴         |
+| daily.wind360Day     | 预报白天风向360角度                                                                                         | 305        |
+| daily.windDirDay     | 预报白天风向                                                                                                | 西北       |
+| daily.windScaleDay      | 预报白天风力等级                                                                                                | 3-4        |
+| daily.windSpeedDay     | 预报白天风速，公里/小时                                                                                     | 15         |
+| daily.wind360Night     | 预报夜间风向360角度                                                                                         | 305        |
+| daily.WindDirNight     | 预报夜间当天风向                                                                                                | 西北       |
+| daily.windScaleNight      | 预报夜间风力等级                                                                                                | 3-4        |
+| daily.windSpeedNight     | 预报夜间风速，公里/小时                                                                                    | 15         |
+| daily.humidity         | 预报当天相对湿度，百分比数值                                                                                | 40         |
+| daily.precip        | 预报当天降水量，默认单位：毫米                                                                              | 1.2        |
+| daily.pressure        | 预报当天大气压强，默认单位：百帕                                                                            | 1020       |
+| daily.vis         | 预报当天能见度，默认单位：公里                                                                              | 10         |
+| daily.cloud       | 预报当天云量，百分比数值                                                                                    | 23         |
+| daily.uvIndex     | 预报当天紫外线强度指数                                                                                      | 3          |
+| hourly.fxTime     | 逐小时预报时间                                                                                        | 2013-12-30T13:00+08:00 |
+| hourly.temp        | 逐小时预报温度                                                                                            | 2                |
+| hourly.icon   | 逐小时预报天气状况图标代码，图标可通过[天气状况和图标](/docs/start/icons)下载  | 101              |
+| hourly.text | 逐小时预报天气状况文字描述，包括阴晴雨雪等天气状态的描述                                                                                | 多云             |
+| hourly.wind360    | 逐小时预报风向360角度                                                                                     | 305              |
+| hourly.windDir    | 逐小时预报风向                                                                                            | 西北             |
+| hourly.windScale     | 逐小时预报风力等级                                                                                            | 3                |
+| hourly.windSpeed    | 逐小时预报风速，公里/小时                                                                                 | 15               |
+| hourly.humidity        | 逐小时预报相对湿度，百分比数值                                                                            | 40               |
+| hourly.precip       | 逐小时预报降水量，默认单位：毫米                                                                          | 1.2              |
+| hourly.pop       | 逐小时预报降水概率，百分比数值，可能为空                                                                          | 5              |
+| hourly.pressure       | 逐小时预报大气压强，默认单位：百帕                                                                        | 1020             |
+| hourly.cloud      | 逐小时预报云量，百分比数值                                                                                | 23               |
+| hourly.dew        | 逐小时预报露点温度                                                                                        | 12               |
+| refer.sources | 原始数据来源，可能为空                             |                                                                            |
+| refer.license | 	使用许可，可能为空                                 |                                                                            |
+
+## 分钟降水
+
+接口 | 接口代码（枚举） | 数据类
+--------- | ------------- | -----------
+分钟降水 | INQUIRE_TYPE_WEATHER_MINUTELY | WeatherMinutelyBaseClass
+
+#### 接口参数
+
+**location** {{ site.data.text.required }}
+
+需要查询地区的以逗号分隔的[经度/纬度坐标](/docsgetting-started/glossary#coordinate)（十进制）。例如： location=39.92,116.41
+
+**appKey** {{ site.data.text.required }}
+
+用户认证key，例如 `appKey=123456789ABC`
+
+**lang** {{ site.data.text.optional }}
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+#### 示例代码
+
 ```objc
-/**
- * @param location (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
+ 
+    HeConfigInstance.publicID = @"publicID";
+    HeConfigInstance.appKey = @"key";
+    HeConfigInstance.appType = APP_TYPE_BIZ;    
+    HeConfigInstance.location = @"116.41,39.92";
+    HeConfigInstance.lang = @"";
+    [HeConfigInstance weatherWithInquireType: INQUIRE_TYPE_WEATHER_MINUTELY WithSuccess:^(WeatherMinutelyBaseClass  *responseObject) {
+        
+        NSLog(@"描述->%@",[responseObject description]);
+        
+    } faileureForError:^(NSError *error) {
+        NSLog(@"error->%@",error);
+        
+    }];
+ 
 ```
 
-###  Forecast的属性
+#### 返回数据
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getDaily_forecast | 天气预报 | List&lt;ForecastBase&gt;
+| 参数            | 描述                                                                   | 示例                   |
+| :-------------- | :--------------------------------------------------------------------- | :--------------------- |
+| code            | 状态码，具体含义请参考[状态码](/docs/start/status-code)                                              | 200                    |
+| updateTime      | 当前[数据最近更新时间](/docs/getting-started/glossary#updatetime)                                       | 2013-12-30T01:45+08:00 |
+| fxLink          | 该城市的分钟降水详情自适应网页，可嵌入网站或应用。**有可能为空。** | http://hfx.link/ae45   |
+| summary         | 分钟降水描述                                                           | 未来2小时无降雨        |
+| minutely.fxTime | 预报时间                                                               | 2013-12-30T01:45+08:00 |
+| minutely.precip | 降水量                                                                 | 10                     |
+| minutely.type   | 降水类型<br />`rain`雨<br />`snow`雪                                   | rain                   |
+| refer.sources   | 原始数据来源，可能为空                                           |                        |
+| refer.license   | 使用许可，可能为空                                          |                        |
 
-###  Basic 基础信息
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
 
-###  Update 接口更新时间
+## 空气质量
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+接口 | 接口代码（枚举） | 数据类
+--------- | ------------- | -----------
+空气质量实况 | INQUIRE_TYPE_WEATHER_AIR_NOW | AirBaseClass
+空气质量5天预报 | INQUIRE_TYPE_WEATHER_AIR_5D | AirBaseClass
 
-###  ForecastBase 天气预报
+#### 请求参数
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期 | 2013-12-30
-getSr | 日出时间 | 07:36
-getSs | 日落时间 | 16:58
-getMr | 月升时间 | 04:47
-getMs | 月落时间 | 14:59
-getTmp_max | 最高温度 | 4
-getTmp_min | 最低温度 | -5
-getCond_code_d | 白天天气状况代码 | 100
-getCond_code_n | 晚间天气状况代码 | 100
-getCond_txt_d | 白天天气状况描述 | 晴
-getCond_txt_n | 晚间天气状况描述 | 晴
-getWind_deg | 风向360角度 | 310
-getWind_dir | 风向 | 西北风
-getWind_sc | 风力 | 1-2
-getWind_spd | 风速，公里/小时 | 14
-getHum | 相对湿度 | 37
-getPcpn | 降水量 | 0
-getPop | 降水概率 | 0
-getPres | 大气压强 | 1018
-getUv_index | 紫外线强度指数 | 3
-getVis | 能见度，单位：公里 | 10
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-##  <span id="实况天气">实况天气</span>
-###  接口参数说明
+**location** {{ site.data.text.required }}
+
+需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docsgetting-started/glossary#coordinate)（十进制），LocationID可通过[城市搜索](#城市查询)服务获取。例如： location=101010100 或 location=39.92,116.41
+
+**appKey** {{ site.data.text.required }}
+
+用户认证key，例如 `appKey=123456789ABC`
+ 
+**lang** {{ site.data.text.optional }}
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+#### 示例代码
+
 ```objc
-/**
- * @param location (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
+   HeConfigInstance.publicID = @"publicID";
+    HeConfigInstance.appKey = @"key";
+    HeConfigInstance.appType = APP_TYPE_BIZ;    
+    HeConfigInstance.location = @"101010100";
+    HeConfigInstance.lang = @"";
+    HeConfigInstance.unit = @"";
+    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_AIR_NOW WithSuccess:^(AirBaseClass  *responseObject) {
+        
+        NSLog(@"描述->%@",[responseObject description]);
+        
+    } faileureForError:^(NSError *error) {
+        NSLog(@"error->%@",error);
+        
+    }];
 ```
 
-###  Now的属性
+#### 返回数据
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getNow | now 实况天气 | NowBase
+| 参数       | 描述              | 示例值    |
+| ---------- | ----------------- | --------- |
+| code          | 状态码，具体含义请参考[状态码](/docs/start/status-code)                     | 200                                                                        |
+| updateTime    | 当前[数据最近更新时间](/docs/getting-started/glossary#updatetime)               | 2013-12-30T01:45+08:00                                                     |
+| fxLink | 该城市的天气预播啊自适应网页，可嵌入网站或应用，**可能为空** | http://hfx.link/ae45 |
+| now.pubTime | 实时空气质量数据发布时间 | 2013-12-30T01:45+08:00 |
+| now.aqi      | 实时空气质量指数，[AQI和PM25的关系](https://www.heweather.com/blog/aqi) | 74               |
+| now.level     | 实时空气质量指数等级	 | 2 |
+| now.category     | 实时空气质量指数级别	 | 良 |
+| now.primary     | 实时空气质量的主要污染物，空气质量为优时，返回值为空             | pm2.5             |
+| now.pm10     | 实时 pm10             | 78               |
+| now.pm2p5     | 实时 pm2.5                   | 66               |
+| now.no2      | 实时 二氧化氮          | 40               |
+| now.so2      | 实时 二氧化硫         | 30               |
+| now.co       | 实时 一氧化碳         | 33               |
+| now.o3       | 实时 臭氧                   | 20               |
+| station.pubTime | 国控站点实时空气质量数据发布时间，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回    | 2013-12-30T01:45+08:00 |
+| station.name  | 国控站点名称，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                     | 万寿西宫         |
+| station.cid     | 国控站点ID，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                       | CNA110000        |
+| station.aqi      | 国控站点实时空气质量指数，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回  | 74               |
+| station.level     | 监测站实时空气质量指数等级，仅在国控站点的城市中返回 | 2               |
+| station.category     | 监测站实时空气质量指数级别，仅在国控站点的城市中返回| 良 |
+| station.primary     | 国控站点实时主要污染物，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回。空气质量为优时，返回值为空                                                   | pm25             |
+| station.pm10     | 国控站点实时 pm10，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                          | 78               |
+| station.pm2p5    | 国控站点实时 pm2.5，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                          | 66               |
+| station.no2      | 国控站点实时 二氧化氮，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                      | 40               |
+| station.so2      | 国控站点实时 二氧化硫，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                      | 30               |
+| station.co       | 国控站点实时 一氧化碳，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                      | 33               |
+| station.o3       | 国控站点实时 臭氧，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                          | 20               |
+| daily.fxDate | 空气质量逐天预报日期                                      | 2018-05-31 |
+| daily.aqi  | 空气质量逐天预报指数 | 74         |
+| daily.level | 逐逐天预报的空气质量指数等级| 2         |
+| daily.category     | 逐天预空气质量指数级别 | 良 |
+| daily.primary | 空气质量逐天预报的主要污染物，空气质量为优时，返回值为空     | pm2.5       |
+| hourly.fxTime | 空气质量逐小时预报日期 | 2013-12-30T01:45+08:00       |
+| hourly.aqi  | 空气质量逐小时预报指数 | 74         |
+| hourly.level | 逐逐天预报的空气质量指数等级| 2         |
+| hourly.category     | 逐天预空气质量指数级别 | 良 |
+| houry.primary | 空气质量逐小时预报的主要污染物，空气质量为优时，返回值为空     | pm2.5       |
+| refer.sources | 	原始数据来源，可能为空                            |                                                                            |
+| refer.license | 	使用许可，可能为空                                 |                                                                            |
 
-###  Basic 基础信息
+## 灾害预警
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+接口 | 接口代码（枚举） | 数据类
+--------- | ------------- | -----------
+灾害预警 | INQUIRE_TYPE_WARNING | WarningBaseClass
 
-###  UpdateBean 接口更新时间
+#### 请求参数
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-###  NowBean 实况天气
+**location** {{ site.data.text.required }}
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getFl | 体感温度，默认单位：摄氏度 | 23
-getTmp | 温度，默认单位：摄氏度 | 21
-getCond_code | 实况天气状况代码 | 100
-getCond_txt | 实况天气状况代码 | 晴
-getWind_deg | 风向360角度 | 305
-getWind_dir | 风向 | 西北
-getWind_sc | 风力 | 3-4
-getWind_spd | 风速，公里/小时 | 15
-getHum | 相对湿度 | 40
-getPcpn | 降水量 | 0
-getPres | 大气压强 | 1020
-getVis | 能见度，默认单位：公里 | 10
-getCloud | 云量 | 23
+需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docsgetting-started/glossary#coordinate)（十进制），LocationID可通过[城市搜索](#城市查询)服务获取。例如： location=101010100 或 location=39.92,116.41
 
-##  <span id="逐小时预报">逐小时预报</span>
-###  接口参数说明
+**appKey** {{ site.data.text.required }}
+
+用户认证key，例如 `appKey=123456789ABC`
+
+**lang** {{ site.data.text.optional }}
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+#### 示例代码
+
 ```objc
-/**
- * @param location (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
+ 
+    HeConfigInstance.publicID = @"publicID";
+    HeConfigInstance.appKey = @"key";
+    HeConfigInstance.appType = APP_TYPE_BIZ;    
+    HeConfigInstance.location = @"101010100";
+    HeConfigInstance.lang = @"";
+    HeConfigInstance.unit = @"";
+    [HeConfigInstance weatherWithInquireType: INQUIRE_TYPE_WARNING WithSuccess:^(WarningBaseClass  *responseObject) {
+        
+        NSLog(@"描述->%@",[responseObject description]);
+        
+    } faileureForError:^(NSError *error) {
+        NSLog(@"error->%@",error);
+        
+    }];
 ```
 
-###  Hourly的属性
+#### 返回数据
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getHourly | hourly 逐小时天气 | List&lt;HourlyBase&gt;
+| 参数              | 描述                                                                   | 示例值                                                           |
+| ----------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| code              | 	状态码，具体含义请参考[状态码](/docs/start/status-code)                                              | 200                                                              |
+| updateTime        | 当前[数据最近更新时间](/docs/getting-started/glossary#updatetime)                                        | 2013-12-30T01:45+08:00                                           |
+| fxLink            | 该城市的灾害预警详情自适应网页，可嵌入网站或应用。**可能为空。** | http://hfx.link/ae45                                             |
+| warning.id        | 本条预警的唯一标识，可判断本条预警是否已经存在，id有效期不超过72小时       | 202010110345679813                                               |
+| warning.pubTime   | 预警发布时间                                                           | 2017-10-25T12:03+08:00                                           |
+| warning.title     | 预警信息标题                                                           | 广东省深圳市气象台发布雷电黄色预警                               |
+| warning.startTime | 预警开始时间，**不适用于所有国家，可能为空。**                       | 广东省深圳市气象台发布雷电黄色预警                               |
+| warning.endTime   | 预警结束时间，**不适用于所有国家，可能为空。**                       | 广东省深圳市气象台发布雷电黄色预警                               |
+| warning.status    | 预警状态，**不适用于所有国家，可能为空。**                           | 预警中                                                           |
+| warning.level     | 预警等级                                                               | 黄色                                                             |
+| warning.type      | 预警类型                                                               | 雷电                                                             |
+| warning.txt       | 预警详细文字描述                                                           | 深圳市气象局于10月04日12时59分发布雷电黄色预警信号，请注意防御。 |
+| refer.sources     | 原始数据来源，可能为空                                           |                                                                  |
+| refer.license     | 使用许可，可能为空                                          |                                                                  |
 
-###  BasicBean 基础信息
+## 灾害预警列表
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+接口 | 接口代码（枚举） | 数据类
+--------- | ------------- | -----------
+灾害预警城市列表 | INQUIRE_TYPE_WARNINGLIST | WarningListClass
 
-###  UpdateBean 接口更新时间
+#### 请求参数
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-###  HourlyBean 逐小时天气
+**range** {{ site.data.text.required }}
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTime | 预报时间，格式yyyy-MM-dd HH:mm | 2013-12-30 13:00
-getTmp | 温度 | 2
-getCond_code | 天气状况代码 | 101
-getCond_txt | 天气状况代码 | 多云
-getWind_deg | 风向360角度 | 290
-getWind_dir | 风向 | 西北
-getWind_sc | 风力 | 3-4
-getWind_spd | 风速，公里/小时 | 15
-getHum | 相对湿度 | 30
-getPres | 大气压强 | 1030
-getPop | 降水概率，百分比 | 30
-getDew | 露点温度 | 5
-getCloud | 云量，百分比 | 15
+选择指定的国家，目前仅支持中国。例如`range=cn`。
 
-##  <span id="生活指数">生活指数</span>
-###  接口参数说明
+**appKey** {{ site.data.text.required }}
+
+用户认证key，例如 `appKey=123456789ABC`
+
+#### 示例代码
+
 ```objc
-/**
- * @param location (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
+ 
+    HeConfigInstance.publicID = @"publicID";
+    HeConfigInstance.appKey = @"key";
+    HeConfigInstance.appType = APP_TYPE_BIZ;    
+    HeConfigInstance.range = @"cn";
+    [HeConfigInstance weatherWithInquireType: INQUIRE_TYPE_WARNINGLIST WithSuccess:^(WarningListClass  *responseObject) {
+        
+        NSLog(@"描述->%@",[responseObject description]);
+        
+    } faileureForError:^(NSError *error) {
+        NSLog(@"error->%@",error);
+        
+    }];
 ```
 
-###  Lifestyle的属性
+#### 返回数据
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getLifestyle | LifestyleBean 逐小时天气 | List&lt;Lifestyle&gt;
+| 参数       | 描述              | 示例值    |
+| ---------- | ----------------- | --------- |
+| code | 状态码，具体含义请参考[状态码](/docs/start/status-code)| 200  |
+| updateTime    | 当前[数据最近更新时间](/docs/getting-started/glossary#updatetime)              | 2013-12-30T01:45+08:00                                                     |
+| warningLocList.locationId   | 当前国家预警的城市/地区ID      | 101010100 |
 
-###  Basic 基础信息
+## 生活指数
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+接口 | 接口代码（枚举） | 数据类
+--------- | ------------- | -----------
+当天生活指数| INQUIRE_TYPE_INDICES_1D | IndicesBaseClass
+3天生活指数 | INQUIRE_TYPE_INDICES_3D | IndicesBaseClass
 
-###  Update 接口更新时间
+#### 请求参数
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-###  LifestyleBase 生活指数
+**indices** {{ site.data.text.required }}
 
-属性 | 说明
---------- | -------------
-getBrf | 生活指数简介
-getTxt | 生活指数详细描述
-getType | 生活指数类型 comf：舒适度指数、cw：洗车指数、drsg：穿衣指数、flu：感冒指数、sport：运动指数、trav：旅游指数、uv：紫外线指数、air：空气污染扩散条件指数
+生活指数数据类型，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数。
 
-##  <span id="常规天气数据集合">常规天气数据集合</span>
-###  接口参数说明
+indices内放入需要的INDICES_TYPESTRING类型，如选择`INDICES_TYPE_all`，则不能再使用其他生活指数类型。
+ 
+类型 | DATA_TYPE | 
+--------- | ------------- | 
+INDICES_TYPE_all|全部指数
+INDICES_TYPE_comf| 舒适度指数 
+INDICES_TYPE_cw |洗车指数
+INDICES_TYPE_drsg|穿衣指数
+INDICES_TYPE_flu|感冒指数
+INDICES_TYPE_spt |运动指数
+INDICES_TYPE_trav|旅游指数
+INDICES_TYPE_uv|紫外线指数
+INDICES_TYPE_ap|空气污染扩散条件指数
+INDICES_TYPE_ac|空调开启指数
+INDICES_TYPE_ag |花粉过敏指数
+INDICES_TYPE_gl |太阳镜指数
+INDICES_TYPE_mu|化妆指数
+INDICES_TYPE_dc|晾晒指数
+INDICES_TYPE_ptfc |交通指数
+INDICES_TYPE_fis |钓鱼指数
+INDICES_TYPE_spi|防晒指数
+INDICES_TYPE_ski|滑雪指数
+ 
+**location** {{ site.data.text.required }}
+
+需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docsgetting-started/glossary#coordinate)（十进制），LocationID可通过[城市搜索](#城市查询)服务获取。例如： location=101010100 或 location=39.92,116.41
+
+**appKey** {{ site.data.text.required }}
+
+用户认证key，例如 `appKey=123456789ABC`
+
+#### 示例代码
+
 ```objc
-/**
- * @param location (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
+ 
+    HeConfigInstance.location = @"101010100";
+    HeConfigInstance.appKey = @"key";
+    HeConfigInstance.appType = APP_TYPE_BIZ;
+    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_INDICES_1D WithSuccess:^(IndicesBaseClass  *responseObject) {
+        
+        NSLog(@"描述->%@",[responseObject description]);
+        
+    } faileureForError:^(NSError *error) {
+        NSLog(@"error->%@",error);
+        
+    }];
 ```
+#### 返回数据
 
-###  Weather的属性
+| 参数          | 描述                                                 | 示例值                                                                     |
+| ------------- | ---------------------------------------------------- | -------------------------------------------------------------------------- |
+| code          | 状态码，具体含义请参考[状态码](/docs/start/status-code)                            | 200                                                                        |
+| updateTime    | 当前[数据最近更新时间](/docs/getting-started/glossary#updatetime)                     | 2013-12-30T01:45+08:00                                                     |
+| fxLink        | 该城市的天气预报详情自适应网页，可嵌入网站或应用 | http://hfx.link/ae45                                                       |
+| daily.date    | 预报日期                                             | 2018-05-30                                                                 |
+| daily.type    | 生活指数预报类型                                     | 2                                                                       |
+| daily.name    | 生活指数预报类型的名称                               | 舒适度指数                                                                 |
+| daily.level   | 生活指数预报等级                                     | 1                                                                       |
+| daily.category   | 生活指数预报级别名称                                     |                                                                        |
+| daily.text    | 生活指数预报的详细描述                               | 白天温度适宜，应会感到比较清爽和舒适。 |
+| refer.sources | 原始数据来源，可能为空                        |                                                                            |
+| refer.license | 	使用许可，可能为空                         |                                                                            |
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getDaily_forecast | DailyForecast 逐小时天气 | List&lt;ForecastBase&gt;
-getLifestyle | LifestyleBean 逐小时天气 | List&lt;LifestyleBase&gt;
-getHourly | hourly 逐小时天气 | List&lt;HourlyBase&gt;
-getNow | now 实况天气 | NowBase
+#### 生活指数等级
 
-###  Basic 基础信息
+生活指数等级仅供参考，等级有可能会进行调整。
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+| 生活指数类型名称       | 类型ID | 等级                                                               |
+| ---------------------- | ------ | ------------------------------------------------------------------ |
+| 全部生活指数           | 0      |                                                                    |
+| 运动指数               | 1      | 适宜(1)、较适宜(2)、较不宜(3)                                               |
+| 洗车指数               | 2      | 适宜(1)、较适宜(2)、较不宜(3)、不宜(4)                                         |
+| 穿衣指数               | 3      | 寒冷(1)、冷(2)、较冷(3)、较舒适(4)、舒适(5)、热(6)、炎热(7)                            |
+| 钓鱼指数               | 4      | 适宜(1)、较适宜(2)、不宜(3)                                                 |
+| 紫外线指数             | 5      | 最弱(1)、弱(2)、中等(3)、强(4)、很强(5)                                           |
+| 旅游指数               | 6      | 适宜(1)、较适宜(2)、一般(3)、较不宜(4)、不适宜(5)                                |
+| 花粉过敏指数           | 7      | 极不易发(1)、不易发(2)、较易发(3)、易发(4)、极易发(5)                             |
+| 舒适度指数             | 8      | 舒适(1)、较舒适(2)、较不舒适(3)、很不舒适(4)、极不舒适(5)、不舒适(6)、非常不舒适(7)     |
+| 感冒指数               | 9      | 少发(1)、较易发(2)、易发(3)、极易发(4)                                         |
+| 空气污染扩散条件指数数 | 10     | 优(1)、良(2)、中(3)、较差(4)、很差(5)                                             |
+| 空调开启指数           | 11     | 长时间开启(1)、部分时间开启(2)、较少开启(3)、开启制暖空调(4)                   |
+| 太阳镜指数             | 12     | 不需要(1)、需要(2)、必要(3)、很必要(4)、非常必要(5)                               |
+| 化妆指数               | 13     | 保湿(1)、保湿防晒(2)、去油防晒(3)、防脱水防晒(4)、去油(5)、防脱水(6)、防晒(7)、滋润保湿(8) |
+| 晾晒指数               | 14     | 极适宜(1)、适宜(2)、基本适宜(3)、不太适宜(4)、不宜(5)、不适宜(6)                     |
+| 交通指数               | 15     | 良好(1)、较好(2)、一般(3)、较差(4)、很差(5)                                       |
+| 防晒指数               | 16     | 弱(1)、较弱(2)、中等(3)、强(4)、极强(5)                                           |
+| 滑雪指数               | 17     | 非常适宜(1)、适宜(2)、不适宜(3)、非常不适宜(4)                                           |
 
-###  Update 接口更新时间
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+## 景点天气预报
 
-###  ForecastBase 天气预报
+接口 | 接口代码（枚举） | 数据类
+--------- | ------------- | -----------
+景点实况天气 | INQUIRE_TYPE_WEATHER_POI_NOW | WeatherPoiBaseClass
+景点7天预报 | INQUIRE_TYPE_WEATHER_POI_7D | WeatherPoiBaseClass
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期 | 2013-12-30
-getSr | 日出时间 | 07:36
-getSs | 日落时间 | 16:58
-getMr | 月升时间 | 04:47
-getMs | 月落时间 | 14:59
-getTmp_max | 最高温度 | 4
-getTmp_min | 最低温度 | -5
-getCond_code_d | 白天天气状况代码 | 100
-getCond_code_n | 晚间天气状况代码 | 100
-getCond_txt_d | 白天天气状况描述 | 晴
-getCond_txt_n | 晚间天气状况描述 | 晴
-getWind_deg | 风向360角度 | 310
-getWind_dir | 风向 | 西北风
-getWind_sc | 风力 | 1-2
-getWind_spd | 风速，公里/小时 | 14
-getHum | 相对湿度 | 37
-getPcpn | 降水量 | 0
-getPop | 降水概率 | 0
-getPres | 大气压强 | 1018
-getUv_index | 紫外线强度指数 | 3
-getVis | 能见度，单位：公里 | 10
+#### 请求参数
 
-###  NowBase 实况天气
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getFl | 体感温度，默认单位：摄氏度 | 23
-getTmp | 温度，默认单位：摄氏度 | 21
-getCond_code | 实况天气状况代码 | 100
-getCond_txt | 实况天气状况代码 | 晴
-getWind_deg | 风向360角度 | 305
-getWind_dir | 风向 | 西北
-getWind_sc | 风力 | 3-4
-getWind_spd | 风速，公里/小时 | 15
-getHum | 相对湿度 | 40
-getPcpn | 降水量 | 0
-getPres | 大气压强 | 1020
-getVis | 能见度，默认单位：公里 | 10
-getCloud | 云量 | 23
+**location** {{ site.data.text.required }}
 
-###  HourlyBase 逐小时天气
+需要查询景点的LocationID，LocationID可通过[城市搜索](#城市查询)服务获取。例如： location=101010100
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTime | 预报时间，格式yyyy-MM-dd HH:mm | 2013-12-30 13:00
-getTmp | 温度 | 2
-getCond_code | 天气状况代码 | 101
-getCond_txt | 天气状况代码 | 多云
-getWind_deg | 风向360角度 | 290
-getWind_dir | 风向 | 西北
-getWind_sc | 风力 | 3-4
-getWind_spd | 风速，公里/小时 | 15
-getHum | 相对湿度 | 30
-getPres | 大气压强 | 1030
-getPop | 降水概率，百分比 | 30
-getDew | 露点温度 | 5
-getCloud | 云量，百分比 | 15
+**appKey** {{ site.data.text.required }}
 
-###  LifestyleBase 生活指数
+用户认证key，例如 `appKey=123456789ABC`
 
-属性 | 说明
---------- | -------------
-getBrf | 生活指数简介
-getTxt | 生活指数详细描述
-getType | 生活指数类型 comf：舒适度指数、cw：洗车指数、drsg：穿衣指数、flu：感冒指数、sport：运动指数、trav：旅游指数、uv：紫外线指数、air：空气污染扩散条件指数、ac：空调开启指数、ag：过敏指数、gl：太阳镜指数、mu：化妆指数、airc：晾晒指数、ptfc：交通指数、fsh：钓鱼指数、spi：防晒指数
+**lang** {{ site.data.text.optional }}
 
-##  <span id="格点实况天气">格点实况天气</span>
-###  接口参数说明
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+**unit** {{ site.data.text.optional }}
+
+[度量衡单位参数](/docs/start/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**。
+
+| 语言 | 语言代码 | 常量属性    |
+| ---- | -------- | ----------- |
+| 公制 | m        | UNIT_TYPE_M |
+| 英制 | i        | UNIT_TYPE_I |
+
+#### 示例代码
+
 ```objc
-/**
- * @param location  (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)仅支持所查询的地区经纬度查询
- *                 经纬度格式：纬度,经度（英文,分隔，十进制格式，北纬东经为正，南纬西经为负）
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
+
+    HeConfigInstance.publicID = @"publicID";
+    HeConfigInstance.appKey = @"key";
+    HeConfigInstance.appType = APP_TYPE_BIZ;    
+    HeConfigInstance.location = @"10101010004A";
+    HeConfigInstance.lang = @"";
+    HeConfigInstance.unit = @"";
+    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_POI_NOW WithSuccess:^(WeatherPoiBaseClass  *responseObject) {
+        
+        NSLog(@"描述->%@",[responseObject description]);
+        
+    } faileureForError:^(NSError *error) {
+        NSLog(@"error->%@",error);
+        
+    }];
 ```
+#### 返回数据
 
-###  GridNow的属性
+| 参数              | 描述                                                                              | 示例值           |
+| ----------------- | --------------------------------------------------------------------------------- | ---------------- |
+| code          | 	状态码，具体含义请参考[状态码](/docs/start/status-code)                    | 200                                                                        |
+| updateTime    | 	当前[数据最近更新时间](/docs/getting-started/glossary#updatetime)              | 2013-12-30T01:45+08:00                                                     |
+| fxLink | 该城市的天气预报详情自适应网页，可嵌入网站或应用，**可能为空** | http://hfx.link/ae45 |
+| now.obsTime       | 实况观测时间                                                                      | 2013-12-30T01:45+08:00 |
+| now.temp           | 实况温度，默认单位：摄氏度                                                        | 21               |
+| now.feelsLike            | 实况体感温度，默认单位：摄氏度                                                    | 23               |
+| now.icon      | 当前天气状况和图标的代码，图标可通过[天气状况和图标](/docs/start/icons)下载   | 100              |
+| now.text    | 实况天气状况的文字描述，包括阴晴雨雪等天气状态的描述                              | 晴               |
+| now.windDir       | 实况风向                                                                          | 西北             |
+| now.windScale        | 实况风力等级                                                                      | 3                |
+| now.humidity           | 实况相对湿度，百分比数值                                                          | 40               |
+| now.precip          | 实况降水量，默认单位：毫米                                                        | 1.2              |
+| now.pressure          | 实况大气压强，默认单位：百帕                                                      | 1020             |
+| daily.fxDate      | 预报日期                                                                          | 2018-05-31       |
+| daily.tempMax      | 预报最高温度                                                                      | 4                |
+| daily.tempMin      | 预报最低温度                                                                      | -5               |
+| daily.iconDay   | 预报白天天气状况图标的代码，图标可通过[天气状况和图标](/docs/start/icons)下载 | 100              |
+| daily.textDay | 预报白天天气状况描述                                                              | 晴               |
+| daily.iconNight   | 预报夜间天气状况图标的代码，图标可通过[天气状况和图标](/docs/start/icons)下载 | 100              |
+| daily.textNight | 晚间天气状况描述                                                                  | 晴               |
+| daily.windDirDay    | 预报白天风向                                                                      | 东               |
+| daily.windScaleDay     | 预报白天风力                                                                      | 2-3              |
+| daily.windDirNight    | 预报夜间风向                                                                      | 东               |
+| daily.windScaleNight     | 预报夜间风力                                                                      | 2-3              |
+| refer.sources | 	原始数据来源，可能为空                             |                                                                            |
+| refer.license | 使用许可，可能为空                                 |                                                                            |
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | GridBasic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getGrid_now | GridNowBase 格点实况天气 | GridNowBase
+## 历史天气
 
-###  GridBasic 基础信息
+接口 | 接口代码（枚举） | 数据类
+--------- | ------------- | -----------
+历史天气 | INQUIRE_TYPE_HISTORICAL_WEATHER | WeatherHistoricalBaseClass
+历史空气质量 | INQUIRE_TYPE_HISTORICAL_AIR | WeatherHistoricalBaseClass
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+#### 请求参数
 
-###  Update 接口更新时间
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+**location** {{ site.data.text.required }}
 
-###  GridNowBase 格点实况天气
+需要查询地区的LocationID，LocationID可通过[城市搜索](#城市查询)服务获取。例如： location=101010100
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTime | 预报时间，格式yyyy-MM-dd HH:mm | 2013-12-30 13:00
-getTmp | 温度 | 2
-getCond_code | 天气状况代码 | 101
-getCond_txt | 天气状况代码 | 多云
-getWind_dir | 风向 | 西北
-getWind_sc | 风力 | 3-4
-getHum | 相对湿度 | 30
-getPcpn | 1小时降水量 | 10
-getPcpn_10m | 10分钟降水量 | 10
-getPres | 大气压强 | 1030
+**date** {{ site.data.text.required }}
 
-##  <span id="格点7天预报">格点7天预报</span>
-###  接口参数说明
+选择获取历史的日期限度，最多可选择最近10天的数据，例如今天是7月5日，最多可获取6月25日至7月4日的历史数据。日期格式为yyyyMMdd，例如 `date=20200531`
+
+**appKey** {{ site.data.text.required }}
+
+
+用户认证key，例如 `appKey=123456789ABC`
+
+**lang** {{ site.data.text.optional }}
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+**unit** {{ site.data.text.optional }}
+
+[度量衡单位参数](/docs/start/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**。
+
+| 语言 | 语言代码 | 常量属性    |
+| ---- | -------- | ----------- |
+| 公制 | m        | UNIT_TYPE_M |
+| 英制 | i        | UNIT_TYPE_I |
+
+#### 示例代码
+
 ```objc
-/**
- * @param location  (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)仅支持所查询的地区经纬度查询
- *                 经纬度格式：纬度,经度（英文,分隔，十进制格式，北纬东经为正，南纬西经为负）
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
+
+     //历史天气
+    HeConfigInstance.publicID = @"publicID";
+    HeConfigInstance.appKey = @"key";
+    HeConfigInstance.appType = APP_TYPE_BIZ;    
+    HeConfigInstance.location = @"101010100";
+    HeConfigInstance.date = @"20200425";
+    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_HISTORICAL_WEATHER WithSuccess:^(WeatherHistoricalBaseClass  *responseObject) {
+        
+        NSLog(@"描述->%@",[responseObject description]);
+        
+    } faileureForError:^(NSError *error) {
+        NSLog(@"error->%@",error);
+        
+    }];
+    //历史空气质量
+      HeConfigInstance.publicID = @"publicID";
+    HeConfigInstance.appKey = @"key";
+    HeConfigInstance.appType = APP_TYPE_BIZ;    HeConfigInstance.location = @"101010100";
+    HeConfigInstance.date = @"20200425";
+    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_HISTORICAL_AIR WithSuccess:^(WeatherHistoricalBaseClass  *responseObject) {
+        
+        NSLog(@"描述->%@",[responseObject description]);
+        
+    } faileureForError:^(NSError *error) {
+        NSLog(@"error->%@",error);
+        
+    }];
 ```
+#### 返回数据
 
-###  GridForecast的属性
+| 参数       | 描述              | 示例值    |
+| ---------- | ----------------- | --------- |
+| code | 	状态码，具体含义请参考[状态码](/docs/start/status-code)| 200  |
+| fxLink | 所查询城市的历史天气和历史空气质量网页，自适应PC和移动端，便于嵌入你的网站或应用。仅限中国城市返回。 | http://hfx.link/ae45 |
+| weatherDaily.date   | 历史当天天气日期     | 2018-05-31 |
+| weatherDaily.sunrise     | 当天日出时间 | 07:36      |
+| weatherDaily.sunset     | 当天日落时间 | 16:58      |
+| weatherDaily.moonrise     | 当天月升时间 | 04:47      |
+| weatherDaily.moonset     | 当天月落时间 | 14:59      |
+| weatherDaily.moonPhase     | 当天月相名称 | 上弦月      |
+| weatherDaily.tempMax | 当天最高温度 | 4          |
+| weatherDaily.tempMin | 当天最低温度 | -5         |
+| weatherDaily.humidity    | 当天相对湿度 | 37         |
+| weatherDaily.precip   | 当天降水量   | 0          |
+| weatherDaily.pressure   | 当天大气压强 | 1018       |
+| weatherHourly.time      | 历史当天天气时间 | 2013-12-30T01:45+08:00 |
+| weatherHourly.temp       | 当天每小时温度                       | 2                |
+| weatherHourly.icon | 当天每小时天气状况图标的代码，图标可通过[天气状况和图标](/docs/start/icons)下载              | 101              |
+| weatherHourly.text  | 当天每小时天气状况代码               | 多云             |
+| weatherHourly.precip      | 当天每小时累计降水量           | 1.2              |
+| weatherHourly.windDir  | 当天每小时风向                       | 西北             |
+| weatherHourly.windScale   | 当天每小时风力                       | 4                |
+| weatherHourly.windSpeed  | 当天每小时风速，公里/小时            | 15               |
+| weatherHourly.wind360  | 当天每小时风向360角度            | 305               |
+| weatherHourly.humidity       | 当天每小时相对湿度                   | 30               |
+| weatherHourly.pressure      | 当天每小时大气压强                   | 1030             |
+| airHourly.pubTime | 历史当天空气质量数据发布时间,格式yyyy-MM-dd HH:mm | 2013-12-30T01:45+08:00 |
+| airHourly.aqi     | 当天每小时空气质量指数                      | 74               |
+| airHourly.primary    | 当天每小时主要污染物                        | pm2.5            |
+| airHourly.level    | 当天每小时空气质量指数等级                          | 2               |
+| airHourly.category    | 当天每小时空气质量指数级别                         | 良               |
+| airHourly.pm10    | 当天每小时pm10                              | 78               |
+| airHourly.pm2p5   | 当天每小时pm2.5                              | 66               |
+| airHourly.no2     | 当天每小时二氧化氮                          | 40               |
+| airHourly.so2     | 当天每小时二氧化硫                          | 30               |
+| airHourly.co      | 当天每小时一氧化碳                          | 33               |
+| airHourly.o3      | 当天每小时臭氧                              | 20               |
+| refer.sources | 原始数据来源，可能为空                             |                                                                            |
+| refer.license | 使用许可，可能为空                                |                                                                            |
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | GridBasic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getGrid_forecast | GridForecastBase 格点实况天气 | List&lt;GridForecastBase&gt;
+## 太阳和月亮
 
-###  GridBasic 基础信息
+接口 | 接口代码（枚举） | 数据类
+--------- | ------------- | -----------
+太阳和月亮 | INQUIRE_TYPE_SUNMOON | SunMoonBaseModel
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+#### 请求参数
 
-###  Update 接口更新时间
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+**location** {{ site.data.text.required }}
 
-###  GridForecastBase 格点预报天气
+需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docsgetting-started/glossary#coordinate)（十进制），LocationID可通过[城市搜索服务](/docs/api/geo)获取。例如：`location=101010100` 或 `location=116.41,39.92`
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期，格式yyyy-MM-dd | 2013-12-30
-getTmp_max | 最高温度 | 4
-getTmp_min | 最低温度 | -5
-getCond_code_d | 白天天气状况代码 | 100
-getCond_code_n | 晚间天气状况代码 | 100
-getCond_txt_d | 白天天气状况描述 | 晴
-getCond_txt_n | 晚间天气状况描述 | 晴
-getWind_dir_d | 白天风向 | 西北
-getWind_dir_n | 夜间风向 | 西北
-getWind_sc_d | 白天风力 | 3-4
-getWind_sc_n | 夜间风力 | 3-4
+**date** {{ site.data.text.required }}
 
-##  <span id="格点逐小时预报">格点逐小时预报</span>
-###  接口参数说明
+选择日期，最多可选择最近60天的数据。日期格式为yyyyMMdd，例如 date=20200531
+
+**appKey** {{ site.data.text.required }}
+
+用户认证key，例如 `appKey=123456789ABC`
+
+**lang** {{ site.data.text.optional }}
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+#### 示例代码
+
 ```objc
-/**
- * @param location  (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)仅支持所查询的地区经纬度查询
- *                 经纬度格式：纬度,经度（英文,分隔，十进制格式，北纬东经为正，南纬西经为负）
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
+      HeConfigInstance.publicID = @"publicID";
+    HeConfigInstance.appKey = @"key";
+    HeConfigInstance.appType = APP_TYPE_BIZ;    
+    HeConfigInstance.location = @"101010100";
+    HeConfigInstance.date = @"20200425";
+    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_SUNMOON WithSuccess:^(SunMoonBaseModel  *responseObject) {
+        
+        NSLog(@"描述->%@",[responseObject description]);
+        
+    } faileureForError:^(NSError *error) {
+        NSLog(@"error->%@",error);
+        
+    }];
+```
+     
+#### 返回数据
+
+| 参数                   | 描述                                                               | 示例值                 |
+| ---------------------- | ------------------------------------------------------------------ | ---------------------- |
+| code                   | 状态码，具体含义请参考[状态码](/docs/start/status-code)         | 200                    |
+| updateTime             | 当前[数据最近更新时间](/docs/getting-started/glossary#updatetime) | 2013-12-30T01:45+08:00 |
+| fxLink                 | 该城市的天气预报详情自适应网页，可嵌入网站或应用               | http://hfx.link/ae45   |
+| sunrise                | 日出时间                                                           | 2013-12-30T05:44+08:00 |
+| sunset                 | 日落时间                                                           | 2013-12-30T17:02+08:00 |
+| moonrise               | 月升时间                                                           | 2013-12-30T13:19+08:00 |
+| moonset                | 月落时间                                                           | 2013-12-31T23:31+08:00 |
+| moonPhase.fxTime       | 月相逐小时预报时间                                                 | 2013-12-31T23:31+08:00 |
+| moonPhase.value        | 月相数值                                                           | 0.25                   |
+| moonPhase.name         | 月相名字                                                           | 上弦月                 |
+| moonPhase.illumination | 月亮照明度，百分比数值                                             | 30                   |
+| refer.sources          | 原始数据来源，**可能为空**                                         |                        |
+| refer.license          | 数据许可证                                                         |                        |
+
+## 城市查询
+
+接口 | 接口代码（枚举） | 数据类
+--------- | ------------- | -----------
+城市查询 | INQUIRE_TYPE_GEO_CITY_LOOKUP | GeoBaseClass
+
+#### 请求参数
+
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
+
+**location** {{ site.data.text.required }}
+
+输入需要查询的城市名称，可使用Location ID、中文、英文、以逗号分隔的经度/纬度坐标、ADCode（仅限中国城市）。例如location=beijing， location=116.4,39.1
+
+**mode** {{ site.data.text.optional }}
+
+搜索查询的方式。在使用名称搜索的时候，可选择模糊搜索或精准搜索，精准搜索最多返回1个结果，模糊搜索最多返回10个结果。**默认精准搜索 mode = SERCHMODE_TYPE_EXACT
+。**
+
+类型 | SEARCH_TYPE | 
+--------- | ------------- | 
+SERCHMODE_TYPE_EXACT | 精准查询，默认
+SERCHMODE_TYPE_FUZZY | 模糊查询
+
+**appKey** {{ site.data.text.required }}
+
+用户认证key，例如 `appKey=123456789ABC`
+
+**lang** {{ site.data.text.optional }}
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+**range** {{ site.data.text.optional }}
+
+搜索范围，**默认搜索全球城市。** 可设定只在某个国家范围内进行搜索，国家名称需使用[ISO 3166 所定义的国家代码](https://www.heweather.com/blog/iso-3166)。
+
+- `world` 全球城市范围，默认
+- `cn` 中国城市范围，可替换为其他国家的 [ISO 3166 国家代码](https://www.heweather.com/blog/iso-3166)，例如`range=us`
+
+**number** {{ site.data.text.optional }}
+
+返回城市的数量，取值范围1-20，默认返回10个结果。
+
+#### 示例代码
+
+```objc 
+    HeConfigInstance.publicID = @"publicID";
+    HeConfigInstance.appKey = @"key";
+    HeConfigInstance.appType = APP_TYPE_BIZ;    
+    HeConfigInstance.location = @"beijing";
+    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_CITY_LOOKUP WithSuccess:^(GeoBaseClass  *responseObject) {
+        
+        NSLog(@"描述->%@",[responseObject description]);
+        
+    } faileureForError:^(NSError *error) {
+        NSLog(@"error->%@",error);
+        
+    }];
+    
 ```
 
-###  GridHourly的属性
+#### 返回参数和数值说明
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | GridBasic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getGrid_hourly | GridHourlyBase 格点实况天气 | List&lt;GridHourlyBase&gt;
+| 参数         | 描述                                             | 示例                 |
+| ------------ | ------------------------------------------------ | -------------------- |
+| code       | 状态码，具体含义请参考[状态码](/docs/start/status-code)           | 200                  |
+| location.name | 地区/城市名称                                    | 南山区               |
+| location.cid   | 地区/城市ID                                      | 101280604            |
+| location.lat          | 地区/城市纬度                                    | 22.53122             |
+| location.lon          | 地区/城市经度                                    | 113.92942            |
+| location.adm2         | 该地区/城市的上级行政区划名称                            | 深圳市               |
+| location.adm1         | 该地区/城市所属一级行政区域                          | 广东省               |
+| location.country         | 该地区/城市所属国家名称                          | 中国                 |
+| location.tz           | 该地区/城市所在时区                              | +0800                |
+| location.utcOffset          | 该地区/城市目前与UTC时间偏移的小时数，参考详细说明         | +08:00   |
+| location.isDst           | 该地区/城市是否当前处于夏令时                               | 0                |
+| location.type         | 该地区/城市的属性                                | city                 |
+| location.rank         | 地区评分                                         | 10                   |
+| location.fxLink       | 该地区的天气预报网页链接，便于嵌入你的网站或应用 | http://hfx.link/34T5 |
+| refer.sources | 原始数据来源，可能为空                             |                                                                            |
+| refer.license | 	使用许可，可能为空                                 |                                                                            |
 
-###  GridBasic 基础信息
+## 热门城市查询
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+接口 | 接口代码（枚举） | 数据类
+--------- | ------------- | -----------
+热门城市查询 | INQUIRE_TYPE_GEO_TOPCITY | GeoBaseClass
 
-###  Update 接口更新时间
+#### 请求参数
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-###  GridHourlyBase 格点逐小时天气预报
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTime | 预报时间，格式yyyy-MM-dd HH:mm | 2013-12-30 13:00
-getTmp | 温度 | 2
-getCond_code | 天气状况代码 | 101
-getCond_txt | 天气状况代码 | 多云
-getWind_dir | 风向 | 西北
-getWind_sc | 风力 | 3-4
-getPcpn | 降水量 | 10
+**appKey** {{ site.data.text.required }}
 
 
-##  <span id="分钟级降雨（邻近预报）">分钟级降雨（邻近预报）</span>
-###  接口参数说明
-```objc
-/**
- * @param location  (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)仅支持所查询的地区经纬度查询
- *                 经纬度格式：纬度,经度（英文,分隔，十进制格式，北纬东经为正，南纬西经为负）
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
+用户认证key，例如 `appKey=123456789ABC`
+
+**lang** {{ site.data.text.optional }}
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+**range** {{ site.data.text.optional }}
+
+搜索范围，**默认搜索全球城市。** 可设定只在某个国家范围内进行搜索，国家名称需使用[ISO 3166 所定义的国家代码](https://www.heweather.com/blog/iso-3166)。
+
+- `world` 全球城市范围，默认
+- `cn` 中国城市范围，可替换为其他国家的 [ISO 3166 国家代码](https://www.heweather.com/blog/iso-3166)，例如`range=us`
+
+**number** {{ site.data.text.optional }}
+
+返回城市的数量，取值范围1-20，默认返回10个结果。
+
+
+#### 示例代码
+
+```objc 
+
+    HeConfigInstance.publicID = @"publicID";
+    HeConfigInstance.appKey = @"key";
+    HeConfigInstance.appType = APP_TYPE_BIZ;    
+    HeConfigInstance.location = @"beijing";
+    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_TOPCITY WithSuccess:^(GeoBaseClass  *responseObject) {
+        
+        NSLog(@"描述->%@",[responseObject description]);
+        
+    } faileureForError:^(NSError *error) {
+        NSLog(@"error->%@",error);
+        
+    }];
+    
 ```
 
-###  GirdMinute的属性
+#### 返回参数和数值说明
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | GridBasic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getPcpn_type | 降水类型，rain雨，snow雪 | GridMinutePcpnType
-getPcpn_5m | GridMinutePcpn5m 未来两小时5分钟降水量 | List&lt;GridMinutePcpn5m&gt;
-getGrid_minute_forecast | GridMinuteForecast 临近预报 | GridMinuteForecast
+| 参数         | 描述                                             | 示例                 |
+| ------------ | ------------------------------------------------ | -------------------- |
+| code       | 状态码，具体含义请参考[状态码](/docs/start/status-code)           | 200                  |
+| location.name | 地区/城市名称                                    | 南山区               |
+| location.cid   | 地区/城市ID                                      | 101280604            |
+| location.lat          | 地区/城市纬度                                    | 22.53122             |
+| location.lon          | 地区/城市经度                                    | 113.92942            |
+| location.adm2         | 该地区/城市的上级行政区划名称                            | 深圳市               |
+| location.adm1         | 该地区/城市所属一级行政区域                          | 广东省               |
+| location.country         | 该地区/城市所属国家名称                          | 中国                 |
+| location.tz           | 该地区/城市所在时区                              | +0800                |
+| location.utcOffset          | 该地区/城市目前与UTC时间偏移的小时数，参考详细说明         | +08:00   |
+| location.isDst           | 该地区/城市是否当前处于夏令时                               | 0                |
+| location.type         | 该地区/城市的属性                                | city                 |
+| location.rank         | 地区评分                                         | 10                   |
+| location.fxLink       | 该地区的天气预报网页链接，便于嵌入你的网站或应用 | http://hfx.link/34T5 |
+| refer.sources | 原始数据来源，可能为空                             |                                                                            |
+| refer.license | 	使用许可，可能为空                                 |                                                                            |
 
-###  GridBasic 基础信息
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+## POI信息搜索
 
-###  Update 接口更新时间
+接口 | 接口代码（枚举） | 数据类
+--------- | ------------- | -----------
+POI信息搜索 | INQUIRE_TYPE_GEO_POI_LOOKUP | GeoBaseClass
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+#### 请求参数
 
-###  GridMinutePcpnType 降水类型
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getPcpn_type | rain雨，snow雪 | rain
+**location** {{ site.data.text.required }}
 
-###  GridMinuteForecast 临近预报
+输入需要查询的POI名称，可使用中文、英文。最少一个汉字或2个英文字母，返回结果将按照相关性和Rank值进行排列。例如location=故宫
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期，格式yyyy-MM-dd HH:mm | 2013-12-30 20:35
-getTxt | 分钟降雨描述 | 未来2小时无降雨
+**appKey** {{ site.data.text.required }}
 
-###  GridMinutePcpn5m 未来两小时5分钟降水量
+用户认证key，例如 `appKey=123456789ABC`
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTime | 时间，格式yyyy-MM-dd HH:mm | 2013-12-30 20:35
-getPcpn | 降水量 | 10
+**type** {{ site.data.text.required }}
 
-##  <span id="天气灾害预警">天气灾害预警</span>
-###  接口参数说明
-```objc
-/**
- * @param location (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
+POI类型，可选择搜索某一类型的POI，目前仅限景点。例如type=scenic
+
+**lang** {{ site.data.text.optional }}
+
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
+
+**city** {{ site.data.text.optional }}
+
+选择POI所在城市，可设定只搜索在特定城市内的POI信息。城市名称可以是中文、英文或城市的LocationID。默认全世界范围。
+
+城市名称需要精准匹配，建议使用LocaitonID，如城市名称无法识别，则数据返回为空。
+
+**number** {{ site.data.text.optional }}
+
+返回城市的数量，取值范围1-20，默认返回10个结果。
+
+
+#### 示例代码
+
+```objc 
+
+    HeConfigInstance.publicID = @"publicID";
+    HeConfigInstance.appKey = @"key";
+    HeConfigInstance.appType = APP_TYPE_BIZ;    
+    HeConfigInstance.location = @"beijing";
+    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_POI_LOOKUP WithSuccess:^(GeoBaseClass  *responseObject) {
+        
+        NSLog(@"描述->%@",[responseObject description]);
+        
+    } faileureForError:^(NSError *error) {
+        NSLog(@"error->%@",error);
+        
+    }];
+    
 ```
 
-###  Alarm的属性
+#### 返回参数和数值说明
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getAlarm | 灾害预警 | List&lt;AlarmBase&gt;
+| 参数         | 描述                                             | 示例                 |
+| ------------ | ------------------------------------------------ | -------------------- |
+| code       | 状态码，具体含义请参考[状态码](/docs/start/status-code)           | 200                  |
+| location.name | 地区/城市名称                                    | 南山区               |
+| location.cid   | 地区/城市ID                                      | 101280604            |
+| location.lat          | 地区/城市纬度                                    | 22.53122             |
+| location.lon          | 地区/城市经度                                    | 113.92942            |
+| location.adm2         | 该地区/城市的上级行政区划名称                            | 深圳市               |
+| location.adm1         | 该地区/城市所属一级行政区域                          | 广东省               |
+| location.country         | 该地区/城市所属国家名称                          | 中国                 |
+| location.tz           | 该地区/城市所在时区                              | +0800                |
+| location.utcOffset          | 该地区/城市目前与UTC时间偏移的小时数，参考详细说明         | +08:00   |
+| location.isDst           | 该地区/城市是否当前处于夏令时                               | 0                |
+| location.type         | 该地区/城市的属性                                | city                 |
+| location.rank         | 地区评分                                         | 10                   |
+| location.fxLink       | 该地区的天气预报网页链接，便于嵌入你的网站或应用 | http://hfx.link/34T5 |
+| refer.sources | 原始数据来源，可能为空                             |                                                                            |
+| refer.license | 	使用许可，可能为空                                 |                                                                            |
 
-###  Basic 基础信息
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
+## POI范围搜索
 
-###  Update 接口更新时间
+接口 | 接口代码（枚举） | 数据类
+--------- | ------------- | -----------
+POI范围搜索 | INQUIRE_TYPE_GEO_POI_RANGE | GeoBaseClass
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+#### 请求参数
 
-###  AlarmBase 预警信息
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTitle | 预警信息标题 | 广东省深圳市气象台发布雷电黄色预警
-getStat | 预警状态 | 预警中
-getLevel | 预警等级：蓝黄橙红白 | 黄色
-getType | 预警类型，全部类型参考本文简介 | 雷电
-getTxt | 预警详细信息 | 深圳市气象局于10月04日12时59分发布雷电黄色预警信号，请注意防御。
+**location** {{ site.data.text.required }}
 
-##  <span id="天气灾害预警集合">天气灾害预警集合</span>
+输入需要查询的POI坐标，坐标以逗号分隔的经度/纬度坐标。例如location=116.4,39.1
 
-###  AlarmAll的属性
+**appKey** {{ site.data.text.required }}
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getAlarm_list | 灾害预警 | List&lt;AlarmAllBase&gt;
+用户认证key，例如 `appKey=123456789ABC`
 
-###  Update 接口更新时间
+**radius** {{ site.data.text.optional }}
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
+搜索范围，可设置搜索半径，取值范围1-50，单位：公里。默认5公里。
 
-###  AlarmAllBase 预警信息
+**lang** {{ site.data.text.optional }}
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getCid | 地区／城市ID | CN101280601
-getTitle | 预警信息标题 | 广东省深圳市气象台发布雷电黄色预警
-getStat | 预警状态 | 预警中
-getLevel | 预警等级 | 黄色
-getType | 预警类型 | 雷电
-getTxt | 预警详细信息 | 深圳市气象局于10月04日12时59分发布雷电黄色预警信号，请注意防御。
+多语言设置，支持31种语言，**默认中文**。具体的语言参数值请参考[多语言参数值](/docs/start/language)。
 
-##  <span id="景点天气预报">景点天气预报</span>
-###  接口参数说明
-```objc
-/**
- * @param location 景点天气仅支持使用景点ID获取数据
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
+**number** {{ site.data.text.optional }}
+
+返回城市的数量，取值范围1-20，默认返回10个结果。
+
+#### 示例代码
+
+```objc 
+
+    HeConfigInstance.publicID = @"publicID";
+    HeConfigInstance.appKey = @"key";
+    HeConfigInstance.appType = APP_TYPE_BIZ;    
+    HeConfigInstance.location = @"116.4,39.1";
+    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_POI_RANGE WithSuccess:^(GeoBaseClass  *responseObject) {
+        
+        NSLog(@"描述->%@",[responseObject description]);
+        
+    } faileureForError:^(NSError *error) {
+        NSLog(@"error->%@",error);
+        
+    }];
+    
 ```
 
-###  ScenicWeather的属性
+#### 返回参数和数值说明
+
+| 参数         | 描述                                             | 示例                 |
+| ------------ | ------------------------------------------------ | -------------------- |
+| code       | 状态码，具体含义请参考[状态码](/docs/start/status-code)           | 200                  |
+| location.name | 地区/城市名称                                    | 南山区               |
+| location.cid   | 地区/城市ID                                      | 101280604            |
+| location.lat          | 地区/城市纬度                                    | 22.53122             |
+| location.lon          | 地区/城市经度                                    | 113.92942            |
+| location.adm2         | 该地区/城市的上级行政区划名称                            | 深圳市               |
+| location.adm1         | 该地区/城市所属一级行政区域                          | 广东省               |
+| location.country         | 该地区/城市所属国家名称                          | 中国                 |
+| location.tz           | 该地区/城市所在时区                              | +0800                |
+| location.utcOffset          | 该地区/城市目前与UTC时间偏移的小时数，参考详细说明         | +08:00   |
+| location.isDst           | 该地区/城市是否当前处于夏令时                               | 0                |
+| location.type         | 该地区/城市的属性                                | city                 |
+| location.rank         | 地区评分                                         | 10                   |
+| location.fxLink       | 该地区的天气预报网页链接，便于嵌入你的网站或应用 | http://hfx.link/34T5 |
+| refer.sources | 原始数据来源，可能为空                             |                                                                            |
+| refer.license | 	使用许可，可能为空                                 |                                                                            |
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getDaily_forecast | 天气预报 | List&lt;ForecastBase&gt;
 
-###  Basic 基础信息
 
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
 
-###  Update 接口更新时间
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
-
-###  ForecastBase 逐天预报
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期 |
-getSr | 日出时间 | 04:50
-getSs | 日落时间 | 18:06
-getTmp_max | 最高温度 | 4
-getTmp_min | 最低温度 | -5
-getCond_code_d | 白天天气状况代码 | 100
-getCond_code_n | 晚间天气状况代码 | 100
-getCond_txt_d | 白天天气状况描述 | 晴
-getCond_txt_n | 晚间天气状况描述 | 晴
-getWind_dir | 风向 | 东
-getWind_sc | 风力 | 2-3
-
-##  <span id="空气质量实况">空气质量实况</span>
-###  接口参数说明
-```objc
-/**
- * @param location (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询
- *                 经纬度格式：纬度,经度（英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
-```
-
-###  AirNow的属性
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getAir_now_station | AQI站点实况 | List&lt;AirNowStation&gt;
-getAir_now_city | AQI城市实况 | AirNowCity
-
-###  Basic 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
-
-###  Update 接口更新时间
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
-
-###  AirNowCity AQI城市实况
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getPub_time | 数据发布时间,格式yyyy-MM-dd HH:mm | 2017-03-20 12:30
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
-
-###  AirNowStation AQI站点实况
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-pgetPub_time | 数据发布时间,格式yyyy-MM-dd HH:mm | 2017-03-20 12:30
-getAir_sta | 站点名称 | 万寿西宫
-getAsid | 站点ID，请参考所有站点ID | CNA110000
-getLat | 站点纬度 | 116.405285
-getLon | 站点经度 | 39.904989
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
-
-##  <span id="空气质量7天预报">空气质量7天预报</span>
-###  接口参数说明
-```objc
-/**
- * @param location (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询
- *                 经纬度格式：纬度,经度（英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
-```
-
-###  AirForecast的属性
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getAir_forecast | 空气质量 AQI 7天预报 | List&lt;AirForecastBase&gt;
-
-###  Basic 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
-
-###  Update 接口更新时间
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
-
-###  AirForecastBase AQI城市实况
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期,格式yyyy-MM-dd | 2017-08-09
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
-
-##  <span id="空气质量逐小时预报">空气质量逐小时预报</span>
-###  接口参数说明
-```objc
-/**
- * @param location (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
-```
-
-###  AirHourly的属性
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getAir_hourly | 空气质量 AQI 7天预报 | List&lt;AirHourlyBase&gt;
-
-###  Basic 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
-
-###  Update 接口更新时间
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
-
-###  AirHourlyBase AQI城市实况
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTime | 预报日期，格式yyyy-MM-dd HH:mm | 2017-08-09 14:00
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
-
-##  <span id="空气质量数据集合">空气质量数据集合</span>
-###  接口参数说明
-```objc
-/**
- * @param location (如果不添加此参数,framework 会根据GPS联网定位,根据当前经纬度查询)所查询的地区，可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
- */
-```
-
-###  Air的属性
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getAir_hourly | 空气质量 AQI 7天预报 | List&lt;AirHourlyBase&gt;
-getAir_forecast | 空气质量 AQI 7天预报 | List&lt;AirForecastBase&gt;
-getAir_now_station | AQI站点实况 | List&lt;AirNowStation&gt;
-getAir_now_city | AQI城市实况 | AirNowCity
-
-###  Basic 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
-
-###  Update 接口更新时间
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
-
-###  AirNowCity AQI城市实况
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getPub_time | 数据发布时间,格式yyyy-MM-dd HH:mm | 2017-03-20 12:30
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
-
-###  AirNowStation AQI站点实况
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-pgetPub_time | 数据发布时间,格式yyyy-MM-dd HH:mm | 2017-03-20 12:30
-getAir_sta | 站点名称 | 万寿西宫
-getAsid | 站点ID，请参考所有站点ID | CNA110000
-getLat | 站点纬度 | 116.405285
-getLon | 站点经度 | 39.904989
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
-
-###  AirForecastBase AQI城市逐天预报
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期,格式yyyy-MM-dd | 2017-08-09
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
-
-###  AirHourlyBase AQI城市逐小时预报
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getTime | 预报日期，格式yyyy-MM-dd HH:mm | 2017-08-09 14:00
-getAqi | 空气质量指数，AQI和PM25的关系 | 74
-getMain | 主要污染物 | pm25
-getQlty | 空气质量，取值范围:优，良，轻度污染，中度污染，重度污染，严重污染，查看计算方式 | 良
-getPm10 | pm10 | 78
-getPm25 | pm25 | 66
-getNo2 | 二氧化氮 | 40
-getSo2 | 二氧化硫 | 30
-getCo | 一氧化碳 | 33
-getO3 | 臭氧 | 20
-
-##  <span id="卫星云图">卫星云图</span>
-###  接口参数说明 （本接口直接返回当前时间最新的一张卫星云图，图片格式为 .jpg）
-
-##  <span id="太阳高度">太阳高度</span>
-###  接口参数说明
-```objc
-/**
- * @param lat      所查询地区的纬度(纬度采用十进制格式，北纬为正，南纬为负)
- * @param lon      所查询地区的经度(经度采用十进制格式，东经为正，西经为负)
- * @param alt      海拔高度，单位：米
- * @param date     查询日期，格式为yyyyMMdd
- * @param time     查询时间，格式为HHmm，24 时制
- * @param tz       查询地区所在时区
- */
-```
-
-###  SolarElevationAngle 数据类
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getStatus | 接口状态 | ok
-getSolar_elevation_angle | 基础信息 | SolarElevationAngleBase
-
-###  SolarElevationAngleBase 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getSolar_elevation_angle | 太阳高度角 | 89
-getSolar_azimuth_angle | 太阳方位角，正北顺时针方向角度 | 190
-getSolar_hour | 太阳时 | 0923
-getHour_angle | 时角 | -45.5
-
-##  <span id="日出日落">日出日落</span>
-###  接口参数说明
-```objc
-/**
- * @param location 可通过该地区名称、ID、Adcode、IP和经纬度进行查询经纬度格式：纬度,经度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     多语言，可以不使用该参数，默认为简体中文，其他语言请参照多语言对照表
- */
-```
-
-###  SolarSunriseSunset 数据类
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getUpdate | 接口更新时间 | Update
-getSunrise_sunset | 日出日落信息 | List&lt;SolarSunriseSunsetBase&gt;
-
-###  Basic 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
-
-###  Update 接口更新时间
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLoc | 当地时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 12:34
-getUtc | UTC时间，24小时制，格式yyyy-MM-dd HH:mm | 2017-10-25 04:34
-
-###  SolarSunriseSunsetBase 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 日期 | 1999-05-01
-getSr | 日出时间 | 05:34
-getSr | 日落时间 | 18:34
-
-##  <span id="历史数据">历史数据</span>
-###  接口参数说明
-```objc
-/**
- * @param location 城市ID
- * @param date     日期
- */
-```
-
-###  Historical 数据类
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | Basic
-getStatus | 接口状态 | ok
-getDaily_weather | 当天概况 | List&lt;HistoricalDaily&gt;
-getHourly_weather | 当天逐小时数据 | List&lt;HistoricalHourly&gt;
-
-###  Basic 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00
-
-###  HistoricalDaily 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getDate | 预报日期 | 2013-12-30
-getSr | 日出时间 | 07:36
-getSs | 日落时间 | 16:58
-getMr | 月升时间 | 04:47
-getMs | 月落时间 | 14:59
-getTmp_max | 最高温度 | 4
-getTmp_min | 最低温度 | -5
-getHum | 相对湿度 | 37
-getPcpn | 降水量 | 0
-getPres | 大气压强 | 1018
-
-###  HistoricalHourly 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBrief |  天气状况描述 | 晴
-getCode | 天气状况代码 | 100
-getDate | 时间 | 2014-05-01
-getDir | 风向 | 东风
-getHum | 湿度 | 52
-getPres | 气压 | 1017
-getSc | 风力 | 3-4
-getSpd | 风速 | 20
-getTmp | 温度 | 15
-
-##  <span id="城市查询">城市查询</span>
-###  接口参数说明
-```objc
-/**
- * @param location (输入需要查询的城市名称，支持模糊搜索，可输入中文（至少一个汉字）、英文（至少2个字母）、IP地址、坐标（经度在前纬度在后，英文,分割）、ADCode
- * @param group    城市查询分组，默认为全球城市，可按照任意国家范围进行查询，国家名称需使用[ISO 3166 所定义的国家代码](https://www.heweather.com/blog/iso-3166)
-                   特殊值：world，查询全球城市
-                   特殊值：scenic，查询中国4A和5A级景点地区
-                   特殊值：overseas，查询除中国以外的全部海外城市
-                   查询分组可最多设置20个值，多个值用英文','连接
- * @param number     搜索查询返回的数量，默认返回10个与查询城市或的确相关性最强的结果，可选1-20个，当使用IP地址或坐标查询时，仅返回一个结果
- * @param lang     多语言，默认为简体中文，其他语言请参照多语言对照表
- */
-```
-
-###  Search的属性
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getBasic | 基础信息 | List&lt;Basic&gt;
-getStatus | 接口状态 | ok
-
-###  Basic 基础信息
-
-属性 | 说明 | 示例值
---------- | ------------- | ----------
-getLocation | 地区／城市名称 | 卓资
-getCid | 地区／城市ID | CN101080402
-getLon | 地区／城市经度 | 112.577702
-getLat | 地区／城市纬度 | 40.89576
-getParent_city | 该地区／城市的上级城市 | 乌兰察布
-getAdmin_area | 该地区／城市所属行政区域 | 内蒙古
-getCnty | 该地区／城市所属国家名称 | 中国
-getTz | 该地区／城市所在时区 | +8.00

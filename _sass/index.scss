@@ -1,0 +1,337 @@
+.homepage {
+  background-color: #fff;
+
+  .hp-weatherbg {
+    text-align: left;
+    color: #fff;
+    background: #02010C;
+
+    .container {
+      padding-left: 80px;
+      min-height: 540px;
+      background: #02010C url("/assets/images/index-bg.png") no-repeat right;
+      background-size: auto 120%;
+    }
+
+    img {
+      height: 400px;
+      width: 1170px;
+    }
+
+    h1 {
+      margin-top: 140px;
+      font-size: 3.6rem;
+      line-height: 63px;
+      font-weight: normal;
+      color: #fff;
+    }
+
+    p {
+      margin: 50px 0 0;
+      font-size: 1.8rem;
+      line-height: 33px;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.56);
+
+      & + p {
+        margin: 14px 0 0;
+      }
+    }
+  }
+
+  .middle {
+    background-color: #FAFAFA;
+    padding: 80px 0;
+
+    .hp-data {
+
+      h2 {
+        margin: 0;
+        text-align: center;
+        font-size: 32px;
+        line-height: 32px;
+        font-weight: 500;
+      }
+
+      > .row {
+        margin-top: 35px;
+        padding: 38px;
+        font-size: 18px;
+        line-height: 24px;
+        color: rgba(38, 50, 36, .8);
+
+        div[class*="col-"] {
+          &:nth-child(4n) {
+            padding-left: 1%;
+            width: 24%;
+          }
+
+          &:nth-child(4n-1) {
+            padding-left: 1%;
+            width: 25%;
+          }
+
+          &:nth-child(4n-2) {
+            padding-left: 5%;
+            width: 26%;
+          }
+        }
+
+        .item-container {
+          padding: 9px 0;
+
+          span, img {
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          img {
+            width: 14px;
+            height: 14px;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+
+    .hp-function {
+      margin-top: 90px;
+
+      .hpf-content {
+        max-width: 435px;
+
+        h2 {
+          margin: 65px 0 0;
+          font-size: 32px;
+          line-height: 32px;
+          font-weight: 500;
+          color: #263238;
+
+          & + p {
+            margin: 35px 0 40px;
+            font-size: 16px;
+            line-height: 30px;
+            color: rgba(38, 50, 56, .8);
+            letter-spacing: 2px;
+
+          }
+        }
+        a {
+          padding: 12px 16px;
+          border-radius: 2px;
+          border: 1px solid #0A0E16;
+          background-color: #0A0E16;
+          color: #FFFFFF;
+
+          &:hover {
+            color: #FFFFFF;
+          }
+
+          > i {
+            font-size: 12px;
+            font-weight: lighter;
+          }
+        }
+      }
+
+      .tools {
+        text-align: center;
+
+        > .row {
+          max-width: 570px;
+          margin: 0 auto;
+
+          padding: 20px 15px 10px;
+          background-color: rgba(253, 204, 69, .2);
+
+          > div[class*="col-"] {
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-bottom: 10px;
+
+            .hpf-api {
+              display: block;
+              border: 1px solid transparent;
+              border-radius: 4px;
+              height: 160px;
+              text-align: center;
+              max-width: 196px;
+              text-decoration: none;
+
+              img {
+                width: 100px;
+              }
+
+              h3 {
+                margin: 4px auto 0;
+                font-size: 16px;
+                line-height: 22px;
+                color: #FFFFFF;
+                font-weight: normal;
+
+                &.android-sdk {
+                  margin: 0 auto;
+                }
+
+                &.plus {
+                  margin: 0 auto;
+                }
+
+                & + p {
+                  margin: 0;
+                  color: #FFFFFF;
+                  font-size: 12px;
+                }
+              }
+
+              &.api {
+                background-color: #0070E0;
+              }
+
+              &.ios {
+                background-color: #263238;
+              }
+
+              &.android {
+                background-color: #7DC242;
+              }
+
+              &.widget {
+                background-color: #FFBA49;
+              }
+
+              &.plus {
+                background-color: #23B8CF;
+              }
+
+              &.setting {
+                background-color: rgba(255, 255, 255, .3);
+                padding-top: 30px;
+              }
+            }
+          }
+        }
+      }
+
+      .hpf-image {
+        text-align: center;
+
+        img {
+          max-width: 570px;
+          width: 100%;
+        }
+      }
+    }
+
+    .hp-moreinfo {
+      margin-top: 90px;
+      text-align: left;
+
+      .hp-moreinfo-content-container {
+        background: linear-gradient(135deg, #FBFDFE 0, #EFEFEF 100%);
+
+        .hp-app, .hp-developer, .hp-price {
+          height: 330px;
+          border-radius: 4px;
+          padding: 44px 20px 0;
+          position: relative;
+          background-size: 100%;
+          border: 1px solid #D3D7DC;
+
+          h2 {
+            margin: 0;
+            color: #000000;
+            font-size: 28px;
+            line-height: 32px;
+            text-align: left;
+
+            & + p {
+              text-align: left;
+              margin-top: 20px;
+              color: rgba(48, 50, 52, .8);
+              font-size: 16px;
+              font-weight: 300;
+              line-height: 30px;
+              letter-spacing: 0;
+
+              & + p {
+                text-align: left;
+                color: rgba(48, 50, 52, .8);
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 30px;
+                letter-spacing: 0;
+              }
+            }
+          }
+
+          .btn-container {
+            position: absolute;
+            width: 100%;
+            bottom: 63px;
+            left: 0;
+
+            .btn {
+              background-color: #FFFFFF;
+              margin-top: 24px;
+              border: none;
+              font-size: 14px;
+              padding: 8px 24px;
+              min-width: 180px;
+              color: #263238;
+            }
+          }
+        }
+
+        .hp-app {
+          background: transparent url("/assets/images/hp-moreinfo/download-app.png") no-repeat bottom;
+          background-size: 100% auto;
+        }
+
+        .hp-developer {
+          background: transparent url("/assets/images/hp-moreinfo/for-developer.png") no-repeat bottom;
+          background-size: 100% auto;
+        }
+
+        .hp-price {
+          background: transparent url("/assets/images/hp-moreinfo/profect-price.png") no-repeat bottom;
+          background-size: 100% auto;
+        }
+      }
+    }
+  }
+
+
+  .join-us {
+    text-align: center;
+    background-color: #FFFFFF;
+    padding: 80px 0;
+
+    p {
+      margin: 0;
+      font-size: 24px;
+      line-height: 24px;
+      color: #000000;
+    }
+
+    .btn-join-us {
+      background-color: #0A0E16;
+      margin-top: 24px;
+      border-radius: 2px;
+      border: none;
+      font-size: 16px;
+      padding: 13px 24px;
+      min-width: 150px;
+      color: #FFFFFF;
+
+      &:hover {
+        background-color: #0A0E16;
+      }
+    }
+  }
+}
+
+
+
+
+

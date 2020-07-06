@@ -1,124 +1,165 @@
 ---
 layout: html
-description: 和风天气开发者平台提供了详细的开发文档，包括天气数据API/SDK/APP及大量的示例代码。
+description: 和风天气提供了全球天气API接口，天气插件，开源天气APP，天气SDK等天气开发产品，数据包括灾害预警、天气实况和预测、分钟级降水、PM2.5空气质量AQI、日出日落、生活指数等。
 permalink: /
 ---
-
-<div id="doc-index">
-    <div class="container">
-        <div class="row">
-
-            <div class='col-sm-6' id='doc-index-header'>
-                <h1 class="title">
-                    和风天气开发者
-                </h1>
-                <div>
-                    <p>
-                        现代化、强大和易于使用的天气数据服务。
-                    </p>
-                    <p>
-                        和风天气提供的开发工具均为免费或开源，支持跨平台使用，开发者可以快速上手或自己改造以适合自己的各类项目。
-                    </p>
-                    <p>
-                        注册为开发者，还可获取更多免费数据和更多访问量。点击<a href="https://www.heweather.com/support/developer-type" target="_blank">了解开发者</a>
-                    </p>
+<div class="homepage">
+    <div class="hp-weatherbg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>创建一个漂亮的<br>天气应用</h1>
+                    <p>和风天气数据 <br>高性能全球化的天气数据开发服务</p>
+                    <p>API / SDK / Widget / APP</p>
                 </div>
-                <div>
-                    <a href="https://console.heweather.com/register?role=developer" class="btn btn-doc-index btn-lg" id="doc-index"
-                        role="button">注册开发者</a>
-                </div>
-            </div>
-            <div class="col-sm-6 hidden-xs">
-                <img class='img-responsive' id='doc-index-banner' src="/assets/images/banner-dev.png" alt="">
             </div>
         </div>
     </div>
-</div>
-<div class="container-fluid">
-    <div class="row" id="doc-model">
-        <div class="col-sm-6 col-md-4">
-            <div class="model-icon">
-                <img src="/assets/images/icon-api.png" alt="" width="40" />
-            </div>
-            <h2>
-                API
-            </h2>
-            <div class="model-content">
-                <p>
-                    天气API是最基础的数据获取方式，可在几乎任何设备、系统、网页、APP和小程序中使用。
-                </p>
-                <p>
-                    <a href="/docs/api/" class="btn btn-doc-model" role="button">查看文档</a>
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="model-icon">
-                <img src="/assets/images/icon-sdk.png" alt="" width="40" />
-            </div>
-            <h2>
-                SDK
-            </h2>
-            <div class="model-content">
-                <p>
-                    在移动设备上使用SDK可以让你更加方便的获取天气数据。
-                </p>
-                <p>
-                    我们的SDK支持<strong>iOS 8.0+</strong>和<strong>Android 4.4+</strong></a>
-                </p>
-                <p>
-                    <a href="/docs/sdk/ios" class="btn btn-doc-model" role="button">iOS文档</a> <a href="/docs/sdk/android" class="btn btn-doc-model"
-                        role="button">Android文档</a>
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="model-icon">
-                <img src="/assets/images/icon-app.png" alt="" width="40" />
-            </div>
-            <h2>
-                天气普拉斯
-            </h2>
-            <div class="model-content">
-                <p>
-                    天气普拉斯 OpenWeatherPlus 是一款开源天气APP，方便开发者快速发布和集成天气服务，包括iOS，Android版本。
-                </p>
-                <p>
-                    <a href="/docs/app/" class="btn btn-doc-model" role="button">APP文档</a> <a
-                        href="https://github.com/heweather" target="_blank" class="btn btn-doc-model"
-                        role="button">Github源码</a>
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="model-icon">
-                <img src="/assets/images/icon-search.png" alt="" width="40" />
-            </div>
-            <h2>
-                城市搜索
-            </h2>
-            <div class="model-content">
-                <p>
-                    免费的城市搜索服务，通过城市搜索找到地点进而获取该地点的天气数据。不再需要维护和存储庞大的城市列表，城市信息随时更新。
-                </p>
-                <p>
-                    <a href="/docs/search/" class="btn btn-doc-model" role="button">查看文档</a>
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="model-icon">
-                <img src="/assets/images/icon-examples.png" alt="" width="40" />
-            </div>
-            <h2>示例代码</h2>
-            <div class="model-content">
-                <p>
-                    我们提供了几种主流语言的调用方式。你可能还需要在此基础上做出一些修改和优化，以便更加适合你的开发项目。
-                </p>
-                <p>
-                    <a href="/docs/examples/" class="btn btn-doc-model" role="button">查看文档</a>
-                </p>
-            </div>
+    <div class="middle">
+        <div class="container">
+            <section class="hp-data">
+                <h2>全球15万+城市天气数据</h2>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 col-sm-12">
+                        <div class="row" style="margin: 0">
+                            {% for item in site.data.list.hp-data %}
+                            <div class="col-sm-3 col-xs-4 col-xs-549 item-container">
+                                <div class="item">
+                                    <img src="{{item.icon}}">
+                                    <span>{{ item.title }}</span>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="hp-function">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-5">
+                        <div class="hpf-content">
+                            <h2>强大的城市搜索</h2>
+                            <p>天气基于地理位置，和风天气提供强大的地理位置搜索功能，支持文字模糊搜索、坐标搜索、热门城市、POI搜索等等，并提供城市的详细信息，你甚至不需要考虑夏令时的烦恼。</p>
+                            <a href="/docs/api/geo" class="btn">
+                                查看城市搜索开发文档 <i class="glyphicon glyphicon-menu-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-7">
+                        <div class="hpf-image">
+                            <img src="/assets/images/hp-geo.png">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="hp-function">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-5">
+                        <div class="hpf-content">
+                            <h2>丰富的开发工具</h2>
+                            <p>除了最基本的API，我们还提供了各类SDK、天气插件以及开源APP，让你的开发更加简单。</p>
+                            <a href="/docs/" class="btn">
+                                查看开发文档 <i class="glyphicon glyphicon-menu-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-7 tools">
+                        <div class="row">
+                            <div class="col-sm-4 col-xs-4">
+                                <div class="hpf-api api">
+                                    <img src="/assets/images/tools/api.png">
+                                    <h3>API</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-4">
+                                <div class="hpf-api ios">
+                                    <img src="/assets/images/tools/ios.png">
+                                    <h3>iOS SDK</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-4">
+                                <div class="hpf-api android">
+                                    <img src="/assets/images/tools/android.png">
+                                    <h3 class="android-sdk">Android<br>SDK</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-4">
+                                <div class="hpf-api widget">
+                                    <img src="/assets/images/tools/widget.png">
+                                    <h3>天气插件</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-4">
+                                <div class="hpf-api plus">
+                                    <img src="/assets/images/tools/plus.png">
+                                    <h3 class="plus">天气普拉斯</h3>
+                                    <p>开源APP</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-4">
+                                <div class="hpf-api setting">
+                                    <img src="/assets/images/tools/hp-data-tool-setting.png" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="hp-function">
+                <div class="row">
+                    <div class="ol-xs-12 col-sm-5">
+                        <div class="hpf-content">
+                            <h2>全球化</h2>
+                            <p>不仅支持31种语言，更在全球10个国家建立了数据中心，无论你的产品部署在哪里，都可以就近访问我们的数据节点，提高响应时间。</p>
+                            <a href="/docs/start/language" class="btn">查看多语言<i class="glyphicon glyphicon-menu-right"></i></a>
+                            <a href="/docs/faq/buy#server-node" class="btn">了解全球节点<i class="glyphicon glyphicon-menu-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-7">
+                        <div class="hpf-image">
+                            <img src="/assets/images/hpf-global.png">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="hp-moreinfo">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <div class="hp-moreinfo-content-container">
+                            <a href="https://www.heweather.com/app/" style="text-decoration: none" target="_blank">
+                                <div class="hp-app">
+                                    <h2>下载APP</h2>
+                                    <p>安装广受好评的和风天气可视化APP，你也能做出更优秀的应用</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <div class="hp-moreinfo-content-container">
+                            <a href="/docs/faq/user" style="text-decoration: none">
+                            <div class="hp-developer">
+                                <h2>开发者方案</h2>
+                                <p>完全免费的开发者方案，并且在使用SDK的情况下没有访问量的限制</p>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <div class="hp-moreinfo-content-container">
+                            <a href="/price" style="text-decoration: none">
+                                <div class="hp-price">
+                                    <h2>价格</h2>
+                                    <p>我们的定价非常简单，按实际使用量计费，低至0.3元/1000次</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
+    <section class="join-us">
+        <p>现在就免费加入和风天气吧</p>
+        <a href="#" type="button" class="btn btn-default btn-join-us">马上注册</a>
+    </section>
 </div>

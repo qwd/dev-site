@@ -1,12 +1,41 @@
 <footer class="footer">
-  <div class="container-fluid">
-    <ul class="footer-nav">
-      <li>
-        <a href="https://www.heweather.com">和风天气官方网站</a>
-      </li>
-      <li>
-        <a href="https://github.com/heweather" target="_blank">Github</a>
-      </li>
-    </ul>
+  <div class="footer-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 col-md-6 col-lg-6">
+          <section class="left">
+            <a class="logo" href="https://dev.heweather.com">
+              <img src="/assets/images/logo-white.png" /><span class="sitename">dev.heweather</span>
+            </a>
+            <div class="build">
+              {{ site.data.t[page.lang].powered }}
+            </div>
+          </section>
+        </div>
+        <div class="col-xs-12 col-sm-7 col-md-6 col-lg-6">
+          <section class="right">
+            <div class="row">
+              {% for group in site.data.nav.footer %}
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <h3>{{ group.group }}</h3>
+                <ul>
+                  {% for item in group.list %}
+                  <li><a href="{{ item.link }}" {% if group.group == "更多信息" %}target="_blank"
+                      {% endif %}>{{ item.title }}</a></li>
+                      {% endfor %}
+                </ul>          
+              </div>
+              {% endfor %}
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyrigh">
+    <div class="container">
+      &copy; 2020 <a href="https://www.{{ site.attribution }}" target="_blank">{{ site.attribution }}</a> All rights
+      reserved. <a href={{ site.icp.url }} target="_blank">{{ site.icp.number }}</a>
+    </div>
   </div>
 </footer>

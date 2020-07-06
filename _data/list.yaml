@@ -1,0 +1,143 @@
+doc-list:
+  - group: 使用API
+    list:
+      - title: 城市信息搜索
+        link: /docs/api/geo
+      - title: 城市天气
+        link: /docs/api/weather
+      - title: 分钟级降水
+        link: /docs/api/weather-gird-minute-pcpn
+      - title: 空气质量
+        link: /docs/api/air
+      - title: 灾害预警
+        link: /docs/api/alarm
+      - title: 天气生活指数
+        link: /docs/api/weather-indices
+      - title: 中国景区天气
+        link: /docs/api/weather-poi
+      - title: 历史天气
+        link: /docs/api/weather-historical
+      - title: 日出日落月升月落和月相
+        link: /docs/api/astronomy
+      # - title: 卫星云图
+      #   link: /docs/api/satellite
+      # - title: 雷达图
+      #   link: /docs/api/radar
+  - group: 使用SDK
+    list:
+      - title: iOS SDK
+        link: /docs/sdk/ios
+      - title: iOS 数据类属性
+        link: /docs/sdk/ios-entity
+      - title: Android SDK
+        link: /docs/sdk/android
+      - title: Android数据类属性
+        link: /docs/sdk/android-entity
+  - group: 使用天气插件
+    list:
+      - title: iOS天气插件
+        link: /docs/widget/ios-widget
+      - title: Android天气插件
+        link: /docs/widget/android-widget
+      - title: H5天气网页/频道页
+        link: /docs/widget/mobile-page-widget
+      - title: 网页标准插件
+        link: /docs/widget/standard-widget
+      - title: 网页简约插件
+        link: /docs/widget/simple-widget
+  - group: 使用天气普拉斯
+    list:
+      - title: iOS 开发文档
+        link: /docs/app/owp-ios
+      - title: Android 开发文档
+        link: /docs/app/owp-android
+  - group: 更多必要信息
+    list:
+      - title: 错误代码
+        link: /docs/start/status-code
+      - title: 多语言
+        link: /docs/start/language
+      - title: 天气图标
+        link: /docs/start/icons
+      - title: 常见城市列表
+        link: /docs/start/location-list
+      - title: 数字加密签名
+        link: /docs/faq/technical#signature-authentication
+      - title: 单位
+        link: /docs/start/unit
+  - group: 专用名词解释
+    list:
+      - title: Rank
+        link: /docs/start/glossary#rank
+      - title: 坐标
+        link: /docs/start/glossary#coordinate
+      - title: 行政区划
+        link: /docs/start/glossary#adm
+      - title: LocationID
+        link: /docs/start/glossary#locationid
+      - title: POI
+        link: /docs/start/glossary#poi
+      - title: 时间和日期
+        link: /docs/start/glossary/#datetime
+      - title: 时区
+        link: /docs/start/glossary#timezone
+      - title: 夏令时
+        link: /docs/start/glossary#isdst
+      - title: UTC时间偏移
+        link: /docs/start/glossary#utc-offset
+      - title: 发布时间
+        link: /docs/start/glossary#pubtime
+      - title: 数据更新时间
+        link: /docs/start/glossary/#updatetime
+      - title: iOS Bundle identifier
+        link: /docs/start/glossary#ios-bundle-identifier
+      - title: Android Package Name
+        link: /docs/start/glossary#android-package-name
+      - title: QPM
+        link: /docs/start/glossary/#qpm
+  - group: 常见问题
+    list:
+      - title: 一般问题
+        link: /docs/faq/general
+      - title: 商业数据和购买
+        link: /docs/faq/buy
+      - title: 技术和开发
+        link: /docs/faq/technical
+      - title: 用户和账号
+        link: /docs/faq/user
+flow: 
+  - title: 1.注册账号
+    img: start-join-icon
+    des: 查看账号类型
+    link: /docs/faq/user#account-type
+  - title: 2.创建应用和KEY
+    img: start-create-icon
+    des: 如何创建
+    link: /docs/start/get-api-key
+  - title: 3.开发集成
+    img: start-dev-icon
+    des: 查看详细文档
+    link: /docs/start/#documentation
+hp-data:
+  - title: 实况天气
+    icon: /assets/images/hp-data/1.png
+  - title: 15天预报
+    icon: /assets/images/hp-data/1.png
+  - title: 逐小时预报
+    icon: /assets/images/hp-data/1.png
+  - title: 分钟降水
+    icon: /assets/images/hp-data/1.png
+  - title: 灾害预警
+    icon: /assets/images/hp-data/2.png
+  - title: 景区天气
+    icon: /assets/images/hp-data/2.png
+  - title: 空气质量
+    icon: /assets/images/hp-data/2.png
+  - title: 历史天气和空气
+    icon: /assets/images/hp-data/2.png
+  - title: 生活指数和预报
+    icon: /assets/images/hp-data/3.png
+  - title: 日出日落
+    icon: /assets/images/hp-data/3.png
+  - title: 月升月落月相
+    icon: /assets/images/hp-data/3.png
