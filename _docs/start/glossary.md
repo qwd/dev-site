@@ -23,7 +23,7 @@ Rank值是表明一个城市或地区排名的数字，基于多种因素综合�
 
 ### LocationID
 
-LocationID或locid，是城市、地区或POI点的ID，一般由数字或字母+数字组成，是一个地点的唯一标识。LocationID可以通过定位搜索服务获取，中国地区、热门海外城市、一些POI点的LocationID还可以通过[城市列表](/docs/refer/LocationList)下载。
+LocationID或locid，是城市、地区或POI点的ID，一般由数字或字母+数字组成，是一个地点的唯一标识。LocationID可以通过定位搜索服务获取，中国地区、热门海外城市、一些POI点的LocationID还可以通过[城市列表](/docs/start/location-list)下载。
 
 ### Adcode
 
