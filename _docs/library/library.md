@@ -22,6 +22,14 @@ permalink: /docs/library/
 
 - [C语言访问和风天气的数据接口 - 笑乐](https://github.com/xlofhappy/heweather-api-c)
 
+## C++
+
+- [Weather APP with C++ & Qt Quick - JX Cheng](https://github.com/chengjianxi/Weather)
+  
+## Dart
+
+- [OpenWeatherPlus-Flutter - Daniel Dai](https://github.com/danieldai/OpenWeatherPlus-Flutter)
+
 ## iOS
 
 - [使用iOS SDK](/docs/sdk/ios) **官方**{:.official}
