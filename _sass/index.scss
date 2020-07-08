@@ -27,7 +27,7 @@
     }
 
     p {
-      margin: 50px 0 0;
+      margin: 30px 0 0;
       font-size: 1.8rem;
       line-height: 33px;
       letter-spacing: 2px;
@@ -185,23 +185,23 @@
               }
 
               &.api {
-                background-color: #0070E0;
+                background-color: #92bbe4;
               }
 
               &.ios {
-                background-color: #263238;
+                background-color: #0A0E16;
               }
 
               &.android {
-                background-color: #7DC242;
+                background-color: #40C5AF;
               }
 
               &.widget {
-                background-color: #FFBA49;
+                background-color: #FDCC45;
               }
 
               &.plus {
-                background-color: #23B8CF;
+                background-color: #FF6800;
               }
 
               &.setting {
@@ -233,7 +233,7 @@
         .hp-app, .hp-developer, .hp-price {
           height: 330px;
           border-radius: 4px;
-          padding: 44px 20px 0;
+          padding: 44px 30px 0;
           position: relative;
           background-size: 100%;
           border: 1px solid #D3D7DC;

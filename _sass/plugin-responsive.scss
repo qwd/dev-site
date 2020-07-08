@@ -4,7 +4,6 @@
       margin-top: 30px;
       .plugin-list-box {
         width: 100%;
-        margin-bottom: 30px;
 
         .plugin-list-pic {
           min-height: 510px;
@@ -16,6 +15,9 @@
           }
         }
       }
+    }
+    .plugin-footer {
+      margin-top: 6px;
     }
   }
 }

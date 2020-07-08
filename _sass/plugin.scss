@@ -22,10 +22,18 @@
   }
 
   .plugin-row-container {
-    margin-top: 95px;
+    margin-top: 80px;
+    .row {
+      margin-left: -12px;
+      margin-right: -12px;
+      > div[class*="col-"] {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+    }
 
     .plugin-list-box {
-      margin: 0 auto 100px;
+      margin: 0 auto 24px;
       text-align: center;
       box-sizing: border-box;
       padding: 30px 0 40px;
@@ -81,6 +89,7 @@
   }
 
   .plugin-footer {
+    margin-top: 70px;
     padding: 70px 0 80px;
     background-color: #FAFAFA;
     text-align: center;
