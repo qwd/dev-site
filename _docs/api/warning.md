@@ -58,14 +58,17 @@ toc: true
 | updateTime        | 当前[API的最近更新时间](/docs/start/glossary#updatetime)             | 2013-12-30T01:45+08:00                                           |
 | fxLink            | 该城市的天气预警的自适应网页，可嵌入网站或应用。**可能为空。** | http://hfx.link/ae45                                             |
 | warning.id        | 本条预警的唯一标识，可判断本条预警是否已经存在，id有效期不超过72小时 | 202010110345679813                                               |
+| warning.sender        | 预警发布单位，**可能为空** | 深圳市气象台                                               |
 | warning.pubTime   | 预警发布时间                                                         | 2017-10-25T12:03+08:00                                           |
 | warning.title     | 预警信息标题                                                         | 广东省深圳市气象台发布雷电黄色预警                               |
-| warning.startTime | 预警开始时间，**不适用于所有国家，可能为空。**                       | 2017-10-25T13:12                                                 |
-| warning.endTime   | 预警结束时间，**不适用于所有国家，可能为空。**                       | 2017-10-26T13:12                                                 |
-| warning.status    | 预警状态，**不适用于所有国家，可能为空。**                           | 预警中                                                           |
+| warning.startTime | 预警开始时间，**可能为空。**                       | 2017-10-25T13:12                                                 |
+| warning.endTime   | 预警结束时间，**可能为空。**                       | 2017-10-26T13:12                                                 |
+| warning.status    | 预警状态，**可能为空**<br />`active` 预警中或首次预警<br />`update` 预警信息更新<br />`cancel` 取消预警                          | active                                                         |
 | warning.level     | 预警等级                                                             | 黄色                                                             |
-| warning.type      | 预警类型                                                             | 雷电                                                             |
+| warning.type| 预警类型                                                             | 11B17                                                         |
+| warning.typeName     | 预警等级名称                                                             | 大雾           |
 | warning.text      | 预警详细文字描述                                                     | 深圳市气象局于10月04日12时59分发布雷电黄色预警信号，请注意防御。 |
+| warning.related      | 与本条预警相关联的预警ID，当预警状态为cancel或update时返回。**可能为空**                                                     | 202010110345679813 |
 | refer.sources     | 原始数据来源，**可能为空**                                           |                                                                  |
 | refer.license     | 数据许可证                                                           |                                                                  |
 
