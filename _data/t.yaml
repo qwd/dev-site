@@ -6,7 +6,7 @@ en:
   console: Console
   join: Register
   logout: Logout
-  s6warning: Here is the Weather API version S6, which will be offline on June 1, 2021 and it is now unavailable for new users. Click to view the latest API service.
+  s6warning: Here is the Weather API version S6, which will be offline on December 31st, 2021 and it is now unavailable for new users. Click to view the latest API service.
   powered: Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>, code hosted by <a href="https://github.com/heweather" target="_blank">Github</a><br />Code licensed <a href="https://github.com/heweather/docs/blob/master/LICENSE" target="_blank">MIT</a>，content <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
   bizapi: For Business
   devapi: For Developer
@@ -20,7 +20,7 @@ zh:
   console: 控制台
   join: 注册
   logout: 退出
-  s6warning: 这里是和风天气API S6版本，该版本将于2021年6月1日下线且不再提供技术支持，新用户现已无法使用，点击查看最新版本
+  s6warning: 这里是和风天气API S6版本，该版本将于2021年12月31日下线且不再提供技术支持，新用户现已无法使用，点击查看最新版本
   powered: 这个网站使用<a href="https://jekyllrb.com/" target="_blank">Jekyll</a>创建，源代码托管在<a href="https://github.com/heweather" target="_blank">Github</a><br />代码采用<a href="https://github.com/heweather/docs/blob/master/LICENSE" target="_blank">MIT许可</a>，文字<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
   bizapi: 商业版
   devapi: 开发版
