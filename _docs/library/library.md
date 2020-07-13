@@ -14,10 +14,6 @@ permalink: /docs/library/
 
 > 我们不对非官方代码进行任何技术支持，也无法确保非官方代码的有效性
 
-## Android
-
-- [使用Android SDK](/docs/sdk/android) **官方**{:.official}
-
 ## C
 
 - [C语言访问和风天气的数据接口 - 笑乐](https://github.com/xlofhappy/heweather-api-c)
@@ -30,13 +26,19 @@ permalink: /docs/library/
 
 - [OpenWeatherPlus-Flutter - Daniel Dai](https://github.com/danieldai/OpenWeatherPlus-Flutter)
 
-## iOS
+## Java
 
-- [使用iOS SDK](/docs/sdk/ios) **官方**{:.official}
+- [使用Android SDK](/docs/sdk/android) **官方**{:.official}
+- [WidgetDemo-Android](https://github.com/heweather/WidgetDemo-Android)
 
 ## JavaScript
 
 - [基于和风天气api和vue.js - ruiruiruiruirain](https://github.com/ruiruiruiruirain/myweather) 
+
+## Objective-C
+
+- [使用iOS SDK](/docs/sdk/ios) **官方**{:.official}
+- [WidgetDemo-iOS](https://github.com/heweather/WidgetDemo-iOS) **官方**{:.official}
 
 ## PHP
 
