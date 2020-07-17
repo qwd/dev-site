@@ -50,11 +50,11 @@ sidebar:
       - zh: 概述
         en: SDK
       - zh: iOS SDK
-        en: ios
+        en: ios sdk
       - zh: iOS 数据类属性
         en: ios Entity
       - zh: Android SDK
-        en: Android
+        en: Android SDK
       - zh: Android数据类属性
         en: Android Entity
       - zh: 下载和更新记录
@@ -115,7 +115,7 @@ footer:
       - title: 天气插件
         link: /docs/widget
       - title: 天气普拉斯
-        link: /docs/ows
+        link: /docs/owp/
   - group: 常见问题
     list: 
       - title: 一般问题

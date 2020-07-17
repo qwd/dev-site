@@ -78,7 +78,7 @@ doc-list:
       - title: POI
         link: /docs/start/glossary#poi
       - title: 时间和日期
-        link: /docs/start/glossary/#datetime
+        link: /docs/start/glossary#datetime
       - title: 时区
         link: /docs/start/glossary#timezone
       - title: 夏令时
@@ -88,13 +88,13 @@ doc-list:
       - title: 发布时间
         link: /docs/start/glossary#pubtime
       - title: 数据更新时间
-        link: /docs/start/glossary/#updatetime
+        link: /docs/start/glossary#updatetime
       - title: iOS Bundle identifier
         link: /docs/start/glossary#ios-bundle-identifier
       - title: Android Package Name
         link: /docs/start/glossary#android-package-name
       - title: QPM
-        link: /docs/start/glossary/#qpm
+        link: /docs/start/glossary#qpm
   - group: 常见问题
     list:
       - title: 一般问题

@@ -17,7 +17,7 @@ redirect_from: /docs/api/
 - 通过经纬度获取
 - 通过ADcode（仅限中国城市）
 
-你可以通过[城市信息搜索](/docs/geo/lookup)或[热门城市查询](/docs/geo/top)获取到精准的地理位置信息，这些位置信息均包含Location ID（例如北京的Location ID为101010100），你需要使用这个Location ID去获取该地点的天气预报、实况等数据。
+你可以通过[城市信息搜索](/docs/api/geo)获取到精准的地理位置信息，这些位置信息均包含Location ID（例如北京的Location ID为101010100），你需要使用这个Location ID去获取该地点的天气预报、实况等数据。
 
 ## 获取天气数据
 
@@ -44,7 +44,7 @@ redirect_from: /docs/api/
 
 ## 多语言
 
-和风天气API v7版本支持[31种主流语言](/docs/refer/i18n)。
+和风天气API v7版本支持[31种主流语言](/docs/start/language)。
 
 ## Gzip压缩
 

@@ -30,7 +30,7 @@ toc: true
 
 **location** {{ site.data.text.required }}
 
-输入需要查询的城市名称，可使用[Location ID](/docs/start/glossary#locationid)、中文、英文、以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)、[ADCode](/docs/start/glossary#adcode)（仅限中国城市）。例如`location=beijing`， `location=116.4,39.1`
+输入需要查询的城市名称，可使用[Location ID](/docs/start/glossary#locationid)、中文、英文、以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)、ADCode（仅限中国城市）。例如`location=beijing`， `location=116.4,39.1`
 
 **key** {{ site.data.text.required }}
   

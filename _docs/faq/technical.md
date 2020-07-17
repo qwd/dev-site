@@ -202,7 +202,7 @@ Xcode切换到Info下，可查看Bundle Identifier。
 
 ### 有没有城市ID？ {#city-list}
 
-有，我们可以提供[中国城市、中国景点等ID信息](/docs/refer/location-list)，针对海外城市，由于数量众多，请使用[城市信息搜索API](/docs/api/geo/)去查询详细的ID。
+有，我们可以提供[中国城市、中国景点等ID信息](/docs/start/location-list)，针对海外城市，由于数量众多，请使用[城市信息搜索API](/docs/api/geo/)去查询详细的ID。
 
 ### 遇到其他技术问题怎么办 {#more-questions}
 
