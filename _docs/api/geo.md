@@ -30,11 +30,25 @@ toc: true
 
 **location** {{ site.data.text.required }}
 
-输入需要查询的城市名称，可使用[Location ID](/docs/start/glossary#locationid)、中文、英文、以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)、ADCode（仅限中国城市）。例如`location=beijing`， `location=116.4,39.1`
+输入需要查询的城市名称，可使用[Location ID](/docs/start/glossary#locationid)、[多语言](/docs/start/language)文字、以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)、ADCode（仅限中国城市）。例如`location=beijing`， `location=116.4,39.1`
+
+> **模糊搜索**，当location传递的为文字时，支持模糊搜索，即用户可以只输入城市名称一部分进行搜索，最少一个汉字或2个字符，排名将按照相关性和Rank值进行排列，便于开发或用户进行选择。例如`location=bei`，将返回与bei相关性最强的若干结果，包括黎巴嫩的贝鲁特和中国的北京市
+> 
+> **重名**，当location传递的为文字时，可能会出现重名的城市，例如陕西省西安市、吉林省辽源市下辖的西安区和黑龙江省牡丹江市下辖的西安区，此时会根据Rank值排序返回所有结果。在这种情况下，可以通过`adm`参数的方式进一步确定需要查询的城市或地区，例如`location=西安&adm=黑龙江`
+{:.bqnote}
 
 **key** {{ site.data.text.required }}
   
 用户认证key，请参考[如何获取你的KEY](/docs/start/get-api-key)。支持[数字签名](/docs/faq/technical#signature-authentication)方式进行认证，推荐使用。例如 `key=123456789ABC`
+
+**adm** {{ site.data.text.optional }}
+  
+城市所属行政区划，只支持[多语言](/docs/start/language)文字，**默认不限定行政区划。** 可设定只在某个行政区划范围内进行搜索，用于出现重名城市或需要对结果进行过滤的时候使用。例如`adm=beijing`
+
+> 如搜索参数为`location=chaoyang&adm=beijing`时，返回的结果只包括北京市的朝阳区，而不包括辽宁省的朝阳市
+> 
+> 如搜索参数仅为`location=chaoyang`时，返回的结果包括北京市的朝阳区、辽宁省的朝阳市以及长春市的朝阳区
+{:.bqnote}
 
 **range** {{ site.data.text.optional }}
   
@@ -42,19 +56,6 @@ toc: true
 
 - `world` 全球城市范围，默认
 - `cn` 中国城市范围，可替换为其他国家的ISO 3166 国家代码，例如`range=us`
-
-**mode** {{ site.data.text.optional }}
-  
-搜索查询的方式。在使用名称搜索的时候，可选择模糊搜索或精准搜索，精准搜索最多返回1个结果，模糊搜索最多返回10个结果。**默认精准搜索。**
-
-- `exact` 精准搜索，默认
-- `fuzzy` 模糊搜索
-
-> **使用模糊搜索时**，允许用户输入城市名称一部分进行搜索，最少一个汉字或2个英文字母，排名将按照相关性和Rank值进行排列，便于开发或用户进行选择。模糊搜索仅支持名称搜索，不适用于经纬度、地区ID或Adcode。
-> 
-> **使用精准搜索时**，只返回一个相关性最强的结果，因此需要尽量输入完整的城市或地区名称，例如希望查找吉林省辽源市下辖的西区，如果仅输入西安，则有可能返回的结果是陕西省的西安市。
-> 
-> **当出现完全重名的情况下**，例如吉林省辽源市下辖的西安区和黑龙江省牡丹江市下辖的西安区，则会根据Rank值排名较高的城市返回在这种情况下，可以通过“名称,行政区域”的方式进一步确定需要查询的城市或地区，例如`location=西安,黑龙江`
 
 **number** {{ site.data.text.optional }}
 
@@ -169,9 +170,9 @@ POI类型，可选择搜索某一类型的POI，目前仅限景点。例如`type
 
 **city** {{ site.data.text.optional }}
   
-选择POI所在城市，可设定只搜索在特定城市内的POI信息。城市名称可以是中文、英文或城市的LocationID。**默认全世界范围**。
+选择POI所在城市，可设定只搜索在特定城市内的POI信息。城市名称可以是文字或城市的LocationID。**默认不限制特定城市**。
 
-> 城市名称需要精准匹配，建议使用LocaitonID，如城市名称无法识别，则数据返回为空。
+> 城市名称为精准匹配，建议使用LocaitonID，如文字无法匹配，则数据返回为空。
 
 **number** {{ site.data.text.optional }}
 
