@@ -214,7 +214,7 @@ permalink: /widget/sdk
             val = $.trim(val);
             type = $.trim(type);
             type = type == 'android' ? '1' : '2';
-            $.post("https://console-api.heweather.net/v1/rest/plugin/create?v=" + new Date().getTime(), {
+            $.post("https://console.heweather.com/v1/rest/plugin/create?v=" + new Date().getTime(), {
                 token: window.token,
                 name: val,
                 type: type,
