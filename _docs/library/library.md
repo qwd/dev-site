@@ -28,17 +28,19 @@ permalink: /docs/library/
 
 ## Java
 
-- [使用Android SDK](/docs/sdk/android) **官方**{:.official}
-- [WidgetDemo-Android](https://github.com/heweather/WidgetDemo-Android)
+- [heWeather.java.sdk - dongjunchen1993](https://github.com/dongjunchen1993/heWeather.java.sdk)
+- [Android SDK](/docs/sdk/android) **官方**{:.official}
+- [天气插件Demo-Android](https://github.com/heweather/WidgetDemo-Android) **官方**{:.official}
 
 ## JavaScript
 
+- [Météo 天气 - Venthan](https://github.com/Venthanx/Weather)
 - [基于和风天气api和vue.js - ruiruiruiruirain](https://github.com/ruiruiruiruirain/myweather) 
 
 ## Objective-C
 
-- [使用iOS SDK](/docs/sdk/ios) **官方**{:.official}
-- [WidgetDemo-iOS](https://github.com/heweather/WidgetDemo-iOS) **官方**{:.official}
+- [iOS SDK](/docs/sdk/ios) **官方**{:.official}
+- [天气插件Demo-iOS](https://github.com/heweather/WidgetDemo-iOS) **官方**{:.official}
 
 ## PHP
 
