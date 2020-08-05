@@ -3,10 +3,8 @@
 
 我们提供多种方式获取数据，用于免费或付费商业产品：
 - [API](https://dev.heweather.com/docs/api)
-- [iOS SDK](https://dev.heweather.com/docs/sdk/ios)
-- [Android SDK](https://dev.heweather.com/docs/sdk/android)
-- [iOS APP](https://dev.heweather.com/docs/sdk/ios)
-- [Android APP](https://dev.heweather.com/docs/sdk/ios)
+- [iOS SDK](https://dev.heweather.com/docs/sdk/ios-sdk)
+- [Android SDK](https://dev.heweather.com/docs/sdk/android-sdk)
 
 [查看完整的开发文档](https://dev.heweather.com)
 
@@ -49,10 +47,8 @@ A modern, powerful, easy-to-use weather data service.
 
 We provide the following ways to access weather data for free and paid commercial use:
 - [API](https://dev.heweather.com/docs/api)
-- [iOS SDK](https://dev.heweather.com/docs/sdk/ios)
-- [Android SDK](https://dev.heweather.com/docs/sdk/android)
-- [iOS APP](https://dev.heweather.com/docs/sdk/ios)
-- [Android APP](https://dev.heweather.com/docs/sdk/ios)
+- [iOS SDK](https://dev.heweather.com/docs/sdk/ios-sdk)
+- [Android SDK](https://dev.heweather.com/docs/sdk/android-sdk)
 
 [Explore full HEWeather docs](https://dev.heweather.com)
 
