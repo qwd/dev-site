@@ -10,25 +10,26 @@ permalink: /docs/library/
 
 对于不同的项目、产品和开发人员，调用方式可能会有所不同，你可能还需要在此基础上做出一些修改和优化，以便更加适合你的开发项目。
 
-如果有你不错的代码希望分享，可以发送邮件 <support@heweather.com> 给我们:)
+如果有你不错的代码希望分享，可以发送邮件 <support@heweather.com> 给我们（请注明作者名称、项目名称、简短说明、仓库地址、主要语言）🙏❤️👍
 
 > 我们不对非官方代码进行任何技术支持，也无法确保非官方代码的有效性
 
 ## C
 
-- [C语言访问和风天气的数据接口 - 笑乐](https://github.com/xlofhappy/heweather-api-c)
+- [heweather-api-c - 笑乐](https://github.com/xlofhappy/heweather-api-c) 如何使用 C语言访问和风天气的数据接口，http + ssl 
 
 ## C#
 
-- [MyWeather UWP天气应用 - Grergo](https://github.com/Grergo/MyWeather)
+- [MyWeather UWP - Grergo](https://github.com/Grergo/MyWeather) UWP天气应用
 
 ## C++
 
-- [Weather APP with C++ & Qt Quick - JX Cheng](https://github.com/chengjianxi/Weather)
+- [Weather - JX Cheng](https://github.com/chengjianxi/Weather) Weather 是使用 C++ & Qt Quick 开发的一款天气 App，理论上可以在 Windows、Mac OS、Linux、Android、iOS 等平台上运行。 
+- [ESP8266_Heweather - Ldufan](https://github.com/Ldufan/ESP8266_Heweather) Arduino开发平台使用ESP8266获取和风天气的第三方库
   
 ## Dart
 
-- [OpenWeatherPlus-Flutter - Daniel Dai](https://github.com/danieldai/OpenWeatherPlus-Flutter)
+- [OpenWeatherPlus-Flutter - Daniel Dai](https://github.com/danieldai/OpenWeatherPlus-Flutter) Opensource weather app built with Flutter & fish-redux, backed by free weather data from heweather.com (用Flutter和fish-redux开发的开源天气APP) 
 
 ## Java
 
@@ -38,8 +39,8 @@ permalink: /docs/library/
 
 ## JavaScript
 
-- [Météo 天气 - Venthan](https://github.com/Venthanx/Weather)
-- [基于和风天气api和vue.js - ruiruiruiruirain](https://github.com/ruiruiruiruirain/myweather) 
+- [Météo 天气 - Venthan](https://github.com/Venthanx/Weather) a MBE style weather web based on VUE
+- [基于和风天气api和vue.js - ruiruiruiruirain](https://github.com/ruiruiruiruirain/myweather) 基于和风天气api和vue.js 
 
 ## Objective-C
 
@@ -48,10 +49,10 @@ permalink: /docs/library/
 
 ## PHP
 
-- [一个基于和风天气的php包扩展 - zhoubohan](https://github.com/zhoubohan/weather)
+- [weather - zhoubohan](https://github.com/zhoubohan/weather) 一个基于和风天气的php包扩展 
 
 ## Python
 
-- [和风天气python接口实现 - Acring](https://github.com/Acring/HeWeather) 
-- [python爬虫获取和风天气 - Wangrong](https://github.com/waro163/Crawling-weather)
-- [HeFeng-Weather - TyranRex](https://github.com/TyranRex/HeFeng-Weather)
+- [HeWeather - Acring](https://github.com/Acring/HeWeather) 和风天气python接口实现
+- [Crawling-weather - Wangrong](https://github.com/waro163/Crawling-weather) python爬虫获取和风天气
+- [HeFeng-Weather - TyranRex](https://github.com/TyranRex/HeFeng-Weather) 这是一个利用和风天气接口获取天气状态信息，并且对获取的数据进行处理，可以通过邮件发送处理的小项目
