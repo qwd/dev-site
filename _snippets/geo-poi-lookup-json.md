@@ -3,8 +3,8 @@ title: POI信息搜索
 ---
 {:.pre-scrollable}
 ```
-// 使用模糊搜索关键字jings 
-// https://geoapi.heweather.net/v2/poi/lookup?type=scenic&location=jings&mode=fuzzy&key=xxx
+// 搜索关键字jings 
+// https://geoapi.heweather.net/v2/poi/lookup?type=scenic&location=jings&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {

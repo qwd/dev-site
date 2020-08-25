@@ -3,8 +3,8 @@ title: 城市信息搜索
 ---
 {:.pre-scrollable}
 ```
-// 使用模糊搜索关键字beij 
-// https://geoapi.heweather.net/v2/city/lookup?location=beij&mode=fuzzy&key=xxx
+// 搜索关键字beij 
+// https://geoapi.heweather.net/v2/city/lookup?location=beij&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {
