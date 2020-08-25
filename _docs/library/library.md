@@ -34,7 +34,7 @@ permalink: /docs/library/
 ## Java
 
 - [heWeather.java.sdk - dongjunchen1993](https://github.com/dongjunchen1993/heWeather.java.sdk)
-- [Android SDK](/docs/sdk/android) **官方**{:.official}
+- [Android SDK](/docs/sdk/android-sdk) **官方**{:.official}
 - [天气插件Demo-Android](https://github.com/heweather/WidgetDemo-Android) **官方**{:.official}
 
 ## JavaScript
@@ -44,7 +44,7 @@ permalink: /docs/library/
 
 ## Objective-C
 
-- [iOS SDK](/docs/sdk/ios) **官方**{:.official}
+- [iOS SDK](/docs/sdk/ios-sdk) **官方**{:.official}
 - [天气插件Demo-iOS](https://github.com/heweather/WidgetDemo-iOS) **官方**{:.official}
 
 ## PHP
