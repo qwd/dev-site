@@ -36,6 +36,7 @@ indices:
     sample: 0
   - data: 3天生活指数预报
     path: 3d
+    dev: 0
 weather-poi:
   - data: 景点实况天气
     path: now
