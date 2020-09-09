@@ -3,12 +3,11 @@
     .hp-weatherbg {
       text-align: left;
       color: #fff;
-      background: #02010C;
 
       .container {
         padding-left: 60px;
         min-height: 480px;
-        background-size: auto 90%;
+        background-size: auto 69%;
       }
 
       h1 {
@@ -16,7 +15,7 @@
         font-size: 3.6rem;
         line-height: 63px;
         font-weight: normal;
-        color: #fff;
+        color: black;
       }
 
       p {
@@ -103,7 +102,7 @@
       .container {
         padding-left: 60px;
         min-height: 400px;
-        background-size: auto 90%;
+        background-size: auto 60%;
       }
 
       h1 {
@@ -111,7 +110,7 @@
         font-size: 3.6rem;
         line-height: 63px;
         font-weight: normal;
-        color: #fff;
+        color: black;
       }
 
       p {
@@ -326,7 +325,7 @@
         font-size: 3.6rem;
         line-height: 63px;
         font-weight: normal;
-        color: #fff;
+        color: black;
       }
 
       p {
@@ -481,7 +480,6 @@
     }
   }
 }
-
 
 @media (max-width: 555px) {
   .homepage {
