@@ -24,13 +24,15 @@ sidebar:
     en: API
     list:
       - zh: 概述
-        en: Overview
+        en: API
       - zh: 城市信息搜索
         en: Geo
       - zh: 天气预报和实况
         en: Weather
       - zh: 分钟级降水
         en: Minutely
+      # - zh: 1公里格点天气
+      #   en: Gird
       - zh: 空气质量
         en: Air
       - zh: 灾害预警
@@ -80,7 +82,7 @@ sidebar:
     en: OWP
     list:
       - zh: 概述
-        en: Overview
+        en: OWP
       - zh: iOS 开发文档
         en: iOS
       - zh: Android 开发文档
@@ -107,33 +109,33 @@ footer:
   - group: 开发文档
     list:
       - title: API
-        link: /docs/api
+        link: /docs/api/
       - title: iOS SDK
-        link: /docs/sdk/ios-sdk
+        link: /docs/sdk/ios-sdk/
       - title: Android SDK
-        link: /docs/sdk/android-sdk
+        link: /docs/sdk/android-sdk/
       - title: 天气插件
-        link: /docs/widget
+        link: /docs/widget/
       - title: 天气普拉斯
         link: /docs/owp/
   - group: 常见问题
     list: 
       - title: 一般问题
-        link: /docs/faq/general
+        link: /docs/faq/general/
       - title: 商业使用和购买
-        link: /docs/faq/buy
+        link: /docs/faq/buy/
       - title: 技术和开发
-        link: /docs/faq/technical
+        link: /docs/faq/technical/
       - title: 用户账号
-        link: /docs/faq/user
+        link: /docs/faq/user/
   - group: 更多信息
     list: 
       - title: 下载APP
-        link: https://www.heweather.com/app/
+        link: https://www.qeweather.com/app/
       - title: 联系我们
-        link: https://www.heweather.com/contact
+        link: https://www.qeweather.com/contact/
       - title: 使用条款
-        link: https://www.heweather.com/terms/tos
+        link: https://www.qeweather.com/terms/tos
       - title: 隐私政策
-        link: https://www.heweather.com/terms/privacy
+        link: https://www.qeweather.com/terms/privacy
 

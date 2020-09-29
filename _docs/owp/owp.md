@@ -3,8 +3,8 @@ title: OpenWeatherPlus 天气普拉斯
 tag: [owp]
 version: v1
 description: 和风天气免费开源天气APP，天气普拉斯开源天气APP iOS/Android开发文档
-permalink: /docs/owp/overview
-redirect_from: /docs/owp/
+permalink: /docs/owp/
+lang-ref: owpowp
 ---
 
 **天气普拉斯 OpenWeatherPlus** 是一款开源天气APP，方便开发者快速发布和集成天气服务，包括iOS和Android版本。
@@ -31,7 +31,7 @@ redirect_from: /docs/owp/
 
 ## 截图
 
-![homepage](https://www.heweather.com/assets/upload/owpss.jpg) 
+![homepage](https://www.qweather.com/assets/upload/owpss.jpg) 
 
 ## 兼容适配
 

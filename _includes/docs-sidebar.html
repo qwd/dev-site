@@ -18,7 +18,7 @@
           <a class="doc-nav-item-link" href="{% if index_item == group_slug %}
           /docs/{{ section.en | slugify }}/
           {% else %}
-          /docs/{{ section.en | slugify }}/{{ item.en | slugify  }}
+          /docs/{{ section.en | slugify }}/{{ item.en | slugify  }}/
           {% endif %}">{{ item.[page.lang] }}</a>
         </li>
         {% endfor %}
@@ -57,7 +57,7 @@
             <li><a href="{% if index_item == group_slug %}
               /docs/{{ section.en | slugify }}/
               {% else %}
-              /docs/{{ section.en | slugify }}/{{ item.en | slugify  }}
+              /docs/{{ section.en | slugify }}/{{ item.en | slugify  }}/
               {% endif %}">
                 {{ item.[page.lang]}}
               </a></li>

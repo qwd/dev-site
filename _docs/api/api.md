@@ -4,8 +4,8 @@ tag: [api]
 type: intro
 version: v7
 description: 和风天气数据API官方开发文档，在此查看和风天气API提供的所有天气数据服务，包括实况天气、30天预报、逐小时预报、空气质量AQI，灾害预警、分钟级降水、生活指数等天气数据服务。
-permalink: /docs/api/overview
-redirect_from: /docs/api/
+permalink: /docs/api/
+lang-ref: docapi
 ---
 
 和风天气API为用户提供一个简洁的RESTful Web接口，用以访问基于位置的天气数据。当前API最新版本为**v7**。
