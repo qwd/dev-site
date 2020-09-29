@@ -3,6 +3,7 @@ title: 多语言
 tag: [start, refer]
 version: 7
 description: 和风天气支持中英德法西意日韩俄泰等多语言，可采用lang参数随时调用
+lang-ref: start-lang
 ---
 
 和风天气支持中英德法西意日韩俄泰等30多种语言，以下是在API或SDK中的多语言参数。

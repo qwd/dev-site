@@ -3,6 +3,7 @@ title: Android SDK 使用文档
 tag: [sdk]
 version: v4
 description: 和风天气官方Android SDK开发文档，适配4.0版本以上，使用免费的和风天气SDK，快速集成和风天气最新天气数据，方便调用
+lang-ref: sdkandroid
 ---
 
 ## 适配版本

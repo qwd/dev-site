@@ -4,6 +4,7 @@ tag: [owp]
 version: v1
 description: 和风天气免费开源天气APP Android版开发文档，天气普拉斯开源天气APP是和风天气推出的免费开源天气APP，可以让你快速开发出属于自己的天气APP应用，完全免费。天气APP Android开发文档
 toc: true
+lang-ref: owpan
 ---
 ## 源码
 

@@ -4,6 +4,7 @@ tag: [sdk]
 version: v4
 description: 和风天气Android SDK 实体类属性对照表
 toc: true
+lang-ref: sdkandroidentitty
 ---
 
 ## 实况天气

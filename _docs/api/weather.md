@@ -4,6 +4,7 @@ tag: [api, bd]
 data: weather
 version: v7
 description: 和风天气实况、天气预报、逐小时天气预报API接口的开发文档。和风天气API支持全国4000+个市县区和海外15万个城市天气预报。
+lang-ref: apiweather
 ---
 
 城市级天气预报API，包括全球15万个城市或地区的1-15天天气预报、实况天气、逐小时天气预报以及日出日落、月升月落等数据。

@@ -3,6 +3,7 @@ title: 下载和更新记录
 tag: [sdk]
 version: 3
 description: 和风天气官方 iOS SDK 和 Android SDK 下载
+lang-ref: sdkrelease
 ---
 ## iOS SDK最新版本
 

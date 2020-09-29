@@ -4,6 +4,7 @@ version: 1.0
 tag: [widget]
 data: weather
 description: 网页标准天气插件适合在任何网页或小程序中嵌入天气区块，包括天气预报、实况、预警、分钟降雨、生活指数等，支持自定义大小和颜色
+lang-ref: widget-standard
 ---
 
 使用[网页标准插件](/widget/standard)，可在任何网页或小程序中嵌入天气模块，包括天气预报、实况、预警、分钟降雨、生活指数等，支持自定义大小和颜色。

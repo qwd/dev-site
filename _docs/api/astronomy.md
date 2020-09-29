@@ -4,6 +4,7 @@ tag: [api]
 data: astronomy
 version: v7
 description: 获取全球城市日出日落、月升月落和逐小时的月相数据。
+lang-ref: apiastro
 ---
 
 获取最近60天全球城市日出日落、月升月落和逐小时的月相数据。

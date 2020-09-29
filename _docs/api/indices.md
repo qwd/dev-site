@@ -4,6 +4,7 @@ tag: [api, bd]
 data: indices
 version: v7
 description: 和风天气生活指数API接口的开发文档。和风天气生活指数API支持全国4000+个市县区和海外15万个城市天气预报。
+lang-ref: apiindices
 ---
 
 和风天气生活指数API接口为中国和海外城市提供详细的生活指数实况和预报数据，包括：
