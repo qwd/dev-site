@@ -3,14 +3,14 @@ title: 城市灾害预警
 ---
 ```
 // 长春灾害预警 
-// 商业版：https://api.heweather.net/v7/warning/now?location=101060101&key=xxx
-// 开发版：https://devapi.heweather.net/v7/warning/now?location=101060101&key=xxx
+// 商业版：https://api.qweather.net/v7/warning/now?location=101060101&key=xxx
+// 开发版：https://devapi.qweather.net/v7/warning/now?location=101060101&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {
   "code": "200",
   "updateTime": "2020-06-21T13:33+08:00",
-  "fxLink": "https://www.heweather.com/severe-weather/changchun-101060101.html",
+  "fxLink": "https://www.qweather.com/severe-weather/changchun-101060101.html",
   "warning": [
     {
       "id": "1010601202006202220000501",

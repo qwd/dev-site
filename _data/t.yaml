@@ -2,7 +2,7 @@ en:
   weatherapi: Weather API
   widget: Widget
   price: Price
-  sitename: Developer.Heweather
+  sitename: Developer.QWeather
   console: Console
   join: Register
   logout: Logout
@@ -16,7 +16,7 @@ zh:
   weatherapi: 天气API
   widget: 天气插件
   price: 价格
-  sitename: 和风天气开发者
+  sitename: 和风天气开发平台
   console: 控制台
   join: 注册
   logout: 退出
@@ -26,6 +26,6 @@ zh:
   devapi: 开发版
   rp: 请求参数
   docs: 开发文档
-  more-calls: 如果你的企业或业务需要大规模的天气访问量，如日均超过100万次的，请发送邮件至<sales@heweather.com>，我们针对大规模应用提供了额外折扣和性能保证。
+  more-calls: 如果你的企业或业务需要大规模的天气访问量，如日均超过100万次的，请发送邮件至<sales@qweather.com>，我们针对大规模应用提供了额外折扣和性能保证。
   pkg-dec: <p>资源包是一种预付费产品，用于抵扣API按量计费和高性能服务的配置费用，相比按量计费的标准价格，资源包最多可降低70%的预算，适合于访问量较大的场景。</p><p>你可以在控制台首页选择购买需要的资源包。<a href="/docs/faq/buy#package">了解更多资源包的说明</a></p>
   price-more: 请访问[商业数据和购买问题](/docs/faq/buy)

@@ -4,14 +4,14 @@ title: 日出日落、月升月落和月相
 {:.pre-scrollable}
 ```
 // 北京日出日落、月升月落和月相 
-// 商业版 https://api.heweather.net/v7/astronomy/sunmoon?location=101010100&date=20200610&key=xxx
-// 开发版 https://devapi.heweather.net/v7/astronomy/sunmoon?location=101010100&date=20200610&key=xxx
+// 商业版 https://api.qweather.net/v7/astronomy/sunmoon?location=101010100&date=20200610&key=xxx
+// 开发版 https://devapi.qweather.net/v7/astronomy/sunmoon?location=101010100&date=20200610&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY，date更换为当天或未来60天任意日期
 
 {
   "code": "200",
   "updateTime": "2020-06-14T16:57+08:00",
-  "fxLink": "https://www.heweather.com/weather/beijing-101010100.html",
+  "fxLink": "https://www.qweather.com/weather/beijing-101010100.html",
   "daily": [
     {
       "fxDate": "2020-06-14",

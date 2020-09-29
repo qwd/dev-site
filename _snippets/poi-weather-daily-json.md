@@ -4,14 +4,14 @@ title: 景点7天预报
 {:.pre-scrollable}
 ```
 // 北京玉渊潭公园7天天气预报 
-// 商业版 https://api.heweather.net/v7/weather/7d?location=101010100&key=xxx
-// 开发版 https://devapi.heweather.net/v7/weather/7d?location=101010100&key=xxx
+// 商业版 https://api.qweather.net/v7/weather/7d?location=101010100&key=xxx
+// 开发版 https://devapi.qweather.net/v7/weather/7d?location=101010100&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {
   "code": "200",
   "updateTime": "2020-06-14T16:57+08:00",
-  "fxLink": "https://www.heweather.com/weather/beijing-101010100.html",
+  "fxLink": "https://www.qweather.com/weather/beijing-101010100.html",
   "daily": [
     {
       "fxDate": "2020-06-14",

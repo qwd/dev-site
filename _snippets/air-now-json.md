@@ -3,14 +3,14 @@ title: 空气质量实况
 ---
 ```
 // 北京空气质量实况 
-// 商业版：https://api.heweather.net/v7/air/now?location=101010100&key=xxx
-// 开发版：https://devapi.heweather.net/v7/air/now?location=101010100&key=xxx
+// 商业版：https://api.qweather.net/v7/air/now?location=101010100&key=xxx
+// 开发版：https://devapi.qweather.net/v7/air/now?location=101010100&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {
   "code": "200",
   "updateTime": "2020-06-21T11:44+08:00",
-  "fxLink": "https://www.heweather.com/air/beijing-101010100.html",
+  "fxLink": "https://www.qweather.com/air/beijing-101010100.html",
   "now": {
     "pubTime": "2020-06-21T11:00+08:00",
     "aqi": "82",

@@ -4,7 +4,7 @@ title: POI范围搜索
 {:.pre-scrollable}
 ```
 // 北京市中心附近5公里景点 
-// https://geoapi.heweather.net/v2/poi/range?location=116.40528,39.90498&type=scenic&radius=10&key=xxx
+// https://geoapi.qweather.net/v2/poi/range?location=116.40528,39.90498&type=scenic&radius=10&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {
@@ -163,7 +163,7 @@ title: POI范围搜索
   ],
   "refer": {
     "sources": [
-      "heweather.com"
+      "qweather.com"
     ],
     "license": [
       "commercial license"

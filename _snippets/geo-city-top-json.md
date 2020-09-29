@@ -4,7 +4,7 @@ title: 热门城市查询
 {:.pre-scrollable}
 ```
 // 中国热门城市前5位 
-// https://geoapi.heweather.net/v2/city/top?number=5&range=cn&key=xxx
+// https://geoapi.qweather.net/v2/city/top?number=5&range=cn&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {
@@ -23,7 +23,7 @@ title: 热门城市查询
       "isDst": "0",
       "type": "city",
       "rank": "25",
-      "fxLink": "https://www.heweather.com/weather/yuhang-101210106.html"
+      "fxLink": "https://www.qweather.com/weather/yuhang-101210106.html"
     },
     {
       "name": "嘉定",
@@ -38,7 +38,7 @@ title: 热门城市查询
       "isDst": "0",
       "type": "city",
       "rank": "23",
-      "fxLink": "https://www.heweather.com/weather/jiading-101020500.html"
+      "fxLink": "https://www.qweather.com/weather/jiading-101020500.html"
     },
     {
       "name": "杭州",
@@ -53,7 +53,7 @@ title: 热门城市查询
       "isDst": "0",
       "type": "city",
       "rank": "11",
-      "fxLink": "https://www.heweather.com/weather/hangzhou-101210101.html"
+      "fxLink": "https://www.qweather.com/weather/hangzhou-101210101.html"
     },
     {
       "name": "上海",
@@ -68,7 +68,7 @@ title: 热门城市查询
       "isDst": "0",
       "type": "city",
       "rank": "11",
-      "fxLink": "https://www.heweather.com/weather/shanghai-101020100.html"
+      "fxLink": "https://www.qweather.com/weather/shanghai-101020100.html"
     },
     {
       "name": "萧山",
@@ -83,7 +83,7 @@ title: 热门城市查询
       "isDst": "0",
       "type": "city",
       "rank": "23",
-      "fxLink": "https://www.heweather.com/weather/xiaoshan-101210102.html"
+      "fxLink": "https://www.qweather.com/weather/xiaoshan-101210102.html"
     }
   ]
 }

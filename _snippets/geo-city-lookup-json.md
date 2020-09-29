@@ -4,7 +4,7 @@ title: 城市信息搜索
 {:.pre-scrollable}
 ```
 // 搜索关键字beij 
-// https://geoapi.heweather.net/v2/city/lookup?location=beij&key=xxx
+// https://geoapi.qweather.net/v2/city/lookup?location=beij&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {
@@ -23,7 +23,7 @@ title: 城市信息搜索
       "isDst": "0",
       "type": "city",
       "rank": "10",
-      "fxLink": "https://www.heweather.com/weather/beijing-101010100.html"
+      "fxLink": "https://www.qweather.com/weather/beijing-101010100.html"
     },
     {
       "name": "旧拜耶兰",
@@ -38,7 +38,7 @@ title: 城市信息搜索
       "isDst": "1",
       "type": "city",
       "rank": "62",
-      "fxLink": "https://www.heweather.com/weather/oud-beijerland-BD495.html"
+      "fxLink": "https://www.qweather.com/weather/oud-beijerland-BD495.html"
     },
     {
       "name": "朝阳",
@@ -53,7 +53,7 @@ title: 城市信息搜索
       "isDst": "0",
       "type": "city",
       "rank": "15",
-      "fxLink": "https://www.heweather.com/weather/chaoyang-101010300.html"
+      "fxLink": "https://www.qweather.com/weather/chaoyang-101010300.html"
     },
     {
       "name": "海淀",
@@ -68,7 +68,7 @@ title: 城市信息搜索
       "isDst": "0",
       "type": "city",
       "rank": "15",
-      "fxLink": "https://www.heweather.com/weather/haidian-101010200.html"
+      "fxLink": "https://www.qweather.com/weather/haidian-101010200.html"
     },
     {
       "name": "丰台",
@@ -83,7 +83,7 @@ title: 城市信息搜索
       "isDst": "0",
       "type": "city",
       "rank": "25",
-      "fxLink": "https://www.heweather.com/weather/fengtai-101010900.html"
+      "fxLink": "https://www.qweather.com/weather/fengtai-101010900.html"
     },
     {
       "name": "大兴",
@@ -98,7 +98,7 @@ title: 城市信息搜索
       "isDst": "0",
       "type": "city",
       "rank": "25",
-      "fxLink": "https://www.heweather.com/weather/daxing-101011100.html"
+      "fxLink": "https://www.qweather.com/weather/daxing-101011100.html"
     },
     {
       "name": "房山",
@@ -113,7 +113,7 @@ title: 城市信息搜索
       "isDst": "0",
       "type": "city",
       "rank": "23",
-      "fxLink": "https://www.heweather.com/weather/fangshan-101011200.html"
+      "fxLink": "https://www.qweather.com/weather/fangshan-101011200.html"
     },
     {
       "name": "通州",
@@ -128,7 +128,7 @@ title: 城市信息搜索
       "isDst": "0",
       "type": "city",
       "rank": "23",
-      "fxLink": "https://www.heweather.com/weather/tongzhou-101010600.html"
+      "fxLink": "https://www.qweather.com/weather/tongzhou-101010600.html"
     },
     {
       "name": "石景山",
@@ -143,7 +143,7 @@ title: 城市信息搜索
       "isDst": "0",
       "type": "city",
       "rank": "35",
-      "fxLink": "https://www.heweather.com/weather/shijingshan-101011000.html"
+      "fxLink": "https://www.qweather.com/weather/shijingshan-101011000.html"
     },
     {
       "name": "昌平",
@@ -158,7 +158,7 @@ title: 城市信息搜索
       "isDst": "0",
       "type": "city",
       "rank": "23",
-      "fxLink": "https://www.heweather.com/weather/changping-101010700.html"
+      "fxLink": "https://www.qweather.com/weather/changping-101010700.html"
     }
   ]
 }

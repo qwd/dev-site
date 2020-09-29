@@ -4,14 +4,14 @@ title: 逐小时预报（未来24小时）
 {:.pre-scrollable}
 ```
 // 北京未来24小时逐小时天气 
-// 商业版 https://api.heweather.net/v7/weather/24d?location=101010100&key=xxx
-// 开发版 https://devapi.heweather.net/v7/weather/24d?location=101010100&key=xxx
+// 商业版 https://api.qweather.net/v7/weather/24d?location=101010100&key=xxx
+// 开发版 https://devapi.qweather.net/v7/weather/24d?location=101010100&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {
   "code": "200",
   "updateTime": "2020-06-14T17:09+08:00",
-  "fxLink": "https://www.heweather.com/weather/beijing-101010100.html",
+  "fxLink": "https://www.qweather.com/weather/beijing-101010100.html",
   "hourly": [
     {
       "fxDate": "2020-06-14T18:00+08:00",

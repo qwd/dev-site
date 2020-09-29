@@ -4,8 +4,8 @@ title: 灾害预警城市列表
 {:.pre-scrollable}
 ```
 // 中国灾害预警城市列表 
-// 商业版 https://api.heweather.net/v7/warning/list?range=cn&key=xxx
-// 开发版 https://devapi.heweather.net/v7/warning/list?range=cn&key=xxx
+// 商业版 https://api.qweather.net/v7/warning/list?range=cn&key=xxx
+// 开发版 https://devapi.qweather.net/v7/warning/list?range=cn&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {

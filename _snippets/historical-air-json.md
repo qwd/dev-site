@@ -4,7 +4,7 @@ title: 空气质量历史数据
 {:.pre-scrollable}
 ```
 // 北京空气质量历史数据 
-// 商业版 https://api.heweather.net/v7/historical/air?location=101010100&date=20200725&key=xxx
+// 商业版 https://api.qweather.net/v7/historical/air?location=101010100&date=20200725&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY，date更换成最近10天的日期
 
 {
@@ -326,7 +326,7 @@ title: 空气质量历史数据
   ],
   "refer": {
     "sources": [
-      "heweather.com"
+      "qweather.com"
     ],
     "license": [
       "commercial license"

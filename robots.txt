@@ -1,5 +1,5 @@
 User-agent: *
-Sitemap: https://dev.heweather.com/sitemap.xml
+Sitemap: https://dev.qweather.com/sitemap.xml
 Disallow: /redirect/
 Disallow: /redirect/*
 Disallow: /assets/
