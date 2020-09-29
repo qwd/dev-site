@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-xs-12 col-sm-5 col-md-6 col-lg-6">
           <section class="left">
-            <a class="logo" href="https://dev.heweather.com">
-              <img src="/assets/images/logo-white.png" /><span class="sitename">dev.heweather</span>
+            <a class="logo" href="{{ site.url }}">
+              <img src="/assets/images/logo-s-light.png" /><span class="sitename">dev.qweather</span>
             </a>
             <div class="build">
               {{ site.data.t[page.lang].powered }}
@@ -20,7 +20,7 @@
                 <h3>{{ group.group }}</h3>
                 <ul>
                   {% for item in group.list %}
-                  <li><a href="{{ item.link }}" {% if group.group == "更多信息" %}target="_blank"
+                  <li><a href="{{ item.link }}"{% if group.group == "更多信息" %} target="_blank"
                       {% endif %}>{{ item.title }}</a></li>
                       {% endfor %}
                 </ul>          

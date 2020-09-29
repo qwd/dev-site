@@ -4,6 +4,7 @@ tag: [owp]
 version: v1
 description: 和风天气免费开源天气APP iOS版开发文档，天气普拉斯开源天气APP是和风天气推出的免费开源天气APP，可以让你快速开发出属于自己的天气APP应用，完全免费。天气APP iOS开发文档。
 toc: true
+lang-ref: owpios
 ---
 ## 源码
 
@@ -48,7 +49,7 @@ $ pod install
 
 在和风天气官网控制台根据Bundle Identifier新建应用并复制appkey，userkey,替换Define目录下CommonMacros中的HeWeatherSDK_USERKey 和 HeWeatherSDK_USERNameKey宏定义对应的key
 
-[和风天气控制台](https://console.heweather.com/)
+[和风天气控制台](https://console.qweather.com/)
 
 6.更换和风天气SDK的域名
     

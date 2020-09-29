@@ -5,6 +5,7 @@ data: warning
 version: v7
 description: 和风天气灾害预警API接口支持全国3240个市县区天气灾害预警，包括：台风、暴雨、暴雪、寒潮、大风、沙尘暴、高温、干旱、雷电、冰雹、霜冻、大雾、霾、道路结冰、寒冷、灰霾、雷雨大风、森林火险、降温、道路冰雪、干热风、低温、冰冻、空气重污染、海上大雾、雷暴大风、持续低温、浓浮尘、龙卷风、低温冻害、海上大风、低温雨雪冰冻、强对流、臭氧、大雪、强降雨、强降温、雪灾、森林（草原）火险、雷暴、严寒、沙尘、海上雷雨大风、海上雷电、海上台风，
 toc: true
+lang-ref: apiwarning
 ---
 
 和风天气灾害预警API接口支持全国3240个市县区天气灾害预警，预警类型和级别包括：
@@ -19,11 +20,11 @@ toc: true
 
 **商业版** **HTTP GET**{:.httpget} 
 
-`https://api.heweather.net/v7/warning/now?{请求参数}`{:.requesturl }
+`https://api.qweather.net/v7/warning/now?{请求参数}`{:.requesturl }
 
 **开发版** **HTTP GET**{:.httpget}
 
-`https://devapi.heweather.net/v7/warning/now?{请求参数}`{:.requesturl }
+`https://devapi.qweather.net/v7/warning/now?{请求参数}`{:.requesturl }
 
 ### 请求参数
 
@@ -78,11 +79,11 @@ toc: true
 
 **商业版** **HTTP GET**{:.httpget}
 
-`https://api.heweather.net/v7/warning/list?{请求参数}`{:.requesturl }
+`https://api.qweather.net/v7/warning/list?{请求参数}`{:.requesturl }
 
 **开发版** **HTTP GET**{:.httpget} 
 
-`https://devapi.heweather.net/v7/warning/list?{请求参数}`{:.requesturl }
+`https://devapi.qweather.net/v7/warning/list?{请求参数}`{:.requesturl }
 
 ### 请求参数
 

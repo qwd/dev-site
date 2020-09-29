@@ -3,6 +3,7 @@ title: 开发常见问题
 tag: [faq]
 description: 在使用和风天气API的时候如果遇到技术问题？可以在此查看常见的开发问题，查阅开发文档了解如何解析和风天气API，或者随时与我们联系。
 toc: true
+lang-ref: faqtech
 ---
 
 ### 注意事项 {#notes}
@@ -18,11 +19,11 @@ toc: true
 
 当你发现天气数据并没有像往常一样正常的返回数据，那么一定是哪个地方出现了错误：
 
-- 请检查返回的错误状态码并查看[它们的具体含义](https://dev.heweather.com/docs/start/status-code)，如果返回的值是200，则检查你的程序。
+- 请检查返回的错误状态码并查看[它们的具体含义](https://dev.qweather.com/docs/start/status-code)，如果返回的值是200，则检查你的程序。
 - 在我们提供的API调试页面尝试调用接口，如果一切正常，请检查你的程序。
 - 本地测试正常，但是生产环境出现错误的时候，请检查你的程序或咨询你的服务器管理员，我们的数据服务无法知道自己在什么环境之中。
 
-如果问题不能解决，请登录[控制台](https://console.heweather.com)提交技术工单。
+如果问题不能解决，请登录[控制台](https://console.qweather.com)提交技术工单。
 
 ### iOS Bundle identifier
 
@@ -56,7 +57,7 @@ Xcode切换到Info下，可查看Bundle Identifier。
 
 - **数字签名所需要的参数**
   
-  `publicid`: 公共ID，每个KEY都对应一个公共ID，可在[控制台](https://console.heweather.com)查看
+  `publicid`: 公共ID，每个KEY都对应一个公共ID，可在[控制台](https://console.qweather.com)查看
 
   `t`: 时间戳，秒级
   

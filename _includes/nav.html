@@ -4,8 +4,8 @@
 <header class="navbar-fixed-top">
   <nav class="container" id="header-nav">
     <div class="navbar-header">
-      <a class="navbar-brand" href="https://dev.heweather.com">
-        <img src="/assets/images/logo-white.png?v={{ site.data.time.resource }}" alt="{{ site.data.t[page.lang].sitename }}">
+      <a class="navbar-brand" href="{{ site.url }}">
+        <img src="/assets/images/logo-s-light.png?v={{ site.data.time.resource }}" alt="{{ site.data.t[page.lang].sitename }}">
         <span>{{ site.data.t[page.lang].sitename }}</span>
       </a>
     </div>
@@ -17,12 +17,12 @@
     </ul>
     {% include nav-widget.html %}
     <ul id="login" class="nav navbar-nav navbar-right hidden-xs">
-      <li><a class="console" href="https://id.heweather.com/#/login?redirect=https://console.heweather.com">{{ site.data.t[page.lang].console }}</a></li>
-      <li style="padding-right: 0"><a style="padding-right: 0" href="https://id.heweather.com/#/register?redirect=https://console.heweather.com">{{ site.data.t[page.lang].join }}</a></li>
+      <li><a class="console" href="https://id.qweather.com/#/login?redirect=https://console.qweather.com">{{ site.data.t[page.lang].console }}</a></li>
+      <li style="padding-right: 0"><a style="padding-right: 0" href="https://id.qweather.com/#/register?redirect=https://console.qweather.com">{{ site.data.t[page.lang].join }}</a></li>
     </ul>
     <ul id="logout" class="nav navbar-nav navbar-right hidden-xs" style="display: none">
-      <li><a class="console" href="https://console.heweather.com">{{ site.data.t[page.lang].console }}</a></li>
-      <li style="padding-right: 0"><a style="padding-right: 0" href="https://id.heweather.com/#/logout?redirect=https://dev.heweather.com">{{ site.data.t[page.lang].logout }}</a></li>
+      <li><a class="console" href="https://console.qweather.com">{{ site.data.t[page.lang].console }}</a></li>
+      <li style="padding-right: 0"><a style="padding-right: 0" href="https://id.qweather.com/#/logout?redirect=https://dev.qweather.com">{{ site.data.t[page.lang].logout }}</a></li>
     </ul>
   </nav>
 </header>

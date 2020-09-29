@@ -4,11 +4,12 @@ tag: [api, b]
 data: historical
 version: v7
 description: 查看和风天气历史天气API接口开发文档，支持2010年1月1日至今的全国城市历史天气数据，API支持前一天历史数据，全部历史数据可选择一次性下载，具体方式请联系我们
+lang-ref: apihistorical
 ---
 
 最近历史数据，可以通过API接口获取最近10天的天气、空气质量历史数据。其中空气质量仅支持中国范围内的城市。
 
-如需要更长时间的城市历史数据或格点历史数据，请在[这里](https://www.heweather.com/products/mad/historical-inquiry)提交购买申请。
+如需要更长时间的城市历史数据或格点历史数据，请在[这里](https://www.qweather.com/products/mad/historical-inquiry)提交购买申请。
 
 ## 请求URL
 

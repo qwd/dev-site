@@ -3,6 +3,7 @@ title: 加密签名认证
 tag: [start, refer]
 version: s6
 description: 和风天气API和SDK支持加密签名认证方式，本文档详细介绍如何使用加密签名的方法
+lang-ref: start-auth-s6
 ---
 
 为了接口调用的安全性，我们推荐你使用加密签名认证方式进行接口访问的认证，加密签名方式是一种替代单独API KEY的更安全的接口访问方式，它会对请求参数加密后得到的签名字串进行身份验证。虽然我们一直强制要求使用HTTPS加密的接口调用方式，已经足够确保你的安全性，但加密签名的方式则避免了API KEY由于各种原因泄露给第三方而导致的风险。
@@ -11,7 +12,7 @@ description: 和风天气API和SDK支持加密签名认证方式，本文档详�
 
 |参数|描述|选择|示例值|
 |---|---|---|---|
-|username|用户ID，登录[控制台](https://console.heweather.com)可查看|必选|username=HE161025121212039|
+|username|用户ID，登录[控制台](https://console.qweather.com)可查看|必选|username=HE161025121212039|
 |t|时间戳，秒级|必选|t=1477455132|
 |sign|数字签名，[签名算法](/docs/refer/secret-authorization)|必选|sign=kNWMNt1fGAm2nIr54afBg|
 
@@ -20,7 +21,7 @@ description: 和风天气API和SDK支持加密签名认证方式，本文档详�
 ### 示例
 以获取实况天气为例
 ```
-https://api.heweather.com/s6/weather/now?location=beijing&username=HE161025121212039&t=1477455132&sign=kNWMNt1fGAm2nIr54afBg
+https://api.qweather.com/s6/weather/now?location=beijing&username=HE161025121212039&t=1477455132&sign=kNWMNt1fGAm2nIr54afBg
 ```
 
 ## 数字签名（sign）方式如下：

@@ -4,6 +4,7 @@ tag: [faq]
 description: 在使用和风天气API的过程中遇到了问题？可以来此查看，我们提供详细的开发文档和帮助内容。
 toc: true
 redirect_from: /docs/faq/
+lang-ref: faqfaq
 ---
 
 ### 我可以将天气数据用于商业产品吗？ {#commercial-use}
@@ -60,7 +61,7 @@ redirect_from: /docs/faq/
 
 ### 我需要注明数据来源吗？ {#attribution}
 
-是的，根据我们的[使用条款](https://www.heweather.com/terms/tos)和[中国气象法](http://www.cma.gov.cn/root7/auto13139/201612/t20161213_349478.html)之规定，你需要在使用天气数据的产品/服务上注明数据来源。
+是的，根据我们的[使用条款](https://www.qweather.com/terms/tos)和[中国气象法](http://www.cma.gov.cn/root7/auto13139/201612/t20161213_349478.html)之规定，你需要在使用天气数据的产品/服务上注明数据来源。
 
 ### 免费版访问量什么时候更新？ {#free-calls-reset}
 
@@ -98,4 +99,4 @@ redirect_from: /docs/faq/
 2. 预测和实测生成的方式方法也不同
 3. 预报数据的更新时间与实测数据不同，当实测数据超过或低于预报数据时，预报数据会进行修正，但修正后的更新要迟于实测数据的发布时间。
 
-> 如需更多帮助，请提交工单，或发送邮件至 support@heweather.com
+> 如需更多帮助，请提交工单，或发送邮件至 support@qweather.com

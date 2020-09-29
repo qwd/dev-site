@@ -3,6 +3,7 @@ title: 用户和账号问题
 tag: [faq]
 description: 什么是和风天气认证开发者和企业开发者？了解更多关于和风天气用户和账号的相关问题，获得更多和风天气的免费数据。
 toc: true
+lang-ref: faquser
 ---
 
 ### 用户类型 {#account-type}
@@ -58,17 +59,17 @@ toc: true
 
 ### 密码忘记了怎么办？ {#password-reset}
 
-访问[重置密码](https://id.heweather.com/#/forget)页面，可以通过注册邮箱或手机号码进行密码的重置。
+访问[重置密码](https://id.qweather.com/#/forget)页面，可以通过注册邮箱或手机号码进行密码的重置。
 
 ### 密码和邮箱都忘了怎么办？ {#forgot-all}
 
 如果你无法再使用原注册邮箱或手机，或已经忘记了原注册邮箱或手机，请按照如下方式提交申请
 
-1. 下载[《修改安全信息申请函》](https://cdn.heweather.com/misc/reset-account-information-application.pdf)
+1. 下载[《修改安全信息申请函》](https://cdn.qweather.com/misc/reset-account-information-application.pdf)
 2. 打印后按要求填写：
   - 如为个人开发者用户，必须将认证开发者时提交的同样身份证扫描或复印件粘贴在申请函中。
   - 如为企业开发者用户，必须填写认证企业开发者时的统一社会信用代码，申请函需加盖公章
-3. 扫描申请函发送至support@heweather.com，注明申请修改安全信息
+3. 扫描申请函发送至support@qweather.com，注明申请修改安全信息
 4. 审核周期为3-5天，我们的客服人员可能会与你进行电话联系，新的密码发送到你的原注册邮箱或手机
 
 ### 注销账号 {#delete-account}
@@ -91,4 +92,4 @@ toc: true
 
 当你最终完成了账号的注销，希望有一天可以再次回来:)
 
-> 如需更多帮助，请提交工单，或发送邮件至 support@heweather.com
+> 如需更多帮助，请提交工单，或发送邮件至 support@qweather.com

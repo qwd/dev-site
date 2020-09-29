@@ -5,6 +5,7 @@ data: geo
 version: v2
 description: 支持模糊搜索的全球位置/城市搜索服务，支持多语言、模糊搜索等功能。
 toc: true
+lang-ref: apigeo
 ---
 
 天气数据是基于地理位置的数据，因此获取天气之前需要先知道具体的位置信息。和风天气提供一个功能强大的城市信息搜索API服务，可获取到需要查询城市的基本信息，包括城市或地区的Location ID（你需要这个ID去查询天气），多语言名称、经纬度、时区、海拔、Rank值、归属上级行政区域、所在行政区域等。
@@ -22,7 +23,7 @@ toc: true
 
 ### 请求URL
 
-**HTTP GET**{:.httpget} `https://geoapi.heweather.net/v2/city/lookup?{请求参数}`{:.requesturl }
+**HTTP GET**{:.httpget} `https://geoapi.qweather.net/v2/city/lookup?{请求参数}`{:.requesturl }
 
 ### 请求参数
 
@@ -95,7 +96,7 @@ toc: true
 
 ### 请求URL
 
-**HTTP GET**{:.httpget} `https://geoapi.heweather.net/v2/city/top?{请求参数}`{:.requesturl }
+**HTTP GET**{:.httpget} `https://geoapi.qweather.net/v2/city/top?{请求参数}`{:.requesturl }
 
 ### 请求参数
 
@@ -150,7 +151,7 @@ toc: true
 
 ### 请求URL
 
-**HTTP GET**{:.httpget} `https://geoapi.heweather.net/v2/poi/lookup?{请求参数}`{:.requesturl }
+**HTTP GET**{:.httpget} `https://geoapi.qweather.net/v2/poi/lookup?{请求参数}`{:.requesturl }
 
 ### 请求参数
 
@@ -211,7 +212,7 @@ POI类型，可选择搜索某一类型的POI，目前仅限景点。例如`type
 
 ### 请求URL
 
-**HTTP GET**{:.httpget} `https://geoapi.heweather.net/v2/poi/range?{请求参数}`{:.requesturl }
+**HTTP GET**{:.httpget} `https://geoapi.qweather.net/v2/poi/range?{请求参数}`{:.requesturl }
 
 ### 请求参数
 

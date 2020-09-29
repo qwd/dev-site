@@ -4,6 +4,7 @@ tag: [sdk]
 version: v4
 description: 和风天气iOS SDK 实体类属性对照表
 toc: true
+lang-ref: sdkiosentity
 ---
 
 ## 天气预报和实况
@@ -234,7 +235,7 @@ HeConfigInstance.unit = @"";
 | updateTime    | 当前[数据最近更新时间](/docs/getting-started/glossary#updatetime)               | 2013-12-30T01:45+08:00                                                     |
 | fxLink | 该城市的天气预播啊自适应网页，可嵌入网站或应用，**可能为空** | http://hfx.link/ae45 |
 | now.pubTime | 实时空气质量数据发布时间 | 2013-12-30T01:45+08:00 |
-| now.aqi      | 实时空气质量指数，[AQI和PM25的关系](https://www.heweather.com/blog/aqi) | 74               |
+| now.aqi      | 实时空气质量指数 | 74               |
 | now.level     | 实时空气质量指数等级	 | 2 |
 | now.category     | 实时空气质量指数级别	 | 良 |
 | now.primary     | 实时空气质量的主要污染物，空气质量为优时，返回值为空             | pm2.5             |
@@ -244,19 +245,19 @@ HeConfigInstance.unit = @"";
 | now.so2      | 实时 二氧化硫         | 30               |
 | now.co       | 实时 一氧化碳         | 33               |
 | now.o3       | 实时 臭氧                   | 20               |
-| station.pubTime | 国控站点实时空气质量数据发布时间，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回    | 2013-12-30T01:45+08:00 |
-| station.name  | 国控站点名称，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                     | 万寿西宫         |
-| station.cid     | 国控站点ID，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                       | CNA110000        |
-| station.aqi      | 国控站点实时空气质量指数，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回  | 74               |
+| station.pubTime | 国控站点实时空气质量数据发布时间，仅在[环保部国控站点的城市](https://cdn.qweather.com/air_gov.xlsx)中返回    | 2013-12-30T01:45+08:00 |
+| station.name  | 国控站点名称，仅在[环保部国控站点的城市](https://cdn.qweather.com/air_gov.xlsx)中返回                                                     | 万寿西宫         |
+| station.cid     | 国控站点ID，仅在[环保部国控站点的城市](https://cdn.qweather.com/air_gov.xlsx)中返回                                                       | CNA110000        |
+| station.aqi      | 国控站点实时空气质量指数，仅在[环保部国控站点的城市](https://cdn.qweather.com/air_gov.xlsx)中返回  | 74               |
 | station.level     | 监测站实时空气质量指数等级，仅在国控站点的城市中返回 | 2               |
 | station.category     | 监测站实时空气质量指数级别，仅在国控站点的城市中返回| 良 |
-| station.primary     | 国控站点实时主要污染物，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回。空气质量为优时，返回值为空                                                   | pm25             |
-| station.pm10     | 国控站点实时 pm10，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                          | 78               |
-| station.pm2p5    | 国控站点实时 pm2.5，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                          | 66               |
-| station.no2      | 国控站点实时 二氧化氮，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                      | 40               |
-| station.so2      | 国控站点实时 二氧化硫，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                      | 30               |
-| station.co       | 国控站点实时 一氧化碳，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                      | 33               |
-| station.o3       | 国控站点实时 臭氧，仅在[环保部国控站点的城市](https://cdn.heweather.com/air_gov.xlsx)中返回                                                          | 20               |
+| station.primary     | 国控站点实时主要污染物，仅在[环保部国控站点的城市](https://cdn.qweather.com/air_gov.xlsx)中返回。空气质量为优时，返回值为空                                                   | pm25             |
+| station.pm10     | 国控站点实时 pm10，仅在[环保部国控站点的城市](https://cdn.qweather.com/air_gov.xlsx)中返回                                                          | 78               |
+| station.pm2p5    | 国控站点实时 pm2.5，仅在[环保部国控站点的城市](https://cdn.qweather.com/air_gov.xlsx)中返回                                                          | 66               |
+| station.no2      | 国控站点实时 二氧化氮，仅在[环保部国控站点的城市](https://cdn.qweather.com/air_gov.xlsx)中返回                                                      | 40               |
+| station.so2      | 国控站点实时 二氧化硫，仅在[环保部国控站点的城市](https://cdn.qweather.com/air_gov.xlsx)中返回                                                      | 30               |
+| station.co       | 国控站点实时 一氧化碳，仅在[环保部国控站点的城市](https://cdn.qweather.com/air_gov.xlsx)中返回                                                      | 33               |
+| station.o3       | 国控站点实时 臭氧，仅在[环保部国控站点的城市](https://cdn.qweather.com/air_gov.xlsx)中返回                                                          | 20               |
 | daily.fxDate | 空气质量逐天预报日期                                      | 2018-05-31 |
 | daily.aqi  | 空气质量逐天预报指数 | 74         |
 | daily.level | 逐逐天预报的空气质量指数等级| 2         |
@@ -766,10 +767,10 @@ SERCHMODE_TYPE_FUZZY | 模糊查询
 
 **range** {{ site.data.text.optional }}
 
-搜索范围，**默认搜索全球城市。** 可设定只在某个国家范围内进行搜索，国家名称需使用[ISO 3166 所定义的国家代码](https://www.heweather.com/blog/iso-3166)。
+搜索范围，**默认搜索全球城市。** 可设定只在某个国家范围内进行搜索，国家名称需使用[ISO 3166 所定义的国家代码](/docs/start/glossary#iso-3166)。
 
 - `world` 全球城市范围，默认
-- `cn` 中国城市范围，可替换为其他国家的 [ISO 3166 国家代码](https://www.heweather.com/blog/iso-3166)，例如`range=us`
+- `cn` 中国城市范围，可替换为其他国家的 [ISO 3166 国家代码](/docs/start/glossary#iso-3166)，例如`range=us`
 
 **number** {{ site.data.text.optional }}
 
@@ -835,10 +836,10 @@ SERCHMODE_TYPE_FUZZY | 模糊查询
 
 **range** {{ site.data.text.optional }}
 
-搜索范围，**默认搜索全球城市。** 可设定只在某个国家范围内进行搜索，国家名称需使用[ISO 3166 所定义的国家代码](https://www.heweather.com/blog/iso-3166)。
+搜索范围，**默认搜索全球城市。** 可设定只在某个国家范围内进行搜索，国家名称需使用[ISO 3166 所定义的国家代码](h/docs/start/glossary#iso-3166)。
 
 - `world` 全球城市范围，默认
-- `cn` 中国城市范围，可替换为其他国家的 [ISO 3166 国家代码](https://www.heweather.com/blog/iso-3166)，例如`range=us`
+- `cn` 中国城市范围，可替换为其他国家的 [ISO 3166 国家代码](/docs/start/glossary#iso-3166)，例如`range=us`
 
 **number** {{ site.data.text.optional }}
 

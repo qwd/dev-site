@@ -3,6 +3,7 @@ title: 错误状态码
 tag: [start, refer]
 version: 7
 description: 和风天气数据状态码和错误码，出现错误的时候，请先参考此表格。
+lang-ref: start-status-code
 ---
 
 通过API接口中的`code`字段，可以获取到当前请求的状态，判断请求是否成功或出现错误。
@@ -19,6 +20,6 @@ description: 和风天气数据状态码和错误码，出现错误的时候，�
 | 403  | 无访问权限，可能是绑定的PackageName、BundleID、域名IP地址不一致，或者是需要额外付费的数据。        |
 |404| 查询的数据或地区不存在。  |
 | 429   | 超过限定的QPM（每分钟访问次数），请参考[QPM说明](/docs/start/glossary#qpm)   |
-| 500  | 无响应或超时，接口服务异常请[联系我们](https://www.heweather.com/contact)                                                                             |
+| 500  | 无响应或超时，接口服务异常请[联系我们](https://www.qweather.com/contact)                                                                             |
 
 最新的状态码与S6版本API不兼容，请参考[S6版本的状态码](/docs/legacy/api/s6#status-code)

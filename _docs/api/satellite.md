@@ -4,18 +4,19 @@ tag: [api, b]
 data: imagery
 version: v7
 description: 和风天气提供全球卫星云图的API接口，包括中国风云4号卫星云图、美国GEOS卫星云图、日本向日葵8号卫星云图。
+lang-ref: apisat
 ---
 
-全球卫星云图，包括中国风云4号卫星云图、美国GEOS卫星云图、日本向日葵8号卫星云图，所获取的图片均为当前请求时间最新的图片。如需要批量下载或指定时间，请[与我们联系](https://www.heweather.com/contact)。
+全球卫星云图，包括中国风云4号卫星云图、美国GEOS卫星云图、日本向日葵8号卫星云图，所获取的图片均为当前请求时间最新的图片。如需要批量下载或指定时间，请[与我们联系](https://www.qweather.com/contact/)。
 
-> - 所获取的云图均为当前请求时间最新的图片，如需要批量下载或指定时间，请[与我们联系](https://www.heweather.com/contact)。
+> - 所获取的云图均为当前请求时间最新的图片，如需要批量下载或指定时间，请[与我们联系](https://www.qweather.com/contact)。
 > - 云图均为full disk规格。
 
 ## 请求URL
 
 ```html
 # 商业版
-https://api.heweather.net/v7/satellite?{parameters}
+https://api.qweather.net/v7/satellite?{parameters}
 ```
 
 ## 请求参数
@@ -54,7 +55,7 @@ https://api.heweather.net/v7/satellite?{parameters}
 | 参数          | 描述             |示例
 | :------------ | :--------------- |
 | status | API状态码，具体含义请参考[状态码](/docs/start/status-code) | 200  |
-| downloadUrl | 返回请求图片的下载链接。**该链接有效期为5分钟**，你可以在有效期内下载多次，但超过5分钟你不能再使用这个链接下载图片，需要重新访问API获取新的下载连接。 | https://cdn.heweather.com/xxx |
+| downloadUrl | 返回请求图片的下载链接。**该链接有效期为5分钟**，你可以在有效期内下载多次，但超过5分钟你不能再使用这个链接下载图片，需要重新访问API获取新的下载连接。 | https://cdn.qweather.com/xxx |
 | pubTime | 该图片的发布时间，时区均为UTC 0点时区 |2019-12-30T20:30Z|
 | fxLink | 所查询卫星云图对应的网页，自适应PC和移动端，便于嵌入你的网站或应用。 | http://hfx.link/ae45 |
 | sources | 数据许可证 | weather china |

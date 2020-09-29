@@ -3,11 +3,12 @@ title: 天气图标
 tag: [start, refer]
 version: 7
 description: 和风天气所使用的多达60种天气图标，天气图标采用署名-非商业性使用 4.0 中国大陆 (CC BY-NC 4.0 CN)许可协议授权
+lang-ref: start-icons
 ---
 
 和风天气提供了两套漂亮的天气图标，用于在你的产品上使用图形展示天气状况。在天气图标S1版中我们还提供了`.ai`格式的源文件，你可以自由的裁剪出适合你的尺寸或者编辑图标的颜色。
 
-![图标截图](/assets/images/heweather-icon-screenshot.png)
+![图标截图](/assets/images/qweather-icon-screenshot.png)
 
 ### 下载
 
@@ -90,7 +91,7 @@ git clone https://github.com/heweather/WeatherIcon.git
 
 ### 版权
 
-本页面包含的天气图标由<a xmlns:cc="http://creativecommons.org/ns#" href="https://www.heweather.com" property="cc:attributionName" rel="cc:attributionURL">和风天气</a>采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">知识共享 署名 4.0 国际 许可协议</a>进行许可。
+本页面包含的天气图标由<a xmlns:cc="http://creativecommons.org/ns#" href="https://www.qweather.com" property="cc:attributionName" rel="cc:attributionURL">和风天气</a>采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">知识共享 署名 4.0 国际 许可协议</a>进行许可。
 
 您可以自由地：
 

@@ -3,13 +3,14 @@ title: 创建应用和KEY
 tag: [start, refer]
 version: 2
 description: 使用和风天气数据API或SDK，首先要先创建一个应用，在这个应用下，你可以为这个应用不同的使用场景创建多个KEY。
+lang-ref: start-get-api-key
 ---
 
 使用和风天气数据API或SDK，首先要先创建一个应用，在这个应用下，你可以为这个应用不同的使用场景创建多个KEY。
 
 ### 第一步 创建应用
 
-进入[控制台](https://console.heweather.com/)后，在左侧导航菜单中选择“API应用管理”
+进入[控制台](https://console.qweather.com/)后，在左侧导航菜单中选择“API应用管理”
 
 ![创建应用](/assets/images/get-key-1.png)
 

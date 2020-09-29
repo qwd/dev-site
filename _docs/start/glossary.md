@@ -3,6 +3,7 @@ title: 名词解释
 tag: [start, refer]
 version: 7
 description: 和风天气API接口专有名词的解释说明
+lang-ref: start-glossary
 ---
 
 ### Rank
@@ -33,7 +34,7 @@ Adcode是中国行政区域编码。
 
 [ISO 3166](https://www.iso.org/iso-3166-country-codes.html)是国际标准化组织（ISO）发布的全球国家代码标准，正式名称是国家名称和其分支的代码。该标准规定了国家名称、附属领土、地理利益的特殊区域以及它们的主要分支（如省或州）的名称。国家代码有二位字母代码、三位字母代码、以及三位数字代码，和风天气采用的是其中的二位字母代码（alpha-2）。
 
-完整的二位数字ISO 3166可[通过我们的Github下载](https://github.com/heweather/LocationList)。
+完整的二位数字ISO 3166可[通过我们的Github下载](https://github.com/qweather/LocationList)。
 
 ### POI
 
@@ -123,6 +124,6 @@ QPM (Query Per Minute)，每分钟请求数，超过每分钟请求数量的请�
 
 风力等级用于直接展示，不建议作为枚举项使用；例如以后出现更高等级风力或者变更了风力等级的标准，采用枚举项的方式则会出现匹配不到的情况，此情况请谨慎使用。
 
-风力等级依据风速而来，可参考[风力等级与风速对照](https://www.heweather.com/blog/wind-speed-vs-wind-scale)，和风天气采用 KM/H 为单位。
+风力等级依据风速而来，可参考[风力等级与风速对照](https://www.qweather.com/blog/wind-speed-vs-wind-scale)，和风天气采用 KM/H 为单位。
 
 当风力等级为0时，风向角度为-1，风向为无持续风向。

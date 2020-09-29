@@ -4,6 +4,7 @@ version: 1.0
 tag: [widget]
 data: weather
 description: 免费的和风天气Android天气插件SDK，包括实况天气、分钟级降水、空气质量、灾害预警、30天预报、生活指数、台风路径等天气内容，支持在Android应用任意位置加入天气内容，并可生成天气频道页面。
+lang-ref: widget-android
 ---
 ## 版本和更新
 
@@ -274,7 +275,7 @@ verticalView.show();
 #### （11）替换天气图标
 
 1. 在文件目录app/src/main下创建资源文件夹assets
-1. 在app/src/main/assets文件夹放入文件名对应天气代码的图标，文件名：白天是天气代码+d，晚上是天气代码+n后缀为.png，例如：100d.png，100n.png（图标对应关系请参考和风天气官网天气状况代码和图标对应关系 https://www.heweather.com/documents/condition）
+1. 在app/src/main/assets文件夹放入文件名对应天气代码的图标，文件名：白天是天气代码+d，晚上是天气代码+n后缀为.png，例如：100d.png，100n.png（图标对应关系请参考和风天气官网天气状况代码和图标对应关系 https://dev.qweather.com/docs/start/icons）
 1. 在初始化的时候调用下列方法
 
 ```java
