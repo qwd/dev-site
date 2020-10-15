@@ -9,28 +9,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <!-- title/description/etc... -->
     {% if page.lang == "zh" %}
     {% seo %}
     {% else %}
     {% seo title=false %}
-    <title>{{ page.title }} | QWeather</title>
+    <title>{{ page.title }} | QWeather Develop</title>
     {% endif %}
+
+    <!-- QWeather APP AppStore -->
     <meta name="apple-itunes-app" content="app-id=1461458147, app-argument=weather" />
-    <link rel="stylesheet" href="/assets/css/font-lang-{{- page.lang -}}.css" />
+
+    <!-- favicons -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg?v={{ site.data.ver.favicon }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v={{ site.data.ver.favicon }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v={{ site.data.ver.favicon }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v={{ site.data.ver.favicon }}">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg?v={{ site.data.ver.favicon }}" color="#524696">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#524696">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+    <!-- font style for multi language support -->
+    <link rel="stylesheet" href="/assets/css/font-lang-{{- page.lang -}}.css?{{ site.data.ver.style }}" />
+    <!-- main style -->
     <link rel="stylesheet" href="/assets/css/style.css?{{ site.data.ver.style }}" />
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
     <!-- HTML5 element support for IE6-8 -->
     <!--[if lt IE 9]>
     <script src="https://cdn.staticfile.org/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
     <![endif]-->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v={{ site.data.ver.favicon }}" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v={{ site.data.ver.favicon }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v={{ site.data.ver.favicon }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v={{ site.data.ver.favicon }}">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg?v={{ site.data.ver.favicon }}" color="#524696">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#524696">
 </head>
 
 <body>
