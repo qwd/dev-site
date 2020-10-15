@@ -1,14 +1,14 @@
 name: 和风天气开发平台
-description: 提供商业和免费的天气API、天气SDK，开源天气APP，天气插件。
+description: 提供商业和免费的天气API、天气SDK，开源天气APP，天气插件
 timezone: Asia/Shanghai
 url: "https://dev.qweather.com"
 lang: zh_CN
-logo: "/assets/images/brand.png"
+logo: "/assets/images/logo-s-dark-800.png"
 attribution: qweather.com
 github: https://github.com/heweather
 icp:
   number: 京ICP备15048401号-11
-  url: "http://beian.miit.gov.cn"
+  url: "https://beian.miit.gov.cn"
 webmaster_verifications:
   google: 5mJlHKIddhky6OQT5qb7M2Uit2yzg4WGwG7JBxWQ6Cw
   bing: EDFBFE217D2B905D82BE1D5A1BC9AB28
@@ -29,6 +29,10 @@ defaults:
     lang: zh
     seo:
       type: "DigitalDocument"
+- scope:
+    path: "_snippets"
+  values:
+    sitemap: false
 collections:
   docs:
     permalink: "/docs/:path/"
@@ -49,7 +53,10 @@ exclude:
 - .gitignore
 - .sass-cache
 - .jekyll-cache
+- .htaccess
+- CNAME
 - README.md
+- LICENSE
 
 plugins:
 - jekyll-seo-tag
