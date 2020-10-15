@@ -3,7 +3,7 @@ title: 分钟级降水
 tag: [api, bd]
 data: minutely
 version: v7
-description: 和风天气分钟级降水API接口开发文档，支持1公里格点的全国分钟级降雨预报（临近预报）数据，为每一分钟的降雨进行精准预测。
+description: 和风天气分钟级降水API接口（临近预报）支持1公里格点的全国分钟级降雨预报数据，为每一分钟的降雨进行精准预测。
 lang-ref: apimin
 ---
 

@@ -2,7 +2,7 @@
 title: OpenWeatherPlus 天气普拉斯
 tag: [owp]
 version: v1
-description: 和风天气免费开源天气APP，天气普拉斯开源天气APP iOS/Android开发文档
+description: 天气普拉斯是和风天气免费开源天气APP，你可以自由的下载和使用，更加容易创建一个属于自己的天气APP，没有广告，不用收费，支持iOS/Android。
 permalink: /docs/owp/
 lang-ref: owpowp
 ---

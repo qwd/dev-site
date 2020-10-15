@@ -2,7 +2,7 @@
 title: 代码库
 tag: [library]
 version: 1.0
-description: 想要快速的使用和风天气的数据吗？我们提供了一些官方示例代码和非官方代码库，可以让你的开发工作更加简单快速。
+description: 想要快速的使用和风天气的数据吗？我们提供了一些官方天气API示例代码和非官方代码库，可以让你的开发工作更加简单快速。
 permalink: /docs/library/
 lang-ref: library
 ---

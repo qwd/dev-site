@@ -3,7 +3,7 @@ title: 天气生活指数
 tag: [api, bd]
 data: indices
 version: v7
-description: 和风天气生活指数API接口的开发文档。和风天气生活指数API支持全国4000+个市县区和海外15万个城市天气预报。
+description: 和风天气全球生活指数API接口包括洗车指数、穿衣指数、感冒指数、过敏指数、紫外线指数、钓鱼指数等20多种数据，生活指数API支持全国4000+个市县区和海外15万个城市天气预报。
 lang-ref: apiindices
 ---
 

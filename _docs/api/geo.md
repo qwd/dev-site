@@ -3,7 +3,7 @@ title: 城市信息搜索
 tag: [api]
 data: geo
 version: v2
-description: 支持模糊搜索的全球位置/城市搜索服务，支持多语言、模糊搜索等功能。
+description: 和风天气GeoAPI提供全球地理位位置、全球城市搜索服务，支持经纬度坐标反查、多语言、模糊搜索等功能。
 toc: true
 lang-ref: apigeo
 ---
