@@ -56,8 +56,8 @@ implementation 'com.google.code.gson:gson:2.6.2'(2.6.2+)
 #### 排除sdk
 
 ```java
--keep public class com.heweather.plugin.bean.** { *; }
--keep public class com.heweather.plugin.view.** { *; }
+-keep public class com.qweather.plugin.bean.** { *; }
+-keep public class com.qweather.plugin.view.** { *; }
 ```
 
 ## 调用说明
@@ -74,14 +74,14 @@ protected void onCreate(Bundle savedInstanceState) {
          * @param key   用户的ID
          * @param location  地址详解，若不传或为空则调用Android源生定位
          */
-         HeWeatherConfig.init("key","location");
+         QWeatherConfig.init("key","location");
     }
 ```
 
 #### （2）横向布局
 
 ```java
-<com.heweather.plugin.view.HorizonView
+<com.qweather.plugin.view.HorizonView
     android:id="@+id/horizon_view"
     android:layout_width="match_parent"
     android:layout_height="60dp" />
@@ -90,7 +90,7 @@ protected void onCreate(Bundle savedInstanceState) {
 #### （3）左侧大布局右侧横向双布局
 
 ```java
-<com.heweather.plugin.view.LeftLargeView
+<com.qweather.plugin.view.LeftLargeView
     android:id="@+id/ll_view"
     android:layout_width="match_parent"
     android:layout_height="60dp"/>
@@ -99,7 +99,7 @@ protected void onCreate(Bundle savedInstanceState) {
 #### （4）右侧大布局左侧横向双布局
 
 ```java
-<com.heweather.plugin.view.RightLargeView
+<com.qweather.plugin.view.RightLargeView
         android:id="@+id/rl_view"
         android:layout_width="match_parent"
         android:layout_height="60dp"/>
@@ -108,7 +108,7 @@ protected void onCreate(Bundle savedInstanceState) {
 #### （5）竖直布局
 
 ```java
-<com.heweather.plugin.view.VerticalView
+<com.qweather.plugin.view.VerticalView
         android:id="@+id/vertical_view"
         android:layout_width="75dp"
         android:layout_height="match_parent"/>
@@ -283,7 +283,7 @@ verticalView.show();
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     //替换天气图标为本地图标
-    HeWeatherConfig.changeWeatherIcon();
+    QWeatherConfig.changeWeatherIcon();
 }
 ```
 
@@ -294,7 +294,7 @@ protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //location若不传或为空则调用Android源生定位
-        HeWeatherConfig.init("用户key","location");
+        QWeatherConfig.init("用户key","location");
         //初始化悬浮控件
         SuspendView suspendView = new SuspendView(this);
         //显示悬浮控件
@@ -304,7 +304,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 #### （13）如需点击控件跳转到H5界面需要在AndroidManifest.xml配置如下代码
 ```html
-<activity android:name="com.heweather.plugin.view.SdkWebViewActivity" />
+<activity android:name="com.qweather.plugin.view.SdkWebViewActivity" />
 ```
 
 
@@ -347,10 +347,10 @@ protected void onCreate(Bundle savedInstanceState) {
 
 | 方法名                                                       | 参数详解                                                     | 作用                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------- |
-| HeWeatherConfig.init("key");                                 | 参数1：和风天气提供的key                                     | 初始化                     |
-| HeWeatherConfig.init("key", location);                       | 参数1：和风天气提供的key 参数2：location（请参照地址详解）   | 初始化                     |
+| QWeatherConfig.init("key");                                 | 参数1：和风天气提供的key                                     | 初始化                     |
+| QWeatherConfig.init("key", location);                       | 参数1：和风天气提供的key 参数2：location（请参照地址详解）   | 初始化                     |
 | setDefaultBack(boolean defaultBack)                          | 参数1：是否展示默认天气图片背景（true：展示，false：透明背景） | 设置是否展示默认的图片背景 |
-| HeWeatherConfig.changeWeatherIcon();                         |                                                              | 使用自己配置的天气图标     |
+| QWeatherConfig.changeWeatherIcon();                         |                                                              | 使用自己配置的天气图标     |
 | setStroke(int radius, int backColor, int strokeWidth, int strokeColor) | 参数1：圆角大小（单位：dp） 参数2：背景颜色 参数3：边框宽度（单位：px） 参数4：边框颜色 | 设置控件的边框             |
 | setViewGravity(String viewGravity)                           | 参数1：控件对齐方式（默认居中）                              | 设置控件对齐方式           |
 | setViewPadding(int paddingLeft, int paddingTop, int paddingRight, int paddingBottom) | 参数1-4：控件左上右下内边距                                  | 设置控件内边距             |

@@ -35,9 +35,9 @@ lang-ref: sdkandroidentitty
 #### 示例代码
 
 ```java
-HeWeather.getWeatherNow(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherNowListener listener) ;
+QWeather.getWeatherNow(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherNowListener listener) ;
 
-HeWeather.getWeatherNow(Context context, String location, HeWeather.OnResultWeatherNowListener listener);
+QWeather.getWeatherNow(Context context, String location, QWeather.OnResultWeatherNowListener listener);
 ```
 
 **WeatherNowBean的属性**
@@ -117,30 +117,30 @@ HeWeather.getWeatherNow(Context context, String location, HeWeather.OnResultWeat
 /**
  * 获取3天预报数据
  */
-HeWeather.getWeather3D(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherDailyListener listener) ;
+QWeather.getWeather3D(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherDailyListener listener) ;
 
-HeWeather.getWeather3D(Context context, String location, HeWeather.OnResultWeatherDailyListener listener);
+QWeather.getWeather3D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
 
 /**
  * 获取7天预报数据
  */
-HeWeather.getWeather7D(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherDailyListener listener) ;
+QWeather.getWeather7D(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherDailyListener listener) ;
 
-HeWeather.getWeather7D(Context context, String location, HeWeather.OnResultWeatherDailyListener listener);
+QWeather.getWeather7D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
 
 /**
  * 获取10天预报数据
  */
-HeWeather.getWeather10D(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherDailyListener listener) ;
+QWeather.getWeather10D(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherDailyListener listener) ;
 
-HeWeather.getWeather10D(Context context, String location, HeWeather.OnResultWeatherDailyListener listener);
+QWeather.getWeather10D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
 
 /**
  * 获取15天预报数据
  */
-HeWeather.getWeather15D(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherDailyListener listener) ;
+QWeather.getWeather15D(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherDailyListener listener) ;
 
-HeWeather.getWeather15D(Context context, String location, HeWeather.OnResultWeatherDailyListener listener);
+QWeather.getWeather15D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
 ```
 
 **WeatherDailyBean的属性**
@@ -230,23 +230,23 @@ HeWeather.getWeather15D(Context context, String location, HeWeather.OnResultWeat
 /**
  * 获取24小时预报数据
  */
-HeWeather.getWeather24Hourly(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherHourlyListener listener);
+QWeather.getWeather24Hourly(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherHourlyListener listener);
 
-HeWeather.getWeather24Hourly(Context context, String location, HeWeather.OnResultWeatherHourlyListener listener);
+QWeather.getWeather24Hourly(Context context, String location, QWeather.OnResultWeatherHourlyListener listener);
 
 /**
  * 获取72小时预报数据
  */
-HeWeather.getWeather72Hourly(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherHourlyListener listener) ;
+QWeather.getWeather72Hourly(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherHourlyListener listener) ;
 
-HeWeather.getWeather72Hourly(Context context, String location, HeWeather.OnResultWeatherHourlyListener listener);
+QWeather.getWeather72Hourly(Context context, String location, QWeather.OnResultWeatherHourlyListener listener);
 
 /**
  * 获取168小时预报数据
  */
-HeWeather.getWeather168Hourly(Context context, String location, Lang lang, Unit unit,HeWeather.OnResultWeatherHourlyListener listener) ;
+QWeather.getWeather168Hourly(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherHourlyListener listener) ;
 
-HeWeather.getWeather168Hourly(Context context, String location, HeWeather.OnResultWeatherHourlyListener listener);
+QWeather.getWeather168Hourly(Context context, String location, QWeather.OnResultWeatherHourlyListener listener);
 
 ```
 
@@ -311,9 +311,9 @@ HeWeather.getWeather168Hourly(Context context, String location, HeWeather.OnResu
 #### 示例代码
 
 ```java
-HeWeather.getMinuteLy(Context context, String location,HeWeather.OnResultMinutelyListener listener);
+QWeather.getMinuteLy(Context context, String location,QWeather.OnResultMinutelyListener listener);
 
-HeWeather.getMinuteLy(Context context, String location, Lang lang, HeWeather.OnResultMinutelyListener listener);
+QWeather.getMinuteLy(Context context, String location, Lang lang, QWeather.OnResultMinutelyListener listener);
 ```
 
 **MinutelyBean的属性**
@@ -367,9 +367,9 @@ HeWeather.getMinuteLy(Context context, String location, Lang lang, HeWeather.OnR
 #### 示例代码
 
 ```java
-HeWeather.getWarning(Context context, String location, final HeWeather.OnResultWarningListener listener) ;
+QWeather.getWarning(Context context, String location, final QWeather.OnResultWarningListener listener) ;
 
-HeWeather.getWarning(Context context, String location, Lang lang, final HeWeather.OnResultWarningListener listener) ;
+QWeather.getWarning(Context context, String location, Lang lang, final QWeather.OnResultWarningListener listener) ;
 
 ```
 
@@ -433,7 +433,7 @@ HeWeather.getWarning(Context context, String location, Lang lang, final HeWeathe
  * @param context  上下文
  * @param listener 网络访问回调接口
  */
-HeWeather.getWarningList(Context context, final HeWeather.OnResultWarningListListener listener);
+QWeather.getWarningList(Context context, final QWeather.OnResultWarningListListener listener);
 ```
 
 **WarningListBean的属性**
@@ -498,12 +498,12 @@ HeWeather.getWarningList(Context context, final HeWeather.OnResultWarningListLis
 /**
  * 获取1天生活指数数据
  */
-HeWeather.get1DIndices(Context context, String location, Lang lang, List<IndicesType> types, HeWeather.OnResultIndicesListener listener);
+QWeather.get1DIndices(Context context, String location, Lang lang, List<IndicesType> types, QWeather.OnResultIndicesListener listener);
 
 /**
  * 获取3天生活指数数据
  */
-HeWeather.get3DIndices(Context context, String location, Lang lang, List<IndicesType> types, HeWeather.OnResultIndicesListener listener) ;
+QWeather.get3DIndices(Context context, String location, Lang lang, List<IndicesType> types, QWeather.OnResultIndicesListener listener) ;
 ```
 
 **IndicesBean的属性**
@@ -570,9 +570,9 @@ HeWeather.get3DIndices(Context context, String location, Lang lang, List<Indices
 #### 示例代码
 
 ```java
-HeWeather.getWeatherPoiNow(Context context, String location, final HeWeather.OnResultPoiNowListener listener);
+QWeather.getWeatherPoiNow(Context context, String location, final QWeather.OnResultPoiNowListener listener);
 
-HeWeather.getWeatherPoiNow(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultPoiNowListener listener) ;
+QWeather.getWeatherPoiNow(Context context, String location, Lang lang, Unit unit, final QWeather.OnResultPoiNowListener listener) ;
 ```
 
 **WeatherPoiNowBean的属性**
@@ -642,9 +642,9 @@ HeWeather.getWeatherPoiNow(Context context, String location, Lang lang, Unit uni
 #### 示例代码
 
 ```java
-HeWeather.getWeatherPoi7D(Context context, String location, final HeWeather.OnResultPoiDailyListener listener);
+QWeather.getWeatherPoi7D(Context context, String location, final QWeather.OnResultPoiDailyListener listener);
 
-HeWeather.getWeatherPoi7D(Context context, String location, Lang lang, Unit unit, final HeWeather.OnResultPoiDailyListener listener) ;
+QWeather.getWeatherPoi7D(Context context, String location, Lang lang, Unit unit, final QWeather.OnResultPoiDailyListener listener) ;
 ```
 
 **WeatherPoiDailyBean的属性**
@@ -705,8 +705,8 @@ HeWeather.getWeatherPoi7D(Context context, String location, Lang lang, Unit unit
 #### 示例代码
 
 ```java
-HeWeather.getAirNow(Context context, String location, Lang lang,
-HeWeather.OnResultAirNowListener listener)
+QWeather.getAirNow(Context context, String location, Lang lang,
+QWeather.OnResultAirNowListener listener)
 ```
 
 **AirNowBean的属性**
@@ -791,7 +791,7 @@ HeWeather.OnResultAirNowListener listener)
  * 空气质量5天预报数据
  */
 
-HeWeather.getAir5D(Context context, String location, Lang lang, HeWeather.OnResultAirDailyListener listener)
+QWeather.getAir5D(Context context, String location, Lang lang, QWeather.OnResultAirDailyListener listener)
 
 ```
 
@@ -861,9 +861,9 @@ HeWeather.getAir5D(Context context, String location, Lang lang, HeWeather.OnResu
 #### 示例代码
 
 ```java
-HeWeather.getHistoricalWeather(Context context, String location, String date, HeWeather.OnResultWeatherHistoricalBeanListener listener) ;
+QWeather.getHistoricalWeather(Context context, String location, String date, QWeather.OnResultWeatherHistoricalBeanListener listener) ;
 
-HeWeather.getHistoricalWeather(Context context, String location, String date, Lang lang, Unit unit,HeWeather.OnResultWeatherHistoricalBeanListener listener)
+QWeather.getHistoricalWeather(Context context, String location, String date, Lang lang, Unit unit,QWeather.OnResultWeatherHistoricalBeanListener listener)
 ```
 
 **HistoryWeatherBean 数据类**
@@ -954,9 +954,9 @@ HeWeather.getHistoricalWeather(Context context, String location, String date, La
 #### 示例代码
 
 ```java
-HeWeather.getHistoricalAir(Context context, String location, String date, HeWeather.OnResultAirHistoricalBeanListener listener) ;
+QWeather.getHistoricalAir(Context context, String location, String date, QWeather.OnResultAirHistoricalBeanListener listener) ;
 
-HeWeather.getHistoricalAir(Context context, String location, String date, Lang lang, Unit unit,HeWeather.OnResultAirHistoricalBeanListener listener)
+QWeather.getHistoricalAir(Context context, String location, String date, Lang lang, Unit unit,QWeather.OnResultAirHistoricalBeanListener listener)
 ```
 
 **HistoricalAirBean 数据类**
@@ -1021,9 +1021,9 @@ HeWeather.getHistoricalAir(Context context, String location, String date, Lang l
 #### 示例代码
 
 ```java
-HeWeather.getSunMoon(Context context, String location, String date, final OnResultSunMoonListener listener) ;
+QWeather.getSunMoon(Context context, String location, String date, final OnResultSunMoonListener listener) ;
 
-HeWeather.getSunMoon(Context context, String location, Lang lang, String date, final OnResultSunMoonListener listener)                                
+QWeather.getSunMoon(Context context, String location, Lang lang, String date, final OnResultSunMoonListener listener)                                
 ```
 
 **SunMoonBean 数据类**
@@ -1115,11 +1115,11 @@ HeWeather.getSunMoon(Context context, String location, Lang lang, String date, f
 #### 示例代码
 
 ```java
-HeWeather.getGeoCityLookup(Context context, String location, Mode mode, Range range, int number, Lang lang, final HeWeather.OnResultGeoListener listener);
+QWeather.getGeoCityLookup(Context context, String location, Mode mode, Range range, int number, Lang lang, final QWeather.OnResultGeoListener listener);
 
-HeWeather.getGeoCityLookup(Context context, Mode mode, Range range, final HeWeather.OnResultGeoBeansListener listener) ;
+QWeather.getGeoCityLookup(Context context, Mode mode, Range range, final QWeather.OnResultGeoBeansListener listener) ;
 
-HeWeather.getGeoCityLookup(Context context, String location, final HeWeather.OnResultGeoBeansListener listener);
+QWeather.getGeoCityLookup(Context context, String location, final QWeather.OnResultGeoBeansListener listener);
 ```
 
 **GeoBean的属性**
@@ -1189,9 +1189,9 @@ HeWeather.getGeoCityLookup(Context context, String location, final HeWeather.OnR
 #### 示例代码
 
 ```java
-HeWeather.getGeoTopCity(Context context, int number, Range range, Lang lang, final HeWeather.OnResultGeoBeansListener listener);
+QWeather.getGeoTopCity(Context context, int number, Range range, Lang lang, final QWeather.OnResultGeoBeansListener listener);
 
-HeWeather.getGeoTopCity(Context context, final HeWeather.OnResultGeoBeansListener listener);
+QWeather.getGeoTopCity(Context context, final QWeather.OnResultGeoBeansListener listener);
 ```
 
 **GeoBean的属性**
@@ -1261,9 +1261,9 @@ POI类型，可选择搜索某一类型的POI，目前仅限景点。例如CityT
 #### 示例代码
 
 ```java
-HeWeather.getGeoPoiLookup(Context context, String location, String city, int number, CityType cityType, Lang lang, final OnResultGeoPoiListener listener);
+QWeather.getGeoPoiLookup(Context context, String location, String city, int number, CityType cityType, Lang lang, final OnResultGeoPoiListener listener);
 
-HeWeather.getGeoPoiLookup(Context context, String location,  CityType cityType,final HeWeather.OnResultGeoPoiListener listener);
+QWeather.getGeoPoiLookup(Context context, String location,  CityType cityType,final QWeather.OnResultGeoPoiListener listener);
 ```
 
 **GeoPoiBean的属性**
@@ -1331,9 +1331,9 @@ POI类型，可选择搜索某一类型的POI，目前仅限景点。例如CityT
 #### 示例代码
 
 ```java
-HeWeather.getGeoPoiRange(Context context, String location, int radius, int number, CityType cityType, Lang lang, final OnResultGeoPoiListener listener);
+QWeather.getGeoPoiRange(Context context, String location, int radius, int number, CityType cityType, Lang lang, final OnResultGeoPoiListener listener);
 
-HeWeather.getGeoPoiRange(Context context, String location, int number, CityType cityType, Lang lang, final OnResultGeoPoiListener listener);
+QWeather.getGeoPoiRange(Context context, String location, int number, CityType cityType, Lang lang, final OnResultGeoPoiListener listener);
 ```
 
 **GeoPoiBean的属性**

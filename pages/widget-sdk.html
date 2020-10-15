@@ -28,7 +28,7 @@ lan-ref: widget-sdk
                         </div>
                         <div class="col-lg-7 col-sm-6 col-xs-7">
                             <a class="btn download"
-                               href="https://a.hecdn.net/download/plugin_sdk/HeWeather_Plugin_SDK_iOS_V1.0.zip">下载</a>
+                               href="https://a.hecdn.net/download/plugin_sdk/QWeather_Plugin_SDK_iOS_V1.0.zip">下载</a>
                             <a class="btn code" onclick="checkLogin('ios')" href="javascript:void(0)">生成密钥</a>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ lan-ref: widget-sdk
                         </div>
                         <div class="col-lg-7 col-sm-6 col-xs-7">
                             <a class="btn download"
-                               href="https://a.hecdn.net/download/plugin_sdk/HeWeather_Plugin_SDK_Android_V1.4.jar">下载</a>
+                               href="https://a.hecdn.net/download/plugin_sdk/QWeather_Plugin_SDK_Android_V1.4.jar">下载</a>
                             <a class="btn code" onclick="checkLogin('android')" href="javascript:void(0)">生成密钥</a>
                         </div>
                     </div>
@@ -58,7 +58,7 @@ lan-ref: widget-sdk
             <div class="row">
                 <div class="col-md-5 text-center">
                     <img id="sdk-phone" class="sdk-choice-phone"
-                         src="/assets/images/sdk-phone1.png?v={{ site.data.time.resource }}" alt="">
+                         src="/assets/images/sdk-phone1.png" alt="">
                 </div>
                 <div class="col-md-5 sdk-choice-container">
                     <div class="row text-center">
@@ -66,7 +66,7 @@ lan-ref: widget-sdk
                             <div class="sdk-choice-item active" data="1">
                                 <div class="img-container">
                                     <img id="sdk-choice1" class="sdk-choice-item-1"
-                                         src="/assets/images/sdk-choice1.png?v={{ site.data.time.resource }}">
+                                         src="/assets/images/sdk-choice1.png">
                                 </div>
                                 <h4>纵向布局</h4>
                             </div>
@@ -75,7 +75,7 @@ lan-ref: widget-sdk
                             <div class="sdk-choice-item" data="2">
                                 <div class="img-container">
                                     <img id="sdk-choice2" class="sdk-choice-item-2"
-                                         src="/assets/images/sdk-choice2.png?v={{ site.data.time.resource }}">
+                                         src="/assets/images/sdk-choice2.png">
                                 </div>
                                 <h4>横向布局</h4>
                             </div>
@@ -86,7 +86,7 @@ lan-ref: widget-sdk
                             <div class="sdk-choice-item" data="3">
                                 <div class="img-container">
                                     <img id="sdk-choice3" class="sdk-choice-item-3"
-                                         src="/assets/images/sdk-choice3.png?v={{ site.data.time.resource }}">
+                                         src="/assets/images/sdk-choice3.png">
                                 </div>
                                 <h4>一分二布局</h4>
                             </div>
@@ -95,7 +95,7 @@ lan-ref: widget-sdk
                             <div class="sdk-choice-item" data="4">
                                 <div class="img-container">
                                     <img id="sdk-choice4" class="sdk-choice-item-4"
-                                         src="/assets/images/sdk-choice4.png?v={{ site.data.time.resource }}">
+                                         src="/assets/images/sdk-choice4.png">
                                 </div>
                                 <h4>二合一布局</h4>
                             </div>
@@ -169,7 +169,7 @@ lan-ref: widget-sdk
                 <div>
                     <input type="hidden" name="type" class="form-control">
                     <input type="text" name="name" class="form-control" maxlength="20">
-                    <img src="/assets/images/sdk-next.png?v={{ site.data.time.resource }}" onclick="generateCode()"
+                    <img src="/assets/images/sdk-next.png" onclick="generateCode()"
                          width="35">
                 </div>
             </div>
@@ -215,7 +215,7 @@ lan-ref: widget-sdk
             val = $.trim(val);
             type = $.trim(type);
             type = type == 'android' ? '1' : '2';
-            $.post("https://console.heweather.com/v1/rest/plugin/create?v=" + new Date().getTime(), {
+            $.post("https://console.qweather.com/v1/rest/plugin/create?v=" + new Date().getTime(), {
                 token: window.token,
                 name: val,
                 type: type,
@@ -235,7 +235,7 @@ lan-ref: widget-sdk
             $(".sdk-choice-item").removeClass("active");
             $(this).addClass("active");
             var data = $(this).attr("data");
-            $("#sdk-phone").attr("src", "/assets/images/sdk-phone" + data + ".png?v={{ site.data.time.resource }}");
+            $("#sdk-phone").attr("src", "/assets/images/sdk-phone" + data + ".png");
         })
     })
 </script>

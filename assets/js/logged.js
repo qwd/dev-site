@@ -8,7 +8,7 @@ $(function () {
         token = Cookies.get('__LE_ID__');
     }
     if (token && token !== '') {
-        $.post('https://id.heweather.com/v1/rest/login/check?token=' + token, function (data) {
+        $.post('https://id.qweather.com/v1/rest/login/check?token=' + token, function (data) {
             if (data.success === true) {
                 window.token = token;
                 window.logged = true;

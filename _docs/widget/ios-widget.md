@@ -21,7 +21,7 @@ iOS 9.0 及以上
 
 ### 手动安装
 
-- 1.1 将HeWeather_Plugin.frameWork拖入到工程中
+- 1.1 将QWeather_Plugin.frameWork拖入到工程中
 - 1.2 info.plist添加Allow Arbitrary Loads元素，同时设为 YES
 - 1.3 本项目依赖于 'SDWebImage' 'Masonry'请确保您的项目中已经安装这两个类库
 - 1.4 sdk需要开启定位权限，请在工程plist.info文件中添加NSLocationAlwaysAndWhenInUseUsageDescription和NSLocationWhenInUseUsageDescription
@@ -33,7 +33,7 @@ iOS 9.0 及以上
 ### 2.1 在所需位置引入头文件 
 
 ```objective-c
-#import <HeWeather_Plugin/HeWeather_Plugin.h>
+#import <QWeather_Plugin/QWeather_Plugin.h>
 ```
 
 #### 2.2.1 显示横向单排

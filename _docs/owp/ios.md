@@ -47,7 +47,7 @@ $ pod install
 
 5.替换和风天气SDK的appkey和userKey
 
-在和风天气官网控制台根据Bundle Identifier新建应用并复制appkey，userkey,替换Define目录下CommonMacros中的HeWeatherSDK_USERKey 和 HeWeatherSDK_USERNameKey宏定义对应的key
+在和风天气官网控制台根据Bundle Identifier新建应用并复制appkey，userkey,替换Define目录下CommonMacros中的QWeatherSDK_USERKey 和 QWeatherSDK_USERNameKey宏定义对应的key
 
 [和风天气控制台](https://console.qweather.com/)
 

@@ -17,7 +17,7 @@ implementation 'com.squareup.okhttp3:okhttp:3.10.0'//网络框架
 implementation 'com.google.code.gson:gson:2.8.0'//json解析
 implementation 'joda-time:joda-time:2.10'//时间框架
 implementation files('libs/AMap_Location_V4.0.1_20180426.jar')//高德定位
-implementation files('libs/HeWeather_Public_Android_V3.3.jar')//和风天气SDK
+implementation files('libs/QWeather_Public_Android_V3.3.jar')//和风天气SDK
 ```
 
 ## 项目结构说明

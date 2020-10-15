@@ -43,9 +43,9 @@ Android 4.4+
  -keep public class org.codehaus.* { *; }
  -keep public class java.nio.* { *; }
 
-//  排除HeWeather
- -dontwarn interfaces.heweather.com.interfacesmodule.**
- -keep class interfaces.heweather.com.interfacesmodule.** { *;}
+//  排除QWeather
+ -dontwarn interfaces.qweather.com.interfacesmodule.**
+ -keep class interfaces.qweather.com.interfacesmodule.** { *;}
 ```
  
 ## 数据访问代码
@@ -87,7 +87,7 @@ HeConfig.switchToBizService();
  * @param listener 网络访问结果回调
  */
 
-HeWeather.getWeatherNow(MainActivity.this, "CN101010100", Lang.ZH_HANS, Unit.METRIC, new HeWeather.OnResultWeatherNowListener() {
+QWeather.getWeatherNow(MainActivity.this, "CN101010100", Lang.ZH_HANS, Unit.METRIC, new QWeather.OnResultWeatherNowListener() {
     @Override
     public void onError(Throwable e) {
         Log.i(TAG, "getWeather onError: " + e);
