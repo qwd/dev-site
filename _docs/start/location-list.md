@@ -14,7 +14,7 @@ lang-ref: start-loclist
 ### 下载常见地区/城市ID
 
 ```
-git clone https://github.com/heweather/LocationList.git
+git clone https://github.com/qwd/LocationList.git
 ```
 
-或者[访问我们的Github下载](https://github.com/heweather/LocationList)
+或者[访问我们的Github下载](https://github.com/qwd/LocationList)

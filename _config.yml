@@ -5,7 +5,7 @@ url: "https://dev.qweather.com"
 lang: zh_CN
 logo: "/assets/images/logo-s-dark-800.png"
 attribution: qweather.com
-github: https://github.com/heweather
+github: https://github.com/qwd
 icp:
   number: 京ICP备15048401号-11
   url: "https://beian.miit.gov.cn"

@@ -9,7 +9,7 @@
 1.克隆
 
 ```
-git clone https://github.com/heweather/dev-site.git
+git clone https://github.com/qwd/dev-site.git
 ```
 
 2.安装jekyll，请参考[jekyll官方安装文档](https://jekyllrb.com/docs/)
@@ -25,7 +25,7 @@ jekyll serve
 
 ## 许可证
 
-代码遵循[MIT](https://github.com/heweather/docs/blob/master/LICENSE)，内容遵循[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+代码遵循[MIT](https://github.com/qwd/docs/blob/master/LICENSE)，内容遵循[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 
 # QWeather Develop website 
 
@@ -36,7 +36,7 @@ jekyll serve
 1.Clone this repo
 
 ```
-git clone https://github.com/heweather/dev-site.git
+git clone https://github.com/qwd/dev-site.git
 ```
 
 2.Install jekyll, please follow [jekyll officail docs](https://jekyllrb.com/docs/)
@@ -53,4 +53,4 @@ jekyll serve
 
 ## License
 
-[MIT](https://github.com/heweather/docs/blob/master/LICENSE) for code, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) for content.
+[MIT](https://github.com/qwd/docs/blob/master/LICENSE) for code, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) for content.

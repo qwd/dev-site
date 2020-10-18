@@ -13,10 +13,10 @@ lang-ref: start-icons
 ### 下载
 
 ```
-git clone https://github.com/heweather/WeatherIcon.git
+git clone https://github.com/qwd/WeatherIcon.git
 ```
 
-或者[访问我们的Github下载](https://github.com/heweather/WeatherIcon)
+或者[访问我们的Github下载](https://github.com/qwd/WeatherIcon)
 
 ### 使用
 * API返回的`icon`即为图标文件名，也等同于为天气代码，文件格式为**PNG**。

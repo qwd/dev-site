@@ -8,7 +8,7 @@ lang-ref: owpios
 ---
 ## 源码
 
-[Github](https://github.com/heweather/OpenWeatherPlus-iOS)
+[Github](https://github.com/qwd/OpenWeatherPlus-iOS)
 
 ## 项目结构说明
 
@@ -27,7 +27,7 @@ lang-ref: owpios
 1.克隆工程
 
 ```
-$ git clone https://github.com/heweather/OpenWeatherPlus-iOS.git
+$ git clone https://github.com/qwd/OpenWeatherPlus-iOS.git
 ```
 
 2.安装 pods

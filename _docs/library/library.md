@@ -41,8 +41,8 @@ lang-ref: library
 
 - [heWeather.java.sdk @dongjunchen1993](https://github.com/dongjunchen1993/heWeather.java.sdk) 和风天气JAVA语言的SDK
 - [Android SDK](/docs/sdk/android-sdk) **官方**{:.official}
-- [天气插件Demo-Android](https://github.com/heweather/WidgetDemo-Android) **官方**{:.official}
-- [OpenWeatherPlus-Android](https://github.com/heweather/OpenWeatherPlus-Android) **官方**{:.official} 基于和风的开源天气APP Android版
+- [天气插件Demo-Android](https://github.com/qwd/WidgetDemo-Android) **官方**{:.official}
+- [OpenWeatherPlus-Android](https://github.com/qwd/OpenWeatherPlus-Android) **官方**{:.official} 基于和风的开源天气APP Android版
 
 ## JavaScript
 
@@ -52,8 +52,8 @@ lang-ref: library
 ## Objective-C
 
 - [iOS SDK](/docs/sdk/ios-sdk) **官方**{:.official}
-- [天气插件Demo-iOS](https://github.com/heweather/WidgetDemo-iOS) **官方**{:.official}
-- [OpenWeatherPlus-iOS](https://github.com/heweather/OpenWeatherPlus-iOS) **官方**{:.official} 基于和风的开源天气APP iOS版
+- [天气插件Demo-iOS](https://github.com/qwd/WidgetDemo-iOS) **官方**{:.official}
+- [OpenWeatherPlus-iOS](https://github.com/qwd/OpenWeatherPlus-iOS) **官方**{:.official} 基于和风的开源天气APP iOS版
 
 ## PHP
 

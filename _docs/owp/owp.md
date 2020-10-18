@@ -41,4 +41,4 @@ Android 4.4+
 
 ## 许可证
 
-[Apache 2.0](https://github.com/heweather/OpenWeatherPlus-iOS/blob/master/LICENSE)
+[Apache 2.0](https://github.com/qwd/OpenWeatherPlus-iOS/blob/master/LICENSE)

@@ -8,7 +8,7 @@ lang-ref: owpan
 ---
 ## 源码
 
-[Github](https://github.com/heweather/OpenWeatherPlus-Android)
+[Github](https://github.com/qwd/OpenWeatherPlus-Android)
 
 ## 项目中引用的第三方
 
@@ -35,12 +35,12 @@ implementation files('libs/QWeather_Public_Android_V3.3.jar')//和风天气SDK
 
 **方法一：**
 
-1. 在github上下载项目[git项目地址](https://github.com/heweather/OpenWeatherPlus-Android)
+1. 在github上下载项目[git项目地址](https://github.com/qwd/OpenWeatherPlus-Android)
 2. open project，同步gradle
 
 **方法二：**
 
-在Android studio中选择File-New-Project from Version Control-git，之后在Git Repository URL中填入https://github.com/heweather/OpenWeatherPlus-Android.git ，点击clone。
+在Android studio中选择File-New-Project from Version Control-git，之后在Git Repository URL中填入https://github.com/qwd/OpenWeatherPlus-Android.git ，点击clone。
 
 ### 配置初始化key
 
