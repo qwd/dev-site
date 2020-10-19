@@ -9,9 +9,14 @@ github: https://github.com/qwd
 icp:
   number: 京ICP备15048401号-11
   url: "https://beian.miit.gov.cn"
+nis:
+  number: 京公网安备11010502042548号
+  url: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502042548
+  icon: "/assets/images/nis-icon.png"
 webmaster_verifications:
-  google: 5mJlHKIddhky6OQT5qb7M2Uit2yzg4WGwG7JBxWQ6Cw
+  google: WFu5M6w9XiYrf3hgUBLxCA1Jrgb_CWTzXTPycVIqngg
   bing: EDFBFE217D2B905D82BE1D5A1BC9AB28
+  baidu: code-emsTMHxQLF
 
 defaults:
 - scope:

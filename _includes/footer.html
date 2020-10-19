@@ -20,7 +20,7 @@
                 <h3>{{ group.group }}</h3>
                 <ul>
                   {% for item in group.list %}
-                  <li><a href="{{ item.link }}"{% if group.group == "更多信息" %} target="_blank"
+                  <li><a href="{{ item.link }}"{% if group.group == "更多信息" %} target="_blank" rel="noopener noreferrer"
                       {% endif %}>{{ item.title }}</a></li>
                       {% endfor %}
                 </ul>          
@@ -35,7 +35,7 @@
   <div class="footer-copyrigh">
     <div class="container">
       &copy; 2020 <a href="https://www.{{ site.attribution }}" target="_blank">{{ site.attribution }}</a> All rights
-      reserved. <a href={{ site.icp.url }} target="_blank">{{ site.icp.number }}</a>
+      reserved. <a href={{ site.icp.url }} target="_blank" rel="noopener noreferrer">{{ site.icp.number }}</a> <img src={{ site.nis.icon}} width="14px" /> <a href={{ site.nis.url }} target="_blank" rel="noopener noreferrer">{{ site.nis.number }}</a>
     </div>
   </div>
 </footer>
