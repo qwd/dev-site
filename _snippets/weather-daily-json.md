@@ -4,8 +4,8 @@ title: 3天预报
 {:.pre-scrollable}
 ```
 // 北京3天预报 
-// 商业版 https://api.qweather.net/v7/weather/3d?location=101010100&key=xxx
-// 开发版 https://devapi.qweather.net/v7/weather/3d?location=101010100&key=xxx
+// 商业版 https://api.qweather.com/v7/weather/3d?location=101010100&key=xxx
+// 开发版 https://devapi.qweather.com/v7/weather/3d?location=101010100&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {

@@ -4,7 +4,7 @@ title: POI信息搜索
 {:.pre-scrollable}
 ```
 // 搜索关键字jings 
-// https://geoapi.qweather.net/v2/poi/lookup?type=scenic&location=jings&key=xxx
+// https://geoapi.qweather.com/v2/poi/lookup?type=scenic&location=jings&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {

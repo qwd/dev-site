@@ -1,8 +1,8 @@
 {% for data in site.data.request-url[page.data]  %}
 **{{ data.data }}** **HTTP GET**{:.httpget} 
-{% assign bizurl = "https://api.qweather.net" %}
-{% assign devurl = "https://devapi.qweather.net" %}
-{% assign dsurl = "https://datasetapi.qweather.net" %}
+{% assign bizurl = "https://api.qweather.com" %}
+{% assign devurl = "https://devapi.qweather.com" %}
+{% assign dsurl = "https://datasetapi.qweather.com" %}
 * {{ site.data.t[page.lang].bizapi }} `{% if page.data == "historical" %}{{ dsurl }}{% else %}{{ bizurl }}{% endif %}/{{ page.version }}/{{ page.data }}/{{ data.path }}?{% raw %}{{% endraw %}{{ site.data.t[page.lang].rp }}{% raw %}}{% endraw %}`{: .requesturl }
 {% unless data.dev %}* {{ site.data.t[page.lang].devapi }} `{{ devurl }}/{{ page.version }}/{{ page.data }}/{{ data.path }}?{% raw %}{{% endraw %}{{ site.data.t[page.lang].rp }}{% raw %}}{% endraw %}`{: .requesturl }{% endunless %}
 {% endfor %}

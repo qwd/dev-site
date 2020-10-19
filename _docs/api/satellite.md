@@ -16,7 +16,7 @@ lang-ref: apisat
 
 ```html
 # 商业版
-https://api.qweather.net/v7/satellite?{parameters}
+https://api.qweather.com/v7/satellite?{parameters}
 ```
 
 ## 请求参数

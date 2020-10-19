@@ -4,8 +4,8 @@ title: 日出日落、月升月落和月相
 {:.pre-scrollable}
 ```
 // 北京日出日落、月升月落和月相 
-// 商业版 https://api.qweather.net/v7/astronomy/sunmoon?location=101010100&date=20200610&key=xxx
-// 开发版 https://devapi.qweather.net/v7/astronomy/sunmoon?location=101010100&date=20200610&key=xxx
+// 商业版 https://api.qweather.com/v7/astronomy/sunmoon?location=101010100&date=20200610&key=xxx
+// 开发版 https://devapi.qweather.com/v7/astronomy/sunmoon?location=101010100&date=20200610&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY，date更换为当天或未来60天任意日期
 
 {

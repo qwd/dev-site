@@ -9,16 +9,20 @@ lang-ref: sdkrelease
 
 |版本号|更新日期|MD5||
 |---|---|---|:---:|
-|4.1.2 |2020-09-06| f1645c612dac2365165faba3e12910d5 |[下载](https://a.hecdn.net/download/api_sdk/HeWeather_iOS_SDK_Pub_V4.1.2.zip)|
+|4.2 |2020-10-18| 152771f1cfc0edb237558925d01efada |[下载](https://a.hecdn.net/download/api_sdk/QWeather_iOS_SDK_Pub_V4.2.zip)|
 
-**更新记录** 2020-09-06
-* 修复历史数据的访问错误
+**更新记录** 2020-10-18
+
+* 优化数据获取速度
+* 升级到QWeather
 
 ## Android SDK最新版本
 
 |版本号|更新日期|MD5||
 |---|---|---|:---:|
-|4.1 |2020-07-09| 1f51d20dd582977007999c05733b9b0e |[下载](https://a.hecdn.net/download/api_sdk/HeWeather_Public_Android_V4.1.jar)|
+|4.2 |2020-10-18| cb057e51e7ce2037f5e19b4577f701f0 |[下载](https://a.hecdn.net/download/api_sdk/QWeather_Public_Android_V4.2.jar)|
 
-**更新记录** 2020-07-09
-* 升级至v7版本接口
+**更新记录** 2020-10-18
+
+* 优化数据获取速度
+* 升级到QWeather

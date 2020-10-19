@@ -4,7 +4,7 @@ title: 热门城市查询
 {:.pre-scrollable}
 ```
 // 中国热门城市前5位 
-// https://geoapi.qweather.net/v2/city/top?number=5&range=cn&key=xxx
+// https://geoapi.qweather.com/v2/city/top?number=5&range=cn&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {

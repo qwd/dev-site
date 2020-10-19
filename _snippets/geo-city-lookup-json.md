@@ -4,7 +4,7 @@ title: 城市信息搜索
 {:.pre-scrollable}
 ```
 // 搜索关键字beij 
-// https://geoapi.qweather.net/v2/city/lookup?location=beij&key=xxx
+// https://geoapi.qweather.com/v2/city/lookup?location=beij&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {

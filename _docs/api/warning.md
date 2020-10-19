@@ -20,11 +20,11 @@ lang-ref: apiwarning
 
 **商业版** **HTTP GET**{:.httpget} 
 
-`https://api.qweather.net/v7/warning/now?{请求参数}`{:.requesturl }
+`https://api.qweather.com/v7/warning/now?{请求参数}`{:.requesturl }
 
 **开发版** **HTTP GET**{:.httpget}
 
-`https://devapi.qweather.net/v7/warning/now?{请求参数}`{:.requesturl }
+`https://devapi.qweather.com/v7/warning/now?{请求参数}`{:.requesturl }
 
 ### 请求参数
 
@@ -79,11 +79,11 @@ lang-ref: apiwarning
 
 **商业版** **HTTP GET**{:.httpget}
 
-`https://api.qweather.net/v7/warning/list?{请求参数}`{:.requesturl }
+`https://api.qweather.com/v7/warning/list?{请求参数}`{:.requesturl }
 
 **开发版** **HTTP GET**{:.httpget} 
 
-`https://devapi.qweather.net/v7/warning/list?{请求参数}`{:.requesturl }
+`https://devapi.qweather.com/v7/warning/list?{请求参数}`{:.requesturl }
 
 ### 请求参数
 

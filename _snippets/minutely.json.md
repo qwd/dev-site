@@ -4,8 +4,8 @@ title: 分钟级降水
 {:.pre-scrollable}
 ```
 // 分钟降水 
-// 商业版 https://api.qweather.net/v7/minutely/5m?location=116.38999,39.9099&key=xxx
-// 开发版 https://devapi.qweather.net/v7/minutely/5m?location=116.38999,39.9099&key=xxx
+// 商业版 https://api.qweather.com/v7/minutely/5m?location=116.38999,39.9099&key=xxx
+// 开发版 https://devapi.qweather.com/v7/minutely/5m?location=116.38999,39.9099&key=xxx
 // 请将示例请求URL中的KEY更换成你自己的KEY
 
 {

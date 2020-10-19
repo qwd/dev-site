@@ -23,7 +23,7 @@ lang-ref: apigeo
 
 ### 请求URL
 
-**HTTP GET**{:.httpget} `https://geoapi.qweather.net/v2/city/lookup?{请求参数}`{:.requesturl }
+**HTTP GET**{:.httpget} `https://geoapi.qweather.com/v2/city/lookup?{请求参数}`{:.requesturl }
 
 ### 请求参数
 
@@ -96,7 +96,7 @@ lang-ref: apigeo
 
 ### 请求URL
 
-**HTTP GET**{:.httpget} `https://geoapi.qweather.net/v2/city/top?{请求参数}`{:.requesturl }
+**HTTP GET**{:.httpget} `https://geoapi.qweather.com/v2/city/top?{请求参数}`{:.requesturl }
 
 ### 请求参数
 
@@ -151,7 +151,7 @@ lang-ref: apigeo
 
 ### 请求URL
 
-**HTTP GET**{:.httpget} `https://geoapi.qweather.net/v2/poi/lookup?{请求参数}`{:.requesturl }
+**HTTP GET**{:.httpget} `https://geoapi.qweather.com/v2/poi/lookup?{请求参数}`{:.requesturl }
 
 ### 请求参数
 
@@ -212,7 +212,7 @@ POI类型，可选择搜索某一类型的POI，目前仅限景点。例如`type
 
 ### 请求URL
 
-**HTTP GET**{:.httpget} `https://geoapi.qweather.net/v2/poi/range?{请求参数}`{:.requesturl }
+**HTTP GET**{:.httpget} `https://geoapi.qweather.com/v2/poi/range?{请求参数}`{:.requesturl }
 
 ### 请求参数
 

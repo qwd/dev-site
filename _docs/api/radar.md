@@ -13,7 +13,7 @@ lang-ref: radar
 
 ```html
 # 商业版
-https://api.qweather.net/v7/radar?{parameters}
+https://api.qweather.com/v7/radar?{parameters}
 ```
 
 ## 请求参数
