@@ -3,7 +3,7 @@
     "short_name": "Dev.QWeather",
     "icons": [
         {
-            "src": "/assets/favicon/android-icon-192x192.png?v=20201011",
+            "src": "/assets/favicon/android-chrome-192x192.png?v=20201011",
             "sizes": "192x192",
             "type": "image/png"
         },
@@ -15,6 +15,6 @@
     ],
     "theme_color": "#524696",
     "background_color": "#524696",
-    "start_url": "https://dev.qeweather.com",
+    "start_url": "https://dev.qweather.com",
     "display": "standalone"
 }

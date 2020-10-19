@@ -131,11 +131,11 @@ footer:
   - group: 更多信息
     list: 
       - title: 下载APP
-        link: https://www.qeweather.com/app/
+        link: https://www.qweather.com/app/
       - title: 联系我们
-        link: https://www.qeweather.com/contact/
+        link: https://www.qweather.com/contact/
       - title: 使用条款
-        link: https://www.qeweather.com/terms/tos
+        link: https://www.qweather.com/terms/tos
       - title: 隐私政策
-        link: https://www.qeweather.com/terms/privacy
+        link: https://www.qweather.com/terms/privacy
 
