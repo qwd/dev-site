@@ -61,6 +61,7 @@ lang-ref: library
 
 ## Python
 
+- [api-QWeather @Ayayaneru](https://github.com/Ayayaneru/api-QWeather) Python-调用和风天气接口示范 并尝试实现一些小功能
 - [HeWeather @Acring](https://github.com/Acring/HeWeather) 和风天气python接口实现
 - [Crawling-weather @Wangrong](https://github.com/waro163/Crawling-weather) python爬虫获取和风天气
 - [HeFeng-Weather @TyranRex](https://github.com/TyranRex/HeFeng-Weather) 这是一个利用和风天气接口获取天气状态信息，并且对获取的数据进行处理，可以通过邮件发送处理的小项目
