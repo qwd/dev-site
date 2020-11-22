@@ -3,13 +3,16 @@ title: 太阳和月亮
 tag: [api]
 data: astronomy
 version: v7
-description: 获取全球城市日出日落、月升月落和逐小时的月相数据。
+description: 和风天气太阳和月亮API提供了全球任意时间任意地点的日出日落API、月升月落API和月相API数据，通过这些数据我们可以完整的描述一天之中太阳和月亮的变化。
 lang-ref: apiastro
 ---
 
 获取最近60天全球城市日出日落、月升月落和逐小时的月相数据。
 
 > 在[逐天预报API](/docs/api/weather)中，也会返回对应天数的日出日落、月升月落和月相数据
+
+> 月相已考虑南北半球的差异，不需要再进行转换
+{:.bqnote}
 
 ## 请求URL
 

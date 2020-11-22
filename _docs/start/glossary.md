@@ -2,7 +2,7 @@
 title: 名词解释
 tag: [start, refer]
 version: 7
-description: 和风天气API接口专有名词的解释说明
+description: 和风天气API接口涉及到很多专业术语和一些特定的名次，我们大部分采用了国际标准格式，在这里将详细的解释什么是和风天气的坐标、行政区划、数据KEY、时间格式、数据更新时间、数据服务性能等专有名词。
 lang-ref: start-glossary
 ---
 
@@ -34,7 +34,7 @@ Adcode是中国行政区域编码。
 
 [ISO 3166](https://www.iso.org/iso-3166-country-codes.html)是国际标准化组织（ISO）发布的全球国家代码标准，正式名称是国家名称和其分支的代码。该标准规定了国家名称、附属领土、地理利益的特殊区域以及它们的主要分支（如省或州）的名称。国家代码有二位字母代码、三位字母代码、以及三位数字代码，和风天气采用的是其中的二位字母代码（alpha-2）。
 
-完整的二位数字ISO 3166可[通过我们的Github下载](https://github.com/qweather/LocationList)。
+完整的二位数字ISO 3166可[通过我们的Github下载](https://github.com/qwd/LocationList)。
 
 ### POI
 

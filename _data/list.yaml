@@ -2,23 +2,23 @@ doc-list:
   - group: 使用API
     list:
       - title: 城市信息搜索
-        link: /docs/api/geo
+        link: /docs/api/geo/
       - title: 城市天气
-        link: /docs/api/weather
+        link: /docs/api/weather/
       - title: 分钟级降水
-        link: /docs/api/weather-gird-minute-pcpn
+        link: /docs/api/minutely/
       - title: 空气质量
-        link: /docs/api/air
+        link: /docs/api/air/
       - title: 灾害预警
-        link: /docs/api/alarm
+        link: /docs/api/warning/
       - title: 天气生活指数
-        link: /docs/api/weather-indices
+        link: /docs/api/indices/
       - title: 中国景区天气
-        link: /docs/api/weather-poi
+        link: /docs/api/weather-poi/
       - title: 历史天气
-        link: /docs/api/weather-historical
+        link: /docs/api/historical/
       - title: 日出日落月升月落和月相
-        link: /docs/api/astronomy
+        link: /docs/api/astronomy/
       # - title: 卫星云图
       #   link: /docs/api/satellite
       # - title: 雷达图
@@ -26,11 +26,11 @@ doc-list:
   - group: 使用SDK
     list:
       - title: iOS SDK
-        link: /docs/sdk/ios
+        link: /docs/sdk/ios-sdk/
       - title: iOS 数据类属性
         link: /docs/sdk/ios-entity
       - title: Android SDK
-        link: /docs/sdk/android
+        link: /docs/sdk/android-sdk/
       - title: Android数据类属性
         link: /docs/sdk/android-entity
   - group: 使用天气插件
@@ -40,7 +40,7 @@ doc-list:
       - title: Android天气插件
         link: /docs/widget/android-widget
       - title: H5天气网页/频道页
-        link: /docs/widget/mobile-page-widget
+        link: /docs/widget/mobile-page/
       - title: 网页标准插件
         link: /docs/widget/standard-widget
       - title: 网页简约插件
@@ -48,9 +48,9 @@ doc-list:
   - group: 使用天气普拉斯
     list:
       - title: iOS 开发文档
-        link: /docs/app/owp-ios
+        link: /docs/owp/ios/
       - title: Android 开发文档
-        link: /docs/app/owp-android
+        link: /docs/owp/android/
   - group: 更多必要信息
     list:
       - title: 错误代码

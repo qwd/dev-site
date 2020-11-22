@@ -19,7 +19,7 @@ lang-ref: apiair
 
 **location** {{ site.data.text.required }}
 
-需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docsgetting-started/glossary#coordinate)（十进制），LocationID可通过[城市搜索服务](/docs/api/geo)获取。例如：`location=101010100` 或 `location=116.41,39.92`
+需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)（十进制），LocationID可通过[城市搜索服务](/docs/api/geo)获取。例如：`location=101010100` 或 `location=116.41,39.92`
 
 **key** {{ site.data.text.required }}
 

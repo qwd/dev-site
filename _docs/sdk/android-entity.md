@@ -1079,17 +1079,6 @@ QWeather.getSunMoon(Context context, String location, Lang lang, String date, fi
 输入需要查询的城市名称，可使用中文、英文、坐标（经度在前纬度在后，英文,分割，请参考坐标的使用规范）、ADCode（仅限中国城市）。例如location=beijing， location=116.4,39.1
 当使用模糊搜索时，至少输入一个汉字或2个英文字母。
 
-**mode** {{ site.data.text.optional }} 
-
-搜索查询的方式。在使用名称搜索的时候，可选择模糊搜索或精准搜索，精准搜索最多返回1个结果，模糊搜索最多返回10个结果。默认精准搜索。
-
-**可调用枚举类Mode**
-
-| 数据类型       | 常量属性 |
-| -------------- | -------- |
-| 精准搜索，默认 | EXACT    |
-| 模糊搜索       | FUZZY    |
-
 **number** {{ site.data.text.optional }} 
 
 返回城市的数量，取值范围1-20，默认返回10个结果。
@@ -1115,9 +1104,9 @@ QWeather.getSunMoon(Context context, String location, Lang lang, String date, fi
 #### 示例代码
 
 ```java
-QWeather.getGeoCityLookup(Context context, String location, Mode mode, Range range, int number, Lang lang, final QWeather.OnResultGeoListener listener);
+QWeather.getGeoCityLookup(Context context, String location, Range range, int number, Lang lang, final QWeather.OnResultGeoListener listener);
 
-QWeather.getGeoCityLookup(Context context, Mode mode, Range range, final QWeather.OnResultGeoBeansListener listener) ;
+QWeather.getGeoCityLookup(Context context, Range range, final QWeather.OnResultGeoBeansListener listener) ;
 
 QWeather.getGeoCityLookup(Context context, String location, final QWeather.OnResultGeoBeansListener listener);
 ```
@@ -1151,7 +1140,7 @@ QWeather.getGeoCityLookup(Context context, String location, final QWeather.OnRes
 | getCountry   | 该地区／城市所属国家名称                                                | 中国                 |
 | getTz        | 该地区／城市所在时区                                                    | +8.00                |
 | getUtcOffset | 该地区/城市目前与UTC时间偏移的小时数                                    | +08:00               |
-| getIsDst     | 该地区/城市是否当前处于夏令时,1 表示当前处于夏令时,0 表示当前不是夏令时 | 0                    |
+| getIsDst     | 该地区/城市是否当前处于夏令时,1: 表示当前处于夏令时, 0: 表示当前不是夏令时 | 0                    |
 | getType      | 该地区／城市的属性                                                      | city                 |
 | getRank      | 该地区／城市评分                                                        | 10                   |
 | getFxLink    | 城市的天气预报网页链接                                                  | http://hfx.link/ae45 |
@@ -1242,7 +1231,7 @@ QWeather.getGeoTopCity(Context context, final QWeather.OnResultGeoBeansListener 
 
 **type** {{ site.data.text.required }} 
 
-POI类型，可选择搜索某一类型的POI，目前仅限景点。例如CityType.SCENIC
+POI类型，可选择搜索某一类型的POI，目前仅限景点。例如 Type.SCENIC
 
 **number** {{ site.data.text.optional }} 
 
@@ -1261,9 +1250,9 @@ POI类型，可选择搜索某一类型的POI，目前仅限景点。例如CityT
 #### 示例代码
 
 ```java
-QWeather.getGeoPoiLookup(Context context, String location, String city, int number, CityType cityType, Lang lang, final OnResultGeoPoiListener listener);
+QWeather.getGeoPoiLookup(Context context, String location, String city, int number, Type type, Lang lang, final OnResultGeoPoiListener listener);
 
-QWeather.getGeoPoiLookup(Context context, String location,  CityType cityType,final QWeather.OnResultGeoPoiListener listener);
+QWeather.getGeoPoiLookup(Context context, String location, Type type, final QWeather.OnResultGeoPoiListener listener);
 ```
 
 **GeoPoiBean的属性**
@@ -1314,7 +1303,7 @@ QWeather.getGeoPoiLookup(Context context, String location,  CityType cityType,fi
 
 **type** {{ site.data.text.required }} 
 
-POI类型，可选择搜索某一类型的POI，目前仅限景点。例如CityType.SCENIC
+POI类型，可选择搜索某一类型的POI，目前仅限景点。例如 Type.SCENIC
 
 **number** {{ site.data.text.optional }} 
 
@@ -1331,9 +1320,9 @@ POI类型，可选择搜索某一类型的POI，目前仅限景点。例如CityT
 #### 示例代码
 
 ```java
-QWeather.getGeoPoiRange(Context context, String location, int radius, int number, CityType cityType, Lang lang, final OnResultGeoPoiListener listener);
+QWeather.getGeoPoiRange(Context context, String location, int radius, int number, Type type, Lang lang, final OnResultGeoPoiListener listener);
 
-QWeather.getGeoPoiRange(Context context, String location, int number, CityType cityType, Lang lang, final OnResultGeoPoiListener listener);
+QWeather.getGeoPoiRange(Context context, String location, int number, Type type, Lang lang, final OnResultGeoPoiListener listener);
 ```
 
 **GeoPoiBean的属性**

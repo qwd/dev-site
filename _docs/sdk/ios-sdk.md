@@ -49,8 +49,8 @@ iOS 8.0 及以上
 在 AppDelegate 中添加 `publicId` 和 `appkey`
 
 ```objc
- HeConfigInstance.publicID = @"";
- HeConfigInstance.appKey = @"";
+ QWeatherConfigInstance.publicID = @"";
+ QWeatherConfigInstance.appKey = @"";
 ```
 
 **设置访问的服务版本**
@@ -58,13 +58,13 @@ iOS 8.0 及以上
 商业版设置为
 
 ```objc
-HeConfigInstance.appType = APP_TYPE_BIZ;
+QWeatherConfigInstance.appType = APP_TYPE_BIZ;
 ```
 
 免费开发版设置为
 
 ```objc
-HeConfigInstance.appType = APP_TYPE_DEV;
+QWeatherConfigInstance.appType = APP_TYPE_DEV;
 ```
 
 高性能或自定义的服务版本
@@ -87,13 +87,13 @@ HeConfigInstance.appType = APP_TYPE_DEV;
  * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
  */
 
-AllWeatherInquieirs *heWeather = [AllWeatherInquieirs sharedInstance];//或AllWeatherInquieirs *heWeather     = [[AllWeatherInquieirs alloc] init];
-heWeather.appType = APP_TYPE_BIZ;
-heWeather.location = @"";
-heWeather.lang = @"";//或heWeather.languageType = @"";
-heWeather.unit = @"";//或heWeather.unitType = @"";
+AllWeatherInquieirs *qWeather = [AllWeatherInquieirs sharedInstance];//或AllWeatherInquieirs *qWeather     = [[AllWeatherInquieirs alloc] init];
+qWeather.appType = APP_TYPE_BIZ;
+qWeather.location = @"";
+qWeather.lang = @"";//或qWeather.languageType = @"";
+qWeather.unit = @"";//或qWeather.unitType = @"";
 
-[heWeather weatherWithInquireType: INQUIRE_TYPE_WEATHER_NOW WithSuccess:^(WeatherBaseClass * responseObject) {
+[qWeather weatherWithInquireType: INQUIRE_TYPE_WEATHER_NOW WithSuccess:^(WeatherBaseClass * responseObject) {
 
       } faileureForError:^(NSError *error) {
 

@@ -26,7 +26,7 @@ lang-ref: sdkiosentity
 
 **location** {{ site.data.text.required }}
 
-需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docsgetting-started/glossary#coordinate)（十进制），LocationID可通过[城市搜索](#城市查询)服务获取。例如： location=101010100 或 location=39.92,116.41
+需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)（十进制），LocationID可通过[城市搜索](#城市查询)服务获取。例如： location=101010100 或 location=39.92,116.41
 
 **appKey** {{ site.data.text.required }}
 
@@ -48,13 +48,13 @@ lang-ref: sdkiosentity
 #### 示例代码
 
 ```objc
-HeConfigInstance.publicID = @"publicID";
-HeConfigInstance.appKey = @"key";
-HeConfigInstance.appType = APP_TYPE_BIZ;
-HeConfigInstance.location = @"101010100";
-HeConfigInstance.lang = @"";
-HeConfigInstance.unit = @"";
-[HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_NOW WithSuccess:^(WeatherBaseClass  *responseObject) {
+QWeatherConfigInstance.publicID = @"publicID";
+QWeatherConfigInstance.appKey = @"key";
+QWeatherConfigInstance.appType = APP_TYPE_BIZ;
+QWeatherConfigInstance.location = @"101010100";
+QWeatherConfigInstance.lang = @"";
+QWeatherConfigInstance.unit = @"";
+[QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_NOW WithSuccess:^(WeatherBaseClass  *responseObject) {
         
     NSLog(@"描述->%@",[responseObject description]);
         
@@ -139,7 +139,7 @@ HeConfigInstance.unit = @"";
 
 **location** {{ site.data.text.required }}
 
-需要查询地区的以逗号分隔的[经度/纬度坐标](/docsgetting-started/glossary#coordinate)（十进制）。例如： location=39.92,116.41
+需要查询地区的以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)（十进制）。例如： location=39.92,116.41
 
 **appKey** {{ site.data.text.required }}
 
@@ -153,12 +153,12 @@ HeConfigInstance.unit = @"";
 
 ```objc
  
-    HeConfigInstance.publicID = @"publicID";
-    HeConfigInstance.appKey = @"key";
-    HeConfigInstance.appType = APP_TYPE_BIZ;    
-    HeConfigInstance.location = @"116.41,39.92";
-    HeConfigInstance.lang = @"";
-    [HeConfigInstance weatherWithInquireType: INQUIRE_TYPE_WEATHER_MINUTELY WithSuccess:^(WeatherMinutelyBaseClass  *responseObject) {
+    QWeatherConfigInstance.publicID = @"publicID";
+    QWeatherConfigInstance.appKey = @"key";
+    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
+    QWeatherConfigInstance.location = @"116.41,39.92";
+    QWeatherConfigInstance.lang = @"";
+    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_WEATHER_MINUTELY WithSuccess:^(WeatherMinutelyBaseClass  *responseObject) {
         
         NSLog(@"描述->%@",[responseObject description]);
         
@@ -198,7 +198,7 @@ HeConfigInstance.unit = @"";
 
 **location** {{ site.data.text.required }}
 
-需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docsgetting-started/glossary#coordinate)（十进制），LocationID可通过[城市搜索](#城市查询)服务获取。例如： location=101010100 或 location=39.92,116.41
+需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)（十进制），LocationID可通过[城市搜索](#城市查询)服务获取。例如： location=101010100 或 location=39.92,116.41
 
 **appKey** {{ site.data.text.required }}
 
@@ -211,13 +211,13 @@ HeConfigInstance.unit = @"";
 #### 示例代码
 
 ```objc
-   HeConfigInstance.publicID = @"publicID";
-    HeConfigInstance.appKey = @"key";
-    HeConfigInstance.appType = APP_TYPE_BIZ;    
-    HeConfigInstance.location = @"101010100";
-    HeConfigInstance.lang = @"";
-    HeConfigInstance.unit = @"";
-    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_AIR_NOW WithSuccess:^(AirBaseClass  *responseObject) {
+   QWeatherConfigInstance.publicID = @"publicID";
+    QWeatherConfigInstance.appKey = @"key";
+    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
+    QWeatherConfigInstance.location = @"101010100";
+    QWeatherConfigInstance.lang = @"";
+    QWeatherConfigInstance.unit = @"";
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_AIR_NOW WithSuccess:^(AirBaseClass  *responseObject) {
         
         NSLog(@"描述->%@",[responseObject description]);
         
@@ -283,7 +283,7 @@ HeConfigInstance.unit = @"";
 
 **location** {{ site.data.text.required }}
 
-需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docsgetting-started/glossary#coordinate)（十进制），LocationID可通过[城市搜索](#城市查询)服务获取。例如： location=101010100 或 location=39.92,116.41
+需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)（十进制），LocationID可通过[城市搜索](#城市查询)服务获取。例如： location=101010100 或 location=39.92,116.41
 
 **appKey** {{ site.data.text.required }}
 
@@ -297,13 +297,13 @@ HeConfigInstance.unit = @"";
 
 ```objc
  
-    HeConfigInstance.publicID = @"publicID";
-    HeConfigInstance.appKey = @"key";
-    HeConfigInstance.appType = APP_TYPE_BIZ;    
-    HeConfigInstance.location = @"101010100";
-    HeConfigInstance.lang = @"";
-    HeConfigInstance.unit = @"";
-    [HeConfigInstance weatherWithInquireType: INQUIRE_TYPE_WARNING WithSuccess:^(WarningBaseClass  *responseObject) {
+    QWeatherConfigInstance.publicID = @"publicID";
+    QWeatherConfigInstance.appKey = @"key";
+    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
+    QWeatherConfigInstance.location = @"101010100";
+    QWeatherConfigInstance.lang = @"";
+    QWeatherConfigInstance.unit = @"";
+    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_WARNING WithSuccess:^(WarningBaseClass  *responseObject) {
         
         NSLog(@"描述->%@",[responseObject description]);
         
@@ -354,11 +354,11 @@ HeConfigInstance.unit = @"";
 
 ```objc
  
-    HeConfigInstance.publicID = @"publicID";
-    HeConfigInstance.appKey = @"key";
-    HeConfigInstance.appType = APP_TYPE_BIZ;    
-    HeConfigInstance.range = @"cn";
-    [HeConfigInstance weatherWithInquireType: INQUIRE_TYPE_WARNINGLIST WithSuccess:^(WarningListClass  *responseObject) {
+    QWeatherConfigInstance.publicID = @"publicID";
+    QWeatherConfigInstance.appKey = @"key";
+    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
+    QWeatherConfigInstance.range = @"cn";
+    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_WARNINGLIST WithSuccess:^(WarningListClass  *responseObject) {
         
         NSLog(@"描述->%@",[responseObject description]);
         
@@ -415,7 +415,7 @@ INDICES_TYPE_spi|防晒指数
  
 **location** {{ site.data.text.required }}
 
-需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docsgetting-started/glossary#coordinate)（十进制），LocationID可通过[城市搜索](#城市查询)服务获取。例如： location=101010100 或 location=39.92,116.41
+需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)（十进制），LocationID可通过[城市搜索](#城市查询)服务获取。例如： location=101010100 或 location=39.92,116.41
 
 **appKey** {{ site.data.text.required }}
 
@@ -425,10 +425,10 @@ INDICES_TYPE_spi|防晒指数
 
 ```objc
  
-    HeConfigInstance.location = @"101010100";
-    HeConfigInstance.appKey = @"key";
-    HeConfigInstance.appType = APP_TYPE_BIZ;
-    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_INDICES_1D WithSuccess:^(IndicesBaseClass  *responseObject) {
+    QWeatherConfigInstance.location = @"101010100";
+    QWeatherConfigInstance.appKey = @"key";
+    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_INDICES_1D WithSuccess:^(IndicesBaseClass  *responseObject) {
         
         NSLog(@"描述->%@",[responseObject description]);
         
@@ -514,13 +514,13 @@ INDICES_TYPE_spi|防晒指数
 
 ```objc
 
-    HeConfigInstance.publicID = @"publicID";
-    HeConfigInstance.appKey = @"key";
-    HeConfigInstance.appType = APP_TYPE_BIZ;    
-    HeConfigInstance.location = @"10101010004A";
-    HeConfigInstance.lang = @"";
-    HeConfigInstance.unit = @"";
-    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_POI_NOW WithSuccess:^(WeatherPoiBaseClass  *responseObject) {
+    QWeatherConfigInstance.publicID = @"publicID";
+    QWeatherConfigInstance.appKey = @"key";
+    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
+    QWeatherConfigInstance.location = @"10101010004A";
+    QWeatherConfigInstance.lang = @"";
+    QWeatherConfigInstance.unit = @"";
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_POI_NOW WithSuccess:^(WeatherPoiBaseClass  *responseObject) {
         
         NSLog(@"描述->%@",[responseObject description]);
         
@@ -602,12 +602,12 @@ INDICES_TYPE_spi|防晒指数
 ```objc
 
      //历史天气
-    HeConfigInstance.publicID = @"publicID";
-    HeConfigInstance.appKey = @"key";
-    HeConfigInstance.appType = APP_TYPE_BIZ;    
-    HeConfigInstance.location = @"101010100";
-    HeConfigInstance.date = @"20200425";
-    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_HISTORICAL_WEATHER WithSuccess:^(WeatherHistoricalBaseClass  *responseObject) {
+    QWeatherConfigInstance.publicID = @"publicID";
+    QWeatherConfigInstance.appKey = @"key";
+    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
+    QWeatherConfigInstance.location = @"101010100";
+    QWeatherConfigInstance.date = @"20200425";
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_HISTORICAL_WEATHER WithSuccess:^(WeatherHistoricalBaseClass  *responseObject) {
         
         NSLog(@"描述->%@",[responseObject description]);
         
@@ -616,11 +616,11 @@ INDICES_TYPE_spi|防晒指数
         
     }];
     //历史空气质量
-      HeConfigInstance.publicID = @"publicID";
-    HeConfigInstance.appKey = @"key";
-    HeConfigInstance.appType = APP_TYPE_BIZ;    HeConfigInstance.location = @"101010100";
-    HeConfigInstance.date = @"20200425";
-    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_HISTORICAL_AIR WithSuccess:^(WeatherHistoricalBaseClass  *responseObject) {
+      QWeatherConfigInstance.publicID = @"publicID";
+    QWeatherConfigInstance.appKey = @"key";
+    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    QWeatherConfigInstance.location = @"101010100";
+    QWeatherConfigInstance.date = @"20200425";
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_HISTORICAL_AIR WithSuccess:^(WeatherHistoricalBaseClass  *responseObject) {
         
         NSLog(@"描述->%@",[responseObject description]);
         
@@ -683,7 +683,7 @@ INDICES_TYPE_spi|防晒指数
 
 **location** {{ site.data.text.required }}
 
-需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docsgetting-started/glossary#coordinate)（十进制），LocationID可通过[城市搜索服务](/docs/api/geo)获取。例如：`location=101010100` 或 `location=116.41,39.92`
+需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)（十进制），LocationID可通过[城市搜索服务](/docs/api/geo)获取。例如：`location=101010100` 或 `location=116.41,39.92`
 
 **date** {{ site.data.text.required }}
 
@@ -700,12 +700,12 @@ INDICES_TYPE_spi|防晒指数
 #### 示例代码
 
 ```objc
-      HeConfigInstance.publicID = @"publicID";
-    HeConfigInstance.appKey = @"key";
-    HeConfigInstance.appType = APP_TYPE_BIZ;    
-    HeConfigInstance.location = @"101010100";
-    HeConfigInstance.date = @"20200425";
-    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_SUNMOON WithSuccess:^(SunMoonBaseModel  *responseObject) {
+      QWeatherConfigInstance.publicID = @"publicID";
+    QWeatherConfigInstance.appKey = @"key";
+    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
+    QWeatherConfigInstance.location = @"101010100";
+    QWeatherConfigInstance.date = @"20200425";
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_SUNMOON WithSuccess:^(SunMoonBaseModel  *responseObject) {
         
         NSLog(@"描述->%@",[responseObject description]);
         
@@ -779,11 +779,11 @@ SERCHMODE_TYPE_FUZZY | 模糊查询
 #### 示例代码
 
 ```objc 
-    HeConfigInstance.publicID = @"publicID";
-    HeConfigInstance.appKey = @"key";
-    HeConfigInstance.appType = APP_TYPE_BIZ;    
-    HeConfigInstance.location = @"beijing";
-    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_CITY_LOOKUP WithSuccess:^(GeoBaseClass  *responseObject) {
+    QWeatherConfigInstance.publicID = @"publicID";
+    QWeatherConfigInstance.appKey = @"key";
+    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
+    QWeatherConfigInstance.location = @"beijing";
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_CITY_LOOKUP WithSuccess:^(GeoBaseClass  *responseObject) {
         
         NSLog(@"描述->%@",[responseObject description]);
         
@@ -836,7 +836,7 @@ SERCHMODE_TYPE_FUZZY | 模糊查询
 
 **range** {{ site.data.text.optional }}
 
-搜索范围，**默认搜索全球城市。** 可设定只在某个国家范围内进行搜索，国家名称需使用[ISO 3166 所定义的国家代码](h/docs/start/glossary#iso-3166)。
+搜索范围，**默认搜索全球城市。** 可设定只在某个国家范围内进行搜索，国家名称需使用[ISO 3166 所定义的国家代码](/docs/start/glossary#iso-3166)。
 
 - `world` 全球城市范围，默认
 - `cn` 中国城市范围，可替换为其他国家的 [ISO 3166 国家代码](/docs/start/glossary#iso-3166)，例如`range=us`
@@ -850,11 +850,11 @@ SERCHMODE_TYPE_FUZZY | 模糊查询
 
 ```objc 
 
-    HeConfigInstance.publicID = @"publicID";
-    HeConfigInstance.appKey = @"key";
-    HeConfigInstance.appType = APP_TYPE_BIZ;    
-    HeConfigInstance.location = @"beijing";
-    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_TOPCITY WithSuccess:^(GeoBaseClass  *responseObject) {
+    QWeatherConfigInstance.publicID = @"publicID";
+    QWeatherConfigInstance.appKey = @"key";
+    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
+    QWeatherConfigInstance.location = @"beijing";
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_TOPCITY WithSuccess:^(GeoBaseClass  *responseObject) {
         
         NSLog(@"描述->%@",[responseObject description]);
         
@@ -928,11 +928,11 @@ POI类型，可选择搜索某一类型的POI，目前仅限景点。例如type=
 
 ```objc 
 
-    HeConfigInstance.publicID = @"publicID";
-    HeConfigInstance.appKey = @"key";
-    HeConfigInstance.appType = APP_TYPE_BIZ;    
-    HeConfigInstance.location = @"beijing";
-    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_POI_LOOKUP WithSuccess:^(GeoBaseClass  *responseObject) {
+    QWeatherConfigInstance.publicID = @"publicID";
+    QWeatherConfigInstance.appKey = @"key";
+    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
+    QWeatherConfigInstance.location = @"beijing";
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_POI_LOOKUP WithSuccess:^(GeoBaseClass  *responseObject) {
         
         NSLog(@"描述->%@",[responseObject description]);
         
@@ -999,11 +999,11 @@ POI范围搜索 | INQUIRE_TYPE_GEO_POI_RANGE | GeoBaseClass
 
 ```objc 
 
-    HeConfigInstance.publicID = @"publicID";
-    HeConfigInstance.appKey = @"key";
-    HeConfigInstance.appType = APP_TYPE_BIZ;    
-    HeConfigInstance.location = @"116.4,39.1";
-    [HeConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_POI_RANGE WithSuccess:^(GeoBaseClass  *responseObject) {
+    QWeatherConfigInstance.publicID = @"publicID";
+    QWeatherConfigInstance.appKey = @"key";
+    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
+    QWeatherConfigInstance.location = @"116.4,39.1";
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_POI_RANGE WithSuccess:^(GeoBaseClass  *responseObject) {
         
         NSLog(@"描述->%@",[responseObject description]);
         

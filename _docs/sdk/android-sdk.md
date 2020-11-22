@@ -44,8 +44,8 @@ Android 4.4+
  -keep public class java.nio.* { *; }
 
 //  排除QWeather
- -dontwarn interfaces.qweather.com.interfacesmodule.**
- -keep class interfaces.qweather.com.interfacesmodule.** { *;}
+ -dontwarn com.qweather.sdk.**
+ -keep class com.qweather.sdk.** { *;}
 ```
  
 ## 数据访问代码
@@ -59,7 +59,7 @@ SDK 不再提供日志功能， 错误信息可由回调函数 OnError 中的 Th
 使用 SDK 时，需提前进行账户初始化（全局执行一次即可）
 
 ```java
-HeConfig.init("PublicId", "AppKey");
+HeConfig.init("PublicId", "PrivateKey");
 ```
 
 **选择API服务版本**
