@@ -1,6 +1,6 @@
 ---
 title: 代码库
-tag: [library]
+tag: library
 version: 1.0
 description: 想要快速的使用和风天气的数据吗？我们提供了一些官方天气API示例代码和非官方代码库，可以让你的开发工作更加简单快速。
 permalink: /docs/library/
@@ -11,7 +11,10 @@ lang-ref: library
 
 对于不同的项目、产品和开发人员，调用方式可能会有所不同，你可能还需要在此基础上做出一些修改和优化，以便更加适合你的开发项目。
 
-如果有你不错的代码希望分享，可以发送邮件 <support@qweather.com> 给我们（请注明作者名称、项目名称、简短说明、仓库地址、主要语言）🙏❤️👍
+如果有你不错的代码希望分享，你可以（二选一）：🙏❤️👍
+
+* 访问dev.qweather网站所在的[Github仓库](https://github.com/qwd/dev-site/){: target="_blank"}，提交一条[Library Share的issue](https://github.com/qwd/dev-site/issues/new?assignees=&labels=share&template=library-share-----.md&title=){: target="_blank"}给我们
+* 发送邮件 <support@qweather.com> 给我们（请注明作者名称、项目名称、一句话介绍、仓库地址、主要语言）
 
 > 我们不对非官方代码进行任何技术支持，也无法确保非官方代码的有效性
 
@@ -61,6 +64,7 @@ lang-ref: library
 
 ## Python
 
+- [QWeatherAPI-Python @Zeyu Zhang](https://github.com/InTereSTingHE/QWeatherAPI-Python) 和风天气API调用python实现
 - [api-QWeather @Ayayaneru](https://github.com/Ayayaneru/api-QWeather) Python-调用和风天气接口示范 并尝试实现一些小功能
 - [HeWeather @Acring](https://github.com/Acring/HeWeather) 和风天气python接口实现
 - [Crawling-weather @Wangrong](https://github.com/waro163/Crawling-weather) python爬虫获取和风天气
