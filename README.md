@@ -1,6 +1,6 @@
 # 和风天气开发平台网站
 
-[和风天气开发平台](https://dev.qweather.com)的网站使用[jekyll](https://jekyllrb.com)创建，我们提供了网站的源代码。
+[和风天气开发平台](https://dev.qweather.com)的网站使用[jekyll](https://jekyllrb.com)创建，并托管于Github。
 
 > 大多数情况你只需要直接访问 <https://dev.qweather.com>
 
@@ -21,7 +21,7 @@ cd repo_folder
 jekyll serve
 ```
 
-4.浏览器访问 `https://localhost:4000`, 哦了!
+4.浏览器访问 `http://localhost:4000`, 哦了!
 
 ## 许可证
 
@@ -29,7 +29,7 @@ jekyll serve
 
 # QWeather Develop website 
 
-[dev.qweather.com](https://dev.qweather.com) is build by [jekyll](https://jekyllrb.com), we provide the source code for this website.
+[dev.qweather.com](https://dev.qweather.com/en/) is powered by [jekyll](https://jekyllrb.com) and hosted by Github.
 
 ### Running locally
 
@@ -42,7 +42,6 @@ git clone https://github.com/qwd/dev-site.git
 2.Install jekyll, please follow [jekyll officail docs](https://jekyllrb.com/docs/)
 
 3.Run jekyll
-
 
 ```
 cd repo_folder

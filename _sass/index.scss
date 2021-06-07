@@ -1,337 +1,197 @@
-.homepage {
-  background-color: #fff;
+.homepage-index-page {
+  .hp-feature {
+    padding-top: 15px;
+    h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 3.6rem;
+    }
 
-  .hp-weatherbg {
-    text-align: left;
-    color: #fff;
-    background: #F2F4F8;
-
-    .container {
-      padding-left: 80px;
-      min-height: 540px;
-      background: #F2F4F8 url("/assets/images/index-bg.png") no-repeat right;
-      background-size: auto 76%;
+    hr {
+      margin: 40px 0;
     }
 
     img {
-      height: 400px;
-      width: 1170px;
+      width: 100%;
+      text-align: center;
     }
 
-    h1 {
-      margin-top: 140px;
-      font-size: 3.6rem;
-      line-height: 63px;
-      font-weight: normal;
-      color: black;
-    }
+    .hp-card {
+      border-radius: 15px;
 
-    p {
-      margin: 30px 0 0;
-      font-size: 1.8rem;
-      line-height: 33px;
-      letter-spacing: 2px;
-      color: #6B6C6D;
-
-      & + p {
-        margin: 14px 0 0;
+      img {
+        border-radius: 15px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
       }
+      &.card-dev {
+        background: linear-gradient(60deg, #FFE8EA, #EDF3FF, #EDF2FB);
+        background-color: #EDF3FF;
+      }
+    }
+    .feat-content {
+      margin-bottom: 80px;
+      .intro {
+        margin-top: 60px;
+        // margin-bottom: 20px;
+        .lead {
+          font-size: 2rem;
+          color: $color-dark;
+          font-weight: $font-weight-light;
+        }
+        p {
+          margin-bottom: 20px;
+          line-height: 1.6;
+          color: $color-grey;
+        }
+      }
+
     }
   }
 
-  .middle {
-    background-color: #FAFAFA;
-    padding: 80px 0;
+  .hp-moreinfo {
+    // margin-top: 40px;
+    // background-color: #eee;
+    padding: 40px 0;
 
-    .hp-data {
+    .hp-card {
+      padding: 20px 20px 0;
+      margin: 15px 0;
+      background: linear-gradient(135deg, #FBFDFE 0, #EFEFEF 100%);
+      background-color: #FBFDFE;
+      border-radius: 15px;
+      border: 1px solid #D3D7DC;
 
-      h2 {
-        margin: 0;
-        text-align: center;
-        font-size: 32px;
-        line-height: 32px;
-        font-weight: 500;
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
       }
 
-      > .row {
-        margin-top: 35px;
-        padding: 38px;
-        font-size: 18px;
-        line-height: 24px;
-        color: rgba(38, 50, 36, .8);
-
-        div[class*="col-"] {
-          &:nth-child(4n) {
-            padding-left: 1%;
-            width: 24%;
-          }
-
-          &:nth-child(4n-1) {
-            padding-left: 1%;
-            width: 25%;
-          }
-
-          &:nth-child(4n-2) {
-            padding-left: 5%;
-            width: 26%;
-          }
+      >a {
+        color: $font-color;
+        &:hover,
+        &:focus {
+          color: #000;
+          background-color: transparent;
+          text-decoration: none;
+          border: none;
         }
 
-        .item-container {
-          padding: 9px 0;
-
-          span, img {
-            display: inline-block;
-            vertical-align: middle;
-          }
-
-          img {
-            width: 14px;
-            height: 14px;
-            margin-right: 8px;
-          }
-        }
-      }
-    }
-
-    .hp-function {
-      margin-top: 90px;
-
-      .hpf-content {
-        max-width: 435px;
-
-        h2 {
-          margin: 65px 0 0;
-          font-size: 32px;
-          line-height: 32px;
-          font-weight: 500;
-          color: #263238;
-
-          & + p {
-            margin: 35px 0 40px;
-            font-size: 16px;
-            line-height: 30px;
-            color: rgba(38, 50, 56, .8);
-            letter-spacing: 2px;
-
-          }
-        }
-        a {
-          padding: 12px 16px;
-          border-radius: 2px;
-          border: 1px solid #0A0E16;
-          background-color: #0A0E16;
-          color: #FFFFFF;
-
-          &:hover {
-            color: #FFFFFF;
-          }
-
-          > i {
-            font-size: 12px;
-            font-weight: lighter;
-          }
-        }
-      }
-
-      .tools {
-        text-align: center;
-
-        > .row {
-          max-width: 570px;
-          margin: 0 auto;
-
-          padding: 20px 15px 10px;
-          background-color: rgba(253, 204, 69, .2);
-
-          > div[class*="col-"] {
-            padding-left: 5px;
-            padding-right: 5px;
-            margin-bottom: 10px;
-
-            .hpf-api {
-              display: block;
-              border: 1px solid transparent;
-              border-radius: 4px;
-              height: 160px;
-              text-align: center;
-              max-width: 196px;
-              text-decoration: none;
-
-              img {
-                width: 100px;
-              }
-
-              h3 {
-                margin: 4px auto 0;
-                font-size: 16px;
-                line-height: 22px;
-                color: #FFFFFF;
-                font-weight: normal;
-
-                &.android-sdk {
-                  margin: 0 auto;
-                }
-
-                &.plus {
-                  margin: 0 auto;
-                }
-
-                & + p {
-                  margin: 0;
-                  color: #FFFFFF;
-                  font-size: 12px;
-                }
-              }
-
-              &.api {
-                background-color: #92bbe4;
-              }
-
-              &.ios {
-                background-color: #0A0E16;
-              }
-
-              &.android {
-                background-color: #40C5AF;
-              }
-
-              &.widget {
-                background-color: #FDCC45;
-              }
-
-              &.plus {
-                background-color: #FF6800;
-              }
-
-              &.setting {
-                background-color: rgba(255, 255, 255, .3);
-                padding-top: 30px;
-              }
-            }
-          }
-        }
-      }
-
-      .hpf-image {
-        text-align: center;
-
-        img {
-          max-width: 570px;
-          width: 100%;
-        }
-      }
-    }
-
-    .hp-moreinfo {
-      margin-top: 90px;
-      text-align: left;
-
-      .hp-moreinfo-content-container {
-        background: linear-gradient(135deg, #FBFDFE 0, #EFEFEF 100%);
-
-        .hp-app, .hp-developer, .hp-price {
-          height: 380px;
-          border-radius: 4px;
-          padding: 44px 30px 0;
-          position: relative;
-          background-size: 100%;
-          border: 1px solid #D3D7DC;
-
-          h2 {
-            margin: 0;
-            color: #000000;
-            font-size: 28px;
-            line-height: 32px;
-            text-align: left;
-
-            & + p {
-              text-align: left;
-              margin-top: 20px;
-              color: rgba(48, 50, 52, .8);
-              font-size: 16px;
-              font-weight: 300;
-              line-height: 30px;
-              letter-spacing: 0;
-
-              & + p {
-                text-align: left;
-                color: rgba(48, 50, 52, .8);
-                font-size: 16px;
-                font-weight: 300;
-                line-height: 30px;
-                letter-spacing: 0;
-              }
-            }
-          }
-
-          .btn-container {
-            position: absolute;
-            width: 100%;
-            bottom: 63px;
-            left: 0;
-
-            .btn {
-              background-color: #FFFFFF;
-              margin-top: 24px;
-              border: none;
-              font-size: 14px;
-              padding: 8px 24px;
-              min-width: 180px;
-              color: #263238;
-            }
-          }
-        }
-
-        .hp-app {
-          background: transparent url("/assets/images/hp-moreinfo/download-app.png") no-repeat bottom;
-          background-size: 100% auto;
-        }
-
-        .hp-developer {
-          background: transparent url("/assets/images/hp-moreinfo/for-developer.png") no-repeat bottom;
-          background-size: 100% auto;
-        }
-
-        .hp-price {
-          background: transparent url("/assets/images/hp-moreinfo/profect-price.png") no-repeat bottom;
-          background-size: 100% auto;
+        p {
+          color: #888;
+          font-weight: $font-weight-light;
+          margin-bottom: 20px;
         }
       }
     }
   }
 
-
-  .join-us {
+  .hp-join-us {
     text-align: center;
-    background-color: #FFFFFF;
-    padding: 80px 0;
+    background-color: #fff;
+    padding: 20px 0;
+    color: $color-dark;
 
-    p {
+    span {
       margin: 0;
-      font-size: 24px;
-      line-height: 24px;
-      color: #000000;
+      font-size: 2rem;
     }
-
-    .btn-join-us {
-      background-color: #0A0E16;
-      margin-top: 24px;
-      border-radius: 2px;
-      border: none;
-      font-size: 16px;
-      padding: 13px 24px;
-      min-width: 150px;
-      color: #FFFFFF;
-
-      &:hover {
-        background-color: #0A0E16;
+  }
+  .hp-client {
+    text-align: center;
+    background-color: #F6F8FB;
+    padding: 40px 0;
+    h2 {
+      margin-bottom: 40px;
+      font-size: 3rem;
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+    .container {
+      max-width: 992px;
+    }
+    .logo-wall {
+      padding: 40px 0 20px 0;
+      .container {
+        max-width: 992px;
+      }
+      .row {
+        margin-bottom: 40px;
       }
     }
   }
 }
 
+@media (max-width: 991px) {
+  .homepage-index-page {
+    .hp-feature {
+      h2 {
+        font-size: 3rem;
+      }
+      .feat-content {
+        .intro {
+          margin-top: 0;
+          .lead {
+            font-size: 1.8rem;
+          }
+          p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+            font-size: 1.4rem;
+          }
+        }  
+      }
+    }
+  }
+}
 
+@media (max-width: 767px) {
+  .homepage-index-page {
+    .hp-feature {
+      // text-align: center;
+      padding-top: 10px;
+      h2 {
+        font-size: 2.6rem;
+      }
+      .feat-content {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
 
-
-
+@media (max-width: 599px) {
+  .homepage-index-page {
+    .hp-feature {
+      text-align: center;
+      padding-top: 10px;
+      h2 {
+        font-size: 2.6rem;
+      }
+      .feat-content {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #eee;
+        .intro {
+          p {
+            margin-bottom: 15px;
+          }
+        }  
+      }
+      .feat-content:last-child {
+        border: none;
+      }
+      .hp-card {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

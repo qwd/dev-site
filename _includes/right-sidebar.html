@@ -1,0 +1,39 @@
+<aside>
+    <h4>{{- site.data.t[page.lang].tocnav -}}</h4>
+    {% include toc.html html=content h_min=2 h_max=3 %}
+</aside>
+{%- case page.tag -%}
+{%- when "ios-sdk" -%}
+<aside>
+    <h4>{{ site.data.t[page.lang].download }}</h4>
+    <ul>
+        <li><a href="{{ site.data.v.ios-sdk.dllink }}"><i class="ifq-download"></i>&nbsp;iOS SDK {{ site.data.v.ios-sdk.version }}</a></li>
+    </ul>
+</aside>
+{%- when "android-sdk" -%}
+<aside>
+    <h4>{{ site.data.t[page.lang].download }}</h4>
+    <ul>
+        <li><a href="{{ site.data.v.android-sdk.dllink }}"><i class="ifq-download"></i>&nbsp;Android SDK {{ site.data.v.android-sdk.version }}</a></li>
+    </ul>
+</aside>
+{%- when "api" -%}
+<aside>
+    <h4>{{ site.data.t[page.lang].library}}</h4>
+    <ul>
+        <li>
+            <a href="{%- if page.lang == "en" -%}/en{%- endif -%}/docs/library/"><i class="ifq-code"></i>&nbsp;{{ site.data.t[page.lang].see-library }}</a> 
+        </li>
+    </ul>
+</aside>
+{%- when "api", "ios-sdk", "android-sdk" -%}
+<aside>
+    <h4>{{- site.data.t[page.lang].resource -}}</h4>
+    <ul>
+        {%- assign res = site.documents | where: "lang", page.lang | where: "tag", "start" | sort: "ref" %}
+        {%- for item in res %}
+        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+        {%- endfor %}
+    </ul>
+</aside>
+{%- endcase -%}

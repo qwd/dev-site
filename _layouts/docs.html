@@ -1,0 +1,52 @@
+---
+layout: html
+---
+
+{%- assign flag = page.url | split: "/" | last -%}
+{% if page.tag == "overview" %}
+<div class="colorful {{ flag }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-7">
+                <h1>{{ page.title }}</h1>
+                <p>{{ page.description }}</p>
+                {%- if flag == "android-sdk" or flag == "ios-sdk" %}
+                <a class="btn btn-std" href="{{ site.data.v[flag].dllink }}" role="button"><i class="ifq-download"></i>&nbsp;{{ site.data.t[page.lang].download }} {{page.title}}<span class="sdkv">v{{ site.data.v[flag].version }}</span></a>
+                <span class="sdkmd5">MD5:{{ site.data.v[flag].md5 }}</span>
+                {%- endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="{% if page.toc %}col-xs-12 col-sm-12 col-md-9{% else %}col-xs-12 col-sm-12{% endif %}">
+                <article>
+                    {% if page.tag != "overview" %}
+                    <section class="article-headline">
+                        <div class="edit-this-docs go-right hidden-sm hidden-xs">
+                            <a href="https://github.com/qwd/dev-site/edit/master/{{ page.path }}" target="_blank" rel="noopener noreferrer"><i class="ifq-pencil"></i>&nbsp;{{ site.data.t[page.lang].edit }}</a>
+                        </div>
+                        <h1>{{ page.title}}</h1>
+                        {%- if page.tag == "ios-sdk" -%}<span class="sdk-v small">{{ site.data.t[page.lang].apply }} iOS
+                            SDK v{{ site.data.v.ios-sdk.version }}+</span>{%- endif -%}
+                        {%- if page.tag == "android-sdk" -%}<span class="sdk-v small">{{ site.data.t[page.lang].apply }}
+                            Android SDK v{{ site.data.v.android-sdk.version }}</span>{%- endif -%}
+                        {% endif %}
+                    </section>
+                    <section class="doc-content">
+                        {% include anchor_headings.html html=content  h_min=2 h_max=3 anchorBody='<i class="ifq-link-horizontal"></i>' anchorClass="anchor-link no-underline" anchorTitle="Permalink" %}
+                    </section>
+                </article>
+            </div>
+            {% if page.toc %}
+            <div class="col-md-3 hidden-sm hidden-xs">
+                {% include right-sidebar.html %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

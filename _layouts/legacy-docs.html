@@ -1,24 +1,26 @@
 ---
 layout: html
 ---
-<div class="container doc-legacy">
-    <div class="row" id='doc-main'>
-        <section class="col-md-10">
-            <div class="region-content">
-                <h1 class="page-header navbar-static-top">{{ page.title}}</h1>
-                <article class="docs-content">
-                    {{ content }}
+
+<div class="main-content doc-legacy">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9">
+                <article>
+                    <section class="article-headline">
+                        <h1>{{ page.title}}</h1>
+                    </section>
+                    <section class=" doc-content">
+                        {% include anchor_headings.html html=content  h_min=2 h_max=3 anchorBody='<i class="ifq-link-horizontal"></i>' anchorClass="anchor-link no-underline" anchorTitle="Permalink" %}
+                    </section>
                 </article>
             </div>
-        </section>
-                {% if page.toc %}
-        <section class="col-md-2 col-lg-2 hidden-sm hidden-xs">
-            <div class="region-doc-toc">
-                {% toc | first %}
+            <div class="col-md-3 col-lg-3 hidden-sm hidden-xs">
+                <aside>
+                    <h4>{{- site.data.t[page.lang].tocnav -}}</h4>
+                    {% include toc.html html=content html=content h_min=2 h_max=3 %}
+                </aside>
             </div>
-        </section>
-        {% endif %}
-            </div>
-        </section>
+        </div>
     </div>
 </div>

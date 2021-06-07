@@ -1,13 +1,80 @@
-<div class="api-snippets">
-    {% for title in site.data.request-url[page.data]  %}
-    {% unless title.sample %}
-    <h4><a href="#{{ title.path }}" data-toggle="collapse">{{ title.data }}</a></h4>
-    <div class="collapse" id="{{ title.path }}">
-        {% assign code = site.snippets | where: "title", title.data %}
-        {% for sample in code %}
-        {{ sample.content | markdownify }}
-        {% endfor %}
-    </div>
-    {% endunless %}
-    {% endfor %} 
-</div>
+{%- comment -%}
+## Usage
+
+{% include api-response.html group="weather" type="now" prefix="now" %}
+
+## Data
+
+See _data/response.yml
+
+## Required Parameters
+- group: set which data to display, only one value can be filled in.
+- prefix: set prefix in the front of fields, like `now.temp`. if no prefix is needed, set prefix="nil". Please note, the order of multiple values must be the same as `type`, multiple values separated by spaces.
+
+## Optional Parameters
+- type: filter data types, i.e. in the weather group, you may want to filter only real-time weather, then set type="now", multiple values can be set, separated by spaces.
+- update: set to 0 will remove `updateTime`, 1 is default.
+- fxlink: set to 0 will remove `fxLink`, 1 is default.
+{%- endcomment -%}
+{%- assign show_fxlink = include.fxlink | default: 1 -%}
+{%- assign show_update = include.update  | default: 1 -%}
+{%- assign isType = include.type  | default: false -%}
+{%- assign type_array = include.type | split: " " -%}
+{%- assign prefix_array = include.prefix | split: " " -%}
+{%- assign num = type_array.size | minus: 1 -%}
+
+<table class="md-in-table">
+    <thead>
+        <tr>
+            <th>{{ site.data.t[page.lang].params}}</th>
+            <th>{{ site.data.t[page.lang].description}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%- comment -%}basic fields{%- endcomment %}
+        <tr>
+            <td><code class="no-bg">{{ site.data.response.code.name }}</code></td>
+            <td>{{ site.data.response.code.desc[page.lang] | markdownify -}}</td>
+        </tr>
+        {%- if show_update == 1 %}
+        <tr>
+            <td><code class="no-bg">{{ site.data.response.update.name }}</code></td>
+            <td>{{ site.data.response.update.desc[page.lang] | markdownify }}</td>
+        </tr> 
+        {%- endif %}
+        {%- if show_fxlink == 1 %}
+        <tr>
+            <td><code class="no-bg">{{ site.data.response.fxlink.name }}</code></td>
+            <td>{{ site.data.response.fxlink.desc[page.lang] | markdownify }}</td>
+        </tr> 
+        {%- endif %}
+        {%- comment -%}data fields with type{%- endcomment %}     
+        {%- if isType %}
+        {%- for i in (0..num) %}
+        {%- assign group_by_type = site.data.response[include.group] | where: "type", type_array[{{i}}]  -%}
+        {%- assign prefix_by_type = prefix_array[{{i}}] | append: "." -%}
+        {%- for item in group_by_type %}
+        <tr>
+            <td><code class="no-bg">{%- if prefix_by_type != "nil." %}{{ prefix_by_type }}{%- endif %}{{ item.name }}</code></td>
+            <td>{{ item.desc[page.lang] | markdownify }}</td>
+        </tr>
+        {%- endfor %}
+        {%- endfor %}
+        {%- comment -%}data fields without type{%- endcomment -%} 
+        {%- else %}
+        {%- for item in site.data.response[include.group] -%}
+        <tr>
+            <td><code class="no-bg">{%- if include.prefix != "nil" %}{{ include.prefix | append: "." }}{%- endif %}{{ item.name }}</code></td>
+            <td>{{ item.desc[page.lang] | markdownify }}</td>
+        </tr>
+        {%- endfor -%}
+        {%- endif %}
+        {%- comment -%}refer fields{%- endcomment -%}
+        {%- for item in site.data.response.refer -%}
+        <tr>
+            <td><code class="no-bg">refer.{{ item.name }}</code></td>
+            <td>{{ item.desc[page.lang] | markdownify }}</td>
+        </tr>  
+        {%- endfor -%}
+    </tbody>
+</table>

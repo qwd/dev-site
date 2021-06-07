@@ -1,0 +1,77 @@
+{%- if page.version == "s6" %}
+<a class="new-version-alart fixed-top" href="/docs/api/">{{ site.data.t[page.lang].s6warning }}</a>
+{%- else %}
+<nav class="qw-navbar">
+  <div class="container">
+    <div class="navbar-brand hidden-xs hidden-sm">
+      <a href="{%- if page.lang == "en" %}/en{%- endif %}/">
+        <img src="/assets/images/logo-s-dark.png" alt="{{ site.name[page.lang] }}"><span>{{ site.name[page.lang] }}</span>
+      </a>
+    </div>
+    <div class="go-left  hidden-xs hidden-sm">
+      <ul class="navbar-item site-item">
+        <li {%- if page.ref == "home" %} class="active"{%- endif %}>
+          <a href="{%- if page.lang == "en" %}/en{%- endif %}/">{{ site.data.t[page.lang].home }}</a>
+        </li>
+        <li {%- if page.collection == "docs_en" or page.collection == "docs_zh" %} class="active"{%- endif %}>
+          <a href="{%- if page.lang == "en" %}/en{%- endif %}/docs/">{{ site.data.t[page.lang].doc }}</a>
+        </li>
+        <li {%- if page.tag == "faq" %} class="active"{%- endif %}>
+          <a href="{%- if page.lang == "en" %}/en{%- endif %}/help/general/">{{ site.data.t[page.lang].help }}</a>
+        </li>
+        <li {%- if page.tag == "widget-page" %} class="active"{%- endif %}>
+          <a href="{{ site.exturl.widget }}{%- if page.lang == "en" %}/en/{%- endif %}">{{ site.data.t[page.lang].widget }}</a>
+        </li>
+        <li {%- if page.ref == "price" %} class="active"{%- endif %}>
+          <a href="{%- if page.lang == "en" %}/en{%- endif %}/price/">{{ site.data.t[page.lang].price }}</a>
+        </li>
+      </ul>
+    </div>
+      <div class="go-right hidden-xs hidden-sm">
+        <ul class="navbar-item site-sub-item">
+          <li class="qw-lang">
+            {%- include lang-selector.html %}
+          </li>
+          <li class="console">
+            <a href="https://id.qweather.com/#/login?redirect=https://console.qweather.com{%- if page.lang == "en" %}&lang=en{%- endif %}" target="_blank" rel="noopener noreferrer">{{ site.data.t[page.lang].console }}</a>
+          </li>
+          <li class="login">
+            <a href="https://id.qweather.com/#/register?redirect=https://console.qweather.com{%- if page.lang == "en" %}&lang=en{%- endif %}" target="_blank" rel="noopener noreferrer">{{ site.data.t[page.lang].register }}</a>
+          </li>
+        </ul>
+      </div>
+
+    <!-- for mobile  -->
+    <div class="navbar-brand-mobile visible-xs-block visible-sm-block">
+      <a href="{%- if page.lang == "en" %}/en{%- endif %}/">
+        <img src="/assets/images/logo-s-dark.png" alt="{{ site.name[page.lang] }}"><span>{{ site.name[page.lang] }}</span>
+      </a>
+      <span class="qw-lang">
+        {%- include lang-selector.html %}
+      </span>
+    </div>
+    <div class="navbar-item-mobile visible-xs-block visible-sm-block">
+      <ul>
+        <li {%- if page.ref == "home" %} class="active"{%- endif %}>
+          <a href="{%- if page.lang == "en" %}/en{%- endif %}/">{{ site.data.t[page.lang].home }}</a>
+        </li>
+        <li {%- if page.collection == "docs_en" or page.collection == "docs_zh" %} class="active"{%- endif %}>
+          <a href="{%- if page.lang == "en" %}/en{%- endif %}/docs/">{{ site.data.t[page.lang].doc }}</a>
+        </li>
+        <li{%- if page.tag == "faq" %} class="active"{%- endif %}>
+          <a href="{%- if page.lang == "en" %}/en{%- endif %}/help/general/">{{ site.data.t[page.lang].help }}</a>
+        </li>
+        <li {%- if page.tag == "widget-page" %} class="active"{%- endif %}>
+          <a href="{{ site.exturl.widget }}{%- if page.lang == "en" %}/en/{%- endif %}">{{ site.data.t[page.lang].widget }}</a>
+        </li>
+        <li {%- if page.ref == "price" %} class="active"{%- endif %}>
+          <a href="{%- if page.lang == "en" %}/en{%- endif %}/price/">{{ site.data.t[page.lang].price }}</a>
+        </li>
+        <li class="login">
+          <a href="https://id.qweather.com/#/register?redirect=https://console.qweather.com{%- if page.lang == "en" %}&lang=en{%- endif %}" target="_blank" rel="noopener noreferrer">{{ site.data.t[page.lang].login }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{%- endif %}

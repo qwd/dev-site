@@ -1,0 +1,61 @@
+---
+title: Price
+description: The price of QWeather service, we offer a completely free plan to developers and pay-as-you-go for business use, we also offer additional discounts for a lot of calls.
+ref: price
+---
+<div class="price-index-page">
+    <section class="pi-intro">
+        <div class="container">
+            <div class="pi-headline">
+                <h1 class="text-center">{{ page.title }}</h1>
+                <p class="text-center">Very simple, free or pay-as-you-go</p>
+            </div>
+            <div class="pi-detail">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="pi-card">
+                            <h2 class="card-title free">{{ site.data.t[page.lang].free }}</h2>
+                            <p>1000 calls per day<br /><span>Everyone</span></p>
+                            <p>16700 calls per day<br /><span>Developer</span></p>
+                            <p>Unlimited calls<br /><span>via SDK</span></p>
+                            <p>Non-commercial use</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="pi-card">
+                            <h2 class="card-title paid">{{ site.data.t[page.lang].pi-paid }}</h2>
+                            <p>From ¥1/1000 calls<br/><span>Standard Price</span></p>
+                            <p>From ¥0.2/1000 calls<br/><span>Calls Package</span></p>
+                            <p>Commercial use</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pi-more">
+        <div class="container">
+            <h3>Learn more</h3>
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-md-offset-4">
+                    <ul>
+                        {% for item in site.data.content-list.price-more %}
+                            <li>
+                                <a href="{% if page.lang == "en" %}/en{% endif %}{{ item.link }}">
+                                    {{ item.title[page.lang] }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pi-join">
+        <a href="https://id.qweather.com/#/register?redirect=https://console.qweather.com{% if page.lang == "en" %}&lang=en{% endif %}" role="button"
+            class="btn btn-std btn-long btn-lg">{{ site.data.t[page.lang].hp-regnow }}</a>
+    </section>
+
+</div>

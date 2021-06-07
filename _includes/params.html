@@ -1,0 +1,13 @@
+{%- comment -%}
+Put this in anywhere and use `p` to select which parameter, e.g. {% include prams.html p="lang" %}
+Multiple parameters are separated by spaces, e.g. {% include prams.html p="lang location" %}
+{%- endcomment -%}
+<div class="request-param">
+    {%- assign param = include.p | split: " "  -%}
+    {%- for item in param -%}
+    <h5 {%- if site.data.p[item].rqd %} class="rqd"{%- endif -%}>{{ site.data.p[item].name }}</h5>
+    {{ site.data.p[item].text[page.lang] | markdownify }}
+    {%- endfor -%}
+</div>
+
+

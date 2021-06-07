@@ -1,0 +1,143 @@
+.price-index-page {
+
+
+  .pi-intro {
+    margin-bottom: 20px;
+    padding: 70px 0 40px 0;
+    background: linear-gradient(to top right, #FFE8EA, #EDF3FF, #EDF2FB);
+    background-color: #c2eafd;
+
+    .container {
+      max-width: 992px;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 2rem;
+    }
+
+    .pi-headline {
+      margin-bottom: 40px;
+      h1 {
+        margin-bottom: 20px;
+      }
+    }
+
+    .pi-detail {
+      margin-bottom: 40px;
+    }
+
+    .pi-card {
+      text-align: center;
+      background-color: #fff;
+      border-radius: 14px;
+      border: 1px solid #D3D7DC;
+      min-height: 460px;
+
+      h2 {
+        margin: 0 auto;
+      }
+
+      .card-title {
+        display: inline-block;
+        padding: 0 20px 10px;
+        margin: 40px 0;
+        font-size: 4rem;
+
+        &.free {
+          border-bottom: 5px solid #FF6800;
+        }
+
+        &.paid {
+          border-bottom: 5px solid #6686FD;
+        }
+      }
+
+      p {
+        font-size: 2rem;
+        margin-bottom: 20px;
+
+        span {
+          font-size: $font-size;
+          color: $color-grey;
+          font-weight: $font-weight-light;
+        }
+      }
+    }
+  }
+
+  .pi-more {
+    h3 {
+      font-size: 3rem;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+      font-weight: $font-weight-light;
+      letter-spacing: $letter-space;
+    }
+
+    ul {
+      margin-bottom: 40px;
+      padding-left: 0;
+      text-align: center;
+      list-style: none;
+    }
+    li {
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #999;
+      // padding: 0 10px 5px;
+      // margin-bottom: 15px;
+      a {
+        color: $font-color;
+        font-size: 2rem;
+
+        &:hover,
+        &:focus {
+          color: #000;
+          border: none;
+          text-decoration: none;
+          background: none;
+        }
+      }
+    }
+
+  }
+
+  .pi-join {
+    text-align: center;
+    padding: 40px 0 80px 0;
+  }
+}
+
+// responsive 
+
+@media (max-width: 768px) {
+  .price-index-page {
+    .pi-intro {
+      .pi-card {
+        .card-title {
+          font-size: 3.2rem;
+          padding-right: 15px;
+          padding-left: 15px;
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .price-index-page {
+    .pi-intro {
+      .pi-card {
+        margin-bottom: 20px;
+      }
+
+    }
+  }
+}
+

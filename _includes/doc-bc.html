@@ -1,0 +1,74 @@
+<!-- for pc -->
+<nav class="qw-navbar sticky-top doc-bc-nav hidden-xs">
+  <div class="container">
+    <ul class="navbar-item doc-bc-item">
+      {%- capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{%- endcapture %}
+      {%- assign splitted_url_parts = page_url_without_index_html | split: '/' %}
+      {%- capture forLoopMaxInt %}{{ splitted_url_parts.size | minus:1 }}{%- endcapture %}
+      {%- for i in (1..forLoopMaxInt) %}
+      {%- capture current_breadcrumb_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/index.html{%- endcapture%}
+      {%- capture current_breadcrumb_md_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{%- endcapture %}
+      {%- capture next_prepender %}{{next_prepender}}/{{ splitted_url_parts[i] }}{%- endcapture %}
+      {%- assign docs_collection_by_lang = site.documents | where: "lang", page.lang %}
+      {%- for breadcrumb_page in docs_collection_by_lang %}
+      {%- if current_breadcrumb_url == breadcrumb_page.url or current_breadcrumb_md_url == breadcrumb_page.url %}
+      {%- assign j = forLoopMaxInt | plus: 0 %}
+      <li {%- if i==j %} class="active"{%- endif %}>
+        {%- capture breadcrumb_page_page_url_without_index_html %}{{ breadcrumb_page.url | remove: "index.html"}}{%- endcapture %}
+        <a href="{{ site.baseurl }}{{ breadcrumb_page_page_url_without_index_html }}">{{ breadcrumb_page.title }}</a>
+      </li>
+      {%- endif %}
+      {%- endfor %}
+      {%- endfor %}
+    </ul>
+  </div>
+</nav>
+
+<!-- for mobile -->
+<nav class="doc-bc-nav-mobile sticky-top visible-xs-block">
+  <div class="container">
+    <select onchange="if (this.value) window.location.href=this.value">
+      <option value="">{{ site.data.t[page.lang].docs-category}}</option>
+      <optgroup label="Web API">
+        {%- for section in site.data.data-list.api %}
+        {%- assign docs = site.documents | where: "lang", page.lang | where: "ref", section.group.name | first %}
+        <option value="{{ docs.url }}">
+          {{- docs.title -}}
+        </option>
+        {%- endfor %}
+      </optgroup>
+      <optgroup label="iOS SDK">
+        {%- assign docs_related_current_doc_by_url = site.documents | where: "lang", page.lang | where: "tag", "ios-sdk" | sort: 'ref' -%}
+        {%- for item in docs_related_current_doc_by_url %}
+        <option value="{{ item.url }}">
+          {{ item.title }}
+        </option>
+        {%- endfor %}
+      </optgroup>
+      <optgroup label="Android SDK">
+        {%- assign docs_related_current_doc_by_url = site.documents | where: "lang", page.lang | where: "tag", "android-sdk" | sort: 'ref' -%}
+        {%- for item in docs_related_current_doc_by_url %}
+        <option value="{{ item.url }}">
+          {{ item.title }}
+        </option>
+        {%- endfor %}
+      </optgroup>
+      <optgroup label="Widget">
+        {%- assign docs_related_current_doc_by_url = site.documents | where: "lang", page.lang | where: "tag", "widget" | sort: 'ref' -%}
+        {%- for item in docs_related_current_doc_by_url %}
+        <option value="{{ item.url }}">
+          {{ item.title }}
+        </option>
+        {%- endfor %}
+      </optgroup>
+      <optgroup label="Open Weather Plus">
+        {%- assign docs_related_current_doc_by_url = site.documents | where: "lang", page.lang | where: "tag", "owp" | sort: 'ref' -%}
+        {%- for item in docs_related_current_doc_by_url %}
+        <option value="{{ item.url }}">
+          {{ item.title }}
+        </option>
+        {%- endfor %}
+      </optgroup>
+    </select>
+  </div>
+</nav>

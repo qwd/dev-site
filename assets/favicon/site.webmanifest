@@ -3,18 +3,18 @@
     "short_name": "Dev.QWeather",
     "icons": [
         {
-            "src": "/assets/favicon/android-chrome-192x192.png?v=20201011",
+            "src": "/assets/favicon/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/assets/favicon/android-chrome-512x512.png?v=20201011",
+            "src": "/assets/favicon/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
     ],
-    "theme_color": "#524696",
-    "background_color": "#524696",
+    "theme_color": "#1a2226",
+    "background_color": "#1a2226",
     "start_url": "https://dev.qweather.com",
     "display": "standalone"
 }
