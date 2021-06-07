@@ -1,0 +1,22 @@
+style: 20210605
+favicon: 20210227
+android-sdk:
+  version: 4.5
+  date: 2021-05-13
+  dllink: https://a.hecdn.net/download/api_sdk/QWeather_Public_Android_V4.5.jar
+  md5: 0e6a190dad12ca2904072bee4991a539
+ios-sdk:
+  version: 4.4
+  date: 2021-05-24
+  dllink: https://a.hecdn.net/download/api_sdk/QWeather_iOS_SDK_Pub_V4.4.zip
+  md5: bacebd99a07f6b8c324cbad859bae4d8
+android-widget:
+  version: 2.0
+  date: 2020-10-20
+  dllink: https://a.hecdn.net/download/api_sdk/QWeather_Public_Android_V4.2.jar
+  md5: cb057e51e7ce2037f5e19b4577f701f0
+ios-widget:
+  version: 2.0
+  date: 2020-10-20
+  dllink: https://a.hecdn.net/download/api_sdk/QWeather_iOS_SDK_Pub_V4.2.zip
+  md5: 152771f1cfc0edb237558925d01efada

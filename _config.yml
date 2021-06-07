@@ -1,9 +1,27 @@
-name: 和风天气开发平台
-description: 提供商业和免费的天气API、天气SDK，开源天气APP，天气插件
+name: 
+  zh: 和风天气开发平台
+  en: Dev.QWeather
+brand:
+  zh: 和风天气
+  en: QWeather
+description: 
+  zh: 高效强大的天气API，天气SDK和天气插件
+  en: Powerful weather API/SDK and weather widget
 timezone: Asia/Shanghai
-url: "https://dev.qweather.com"
-lang: zh_CN
-logo: "/assets/images/logo-s-dark-800.png"
+url: https://dev.qweather.com
+exturl:
+  attr: https://www.qweather.com
+  cdn: https://cdn.qweather.com
+  widget: https://widget.qweather.com
+  api: https://api.qweather.com
+  devapi: https://devapi.qweather.com
+  geoapi: https://geoapi.qweather.com
+  datasetapi: https://datasetapi.qweather.com
+lang: zh
+logo: https://cdn.qweather.com/media/qw-logo-s-dark-800.png
+license:
+  code: MIT | https://github.com/qwd/docs/blob/master/LICENSE
+  content: CC BY 4.0 | https://creativecommons.org/licenses/by/4.0/
 attribution: qweather.com
 github: https://github.com/qwd
 icp:
@@ -11,60 +29,84 @@ icp:
   url: "https://beian.miit.gov.cn"
 nis:
   number: 京公网安备11010502042548号
-  url: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502042548
-  icon: "/assets/images/nis-icon.png"
-webmaster_verifications:
-  google: WFu5M6w9XiYrf3hgUBLxCA1Jrgb_CWTzXTPycVIqngg
-  bing: EDFBFE217D2B905D82BE1D5A1BC9AB28
-  baidu: code-emsTMHxQLF
+  url: "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502042548"
 
 defaults:
 - scope:
-    path: "pages"
-    type: "pages"
+    path: pages_zh
+    type: pages
   values:
-    layout: "html"
+    layout: html
     lang: zh
     permalink: "/:basename/"
+    seo:
+      type: WebPage
 - scope:
-    path: "_docs"
-    type: "docs"
+    path: pages_en
+    type: pages
   values:
-    layout: "docs-page"
+    layout: html
+    lang: en
+    permalink: "/en/:basename/"
+    seo:
+      type: WebPage
+- scope:
+    path: pages_zh/help
+    type: pages
+  values:
+    layout: faq-page
+    lang: zh
+    permalink: "/help/:basename/"
+    seo:
+      type: FAQPage
+- scope:
+    path: pages_en/help
+    type: pages
+  values:
+    layout: faq-page
+    lang: en
+    permalink: "/en/help/:basename/"
+    seo:
+      type: FAQPage
+- scope:
+    path: _docs_zh
+    type: docs_zh
+  values:
+    layout: docs
     lang: zh
     seo:
-      type: "DigitalDocument"
+      type: Article
+    toc: true
 - scope:
-    path: "_snippets"
+    path: _docs_en
+    type: docs_en
   values:
-    sitemap: false
+    layout: docs
+    lang: en
+    seo:
+      type: Article
+    toc: true
 collections:
-  docs:
+  docs_zh:
     permalink: "/docs/:path/"
     output: true
-  snippets:
-    permalink: "/snippets/:path/"
+  docs_en:
+    permalink: "/en/docs/:path/"
     output: true
-toc:
-  min_level: 2 # default: 1
-  max_level: 3 # default: 6
+  snippets:
+    output: false
+    permalink: "/snippets/:path/"
 sass:
   sass_dir: _sass
   style: compressed
 
 exclude:
-- .idea
-- .git
-- .gitignore
-- .sass-cache
-- .jekyll-cache
-- .htaccess
 - CNAME
 - README.md
 - LICENSE
+- test
+- build.sh
 
 plugins:
-- jekyll-seo-tag
 - jekyll-sitemap
-- jekyll-toc
 - jekyll-redirect-from

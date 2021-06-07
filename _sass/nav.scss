@@ -1,0 +1,360 @@
+.qw-navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  background-color: #fff;
+  &.faq-nav {
+    min-height: 60px;
+  }
+  &.doc-bc-nav {
+    background-color: #111;
+    background-color: rgba(17,17,17,.85);
+
+  }
+
+  .navbar-brand {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    a {
+      float: left;
+      font-size: 1.8rem;
+      margin-left: -15px;
+      padding: 10px 15px;
+      line-height: 20px;
+
+      img {
+        height: 30px;
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+
+      span {
+        font-weight: bold;
+        font-size: $font-size;
+        display: inline-block;
+        color: #000;
+      }
+    }
+  }
+
+  .navbar-item {
+    height: 50px;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+
+    li {
+      display: block;
+      float: left;
+    }
+
+    a {
+      display: block;
+      line-height: 20px;
+      padding: 15px 5px;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    &.site-item {
+      a {
+        color: $color-grey;
+        margin: 0 5px;
+
+        &:hover,
+        &:focus {
+          color: #000;
+          border-bottom: 2px solid;
+          padding-bottom: 5px;
+        }
+      }
+      li.active>a {
+        color: #000;
+        border-bottom: 2px solid;
+        padding-bottom: 5px;
+      }
+    }
+
+    &.site-sub-item {
+      a {
+        color: $color-grey;
+        margin-left: 10px;
+        padding: 15px 0;
+        &:hover,
+        &:focus {
+          color: #000;
+          text-decoration: none;
+        }
+      }
+
+      .qw-lang {
+        a {
+          margin: 0 0 0 5px;
+          display: inline-block;
+          color: $color-grey;
+          font-size: $small-font-size;
+          &:hover,
+          &:focus {
+            color: #000;
+            background-color: transparent;
+            border: none;
+          }
+        }
+        .active {
+          color: #000;
+          font-weight: bold;
+        }
+      }
+
+      .console>a {
+        background-color: $link-color;
+        color: #f0f0f0;
+        padding: 6px 12px;
+        border-radius: 14px;
+        margin-top: 9px;
+        margin-bottom: 9px;
+        &:hover,
+        &:focus {
+          background-color: $link-color;
+          color: #fff;
+          padding: 6px 12px;
+        }
+      }
+    }
+
+    &.faq-item-color {
+      li {
+        padding-left: 0;
+        margin-right: 5px;
+        :last-child {
+          margin-right: 0;
+        }
+      }
+
+      a {
+        border-radius: 14px;
+        padding: 6px 8px;
+        margin: 9px 0;
+        &.faq-general {
+          color: $link-color;
+          border: 1px solid $link-color;
+          &:hover {
+            background-color: $link-color;
+            color: #fff;
+          }
+        }
+
+        &.faq-buy {
+          color: #b40973;
+          border: 1px solid #b40973;
+          &:hover {
+            background-color: #b40973;
+            color: #fff;
+          }
+        }
+
+        &.faq-tech {
+          color: #333;
+          border: 1px solid #333;
+          &:hover {
+            background-color: #333;
+            color: #fff;
+          }
+        }
+
+        &.faq-account {
+          color: green;
+          border: 1px solid green;
+        }
+        &:hover,
+        &:active,
+        &:focus,
+        &:visited {
+          text-decoration: none;
+        }
+      }
+
+      li.active {
+        >a {
+          color: #fff;
+          &.faq-general{
+            background-color: $link-color;
+          }
+          &.faq-buy {
+            background-color: #b40973;
+          }
+          &.faq-tech {
+            background-color: #333;
+          }
+          &.faq-account {
+            background-color: rgb(5, 78, 15);
+          }
+        }
+      }
+    }
+    &.faq-item {
+      height: 60px;
+      border-bottom: 1px solid #eee;
+      li {
+        padding-left: 0;
+        display: inline-block;
+      }
+      a {
+        color: $color-grey-2;
+        font-size: 1.5rem;
+        line-height: 30px;
+        padding: 15px 10px;
+        display: block;
+        &:hover,
+        &:active,
+        &:focus {
+          color: $color-dark;
+          text-decoration: none;
+        }
+      }
+      li.active >a {
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: $color-dark;
+      }
+    }
+    &.doc-bc-item {
+      li {
+        padding-left: 0;
+      }
+      li:first-child {
+        font-size: 1.6rem;
+      }
+      li+li::before {
+        // padding: 0 5px;
+        content: "\003e";
+        color: #bbb;
+      }
+      a {
+        display: inline-block;
+        color: #bbb;
+        text-align: center;
+        font-weight: 300;
+        &:focus,
+        &:hover {
+          text-decoration: none;
+          background-color: transparent;
+          color: #fff;
+        }
+      }
+      li.active >a {
+        color: #fff;
+      }
+    }
+  }
+
+  .navbar-brand-mobile {
+    text-align: center;
+    min-height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 20px;
+    img {
+      display: inline-block;
+      height: 30px;
+      vertical-align: middle;
+    }
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 20px;
+      padding: 5px 0;
+      margin-left: 5px;
+    }
+    a {
+      color: $font-color;
+      font-size: 1.5rem;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: $font-color;
+      }
+    }
+    .qw-lang {
+      float: right;
+      margin-left: -40px;
+      padding: 5px 0;
+      a {
+        margin: 0 0 0 5px;
+        display: inline-block;
+        line-height: 20px;
+        color: $color-grey;
+        font-size: $small-font-size;
+        &:hover,
+        &:focus {
+          color: #000;
+          background-color: transparent;
+          border: none;
+        }
+      }
+      .active {
+        color: #000;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .navbar-item-mobile {
+    position: relative;
+    min-height: 40px;
+    text-align: center;
+    line-height: 20px;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      margin: 0;
+      display: inline-block;
+    }
+    a {
+      color: $color-grey;
+      display: block;
+      padding: 5px 5px;
+      line-height: 20px;
+      text-align: center;
+      &:hover,
+      &:focus {
+        color: #000;
+        // font-weight: bold;
+        text-decoration: none;
+      }
+    }
+    li.active>a {
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    li.login>a {
+      background-color: $link-color;
+      color: #f0f0f0;
+      border-radius: 10px;
+    }
+  }
+}
+
+.doc-bc-nav-mobile {
+  min-height: 50px;
+  select {
+    min-height: 30px;
+    color: $color-light;
+    background-color: rgba($color: #111, $alpha: 0.85);
+    // background: #111;
+    width: 100%;
+    padding: 10px 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    line-height: 20px;
+  }
+}

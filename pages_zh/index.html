@@ -1,0 +1,165 @@
+---
+title: 和风天气开发平台
+description: 和风天气为开发者和企业用户提供了全球天气数据服务，并提供了天气API接口，天气插件，开源天气APP，天气SDK等开发工具，数据包括灾害预警、实时天气和预报、PM2.5空气质量AQI、台风、潮汐、日出日落、生活指数等。
+image: /assets/images/hp-feat-data.png
+permalink: /
+ref: home
+---
+
+<div class="colorful homepage">
+    <div class="container">
+        <h1>{{ site.data.t[page.lang].hp-slogan }}</h1>
+        <p>{{ site.data.t[page.lang].hp-slogan-d1 }}</p>
+        <p>{{ site.data.t[page.lang].hp-slogan-d2 }}</p>
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                <img src="/assets/images/hp-header-bg.png" alt="QWeather Develop background image">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="homepage-index-page">
+    <div class="hp-feature">
+        <div class="container">
+            <div class="row feat-data feat-content">
+                <div class="col-xs-12 col-sm-5 col-md-5">
+                    <div class="intro">
+                        <h2>{{ site.data.t[page.lang].hp-data }}</h2>
+                            <div class="visible-xs-block">
+                                <div class="hp-card">
+                                    <img src="/assets/images/hp-feat-data.png" alt="QWeather Develop weather data">
+                                </div>
+                            </div>
+                        <p class="lead">合规的，全球15万城市，天气、海洋、天文、台风、预警、空气、地理等7大类28小项数据</p>
+                        <p>我们将机器学习和人工智能算法融合到多种气象数据源，提供高精度、高稳定性的气象数据服务。</p>
+                        <a href="{% if page.lang == "en" %}/en{% endif %}/help/data/" class="btn btn-std btn-line btn-md">
+                            {{ site.data.t[page.lang].hp-seedata }}
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-7 col-md-7 hidden-xs">
+                    <div class="hp-card">
+                        <img src="/assets/images/hp-feat-data.png" alt="QWeather Develop weather data">
+                    </div>
+                </div>
+            </div>
+            <div class="row feat-dev feat-content">
+                <div class="col-xs-12 col-sm-5 col-md-5">
+                    <div class="intro">
+                        <h2>{{ site.data.t[page.lang].hp-dev }}</h2>
+                        <div class="visible-xs-block">
+                            <div class="hp-card">
+                                <img src="/assets/images/hp-feat-devtools.png" alt="QWeather Develop Tools">
+                            </div>
+                        </div>
+                        <p class="lead">使用移动端SDK或Web API方便快速的获取天气数据</p>
+                        <p>我们提供了详细的开发文档，还包括了代码库以及开源APP示例，让你的开发工作变得更加轻松。</p>
+                        <a href="{% if page.lang == "en" %}/en{% endif %}/docs/" class="btn btn-std btn-line btn-md">
+                            {{ site.data.t[page.lang].hp-seedoc }}
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-7 col-md-7 hidden-xs">
+                    <div class="hp-card card-dev">
+                        <img src="/assets/images/hp-feat-devtools.png" alt="QWeather Develop Tools">
+                    </div>
+                </div>
+            </div>
+            <div class="row feat-widget feat-content">
+                <div class="col-xs-12 col-sm-5 col-md-5">
+                    <div class="intro">
+                        <h2>{{ site.data.t[page.lang].widget }}</h2>
+                        <div class="visible-xs-block">
+                            <div class="hp-card">
+                                <img src="/assets/images/hp-feat-widget-{{- page.lang -}}.png" alt="Free weather widget">
+                            </div>
+                        </div>
+                        <p class="lead">完全免费的天气插件，提供可视化配置，几乎不需要任何复杂的代码，开箱即用</p>
+                        <p>天气插件提供网页版、H5版和移动端SDK，支持自定义字体、颜色和布局，并可对展示的天气内容进行排序或隐藏。
+                        </p>
+                        <a href="{% if page.lang == "en" %}/en{% endif %}/docs/widget/" class="btn btn-std btn-line btn-md">
+                            {{ site.data.t[page.lang].hp-seedoc }}
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-7 col-md-7 hidden-xs">
+                    <div class="hp-card">
+                        <img src="/assets/images/hp-feat-widget-{{- page.lang -}}.png" alt="Free weather widget">
+                    </div>
+
+                </div>
+            </div>
+            <div class="row feat-ww feat-content">
+                <div class="col-xs-12 col-sm-5 col-md-5">
+                    <div class="intro">
+                        <h2>{{ site.data.t[page.lang].hp-ww }}</h2>
+                        <div class="visible-xs-block">
+                            <div class="hp-card">
+                                <img src="/assets/images/hp-feat-global.png" alt="QWeather Develop for Worldwide">
+                            </div>
+                        </div>
+                        <p class="lead">
+                            31种语言，遍布10个国家的数据中心，让你的应用轻松的为全球各地用户提供服务
+                        </p>
+                        <p>通过我们全球数据中心和自动路由功能，无论你的产品部署在哪里，都可以就近访问我们的数据节点，提高响应时间。</p>
+                        <a href="{% if page.lang == "en" %}/en{% endif %}/docs/start/language/" class="btn btn-std btn-line btn-md">{{ site.data.t[page.lang].hp-seelang }}</a>
+                            &nbsp;
+                        <a href="{% if page.lang == "en" %}/en{% endif %}/help/buy#server-node" class="btn btn-std btn-line btn-md">{{ site.data.t[page.lang].hp-seenode }}</a>
+                    </div>
+
+                </div>
+                <div class="col-sm-7 col-md-7 hidden-xs">
+                    <div class="hp-card">
+                        <img src="/assets/images/hp-feat-global.png" alt="QWeather Develop for Worldwide">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hp-client">
+        <div class="container">
+            <h2>{{ site.data.t[page.lang].hp-client }}</h2>
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <img src="/assets/images/hp-client-lg.png" alt="QWeather client list" class="visible-lg-block visible-xl-block">
+                    <img src="/assets/images/hp-client-md.png" alt="QWeather client list" class="visible-md-block ">
+                    <img src="/assets/images/hp-client-xs.png" alt="QWeather client list" class="visible-xs-block visible-sm-block">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hp-moreinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="hp-card">
+                        <a href="https://www.qweather.com/{% if page.lang == "en" %}en/{% endif %}app/"
+                            target="_blank" rel="noopener noreferrer">
+                            <h2>{{ site.data.t[page.lang].getapp }}</h2>
+                            <p>{{ site.data.t[page.lang].hp-getapp-des }}</p>
+                            <img src="/assets/images/hp-card-download-app.png" alt="Download QWeather APP">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="hp-card">
+                        <a href="{% if page.lang == "en" %}/en{% endif %}/help/account/">
+                            <h2>{{ site.data.t[page.lang].hp-devplan }}</h2>
+                            <p>{{ site.data.t[page.lang].hp-devplan-des }}</p>
+                            <img src="/assets/images/hp-card-developer.png" alt="Go to QWeather help center">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="hp-card">
+                        <a href="{% if page.lang == "en" %}/en{% endif %}/price/">
+                            <h2>{{ site.data.t[page.lang].price }}</h2>
+                            <p>{{ site.data.t[page.lang].hp-price-des }}</p>
+                            <img src="/assets/images/hp-card-price.png" alt="Price for QWeather service">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

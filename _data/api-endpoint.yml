@@ -1,0 +1,216 @@
+city-lookup:
+  - path: /city/lookup
+    name:
+      zh: 城市信息搜索
+      en: City Lookup
+top-city:
+  - path: /city/top
+    name:
+      zh: 热门城市查询
+      en: Top City
+poi-lookup:
+  - path: /poi/lookup
+    name:
+      zh: POI信息搜索
+      en: POI Lookup
+poi-range:
+  - path: /poi/range
+    name:
+      zh: POI范围搜索
+      en: POI Range
+weather-now:
+  - path: /weather/now
+    name:
+      zh: 实况天气
+      en: Real-time
+weather-daily-forecast:
+  - path: /weather/3d
+    name:
+      zh: 3天预报
+      en: 3 Days Forecast
+  - path: /weather/7d
+    name:
+      zh: 7天预报
+      en: 7 Days Forecast
+  - path: /weather/10d
+    name:
+      zh: 10天预报
+      en: 10 Days Forecast
+    biz-only: true
+  - path: /weather/15d
+    name:
+      zh: 15天预报
+      en: 15 Days Forecast
+    biz-only: true
+weather-hourly-forecast:
+  - path: /weather/24h
+    name:
+      zh: 逐小时预报（未来24小时）
+      en: Hourly Forecast (24hrs)
+  - path: /weather/72h
+    name:
+      zh: 逐小时预报（未来72小时）
+      en: Hourly Forecast (72hrs)
+    biz-only: true
+  - path: /weather/168h
+    name:
+      zh: 逐小时预报（未来168小时）
+      en: Hourly Forecast (168hrs)
+    biz-only: true
+poi-weather-now:
+  - path: /poi-weather/now
+    name:
+      zh: 实况天气
+      en: Real-time
+poi-weather-daily-forecast:
+  - path: /poi-weather/3d
+    name:
+      zh: 3天预报
+      en: 3 Days Forecast
+  - path: /poi-weather/7d
+    name:
+      zh: 7天预报
+      en: 7 Days Forecast
+  - path: /poi-weather/10d
+    name:
+      zh: 10天预报
+      en: 10 Days Forecast
+    biz-only: true
+  - path: /poi-weather/15d
+    name:
+      zh: 15天预报
+      en: 15 Days Forecast
+    biz-only: true
+poi-weather-hourly-forecast:
+  - path: /poi-weather/24h
+    name:
+      zh: 逐小时预报（未来24小时）
+      en: Hourly Forecast (24hrs)
+  - path: /poi-weather/48h
+    name:
+      zh: 逐小时预报（未来48小时）
+      en: Hourly Forecast (48hrs)
+    biz-only: true
+  - path: /poi-weather/72h
+    name:
+      zh: 逐小时预报（未来72小时）
+      en: Hourly Forecast (72hrs)
+    biz-only: true
+minutely:
+  - path: /minutely/5m
+    name:
+      zh: 分钟级降水
+      en: Minutely Forecast
+    biz-only: true
+grid-weather-now:
+  - path: /grid-weather/now
+    name:
+      zh: 格点实况天气
+      en: Real-time by Grid
+    biz-only: true
+grid-weather-daily-forecast:
+  - path: /grid-weather/3d
+    name:
+      zh: 格点3天预报
+      en: 3 Days Forecast by Grid
+    biz-only: true
+  - path: /grid-weather/7d
+    name:
+      zh: 格点7天预报
+      en: 7 Days Forecast by Grid
+    biz-only: true
+grid-weather-hourly-forecast:
+  - path: /grid-weather/24h
+    name:
+      zh: 逐小时预报（未来24小时）
+      en: Hourly Forecast by Grid (24hrs)
+    biz-only: true
+indices:
+  - path: /indices/1d
+    name:
+      zh: 当天生活指数
+      en: Today Indices
+  - path: /indices/3d
+    name:
+      zh: 未来3天生活指数
+      en: 3 Days of Indices
+    biz-only: true
+weather-warning:
+  - path: /warning/now
+    name:
+      zh: 天气灾害预警
+      en: Severe Weather
+weather-warning-city-list:
+  - path: /warning/list
+    name:
+      zh: 天气灾害预警城市列表
+      en: Severe Weather City List
+air-now:
+  - path: /air/now
+    name:
+      zh: 实时空气质量
+      en: Real-time
+air-daily-forecast:
+  - path: /air/5d
+    name:
+      zh: 空气质量5天预报
+      en: 5 Days Forecast
+    biz-only: true
+historical-weather:
+  - path: /historical/weather
+    name:
+      zh: 历史天气数据
+      en: Historical Weather
+historical-air:
+  - path: /historical/air
+    name:
+      zh: 历史空气质量数据
+      en: Historical Air Quality
+storm-list:
+  - path: /tropical/storm-list
+    name:
+      zh: 台风查询
+      en: Storm List
+    biz-only: true
+storm-track:
+  - path: /tropical/storm-track
+    name:
+      zh: 台风路径
+      en: Tropical Cyclones Track
+    biz-only: true
+storm-forecast:
+  - path: /tropical/storm-forecast
+    name:
+      zh: 台风预报
+      en: Tropical Cyclones Forecast
+    biz-only: true
+sunrise-sunset:
+  - path: /astronomy/sun
+    name:
+      zh: 潮汐
+      en: Tide
+    biz-only: true
+moon-and-moon-phase:
+  - path: /astronomy/moon
+    name:
+      zh: 月升月落和月相
+      en: Moon and Moon Phase
+    biz-only: true
+solar-elevation-angle:
+  - path: /astronomy/solar-elevation-angle
+    name:
+      zh: 太阳高度角
+      en: Solar Elevation Angle
+    biz-only: true
+tide:
+  - path: /ocean/tide
+    name:
+      zh: 潮汐
+      en: Tide
+    biz-only: true
+currents:
+  - path: /ocean/currents
+    name:
+      zh: 潮流
+      en: Currents
+    biz-only: true

@@ -1,0 +1,10 @@
+{%- assign docs_related_current_doc_by_url = site.documents | where: "lang", page.lang | where_exp: "item", "item.url contains page.url" | where_exp: "item", "item.url.size > page.url.size " | sort: 'ref' -%}
+{%- assign no_title = include.notitle | default: false -%}
+{%- if no_title == false -%}
+<h4>{{ site.data.t[page.lang].docs-list }}</h4>    
+{%- endif -%}
+<ul>
+    {%- for item in docs_related_current_doc_by_url %}
+    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {%- endfor %}
+</ul>

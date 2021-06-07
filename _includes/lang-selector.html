@@ -1,0 +1,12 @@
+  {%- if site.pages %}
+  {%- assign node = site.pages | where: "ref", page.ref | sort: 'lang' %}
+  {%- for item in node %}
+  <a {%- if page.lang == item.lang %} class="active"{%- endif %} href="{{ item.url }}">{{ site.data.t[item.lang].langcode }}</a>
+  {%- endfor %}
+  {%- endif %}
+  {%- if site.documents %}
+  {%- assign node = site.documents | where: "ref", page.ref | sort: 'lang' %}
+  {%- for item in node %}
+  <a {%- if page.lang == item.lang %} class="active"{%- endif %} href="{{ item.url }}">{{ site.data.t[item.lang].langcode }}</a>
+  {%- endfor %}
+  {%- endif %}

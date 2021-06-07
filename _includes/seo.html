@@ -1,0 +1,60 @@
+    {%- comment -%}
+    Set "noindex" for seo false pages, e.g. 404.html
+    {%- endcomment -%}
+    {%- if page.seo == false %}
+    <title>{{ page.title }}</title>
+    <meta name="robots" content="noindex">     
+    {%- else %}
+    {%- comment -%}
+    Set a variety of titles for title/og/json-ld
+    {%- endcomment -%}        
+    {%- if page.tag and page.tag != "overview" %}
+    {%- assign upcase_tag = page.tag | upcase -%}
+    {%- capture seotitle_w_sitename -%}{{ page.title }} - {{ upcase_tag }} | {{ site.name[page.lang] }}{%- endcapture -%}
+    {%- capture seotitle -%}{{ page.title }} - {{ upcase_tag }}{%- endcapture -%}
+    {%- elsif page.ref == "home" %}
+    {%- capture seotitle_w_sitename -%}{{ site.name[page.lang] }} ~ {{site.description[page.lang]}}{%- endcapture -%}
+    {%- capture seotitle -%}{{ site.name[page.lang] }}{%- endcapture -%}
+    {%- else %}
+    {%- capture seotitle_w_sitename -%}{{ page.title }} | {{ site.name[page.lang] }}{%- endcapture -%}
+    {%- capture seotitle -%}{{ page.title }}{%- endcapture -%}           
+    {%- endif %}
+    {%- comment -%}
+    Set seo meta tags for pages and documents
+    {%- endcomment -%}  
+    <title>{{ seotitle_w_sitename }}</title>
+    <meta name="description" content="{{ page.description }}" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+    <meta property="og:title" content="{{ seotitle }}" />
+    <meta property="og:locale" content="{{ page.lang }}" />
+    <meta property="og:locale:alternate" content="{%- if page.lang == "en" -%}zh{%- else -%}en{%- endif -%}" />
+    {%- if page.image %}
+    <meta property="og:image" content="{{ site.url }}{{ page.image }}" />    
+    {%- endif %}
+    <meta property="og:description" content="{{ page.description }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:site_name" content="{{ site.name[page.lang] }}" />
+    <meta property="og:type" content="{{page.seo.type}}" />
+    <meta property="article:modified_time" content="{{page.date | date_to_xmlschema }}" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "{{page.seo.type}}",
+            "headline": "{{ seotitle }}",
+            "dateModified":"{{page.date | date_to_xmlschema }}",
+            "description": "{{ page.description }}",    
+            "url":"{{ site.url }}{{ page.url }}",
+            {%- if page.image %}
+            "image" : "{{ site.url }}{{ page.image }}",
+            {%- endif %}
+            "publisher":{
+                "@type":"Organization",
+                "name": "{{ site.name[page.lang] }}",
+                "logo":{
+                    "@type":"ImageObject",
+                    "url":"{{ site.logo }}"
+                }
+            }
+          }
+    </script>
+    {%- endif %}
