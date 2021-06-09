@@ -1,0 +1,24 @@
+---
+layout: null
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {%- assign all_pages = site.pages | where: "sitemap", nil -%}
+  {%- assign all_docs = site.documents | where: "sitemap", nil | where_exp: "item", "item.collection contains 'docs_'" -%}
+  {%- for item in all_docs %}
+  <url>
+    <loc>{{ site.url }}{{ item.url }}</loc>
+    <lastmod>{{ item.date }}</lastmod>
+    <priority>1.0</priority>
+  </url>  
+  {%- endfor %}
+  {%- for item in all_pages %}
+  {%- if item.title %}
+  <url>
+    <loc>{{ site.url }}{{ item.url }}</loc>
+    <priority>1.0</priority>
+  </url>    
+  {%- endif %}
+  {%- endfor %}
+</urlset>

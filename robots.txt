@@ -9,5 +9,3 @@ Disallow: /test/*
 Disallow: /snippets/*
 Disallow: /redirects*
 Disallow: /redirect/*
-Disallow: /assets/css/*
-Disallow: /assets/js/*

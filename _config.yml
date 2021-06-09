@@ -108,5 +108,5 @@ exclude:
 - build.sh
 
 plugins:
-- jekyll-sitemap
+# - jekyll-sitemap
 - jekyll-redirect-from
