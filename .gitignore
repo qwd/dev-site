@@ -1,10 +1,4 @@
-# jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-# macos
+# macOS
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -23,5 +17,32 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# WebStorm
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Tools
 .idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+# jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Misc
+*.tmp
+*.bak

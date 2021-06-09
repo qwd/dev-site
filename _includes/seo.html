@@ -20,6 +20,15 @@
     {%- capture seotitle -%}{{ page.title }}{%- endcapture -%}           
     {%- endif %}
     {%- comment -%}
+    Adjust the page.image URL to match the absolute or relative URL
+    {%- endcomment -%}
+    {%- assign page_img = page.image | split: "/" -%}
+    {%- unless page_img.first == "https:" or page_img.first == "http:" -%}
+    {%- capture seo_img_url -%}{{ site.url }}{{ page.image }}{%- endcapture -%}
+    {%- else -%}
+    {%- capture seo_img_url -%}{{ page.image }}{%- endcapture -%}
+    {%- endunless -%}
+    {%- comment -%}
     Set seo meta tags for pages and documents
     {%- endcomment -%}  
     <title>{{ seotitle_w_sitename }}</title>
@@ -29,7 +38,7 @@
     <meta property="og:locale" content="{{ page.lang }}" />
     <meta property="og:locale:alternate" content="{%- if page.lang == "en" -%}zh{%- else -%}en{%- endif -%}" />
     {%- if page.image %}
-    <meta property="og:image" content="{{ site.url }}{{ page.image }}" />    
+    <meta property="og:image" content="{{ seo_img_url }}" />    
     {%- endif %}
     <meta property="og:description" content="{{ page.description }}" />
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
@@ -45,7 +54,7 @@
             "description": "{{ page.description }}",    
             "url":"{{ site.url }}{{ page.url }}",
             {%- if page.image %}
-            "image" : "{{ site.url }}{{ page.image }}",
+            "image" : "{{ seo_img_url }}",
             {%- endif %}
             "publisher":{
                 "@type":"Organization",
