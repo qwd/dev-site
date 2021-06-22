@@ -37,7 +37,7 @@ Congratulations 🎉 You have got the real-time weather data of Beijing by API. 
 
 > **Gzip Compression**
 >
-> The v7 version API uses gizp compression by default. Please decompress the data you have obtained.
+> The v7 version API uses gzip compression by default. Please decompress the data you have obtained.
 {:.bqwarning}
 
 

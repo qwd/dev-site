@@ -33,7 +33,7 @@ ref: 0-api-homepage
 
 > **Gzip compression**
 >
-> The v7 version API uses gizp compression by default, which can greatly reduce traffic and improve response speed. Please decompress the data you have obtained.
+> The v7 version API uses gzip compression by default, which can greatly reduce traffic and improve response speed. Please decompress the data you have obtained.
 
 > **Languages**
 >
