@@ -25,10 +25,10 @@ If no optional parameters are set, the default value will be used.
 ### Sample Code
 
 ```objc
- 
     QWeatherConfigInstance.location = @"101010100";
     QWeatherConfigInstance.appKey = @"key";
     QWeatherConfigInstance.appType = APP_TYPE_BIZ;
+    QWeatherConfigInstance.indices = @[@(INDICES_TYPE_all)];
     [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_INDICES_1D WithSuccess:^(IndicesBaseClass *responseObject) {
         
         NSLog(@"Description->%@",[responseObject description]);

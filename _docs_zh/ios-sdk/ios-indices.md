@@ -25,10 +25,10 @@ ref: 4-sdk-ios-indices
 ### 示例代码
 
 ```objc
- 
     QWeatherConfigInstance.location = @"101010100";
     QWeatherConfigInstance.appKey = @"key";
     QWeatherConfigInstance.appType = APP_TYPE_BIZ;
+    QWeatherConfigInstance.indices = @[@(INDICES_TYPE_all)];
     [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_INDICES_1D WithSuccess:^(IndicesBaseClass  *responseObject) {
         
         NSLog(@"描述->%@",[responseObject description]);

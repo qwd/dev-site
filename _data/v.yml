@@ -6,10 +6,10 @@ android-sdk:
   dllink: https://a.hecdn.net/download/api_sdk/QWeather_Public_Android_V4.5.jar
   md5: 0e6a190dad12ca2904072bee4991a539
 ios-sdk:
-  version: 4.4
-  date: 2021-05-24
-  dllink: https://a.hecdn.net/download/api_sdk/QWeather_iOS_SDK_Pub_V4.4.zip
-  md5: bacebd99a07f6b8c324cbad859bae4d8
+  version: 4.5
+  date: 2021-0-20
+  dllink: https://a.hecdn.net/download/api_sdk/QWeather_iOS_SDK_Pub_V4.5.zip
+  md5: ea2d403c374dca335c4948dfece650c3
 android-widget:
   version: 2.0
   date: 2020-10-20
