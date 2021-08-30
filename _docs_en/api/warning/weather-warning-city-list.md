@@ -3,14 +3,12 @@ title: Weather Warning City List
 tag: api
 data: warning
 version: v7
-description: Get a list of cities in China where weather warnings are currently in effect.
+description: Get a list of cities in China and EU countries where weather warnings are currently in effect.
 toc: true
 ref: 2-api-weather-warning-city-list
 ---
 
-Get a list of cities in China where weather warnings are currently in effect.
-
-> Only China data is supported
+Get a list of cities in China and EU countries where weather warnings are currently in effect.
 
 ### Request URL
 
@@ -20,7 +18,7 @@ Get a list of cities in China where weather warnings are currently in effect.
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="range-cn key" %}
+{% include params.html p="range-warning key" %}
 
 ### Response
 

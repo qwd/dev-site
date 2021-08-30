@@ -9,8 +9,6 @@ ref: 1-api-weather-warning
 
 Weather Warning API for getting real-time local severe weather warning.
 
-> Only China data is supported
-
 ### Request URL
 
 {% include api-url.html flag="weather-warning" %}
