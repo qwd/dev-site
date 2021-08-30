@@ -2,11 +2,11 @@
 title: Weather Warning
 tag: ios-sdk
 version: v4
-description: QWeather iOS SDK support severe weathe warning in China, real-time access to typhoon, heat wave, cold wave, gale, heavy air pollution, wildfire, dust storms, droughts, lightning, hail, frost, heavy fog, etc.
+description: QWeather iOS SDK support severe weathe warning in China and EU countries, real-time access to typhoon, heat wave, cold wave, gale, heavy air pollution, wildfire, dust storms, droughts, lightning, hail, frost, heavy fog, etc.
 ref: 5-sdk-ios-warning
 ---
 
-Get severe weathe warning in China, including typhoon, heat wave, cold wave, gale, heavy air pollution, wildfire, dust storms, droughts, lightning, hail, frost, heavy fog, etc.
+Get severe weathe warning in China and EU countries, including typhoon, heat wave, cold wave, gale, heavy air pollution, wildfire, dust storms, droughts, lightning, hail, frost, heavy fog, etc.
 
 ## Weather Warning
 
@@ -62,6 +62,8 @@ ing.status | Warning status, **Not applicable to all countries, **may be null**.
 
 ## Weather Warning City List
 
+Get a list of cities with current weather warnings in China and EU countries.
+
 | Interface code (Enum)    | Interface              | Class            |
 | ------------------------ | ---------------------- | ---------------- |
 | INQUIRE_TYPE_WARNINGLIST | List of warning cities | WarningListClass |
@@ -70,7 +72,7 @@ ing.status | Warning status, **Not applicable to all countries, **may be null**.
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="range-cn key-ios" %}
+{% include params.html p="range-warning key-ios" %}
 
 ### Sample Code
 

@@ -341,14 +341,16 @@ range:
      - `uk` 英国
      - `ru` 俄罗斯
      - [更多国家代码](/en/docs/start/glossary#iso-3166)
-range-cn:
+range-warning:
   rqd: true
   name: range
   text: 
     en: |-
-     Select the specified country, for now only supports `range=cn` 
+     Select the specified country, now support China and EU countries, the country name needs to use [country code ISO 3166](/en/docs/start/glossary#iso-3166).  
+     
+     For example `range=cn`, `range=fr` 
     zh: |-
-     选择指定的国家，目前仅支持中国。例如`range=cn`。
+     选择指定的国家，目前支持中国和欧盟国家。国家名称需使用[ISO 3166 所定义的国家代码](/docs/start/glossary#iso-3166)。例如`range=cn`，`range=fr`。
 number:
   name: number
   text: 
