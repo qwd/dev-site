@@ -64,6 +64,7 @@ You just need to:
 
 ## Python
 
+- [QWeatherBot @daya0576](https://github.com/daya0576/he-weather-bot) Telegram weather robot based on QWeather API
 - [QWeatherAPI-Python @Zeyu Zhang](https://github.com/InTereSTingHE/QWeatherAPI-Python) Python implementation for QWeather API 
 - [api-QWeather @Ayayaneru](https://github.com/Ayayaneru/api-QWeather) Python-QWeather API demonstration and try to implement some small functions
 - [HeWeather @Acring](https://github.com/Acring/HeWeather) QWeather Python implementation
