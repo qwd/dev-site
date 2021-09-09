@@ -5,6 +5,7 @@ title: moon-and-moon-phase
 ``` 
 // New York moon rise, moon set and moon phase on 2021-02-20
 // Pro API https://api.qweather.com/v7/astronomy/moon?location=1E98E&date=20210220&lang=en&key=YOUR_KEY
+// Dev API https://devapi.qweather.com/v7/astronomy/moon?location=1E98E&date=20210220&lang=en&key=YOUR_KEY
 // Replace date=20210220 with next 60 days
 
 {

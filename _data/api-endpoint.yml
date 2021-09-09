@@ -189,13 +189,11 @@ sunrise-sunset:
     name:
       zh: 潮汐
       en: Tide
-    biz-only: true
 moon-and-moon-phase:
   - path: /astronomy/moon
     name:
       zh: 月升月落和月相
       en: Moon and Moon Phase
-    biz-only: true
 solar-elevation-angle:
   - path: /astronomy/solar-elevation-angle
     name:

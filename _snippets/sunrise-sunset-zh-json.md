@@ -5,6 +5,7 @@ title: moon-and-moon-phase
 ``` 
 // 北京2021年2月20日日出日落时间
 // 商业版 API https://api.qweather.com/v7/astronomy/sun?location=101010100&date=20210220&key=你的KEY
+// 开发版 API https://devapi.qweather.com/v7/astronomy/sun?location=101010100&date=20210220&key=你的KEY
 // 替换 date=20210220 为未来60天的日期
 
 {

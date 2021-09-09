@@ -5,6 +5,7 @@ title: moon-and-moon-phase
 ``` 
 // New York sunrise and sunset on 2021-02-20
 // Pro API https://api.qweather.com/v7/astronomy/sun?location=1E98E&date=20210220&lang=en&key=YOUR_KEY
+// Dev API https://devapi.qweather.com/v7/astronomy/sun?location=1E98E&date=20210220&lang=en&key=YOUR_KEY
 // Replace date=20210220 with next 60 days
 
 {
