@@ -33,7 +33,7 @@ Android 4.4+
 **Reference Library**
 
 ```
-compile'com.squareup.okhttp3:okhttp:3.9.0' (3.9.0+)
+compile'com.squareup.okhttp3:okhttp:3.9.0' (3.12.12+)
 compile'com.google.code.gson:gson:2.6.2' (2.6.2+)
 ```
 
