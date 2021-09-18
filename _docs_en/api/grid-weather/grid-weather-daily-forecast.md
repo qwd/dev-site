@@ -7,9 +7,9 @@ description: QWeather provides high-precision weather forecasts within 1 kilomet
 ref: api-grid-weather-daily-forecast
 ---
 
-Obtain high-precision weather forecasts within 1 kilometer within China, including: temperature, humidity, atmospheric pressure, weather conditions, wind, wind direction, etc.
+Get daily weather forecasts at any latitude and longitude in the world,, including: temperature, humidity, atmospheric pressure, weather conditions, wind, wind direction, etc.
 
-> This data is only supported for Chinese cities.
+> Data support up to 1 KM, i.e. two decimal places of coordinates.
 
 ### Request URL
 

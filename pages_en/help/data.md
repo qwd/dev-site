@@ -18,9 +18,9 @@ QWeather provides the following weather data, this table is subject to change at
 | Hourly forecast          | 1 hr            | Hourly    | 1-168 hrs  | Global     |
 | Real-time POI Weather    | 1 hr            | Real-time | Real-time  | Global     |
 | POI Daily forecast       | 8 hrs           | Daily     | 1-7 days   | Global     |
-| Real-time Weather (Gird) | 20 min          | Real-time | Realtime   | China      |
-| Daily forecast (Gird)    | 12 hrs          | Daily     | 1-7 days   | China      |
-| Hourly forecast (Gird)   | 1 hr            | Hourly    | 1-72 hrs   | China      |
+| Real-time Weather (Gird) | 20 min          | Real-time | Realtime   | Global      |
+| Daily forecast (Gird)    | 12 hrs          | Daily     | 1-7 days   | Global      |
+| Hourly forecast (Gird)   | 1 hr            | Hourly    | 1-72 hrs   | Global      |
 | Minute Precip (Gird)     | 5 min           | 5 min     | 1-2 hrs    | China      |
 
 #### Weather Indices
@@ -53,14 +53,10 @@ QWeather provides the following weather data, this table is subject to change at
 
 #### Warning
 
-Early warning information for the China region comes from the National Early Warning Center, which currently provides 57 types of warning events.
-
-Typhoon, rainstorm, snowstorm, cold wave, gale, dust storm, high temperature, drought, lightning, hail, frost, fog, haze, road icing, cold, gray haze, thunderstorm and gale, forest fire danger, cooling, road snow and ice, dry hot wind, low temperature, freezing, heavy air pollution, maritime fog, thunderstorm and gale, persistent low temperature, dense floating dust, tornado, low temperature freeze, maritime gale, low temperature rain and snow freeze, strong convection, ozone, heavy snow, heavy rainfall, strong cooling, snowstorm, forest (grassland) fire danger, thunderstorm, severe cold, sand and dust, maritime thunderstorm and gale, maritime lightning, maritime typhoon.
-
 | Data              | Update interval | Time step | Time range | Geographic |
 | ----------------- | --------------- | --------- | ---------- | ---------- |
-| Warning           | 5 min           | Real-time | Real-time  | China      |
-| Warning city list | 5 min           | Real-time | Real-time  | China      |
+| Warning           | 5 min           | Real-time | Real-time  | China and EU countries      |
+| Warning city list | 5 min           | Real-time | Real-time  | China and EU countries      |
 
 #### Astronomy
 
@@ -91,7 +87,6 @@ Typhoon, rainstorm, snowstorm, cold wave, gale, dust storm, high temperature, dr
 We focus on China and global weather services. In China, We have established long-term and in-depth cooperation with government departments. We have legal authorization and weather information service filing qualification (filing number 1120170032) as well.
 
 Use our weather service products to meet Chinese legal requirements and avoid legal/copyright risks. For more information on compliance issues for conducting weather services in China, feel free to contact our business team at <sales@qweather.com>
-
 
 ## Cities {#cities}
 

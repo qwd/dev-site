@@ -58,7 +58,7 @@
         <li {%- if page.collection == "docs_en" or page.collection == "docs_zh" %} class="active"{%- endif %}>
           <a href="{%- if page.lang == "en" %}/en{%- endif %}/docs/">{{ site.data.t[page.lang].doc }}</a>
         </li>
-        <li{%- if page.tag == "faq" %} class="active"{%- endif %}>
+        <li {%- if page.tag == "faq" %} class="active"{%- endif %}>
           <a href="{%- if page.lang == "en" %}/en{%- endif %}/help/general/">{{ site.data.t[page.lang].help }}</a>
         </li>
         <li {%- if page.tag == "widget-page" %} class="active"{%- endif %}>
