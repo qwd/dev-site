@@ -7,9 +7,9 @@ description: QWeather provides high-precision hourly weather forecasts within 1 
 ref: api-grid-weather-hourly-forecast
 ---
 
-Obtain high-precision hourly weather forecasts within 1 km of China, including: temperature, humidity, atmospheric pressure, weather conditions, wind direction, etc.
+Get hourly weather forecasts at any latitude and longitude in the world, including: temperature, humidity, atmospheric pressure, weather conditions, wind direction, etc.
 
-> This data is only supported for Chinese cities.
+> Data support up to 1 KM, i.e. two decimal places of coordinates.
 
 ### Request URL
 
