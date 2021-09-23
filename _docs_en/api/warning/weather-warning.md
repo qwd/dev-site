@@ -27,3 +27,7 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 {% include api-snippet.html %}
 
 {% include api-response.html group="warning" type="warning" prefix="warning" %}
+
+### Warning Level and Type
+
+See [Warning Level and Type](/en/docs/start/warning-info/)

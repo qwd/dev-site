@@ -99,3 +99,7 @@ If no optional parameters are set, the default value will be used.
 | code                      | Status code, please refer to [Status Code](/en/docs/start/status-code/) | 200                    |
 | updateTime                | [Last updated time](/en/docs/start/glossary#update-time)     | 2013-12-30T01:45+08:00 |
 | warningLocList.locationId | The city/region ID of the current country warning                      | 101010100              |
+
+## Warning Level and Type
+
+See [Warning Level and Type](/en/docs/start/warning-info/)
