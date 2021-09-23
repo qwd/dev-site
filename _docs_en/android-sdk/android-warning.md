@@ -106,3 +106,7 @@ Properties of WarningListBean
 | Property | Description | Example |
 | ------------- | ------------ | --------- |
 | getLocationId | Location ID | 101280601 |
+
+## Warning Level and Type
+
+See [Warning Level and Type](/en/docs/start/warning-info/)
