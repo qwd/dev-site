@@ -1,105 +1,121 @@
 ---
 title: Weather Icons
 tag: start
-toc: false
-description: QWeather provides 2 beautiful sets of icons for our weather APIs and SDK, we also provide the .ai source file, so you can edit them freely.
+description: QWeather Icons is a beautiful weather icon and weather icon font in SVG format for easy embedding in websites or APPs. QWeather Icons is open source project and you can use it for any project or redesign these icons for free.
 ref: 5-start-icons
 ---
 
-QWeather provides two sets of beautiful weather icons, which are used to display weather conditions in graphics on your products. In the weather icon S1 version, we also provide source files in `.ai` format. You can freely crop out the size or edit the color of the icon.
+[QWeather Icons && Fonts](https://icons.qweather.com/en/) is a beautiful weather icon and weather icon font in SVG format for easy embedding in websites or APPs. QWeather Icons is open source project and you can use it for any project or redesign these icons for free.
 
-![Icon screenshot](/assets/images/content/qweather-icon-screenshot.png)
+<a href="https://icons.qweather.com/en/">![图标截图](/assets/images/content/qweather-icon-screenshot-new.png)</a>
 
-## Download
+## Download and Usage
+
+You can [download and install QWeather Icons](https://icons.qweather.com/en/install/) in many ways, including npm, CDN or direct download.
+
+QWeather Icons is in SVG format and supports [svg and img tags, icon fonts or css styles](https://icons.qweather.com/en/usage/), you can freely control the size, style and color of QWeather Icons.
+
+Go to [QWeather Icons](https://icons.qweather.com/en/) for more information and [browse the full icons](https://icons.qweather.com/en/icons/).
+
+## Source Code
 
 ```
-git clone https://github.com/qwd/WeatherIcon.git
+git clone https://github.com/qwd/Icons.git
 ```
 
-Or [download from Github](https://github.com/qwd/WeatherIcon){: target="_blank"}
+Or visit our [Github repo](https://github.com/qwd/Icons) for source code of QWeather Icons, if you get some bug, feel free to [submit an issue](https://github.com/qwd/Icons/issues) or PR.
 
-## Use
+## Icon Code
 
-- The parameter `iconCode` in API/SDK is the icon file name, with file format is .png
-- Some icons are different during the day and night, such as `100.png` for sunny day and `150.png` for clear night.
-- Weather icon and code will be changed or deleted, please update in time.
+> **Please note**: icons and icon codes are constantly being updated, including additions, modifications and deletions, you have to make sure that your program is compatible so that these changes do not cause errors!
+{:.bqwarning}
 
-## Icon code
+| Icon code | Weather                 | Day      | Night    |
+| --------- | ----------------------- | -------- | -------- |
+| 100       | Sunny                   | &#9989;  | &#10060; |
+| 101       | Cloudy                  | &#9989;  | &#10060;  |
+| 102       | Few Clouds              | &#9989;  | &#10060;  |
+| 103       | Partly Cloudy           | &#9989;  | &#10060; |
+| 104       | Overcast                | &#9989;  | &#9989; |
+| 150       | Clear                   | &#10060; | &#9989;  |
+| 151       | Cloudy                  | &#10060; | &#9989;  |
+| 152       | Few Clouds              | &#10060; | &#9989;  |
+| 153       | Partly Cloudy           | &#10060; | &#9989;  |
+| 154       | Overcast                | &#9989; | &#9989;  |
+| 300       | Shower Rain             | &#9989;  | &#10060; |
+| 301       | Heavy Shower Rain       | &#9989;  | &#10060; |
+| 302       | Thundershower           | &#9989;  | &#9989;  |
+| 303       | Heavy Thunderstorm      | &#9989;  | &#9989;  |
+| 304       | Thundershower with hail | &#9989;  | &#9989;  |
+| 305       | Light Rain              | &#9989;  | &#9989;  |
+| 306       | Moderate Rain           | &#9989;  | &#9989;  |
+| 307       | Heavy Rain              | &#9989;  | &#9989;  |
+| 308       | Extreme Rain            | &#9989;  | &#9989;  |
+| 309       | Drizzle Rain            | &#9989;  | &#9989;  |
+| 310       | Storm                   | &#9989;  | &#9989;  |
+| 311       | Heavy Storm             | &#9989;  | &#9989;  |
+| 312       | Severe Storm            | &#9989;  | &#9989;  |
+| 313       | Freezing Rain           | &#9989;  | &#9989;  |
+| 314       | Light to moderate rain  | &#9989;  | &#9989;  |
+| 315       | Moderate to heavy rain  | &#9989;  | &#9989;  |
+| 316       | Heavy rain to storm     | &#9989;  | &#9989;  |
+| 317       | Storm to heavy storm    | &#9989;  | &#9989;  |
+| 318       | Heavy to severe storm   | &#9989;  | &#9989;  |
+| 350       | Shower Rain             | &#10060; | &#9989;  |
+| 351       | Heavy Shower Rain       | &#10060; | &#9989;  |
+| 399       | Rain                    | &#9989;  | &#9989;  |
+| 400       | Light Snow              | &#9989;  | &#9989;  |
+| 401       | Moderate Snow           | &#9989;  | &#9989;  |
+| 402       | Heavy Snow              | &#9989;  | &#9989;  |
+| 403       | Snowstorm               | &#9989;  | &#9989;  |
+| 404       | Sleet                   | &#9989;  | &#9989;  |
+| 405       | Rain And Snow           | &#9989;  | &#9989;  |
+| 406       | Shower Snow             | &#9989;  | &#10060; |
+| 407       | Snow Flurry             | &#9989;  | &#10060; |
+| 408       | Light to moderate snow  | &#9989;  | &#9989;  |
+| 409       | Moderate to heavy snow  | &#9989;  | &#9989;  |
+| 410       | Heavy snow to snowstorm | &#9989;  | &#9989;  |
+| 456       | Shower Snow             | &#10060; | &#9989;  |
+| 457       | Snow Flurry             | &#10060; | &#9989;  |
+| 499       | Snow                    | &#9989;  | &#9989;  |
+| 500       | Mist                    | &#9989;  | &#9989;  |
+| 501       | Foggy                   | &#9989;  | &#9989;  |
+| 502       | Haze                    | &#9989;  | &#9989;  |
+| 503       | Sand                    | &#9989;  | &#9989;  |
+| 504       | Dust                    | &#9989;  | &#9989;  |
+| 507       | Duststorm               | &#9989;  | &#9989;  |
+| 508       | Sandstorm               | &#9989;  | &#9989;  |
+| 509       | Dense fog               | &#9989;  | &#9989;  |
+| 510       | Strong fog              | &#9989;  | &#9989;  |
+| 511       | Moderate haze           | &#9989;  | &#9989;  |
+| 512       | Heavy haze              | &#9989;  | &#9989;  |
+| 513       | Severe haze             | &#9989;  | &#9989;  |
+| 514       | Heavy fog               | &#9989;  | &#9989;  |
+| 515       | Extra heavy fog         | &#9989;  | &#9989;  |
+| 800       | new-moon                | &#9989;  | &#9989;  |
+| 801       | waxing-crescent         | &#9989;  | &#9989;  |
+| 802       | first-quarter           | &#9989;  | &#9989;  |
+| 803       | waxing-gibbous          | &#9989;  | &#9989;  |
+| 804       | full-moon               | &#9989;  | &#9989;  |
+| 805       | waning-gibbous          | &#9989;  | &#9989;  |
+| 806       | last-quarter            | &#9989;  | &#9989;  |
+| 807       | waning-crescent         | &#9989;  | &#9989;  |
+| 900       | Hot                     | &#9989;  | &#9989;  |
+| 901       | Cold                    | &#9989;  | &#9989;  |
+| 999       | Unknown                 | &#9989;  | &#9989;  |
 
-| 图标代码 icon code | 天气状况         | weather                 | 白天 day | 夜晚 night |
-| ------------------ | ---------------- | ----------------------- | -------- | ---------- |
-| 100                | 晴               | Sunny                   | &bull;   | &times;    |
-| 101                | 多云             | Cloudy                  | &bull;   | &bull;     |
-| 102                | 少云             | Few Clouds              | &bull;   | &bull;     |
-| 103                | 晴间多云         | Partly Cloudy           | &bull;   | &times;    |
-| 104                | 阴               | Overcast                | &bull;   | &times;    |
-| 150                | 晴               | Clear                   | &times;  | &bull;     |
-| 153                | 晴间多云         | Partly Cloudy           | &times;  | &bull;     |
-| 154                | 阴               | Overcast                | &times;  | &bull;     |
-| 300                | 阵雨             | Shower Rain             | &bull;   | &times;    |
-| 301                | 强阵雨           | Heavy Shower Rain       | &bull;   | &times;    |
-| 302                | 雷阵雨           | Thundershower           | &bull;   | &bull;     |
-| 303                | 强雷阵雨         | Heavy Thunderstorm      | &bull;   | &bull;     |
-| 304                | 雷阵雨伴有冰雹   | Thundershower with hail | &bull;   | &bull;     |
-| 305                | 小雨             | Light Rain              | &bull;   | &bull;     |
-| 306                | 中雨             | Moderate Rain           | &bull;   | &bull;     |
-| 307                | 大雨             | Heavy Rain              | &bull;   | &bull;     |
-| 308                | 极端降雨         | Extreme Rain            | &bull;   | &bull;     |
-| 309                | 毛毛雨/细雨      | Drizzle Rain            | &bull;   | &bull;     |
-| 310                | 暴雨             | Storm                   | &bull;   | &bull;     |
-| 311                | 大暴雨           | Heavy Storm             | &bull;   | &bull;     |
-| 312                | 特大暴雨         | Severe Storm            | &bull;   | &bull;     |
-| 313                | 冻雨             | Freezing Rain           | &bull;   | &bull;     |
-| 314                | 小到中雨         | Light to moderate rain  | &bull;   | &bull;     |
-| 315                | 中到大雨         | Moderate to heavy rain  | &bull;   | &bull;     |
-| 316                | 大到暴雨         | Heavy rain to storm     | &bull;   | &bull;     |
-| 317                | 暴雨到大暴雨     | Storm to heavy storm    | &bull;   | &bull;     |
-| 318                | 大暴雨到特大暴雨 | Heavy to severe storm   | &bull;   | &bull;     |
-| 399                | 雨               | Rain                    | &bull;   | &bull;     |
-| 350                | 阵雨             | Shower Rain             | &times;  | &bull;     |
-| 351                | 强阵雨           | Heavy Shower Rain       | &times;  | &bull;     |
-| 400                | 小雪             | Light Snow              | &bull;   | &bull;     |
-| 401                | 中雪             | Moderate Snow           | &bull;   | &bull;     |
-| 402                | 大雪             | Heavy Snow              | &bull;   | &bull;     |
-| 403                | 暴雪             | Snowstorm               | &bull;   | &bull;     |
-| 404                | 雨夹雪           | Sleet                   | &bull;   | &bull;     |
-| 405                | 雨雪天气         | Rain And Snow           | &bull;   | &bull;     |
-| 406                | 阵雨夹雪         | Shower Snow             | &bull;   | &times;    |
-| 407                | 阵雪             | Snow Flurry             | &bull;   | &times;    |
-| 408                | 小到中雪         | Light to moderate snow  | &bull;   | &bull;     |
-| 409                | 中到大雪         | Moderate to heavy snow  | &bull;   | &bull;     |
-| 410                | 大到暴雪         | Heavy snow to snowstorm | &bull;   | &bull;     |
-| 499                | 雪               | Snow                    | &bull;   | &bull;     |
-| 456                | 阵雨夹雪         | Shower Snow             | &times;  | &bull;     |
-| 457                | 阵雪             | Snow Flurry             | &times;  | &bull;     |
-| 500                | 薄雾             | Mist                    | &bull;   | &bull;     |
-| 501                | 雾               | Foggy                   | &bull;   | &bull;     |
-| 502                | 霾               | Haze                    | &bull;   | &bull;     |
-| 503                | 扬沙             | Sand                    | &bull;   | &bull;     |
-| 504                | 浮尘             | Dust                    | &bull;   | &bull;     |
-| 507                | 沙尘暴           | Duststorm               | &bull;   | &bull;     |
-| 508                | 强沙尘暴         | Sandstorm               | &bull;   | &bull;     |
-| 509                | 浓雾             | Dense fog               | &bull;   | &bull;     |
-| 510                | 强浓雾           | Strong fog              | &bull;   | &bull;     |
-| 511                | 中度霾           | Moderate haze           | &bull;   | &bull;     |
-| 512                | 重度霾           | Heavy haze              | &bull;   | &bull;     |
-| 513                | 严重霾           | Severe haze             | &bull;   | &bull;     |
-| 514                | 大雾             | Heavy fog               | &bull;   | &bull;     |
-| 515                | 特强浓雾         | Extra heavy fog         | &bull;   | &bull;     |
-| 900                | 热               | Hot                     | &bull;   | &bull;     |
-| 901                | 冷               | Cold                    | &bull;   | &bull;     |
-| 999                | 未知             | Unknown                 | &bull;   | &bull;     |
 
-## Copyright
+## Copyright and License
 
-<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/StillImage" property="dct:title" rel="dct:type">The weather icons in this page are created</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.qweather.com" property="cc:attributionName" rel="cc:attributionURL">QWeather</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+Copyright [QWeather](https://www.qweather.com/)
 
-You are free to:
+Code for [MIT](https://github.com/qwd/Icons/blob/main/LICENSE)
 
-- **Share** — copy and redistribute the material in any medium or format
-- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially. 
+Icons for [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
-Under the following terms:
+## Previous versions
 
-- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. 
-- **No additional restrictions** - You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits. 
+> Previous versions no longer provide any updates and may not match the current latest weather icon code
+{:.bqwarning}
+
+QWeather Icons was formerly known as the Weather Icons project. This project provides two sets of icons in PNG format, including color and monochrome versions. If you tend to use this older version, please visit the [Weather Icons repository](https://github.com/qwd/WeatherIcon) for download.
