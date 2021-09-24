@@ -27,6 +27,9 @@ Or visit our [Github repo](https://github.com/qwd/Icons) for source code of QWea
 
 ## Icon Code
 
+> **Please note**: icons and icon codes are constantly being updated, including additions, modifications and deletions, you have to make sure that your program is compatible so that these changes do not cause errors!
+{:.bqwarning}
+
 | Icon code | Weather                 | Day      | Night    |
 | --------- | ----------------------- | -------- | -------- |
 | 100       | Sunny                   | &#9989;  | &#10060; |
