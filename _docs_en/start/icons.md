@@ -30,15 +30,15 @@ Or visit our [Github repo](https://github.com/qwd/Icons) for source code of QWea
 | Icon code | Weather                 | Day      | Night    |
 | --------- | ----------------------- | -------- | -------- |
 | 100       | Sunny                   | &#9989;  | &#10060; |
-| 101       | Cloudy                  | &#9989;  | &#9989;  |
-| 102       | Few Clouds              | &#9989;  | &#9989;  |
+| 101       | Cloudy                  | &#9989;  | &#10060;  |
+| 102       | Few Clouds              | &#9989;  | &#10060;  |
 | 103       | Partly Cloudy           | &#9989;  | &#10060; |
-| 104       | Overcast                | &#9989;  | &#10060; |
+| 104       | Overcast                | &#9989;  | &#9989; |
 | 150       | Clear                   | &#10060; | &#9989;  |
 | 151       | Cloudy                  | &#10060; | &#9989;  |
 | 152       | Few Clouds              | &#10060; | &#9989;  |
 | 153       | Partly Cloudy           | &#10060; | &#9989;  |
-| 154       | Overcast                | &#10060; | &#9989;  |
+| 154       | Overcast                | &#9989; | &#9989;  |
 | 300       | Shower Rain             | &#9989;  | &#10060; |
 | 301       | Heavy Shower Rain       | &#9989;  | &#10060; |
 | 302       | Thundershower           | &#9989;  | &#9989;  |
@@ -58,9 +58,9 @@ Or visit our [Github repo](https://github.com/qwd/Icons) for source code of QWea
 | 316       | Heavy rain to storm     | &#9989;  | &#9989;  |
 | 317       | Storm to heavy storm    | &#9989;  | &#9989;  |
 | 318       | Heavy to severe storm   | &#9989;  | &#9989;  |
-| 399       | Rain                    | &#9989;  | &#9989;  |
 | 350       | Shower Rain             | &#10060; | &#9989;  |
 | 351       | Heavy Shower Rain       | &#10060; | &#9989;  |
+| 399       | Rain                    | &#9989;  | &#9989;  |
 | 400       | Light Snow              | &#9989;  | &#9989;  |
 | 401       | Moderate Snow           | &#9989;  | &#9989;  |
 | 402       | Heavy Snow              | &#9989;  | &#9989;  |
@@ -72,9 +72,9 @@ Or visit our [Github repo](https://github.com/qwd/Icons) for source code of QWea
 | 408       | Light to moderate snow  | &#9989;  | &#9989;  |
 | 409       | Moderate to heavy snow  | &#9989;  | &#9989;  |
 | 410       | Heavy snow to snowstorm | &#9989;  | &#9989;  |
-| 499       | Snow                    | &#9989;  | &#9989;  |
 | 456       | Shower Snow             | &#10060; | &#9989;  |
 | 457       | Snow Flurry             | &#10060; | &#9989;  |
+| 499       | Snow                    | &#9989;  | &#9989;  |
 | 500       | Mist                    | &#9989;  | &#9989;  |
 | 501       | Foggy                   | &#9989;  | &#9989;  |
 | 502       | Haze                    | &#9989;  | &#9989;  |
