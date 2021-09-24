@@ -12,6 +12,7 @@ url: https://dev.qweather.com
 exturl:
   attr: https://www.qweather.com
   cdn: https://cdn.qweather.com
+  icons: https://icons.qweather.com
   widget: https://widget.qweather.com
   api: https://api.qweather.com
   devapi: https://devapi.qweather.com

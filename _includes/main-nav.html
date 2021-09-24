@@ -16,11 +16,14 @@
         <li {%- if page.collection == "docs_en" or page.collection == "docs_zh" %} class="active"{%- endif %}>
           <a href="{%- if page.lang == "en" %}/en{%- endif %}/docs/">{{ site.data.t[page.lang].doc }}</a>
         </li>
+        <li>
+          <a href="{{ site.exturl.icons }}{%- if page.lang == "en" %}/en/{%- endif %}">{{ site.data.t[page.lang].icons }}</a>
+        </li>
+        <li>
+          <a href="{{ site.exturl.widget }}{%- if page.lang == "en" %}/en/{%- endif %}">{{ site.data.t[page.lang].widget }}</a>
+        </li>
         <li {%- if page.tag == "faq" %} class="active"{%- endif %}>
           <a href="{%- if page.lang == "en" %}/en{%- endif %}/help/general/">{{ site.data.t[page.lang].help }}</a>
-        </li>
-        <li {%- if page.tag == "widget-page" %} class="active"{%- endif %}>
-          <a href="{{ site.exturl.widget }}{%- if page.lang == "en" %}/en/{%- endif %}">{{ site.data.t[page.lang].widget }}</a>
         </li>
         <li {%- if page.ref == "price" %} class="active"{%- endif %}>
           <a href="{%- if page.lang == "en" %}/en{%- endif %}/price/">{{ site.data.t[page.lang].price }}</a>
@@ -58,11 +61,14 @@
         <li {%- if page.collection == "docs_en" or page.collection == "docs_zh" %} class="active"{%- endif %}>
           <a href="{%- if page.lang == "en" %}/en{%- endif %}/docs/">{{ site.data.t[page.lang].doc }}</a>
         </li>
+        <li>
+          <a href="{{ site.exturl.icons }}{%- if page.lang == "en" %}/en/{%- endif %}">{{ site.data.t[page.lang].icons }}</a>
+        </li>
+        <li>
+          <a href="{{ site.exturl.widget }}{%- if page.lang == "en" %}/en/{%- endif %}">{{ site.data.t[page.lang].widget }}</a>
+        </li>
         <li {%- if page.tag == "faq" %} class="active"{%- endif %}>
           <a href="{%- if page.lang == "en" %}/en{%- endif %}/help/general/">{{ site.data.t[page.lang].help }}</a>
-        </li>
-        <li {%- if page.tag == "widget-page" %} class="active"{%- endif %}>
-          <a href="{{ site.exturl.widget }}{%- if page.lang == "en" %}/en/{%- endif %}">{{ site.data.t[page.lang].widget }}</a>
         </li>
         <li {%- if page.ref == "price" %} class="active"{%- endif %}>
           <a href="{%- if page.lang == "en" %}/en{%- endif %}/price/">{{ site.data.t[page.lang].price }}</a>

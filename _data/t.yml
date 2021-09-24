@@ -1,6 +1,7 @@
 en:
   home: Home
   widget: Widget
+  icons: Icons
   library: Library
   see-library: See Code Library
   price: Price
@@ -148,7 +149,8 @@ en:
   cw-fixed: Fixed in the browser
 zh:
   home: 首页
-  widget: 天气插件
+  widget: 插件
+  icons: 图标
   products: 天气产品
   library: 代码库
   see-library: 浏览示例代码库
