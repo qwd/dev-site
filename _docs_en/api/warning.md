@@ -8,6 +8,8 @@ description: QWeather severe weathe warning API support severe weathe warning in
 ref: api-warning
 ---
 
-Warning API supports supports weather warning, geological hazard warning and earthquake warning in China and EU countries.
+QWeather Weather Warning API provides global severe weather warning services covering China and dozens of countries or regions around the world, supporting multiple languages (including local languages) and containing nearly 100 types of weather warnings.
+
+Learn more about our [supported countries or regions](/en/docs/start/warning-info/#supported-regions), [warning levels](/en/docs/start/warning-info/#warning-level) and [warning types](/en/docs/start/warning-info/#warning-type).
 
 {% include list-by-data.html %}
