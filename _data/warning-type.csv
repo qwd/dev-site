@@ -1,0 +1,91 @@
+type,type_deprecated,type_name_zh,type_name_en
+1001,11B01,台风,Typhoon
+1002,11B02,龙卷风,Tornado
+1003,11B03,暴雨,Rainstorm
+1004,11B04,暴雪,Snow Storm
+1005,11B05,寒潮,Cold Wave
+1006,11B06,大风,Gale
+1007,11B07,沙尘暴,Sandstorm
+1008,11B08,低温冻害,Low Temperature Freeze
+1009,11B09,高温,High Temperature
+1010,11B10,热浪,Heat Wave
+1011,11B11,干热风,Dry Hot Air
+1012,11B12,下击暴流,Downburst
+1013,11B13,雪崩,Avalanche
+1014,11B14,雷电,Lightning
+1015,11B15,冰雹,Hail
+1016,11B16,霜冻,Frost
+1017,11B17,大雾,Heavy Fog
+1018,11B18,低空风切变,Low-Level Wind Shearl
+1019,11B19,霾,Haze
+1020,11B20,雷雨大风,Thunder Gust
+1021,11B21,道路结冰,Road Icing
+1022,11B22,干旱,Drought
+1023,11B23,海上大风,Gale at Sea
+1024,11B24,高温中暑,Heat Stroke
+1025,11B25,森林火险,Wildfire
+1026,11B26,草原火险,Grassland Fire
+1027,11B27,冰冻,Freeze
+1028,11B28,空间天气,Space Weather
+1029,11B29,重污染,Heavy Air Pollution
+1030,11B30,低温雨雪冰冻,Low Temperature Rain and Snow
+1031,11B31,强对流,Strong Convection
+1032,11B32,臭氧,Ozone
+1033,11B33,大雪,Heavy Snow
+1034,11B34,寒冷,Cold
+1035,11B35,连阴雨,Continuous Rain
+1036,11B36,渍涝风险,Waterlogging
+1037,11B37,地质灾害气象风险,Geological Hazard
+1038,11B38,强降雨,Heavy Rainfall
+1039,11B39,强降温,Severely Falling Temperature
+1040,11B40,雪灾,Snow Disaster
+1041,11B41,森林（草原）火险,Wildfire (Grassland)
+1042,11B42,医疗气象,Medical Meteorology
+1043,11B43,雷暴,Thunderstorm
+1044,11B44,停课信号,School Closure
+1045,11B45,停工信号,Factory Closure
+1046,11B46,海上风险,Maritime Risk
+1047,11B47,春季沙尘天气,Spring Dust
+1048,11B48,降温,Falling Temperature
+1049,11B49,台风暴雨,Typhoon and Rainstorm
+1050,11B50,严寒,Severe Cold
+1051,11B51,沙尘,Sand Dust
+1052,11B52,海上雷雨大风,Sea Thunderstorms
+1053,11B53,海上大雾,Sea Fog
+1054,11B54,海上雷电,Sea Thunder
+1055,11B55,海上台风,Sea Typhoon
+1056,11B56,低温,Low Temperature
+1057,11B57,道路冰雪,Road Ice and Snow
+1058,11B58,雷暴大风,Thunderstorm and Gale
+1059,11B59,持续低温,Continuous Low Temperature
+1061,11B61,浓浮沉,Strong Dust
+1064,11B64,短时强降雨,Short-lived Heavy Shower Rain
+1101,,洪水,Flood
+1302,,泥石流,Mudflow
+1402,,风暴潮,Storm Surge
+1601,,炎热,Very Hot Weather
+1602,,强烈季风信号,Strong Monsoon Signal
+1603,,山泥倾泻,Landslip
+1604,,热带气旋,Tropical Cyclone
+1605,,火灾危险,Fire Danger
+1606,,新界北部水浸特别报告,Special Announcement on Flooding in the northern New Territories
+1607,,寒冷天气,Cold Weather
+2001,,大风,Wind
+2002,,强降雪和结冰,Snow-ice
+2003,,大雾,Fog
+2004,,海岸风险,Coastal Event
+2005,,森林火险,Forest Fire
+2006,,雨,Rain
+2007,,大雨洪水,Rain-flood
+2008,,冻雨和结冰,"Freezing rain, icing"
+2009,,地面霜,Ground Frost
+2010,,扬尘风,Dust Raising Winds
+2011,,强地面风,Strong Surface Winds
+2012,,炎热,Hot Day
+2013,,夜间炎热,Warm Night
+2014,,寒冷,Cold Day
+2015,,雷暴和闪电,Thunderstorm and Lightning
+2016,,冰雹风暴,Hailstorm
+2017,,海况风险,Sea area warning
+2018,,渔业风险,Fishermen warning
+9999,11B99,其他,Other

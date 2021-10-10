@@ -4,10 +4,12 @@ tag: api
 data: warning
 version: v7
 toc: false
-description: QWeather severe weathe warning API support severe weathe warning in China and EU countries, real-time access to typhoon, heat wave, cold wave, gale, heavy air pollution, wildfire, dust storms, droughts, lightning, hail, frost, heavy fog, etc.
+description: QWeather weather warning API can get global real-time severe weather warning data, including China and dozens of countries or regions around the world, supporting multiple languages (including local languages) and 100+ types of warnings, such as Typhoon, Tornado, Rainstorm, Avalanche, Air Pollution, Wildfire, Thunderstorm, Droughts, Lightning, Hail, Frost, Fog, Flood and etc.
 ref: api-warning
 ---
 
-Warning API supports supports weather warning, geological hazard warning and earthquake warning in China and EU countries.
+QWeather weather warning API can get global real-time severe weather warning data, including China and dozens of countries or regions around the world, supporting multiple languages (including local languages) and 100+ types of warnings.
+
+Learn more about our [supported countries or regions](/en/docs/start/warning-info/#supported-regions), [warning levels](/en/docs/start/warning-info/#warning-level) and [warning types](/en/docs/start/warning-info/#warning-type).
 
 {% include list-by-data.html %}

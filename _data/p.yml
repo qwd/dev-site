@@ -346,11 +346,11 @@ range-warning:
   name: range
   text: 
     en: |-
-     Select the specified country, now support China and EU countries, the country name needs to use [country code ISO 3166](/en/docs/start/glossary#iso-3166).  
+     Set country or region. See [supported countries or regions](/en/docs/start/warning-info/#supported-regions) for Weather Warning, [ISO 3166](/en/docs/start/glossary#iso-3166) format.  
      
      For example `range=cn`, `range=fr` 
     zh: |-
-     选择指定的国家，目前支持中国和欧盟国家。国家名称需使用[ISO 3166 所定义的国家代码](/docs/start/glossary#iso-3166)。例如`range=cn`，`range=fr`。
+     选择指定的国家或地区。天气预警支持的国家或地区请参考[这里](/docs/start/warning-info/#supported-regions)，使用[ISO 3166](/docs/start/glossary#iso-3166)格式。例如`range=cn`，`range=fr`。
 number:
   name: number
   text: 

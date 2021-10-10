@@ -3,11 +3,13 @@ title: Weather Warning
 tag: api
 data: warning
 version: v7
-description: QWeather Weather Warning API for getting real-time local severe weather warning.
+description: QWeather Weather Warning API for getting real-time local severe weather warning around the world.
 ref: 1-api-weather-warning
 ---
 
-Weather Warning API for getting real-time local severe weather warning.
+Weather Warning API for getting real-time local severe weather warning around the world.
+
+> You can also first get a list of all cities in a given country or region where warnings are currently in effect via [Weather Warning City List API](/en/docs/api/warning/weather-warning-city-list/).
 
 ### Request URL
 
@@ -17,7 +19,11 @@ Weather Warning API for getting real-time local severe weather warning.
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="key location lang-zhen" %}
+{% include params.html p="key location" %}
+
+> Weather warnings are not available in all cities, see [supported countries or regions for weather warnings](/en/docs/start/warning-info/#supported-regions).
+
+{% include params.html p="lang-zhen" %}
 
 ### Response
 
@@ -28,6 +34,8 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 
 {% include api-response.html group="warning" type="warning" prefix="warning" %}
 
-### Warning Level and Type
+### More Warning Resource
 
-See [Warning Level and Type](/en/docs/start/warning-info/)
+- [Supported Countries and Regions](/en/docs/start/warning-info/#supported-regions)
+- [Warning Level](/en/docs/start/warning-info/#warning-level)
+- [Warning Type](/en/docs/start/warning-info/#warning-type)

@@ -744,25 +744,25 @@ warning:
   - name: level
     desc:
       zh: |-
-       [预警等级](/docs/start/warning-info/)
+       [预警等级](/docs/start/warning-info/#warning-level)
       en: |-
-       [Warning level](/en/docs/start/warning-info/)
+       [Warning level](/en/docs/start/warning-info/#warning-level)
     example: Yellow
     type: [warning]
   - name: type
     desc:
       zh: |-
-       [预警类型ID](/docs/start/warning-info/)
+       [预警类型ID](/docs/start/warning-info/#warning-type)
       en: |-
-       [Warning type ID](/en/docs/start/warning-info/)
+       [Warning type ID](/en/docs/start/warning-info/#warning-type)
     example: 11B17
     type: [warning]
   - name: typeName
     desc:
       zh: |-
-       [预警类型名称](/docs/start/warning-info/)
+       [预警类型名称](/docs/start/warning-info/#warning-type)
       en: |-
-       [Warning type name](/en/docs/start/warning-info/)
+       [Warning type name](/en/docs/start/warning-info/#warning-type)
     example: Heavy fog
     type: [warning]
   - name: text
