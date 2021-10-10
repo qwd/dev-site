@@ -5,19 +5,19 @@ description: QWeather supports weather warning services for many countries and r
 ref: 9-start-warning
 ---
 
-QWeather supports weather warning services for many countries and regions around the world. You can find more descriptions of these warnings here, such as the list of supported countries and regions, warning levels and warning types.
+QWeather supports weather warning services for many countries or regions around the world. You can find more descriptions of these warnings here, such as the list of supported countries and regions, warning levels and warning types.
 
 ## Supported Regions
 
-Weather warnings are not available for all cities, we will continue to expand these data, currently QWeather supports the following countries and regions.
+Weather warnings are not available for all cities, we will continue to expand these data, currently QWeather supports the following countries or regions.
 
-> You can use the `range` parameter to get a list of all warning cities for that country via [warning city list](/en/docs/api/warning/weather-warning-city-list/).
+> You can use the `range` parameter to get a list of all warning cities for that country or regions via [Warning City List API](/en/docs/api/warning/weather-warning-city-list/).
 
 <table>
   <thead>
     <tr>
       <th>ISO 3166-1</th>
-      <th>Regions</th>
+      <th>Countries or Regions</th>
     </tr>
   </thead>
   <tbody>
@@ -25,7 +25,7 @@ Weather warnings are not available for all cities, we will continue to expand th
   {%- assign name = "name-" | append: page.lang -%}
   {% for item in warning_regions %}
     <tr>
-      <td>{{ item.alpha-2  }}</td>
+      <td>{{ item.alpha-2 | downcase  }}</td>
       <td>{%- if page.lang == "zh" -%}{{ item.name_zh  }}{%- else -%}{{ item.name_en  }}{%- endif -%}</td>
     </tr>
   {% endfor %}  
@@ -38,8 +38,6 @@ Warning levels may vary by country and region. For mainland China, white (Guangd
 
 > In general, the darker the color, the higher the severity of the warning, but not all warnings have all levels, for example, haze warnings are only available in yellow and orange.
 
-> Not all warnings contain all levels, for instance: haze warnings only have yellow and orange levels.
-
 - White 
 - Blue 
 - Green 
@@ -49,6 +47,8 @@ Warning levels may vary by country and region. For mainland China, white (Guangd
 - Black
 
 ## Warning Type
+
+QWeather provides over 100 warning types based on definitions from official meteorological departments around the world, however, these types are not available to all countries or regions. 
 
 > Please note: All warning types and levels are possible to change, including additions, modifications or deletions, be sure to set your program's compatibility so that these changes do not cause errors!
 {:.bqwarning}

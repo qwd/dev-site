@@ -1,15 +1,15 @@
 ---
 title: 预警参考资料
 tag: start
-description: 不同国家的灾害预警具有不同定义的等级和类型，这里可以了解到和风天气全部灾害预警信息的等级和类型说明。
+description: 和风天气预警服务支持全球多个国家和地区的气象预警服务，这里可以了解我们所支持的预警信息的详细说明，例如支持的国家和地区列表，预警等级和预警类型。
 ref: 9-start-warning
 ---
 
-和风天气预警服务支持全球多个国家和地区的气象预警服务，这里可以了解我们所支持的预警信息的详细说明，例如支持的国家和地区列表，预警等级和预警类型。
+和风天气预警服务支持全球多个国家和地区的气象预警服务，这里可以了解我们所支持的预警信息的详细说明，例如支持的国家或地区列表，预警等级和预警类型。
 
-## 支持的国家和地区 {#supported-regions}
+## 支持的国家或地区 {#supported-regions}
 
-天气灾害预警并非适用于所有城市，我们将不断的扩展这些数据，目前和风天气预警服务支持的国家和地区如下：
+天气灾害预警并非适用于所有城市，我们将不断的扩展这些数据，目前和风天气预警服务支持的国家或地区如下：
 
 > 你可以使用`range`参数通过[预警城市列表](/docs/api/warning/weather-warning-city-list/)获取该国家的所有预警城市信息
 
@@ -17,7 +17,7 @@ ref: 9-start-warning
   <thead>
     <tr>
       <th>ISO 3166-1</th>
-      <th>国家和地区</th>
+      <th>国家或地区</th>
     </tr>
   </thead>
   <tbody>
@@ -25,7 +25,7 @@ ref: 9-start-warning
   {%- assign name = "name-" | append: page.lang -%}
   {% for item in warning_regions %}
     <tr>
-      <td>{{ item.alpha-2  }}</td>
+      <td>{{ item.alpha-2 | downcase  }}</td>
       <td>{%- if page.lang == "zh" -%}{{ item.name_zh  }}{%- else -%}{{ item.name_en  }}{%- endif -%}</td>
     </tr>
   {% endfor %}  
@@ -47,6 +47,8 @@ ref: 9-start-warning
 - 黑色
 
 ## 预警类型 {#warning-type}
+
+和风天气根据各国官方气象部门的定义，提供了超过100种预警类型，这些类型并非适用于所有国家或地区。 
 
 > 请注意，所有预警类型和等级都有可能发生变化，包括新增、修改或删除，因此请务必调整好你的程序，以便在发生变化的时候不会导致错误出现！
 {:.bqwarning}

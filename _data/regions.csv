@@ -99,7 +99,7 @@ Haiti,海地,HT,HTI,332,ISO 3166-2:HT,true,,
 Heard Island and McDonald Islands,赫德岛和麦克唐纳群岛,HM,HMD,334,ISO 3166-2:HM,false,,
 Holy See,梵蒂冈,VA,VAT,336,ISO 3166-2:VA,true,,
 Honduras,洪都拉斯,HN,HND,340,ISO 3166-2:HN,true,,
-Hong Kong,香港,HK,HKG,344,ISO 3166-2:HK,false,true,true
+Hong Kong,中国香港,HK,HKG,344,ISO 3166-2:HK,false,true,true
 Hungary,匈牙利,HU,HUN,348,ISO 3166-2:HU,true,true,
 Iceland,冰岛,IS,ISL,352,ISO 3166-2:IS,true,true,
 India,印度,IN,IND,356,ISO 3166-2:IN,true,true,
@@ -130,7 +130,7 @@ Libya,利比亚,LY,LBY,434,ISO 3166-2:LY,true,,
 Liechtenstein,列支敦士登,LI,LIE,438,ISO 3166-2:LI,true,,
 Lithuania,立陶宛,LT,LTU,440,ISO 3166-2:LT,true,true,
 Luxembourg,卢森堡,LU,LUX,442,ISO 3166-2:LU,true,true,
-Macao,澳门,MO,MAC,446,ISO 3166-2:MO,false,true,true
+Macao,中国澳门,MO,MAC,446,ISO 3166-2:MO,false,true,true
 Madagascar,马达加斯加,MG,MDG,450,ISO 3166-2:MG,true,,
 Malawi,马拉维,MW,MWI,454,ISO 3166-2:MW,true,,
 Malaysia,马来西亚,MY,MYS,458,ISO 3166-2:MY,true,,
