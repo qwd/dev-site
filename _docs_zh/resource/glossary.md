@@ -1,8 +1,9 @@
 ---
 title: 专用词汇表
-tag: start
+tag: resource
 description: 和风天气数据服务涉及到很多专业术语，我们大部分采用了国际标准格式，在这里将详细的解释什么是和风天气的坐标、行政区划、数据KEY、时间格式、数据更新时间、数据服务性能等专有名词。
-ref: 2-start-glossary
+redirect_from: /docs/start/glossary/
+ref: 2-res-glossary
 ---
 
 ## Application

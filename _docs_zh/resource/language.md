@@ -1,12 +1,13 @@
 ---
 title: 多语言
-tag: start
+tag: resource
 toc: false
-description: 和风天气支持中英德法西意日韩俄泰等多语言，可采用lang参数随时调用
-ref: 4-start-lang
+description: 和风天气支持30+种主流语言及所在地区的当地语言，包括中英德法西意日韩俄泰等多语言，你可以使用lang参数随时调用。
+redirect_from: /docs/start/language/
+ref: 4-res-lang
 ---
 
-和风天气支持中英德法西意日韩俄泰等30多种语言，以下是在API或SDK中的多语言参数。
+和风天气支持30+种主流语言，包括中英德法西意日韩俄泰等多语言，你可以使用lang参数随时调用。以下是在API或SDK中的多语言参数。
 
 > 默认语言为中文，如一些城市名称没有中文的，使用英文或本地语言代替。
 > 

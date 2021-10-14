@@ -1,9 +1,10 @@
 ---
 title: Location List
-tag: start
+tag: resource
 toc: false
 description: QWeather location list with points of interest, attractions, air monitoring station, and Chinese cities. The list including IDs, latitude/longitude and more information.
-ref: 6-start-location-list
+redirect_from: /en/docs/start/location-list/
+ref: 6-res-location-list
 ---
 
 QWeather provides weather data services for 150,000 cities and variety of POIs around the world. In addition to obtaining city information through the GeoAPI, we also provide Location IDs for some cities and POIs.

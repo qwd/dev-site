@@ -1,9 +1,10 @@
 ---
 title: Status Code
-tag: start
+tag: resource
 toc: false
 description: QWeather data status code and error code. When an error occurs, please refer to this table first.
-ref: 3-start-status-code
+redirect_from: /en/docs/start/status-code/
+ref: 3-res-status-code
 ---
 
 By `code` in the API/SDK, you can get the status of the current request and determine whether the request is successful or an error occurred.

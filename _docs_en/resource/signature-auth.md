@@ -1,8 +1,9 @@
 ---
 title: Signature Auth
-tag: start
+tag: resource
 description: QWeather API support Signature Authentication methods to ensure the security of your key.
-ref: 7-start-auth
+redirect_from: /en/docs/start/signature-auth/
+ref: 7-res-auth
 ---
 
 For more security of API request, we recommend that you use the Signature Authentication for access authentication.

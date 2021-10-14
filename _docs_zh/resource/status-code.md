@@ -1,9 +1,10 @@
 ---
 title: 错误状态码
-tag: start
+tag: resource
 toc: false
 description: 和风天气数据状态码和错误码，出现错误的时候，请先参考此表格。
-ref: 3-start-status-code
+redirect_from: /docs/start/status-code/
+ref: 3-res-status-code
 ---
 
 通过API接口中的`code`字段，可以获取到当前请求的状态，判断请求是否成功或出现错误。

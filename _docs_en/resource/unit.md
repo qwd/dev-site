@@ -1,9 +1,10 @@
 ---
 title: Unit
-tag: start
+tag: resource
 toc: false
-description: QWeather use metric units by default, such as kilometers, Celsius, etc. If you need to use imperial units, you can select the unit by adding the parameter `unit=i` (imperial system) or `unit=m` (metric system) in the interface .
-ref: 8-start-unit
+description: QWeather use metric units by default, such as kilometers, Celsius, etc. If you need to use imperial units, you can select the unit by adding the parameter `unit=i` (imperial system) or `unit=m` (metric system) in the interface.
+redirect_from: /en/docs/start/unit/
+ref: 8-res-unit
 ---
 
 Metric units are used by default for QWeather, such as kilometers, degrees Celsius, etc. If you need to use imperial units, you can set them by adding the following parameters.

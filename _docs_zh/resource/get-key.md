@@ -1,9 +1,9 @@
 ---
 title: 创建应用和KEY
-tag: start
+tag: resource
 description: 使用和风天气数据API或SDK，首先要先创建一个应用，在这个应用下，你可以为这个应用不同的使用场景创建多个KEY。本篇文档介绍如何快速的创建和风天气的应用和KEY。
 redirect_from: /docs/start/get-api-key/
-ref: 1-start-get-api-key
+ref: 1-res-get-api-key
 ---
 
 使用和风天气数据API或SDK，需要先创建一个[应用](/docs/start/glossary/#application)，在这个应用下，你可以为不同的使用场景创建多个KEY。

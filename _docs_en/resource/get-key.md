@@ -1,8 +1,9 @@
 ---
 title: Get KEY
-tag: start
+tag: resource
 description: To use the QWeather Data API or SDK, you need create an Application first and create multiple keys for different usage scenarios.
-ref: 1-start-get-api-key
+redirect_from: /en/docs/start/get-api-key/
+ref: 1-res-get-api-key
 ---
 
 To use QWeather data service, you need to create an [Application](/en/docs/start/glossary/#Application) first and create multiple [KEY](/en/docs/start/glossary/#key) for different usage scenarios.

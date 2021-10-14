@@ -315,20 +315,20 @@ ref: docs-index
                     <ul>
                         {% for section in site.data.content-list.glossary %}
                         {% for item in section.list limit:7 %}
-                        <li><a href="{% if page.lang == "en" %}/en{% endif %}/docs/start/glossary/#{{ item.title.en |
+                        <li><a href="{% if page.lang == "en" %}/en{% endif %}/docs/resource/glossary/#{{ item.title.en |
                                 slugify }}">{{ item.title[page.lang] }}</a>
                         </li>
                         {% endfor %}
                         {% endfor %}
                         <li>
-                            <a href="{% if page.lang == "en" %}/en{% endif %}/docs/start/glossary/"><strong>See More</strong></a>
+                            <a href="{% if page.lang == "en" %}/en{% endif %}/docs/resource/glossary/"><strong>See More</strong></a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                     <h3>{{ site.data.t[page.lang].resource }}</h3>
                     <ul>
-                        {%- assign res = site.documents | where: "lang", page.lang | where: "tag", "start" | sort: "ref" %}
+                        {%- assign res = site.documents | where: "lang", page.lang | where: "tag", "resource" | sort: "ref" %}
                         {%- for item in res %}
                         <li><a href="{{ item.url }}">{{ item.title }}</a></li>
                         {%- endfor %}
