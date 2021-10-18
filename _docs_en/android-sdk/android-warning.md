@@ -33,7 +33,7 @@ Properties of WarningBean
 
 | Property | Description | Example |
 | --------------- | -------------------------- | ------ --------------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getBeanBaseList | Disaster Warning | List&lt;WarningBeanBase&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getBasic | Basic Information | Basic |
@@ -49,7 +49,7 @@ Properties of WarningBean
 
 | Property | Description | Example |
 | ------------- | ------------------- | ------------------- |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time) | 2017-10-25T04:34+08:00 |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time) | 2017-10-25T04:34+08:00 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
 
 **WarningBeanBase Warning Information**
@@ -97,8 +97,8 @@ Properties of WarningListBean
 
 | Property | Description | Example |
 | -------------- | ------------ | --------------------- ------ |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time) | 2017-10-25T12:34+08:00 |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time) | 2017-10-25T12:34+08:00 |
 | getWarningBean | Weather warning | List&lt;WarningListBean&gt; |
 
 **WarningListBeanBase Warning Information**
@@ -109,4 +109,4 @@ Properties of WarningListBean
 
 ## Warning Level and Type
 
-See [Warning Level and Type](/en/docs/start/warning-info/)
+See [Warning Level and Type](/en/docs/resource/warning-info/)

@@ -34,7 +34,7 @@ Properties of HistoryWeatherBean
 
 | Property | Description | Example |
 | -------------- | -------------------------- | ---------------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getDailyBean | Overview of the daily forecast | DailyBean |
 | getHourlyBeans | Hourly data of the day | List&lt;HourlyBean&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
@@ -51,7 +51,7 @@ Properties of HistoryWeatherBean
 
 | Property | Description | Example |
 | ------------- | ------------------------ | -------------------- |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time) | 2017-10-25T04:34+08:00 |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time) | 2017-10-25T04:34+08:00 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
 
 **DailyBean**
@@ -76,7 +76,7 @@ Properties of HistoryWeatherBean
 | ------------ | ------------------------------------- | ---------------- |
 | getTime | Historical weather time of the day | 2013-12-30T13:00+08:00 |
 | getTemp | Temperature | 2 |
-| getIcon | Icon code of weather conditions, free to download [weather icons](/en/docs/start/icons/) | 101 |
+| getIcon | Icon code of weather conditions, free to download [weather icons](/en/docs/resource/icons/) | 101 |
 | getText |  Weather conditions | Cloudy |
 | getWind360 | Wind direction in azimuth degree | 290 |
 | getWindDir | Wind direction | NW |
@@ -111,7 +111,7 @@ Properties of HistoricalAirBean
 
 | Property | Description | Example |
 | ----------------- | -------------------------- | ------------------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getBasic | Basic Information | Basic |
 | getAirHourlyBeans | Hourly air quality data for the day | List&lt;AirHourlyBean&gt; |
@@ -127,7 +127,7 @@ Properties of HistoricalAirBean
 
 | Property | Description | Example |
 | ------------- | ------------------------ | -------------------- |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time) | 2017-10-25T04:34+08:00 |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time) | 2017-10-25T04:34+08:00 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
 
 **AirHourlyBean historical day by hour air quality data**

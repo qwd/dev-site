@@ -6,7 +6,7 @@ description: 使用和风天气Android SDK获取天气灾害预警数据，实�
 ref: 5-sdk-android-warning
 ---
 
-和风天气灾害预警支持中国和欧盟国家天气灾害预警，预警类型包括：台风、暴雨、暴雪、寒潮、大风、沙尘暴、高温、干旱、雷电、冰雹、霜冻、大雾、霾、道路结冰、寒冷、灰霾、雷雨大风、森林火险、降温、道路冰雪、干热风、低温、冰冻、空气重污染、海上大雾、雷暴大风、持续低温、浓浮尘、龙卷风、低温冻害、海上大风、低温雨雪冰冻、强对流、臭氧、大雪、强降雨、强降温、雪灾、森林（草原）火险、雷暴、严寒、沙尘、海上雷雨大风、海上雷电、海上台风等，详细列表请查看[预警类型和等级](/docs/start/warning-info/)
+和风天气灾害预警支持中国和欧盟国家天气灾害预警，预警类型包括：台风、暴雨、暴雪、寒潮、大风、沙尘暴、高温、干旱、雷电、冰雹、霜冻、大雾、霾、道路结冰、寒冷、灰霾、雷雨大风、森林火险、降温、道路冰雪、干热风、低温、冰冻、空气重污染、海上大雾、雷暴大风、持续低温、浓浮尘、龙卷风、低温冻害、海上大风、低温雨雪冰冻、强对流、臭氧、大雪、强降雨、强降温、雪灾、森林（草原）火险、雷暴、严寒、沙尘、海上雷雨大风、海上雷电、海上台风等，详细列表请查看[预警类型和等级](/docs/resource/warning-info/)
 
 ## 灾害预警
 
@@ -31,7 +31,7 @@ QWeather.getWarning(Context context, String location, Lang lang, final QWeather.
 
 | 属性            | 说明                       | 示例值                      |
 | --------------- | -------------------------- | --------------------------- |
-| getCode         | 接口状态                   | [Status Code](/docs/start/status-code/)   |
+| getCode         | 接口状态                   | [Status Code](/docs/resource/status-code/)   |
 | getBeanBaseList | 灾害预警                   | List&lt;WarningBeanBase&gt; |
 | getRefer        | Refer 数据来源以及数据授权 | Refer                       |
 | getBasic        | Basic 基础信息             | Basic                       |
@@ -93,7 +93,7 @@ QWeather.getWarningList(Context context, final QWeather.OnResultWarningListListe
 
 | 属性           | 说明         | 示例值                      |
 | -------------- | ------------ | --------------------------- |
-| getCode        | 接口状态     | [Status Code](/docs/start/status-code/)     |
+| getCode        | 接口状态     | [Status Code](/docs/resource/status-code/)     |
 | getUpdateTime  | 接口更新时间 | 2017-10-25T12:34+08:00            |
 | getWarningBean | 灾害预警     | List&lt;WarningListBean&gt; |
 
@@ -105,4 +105,4 @@ QWeather.getWarningList(Context context, final QWeather.OnResultWarningListListe
 
 ## 预警类型和等级
 
-查看[预警类型和等级](/docs/start/warning-info/)
+查看[预警类型和等级](/docs/resource/warning-info/)

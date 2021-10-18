@@ -33,7 +33,7 @@ QWeather.getStormList(Context context, String year, Basin basin, OnResultTropica
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
-| getCode         | 接口状态 | [Status Code](/docs/start/status-code/)        |
+| getCode         | 接口状态 | [Status Code](/docs/resource/status-code/)        |
 | getBasic         | 更新信息 | Basic       |
 | getRefer         | Refer 数据来源以及数据授权 | Refer  |
 | getStormList | 台风数据 | List<StormBean> |
@@ -87,7 +87,7 @@ QWeather.getStormTrack(Context context, String stormId, OnResultTropicalStormTra
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
-| getCode         | 接口状态 | [Status Code](/docs/start/status-code/)        |
+| getCode         | 接口状态 | [Status Code](/docs/resource/status-code/)        |
 | getBasic         | 更新信息 | Basic       |
 | getRefer         | Refer 数据来源以及数据授权 | Refer  |
 | getIsActive         | 是否为活跃台风<br />`1` 活跃台风 <br /> `0` 停编 | 0  |
@@ -178,7 +178,7 @@ QWeather.getStormForecast(Context context, String stormId, OnResultTropicalStorm
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
-| getCode         | 接口状态 | [Status Code](/docs/start/status-code/)        |
+| getCode         | 接口状态 | [Status Code](/docs/resource/status-code/)        |
 | getBasic         | 更新信息 | Basic       |
 | getRefer         | Refer 数据来源以及数据授权 | Refer  |
 | getForecastList | 台风预报数据 | List<StormForecastBaseBean> |

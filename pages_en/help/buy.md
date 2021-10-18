@@ -15,7 +15,7 @@ The purchase of the QWeather data service allows you to use weather data for any
 
 QWeather uses a per-volume billing model, a.k.a. Pay as You Go, where you only pay for what you actually use, and the purchase process is very simple: 
 
-1. Log in to the [Console](https://console.qweather.com/?lang=en) and [create a Pro Application](/en/docs/start/get-key/)
+1. Log in to the [Console](https://console.qweather.com/?lang=en) and [create a Pro Application](/en/docs/resource/get-key/)
 2. Make sure you have a sufficient balance in your account or have purchased a [Package](#package).
 3. Done.
 

@@ -2,11 +2,11 @@
 title: 创建应用和KEY
 tag: resource
 description: 使用和风天气数据API或SDK，首先要先创建一个应用，在这个应用下，你可以为这个应用不同的使用场景创建多个KEY。本篇文档介绍如何快速的创建和风天气的应用和KEY。
-redirect_from: /docs/start/get-api-key/
+redirect_from: /docs/start/get-key/
 ref: 1-res-get-api-key
 ---
 
-使用和风天气数据API或SDK，需要先创建一个[应用](/docs/start/glossary/#application)，在这个应用下，你可以为不同的使用场景创建多个KEY。
+使用和风天气数据API或SDK，需要先创建一个[应用](/docs/resource/glossary/#application)，在这个应用下，你可以为不同的使用场景创建多个KEY。
 
 ## 创建应用
 
@@ -47,7 +47,7 @@ ref: 1-res-get-api-key
 * Android SDK：需要绑定Android APP的 `PackageName`，如果你有多个APP，可以创建多个KEY，绑定后该KEY仅可用于此APP。
 * iOS SDK：需要绑定iOS APP的 `bundle id`，如果你有多个APP，可以创建多个KEY，绑定后该KEY仅可用于此APP。
 
-点击了解如何获取[iOS Bundle ID](/docs/start/glossary/#ios-bundle-identifier)或[Android Package Name](/docs/start/glossary/#android-package-name)
+点击了解如何获取[iOS Bundle ID](/docs/resource/glossary/#ios-bundle-identifier)或[Android Package Name](/docs/resource/glossary/#android-package-name)
 
 ## 创建完成
 

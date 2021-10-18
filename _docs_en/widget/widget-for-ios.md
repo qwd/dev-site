@@ -372,7 +372,7 @@ ring *)userKey Location:(NSString *)location;
 | padding | QWeatherPluginView's inner margin | UIEdgeInsets | UIEdgeInsetsZero |
 | backgroundColor | View background color | UIColor | [UIColor clearColor]
 |
-| backgroundImageTitle | Custom view background image title: set effective when the value of theirType is QWeatherPluginViewThemeTypeAuto, the image naming rule is xxx_code_d during the day and xxx_code_n at night where the code is referenced [Qweather icon code](/en/docs/start/icons/) is passed in xxx Just prefix | | |
+| backgroundImageTitle | Custom view background image title: set effective when the value of theirType is QWeatherPluginViewThemeTypeAuto, the image naming rule is xxx_code_d during the day and xxx_code_n at night where the code is referenced [Qweather icon code](/en/docs/resource/icons/) is passed in xxx Just prefix | | |
 | | NSString | None | |
 | borderColor | Border color | UIColor | #F5F5F5 |
 | borderWidth | Border width | CGFloat | 2.0 |
@@ -408,7 +408,7 @@ ring *)userKey Location:(NSString *)location;
 | alarmTextColorArray | The alarm text color array is only valid for the QWeatherConfigModelTypeAlarm type. The array stores the colors in order, and the corresponding order is white, blue, yellow, orange, red. All five levels must be set to be effective, otherwise the default
 | NSArray< UIColor*> | Built-in color array |
 | iconSize | Weather condition picture size, adjustable range 6-32 | CGFloat | 12 |
-| iconImageTitle | Custom icon name: 1. Custom weather condition icon name: The picture naming rule is xxx_code_d during the day and xxx_code_n at night, where the code is [QWeather icon code](/en/docs/start/icons/) and the xxx prefix can be input 2 .Customized humidity picture: use the picture name directly 3. Customize the wind direction picture: the picture naming convention is xxx_wind_nodirection (no continuous wind direction icon), xxx_wind_rotate (rotating wind icon), xxx_wind_normal (normal wind direction icon, the picture points to the north, just do it internally Rotation processing), just pass in the prefix xxx | NSString | None, use the default image |
+| iconImageTitle | Custom icon name: 1. Custom weather condition icon name: The picture naming rule is xxx_code_d during the day and xxx_code_n at night, where the code is [QWeather icon code](/en/docs/resource/icons/) and the xxx prefix can be input 2 .Customized humidity picture: use the picture name directly 3. Customize the wind direction picture: the picture naming convention is xxx_wind_nodirection (no continuous wind direction icon), xxx_wind_rotate (rotating wind icon), xxx_wind_normal (normal wind direction icon, the picture points to the north, just do it internally Rotation processing), just pass in the prefix xxx | NSString | None, use the default image |
 | type | Configuration style control type | [QWeatherConfigModelType](#qweatherconfigmodeltype) | QWeatherConfigModelTypeLocation |
 | padding | The margins and spacing between the subview and the parent view and other subviews follow the linear layout. For example, the spacing between the second control and the first control in the horizontal layout is the padding.left of the second control and the padding.left of the first control. padding.right is invalid. For vertical layout, the distance between the second control and the bottom of the first control is the padding.top of the second control, and the padding.bottom of the first control is invalid | UIEdgeInsets | UIEdgeInsetsMake(2, 5, 2, 5) |
 

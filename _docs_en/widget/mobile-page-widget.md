@@ -27,12 +27,12 @@ Multi-language settings, the default is `auto`.
 
 **lc**
 
-Mobile Page Widget can be located using `auto`, `accu`, [locationID](/en/docs/start/glossary#locationID) or comma-separated [longitude/latitude](/en/docs/start/glossary#coordinate) (decimal). LocationID is available through [GeoAPI](/en/docs/api/geo/)
+Mobile Page Widget can be located using `auto`, `accu`, [locationID](/en/docs/resource/glossary#locationID) or comma-separated [longitude/latitude](/en/docs/resource/glossary#coordinate) (decimal). LocationID is available through [GeoAPI](/en/docs/api/geo/)
 
 - `auto` is obtained from the IP address, IP address cannot guarantee that the address is completely accurate
 - `accu` may require a popup to prompt the user to agree to the location permissions, depending on the browser
-- Specify the city's [locationID](/en/docs/start/glossary#locationID), available through [GeoAPI](/en/docs/api/geo/)
-- Specify the city's [longitude/latitude](/en/docs/start/glossary#coordinate) (decimal)
+- Specify the city's [locationID](/en/docs/resource/glossary#locationID), available through [GeoAPI](/en/docs/api/geo/)
+- Specify the city's [longitude/latitude](/en/docs/resource/glossary#coordinate) (decimal)
 
 **bg**
 

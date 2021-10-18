@@ -12,7 +12,7 @@ ref: 0-start-homepage
 
 ## 创建应用
 
-开始正式开发之前，你需要先[创建一个应用和KEY](/docs/start/get-key/)，这个KEY是你获取天气数据的认证信息。
+开始正式开发之前，你需要先[创建一个应用和KEY](/docs/resource/get-key/)，这个KEY是你获取天气数据的认证信息。
 
 应用分为商业版和开发版，前者用于商业用途并获获取更多的天气数据，后者用于个人开发项目，你可以查看[商业版与免费版应用的对比](/help/general/#biz-vs-free)。
 
@@ -30,7 +30,7 @@ https://devapi.qweather.com/v7/weather/now?location=101010100&key=你的KEY
 
 恭喜你🎉你已经通过我们的天气API获取到了北京市的实况天气数据。现在，你可以访问[Web API的开发文档](/docs/api/)了解更多数据的用法。
 
-> 如果你在浏览器中没有看到类似的数据返回，请根据返回的`code`去[查看出现了什么问题](/docs/start/status-code/)
+> 如果你在浏览器中没有看到类似的数据返回，请根据返回的`code`去[查看出现了什么问题](/docs/resource/status-code/)
 
 > **Gzip压缩**
 > 
@@ -88,12 +88,17 @@ WIDGET = {
 
 很多和风天气的爱好者为大家贡献了很多优秀的示范代码甚至应用代码，或许可以为你提供一些灵感。
 
-我们也欢迎你共享你的代码，我为人人，人人为我❤️
+我们也欢迎你共享你的代码，我为人人，人人为我 ❤️
 
-访问[代码库](/docs/library/)
+访问[代码库](/docs/library/)。
 
 ## 其他实用资源
 
 天气数据涉及到了大量专业信息，需要你额外关注，例如：
 
-{% include list-by-data.html notitle=true %}
+<ul>
+    {%- assign res = site.documents | where: "lang", page.lang | where: "tag", "resource" | sort: "ref" %}
+    {%- for item in res %}
+    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {%- endfor %}
+</ul>

@@ -6,9 +6,9 @@ key:
   name: key
   text:
     zh: |-
-     用户认证key，请参考[如何获取你的KEY](/docs/start/get-key/)。支持[数字签名](/docs/start/signature-auth/)方式进行认证。例如 `key=123456789ABC`
+     用户认证key，请参考[如何获取你的KEY](/docs/resource/get-key/)。支持[数字签名](/docs/resource/signature-auth/)方式进行认证。例如 `key=123456789ABC`
     en: |-
-     API authentication key, please refer to [How To Get Your Key](/en/docs/start/get-key/). Support [Signature Authentication](/en/docs/start/signature-auth/). 
+     API authentication key, please refer to [How To Get Your Key](/en/docs/resource/get-key/). Support [Signature Authentication](/en/docs/resource/signature-auth/). 
 
      For example: `key=12334567890ABC` 
   rqd: true
@@ -16,36 +16,36 @@ key-ios:
   name: appKey
   text:
     zh: |-
-     用户认证key，请参考[如何获取你的KEY](/docs/start/get-key/)。例如 `appKey=123456789ABC`
+     用户认证key，请参考[如何获取你的KEY](/docs/resource/get-key/)。例如 `appKey=123456789ABC`
     en: |-
-     API authentication key, please refer to [How To Get Your Key](/en/docs/start/get-key/). 
+     API authentication key, please refer to [How To Get Your Key](/en/docs/resource/get-key/). 
 
      For example: `appKey=12334567890ABC` 
   rqd: true
 location: 
   name: location
   text: 
-    zh: 需要查询地区的[LocationID](/docs/start/glossary#locationid)或以英文逗号分隔的[经度,纬度坐标](/docs/start/glossary#coordinate)（十进制），LocationID可通过[城市搜索](/docs/api/geo/)服务获取。例如 `location=101010100` 或 `location=116.41,39.92`
+    zh: 需要查询地区的[LocationID](/docs/resource/glossary#locationid)或以英文逗号分隔的[经度,纬度坐标](/docs/resource/glossary#coordinate)（十进制），LocationID可通过[城市搜索](/docs/api/geo/)服务获取。例如 `location=101010100` 或 `location=116.41,39.92`
     en: |-
-     The location to be queried, support [LocationID](/en/docs/start/glossary#locationid) or comma-separated [longitude and latitude](/en/docs/start/glossary#coordinate), LocationID can be obtained by [GeoAPI](/en/docs/api/geo/). 
+     The location to be queried, support [LocationID](/en/docs/resource/glossary#locationid) or comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate), LocationID can be obtained by [GeoAPI](/en/docs/api/geo/). 
      
      For example: `location=101010100` or `location=116.41,39.92`
   rqd: true
 location-geo: 
   name: location
   text: 
-    zh: 需要查询地区的名称，支持文字、以英文逗号分隔的[经度,纬度坐标](/docs/start/glossary#coordinate)（十进制）、[LocationID](/docs/start/glossary#locationid)或[Adcode](/docs/start/glossary/#adcode)（仅限中国城市）。例如 `location=北京` 或 `location=116.41,39.92`
+    zh: 需要查询地区的名称，支持文字、以英文逗号分隔的[经度,纬度坐标](/docs/resource/glossary#coordinate)（十进制）、[LocationID](/docs/resource/glossary#locationid)或[Adcode](/docs/resource/glossary/#adcode)（仅限中国城市）。例如 `location=北京` 或 `location=116.41,39.92`
     en: |-
-     The location to be queried, support text, [LocationID](/en/docs/start/glossary#locationid), comma-separated [longitude and latitude](/en/docs/start/glossary#coordinate), [Adcode](/docs/start/glossary/#adcode)(Chinese cities only). 
+     The location to be queried, support text, [LocationID](/en/docs/resource/glossary#locationid), comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate), [Adcode](/docs/resource/glossary/#adcode)(Chinese cities only). 
      
      For example: `location=beijing` or `location=116.41,39.92`
   rqd: true
 location-coord:
   name: location
   text: 
-    zh: 需要查询地区的以英文逗号分隔的[经度,纬度坐标](/docs/start/glossary#coordinate)（十进制）。例如 `location=116.41,39.92`
+    zh: 需要查询地区的以英文逗号分隔的[经度,纬度坐标](/docs/resource/glossary#coordinate)（十进制）。例如 `location=116.41,39.92`
     en: |-
-     The comma-separated [longitude and latitude](/en/docs/start/glossary#coordinate) of the location to be queried. 
+     The comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate) of the location to be queried. 
 
      For example: `location=116.41,39.92`
   rqd: true
@@ -53,9 +53,9 @@ location-id:
   name: location
   text: 
     zh: |-
-     需要查询的地区，仅支持[LocationID](/docs/start/glossary#locationid)，LocationID可通过[城市搜索服务](/docs/api/geo/)获取。例如 `location=101010100`
+     需要查询的地区，仅支持[LocationID](/docs/resource/glossary#locationid)，LocationID可通过[城市搜索服务](/docs/api/geo/)获取。例如 `location=101010100`
     en: |-
-     The location to be queried, only support [LocationID](/en/docs/start/glossary#locationid) and LocationID can be obtained by [GeoAPI](/en/docs/api/geo/). 
+     The location to be queried, only support [LocationID](/en/docs/resource/glossary#locationid) and LocationID can be obtained by [GeoAPI](/en/docs/api/geo/). 
      
      For example: `location=101010100`
   rqd: true
@@ -63,9 +63,9 @@ location-p6:
   name: location
   text: 
     zh: |-
-     需要查询的潮流站点，请填写潮流站点的[LocationID](/docs/start/glossary#locationid)，LocationID可通过[POI搜索服务](/docs/api/geo/poi-lookup/)获取。例如 `location=P66981`
+     需要查询的潮流站点，请填写潮流站点的[LocationID](/docs/resource/glossary#locationid)，LocationID可通过[POI搜索服务](/docs/api/geo/poi-lookup/)获取。例如 `location=P66981`
     en: |-
-     The currents station to be queried, need [LocationID](/en/docs/start/glossary#locationid) and LocationID can be obtained by [POI Lookup](/en/docs/api/geo/poi-lookup/). 
+     The currents station to be queried, need [LocationID](/en/docs/resource/glossary#locationid) and LocationID can be obtained by [POI Lookup](/en/docs/api/geo/poi-lookup/). 
      
      For example: `location=P66981`
   rqd: true
@@ -73,9 +73,9 @@ location-p2:
   name: location
   text: 
     zh: |-
-     需要查询的潮汐站点，请填写潮汐站点的[LocationID](/docs/start/glossary#locationid)，LocationID可通过[POI搜索服务](/docs/api/geo/poi-lookup/)获取。例如 `location=P2951`
+     需要查询的潮汐站点，请填写潮汐站点的[LocationID](/docs/resource/glossary#locationid)，LocationID可通过[POI搜索服务](/docs/api/geo/poi-lookup/)获取。例如 `location=P2951`
     en: |-
-     The tide station to be queried, need [LocationID](/en/docs/start/glossary#locationid) and LocationID can be obtained by [POI Lookup](/en/docs/api/geo/poi-lookup/). 
+     The tide station to be queried, need [LocationID](/en/docs/resource/glossary#locationid) and LocationID can be obtained by [POI Lookup](/en/docs/api/geo/poi-lookup/). 
      
      For example: `location=P2951`
   rqd: true
@@ -84,24 +84,24 @@ location-android:
   name: location
   text: 
     zh: |-
-     需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)（十进制），LocationID可通过[GeoAPI](/docs/android-sdk/android-geo/)服务获取。例如： `location=101010100` 或 `location=116.41,39.92`
+     需要查询地区的[LocationID](/docs/resource/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/resource/glossary#coordinate)（十进制），LocationID可通过[GeoAPI](/docs/android-sdk/android-geo/)服务获取。例如： `location=101010100` 或 `location=116.41,39.92`
     en: |-
-     The city to be queried, support [LocationID](/en/docs/start/glossary#locationid) or  comma-separated [longitude and latitude](/en/docs/start/glossary#coordinate), LocationID can be obtained by [GeoAPI](/en/docs/android-sdk/android-geo/). 
+     The city to be queried, support [LocationID](/en/docs/resource/glossary#locationid) or  comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate), LocationID can be obtained by [GeoAPI](/en/docs/android-sdk/android-geo/). 
 location-ios:
   rqd: true
   name: location
   text: 
     zh: |-
-     需要查询地区的[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)（十进制），LocationID可通过[GeoAPI](/docs/ios-sdk/ios-geo/)服务获取。例如： `location=101010100` 或 `location=116.41,39.92`
+     需要查询地区的[LocationID](/docs/resource/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/resource/glossary#coordinate)（十进制），LocationID可通过[GeoAPI](/docs/ios-sdk/ios-geo/)服务获取。例如： `location=101010100` 或 `location=116.41,39.92`
     en: |-
-     The city to be queried, support [LocationID](/en/docs/start/glossary#locationid) or  comma-separated [longitude and latitude](/en/docs/start/glossary#coordinate), LocationID can be obtained by [GeoAPI](/en/docs/ios-sdk/ios-geo/). 
+     The city to be queried, support [LocationID](/en/docs/resource/glossary#locationid) or  comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate), LocationID can be obtained by [GeoAPI](/en/docs/ios-sdk/ios-geo/). 
 location-id-android: 
   name: location
   text: 
     zh: |-
-     需要查询的地区，仅支持[LocationID](/docs/start/glossary#locationid)，LocationID可通过[城市搜索服务](/docs/android-sdk/android-geo/)获取。例如 `location=101010100`
+     需要查询的地区，仅支持[LocationID](/docs/resource/glossary#locationid)，LocationID可通过[城市搜索服务](/docs/android-sdk/android-geo/)获取。例如 `location=101010100`
     en: |-
-     The location to be queried, only support [LocationID](/en/docs/start/glossary#locationid) and LocationID can be obtained by [GeoAPI](/en/docs/android-sdk/android-geo/). 
+     The location to be queried, only support [LocationID](/en/docs/resource/glossary#locationid) and LocationID can be obtained by [GeoAPI](/en/docs/android-sdk/android-geo/). 
      
      For example: `location=101010100`
   rqd: true
@@ -109,9 +109,9 @@ location-id-ios:
   name: location
   text: 
     zh: |-
-     需要查询的地区，仅支持[LocationID](/docs/start/glossary#locationid)，LocationID可通过[城市搜索服务](/docs/ios-sdk/ios-geo/)获取。例如 `location=101010100`
+     需要查询的地区，仅支持[LocationID](/docs/resource/glossary#locationid)，LocationID可通过[城市搜索服务](/docs/ios-sdk/ios-geo/)获取。例如 `location=101010100`
     en: |-
-     The location to be queried, only support [LocationID](/en/docs/start/glossary#locationid) and LocationID can be obtained by [GeoAPI](/en/docs/ios-sdk/ios-geo/). 
+     The location to be queried, only support [LocationID](/en/docs/resource/glossary#locationid) and LocationID can be obtained by [GeoAPI](/en/docs/ios-sdk/ios-geo/). 
      
      For example: `location=101010100`
   rqd: true
@@ -137,7 +137,7 @@ lang:
      - `es` Spanish
      - `ja` Japanese
      - `ko` Korean
-     - [See more language code](/en/docs/start/language/)
+     - [See more language code](/en/docs/resource/language/)
     zh: |
      多语言设置，**默认中文**，当数据不匹配你设置的语言时，将返回英文或其本地语言结果。
      - `zh` 中文, **默认**
@@ -146,7 +146,7 @@ lang:
      - `es` 西班牙语
      - `ja` 日语
      - `ko` 韩语
-     - [查看更多语言代码](/docs/start/language/)
+     - [查看更多语言代码](/docs/resource/language/)
 lang-zhen: 
   name: lang
   text: 
@@ -162,34 +162,34 @@ lang-sdk:
   name: lang
   text:
     zh: |-
-     多语言设置，**默认中文**，当数据不匹配你设置的语言时，将返回英文或其本地语言结果。可选语言请参考[多语言参数](/docs/start/language/)。
+     多语言设置，**默认中文**，当数据不匹配你设置的语言时，将返回英文或其本地语言结果。可选语言请参考[多语言参数](/docs/resource/language/)。
     en: |-
-     Multi-language, **default Chinese**, if data does not match the language you set, it will return in English or its native language. Language parameter please refer to [Language](/en/docs/start/language/)
+     Multi-language, **default Chinese**, if data does not match the language you set, it will return in English or its native language. Language parameter please refer to [Language](/en/docs/resource/language/)
 lang-zhen-sdk: 
   name: lang
   text: 
     en: |
-     Multi-language setting, **default Chinese**, only support Chinese and English for this data. Language parameter please refer to [Language](/en/docs/start/language/)
+     Multi-language setting, **default Chinese**, only support Chinese and English for this data. Language parameter please refer to [Language](/en/docs/resource/language/)
     zh: |
-     多语言设置，**默认中文**，本数据**仅支持中文和英文**。可选语言请参考[多语言参数](/docs/start/language/)。
+     多语言设置，**默认中文**，本数据**仅支持中文和英文**。可选语言请参考[多语言参数](/docs/resource/language/)。
 unit: 
   name: unit
   text: 
     en: |-
-     Select weather data unit, for unit parameters of all data, please refer [Unit](/en/docs/start/unit)
+     Select weather data unit, for unit parameters of all data, please refer [Unit](/en/docs/resource/unit)
      - `m` metric unit, **default**
      - `i` imperial unit
     zh: |-
-     [度量衡单位参数](/docs/start/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**
+     [度量衡单位参数](/docs/resource/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**
      - `m` 公制单位，**默认**
      - `i` 英制单位
 unit-sdk: 
   name: unit
   text: 
     en: |-
-     Set weather data unit, **default Metric**, unit parameters please refer [Unit](/en/docs/start/unit)
+     Set weather data unit, **default Metric**, unit parameters please refer [Unit](/en/docs/resource/unit)
     zh: |-
-     [度量衡单位参数](/docs/start/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**
+     [度量衡单位参数](/docs/resource/unit)选择，例如温度选摄氏度或华氏度、公里或英里。**默认公制单位**
 idx-type:
   rqd: true
   name: type
@@ -324,33 +324,33 @@ range:
   name: range
   text: 
     en: |-
-     Set to search only within a certain country. The country name needs to use [country code ISO 3166](/en/docs/start/glossary#iso-3166). 
+     Set to search only within a certain country. The country name needs to use [country code ISO 3166](/en/docs/resource/glossary#iso-3166). 
      - `world` Around the world, **default**
      - `cn` China
      - `us` United States
      - `fr` France
      - `uk` United Kingdom
      - `ru` Russia
-     - [See more country code](/en/docs/start/glossary#iso-3166)
+     - [See more country code](/en/docs/resource/glossary#iso-3166)
     zh: |-
-     搜索范围，可设定只在某个国家范围内进行搜索，国家名称需使用[ISO 3166 所定义的国家代码](/docs/start/glossary#iso-3166)。
+     搜索范围，可设定只在某个国家范围内进行搜索，国家名称需使用[ISO 3166 所定义的国家代码](/docs/resource/glossary#iso-3166)。
      - `world` 全球城市范围，**默认**
      - `cn` 中国城市范围，可替换为其他国家的ISO 3166 国家代码，例如`range=us`
      - `us` 美国
      - `fr` 法国
      - `uk` 英国
      - `ru` 俄罗斯
-     - [更多国家代码](/en/docs/start/glossary#iso-3166)
+     - [更多国家代码](/en/docs/resource/glossary#iso-3166)
 range-warning:
   rqd: true
   name: range
   text: 
     en: |-
-     Set country or region. See [supported countries or regions](/en/docs/start/warning-info/#supported-regions) for Weather Warning, [ISO 3166](/en/docs/start/glossary#iso-3166) format.  
+     Set country or region. See [supported countries or regions](/en/docs/resource/warning-info/#supported-regions) for Weather Warning, [ISO 3166](/en/docs/resource/glossary#iso-3166) format.  
      
      For example `range=cn`, `range=fr` 
     zh: |-
-     选择指定的国家或地区。天气预警支持的国家或地区请参考[这里](/docs/start/warning-info/#supported-regions)，使用[ISO 3166](/docs/start/glossary#iso-3166)格式。例如`range=cn`，`range=fr`。
+     选择指定的国家或地区。天气预警支持的国家或地区请参考[这里](/docs/resource/warning-info/#supported-regions)，使用[ISO 3166](/docs/resource/glossary#iso-3166)格式。例如`range=cn`，`range=fr`。
 number:
   name: number
   text: 

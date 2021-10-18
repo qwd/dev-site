@@ -20,7 +20,7 @@ If no optional parameters are set, the default value will be used.
 
 {% include params.html p="location-ios" %}
 
-> Weather warnings are not available in all cities, see [supported countries or regions for weather warnings](/en/docs/start/warning-info/#supported-regions).
+> Weather warnings are not available in all cities, see [supported countries or regions for weather warnings](/en/docs/resource/warning-info/#supported-regions).
 
 {% include params.html p="key-ios lang-zhen-sdk" %}
 
@@ -86,4 +86,4 @@ If no optional parameters are set, the default value will be used.
 
 ## Warning Level and Type
 
-See [Warning Level and Type](/en/docs/start/warning-info/)
+See [Warning Level and Type](/en/docs/resource/warning-info/)

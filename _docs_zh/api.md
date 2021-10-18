@@ -37,6 +37,6 @@ ref: 0-api-homepage
 
 > **多语言**
 > 
-> 和风天气API v7版本支持[31种主流语言](/docs/start/language/)。
+> 和风天气API v7版本支持[31种主流语言](/docs/resource/language/)。
 
 > 如需要查看更早期的版本的开发文档请访问 [S6版本](/docs/legacy/api/s6/)，S6版本的技术支持截止于2020年6月1日。

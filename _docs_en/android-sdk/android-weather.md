@@ -32,7 +32,7 @@ Properties of WeatherNowBean
 
 | Property | Description | Example |
 | -------- | -------------------------- | ----------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getNow | Real-tiem weather | NowBaseBean |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getBasic | Basic Information | Basic |
@@ -48,7 +48,7 @@ Properties of WeatherNowBean
 
 | Property | Description | Example |
 | ------------- | ------------------------ | ---------- ---------- |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time) | 2017-10-25T04:34+08:00 |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time) | 2017-10-25T04:34+08:00 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
 
 **NowBaseBean Live Weather**
@@ -58,7 +58,7 @@ Properties of WeatherNowBean
 | getObsTime | Observation time | 2013-12-30T13:14+08:00 |
 | getFeelsLike | Real feels like temperature | 23 |
 | getTemp | Temperature | 21 |
-| getIcon | Icon code of weather conditions, free to download [weather icons](/en/docs/start/icons/) | 100 |
+| getIcon | Icon code of weather conditions, free to download [weather icons](/en/docs/resource/icons/) | 100 |
 | getText | Weather conditions | Sunny |
 | getWind360 | Wind direction in azimuth degree | 305 |
 | getWindDir | Wind direction | NW |
@@ -122,7 +122,7 @@ Properties of WeatherDailyBean
 
 | Property | Description | Example |
 | -------- | -------------------------- | ------------- -------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getDaily | Daily forecast weather | List&lt;DailyBean&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getBasic | Basic Information | Basic |
@@ -138,7 +138,7 @@ Properties of WeatherDailyBean
 
 | Property | Description | Example |
 | ------------- | ------------------------ | ---------- ---------- |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time) | 2017-10-25T04:34+08:00 |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time) | 2017-10-25T04:34+08:00 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
 
 **DailyBean Weather Forecast**
@@ -153,8 +153,8 @@ Properties of WeatherDailyBean
 | getMoonPhase | Moon Phase Name | Full Moon |
 | getTempMax | The highest temperature of the day | 4 |
 | getTempMin | The lowest temperature of the day | -5 |
-| getIconDay | Icon code for daytime weather conditions, free to download [weather icons](/en/docs/start/icons/) | 100 |
-| getIconNight | Icon codes for night weather conditions, free to download [weather icons](/en/docs/start/icons/) | 100 |
+| getIconDay | Icon code for daytime weather conditions, free to download [weather icons](/en/docs/resource/icons/) | 100 |
+| getIconNight | Icon codes for night weather conditions, free to download [weather icons](/en/docs/resource/icons/) | 100 |
 | getTextDay | Weather conditions for daytime | Sunny |
 | getTextNight | Weather conditions for night | Sunny |
 | getWind360Day | Daytime wind direction in azimuth degree | 310 |
@@ -216,7 +216,7 @@ Properties of WeatherHourlyBean
 
 | Property | Description | Example |
 | --------- | -------------------------- | ------------ ---------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getHourly | HourlyBean Hourly Weather | List&lt;HourlyBean&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getBasic | Basic Information | Basic |
@@ -232,7 +232,7 @@ Properties of WeatherHourlyBean
 
 | Property | Description | Example |
 | ------------- | ------------------------ | ---------- ---------- |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time) | 2017-10-25T04:34+08:00 |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time) | 2017-10-25T04:34+08:00 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
 
 **HourlyBean Hourly Weather**
@@ -241,7 +241,7 @@ Properties of WeatherHourlyBean
 | ------------ | ------------------------------------ ---- | ---------------- |
 | getFxTime | Forecast time | 2013-12-30T13:00+08:00 |
 | getTemp | Temperature | 2 |
-| getIcon | Icon code of weather conditions, free to download [weather icons](/en/docs/start/icons/) | 101 |
+| getIcon | Icon code of weather conditions, free to download [weather icons](/en/docs/resource/icons/) | 101 |
 | getText |  Weather conditions | Cloudy |
 | getWind360 | Wind direction in azimuth degree | 290 |
 | getWindDir | Wind direction | NW |
@@ -278,7 +278,7 @@ Properties of MinutelyBean
 
 | Property | Description | Example |
 | --------------- | -------------------------- | ------ -------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getSummary | Precipitation description | No precipitation in the next 2 hours |
 | getMinutelyList | Minutely data | List&lt;Minutely&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
@@ -295,7 +295,7 @@ Properties of MinutelyBean
 
 | Property | Description | Example |
 | ------------- | ------------------------ | ---------- ---------- |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time) | 2017-10-25T04:34+08:00 |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time) | 2017-10-25T04:34+08:00 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
 
 **Minutely precipitation in the next two hours and 5 minutes**

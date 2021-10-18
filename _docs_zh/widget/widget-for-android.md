@@ -293,7 +293,7 @@ horizonView.setStroke(5, Color.parseColor("#313a44"), 1, Color.BLACK);
 ### 替换天气图标
 
 1. 在文件目录app/src/main下创建资源文件夹assets
-2. 在app/src/main/assets文件夹放入文件名对应天气代码的图标，文件名：白天是天气代码+d，晚上是天气代码+n后缀为.png，例如：100d.png，100n.png，请参考[天气图标](/docs/start/icons/)
+2. 在app/src/main/assets文件夹放入文件名对应天气代码的图标，文件名：白天是天气代码+d，晚上是天气代码+n后缀为.png，例如：100d.png，100n.png，请参考[天气图标](/docs/resource/icons/)
 3. 在初始化的时候调用下列方法
 
 ```java

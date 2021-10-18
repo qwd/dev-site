@@ -44,8 +44,8 @@ ref: 1-help-general
 |SDK访问量|按需|按需|1000次/天|无限量|
 |KEY的数量|10个/应用|10个/应用|3个/应用|10个/应用|
 |[全球自动路由<sup>?</sup>](/help/buy/#server-node)|&#10003;|&#10003;|仅限中国节点|仅限中国节点|
-|[QPM<sup>?</sup>](/docs/start/glossary/#qpm)|3,000|50,000|300|500|
-|[最大连接数<sup>?</sup>](/docs/start/glossary/#max-connections)|3,000|50,000|100|100|
+|[QPM<sup>?</sup>](/docs/resource/glossary/#qpm)|3,000|50,000|300|500|
+|[最大连接数<sup>?</sup>](/docs/resource/glossary/#max-connections)|3,000|50,000|100|100|
 |带宽|共享|独享|共享|共享|
 |服务器|共享|独享|共享|共享|
 |自定义API域名|&times;|&#10003;|&times;|&times;|
@@ -61,7 +61,7 @@ ref: 1-help-general
 
 ## API和插件应用是什么？ {#applications}
 
-关于如何创建应用、密钥KEY及应用的数量，请参考[创建API应用和KEY](/docs/start/get-key/)
+关于如何创建应用、密钥KEY及应用的数量，请参考[创建API应用和KEY](/docs/resource/get-key/)
 
 ## 我需要注明数据来源吗？ {#attribution} 
 
@@ -73,19 +73,19 @@ ref: 1-help-general
 
 ## 天气数据的更新频率是多少？ {#update-time}
 
-不同的天气数据有不同的更新频率和更新时间，请参考[这里](/docs/start/glossary#update-time)
+不同的天气数据有不同的更新频率和更新时间，请参考[这里](/docs/resource/glossary#update-time)
 
 ## 支持多语言吗？ {#language}
 
-支持，我们支持[超过30种语言](/docs/start/language/)且不定期增加中，多语言功能不仅对天气状况等内容进行了多语言支持，还包括了全球城市名、别名的支持。你可以简单的在请求中加上`lang=xx`参数来获取对应的语言。
+支持，我们支持[超过30种语言](/docs/resource/language/)且不定期增加中，多语言功能不仅对天气状况等内容进行了多语言支持，还包括了全球城市名、别名的支持。你可以简单的在请求中加上`lang=xx`参数来获取对应的语言。
 
 ## 有没有城市列表？ {#city-list}
 
-有，我们可以提供[中国城市、POI等ID信息](/docs/start/location-list/)，其他城市或地理信息，请使用[GeoAPI](/docs/api/geo/)去获取。
+有，我们可以提供[中国城市、POI等ID信息](/docs/resource/location-list/)，其他城市或地理信息，请使用[GeoAPI](/docs/api/geo/)去获取。
 
 ## 有没有天气图标? {#weather-icons}
 
-有，免费使用，在[这里](/docs/start/icons/)
+有，免费使用，在[这里](/docs/resource/icons/)
 
 ## 免责声明
 
