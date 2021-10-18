@@ -138,3 +138,7 @@ QWeather.getAir5D(Context context, String location, Lang lang, QWeather.OnResult
 | getPrimary  | 主要污染物                    | PM2.5       |
 | getLevel    | 实时空气质量指数等级          | 2          |
 | getCategory | 实时空气质量指数级别          | 良         |
+
+## 空气质量指数等级
+
+请查看[空气质量信息](/docs/resource/air-info/)。

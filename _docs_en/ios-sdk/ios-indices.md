@@ -54,31 +54,9 @@ If no optional parameters are set, the default value will be used.
 | refer.sources | Data source and other statements, **may be null** | qweather.com |
 | refer.license | License, **may be null** |commercial license |
 
-### Indices Constant
+### Index type and level
 
-The weather indices level is for reference only, and the level may be adjusted. 
-
-> If you set `INDICES_TYPE_all`, you cannot use other indices types.
-
-| Type              | Name            | Level  (Category)                                                                                                                                                                                                     |
-| ----------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| INDICES_TYPE_all  | All indices     |                                                                                                                                                                                                                       |
-| INDICES_TYPE_spt  | Sports          | Excellent (1), Good (2), Poor  (3)                                                                                                                                                                                    |
-| INDICES_TYPE_cw   | Car Wash        | Excellent (1), Good (2), At Risk  (3), Poor (4)                                                                                                                                                                       |
-| INDICES_TYPE_drsg | Clothing        | Freezing (1), Cold (2), Cooler  (3), Cool (4), Comfort (5), Hot (6), Heat (7)                                                                                                                                         |
-| INDICES_TYPE_fis  | Fishing         | Good (1), Moderate (2), Poor  (3)                                                                                                                                                                                     |
-| INDICES_TYPE_uv   | UV              | Very Low (1), Low (2), Moderate  (3), High (4), Extreme (5)                                                                                                                                                           |
-| INDICES_TYPE_tra  | Travel          | Excellent (1), Good (2), Moderate  (3), Fair (4), Poor (5)                                                                                                                                                            |
-| INDICES_TYPE_ag   | Allergy         | Beneficial (1), Neutral (2), At  Risk (3), High Risk (4), Extreme Risk (5)                                                                                                                                            |
-| INDICES_TYPE_comf | Comfort         | Excellent (1), Good (2), Moderate  (3), Poor (4), Bad (5), Worse (6), Worst (7) )                                                                                                                                     |
-| INDICES_TYPE_flu  | Cold            | Healthy (1), Moderate (2),  Unhealthy (3), Hazardous (4)                                                                                                                                                              |
-| INDICES_TYPE_ap   | Air Pollution   | Excellent (1), Good (2), Moderate  (3), Bad (4), Poor (5)                                                                                                                                                             |
-| INDICES_TYPE_ac   | Air-Conditioner | On (1), Advise (2), Neutral (3),  Heating Mode (4)                                                                                                                                                                    |
-| INDICES_TYPE_gl   | Sunglasses      | No (1), Recommend (2), Advise (3),  Need (4), Necessary (5)                                                                                                                                                           |
-| INDICES_TYPE_mu   | Makeup          | Hydrating (1), Moisturizing and  sun protection (2), Oil control and sun protection (3), Prevent dehydration  and sun protection (4), Oil control (5), Prevent dehydration (6), Sun  protection (7), Moisturizing (8) |
-| INDICES_TYPE_dc   | Air-Cure        | Excellent (1), Good (2), Moderate  (3), At Risk (4), Bad (5), Poor (6)                                                                                                                                                |
-| INDICES_TYPE_ptfc | Traffic         | Excellent (1), Good (2), Moderate  (3), Poor (4), Bad (5)                                                                                                                                                             |
-| INDICES_TYPE_spi  | SPF             | Very Low (1), Low (2), Moderate  (3), High (4), Extreme (5)                                                                                                                                                           |
+See [Indices Info](/en/docs/resource/indices-info/).
 
 
 

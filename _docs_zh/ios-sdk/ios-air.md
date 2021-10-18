@@ -83,3 +83,7 @@ ref: 6-sdk-ios-air
 | houry.primary    | 空气质量逐小时预报的主要污染物，空气质量为优时，返回值为空                                                                  | pm2.5                  |
 | refer.sources    | 原始数据来源，可能为空                                                                                                      |                        |
 | refer.license    | 使用许可，可能为空                                                                                                          |                        |
+
+### 空气质量指数等级
+
+请查看[空气质量信息](/docs/resource/air-info/)。

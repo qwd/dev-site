@@ -27,11 +27,4 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 
 ### Air Quality Index Level
 
-| AQI | Level | Category | Category Color |
-| ------- | ---- | -------- | -------- |
-| 0-50 | Level 1 | Excellent | Green |
-| 51-100 | Level 2 | Good | Yellow |
-| 101-150 | Level 3 | Lightly Pollution | Orange |
-| 151-200 | Level 4 | Moderate pollution | Red |
-| 201-300 | Level 5 | Heavy pollution | Purple |
-| >300 | Level 6 | Serious pollution | Maroon |
+See [Air Quality Info](/en/docs/resource/air-info/).

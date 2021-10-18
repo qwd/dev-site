@@ -195,25 +195,25 @@ idx-type:
   name: type
   text: 
     en: |-
-     Weather indices type ID, including car wash index, clothing index, fishing index, etc. You can get multiple types of weather indices at one time, and multiple types are separated by comma, e.g., `type=3,5`, and all indices type see [Indices Constant](#indices-constant).
+     Weather indices type ID, including car wash index, clothing index, fishing index, etc. You can get multiple types of weather indices at one time, and multiple types are separated by comma, e.g., `type=3,5`, and all indices type see [Indices Info](/en/docs/resource/indices-info/).
     zh: |-
-     生活指数的类型ID，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数，多个类型用英文`,`分割。例如`type=3,5`。具体生活指数的ID和等级参考[生活指数常量](#indices-constant)。各项生活指数并非适用于所有城市。
+     生活指数的类型ID，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数，多个类型用英文`,`分割。例如`type=3,5`。具体生活指数的ID和等级参考[天气指数信息](/docs/resource/indices-info/)。各项生活指数并非适用于所有城市。
 idx-type-android:
   rqd: true
   name: IndicesType
   text: 
     en: |-
-     Weather indices type, including car wash index, clothing index, fishing index, etc. You can get multiple types of weather indices at one time, add multiple types to the same array. All indices type see [Indices Constant](#indices-constant).
+     Weather indices type, including car wash index, clothing index, fishing index, etc. You can get multiple types of weather indices at one time, add multiple types to the same array. All indices type see [Indices Info](/en/docs/resource/indices-info/).
     zh: |-
-     生活指数的类型，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数，多个类型请添加进同一数组。各项生活指数并非适用于所有城市。具体生活指数的ID和等级参考[生活指数常量](#indices-constant)。  
+     生活指数的类型，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数，多个类型请添加进同一数组。各项生活指数并非适用于所有城市。具体生活指数的ID和等级参考[天气指数信息](/docs/resource/indices-info/)。  
 idx-type-ios:
   rqd: true
   name: indices
   text: 
     en: |-
-     Weather indices type ID, including car wash index, clothing index, fishing index, etc. You can get multiple types of weather indices at one time. All indices type see [Indices Constant](#indices-constant).
+     Weather indices type ID, including car wash index, clothing index, fishing index, etc. You can get multiple types of weather indices at one time. All indices type see [Indices Info](/en/docs/resource/indices-info/).
     zh: |-
-     生活指数的类型，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数。各项生活指数并非适用于所有城市。具体生活指数的ID和等级参考[生活指数常量](#indices-constant)。  
+     生活指数的类型，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数。各项生活指数并非适用于所有城市。具体生活指数的ID和等级参考[天气指数信息](/docs/resource/indices-info/)。  
 date:
   rqd: true
   name: date

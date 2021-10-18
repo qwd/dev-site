@@ -135,3 +135,7 @@ Properties of AirDailyBean
 | getPrimary | The main pollutant. When the air quality category is `excellent`, return `NA` | PM2.5 |
 | getLevel | Real-time air quality index level  | 2 |
 | getCategory | Real-time air quality index category  | Good |
+
+## Air Quality Index Level
+
+See [Air Quality Info](/en/docs/resource/air-info/).

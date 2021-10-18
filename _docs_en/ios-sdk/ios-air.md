@@ -78,3 +78,7 @@ If no optional parameters are set, the default value will be used.
 | daily.primary    | The main pollutants, When the air quality category is `excellent`, return `NA`                                                                                                             | pm2.5                   |
 | refer.sources    | Data source and other statements, **may be null**                                                                                                                                          |                         |
 | refer.license    | License, **may be null**                                                                                                                                                                   |                         |
+
+### Air Quality Index Level
+
+See [Air Quality Info](/en/docs/resource/air-info/).
