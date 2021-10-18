@@ -40,19 +40,7 @@ If no optional parameters are set, the default value will be used.
 ```
 ### Response
 
-| Parameters | Description | Example values ​​ |
-| ---------- | ----------- | ----------------- |  |------------------------------------------ |
-| code | Status code, please refer to [Status Code](/en/docs/start/status-code/) | 200 |
-| updateTime | [Last updated time](/en/docs/start/glossary#update-time) | 2013-12-30T01:45+08:00 |
-| fxLink | Responsive web page of this data, for embedded in website or APP | http://hfx.link/ae45 |
-| daily.date | Forecast date | 2018-05-30 |
-| daily.type | Weather indices type | 2 |
-| daily.name | Name of weather indices type | Comfort index |
-| daily.level | Weather indices level | 1 |
-| daily.category | Weather indices category name |Comfort |
-| daily.text | Detailed description of the weather indices, **may be null** | The temperature is suitable during the day, and you should feel more refreshing and comfortable. |
-| refer.sources | Data source and other statements, **may be null** | qweather.com |
-| refer.license | License, **may be null** |commercial license |
+{% include api-response.html group="indices" prefix="daily" %}
 
 ### Index type and level
 

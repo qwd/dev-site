@@ -40,19 +40,7 @@ ref: 4-sdk-ios-indices
 ```
 ### 返回数据
 
-| 参数           | 描述                                                               | 示例值                                 |
-| -------------- | ------------------------------------------------------------------ | -------------------------------------- |
-| code           | 状态码，具体含义请参考[状态码](/docs/start/status-code/)            | 200                                    |
-| updateTime     | 当前[数据最近更新时间](/docs/start/glossary#update-time) | 2013-12-30T01:45+08:00                 |
-| fxLink         | 该城市的天气预报详情自适应网页，可嵌入网站或应用                   | http://hfx.link/ae45                   |
-| daily.date     | 预报日期                                                           | 2018-05-30                             |
-| daily.type     | 生活指数预报类型                                                   | 2                                      |
-| daily.name     | 生活指数预报类型的名称                                             | 舒适度指数                             |
-| daily.level    | 生活指数预报等级                                                   | 1                                      |
-| daily.category | 生活指数预报级别名称                                               |                                        |
-| daily.text     | 生活指数预报的详细描述                                             | 白天温度适宜，应会感到比较清爽和舒适。 |
-| refer.sources  | 原始数据来源，可能为空                                             |                                        |
-| refer.license  | 使用许可，可能为空                                                 |                                        |
+{% include api-response.html group="indices" prefix="daily" %}
 
 ### 生活指数类型和等级
 
