@@ -37,4 +37,4 @@ ref: 0-api-homepage
 
 > **Languages**
 >
-> API v7 supports [31 languages](/en/docs/start/language/).
+> API v7 supports [31 languages](/en/docs/resource/language/).

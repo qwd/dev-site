@@ -299,7 +299,7 @@ horizonView.setStroke(5, Color.parseColor("#313a44"), 1, Color.BLACK);
 ### Replace weather icon
 
 1. Create a resource folder assets under the file directory app/src/main
-2. Put the icon of the file name corresponding to the weather code in the app/src/main/assets folder, the file name: weather code + d during the day, weather code + n at night, icon format is ​​.png, for example: 100d.png, 100n .png, please refer to [Weather Icons](/en/docs/start/icons/) 
+2. Put the icon of the file name corresponding to the weather code in the app/src/main/assets folder, the file name: weather code + d during the day, weather code + n at night, icon format is ​​.png, for example: 100d.png, 100n .png, please refer to [Weather Icons](/en/docs/resource/icons/) 
 3. Call the following method during initialization
 
 ```java

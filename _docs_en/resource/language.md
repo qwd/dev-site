@@ -1,9 +1,10 @@
 ---
 title: Language
-tag: start
+tag: resource
 toc: false
 description: QWeather supports more than 30 languages ​​including Chinese, English, German, French, Spanish, Italian, Japanese, Korean, Russian, Thai, etc., and can be called at any time with the lang parameter
-ref: 4-start-lang
+redirect_from: /en/docs/start/language/
+ref: 4-res-lang
 ---
 
 QWeather supports more than 30 languages ​​including Chinese, English, German, French, Spanish, Italian, Japanese, Korean, Russian, Thai, etc. The following are the multi-language parameters in the API or SDK.

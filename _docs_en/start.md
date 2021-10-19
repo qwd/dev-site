@@ -15,9 +15,9 @@ Register an account at [here](https://id.qweather.com/#/register?lang=en&redirec
 
 ## Get KEY
 
-[Create an Application and KEY](/en/docs/start/get-key/).
+[Create an Application and KEY](/en/docs/resource/get-key/).
 
-There are two edition for [Application](/en/docs/start/glossary/#application): Pro and Dev, you can check [Pro vs. Dev](/en/help/general/#biz-vs-free).
+There are two edition for [Application](/en/docs/resource/glossary/#application): Pro and Dev, you can check [Pro vs. Dev](/en/help/general/#biz-vs-free).
 
 ## Web API
 
@@ -33,7 +33,7 @@ You should now see data in your browser similar to the image below
 
 Congratulations 🎉 You have got the real-time weather data of Beijing by API. Now, you can visit [Web API documentation](/en/docs/api/) to learn more about the usage of the data.
 
-> If you don't see the data in your browser, please check [Status Code](/en/docs/start/status-code/)
+> If you don't see the data in your browser, please check [Status Code](/en/docs/resource/status-code/)
 
 > **Gzip Compression**
 >
@@ -94,8 +94,13 @@ Many users of QWeather have contributed a lot of excellent snippets, library or 
 
 We also welcome you to share your code ❤️
 
-See [Library](/en/docs/library/)
+See [Library](/en/docs/library/).
 
 ## Utility Resource
 
-{% include list-by-data.html notitle=true %}
+<ul>
+    {%- assign res = site.documents | where: "lang", page.lang | where: "tag", "resource" | sort: "ref" %}
+    {%- for item in res %}
+    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {%- endfor %}
+</ul>

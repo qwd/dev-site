@@ -1,9 +1,10 @@
 ---
 title: 常见城市列表
-tag: start
+tag: resource
 toc: false
 description: 和风天气城市列表，提供兴趣点、景点、环保部国控站点以及全国3000+市县区名称、ID、经纬度等信息。
-ref: 6-start-location-list
+redirect_from: /docs/start/location-list/
+ref: 6-res-location-list
 ---
 
 和风天气提供全球15万个城市和多种兴趣点（POI）的天气数据服务，除了通过GeoAPI获取城市和POI信息以外，我们还提供了一些常见城市和POI的列表。

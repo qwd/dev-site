@@ -30,7 +30,7 @@ QWeather.getWeatherNow(Context context, String location, QWeather.OnResultWeathe
 
 | 属性     | 说明                       | 示例值      |
 | -------- | -------------------------- | ----------- |
-| getCode  | 接口状态                   | [Status Code](/docs/start/status-code/)  |
+| getCode  | 接口状态                   | [Status Code](/docs/resource/status-code/)  |
 | getNow   | NowBean 实况天气           | NowBaseBean |
 | getRefer | Refer 数据来源以及数据授权 | Refer       |
 | getBasic | Basic 基础信息             | Basic       |
@@ -120,7 +120,7 @@ QWeather.getWeather15D(Context context, String location, QWeather.OnResultWeathe
 
 | 属性     | 说明                       | 示例值                |
 | -------- | -------------------------- | --------------------- |
-| getCode  | 接口状态                   | [Status Code](/docs/start/status-code/)   |
+| getCode  | 接口状态                   | [Status Code](/docs/resource/status-code/)   |
 | getDaily | DailyBean 逐天天气         | List&lt;DailyBean&gt; |
 | getRefer | Refer 数据来源以及数据授权 | Refer                 |
 | getBasic | Basic 基础信息             | Basic                 |
@@ -214,7 +214,7 @@ QWeather.getWeather168Hourly(Context context, String location, QWeather.OnResult
 
 | 属性      | 说明                       | 示例值                 |
 | --------- | -------------------------- | ---------------------- |
-| getCode   | 接口状态                   | [Status Code](/docs/start/status-code/)  |
+| getCode   | 接口状态                   | [Status Code](/docs/resource/status-code/)  |
 | getHourly | HourlyBean 逐小时天气      | List&lt;HourlyBean&gt; |
 | getRefer  | Refer 数据来源以及数据授权 | Refer                  |
 | getBasic  | Basic 基础信息             | Basic                  |
@@ -276,7 +276,7 @@ QWeather.getMinuteLy(Context context, String location, Lang lang, QWeather.OnRes
 
 | 属性            | 说明                       | 示例值               |
 | --------------- | -------------------------- | -------------------- |
-| getCode         | 接口状态                   | [Status Code](/docs/start/status-code/)   |
+| getCode         | 接口状态                   | [Status Code](/docs/resource/status-code/)   |
 | getSummary      | 分钟降水描述               | 未来2小时无降雨      |
 | getMinutelyList | 临近预报                   | List&lt;Minutely&gt; |
 | getRefer        | Refer 数据来源以及数据授权 | Refer                |

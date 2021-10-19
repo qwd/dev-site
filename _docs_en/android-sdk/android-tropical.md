@@ -35,7 +35,7 @@ Properties of StormListBean
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
-| getCode         | Status code, please refer to [Status Code](/en/docs/start/status-code/) | [Status Code](/docs/start/status-code/)        |
+| getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)        |
 | getBasic         | Basic Informatio | Basic       |
 | getRefer         | Reference data, includes data source, statements and license | Refer  |
 | getStormList | Storm list and IDs | List<StormBean> |
@@ -45,7 +45,7 @@ Properties of StormListBean
 
 | Property           | Description         | Example             |
 | -------------- | ------------ | ------------------ |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time)  | 2017-10-25T04:34+08:00      |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time)  | 2017-10-25T04:34+08:00      |
 | getFxLink |Responsive web page of this data, for embedded in website or APP  | http://hfx.link/1 |
 
 **Refer**
@@ -91,7 +91,7 @@ Properties of StormTrackBean
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
-| getCode         | Status code, please refer to [Status Code](/en/docs/start/status-code/) | [Status Code](/docs/start/status-code/)        |
+| getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)        |
 | getBasic         | Basic Informatio | Basic       |
 | getRefer         | Reference data, includes data source, statements and license | Refer  |
 | getIsActive         | Is it an active storm?<br />`1` Active <br /> `0` Stopped | 0  |
@@ -102,7 +102,7 @@ Properties of StormTrackBean
 
 | Property           | Description         | Example             |
 | -------------- | ------------ | ------------------ |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time)  | 2017-10-25T04:34+08:00      |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time)  | 2017-10-25T04:34+08:00      |
 | getFxLink |Responsive web page of this data, for embedded in website or APP  | http://hfx.link/1 |
 
 **Refer**
@@ -184,7 +184,7 @@ Properties of TideBean
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
-| getCode         | Status code, please refer to [Status Code](/en/docs/start/status-code/) | [Status Code](/docs/start/status-code/)        |
+| getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)        |
 | getBasic         | Basic Informatio | Basic       |
 | getRefer         | Reference data, includes data source, statements and license | Refer  |
 | getForecastList | Storm forecast data | List<StormForecastBaseBean> |
@@ -193,7 +193,7 @@ Properties of TideBean
 
 | Property           | Description         | Example             |
 | -------------- | ------------ | ------------------ |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time)  | 2017-10-25T04:34+08:00      |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time)  | 2017-10-25T04:34+08:00      |
 | getFxLink |Responsive web page of this data, for embedded in website or APP  | http://hfx.link/1 |
 
 **Refer**

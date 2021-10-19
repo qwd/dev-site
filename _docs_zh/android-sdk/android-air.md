@@ -30,7 +30,7 @@ QWeather.OnResultAirNowListener listener)
 
 | 属性                 | 说明                       | 示例值                        |
 | -------------------- | -------------------------- | ----------------------------- |
-| getCode              | 接口状态                   | [Status Code](/docs/start/status-code/)     |
+| getCode              | 接口状态                   | [Status Code](/docs/resource/status-code/)     |
 | getAirNowStationBean | AQI站点实况                | List&lt;AirNowStationBean&gt; |
 | getNow               | AQI城市实况                | NowBean                       |
 | getRefer             | Refer 数据来源以及数据授权 | Refer                         |
@@ -110,7 +110,7 @@ QWeather.getAir5D(Context context, String location, Lang lang, QWeather.OnResult
 
 | 属性        | 说明                       | 示例值                |
 | ----------- | -------------------------- | --------------------- |
-| getCode     | 接口状态                   | [Status Code](/docs/start/status-code/)   |
+| getCode     | 接口状态                   | [Status Code](/docs/resource/status-code/)   |
 | getAirDaily | 空气质量 AQI 7天预报       | List&lt;DailyBean&gt; |
 | getRefer    | Refer 数据来源以及数据授权 | Refer                 |
 | getBasic    | Basic 基础信息             | Basic                 |
@@ -138,3 +138,7 @@ QWeather.getAir5D(Context context, String location, Lang lang, QWeather.OnResult
 | getPrimary  | 主要污染物                    | PM2.5       |
 | getLevel    | 实时空气质量指数等级          | 2          |
 | getCategory | 实时空气质量指数级别          | 良         |
+
+## 空气质量指数等级
+
+请查看[空气质量信息](/docs/resource/air-info/)。

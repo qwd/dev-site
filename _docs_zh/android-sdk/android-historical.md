@@ -30,7 +30,7 @@ QWeather.getHistoricalWeather(Context context, String location, String date, Lan
 
 | 属性           | 说明                       | 示例值                 |
 | -------------- | -------------------------- | ---------------------- |
-| getCode        | 接口状态                   | [Status Code](/docs/start/status-code/) |
+| getCode        | 接口状态                   | [Status Code](/docs/resource/status-code/) |
 | getDailyBean   | 当天概况                   | DailyBean              |
 | getHourlyBeans | 当天逐小时数据             | List&lt;HourlyBean&gt; |
 | getRefer       | Refer 数据来源以及数据授权 | Refer                  |
@@ -104,7 +104,7 @@ QWeather.getHistoricalAir(Context context, String location, String date, Lang la
 
 | 属性              | 说明                       | 示例值                    |
 | ----------------- | -------------------------- | ------------------------- |
-| getCode           | 接口状态                   | [Status Code](/docs/start/status-code/)    |
+| getCode           | 接口状态                   | [Status Code](/docs/resource/status-code/)    |
 | getRefer          | Refer 数据来源以及数据授权 | Refer                     |
 | getBasic          | Basic 基础信息             | Basic                     |
 | getAirHourlyBeans | 当天逐小时空气质量数据     | List&lt;AirHourlyBean&gt; |

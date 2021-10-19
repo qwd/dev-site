@@ -1,8 +1,9 @@
 ---
 title: 专用词汇表
-tag: start
+tag: resource
 description: 和风天气数据服务涉及到很多专业术语，我们大部分采用了国际标准格式，在这里将详细的解释什么是和风天气的坐标、行政区划、数据KEY、时间格式、数据更新时间、数据服务性能等专有名词。
-ref: 2-start-glossary
+redirect_from: /docs/start/glossary/
+ref: 2-res-glossary
 ---
 
 ## Application
@@ -23,7 +24,7 @@ API Key或KEY是验证与授权使用的用户密钥。使用和风天气API、S
 
 ## Public ID
 
-Public ID是用户某一个数据KEY的公钥，当你使用[数字加密签名](/docs/start/signature-auth/)获取数据时，需要传递Public ID。
+Public ID是用户某一个数据KEY的公钥，当你使用[数字加密签名](/docs/resource/signature-auth/)获取数据时，需要传递Public ID。
 
 ## Rank
 
@@ -43,7 +44,7 @@ Rank值是表明一个城市或地区排名的数字，基于多种因素综合�
 
 ## LocationID
 
-LocationID或locid，是城市、地区或POI点的ID，一般由数字或字母+数字组成，是一个地点的唯一标识。LocationID可以通过定位搜索服务获取，中国地区、热门海外城市、一些POI点的LocationID还可以通过[城市列表](/docs/start/location-list/)下载。
+LocationID或locid，是城市、地区或POI点的ID，一般由数字或字母+数字组成，是一个地点的唯一标识。LocationID可以通过定位搜索服务获取，中国地区、热门海外城市、一些POI点的LocationID还可以通过[城市列表](/docs/resource/location-list/)下载。
 
 ## Adcode
 
@@ -107,12 +108,12 @@ Xcode切换到Info下，可查看Bundle Identifier。
 
 | 名称示例     | 是否正确？ |
 | ------------ | ---------- |
-| abc.xyz.def  | <span class="text-good">正确</span>       |
-| abc.xyz      | <span class="text-good">正确</span>       |
-| abc.x1.y-z   | <span class="text-good">正确</span>       |
-| abc.1x.2y.3z | <span class="text-warning">错误</span>      |
-| 1a.xyz.def   | <span class="text-warning">错误</span>        |
-| abc.xyz_     | <span class="text-warning">错误</span>        |
+| abc.xyz.def  | ✅       |
+| abc.xyz      | ✅       |
+| abc.x1.y-z   | ✅       |
+| abc.1x.2y.3z | ❌      |
+| 1a.xyz.def   | ❌        |
+| abc.xyz_     | ❌        |
 
 ## Android Package Name
 
@@ -122,12 +123,12 @@ Xcode切换到Info下，可查看Bundle Identifier。
 
 | 名称示例     | 是否正确？ |
 | ------------ | ---------- |
-| abc.xyz.def  | <span class="text-good">正确</span>       |
-| abc.xyz      | <span class="text-good">正确</span>       |
-| abc.x1.y-z   | <span class="text-good">正确</span>       |
-| abc.1x.2y.3z | <span class="text-warning">错误</span>      |
-| 1a.xyz.def   | <span class="text-warning">错误</span>        |
-| abc.xyz_     | <span class="text-warning">错误</span>        |
+| abc.xyz.def  | ✅       |
+| abc.xyz      | ✅       |
+| abc.x1.y-z   | ✅       |
+| abc.1x.2y.3z | ❌      |
+| 1a.xyz.def   | ❌        |
+| abc.xyz_     | ❌        |
 
 ## 最大连接数 {#max-connections}
 

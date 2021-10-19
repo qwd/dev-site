@@ -43,7 +43,7 @@ QWeather.getGeoCityLookup(Context context, String location, final QWeather.OnRes
 
 | 属性            | 说明     | 示例值                   |
 | --------------- | -------- | ------------------------ |
-| getCode         | 接口状态 | [Status Code](/docs/start/status-code/)  |
+| getCode         | 接口状态 | [Status Code](/docs/resource/status-code/)  |
 | getLocationBean | 城市数据 | List&lt;LocationBean&gt; |
 
 
@@ -97,7 +97,7 @@ QWeather.getGeoTopCity(Context context, final QWeather.OnResultGeoBeansListener 
 
 | 属性            | 说明     | 示例值                   |
 | --------------- | -------- | ------------------------ |
-| getCode         | 接口状态 | [Status Code](/docs/start/status-code/)   |
+| getCode         | 接口状态 | [Status Code](/docs/resource/status-code/)   |
 | getLocationBean | 城市数据 | List&lt;LocationBean&gt; |
 
 
@@ -151,7 +151,7 @@ QWeather.getGeoPoiLookup(Context context, String location, Type type, final QWea
 
 | 属性       | 说明     | 示例值          |
 | ---------- | -------- | --------------- |
-| getCode    | 接口状态 | [Status Code](/docs/start/status-code/)  |
+| getCode    | 接口状态 | [Status Code](/docs/resource/status-code/)  |
 | getPoiList | 城市数据 | List&lt;Poi&gt; |
 
 
@@ -204,7 +204,7 @@ QWeather.getGeoPoiRange(Context context, String location, int number, Type type,
 
 | 属性       | 说明     | 示例值          |
 | ---------- | -------- | ------------- |
-| getCode    | 接口状态 | [Status Code](/docs/start/status-code/) |
+| getCode    | 接口状态 | [Status Code](/docs/resource/status-code/) |
 | getPoiList | 城市数据 | List&lt;Poi&gt; |
 
 

@@ -1,8 +1,9 @@
 ---
 title: 加密签名认证
-tag: start
+tag: resource
 description: 和风天气API和SDK支持加密签名认证方式，本文档详细介绍如何使用加密签名的方法
-ref: 7-start-auth
+redirect_from: /docs/start/signature-auth/
+ref: 7-res-auth
 ---
 
 为了提供更安全的API认证，我们推荐你使用数字签名认证方式进行接口访问的认证，数字签名方式是一种替代单独API KEY的更安全的接口访问方式，它会对请求参数加密后得到的签名字串进行身份验证。

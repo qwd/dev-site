@@ -14,7 +14,7 @@ For different services and products, we have different licenses for.
 - Using the free development version of the API/SDK data, you **CAN NOT** use it for any commercial purposes.
 - Using the free weather widget, you **CAN** use it for any commercial purposes.
 - [Open Weather Plus](/en/docs/owp/) is under the terms of the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0) .
-- QWeather [Icons](/en/docs/start/icons/) is under the terms of [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/deed.zh) license.
+- QWeather [Icons](/en/docs/resource/icons/) is under the terms of [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/deed.zh) license.
 
 > **Definition of Commercial Purposes:** Using QWeather data service to develop any products for the public, or corporate actions that can directly or indirectly obtain economic benefits.
 
@@ -45,8 +45,8 @@ For different services and products, we have different licenses for.
 |SDK calls|On-demand|On-demand|1000/day|Unlimited|
 |[Global Routing<sup>?</sup>](/en/help/buy/#server-node)|&#10003;|&#10003;|Only China Node|Only China Node|
 |Number of KEYs|10/Application|10/Application|3/Application|10/Application|
-|[QPM<sup>?</sup>](/en/docs/start/glossary/#qpm)|3,000|50,000|300|500|
-|[Max Connections<sup>?</sup>](/en/docs/start/glossary/#max-connections)|3,000|50,000|100|100|
+|[QPM<sup>?</sup>](/en/docs/resource/glossary/#qpm)|3,000|50,000|300|500|
+|[Max Connections<sup>?</sup>](/en/docs/resource/glossary/#max-connections)|3,000|50,000|100|100|
 |Bandwidth|Shared|Dedicated|Shared|Shared|
 |Server|Shared|Dedicated|Shared|Shared|
 |Custom API Domains|&times;|&#10003;|&times;|&times;|
@@ -62,7 +62,7 @@ QWeather supports weather data for 3000+ cities in China and 150,000+ cities aro
 
 You can create data applicationss for your products in the [Console](https://console.qweather.com/?lang=en), and create multiple KEYs in the data applicationss for getting weather data.
 
-Please refer to [Create Application and KEY](/en/docs/start/get-key/) for how to create the data application.
+Please refer to [Create Application and KEY](/en/docs/resource/get-key/) for how to create the data application.
 
 ## Do I need to specify the source of the data? {#attribution} 
 
@@ -74,19 +74,19 @@ Free API Calls are reset at 00:00(UTC+8).
 
 ## How often is the weather data updated? {#update-time}
 
-Please refer to [here](/en/docs/start/glossary#update-time)
+Please refer to [here](/en/docs/resource/glossary#update-time)
 
 ## Weather icon
 
-The weather icons are free to use, see [here](/en/docs/start/icons/).
+The weather icons are free to use, see [here](/en/docs/resource/icons/).
 
 ## Location list
 
-We provide [List of Chinese cities and POI](/en/docs/start/location-list/), for the rest of the world, please use [GeoAPI](/en/docs/api/geo/) to find more IDs.
+We provide [List of Chinese cities and POI](/en/docs/resource/location-list/), for the rest of the world, please use [GeoAPI](/en/docs/api/geo/) to find more IDs.
 
 ## Multiple languages {#language}
 
-Yes, we support [more than 30 languages](/en/docs/start/language/) and are adding more from time to time. The multi-language feature not only provides multi-language support for weather conditions and other content, but also includes support for global city names and aliases. You can simply add the `lang=xx` parameter to the request to get the corresponding language.
+Yes, we support [more than 30 languages](/en/docs/resource/language/) and are adding more from time to time. The multi-language feature not only provides multi-language support for weather conditions and other content, but also includes support for global city names and aliases. You can simply add the `lang=xx` parameter to the request to get the corresponding language.
 
 ## Disclaimer
 

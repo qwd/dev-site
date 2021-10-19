@@ -27,12 +27,12 @@ H5网页的多语言设置，默认为自动。
 
 **lc**
 
-H5网页的定位方式，可以选择`auto`、`accu`、[LocationID](/docs/start/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/start/glossary#coordinate)（十进制），LocationID可通过[城市搜索服务](/docs/api/geo/)获取
+H5网页的定位方式，可以选择`auto`、`accu`、[LocationID](/docs/resource/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/resource/glossary#coordinate)（十进制），LocationID可通过[城市搜索服务](/docs/api/geo/)获取
 
 - `auto` 根据IP地址获取，IP地址无法保证地址完全准确
 - `accu` 根据浏览器精准定位，可能需要弹窗提示用户同意定位权限
-- 指定城市的[LocationID](/docs/start/glossary#locationid) ，可通过[GeoAPI](/docs/api/geo/)获取
-- 指定城市的[经度/纬度坐标](/docs/start/glossary#coordinate)（十进制）
+- 指定城市的[LocationID](/docs/resource/glossary#locationid) ，可通过[GeoAPI](/docs/api/geo/)获取
+- 指定城市的[经度/纬度坐标](/docs/resource/glossary#coordinate)（十进制）
 
 **bg**
 

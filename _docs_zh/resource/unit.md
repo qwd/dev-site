@@ -1,9 +1,10 @@
 ---
 title: 单位
-tag: start
+tag: resource
 toc: false
 description: 和风天气默认采用公制单位，例如：公里、摄氏度等，如需要采用英制单位，可以通过在接口中增加参数`unit=i`（英制）或`unit=m`（公制）进行单位的选择。
-ref: 8-start-unit
+redirect_from: /docs/start/unit/
+ref: 8-res-unit
 ---
 
 和风天气默认采用公制单位，例如：公里、摄氏度等，如需要采用英制单位，可以通过添加对应的参数进行设置。

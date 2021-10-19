@@ -45,7 +45,7 @@ Properties of GeoBean
 
 | Property | Description | Example |
 | --------------- | -------- | ------------------------ |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getLocationBean | City data | List&lt;LocationBean&gt; |
 
 
@@ -68,11 +68,11 @@ Properties of GeoBean
 | getAdm2 | Name of the superior administrative division of the location | Ulan Qab |
 | getAdm1 | The first-level administrative region of the location | Inner Mongolia |
 | getCountry | Country name of the location | China |
-| getTz | Location [Timezone](/en/docs/start/glossary#timezone) | Asia/Shanghai |
-| getUtcOffset | The number of hours offset between local time and UTC time, refer to [UTC-Offset](/en/docs/start/glossary#utc-offset) | +08:00 |
+| getTz | Location [Timezone](/en/docs/resource/glossary#timezone) | Asia/Shanghai |
+| getUtcOffset | The number of hours offset between local time and UTC time, refer to [UTC-Offset](/en/docs/resource/glossary#utc-offset) | +08:00 |
 | getIsDst |Is the location currently observing Daylight Saving time<br />`1` in daylight saving time <br /> `0` not in daylight saving time | 0 |
 | getType | Type of the location | city |
-| getRank | [Location Rank](/en/docs/start/glossary#rank) | 10 |
+| getRank | [Location Rank](/en/docs/resource/glossary#rank) | 10 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
 
 ## Top City
@@ -99,7 +99,7 @@ Properties of GeoBean
 
 | Property | Description | Example |
 | --------------- | -------- | ------------------------ |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getLocationBean | City data | List&lt;LocationBean&gt; |
 
 
@@ -122,11 +122,11 @@ Properties of GeoBean
 | getAdm2 | Name of the superior administrative division of the location | Ulan Qab |
 | getAdm1 | The first-level administrative region of the location | Inner Mongolia |
 | getCountry | Country name of the location | China |
-| getTz | Location [Timezone](/en/docs/start/glossary#timezone) | Asia/Shanghai |
-| getUtcOffset | The number of hours offset between local time and UTC time, refer to [UTC-Offset](/en/docs/start/glossary#utc-offset) | +08:00 |
+| getTz | Location [Timezone](/en/docs/resource/glossary#timezone) | Asia/Shanghai |
+| getUtcOffset | The number of hours offset between local time and UTC time, refer to [UTC-Offset](/en/docs/resource/glossary#utc-offset) | +08:00 |
 | getIsDst | Is the location currently observing Daylight Saving time<br />`1` in daylight saving time <br /> `0` not in daylight saving time | 0 |
 | getType | Type of the location | city |
-| getRank | [Location Rank](/en/docs/start/glossary#rank) | 10 |
+| getRank | [Location Rank](/en/docs/resource/glossary#rank) | 10 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
 
 ## POI Lookup
@@ -153,7 +153,7 @@ Properties of GeoPoiBean
 
 | Property | Description | Example |
 | ---------- | -------- | --------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getPoiList | City data | List&lt;Poi&gt; |
 
 
@@ -176,11 +176,11 @@ Properties of GeoPoiBean
 | getAdm2 | Name of the superior administrative division of the POI | Shenzhen |
 | getAdm1 | The first-level administrative region to which the POI belongs | Guangdong Province |
 | getCountry | Country name of the POI | China |
-| getTz | [Timezone](/en/docs/start/glossary#timezone) of the POI | Asia/Shanghai |
-| getUtcOffset | The number of hours offset between local time and UTC time, refer to [UTC-Offset](/en/docs/start/glossary#utc-offset) | +08:00 |
+| getTz | [Timezone](/en/docs/resource/glossary#timezone) of the POI | Asia/Shanghai |
+| getUtcOffset | The number of hours offset between local time and UTC time, refer to [UTC-Offset](/en/docs/resource/glossary#utc-offset) | +08:00 |
 | getIsDst | Is the location currently observing Daylight Saving time<br />`1` in daylight saving time <br /> `0` not in daylight saving time | 0 |
 | getType | POI type | scenic |
-| getRank | [Location Rank](/en/docs/start/glossary#rank) | 10 |
+| getRank | [Location Rank](/en/docs/resource/glossary#rank) | 10 |
 
 ## POI Range
 
@@ -206,7 +206,7 @@ Properties of GeoPoiBean
 
 | Property | Description | Example |
 | ---------- | -------- | --------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getPoiList | City data | List&lt;Poi&gt; |
 
 
@@ -229,8 +229,8 @@ Properties of GeoPoiBean
 | getAdm2 | Name of the superior administrative division of the POI | Shenzhen |
 | getAdm1 | The first-level administrative region to which the POI belongs | Guangdong Province |
 | getCountry | Country name of the POI | China |
-| getTz | [Timezone](/en/docs/start/glossary#timezone) of the POI | Asia/Shanghai |
-| getUtcOffset | The number of hours offset between local time and UTC time, refer to [UTC-Offset](/en/docs/start/glossary#utc-offset) | +08:00 |
+| getTz | [Timezone](/en/docs/resource/glossary#timezone) of the POI | Asia/Shanghai |
+| getUtcOffset | The number of hours offset between local time and UTC time, refer to [UTC-Offset](/en/docs/resource/glossary#utc-offset) | +08:00 |
 | getIsDst | Is the location currently observing Daylight Saving time<br />`1` in daylight saving time <br /> `0` not in daylight saving time | 0 |
 | getType | POI type | scenic |
-| getRank | [Location Rank](/en/docs/start/glossary#rank) | 10 |
+| getRank | [Location Rank](/en/docs/resource/glossary#rank) | 10 |

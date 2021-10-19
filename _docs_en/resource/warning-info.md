@@ -1,8 +1,8 @@
 ---
 title: Warning Info
-tag: start
+tag: resource
 description: QWeather supports weather warning services for many countries and regions around the world. You can find more descriptions of these warnings here, such as the list of supported countries and regions, warning levels and warning types.
-ref: 9-start-warning
+ref: 9-res-warning
 ---
 
 QWeather supports weather warning services for many countries or regions around the world. You can find more descriptions of these warnings here, such as the list of supported countries and regions, warning levels and warning types.

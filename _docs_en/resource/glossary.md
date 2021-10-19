@@ -1,8 +1,9 @@
 ---
 title: Glossary
-tag: start
+tag: resource
 description: QWeather data service uses many professional terms, and we have adopted mostly international standard formats. Here we will explain in detail what QWeather coordinates, administrative divisions, KEY, time format, data update time, and etc.
-ref: 2-start-glossary
+redirect_from: /en/docs/start/glossary/
+ref: 2-res-glossary
 ---
 
 ## Application
@@ -21,7 +22,7 @@ API Key or KEY is a user key used for authorization. You need to pass this key w
 
 ## Public ID
 
-Public ID is the public key of a certain data KEY of the user. When you use [Signature Authentication](/en/docs/start/signature-auth/) to obtain data, you need to pass the Public ID.
+Public ID is the public key of a certain data KEY of the user. When you use [Signature Authentication](/en/docs/resource/signature-auth/) to obtain data, you need to pass the Public ID.
 
 ## Rank
 
@@ -41,7 +42,7 @@ In various countries around the world, there are different administrative levels
 
 ## LocationID
 
-LocationID is the ID of a city, region, or POI point. It is generally composed of numbers or letters + numbers, and is a unique identification of a location. LocationID can be obtained through the GeoAPI. The LocationID of China region and some POI points can also be downloaded through [City List](/en/docs/start/location-list/).
+LocationID is the ID of a city, region, or POI point. It is generally composed of numbers or letters + numbers, and is a unique identification of a location. LocationID can be obtained through the GeoAPI. The LocationID of China region and some POI points can also be downloaded through [City List](/en/docs/resource/location-list/).
 
 ## Adcode
 
@@ -104,12 +105,12 @@ Please note that Bundle ID is limited to English letters, numbers, dashes and un
 
 | Example     | Is that correct? |
 | ------------ | ---------- |
-| abc.xyz.def  | <span class="text-good">YES</span>       |
-| abc.xyz      | <span class="text-good">YES</span>       |
-| abc.x1.y-z   | <span class="text-good">YES</span>       |
-| abc.1x.2y.3z | <span class="text-warning">NO</span>      |
-| 1a.xyz.def   | <span class="text-warning">NO</span>        |
-| abc.xyz_     | <span class="text-warning">NO</span>        |
+| abc.xyz.def  | ✅       |
+| abc.xyz      | ✅       |
+| abc.x1.y-z   | ✅       |
+| abc.1x.2y.3z | ❌      |
+| 1a.xyz.def   | ❌        |
+| abc.xyz_     | ❌        |
 
 ## Android Package Name
 
@@ -119,12 +120,12 @@ Please note that the Android Package Name is limited to English letters, numbers
 
 | Example     | Is that correct? |
 | ------------ | ---------- |
-| abc.xyz.def  | <span class="text-good">YES</span>       |
-| abc.xyz      | <span class="text-good">YES</span>       |
-| abc.x1.y-z   | <span class="text-good">YES</span>       |
-| abc.1x.2y.3z | <span class="text-warning">NO</span>      |
-| 1a.xyz.def   | <span class="text-warning">NO</span>        |
-| abc.xyz_     | <span class="text-warning">NO</span>        |
+| abc.xyz.def  | ✅       |
+| abc.xyz      | ✅       |
+| abc.x1.y-z   | ✅       |
+| abc.1x.2y.3z | ❌      |
+| 1a.xyz.def   | ❌        |
+| abc.xyz_     | ❌        |
 
 ## Max Connections
 

@@ -7,17 +7,17 @@ code:
   name: code
   desc:
      zh: >-
-      API状态码，具体含义请参考[状态码](/docs/start/status-code/)
+      API状态码，具体含义请参考[状态码](/docs/resource/status-code/)
      en: >-
-      API status code, please refer to [Status Code](/en/docs/start/status-code/)
+      API status code, please refer to [Status Code](/en/docs/resource/status-code/)
   example: 200
 update:
   name: updateTime
   desc:
     zh: >-
-      当前[API的最近更新时间](/docs/start/glossary#update-time)
+      当前[API的最近更新时间](/docs/resource/glossary#update-time)
     en: >-
-      [API last update time](/en/docs/start/glossary#update-time)
+      [API last update time](/en/docs/resource/glossary#update-time)
   example: 2013-12-30T01:45+08:00
 fxlink:
   name: fxLink
@@ -97,8 +97,8 @@ weather:
     type: [daily, gdaily]
   - name: iconDay
     desc:
-      zh: 预报白天天气状况的图标代码，图标可通过[天气状况和图标](/docs/start/icons/)下载
-      en: Icon code for daytime weather conditions, free to download [weather icons](/en/docs/start/icons/)
+      zh: 预报白天天气状况的图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载
+      en: Icon code for daytime weather conditions, free to download [weather icons](/en/docs/resource/icons/)
     type: [daily, gdaily]
   - name: textDay
     desc:
@@ -107,8 +107,8 @@ weather:
     type: [daily, gdaily]
   - name: iconNight
     desc:
-      zh: 预报夜间天气状况的图标代码，图标可通过[天气状况和图标](/docs/start/icons/)下载
-      en: Icon codes for night weather conditions, free to download [weather icons](/en/docs/start/icons/)
+      zh: 预报夜间天气状况的图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载
+      en: Icon codes for night weather conditions, free to download [weather icons](/en/docs/resource/icons/)
     type: [daily, gdaily]
   - name: textNight
     desc:
@@ -189,8 +189,8 @@ weather:
     type: [now, forecast]
   - name: icon
     desc:
-      zh: 天气状况和图标的代码，图标可通过[天气状况和图标](/docs/start/icons/)下载
-      en: Icon code of weather conditions, free to download [weather icons](/en/docs/start/icons/)
+      zh: 天气状况和图标的代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载
+      en: Icon code of weather conditions, free to download [weather icons](/en/docs/resource/icons/)
     example: 100
     type: [now, hourly,ghourly,gnow]
   - name: text
@@ -416,22 +416,22 @@ geo:
     type: [location, topcity]
   - name: tz
     desc:
-      zh: 地区/城市所在[时区](/docs/start/glossary#timezone)
-      en: Location [timezone](/en/docs/start/glossary#timezone)
+      zh: 地区/城市所在[时区](/docs/resource/glossary#timezone)
+      en: Location [timezone](/en/docs/resource/glossary#timezone)
     example: Asia/Shanghai
     type: [location, topcity]
   - name: utcOffset
     desc:
-      zh: 地区/城市目前与UTC时间偏移的小时数，参考[详细说明](/docs/start/glossary#utc-offset)
-      en: The number of hours offset between local time and UTC time, refer to [UTC Offset](/en/docs/start/glossary#utc-offset)
+      zh: 地区/城市目前与UTC时间偏移的小时数，参考[详细说明](/docs/resource/glossary#utc-offset)
+      en: The number of hours offset between local time and UTC time, refer to [UTC Offset](/en/docs/resource/glossary#utc-offset)
     example: +08:00
     type: [location, topcity]
   - name: isDst
     desc:
       zh: >-
-        地区/城市是否当前处于[夏令时](/docs/start/glossary/#daylight-saving-time)<br />`1` 表示当前处于夏令时 <br /> `0` 表示当前不是夏令时
+        地区/城市是否当前处于[夏令时](/docs/resource/glossary/#daylight-saving-time)<br />`1` 表示当前处于夏令时 <br /> `0` 表示当前不是夏令时
       en: >-
-        Is the location currently on [daylight saving time](/en/docs/start/glossary/#daylight-saving-time)<br />`1` in daylight saving time <br /> `0` not in daylight saving time
+        Is the location currently on [daylight saving time](/en/docs/resource/glossary/#daylight-saving-time)<br />`1` in daylight saving time <br /> `0` not in daylight saving time
     example: 0
     type: [location, topcity]
   - name: type
@@ -443,9 +443,9 @@ geo:
   - name: rank
     desc:
       zh: >-
-        [地区评分](/docs/start/glossary#rank)
+        [地区评分](/docs/resource/glossary#rank)
       en: >-
-        [Location Rank](/en/docs/start/glossary#rank)
+        [Location Rank](/en/docs/resource/glossary#rank)
     example: city
     type: [location, topcity]
   - name: fxLink
@@ -499,22 +499,22 @@ geo_poi:
     type: [poi]
   - name: tz
     desc:
-      zh: POI（兴趣点）所在[时区](/docs/start/glossary#timezone)
-      en: POI [timezone](/en/docs/start/glossary#timezone)
+      zh: POI（兴趣点）所在[时区](/docs/resource/glossary#timezone)
+      en: POI [timezone](/en/docs/resource/glossary#timezone)
     example: Asia/Shanghai
     type: [poi]
   - name: utcOffset
     desc:
-      zh: POI（兴趣点）目前与UTC时间偏移的小时数，参考[详细说明](/docs/start/glossary#utc-offset)
-      en: The number of hours offset between local time and UTC time, refer to [UTC Offset](/en/docs/start/glossary#utc-offset)
+      zh: POI（兴趣点）目前与UTC时间偏移的小时数，参考[详细说明](/docs/resource/glossary#utc-offset)
+      en: The number of hours offset between local time and UTC time, refer to [UTC Offset](/en/docs/resource/glossary#utc-offset)
     example: +08:00
     type: [poi]
   - name: isDst
     desc:
       zh: >-
-        POI（兴趣点）是否当前处于[夏令时](/docs/start/glossary/#daylight-saving-time)<br />`1` 表示当前处于夏令时 <br /> `0` 表示当前不是夏令时
+        POI（兴趣点）是否当前处于[夏令时](/docs/resource/glossary/#daylight-saving-time)<br />`1` 表示当前处于夏令时 <br /> `0` 表示当前不是夏令时
       en: >-
-        Is the POI currently on [daylight saving time](/en/docs/start/glossary/#daylight-saving-time)<br />`1` in daylight saving time <br /> `0` not in daylight saving time
+        Is the POI currently on [daylight saving time](/en/docs/resource/glossary/#daylight-saving-time)<br />`1` in daylight saving time <br /> `0` not in daylight saving time
     example: 0
     type: [poi]
   - name: type
@@ -526,9 +526,9 @@ geo_poi:
   - name: rank
     desc:
       zh: >-
-        [地区评分](/docs/start/glossary#rank)
+        [地区评分](/docs/resource/glossary#rank)
       en: >-
-        [POI Rank](/en/docs/start/glossary#rank)
+        [POI Rank](/en/docs/resource/glossary#rank)
     example: 2
     type: [poi]
   - name: fxLink
@@ -744,25 +744,25 @@ warning:
   - name: level
     desc:
       zh: |-
-       [预警等级](/docs/start/warning-info/#warning-level)
+       [预警等级](/docs/resource/warning-info/#warning-level)
       en: |-
-       [Warning level](/en/docs/start/warning-info/#warning-level)
+       [Warning level](/en/docs/resource/warning-info/#warning-level)
     example: Yellow
     type: [warning]
   - name: type
     desc:
       zh: |-
-       [预警类型ID](/docs/start/warning-info/#warning-type)
+       [预警类型ID](/docs/resource/warning-info/#warning-type)
       en: |-
-       [Warning type ID](/en/docs/start/warning-info/#warning-type)
+       [Warning type ID](/en/docs/resource/warning-info/#warning-type)
     example: 11B17
     type: [warning]
   - name: typeName
     desc:
       zh: |-
-       [预警类型名称](/docs/start/warning-info/#warning-type)
+       [预警类型名称](/docs/resource/warning-info/#warning-type)
       en: |-
-       [Warning type name](/en/docs/start/warning-info/#warning-type)
+       [Warning type name](/en/docs/resource/warning-info/#warning-type)
     example: Heavy fog
     type: [warning]
   - name: text
@@ -844,8 +844,8 @@ hisweather:
     type: [hourly]
   - name: icon
     desc:
-      zh: 当天每小时天气状况图标的代码，图标可通过[天气状况和图标](/docs/start/icons/)下载
-      en: Icon code of weather conditions, free to download [weather icons](/en/docs/start/icons/)
+      zh: 当天每小时天气状况图标的代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载
+      en: Icon code of weather conditions, free to download [weather icons](/en/docs/resource/icons/)
     example: 100
     type: [hourly]
   - name: text

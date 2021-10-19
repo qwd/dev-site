@@ -33,7 +33,7 @@ Properties of TideBean
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
-| getCode         | Status code, please refer to [Status Code](/en/docs/start/status-code/) | [Status Code](/docs/start/status-code/)        |
+| getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)        |
 | getBasic         | Basic Informatio | Basic       |
 | getRefer         | Reference data, includes data source, statements and license | Refer  |
 | getTideHourlyList | Hourly data | List\<TideHourlyBase> |
@@ -43,7 +43,7 @@ Properties of TideBean
 
 | Property           | Description         | Example             |
 | -------------- | ------------ | ------------------ |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time)  | 2017-10-25T04:34+08:00      |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time)  | 2017-10-25T04:34+08:00      |
 | getFxLink |Responsive web page of this data, for embedded in website or APP  | http://hfx.link/1 |
 
 **Refer**
@@ -94,7 +94,7 @@ Properties of CurrentsBean
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
-| getCode         | Status code, please refer to [Status Code](/en/docs/start/status-code/) | [Status Code](/docs/start/status-code/)         |
+| getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)         |
 | getBasic         | Basic Informatio | Basic       |
 | getRefer         | Reference data, includes data source, statements and license | Refer  |
 | getHourlyList | Hourly currents data | List\<CurrentsHourlyBase> |
@@ -104,7 +104,7 @@ Properties of CurrentsBean
 
 | Property           | Description         | Example             |
 | -------------- | ------------ | ------------------ |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time)  | 2017-10-25T04:34+08:00      |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time)  | 2017-10-25T04:34+08:00      |
 | getFxLink |Responsive web page of this data, for embedded in website or APP  | http://hfx.link/1 |
 
 **Refer**

@@ -34,7 +34,7 @@ Properties of SunBean
 
 | Property | Description | Example |
 | -------------------- | -------------------------- |- ------------------------ |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getSunrise | Sunrise time | 2017-10-25T06:01+08:00 |
 | getSunset | Sunset time | 2017-10-25T18:01+08:00 |
@@ -50,7 +50,7 @@ Properties of SunBean
 
 | Property | Description | Example |
 | ------------- | ------------------------ | ---------- ---------- |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time) | 2017-10-25T04:34+08:00 |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time) | 2017-10-25T04:34+08:00 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
 
 ## Moon
@@ -79,7 +79,7 @@ Properties of MoonBean
 
 | Property | Description | Example |
 | -------------------- | -------------------------- | ------------------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getMoonrise       | Moonrise time                   | 2017-10-25T01:34+08:00           |
 | getMoonset       | Moonset time                   | 2017-10-25T04:34+08:00           |
@@ -96,7 +96,7 @@ Properties of MoonBean
 
 | Property | Description | Example |
 | ------------- | ------------------------ | ---------- ---------- |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time) | 2017-10-25T04:34+08:00 |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time) | 2017-10-25T04:34+08:00 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
 
 **MoonPhaseBean**
@@ -132,7 +132,7 @@ Properties of SolarElevationAngleBean
 
 | Property | Description | Example |
 | -------------------- | -------------------------- | ------------------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/start/status-code/) | Code |
+| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getSolarElevationAngle       | Solar elevation angle                   | 70.73  |
 | getSolarAzimuthAngle       |  Solar azimuth angle   | 205.95      |
@@ -150,5 +150,5 @@ Properties of SolarElevationAngleBean
 
 | Property | Description | Example |
 | ------------- | ------------------------ | ---------- ---------- |
-| getUpdateTime | [Last updated time](/en/docs/start/glossary#update-time) | 2017-10-25T04:34+08:00 |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time) | 2017-10-25T04:34+08:00 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |

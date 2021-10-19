@@ -1,11 +1,12 @@
 ---
 title: Get KEY
-tag: start
+tag: resource
 description: To use the QWeather Data API or SDK, you need create an Application first and create multiple keys for different usage scenarios.
-ref: 1-start-get-api-key
+redirect_from: /en/docs/start/get-key/
+ref: 1-res-get-api-key
 ---
 
-To use QWeather data service, you need to create an [Application](/en/docs/start/glossary/#Application) first and create multiple [KEY](/en/docs/start/glossary/#key) for different usage scenarios.
+To use QWeather data service, you need to create an [Application](/en/docs/resource/glossary/#Application) first and create multiple [KEY](/en/docs/resource/glossary/#key) for different usage scenarios.
 
 ## Create an Application
 
@@ -48,7 +49,7 @@ If your KEY type is iOS or Android SDK, you need to bind the your APP.
 * Android SDK: Need to bind the `PackageName` of your Android APP. If you have multiple APPs, you can create multiple KEYs. After binding, the KEY can only be used for this APP.
 * iOS SDK: You need to bind the `bundle id` of iOS APP. If you have multiple apps, you can create multiple KEYs. After binding, the KEY can only be used for this app.
 
-Learn how to obtain [iOS Bundle ID](/en/docs/start/glossary/#ios-bundle-identifier) ​​or [Android Package Name](/en/docs/start/glossary/#android-package-name)
+Learn how to obtain [iOS Bundle ID](/en/docs/resource/glossary/#ios-bundle-identifier) ​​or [Android Package Name](/en/docs/resource/glossary/#android-package-name)
 
 ## Done
 

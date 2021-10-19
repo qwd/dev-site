@@ -31,7 +31,7 @@ QWeather.getOceanTide(Context context, String location, String date, OnResultOce
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
-| getCode         | 接口状态 | [Status Code](/docs/start/status-code/)        |
+| getCode         | 接口状态 | [Status Code](/docs/resource/status-code/)        |
 | getBasic         | 更新信息 | Basic       |
 | getRefer         | Refer 数据来源以及数据授权 | Refer  |
 | getTideHourlyList | 潮汐小时数据 | List\<TideHourlyBase> |
@@ -90,7 +90,7 @@ QWeather.getOceanCurrents(Context context, String location, String date, OnResul
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
-| getCode         | 接口状态 | [Status Code](/docs/start/status-code/)         |
+| getCode         | 接口状态 | [Status Code](/docs/resource/status-code/)         |
 | getBasic         | 更新信息 | Basic       |
 | getRefer         | Refer 数据来源以及数据授权 | Refer  |
 | getHourlyList | 潮流小时数据 | List\<CurrentsHourlyBase> |

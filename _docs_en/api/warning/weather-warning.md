@@ -21,7 +21,7 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 
 {% include params.html p="key location" %}
 
-> Weather warnings are not available in all cities, see [supported countries or regions for weather warnings](/en/docs/start/warning-info/#supported-regions).
+> Weather warnings are not available in all cities, see [supported countries or regions for weather warnings](/en/docs/resource/warning-info/#supported-regions).
 
 {% include params.html p="lang-zhen" %}
 
@@ -36,6 +36,6 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 
 ### More Warning Resource
 
-- [Supported Countries and Regions](/en/docs/start/warning-info/#supported-regions)
-- [Warning Level](/en/docs/start/warning-info/#warning-level)
-- [Warning Type](/en/docs/start/warning-info/#warning-type)
+- [Supported Countries and Regions](/en/docs/resource/warning-info/#supported-regions)
+- [Warning Level](/en/docs/resource/warning-info/#warning-level)
+- [Warning Type](/en/docs/resource/warning-info/#warning-type)

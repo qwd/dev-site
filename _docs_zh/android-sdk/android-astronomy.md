@@ -33,7 +33,7 @@ QWeather.getSun(Context context, String location, Lang lang, String date, final 
 
 | 属性                 | 说明                       | 示例值                    |
 | -------------------- | -------------------------- | ------------------------- |
-| getCode              | 状态码，具体含义请参考[状态码](/docs/start/status-code/)                   | Code       |
+| getCode              | 状态码，具体含义请参考[状态码](/docs/resource/status-code/)                   | Code       |
 | getRefer             | Refer 数据来源以及数据授权 | Refer                     |
 | getSunrise           | 日出                   | 2017-10-25T06:01+08:00           |
 | getSunset            | 日落                   | 2017-10-25T18:01+08:00           |
@@ -49,7 +49,7 @@ QWeather.getSun(Context context, String location, Lang lang, String date, final 
 
 | 属性          | 说明                     | 示例值               |
 | ------------- | ------------------------ | -------------------- |
-| getUpdateTime | [数据最近更新时间](/docs/start/glossary#update-time)             | 2017-10-25T04:34+08:00   |
+| getUpdateTime | [数据最近更新时间](/docs/resource/glossary#update-time)             | 2017-10-25T04:34+08:00   |
 | getFxLink     | 当前数据的响应式页面，便于嵌入网站或应用 | http://hfx.link/ae45 |
 
 
@@ -77,7 +77,7 @@ QWeather.getMoon(Context context, String location, Lang lang, String date, final
 
 | 属性                 | 说明                       | 示例值                    |
 | -------------------- | -------------------------- | ------------------------- |
-| getCode              | 状态码，具体含义请参考[状态码](/docs/start/status-code/)                   | Code       |
+| getCode              | 状态码，具体含义请参考[状态码](/docs/resource/status-code/)                   | Code       |
 | getRefer             | Refer 数据来源以及数据授权 | Refer                     |
 | getMoonrise       | 月升                   | 2017-10-25T01:34+08:00           |
 | getMoonset       | 月落                   | 2017-10-25T04:34+08:00           |
@@ -130,7 +130,7 @@ QWeather.getSolarElevationAngle(Context context, String location, String date, S
 
 | 属性                 | 说明                       | 示例值                    |
 | -------------------- | -------------------------- | ------------------------- |
-| getCode              | 状态码，具体含义请参考[状态码](/docs/start/status-code/)                   | Code       |
+| getCode              | 状态码，具体含义请参考[状态码](/docs/resource/status-code/)                   | Code       |
 | getRefer             | Refer 数据来源以及数据授权 | Refer                     |
 | getSolarElevationAngle       | 太阳高度角                   | 70.73  |
 | getSolarAzimuthAngle       |  太阳方位角，正北顺时针方向角度   | 205.95      |
