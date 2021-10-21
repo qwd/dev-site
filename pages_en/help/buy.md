@@ -37,7 +37,7 @@ The price is very simple. You will be billed according to how much you actually 
 | Minute Precip              |                           1                            |                            2                            |
 | Real-time weather(Grid)             | 1                | 2                |
 | 3-day weather forecast(Grid)             | 1                | 2                |
-| 7-day weather forecast(Grid)             | 12               | 3               |
+| 7-day weather forecast(Grid)             | 2               | 3               |
 | 24-hr weather forecast(Grid)  | 1                | 2                |
 | 72-hr weather forecast(Grid)  | 2                | 3                |
 | Real-time air quality      |                           1                            |                            2                            |
