@@ -86,7 +86,7 @@ HeConfig.switchToBizService();
 ```java
 /**
  * 实况天气数据
- * @param location 所查询的地区，可通过该地区名称、ID、IP和经纬度进行查询经纬度格式：经度,纬度
+ * @param location 所查询的地区，可通过该地区ID、经纬度进行查询经纬度格式：经度,纬度
  *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
  * @param lang     (选填)多语言，可以不使用该参数，默认为简体中文
  * @param unit     (选填)单位选择，公制（m）或英制（i），默认为公制单位
