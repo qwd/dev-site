@@ -1,3 +1,4 @@
+
 # name: name of the parameters
 # dese: Description of the parameters, markdown format.
 # example: Example value
@@ -610,6 +611,27 @@ astro:
       en: Hour Angle
     example: -45.5
     type: [sea]
+radiation:
+  - name: fxTime
+    desc:
+      zh: 逐小时预报时间
+      en: Hourly forecast time
+    type: [radiation]
+  - name: net
+    desc: 
+      zh: 净太阳辐射，W/m<sup>2</sup>
+      en: Net surface solar radiation, W/m<sup>2</sup>
+    type: [radiation]
+  - name: diffuse
+    desc: 
+      zh: 太阳散射辐射，W/m<sup>2</sup>
+      en: Diffuse solar radiation, W/m<sup>2</sup> 
+    type: [radiation]
+  - name: direct
+    desc: 
+      zh: 太阳直接辐射，W/m<sup>2</sup>
+      en: Direct solar radiation, W/m<sup>2</sup> 
+    type: [radiation]
 ocean:
   - name: fxTime
     desc:

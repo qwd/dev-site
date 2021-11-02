@@ -104,6 +104,7 @@ api:
       - name: 1-api-sun
       - name: 2-api-moon
       - name: 3-api-solar-elevation-angle
+      - name: 4-api-solar-radiation-hourly-forecast
   - group: 
       zh: 海洋API
       en: Ocean API
