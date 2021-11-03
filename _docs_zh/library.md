@@ -63,6 +63,7 @@ ref: 0-library-homepage
 
 ## Python
 
+- [QWeather @RTAkland](https://github.com/MarkusJoe/QWeather) 一个使用和风天气API获取天气信息并通过SMTP发送到邮箱的python小项目
 - [QWeatherBot @daya0576](https://github.com/daya0576/he-weather-bot) 基于和风 API 的 Telegram 天气预报机器人
 - [QWeatherAPI-Python @Zeyu Zhang](https://github.com/InTereSTingHE/QWeatherAPI-Python) 和风天气API调用python实现
 - [api-QWeather @Ayayaneru](https://github.com/Ayayaneru/api-QWeather) Python-调用和风天气接口示范 并尝试实现一些小功能
