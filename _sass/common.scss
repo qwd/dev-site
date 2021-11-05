@@ -628,6 +628,21 @@ table {
   }
 }
 
+// special
+.qw-special {
+  padding: 0;
+  img {
+    border-radius: 14px;
+    width: 100%;
+  }
+}
+.qw-special-text {
+  margin-bottom: 20px;
+  color: $link-color;
+  font-weight: bold;
+  display: block;
+  font-size: 16px;
+}
 // responsive
 
 @media (max-width: 767px) {
