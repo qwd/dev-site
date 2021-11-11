@@ -18,7 +18,7 @@ Android 4.0及以上
 
 ## 工程配置
 
-- 将Heweather_Plugin.jar导入到工程中，并且引用
+- 将QWeather_Plugin.jar导入到工程中，并且引用
 - 配置Android Manifest权限
 
 ### 权限列表
