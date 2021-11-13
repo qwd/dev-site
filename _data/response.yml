@@ -85,6 +85,12 @@ weather:
       en: Moon phase name
     example: Full Moon
     type: [daily]
+  - name: moonPhaseIcon
+    desc:
+      zh: 月相图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载
+      en: Icon code for moon phase, free to download [QWeather Icons](/en/docs/resource/icons/)
+    example: Full Moon
+    type: [daily]
   - name: tempMax
     desc:
       zh: 预报当天最高温度
@@ -566,6 +572,12 @@ astro:
     desc:
       zh: 月相名字
       en: Moon Phase Name
+    example: First Quarter Moon
+    type: [moon]
+  - name: moonPhase.icon
+    desc:
+      zh: 月相图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载
+      en: Icon code for moon phase, free to download [QWeather Icons](/en/docs/resource/icons/)
     example: First Quarter Moon
     type: [moon]
   - name: moonPhase.illumination
