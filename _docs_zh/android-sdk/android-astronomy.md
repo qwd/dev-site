@@ -106,6 +106,7 @@ QWeather.getMoon(Context context, String location, Lang lang, String date, final
 | getValue        | 月相数值               | 0.25                   |
 | getName         | 月相名字               | 上弦月                 |
 | getIllumination | 月亮照明度，百分比数值 | 30                     |
+| getIcon | 月相图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载 | 802                     |
 
 
 ## 太阳高度角

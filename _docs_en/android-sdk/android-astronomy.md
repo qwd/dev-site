@@ -107,6 +107,7 @@ Properties of MoonBean
 | getValue        | Moon phase value               | 0.25                   |
 | getName         | Moon Phase Name               | 上弦月                 |
 | getIllumination | Moon illuminance in percent | 30                     |
+| getIcon | Icon code for moon phase, free to download [QWeather Icons](/en/docs/resource/icons/) | 802                     |
 
 ## Solar Elevation Angle
 

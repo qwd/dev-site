@@ -149,6 +149,7 @@ QWeather.getWeather15D(Context context, String location, QWeather.OnResultWeathe
 | getMoonRise       | 月升时间            | 04:47      |
 | getMoonSet        | 月落时间            | 14:59      |
 | getMoonPhase      | 月相名称            | 满月       |
+| getMoonPhaseIcon      | 月相图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载            | 804    |
 | getTempMax        | 最高温度            | 4          |
 | getTempMin        | 最低温度            | -5         |
 | getIconDay        | 白天天气状况代码    | 100        |
