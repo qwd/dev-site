@@ -151,6 +151,7 @@ Properties of WeatherDailyBean
 | getMoonRise | Moonrise time | 04:47 |
 | getMoonSet | Moonset time | 14:59 |
 | getMoonPhase | Moon Phase Name | Full Moon |
+| getMoonPhaseIcon      | Icon code for moon phase, free to download [QWeather Icons](/en/docs/resource/icons/)            | 804    |
 | getTempMax | The highest temperature of the day | 4 |
 | getTempMin | The lowest temperature of the day | -5 |
 | getIconDay | Icon code for daytime weather conditions, free to download [weather icons](/en/docs/resource/icons/) | 100 |
