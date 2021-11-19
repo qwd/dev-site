@@ -30,7 +30,7 @@ ref: 2-sdk-ios-geo
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-{% include params.html p="key-ios location-geo lang-sdk range number" %}
+{% include params.html p="key-ios location-geo lang-sdk adm range number" %}
 
 ### 示例代码
 
