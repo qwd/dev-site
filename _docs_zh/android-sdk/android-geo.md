@@ -27,7 +27,7 @@ ref: 2-sdk-android-geo
 
 ### 接口参数说明
 
-{% include params.html p="location-geo range number lang-sdk" %}
+{% include params.html p="location-geo adm range number lang-sdk" %}
 
 ### 示例代码
 
