@@ -27,7 +27,7 @@ In addition, the GeoAPI service can also help you:
 
 ### Parameter
 
-{% include params.html p="location-geo range number lang-sdk" %}
+{% include params.html p="location-geo adm range number lang-sdk" %}
 
 ### Sample Code
 
