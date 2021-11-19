@@ -78,7 +78,7 @@ If no optional parameters are set, the default value will be used.
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="key-ios lang-sdk range number" %}
+{% include params.html p="key-ios lang-sdk adm range number" %}
 
 ### Sample Code
 
