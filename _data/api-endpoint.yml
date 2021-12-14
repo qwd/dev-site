@@ -200,6 +200,17 @@ solar-elevation-angle:
       zh: 太阳高度角
       en: Solar Elevation Angle
     biz-only: true
+solar-radiation-hourly-forecast:
+  - path: /solar-radiation/24h
+    name: 
+      zh: 逐小时预报（未来24小时）
+      en: Hourly Forecast (24hrs)
+    biz-only: true
+  - path: /solar-radiation/72h
+    name: 
+      zh: 逐小时预报（未来72小时）
+      en: Hourly Forecast (72hrs)
+    biz-only: true
 tide:
   - path: /ocean/tide
     name:
