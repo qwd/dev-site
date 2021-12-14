@@ -9,7 +9,7 @@ ref: 4-api-solar-radiation-hourly-forecast
 
 Get hour-by-hour global solar radiation data.
 
-> This data will be publicly available later this year and is currently restricted to certain users who request access
+> Solar Radiation data is currently available to certain users only, please find out [how to request a trial](https://blog.qweather.com/announce/solar-radiation-trial/)
 
 ### Request URL
 

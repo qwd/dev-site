@@ -9,7 +9,7 @@ ref: 4-api-solar-radiation-hourly-forecast
 
 获取全球任意坐标未来逐小时的太阳辐射数据。
 
-> 本数据将在今年晚些时候公开提供，目前仅限特定用户申请使用
+> 太阳辐照数据目前仅限特定用户申请使用，请了解[如何申请试用](https://blog.qweather.com/announce/solar-radiation-trial/)。
 
 ### 请求URL
 
