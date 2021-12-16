@@ -399,7 +399,9 @@ title: 逐小时预报（未来24小时）
   ],
   "refer": {
     "sources": [
-      "Weather China"
+      "QWeather",
+      "NMC",
+      "ECMWF"
     ],
     "license": [
       "commercial license"

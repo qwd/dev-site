@@ -102,7 +102,7 @@ title: 灾害预警城市列表
   "refer": {
     "sources": [
       "12379",
-      "Weather China"
+      "QWeather"
     ],
     "license": [
       "commercial license"

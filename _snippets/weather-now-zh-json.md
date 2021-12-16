@@ -30,7 +30,9 @@ title: 实况天气
   },
   "refer": {
     "sources": [
-      "Weather China"
+      "QWeather",
+      "NMC",
+      "ECMWF"
     ],
     "license": [
       "commercial license"
