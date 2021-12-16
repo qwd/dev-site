@@ -127,7 +127,7 @@ weather:
       zh: 预报白天风向360角度
       en: Daytime wind direction in azimuth degree
     example: 187
-    type: [daily]
+    type: [daily, gdaily]
   - name: windDirDay
     desc:
       zh: 预报白天风向
@@ -145,13 +145,13 @@ weather:
       zh: 预报白天风速，公里/小时
       en: Daytime wind speed, KM/H
     example: 9
-    type: [daily]
+    type: [daily, gdaily]
   - name: wind360Night
     desc:
       zh: 预报夜间风向360角度
       en: Nightly wind direction in azimuth degree
     example: 89
-    type: [daily]
+    type: [daily, gdaily]
   - name: windDirNight
     desc:
       zh: 预报夜间当天风向
@@ -169,13 +169,13 @@ weather:
       zh: 预报夜间风速，公里/小时
       en: Nightly wind speed, KM/H
     example: 3-4
-    type: [daily]
+    type: [daily, gdaily]
   - name: precip
     desc:
       zh: 预报当天总降水量，默认单位：毫米
       en: Estimated total precipitation for the day
     example: 3
-    type: [daily]
+    type: [daily, gdaily]
   - name: uvIndex
     desc:
       zh: 紫外线强度指数
@@ -211,7 +211,7 @@ weather:
       zh: 风向360角度
       en: Wind direction in azimuth degree
     example: 134
-    type: [now, hourly]
+    type: [now, hourly, ghourly, gnow]
   - name: windDir
     desc:
       zh: 风向
@@ -229,13 +229,13 @@ weather:
       zh: 风速，公里/小时
       en: Wind speed, KM/H
     example: 15
-    type: [now, hourly]
+    type: [now, hourly, ghourly, gnow]
   - name: humidity
     desc:
       zh: 相对湿度，百分比数值
       en: Relative humidity in percent
     example: 15
-    type: [now, hourly, daily, gnow]
+    type: [now, hourly, daily, gnow, ghourly, gdaily]
   - name: precip
     desc:
       zh: 当前小时累计降水量，默认单位：毫米
@@ -253,7 +253,7 @@ weather:
       zh: 大气压强，默认单位：百帕
       en: Atmospheric pressure, hPa
     example: 1004
-    type: [now, hourly, daily, gnow]
+    type: [now, hourly, daily, gnow, gdaily]
   - name: vis
     desc:
       zh: 能见度，默认单位：公里
@@ -265,13 +265,13 @@ weather:
       zh: 云量，百分比数值
       en: Cloud cover in percent
     example: 89
-    type: [now, hourly, daily]
+    type: [now, hourly, daily, ghourly, gnow]
   - name: dew
     desc:
       zh: 露点温度
       en: Dew point temperature
     example: 12
-    type: [now, hourly]
+    type: [now, hourly, ghourly, gnow]
 minutely:
   - name: summary
     desc:
