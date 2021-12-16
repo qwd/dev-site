@@ -25,27 +25,27 @@ key-ios:
 location: 
   name: location
   text: 
-    zh: 需要查询地区的[LocationID](/docs/resource/glossary#locationid)或以英文逗号分隔的[经度,纬度坐标](/docs/resource/glossary#coordinate)（十进制），LocationID可通过[城市搜索](/docs/api/geo/)服务获取。例如 `location=101010100` 或 `location=116.41,39.92`
+    zh: 需要查询地区的[LocationID](/docs/resource/glossary#locationid)或以英文逗号分隔的[经度,纬度坐标](/docs/resource/glossary#coordinate)（十进制，最多支持小数点后两位），LocationID可通过[城市搜索](/docs/api/geo/)服务获取。例如 `location=101010100` 或 `location=116.41,39.92`
     en: |-
-     The location to be queried, support [LocationID](/en/docs/resource/glossary#locationid) or comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate), LocationID can be obtained by [GeoAPI](/en/docs/api/geo/). 
+     The location to be queried, support [LocationID](/en/docs/resource/glossary#locationid) or comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate) (decimal, up to 2 decimal places), LocationID can be obtained by [GeoAPI](/en/docs/api/geo/). 
      
      For example: `location=101010100` or `location=116.41,39.92`
   rqd: true
 location-geo: 
   name: location
   text: 
-    zh: 需要查询地区的名称，支持文字、以英文逗号分隔的[经度,纬度坐标](/docs/resource/glossary#coordinate)（十进制）、[LocationID](/docs/resource/glossary#locationid)或[Adcode](/docs/resource/glossary/#adcode)（仅限中国城市）。例如 `location=北京` 或 `location=116.41,39.92`
+    zh: 需要查询地区的名称，支持文字、以英文逗号分隔的[经度,纬度坐标](/docs/resource/glossary#coordinate)（十进制，最多支持小数点后两位）、[LocationID](/docs/resource/glossary#locationid)或[Adcode](/docs/resource/glossary/#adcode)（仅限中国城市）。例如 `location=北京` 或 `location=116.41,39.92`
     en: |-
-     The location to be queried, support text, [LocationID](/en/docs/resource/glossary#locationid), comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate), [Adcode](/docs/resource/glossary/#adcode)(Chinese cities only). 
+     The location to be queried, support text, [LocationID](/en/docs/resource/glossary#locationid), comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate) (decimal, up to 2 decimal places), [Adcode](/docs/resource/glossary/#adcode)(Chinese cities only). 
      
      For example: `location=beijing` or `location=116.41,39.92`
   rqd: true
 location-coord:
   name: location
   text: 
-    zh: 需要查询地区的以英文逗号分隔的[经度,纬度坐标](/docs/resource/glossary#coordinate)（十进制）。例如 `location=116.41,39.92`
+    zh: 需要查询地区的以英文逗号分隔的[经度,纬度坐标](/docs/resource/glossary#coordinate)（十进制，最多支持小数点后两位）。例如 `location=116.41,39.92`
     en: |-
-     The comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate) of the location to be queried. 
+     The comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate) (decimal, up to 2 decimal places) of the location to be queried.
 
      For example: `location=116.41,39.92`
   rqd: true
@@ -84,17 +84,17 @@ location-android:
   name: location
   text: 
     zh: |-
-     需要查询地区的[LocationID](/docs/resource/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/resource/glossary#coordinate)（十进制），LocationID可通过[GeoAPI](/docs/android-sdk/android-geo/)服务获取。例如： `location=101010100` 或 `location=116.41,39.92`
+     需要查询地区的[LocationID](/docs/resource/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/resource/glossary#coordinate)（十进制，最多支持小数点后两位），LocationID可通过[GeoAPI](/docs/android-sdk/android-geo/)服务获取。例如： `location=101010100` 或 `location=116.41,39.92`
     en: |-
-     The city to be queried, support [LocationID](/en/docs/resource/glossary#locationid) or  comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate), LocationID can be obtained by [GeoAPI](/en/docs/android-sdk/android-geo/). 
+     The city to be queried, support [LocationID](/en/docs/resource/glossary#locationid) or comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate) (decimal, up to 2 decimal places), LocationID can be obtained by [GeoAPI](/en/docs/android-sdk/android-geo/). 
 location-ios:
   rqd: true
   name: location
   text: 
     zh: |-
-     需要查询地区的[LocationID](/docs/resource/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/resource/glossary#coordinate)（十进制），LocationID可通过[GeoAPI](/docs/ios-sdk/ios-geo/)服务获取。例如： `location=101010100` 或 `location=116.41,39.92`
+     需要查询地区的[LocationID](/docs/resource/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/resource/glossary#coordinate)（十进制，最多支持小数点后两位），LocationID可通过[GeoAPI](/docs/ios-sdk/ios-geo/)服务获取。例如： `location=101010100` 或 `location=116.41,39.92`
     en: |-
-     The city to be queried, support [LocationID](/en/docs/resource/glossary#locationid) or  comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate), LocationID can be obtained by [GeoAPI](/en/docs/ios-sdk/ios-geo/). 
+     The city to be queried, support [LocationID](/en/docs/resource/glossary#locationid) or  comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate) (decimal, up to 2 decimal places), LocationID can be obtained by [GeoAPI](/en/docs/ios-sdk/ios-geo/). 
 location-id-android: 
   name: location
   text: 

@@ -262,14 +262,14 @@ weather:
     type: [now, daily]
   - name: cloud
     desc:
-      zh: 云量，百分比数值
-      en: Cloud cover in percent
+      zh: 云量，百分比数值。**可能为空**
+      en: Cloud cover in percent, **may be null**
     example: 89
     type: [now, hourly, daily, ghourly, gnow]
   - name: dew
     desc:
-      zh: 露点温度
-      en: Dew point temperature
+      zh: 露点温度。**可能为空**
+      en: Dew point temperature, **may be null**
     example: 12
     type: [now, hourly, ghourly, gnow]
 minutely:
