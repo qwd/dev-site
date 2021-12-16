@@ -42,6 +42,11 @@ weather-daily-forecast:
       zh: 15天预报
       en: 15 Days Forecast
     biz-only: true
+  - path: /weather/30d
+    name:
+      zh: 30天预报
+      en: 30 Days Forecast
+    biz-only: true
 weather-hourly-forecast:
   - path: /weather/24h
     name:
@@ -124,6 +129,11 @@ grid-weather-hourly-forecast:
     name:
       zh: 逐小时预报（未来24小时）
       en: Hourly Forecast by Grid (24hrs)
+    biz-only: true
+  - path: /grid-weather/72h
+    name:
+      zh: 逐小时预报（未来72小时）
+      en: Hourly Forecast by Grid (72hrs)
     biz-only: true
 indices:
   - path: /indices/1d

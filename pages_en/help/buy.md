@@ -30,6 +30,7 @@ The price is very simple. You will be billed according to how much you actually 
 | 7-day weather forecast     |                           2                            |                            3                            |
 | 10-day weather forecast    |                           3                            |                            4                            |
 | 15-day weather forecast    |                           4                            |                            5                            |
+| 30-day weather forecast    |                           8                            |                            9                            |
 | 24-hr weather forecast     |                           1                            |                            2                            |
 | 72-hr weather forecast     |                           2                            |                            3                            |
 | 168-hr weather forecast    |                           3                            |                            4                            |
@@ -46,6 +47,8 @@ The price is very simple. You will be billed according to how much you actually 
 | Real-time weather (POI)    |                           1                            |                            2                            |
 | Daily weather (POI)        |                           2                            |                            3                            |
 | Historical                 |                           1                            |                            2                            |
+| Tropical Cyclone               |                           50                            |                            80                            |
+| Tide and Currents               |                           10                            |                            18                            |
 | Sun and Moon               |                           1                            |                            2                            |
 | GeoAPI                     |                          0.1                           |                           0.2                           |
 
@@ -78,7 +81,7 @@ For different data, the discount is different, please login to the console to ch
 
 ## More calls
 
-If your business requires large scale reqeusts, such as over 1 million calls per day, send an email to <sales@qweather.com>, we provide additional discounts and performance guarantees for large-scale Applications.
+If your business requires large scale reqeusts, such as over 500K calls per day, send an email to <sales@qweather.com>, we provide additional discounts and performance guarantees for large-scale Applications.
 
 ## Performance Application {#hpa}
 

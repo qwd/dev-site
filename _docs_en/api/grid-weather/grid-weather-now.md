@@ -3,13 +3,13 @@ title: Grid Weather Real-time
 tag: api
 data: grid-weather
 version: v7
-description: QWeather provides high-precision real-time weather within 1 kilometer within China, including temperature, humidity, atmospheric pressure, weather conditions, wind, wind direction, etc.
+description: QWeather provides high-precision real-time weather at any latitude and longitude around the world, including temperature, humidity, atmospheric pressure, weather conditions, wind, wind direction, etc.
 ref: api-gird-weather-now
 ---
 
-Obtain high-precision real-time weather within 1 km of China, including: temperature, humidity, atmospheric pressure, weather conditions, wind direction, etc.
+Get high-precision real-time weather at any latitude and longitude around the world.
 
-> This data is only supported for Chinese cities.
+> The spatial resolution is 1x1, 3x3 or 5x5 KM, depending on the region.
 
 ### Request URL
 
