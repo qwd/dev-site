@@ -17,7 +17,7 @@ ref: 1-api-weather-now
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值，参数之间使用`&`进行分隔。
 
-{% include params.html flag="weather" p="key location lang unit gzip"%}
+{% include params.html flag="weather" p="key location lang unit"%}
 
 ### 返回数据
 

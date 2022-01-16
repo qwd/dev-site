@@ -17,7 +17,7 @@ ref: 1-api-air-now
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值，参数之间使用`&`进行分隔。
 
-{% include params.html p="key location lang gzip" %}
+{% include params.html p="key location lang" %}
 
 ### 返回数据
 

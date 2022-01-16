@@ -4,7 +4,7 @@ title: 景点实况天气
 
 ```
 // 北京玉渊潭公园实况天气 
-// 商业版 https://api.qweather.com/v7/weather-poi/now?gzip=y&location=10101020010A&key=你的KEY
+// 商业版 https://api.qweather.com/v7/weather-poi/now?&location=10101020010A&key=你的KEY
 
 {
   "code": "200",
