@@ -17,7 +17,7 @@ Real-time Air Quality API for Chinese cities and 1,700 monitoring stations, incl
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="key location lang gzip" %}
+{% include params.html p="key location lang" %}
 
 ### Response
 

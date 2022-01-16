@@ -17,7 +17,7 @@ Real-time weather data for 150,000 cities around the world, including real-time 
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html flag="weather" p="key location lang unit gzip"%}
+{% include params.html flag="weather" p="key location lang unit"%}
 
 ### Response
 
