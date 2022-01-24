@@ -32,11 +32,27 @@ Weather warnings are not available for all cities, we will continue to expand th
   </tbody>
 </table>
 
-## Warning Level
+## Status
 
-Warning levels may vary by country and region. For mainland China, white (Guangdong Province only), blue, yellow, orange, and red are used. For Hong Kong(SAR China), yellow, red and black are used. For Macau(SAR China), blue, yellow, orange, red and black are used. For other countries and regions, green, yellow, orange and red are available.
+`warning.status` denotes the status of the current warning published, including:
 
-> In general, the darker the color, the higher the severity of the warning, but not all warnings have all levels, for example, haze warnings are only available in yellow and orange.
+- Active - Warning is active
+- Update - The current warning is an update or modification to a previously specified warning.
+- Cancel - The previously specified warning is cancelled for various reasons. This is a reserved value and you cannot use it to determine if the warning is active.
+
+## Expiry time
+
+If the warning message does not provide a value for `endTime`, QWeather will set this warning to be valid for 24 hours from `startTime`.
+
+## Level (Severity)
+
+Every country and region may have its own definitions or protocols for weather warning levels(severity) and not all warning messages have every level, for example, haze warnings are only available in Yellow and Orange.
+
+#### Color
+
+Some countries and regions, weather warning levels are usually defined by colors. For mainland China, White (Guangdong Province only), Blue, Yellow, Orange and Red are used. For Hong Kong(SAR China), Yellow, Red and Black are used. For Macau(SAR China), Blue, Yellow, Orange, Red and Black are used. For Russia, White, Green, Yellow, Orange and Red are uesed. For India and European region, Green, Yellow, Orange and Red are available.
+
+In general, the darker the color, the higher the severity of the warning. Currently available colors include:
 
 - White 
 - Blue 
@@ -45,6 +61,58 @@ Warning levels may vary by country and region. For mainland China, white (Guangd
 - Orange 
 - Red
 - Black
+
+#### Text
+
+Some countries and regions, weather warning levels are usually defined by text. For Kuwait, Minor, Moderate, Severe and Extreme are used. For Brazil, Moderate, Severe and Extreme are applied. For South Africa, Minor, Moderate, Extreme and Unknown are applied. For Australia, Cancel, None, Unknown, Standard, Minor, Moderate, Major, Severe and Extreme are applied.
+
+Currently available text includes:
+
+- Cancel
+- None
+- Unknown
+- Standard
+- Minor
+- Moderate
+- Major
+- Severe
+- Extreme
+
+#### Color vs Text
+
+Both color and text can indicate the severity of the warning message, and you can refer to the following table:
+
+| Color  | Text     |
+| ------ | -------- |
+| White  | Unknown  |
+| Blue   | Minor    |
+| Yellow | Moderate |
+| Orange | Severe   |
+| Red    | Extreme  |
+
+## Urgency
+
+> **Urgency** is not available in some countries and regions, or does not have the same value as listed below
+
+`warning.urgency` denotes the urgency of the warning message, including:
+
+- Immediate
+- Expected
+- Future
+- Past
+- Unknown
+
+## Certainty
+
+> **Certainty** is not available in some countries and regions, or does not have the same value as listed below
+
+`warning.certainty` denotes the certainty or confidence level of the warning messages, including:
+
+- Observed
+- Likely
+- Possible
+- Unlikely
+- Unknown
 
 ## Warning Type
 

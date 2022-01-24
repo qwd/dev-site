@@ -763,24 +763,26 @@ warning:
     type: [warning]
   - name: endTime
     desc:
-      zh: 预警结束时间，**可能为空**
-      en: End time of warning, **may be null**
+      zh: >-
+       [预警结束时间](/docs/resource/warning-info/#expiry-time)，**可能为空**
+      en: >-
+       [End time of warning](/en/docs/resource/warning-info/#expiry-time), **may be null**
     example: 2017-10-26T13:12
     type: [warning]
   - name: status
     desc:
       zh: >-
-       预警状态，**可能为空**<br />`active` 预警中或首次预警<br />`update` 预警信息更新<br />`cancel` 取消预警
+       [预警信息的发布状态](/docs/resource/warning-info/#status)
       en: >-
-       Warning status, **may be null**<br />`active` Early warning or first warning<br />`update` Warning information update<br />`cancel` cancel warning
+       [Warning status](/en/docs/resource/warning-info/#status)
     example: active
     type: [warning]
   - name: level
     desc:
       zh: |-
-       [预警等级](/docs/resource/warning-info/#warning-level)
+       [预警等级](/docs/resource/warning-info/#level-severity)
       en: |-
-       [Warning level](/en/docs/resource/warning-info/#warning-level)
+       [Warning level](/en/docs/resource/warning-info/#level-severity)
     example: Yellow
     type: [warning]
   - name: type
@@ -798,6 +800,20 @@ warning:
       en: |-
        [Warning type name](/en/docs/resource/warning-info/#warning-type)
     example: Heavy fog
+    type: [warning]
+  - name: urgency
+    desc:
+      zh: |-
+       [预警信息的紧迫程度](/docs/resource/warning-info/#urgency)，**可能为空**
+      en: |-
+       [The urgency of the warning message](/en/docs/resource/warning-info/#urgency), **may be null**
+    type: [warning]
+  - name: certainty
+    desc:
+      zh: |-
+       [预警信息的确定性](/docs/resource/warning-info/#certainty)，**可能为空**
+      en: |-
+       [The certainty of the warning message](/en/docs/resource/warning-info/#certainty), **may be null**
     type: [warning]
   - name: text
     desc:

@@ -37,5 +37,5 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 ### More Warning Resource
 
 - [Supported Countries and Regions](/en/docs/resource/warning-info/#supported-regions)
-- [Warning Level](/en/docs/resource/warning-info/#warning-level)
+- [Warning Level](/en/docs/resource/warning-info/#level-severity)
 - [Warning Type](/en/docs/resource/warning-info/#warning-type)
