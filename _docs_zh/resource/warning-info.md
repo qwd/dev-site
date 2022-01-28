@@ -11,6 +11,8 @@ ref: 9-res-warning
 
 天气灾害预警并非适用于所有城市，我们将不断的扩展这些数据，目前和风天气预警服务支持的国家或地区如下：
 
+> 天气预警基于各国政府部门的官方数据，当官方数据无法正常发布时，我们可能会临时下线遇到问题的国家。
+
 > 你可以使用`range`参数通过[预警城市列表](/docs/api/warning/weather-warning-city-list/)获取该国家的所有预警城市信息
 
 <table>
@@ -68,15 +70,15 @@ ref: 9-res-warning
 
 目前使用文字描述的等级包括：
 
-- 取消
-- 无
-- 未知
-- 标准
-- 低
-- 中等
-- 高
-- 严重
-- 极端
+- Cancel
+- None
+- Unknown
+- Standard
+- Minor
+- Moderate
+- Major
+- Severe
+- Extreme
 
 #### 颜色与文字对照
 
