@@ -2,11 +2,13 @@
 title: Weather Warning
 tag: android-sdk
 version: v4
-description: QWeather Android SDK support severe weathe warning in China and EU countries, real-time access to typhoon, heat wave, cold wave, gale, heavy air pollution, wildfire, dust storms, droughts, lightning, hail, frost, heavy fog, etc.
+description: QWeather Android SDK support severe weathe warning in China and many countries or regions around the world, real-time access to typhoon, heat wave, cold wave, gale, heavy air pollution, wildfire, dust storms, droughts, lightning, hail, frost, heavy fog, etc.
 ref: 5-sdk-android-warning
 ---
 
-Get severe weathe warning in China and EU countries, including typhoon, heat wave, cold wave, gale, heavy air pollution, wildfire, dust storms, droughts, lightning, hail, frost, heavy fog, etc.
+Get severe weathe warning in many countries or regions around the world, including typhoon, heat wave, cold wave, gale, heavy air pollution, wildfire, dust storms, droughts, lightning, hail, frost, heavy fog, etc.
+
+See also [Warning Info](/en/docs/resource/warning-info/).
 
 ## Weather Warning
 

@@ -5,7 +5,14 @@ description: QWeather supports weather warning services for many countries and r
 ref: 9-res-warning
 ---
 
-QWeather supports weather warning services for many countries or regions around the world. You can find more descriptions of these warnings here, such as the list of supported countries and regions, warning levels and warning types.
+QWeather supports weather warning services([API](/en/docs/api/warning/), [iOS SDK](/en/docs/ios-sdk/ios-warning/), [Android SDK](/en/docs/android-sdk/android-warning/)) for many countries or regions around the world. You can find more descriptions of these warnings here, such as the list of supported countries and regions, warning levels and warning types.
+
+> All warning level, type, urgency and other fields are possible to change, including add/modify/delete. We may not be able to give advance notice of these changes, **so you have to make your code more compatible to avoid errors when they happen.**
+>
+> We recommend not trying to enumerate these values or mappings, but to output them directly to the screen.
+{: .bqwarning}
+
+> Weather warning do not always work with multilingual setting. When a warning message does not respond to your multilingual setting, we will return the message in either English or the local language, or even part of the content in English and part in the local language.
 
 ## Supported Regions
 
@@ -44,15 +51,17 @@ Weather warnings are not available for all cities, we will continue to expand th
 
 ## Expiry time
 
-If the warning message does not provide a value for `endTime`, QWeather will set this warning to be valid for 24 hours from `startTime`.
+> Typically, a warning message is not valid for more than 48 hours, so if `warning.endTime` is not available, we recommend to set the expiry time of this warning message to 24 hours from `warning.startTime` (which is what we do).
+
+You can use `warning.endTime` to estimate when a warning message will expire, or when you can no longer get a warning message with the same ID as the previous one, which means that the warning has expired.
 
 ## Level (Severity)
 
-Every country and region may have its own definitions or protocols for weather warning levels(severity) and not all warning messages have every level, for example, haze warnings are only available in Yellow and Orange.
+Every country and region may have its own definitions or protocols for weather warning levels(severity) and not all warning messages have every level, for example, haze warnings are only available in Yellow(Moderate) and Orange(Severe).
 
 #### Color
 
-Some countries and regions, weather warning levels are usually defined by colors. For mainland China, White (Guangdong Province only), Blue, Yellow, Orange and Red are used. For Hong Kong(SAR China), Yellow, Red and Black are used. For Macau(SAR China), Blue, Yellow, Orange, Red and Black are used. For Russia, White, Green, Yellow, Orange and Red are uesed. For India and European region, Green, Yellow, Orange and Red are available.
+For some countries and regions, weather warning levels are usually defined by colors. For mainland China, White (Guangdong Province only), Blue, Yellow, Orange and Red are used. For Hong Kong(SAR China), Yellow, Red and Black are used. For Macau(SAR China), Blue, Yellow, Orange, Red and Black are used. For Russia, White, Green, Yellow, Orange and Red are uesed. For India and European region, Green, Yellow, Orange and Red are available.
 
 In general, the darker the color, the higher the severity of the warning. Currently available colors include:
 
@@ -66,7 +75,7 @@ In general, the darker the color, the higher the severity of the warning. Curren
 
 #### Text
 
-Some countries and regions, weather warning levels are usually defined by text. For Kuwait, Minor, Moderate, Severe and Extreme are used. For Brazil, Moderate, Severe and Extreme are applied. For South Africa, Minor, Moderate, Extreme and Unknown are applied. For Australia, Cancel, None, Unknown, Standard, Minor, Moderate, Major, Severe and Extreme are applied.
+For some countries and regions, weather warning levels are usually defined by text. For Kuwait, Minor, Moderate, Severe and Extreme are used. For Brazil, Moderate, Severe and Extreme are applied. For South Africa, Minor, Moderate, Extreme and Unknown are applied. For Australia, Cancel, None, Unknown, Standard, Minor, Moderate, Major, Severe and Extreme are applied. For other countries and regions, Unknown, Minor, Moderate, Severe and Extreme are available.
 
 Currently available text includes:
 
@@ -82,7 +91,7 @@ Currently available text includes:
 
 #### Color vs Text
 
-Both color and text can indicate the severity of the warning message, and you can refer to the following table:
+Both color and text can indicate the severity of the warning message, and generally they can be mapped to each other(it is not a rule or standard, just our practice):
 
 | Color  | Text     |
 | ------ | -------- |
@@ -120,8 +129,7 @@ Both color and text can indicate the severity of the warning message, and you ca
 
 QWeather provides over 100 warning types based on definitions from official meteorological departments around the world, however, these types are not available to all countries or regions. 
 
-> Please note: All warning types and levels are possible to change, including additions, modifications or deletions, be sure to set your program's compatibility so that these changes do not cause errors!
-{:.bqwarning}
+We also provide warning icons, please go to [QWeather Icons](https://icons.qweather.com/en/).
 
 > As of January 1, 2022, the API will use Type instead of Type (deprecated) return, so please update it.
 {:.bqwarning}
