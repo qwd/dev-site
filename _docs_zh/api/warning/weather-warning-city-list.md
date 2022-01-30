@@ -8,7 +8,9 @@ toc: true
 ref: 2-api-weather-warning-city-list
 ---
 
-获取指定国家或地区当前正在发生预警的城市列表。
+获取指定国家或地区当前正在发生预警的城市列表，根据预警城市列表查询[指定城市的预警信息](/docs/api/warning/weather-warning/)。
+
+查看[天气预警API](/docs/api/warning/weather-warning/)获取预警详情。
 
 ### 请求URL
 

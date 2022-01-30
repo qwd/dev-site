@@ -88,4 +88,15 @@ type,type_deprecated,type_name_zh,type_name_en
 2016,,冰雹风暴,Hailstorm
 2017,,海况风险,Sea area warning
 2018,,渔业风险,Fishermen warning
+2019,,低湿度,Low Humidity
+2020,,累计降水风险,Accumulated Rain
+2021,,冲浪风险,Hazardous Surf Warning 
+2022,,海上大风,Marine Wind Warning
+2023,,道路天气风险,Road Weather Alert
+2024,,雷雨,Thunder Rain
+2025,,雷雨大雾,Thunder rain and Fog
+2026,,破坏性大风,Damaging Winds
+2027,,草原火灾条件,Veld Fire Conditions
+2028,,天气预警建议,Weather Advisory
+9998,,天气预警,Severe Weather Warning 
 9999,11B99,其他,Other

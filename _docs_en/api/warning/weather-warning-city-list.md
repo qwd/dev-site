@@ -8,7 +8,9 @@ toc: true
 ref: 2-api-weather-warning-city-list
 ---
 
-Get a list of cities for the specified country or region where weather warnings are currently in effect.
+Get a list of cities for the specified country or region where [weather warnings](/en/docs/api/warning/weather-warning/) are currently in effect.
+
+See also [Weather warning API](/en/docs/api/warning/weather-warning/) to get warning details.
 
 ### Request URL
 

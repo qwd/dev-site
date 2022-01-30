@@ -8,6 +8,8 @@ ref: 5-sdk-ios-warning
 
 Weather Warning for getting real-time local severe weather warning around the world, including typhoon, heat wave, cold wave, gale, heavy air pollution, wildfire, dust storms, droughts, lightning, hail, frost, heavy fog, etc.
 
+See also [Warning Info](/en/docs/resource/warning-info/).
+
 ## Weather Warning
 
 | Interface code (Enum) | Interface       | Class            |
