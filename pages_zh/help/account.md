@@ -43,7 +43,7 @@ ref: 4-help-account
 
 1. 下载[《申请变更帐号认证信息申请函》](https://cdn.qweather.com/misc/modify-enroll-application.pdf)并按其中的要求填写
 2. 填写完成后打印并扫描，企业开发者需加盖新企业的公章
-3. 将扫描的申请函和原身份信息照片/原企业营业执照照片发送至support@qweather.com，邮件标题注明：认证开发者身份变更
+3. 将扫描的申请函和新身份信息照片/新企业营业执照照片发送至support@qweather.com，邮件标题注明：认证开发者身份变更
 4. 审核周期为3-5天，我们的客服人员可能会与你进行电话联系，变更成功后会发送邮件通知
 
 ## 密码忘记了怎么办？ {#password-reset}
