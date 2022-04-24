@@ -34,6 +34,7 @@ You just need to:
 ## Dart
 
 - [OpenWeatherPlus-Flutter @Daniel Dai](https://github.com/danieldai/OpenWeatherPlus-Flutter) Opensource weather app built with Flutter & fish-redux, backed by free weather data from qweather.com
+- [flutter_qweather @CyJaySong](https://github.com/fluttercandies/flutter_qweather) Flutter plugin for QWeather, support Android and iOS.
 
 ## Go
 
