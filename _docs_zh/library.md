@@ -33,6 +33,7 @@ ref: 0-library-homepage
 ## Dart
 
 - [OpenWeatherPlus-Flutter @Daniel Dai](https://github.com/danieldai/OpenWeatherPlus-Flutter) Opensource weather app built with Flutter & fish-redux, backed by free weather data from heweather.com (用Flutter和fish-redux开发的开源天气APP) 
+- [flutter_qweather @CyJaySong](https://github.com/fluttercandies/flutter_qweather) Flutter 和风天气插件，支持安卓和iOS平台
 
 ## Go
 
