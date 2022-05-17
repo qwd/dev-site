@@ -57,7 +57,7 @@
   <div class="footer-copyright">
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6">{{ site.data.t[page.lang].footer-copyright }}</div>
+        <div class="col-xs-12 col-sm-12 col-md-6">&copy; {{ site.time | date: "%Y" }} {{ site.data.t[page.lang].footer-copyright }}</div>
         <div class="col-xs-12 col-sm-12 col-md-6 text-right"><a href={{ site.icp.url }} target="_blank" rel="noopener noreferrer">{{ site.icp.number }}</a> &nbsp; <a href={{ site.nis.url }} target="_blank" rel="noopener noreferrer">{{ site.nis.number }}</a></div>
       </div>
     </div>

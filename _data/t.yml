@@ -21,7 +21,7 @@ en:
   s6warning: Here is the Weather API version S6, which will be offline on December 31st, 2021 and it is now unavailable for new users. Click to view the latest API service.
   footer-des: Simple · Efficient · Powerful Weather Service
   footer-copyright: |-
-   &copy; 2021 <a href="https://www.qweather.com/en/" target="_blank" rel="noopener noreferrer">QWeather</a>. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> Hosted by <a href="https://github.com/qwd" target="_blank" rel="noopener noreferrer">Github</a>
+   <a href="https://www.qweather.com/en/" target="_blank" rel="noopener noreferrer">QWeather</a>. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> Hosted by <a href="https://github.com/qwd" target="_blank" rel="noopener noreferrer">Github</a>
   goto-qw: See more weather? Go to QWeather
   params: Parameters
   description: Description
@@ -171,7 +171,7 @@ zh:
   s6warning: 和风天气API S6版将于2021年12月31日停止技术支持并于2022年12月31日停止服务，请使用最新版本
   footer-des: 一个简单 · 高效 · 强大的天气数据服务
   footer-copyright: |-
-   &copy; 2021 <a href="https://www.qweather.com" target="_blank" rel="noopener noreferrer">QWeather</a> 本站由<a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a>驱动运行在<a href="https://github.com/qwd" target="_blank" rel="noopener noreferrer">Github</a>
+   <a href="https://www.qweather.com" target="_blank" rel="noopener noreferrer">QWeather</a> 本站由<a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a>驱动运行在<a href="https://github.com/qwd" target="_blank" rel="noopener noreferrer">Github</a>
   goto-qw: 查询更多天气？访问和风天气
   params: 参数
   description: 描述
