@@ -55,29 +55,20 @@ ref: 9-res-warning
 
 你可以根据`warning.endTime`来预估一条预警信息的失效时间，或者当你更新数据的时候无法再获取当之前相同ID的预警信息时，代表这一条预警已经过期或失效。
 
-## 预警等级 {#level-severity}
+## 预警等级（弃用） {#level-deprecated}
 
-不同国家和地区对预警等级有自己的的定义和规范，同时并非每个预警类别都划分了所有等级，例如霾预警只有黄色（Moderate）和橙色（Severe）级别。
+`warning.level`代表预警信息的等级。
 
-#### 使用颜色定义
+> **警告：**目前该字段已弃用，使用[严重等级](/docs/resource/warning-info/#severity)和[严重等级颜色](/docs/resource/warning-info/#severity-color)替代。
+{:.bqwarning}
 
-一些国家和地区的预警等级习惯采用颜色进行定义。在中国大陆地区适用于白色（仅限广东省）、蓝色、黄色、橙色和红色。对于中国香港地区，适用于黄色、红色和黑色。对于中国澳门地区，适用于蓝色、黄色、橙色、红色和黑色。对于俄罗斯，适用于白色、绿色、黄色和红色。对于印度、欧洲的国家和地区，适用于绿色、黄色、橙色和红色。
+## 严重等级 {#severity}
 
-一般来说，颜色越深，代表预警的严重程度越高，目前使用的颜色包括：
+`warning.severity`表示预警事件所造成的影响强度。
 
-- 白色 
-- 蓝色 
-- 绿色 
-- 黄色 
-- 橙色 
-- 红色
-- 黑色
+不同国家和地区对预警严重等级有自己的的定义和规范，在科威特适用于Minor、Moderate、Severe和Extreme。对于巴西，适用于Moderate、Severe和Extreme。对于南非，适用于Minor、Moderate、Extreme和Unknown。对于澳大利亚适用于Cancel、None、Unknown、Standard、Minor、Moderate、Major、Severe和Extreme。对于其他国家适用于Unknown、Minor、Moderate、Severe和Extreme。
 
-#### 使用文字定义
-
-一些国家和地区采用文字对预警等级进行定义。在科威特适用于Minor、Moderate、Severe和Extreme。对于巴西，适用于Moderate、Severe和Extreme。对于南非，适用于Minor、Moderate、Extreme和Unknown。对于澳大利亚适用于Cancel、None、Unknown、Standard、Minor、Moderate、Major、Severe和Extreme。对于其他国家适用于Unknown、Minor、Moderate、Severe和Extreme。
-
-目前使用文字描述的等级包括：
+目前预警严重等级包括：
 
 - Cancel
 - None
@@ -89,21 +80,25 @@ ref: 9-res-warning
 - Severe
 - Extreme
 
-#### 颜色与文字对照
+## 严重等级颜色 {#severity-color}
 
-使用颜色和文字都可以表示预警信息的严重程度，一般来说它们之间可以互相映射（这不是法规或标准，只是我们的习惯）。
+对于[严重等级](/docs/resource/warning-info/#severity)，一些国家和地区的预警严重等级习惯采用颜色进行定义，我们将根据当地习惯提供严重等级所适用的颜色。
 
-| 颜色 | 文字     |
-| ---- | -------- |
-| 白色 | Unknown  |
-| 蓝色 | Minor    |
-| 黄色 | Moderate |
-| 橙色 | Severe   |
-| 红色 | Extreme  |
+> **注意：**如果当地没有更适合的颜色，则返回为空。
+
+目前预警严重等级颜色包括：
+
+- White 
+- Blue 
+- Green 
+- Yellow 
+- Orange 
+- Red
+- Black
 
 ## 紧迫程度 {#urgency}
 
-> 这个字段在一些国家和地区不可用，或者与所列出的值不尽相同
+> **注意：**这个字段在一些国家和地区不可用，或者与所列出的值不尽相同
 
 `warning.urgency` 表示预警信息的紧迫性，包括：
 
@@ -115,7 +110,7 @@ ref: 9-res-warning
 
 ## 确定性 {#certainty}
 
-> 这个字段在一些国家和地区不可用，或者与所列出的值不尽相同
+> **注意：**这个字段在一些国家和地区不可用，或者与所列出的值不尽相同
 
 `warning.certainty` 表示预警信息的确定性或可信度，包括：
 

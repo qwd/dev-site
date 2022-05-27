@@ -780,9 +780,25 @@ warning:
   - name: level
     desc:
       zh: |-
-       [预警等级](/docs/resource/warning-info/#level-severity)
+       [预警等级（弃用）](/docs/resource/warning-info/#level-deprecated)，**该字段已弃用，使用`severity`和`severityColor`代替**
       en: |-
-       [Warning level](/en/docs/resource/warning-info/#level-severity)
+       [Warning level(deprecated)](/en/docs/resource/warning-info/#level-deprecated), **this field is deprecated and uses `severity` and `severityColor` instead**
+    example: Yellow
+    type: [warning]
+  - name: severity
+    desc:
+      zh: |-
+       [预警严重等级](/docs/resource/warning-info/#severity)
+      en: |-
+       [Warning severity](/en/docs/resource/warning-info/#severity)
+    example: Moderate
+    type: [warning]
+  - name: severityColor
+    desc:
+      zh: |-
+       [预警严重等级颜色](/docs/resource/warning-info/#severity-color)
+      en: |-
+       [Preferred color for severity](/en/docs/resource/warning-info/#severity-color)
     example: Yellow
     type: [warning]
   - name: type
