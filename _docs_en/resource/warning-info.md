@@ -55,29 +55,20 @@ Weather warnings are not available for all cities, we will continue to expand th
 
 You can use `warning.endTime` to estimate when a warning message will expire, or when you can no longer get a warning message with the same ID as the previous one, which means that the warning has expired.
 
-## Level (Severity)
+## Level (deprecated) 
 
-Every country and region may have its own definitions or protocols for weather warning levels(severity) and not all warning messages have every level, for example, haze warnings are only available in Yellow(Moderate) and Orange(Severe).
+`warning.level` represents the level of the warning information.
 
-#### Color
+> **Warning:** This field is currently deprecated, replaced with [severity](/en/docs/resource/warning-info/#severity) and [severity color](/en/docs/resource/warning-info/#severity-color).
+{:.bqwarning}
 
-For some countries and regions, weather warning levels are usually defined by colors. For mainland China, White (Guangdong Province only), Blue, Yellow, Orange and Red are used. For Hong Kong(SAR China), Yellow, Red and Black are used. For Macau(SAR China), Blue, Yellow, Orange, Red and Black are used. For Russia, White, Green, Yellow, Orange and Red are uesed. For India and European region, Green, Yellow, Orange and Red are available.
+## Severity
 
-In general, the darker the color, the higher the severity of the warning. Currently available colors include:
+`warning.severity` indicates the intensity of the impact caused by the warning event.
 
-- White 
-- Blue 
-- Green 
-- Yellow 
-- Orange 
-- Red
-- Black
+Every country and region may have its own definitions or protocols for warning severity. For Kuwait, Minor, Moderate, Severe and Extreme are used. For Brazil, Moderate, Severe and Extreme are applied. For South Africa, Minor, Moderate, Extreme and Unknown are applied. For Australia, Cancel, None, Unknown, Standard, Minor, Moderate, Major, Severe and Extreme are applied. For other countries and regions, Unknown, Minor, Moderate, Severe and Extreme are available.
 
-#### Text
-
-For some countries and regions, weather warning levels are usually defined by text. For Kuwait, Minor, Moderate, Severe and Extreme are used. For Brazil, Moderate, Severe and Extreme are applied. For South Africa, Minor, Moderate, Extreme and Unknown are applied. For Australia, Cancel, None, Unknown, Standard, Minor, Moderate, Major, Severe and Extreme are applied. For other countries and regions, Unknown, Minor, Moderate, Severe and Extreme are available.
-
-Currently available text includes:
+Currently available severity includes:
 
 - Cancel
 - None
@@ -89,21 +80,25 @@ Currently available text includes:
 - Severe
 - Extreme
 
-#### Color vs Text
+## Severity color
 
-Both color and text can indicate the severity of the warning message, and generally they can be mapped to each other(it is not a rule or standard, just our practice):
+Some countries and regions prefer to define the [severity](/en/docs/resource/warning-info/#severity) by color, and we will provide the preferred color for the severity according to the local practice.
 
-| Color  | Text     |
-| ------ | -------- |
-| White  | Unknown  |
-| Blue   | Minor    |
-| Yellow | Moderate |
-| Orange | Severe   |
-| Red    | Extreme  |
+> **Note:** May be null if there is no local preferred color.
+
+Currently available colors are:
+
+- White 
+- Blue 
+- Green 
+- Yellow 
+- Orange 
+- Red
+- Black
 
 ## Urgency
 
-> **Urgency** is not available in some countries and regions, or does not have the same value as listed below
+> **Note:** `warning.urgency` is not available in some countries and regions, or does not have the same value as listed below
 
 `warning.urgency` denotes the urgency of the warning message, including:
 
@@ -115,7 +110,7 @@ Both color and text can indicate the severity of the warning message, and genera
 
 ## Certainty
 
-> **Certainty** is not available in some countries and regions, or does not have the same value as listed below
+> **Note:** `warning.certainty` is not available in some countries and regions, or does not have the same value as listed below
 
 `warning.certainty` denotes the certainty or confidence level of the warning messages, including:
 
@@ -131,7 +126,7 @@ QWeather provides over 100 warning types based on definitions from official mete
 
 We also provide warning icons, please go to [QWeather Icons](https://icons.qweather.com/en/).
 
-> As of January 1, 2022, the API will use Type instead of Type (deprecated) return, so please update it.
+> **Warning:** As of January 1, 2022, the API will use Type instead of Type (deprecated) return, so please update it.
 {:.bqwarning}
 
 <table>

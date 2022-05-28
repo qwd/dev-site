@@ -796,9 +796,9 @@ warning:
   - name: severityColor
     desc:
       zh: |-
-       [预警严重等级颜色](/docs/resource/warning-info/#severity-color)
+       [预警严重等级颜色](/docs/resource/warning-info/#severity-color)，**可能为空**
       en: |-
-       [Preferred color for severity](/en/docs/resource/warning-info/#severity-color)
+       [Preferred color for severity](/en/docs/resource/warning-info/#severity-color), **may be null**
     example: Yellow
     type: [warning]
   - name: type

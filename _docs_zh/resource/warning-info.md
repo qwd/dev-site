@@ -126,7 +126,7 @@ ref: 9-res-warning
 
 我们提供了下列预警类型的图标，请参考[和风天气图标](https://icons.qweather.com/)。
 
-> Type（弃用）版将在2021年12月31日不再返回，而采用新的Type名称，请及时更新。
+> **警告：**Type（弃用）版将在2021年12月31日不再返回，而采用新的Type名称，请及时更新。
 {:.bqwarning}
 
 <table>
