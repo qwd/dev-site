@@ -34,8 +34,6 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 
 {% include api-response.html group="warning" type="warning" prefix="warning" %}
 
-### More Warning Resource
+### See also
 
-- [Supported Countries and Regions](/en/docs/resource/warning-info/#supported-regions)
-- [Warning Level](/en/docs/resource/warning-info/#level-severity)
-- [Warning Type](/en/docs/resource/warning-info/#warning-type)
+- [Warning Information](/en/docs/resource/warning-info/)
