@@ -33,8 +33,6 @@ ref: 1-api-weather-warning
 
 {% include api-response.html group="warning" type="warning" prefix="warning" %}
 
-### 更多预警资料
+### 另请参考
 
-- [预警支持的国家和地区](/docs/resource/warning-info/#supported-regions)
-- [预警等级](/docs/resource/warning-info/#level-severity)
-- [预警类型](/docs/resource/warning-info/#warning-type)
+- [天气预警信息](/docs/resource/warning-info/)
