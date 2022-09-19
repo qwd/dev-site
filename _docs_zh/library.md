@@ -52,6 +52,10 @@ ref: 0-library-homepage
 - [Météo 天气 @Venthan](https://github.com/Venthanx/Weather) a MBE style weather web based on VUE
 - [基于和风天气api和vue.js @ruiruiruiruirain](https://github.com/ruiruiruiruirain/myweather) 基于和风天气api和vue.js 
 
+## Kotlin
+
+- [夏风天气 @Vast Gui](https://github.com/SakurajimaMaii/XiaFengWeather) 一款基于MVVM架构开发的天气应用，提供近十天天气预报，空气质量查看以及城市搜索等功能。
+
 ## Objective-C
 
 - [iOS SDK](/docs/ios-sdk/) **官方**{:.label .official}

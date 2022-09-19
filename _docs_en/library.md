@@ -53,6 +53,10 @@ You just need to:
 - [Météo weather @Venthan](https://github.com/Venthanx/Weather) a MBE style weather web based on VUE
 - [基于和风天气api和vue.js @ruiruiruiruirain](https://github.com/ruiruiruiruirain/myweather) Based on QWeather API and vue.js
 
+## Kotlin
+
+- [夏风天气 @Vast Gui](https://github.com/SakurajimaMaii/XiaFengWeather) Weather app based on MVVM, providing the last ten days weather forecast, air quality and city search functions.
+
 ## Objective-C
 
 - [iOS SDK](/en/docs/ios-sdk/) **Official**{:.label .official}
