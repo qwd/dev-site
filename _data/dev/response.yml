@@ -15,9 +15,9 @@ update:
   name: updateTime
   desc:
     zh: >-
-      当前[API的最近更新时间](/docs/resource/glossary#update-time)
+      当前[API的最近更新时间](/docs/resource/glossary/#update-time)
     en: >-
-      [API last update time](/en/docs/resource/glossary#update-time)
+      [API last update time](/en/docs/resource/glossary/#update-time)
   example: 2013-12-30T01:45+08:00
 fxlink:
   name: fxLink
@@ -422,14 +422,14 @@ geo:
     type: [location, topcity]
   - name: tz
     desc:
-      zh: 地区/城市所在[时区](/docs/resource/glossary#timezone)
-      en: Location [timezone](/en/docs/resource/glossary#timezone)
+      zh: 地区/城市所在[时区](/docs/resource/glossary/#timezone)
+      en: Location [timezone](/en/docs/resource/glossary/#timezone)
     example: Asia/Shanghai
     type: [location, topcity]
   - name: utcOffset
     desc:
-      zh: 地区/城市目前与UTC时间偏移的小时数，参考[详细说明](/docs/resource/glossary#utc-offset)
-      en: The number of hours offset between local time and UTC time, refer to [UTC Offset](/en/docs/resource/glossary#utc-offset)
+      zh: 地区/城市目前与UTC时间偏移的小时数，参考[详细说明](/docs/resource/glossary/#utc-offset)
+      en: The number of hours offset between local time and UTC time, refer to [UTC Offset](/en/docs/resource/glossary/#utc-offset)
     example: +08:00
     type: [location, topcity]
   - name: isDst
@@ -449,9 +449,9 @@ geo:
   - name: rank
     desc:
       zh: >-
-        [地区评分](/docs/resource/glossary#rank)
+        [地区评分](/docs/resource/glossary/#rank)
       en: >-
-        [Location Rank](/en/docs/resource/glossary#rank)
+        [Location Rank](/en/docs/resource/glossary/#rank)
     example: city
     type: [location, topcity]
   - name: fxLink
@@ -505,14 +505,14 @@ geo_poi:
     type: [poi]
   - name: tz
     desc:
-      zh: POI（兴趣点）所在[时区](/docs/resource/glossary#timezone)
-      en: POI [timezone](/en/docs/resource/glossary#timezone)
+      zh: POI（兴趣点）所在[时区](/docs/resource/glossary/#timezone)
+      en: POI [timezone](/en/docs/resource/glossary/#timezone)
     example: Asia/Shanghai
     type: [poi]
   - name: utcOffset
     desc:
-      zh: POI（兴趣点）目前与UTC时间偏移的小时数，参考[详细说明](/docs/resource/glossary#utc-offset)
-      en: The number of hours offset between local time and UTC time, refer to [UTC Offset](/en/docs/resource/glossary#utc-offset)
+      zh: POI（兴趣点）目前与UTC时间偏移的小时数，参考[详细说明](/docs/resource/glossary/#utc-offset)
+      en: The number of hours offset between local time and UTC time, refer to [UTC Offset](/en/docs/resource/glossary/#utc-offset)
     example: +08:00
     type: [poi]
   - name: isDst
@@ -532,9 +532,9 @@ geo_poi:
   - name: rank
     desc:
       zh: >-
-        [地区评分](/docs/resource/glossary#rank)
+        [地区评分](/docs/resource/glossary/#rank)
       en: >-
-        [POI Rank](/en/docs/resource/glossary#rank)
+        [POI Rank](/en/docs/resource/glossary/#rank)
     example: 2
     type: [poi]
   - name: fxLink

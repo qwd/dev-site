@@ -8,7 +8,7 @@ ref: 1-sdk-android-weather-warning
 
 > 使用天气预警API，你需要了解更多[预警信息](/docs/resource/warning-info/)。
 
-> 你也可以先通过[天气预警城市列表API](/docs/android-sdk/warning/weather-warning-city-list/)获取到指定国家或地区当前发生预警的所有城市列表。
+> 你也可以先通过[天气预警城市列表API](/docs/android-sdk/warning/android-weather-warning-city-list/)获取到指定国家或地区当前发生预警的所有城市列表。
 
 | 接口代码| 接口说明        | 数据类      |
 | ------------ | ---------- | ----------- |

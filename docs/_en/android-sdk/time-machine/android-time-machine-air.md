@@ -49,7 +49,7 @@ Properties of HistoricalAirBean
 
 | Property | Description | Example |
 | ------------- | ------------------------ | -------------------- |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time) | 2017-10-25T04:34+08:00 |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
 
 **AirHourlyBean historical day by hour air quality data**

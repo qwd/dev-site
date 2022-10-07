@@ -6,9 +6,9 @@ ref: 2-sdk-android-warning-city-list
 
 获取指定国家或地区当前正在发生预警的城市列表。你可以通过这个列表快速的了解到当前国家或地区都有哪些地方正在发生天气预警。
 
-根据这些城市列表再查询详细的[预警数据](/docs/android-sdk/warning/weather-warning/)。
+根据这些城市列表再查询详细的[预警数据](/docs/android-sdk/warning/android-weather-warning/)。
 
-> 关于天气预警数据的更多信息，可以参考[实用资料-预警信息](/docs/resources/warning-info/)。
+> 关于天气预警数据的更多信息，可以参考[实用资料-预警信息](/docs/resource/warning-info/)。
 
 | 接口代码| 接口说明                | 数据类          |
 | ---------------- | -------------- | --------------- |

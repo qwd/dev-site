@@ -18,5 +18,5 @@ By `code` in the API/SDK, you can get the status of the current request and dete
 | 402 | The requests has been exceeded or the balance is insufficient to support continued access to the service. You can recharge, or wait for the calls to reset. |
 | 403 | No access permission, it may be because the PackageName or BundleID are inconsistent, or data that requires additional payment. |
 |404| The queried data or region does not exist. |
-| 429 | Exceeding the limited QPM, please refer to [QPM](/en/docs/resource/glossary#qpm) |
+| 429 | Exceeding the limited QPM, please refer to [QPM](/en/docs/resource/glossary/#qpm) |
 | 500 | No response or timeout, service down, please [contact us](https://www.qweather.com/en/contact) |

@@ -36,7 +36,7 @@ Properties of CurrentsBean
 
 | Property           | Description         | Example             |
 | -------------- | ------------ | ------------------ |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time)  | 2017-10-25T04:34+08:00      |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time)  | 2017-10-25T04:34+08:00      |
 | getFxLink |Responsive web page of this data, for embedded in website or APP  | http://hfx.link/1 |
 
 **Refer**

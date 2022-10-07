@@ -24,9 +24,9 @@ layout: html
                 {% assign arranged_works = showcase.works | sort: 'name' -%}
                 {% for work in arranged_works %}
                 <div class="works-item ml-3 mb-4">
-                    <a class="work-name d-inline-block mb-2" href="{{ work.repo }}" target="_blank" rel="noopener noreferrer">{{ work.name }}</a>
+                    <a class="work-name d-inline-block mb-2" href="{{ work.code }}" target="_blank" rel="noopener noreferrer">{{ work.name }}</a>
                     <div class="work-meta d-flex mb-2">
-                        <a class="d-block btn-link btn-link-sm btn-link-purple mr-2" href="{{ work.website | default: work.repo }}" target="_blank" rel="noopener noreferrer">@{{ work.author }}</a>
+                        <a class="d-block btn-link btn-link-sm btn-link-purple mr-2" href="{{ work.website | default: work.code }}" target="_blank" rel="noopener noreferrer">@{{ work.author }}</a>
                         {%- if work.screenshot or work.screenshot != nil -%}
                         <a class="d-block btn-link btn-link-sm btn-link-pink" href="{{ work.screenshot }}" target="_blank" rel="noopener noreferrer">{{ site.data.t[page.lang].screenshot }}</a>
                         {%- endif %}

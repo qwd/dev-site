@@ -6,7 +6,7 @@ ref: 2-sdk-android-weather-warning-city-list
 
 Get a list of cities for the specified country or region where weather warnings are currently in effect.
 
-See also [Weather warning Android SDK](/en/docs/android-sdk/warning/weather-warning/) to get warning details.
+See also [Weather warning Android SDK](/en/docs/android-sdk/warning/android-weather-warning/) to get warning details.
 
 > For more warning information, see [Warning Info](/en/docs/resource/warning-info/).
 
@@ -35,7 +35,7 @@ Properties of WarningListBean
 | Property | Description | Example |
 | -------------- | ------------ | --------------------- ------ |
 | getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary#update-time) | 2017-10-25T12:34+08:00 |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T12:34+08:00 |
 | getWarningBean | Weather warning | List&lt;WarningListBean&gt; |
 
 **WarningListBeanBase Warning Information**

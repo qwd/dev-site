@@ -5,7 +5,7 @@ description: QWeather supports weather warning services for many countries and r
 ref: res-warning
 ---
 
-QWeather supports weather warning services([API](/en/docs/api/warning/), [iOS SDK](/en/docs/ios-sdk/ios-warning/), [Android SDK](/en/docs/android-sdk/android-warning/)) for many countries or regions around the world. You can find more descriptions of these warnings here, such as the list of supported countries and regions, warning levels and warning types.
+QWeather supports weather warning services([API](/en/docs/api/warning/), [iOS SDK](/en/docs/ios-sdk/warning/ios-weather-warning/), [Android SDK](/en/docs/android-sdk/warning/android-weather-warning/)) for many countries or regions around the world. You can find more descriptions of these warnings here, such as the list of supported countries and regions, warning levels and warning types.
 
 > All warning level, type, urgency and other fields are possible to change, including add/modify/delete. We may not be able to give advance notice of these changes, **so you have to make your code more compatible to avoid errors when they happen.**
 >

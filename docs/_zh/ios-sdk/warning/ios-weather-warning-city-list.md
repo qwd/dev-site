@@ -8,7 +8,7 @@ ref: 2-sdk-ios-weather-warning-city-list
 
 根据这些城市列表再查询详细的[预警数据](/docs/api/warning/weather-warning/)。
 
-> 关于天气预警数据的更多信息，可以参考[实用资料-预警信息](/docs/resources/warning-info/)。
+> 关于天气预警数据的更多信息，可以参考[实用资料-预警信息](/docs/resource/warning-info/)。
 
 | 接口代码（枚举）         | 接口             | 数据类           |
 | ------------------------ | ---------------- | ---------------- |

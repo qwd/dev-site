@@ -44,5 +44,5 @@ QWeather.getSun(Context context, String location, Lang lang, String date, final 
 
 | 属性          | 说明                     | 示例值               |
 | ------------- | ------------------------ | -------------------- |
-| getUpdateTime | [数据最近更新时间](/docs/resource/glossary#update-time)             | 2017-10-25T04:34+08:00   |
+| getUpdateTime | [数据最近更新时间](/docs/resource/glossary/#update-time)             | 2017-10-25T04:34+08:00   |
 | getFxLink     | 当前数据的响应式页面，便于嵌入网站或应用 | http://hfx.link/ae45 |

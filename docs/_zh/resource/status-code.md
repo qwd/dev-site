@@ -18,7 +18,7 @@ ref: res-status-code
 | 402   | 超过访问次数或余额不足以支持继续访问服务，你可以充值、升级访问量或等待访问量重置。 |
 | 403  | 无访问权限，可能是绑定的PackageName、BundleID、域名IP地址不一致，或者是需要额外付费的数据。        |
 |404| 查询的数据或地区不存在。  |
-| 429   | 超过限定的QPM（每分钟访问次数），请参考[QPM说明](/docs/resource/glossary#qpm)   |
+| 429   | 超过限定的QPM（每分钟访问次数），请参考[QPM说明](/docs/resource/glossary/#qpm)   |
 | 500  | 无响应或超时，接口服务异常请[联系我们](https://www.qweather.com/contact)                                                                             |
 
-最新的状态码与S6版本API不兼容，请参考[S6版本的状态码](/docs/legacy/api/s6#status-code)
+最新的状态码与S6版本API不兼容，请参考[S6版本的状态码](/docs/legacy/api/s6/#status-code)

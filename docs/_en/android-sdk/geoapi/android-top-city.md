@@ -54,9 +54,9 @@ Properties of GeoBean
 | getAdm2 | Name of the superior administrative division of the location | Ulan Qab |
 | getAdm1 | The first-level administrative region of the location | Inner Mongolia |
 | getCountry | Country name of the location | China |
-| getTz | Location [Timezone](/en/docs/resource/glossary#timezone) | Asia/Shanghai |
-| getUtcOffset | The number of hours offset between local time and UTC time, refer to [UTC-Offset](/en/docs/resource/glossary#utc-offset) | +08:00 |
+| getTz | Location [Timezone](/en/docs/resource/glossary/#timezone) | Asia/Shanghai |
+| getUtcOffset | The number of hours offset between local time and UTC time, refer to [UTC-Offset](/en/docs/resource/glossary/#utc-offset) | +08:00 |
 | getIsDst | Is the location currently observing Daylight Saving time<br />`1` in daylight saving time <br /> `0` not in daylight saving time | 0 |
 | getType | Type of the location | city |
-| getRank | [Location Rank](/en/docs/resource/glossary#rank) | 10 |
+| getRank | [Location Rank](/en/docs/resource/glossary/#rank) | 10 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
