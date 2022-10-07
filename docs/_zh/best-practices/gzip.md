@@ -12,7 +12,7 @@ ref: bp-gzip
 
 ## C#
 
-<https://docs.microsoft.com/zh-cn/dotnet/api/system.io.compression.gzipstream?view=net-6.0>
+<https://learn.microsoft.com/zh-cn/dotnet/api/system.io.compression.gzipstream?view=net-6.0>
 
 ## Dart
 

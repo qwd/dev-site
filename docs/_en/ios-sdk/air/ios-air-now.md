@@ -1,7 +1,7 @@
 ---
 title: Real-time Air Quality
 tag: [guide, ios, air, now]
-ref: 6-sdk-ios-air
+ref: 1-sdk-ios-air-now
 ---
 
 Real-time air quality for Chinese cities and 1,700 monitoring stations, including AQI, air quality levels, primary pollutants, PM10, PM2.5, ozone, nitrogen dioxide sulfur dioxide and carbon monoxide values.

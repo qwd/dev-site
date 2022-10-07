@@ -12,7 +12,7 @@ Here is the official documentation for processing Gzip in various languages.
 
 ## C#
 
-<https://docs.microsoft.com/en-us/dotnet/api/system.io.compression.gzipstream?view=net-6.0>
+<https://learn.microsoft.com/en-us/dotnet/api/system.io.compression.gzipstream?view=net-6.0>
 
 ## Dart
 

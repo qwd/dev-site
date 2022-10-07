@@ -1,7 +1,7 @@
 ---
 title: Minutely Precipitation
 tag: [guide, android, minutely, precip]
-ref: 1-android-weather-minutely
+ref: 1-sdk-android-minutely-precip
 ---
 
 Get minute-level precipitation forecast data every 5 minutes for the next 2 hours in China.

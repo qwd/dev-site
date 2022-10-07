@@ -1,7 +1,7 @@
 ---
 title: Currents
 tag: [guide, ios, ocean, currents]
-ref: 9-sdk-ios-currents
+ref: 2-sdk-ios-ocean-currents
 ---
 
 Global currents data for the next 10 days, including currents speed and direction.

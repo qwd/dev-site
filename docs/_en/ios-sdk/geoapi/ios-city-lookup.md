@@ -1,7 +1,7 @@
 ---
 title: City Lookup
 tag: [guide, ios, geo, city-lookup]
-ref: 2-sdk-ios-geo-city-lookup
+ref: 1-sdk-ios-geo-city-lookup
 ---
 
 City Lookup provides reverse geocoding, geolocation lookup services, supports multi-language, fuzzy search and other functions.

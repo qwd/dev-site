@@ -1,7 +1,7 @@
 ---
 title: 逐小时天气预报
 tag: [guide, ios, weather, hourly]
-ref: 3-sdk-ios-weather-hourly
+ref: 3-sdk-ios-weather-hourly-forecast
 ---
 
 逐小时天气预报API，提供全球城市未来24-168小时逐小时天气预报，包括：温度、天气状况、风力、风速、风向、相对湿度、大气压强、降水概率、露点温度、云量。

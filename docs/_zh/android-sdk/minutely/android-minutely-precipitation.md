@@ -1,7 +1,7 @@
 ---
 title: 分钟级降水
 tag: [guide, android, minutely, precip]
-ref: 1-android-minutely-precipitation
+ref: 1-sdk-android-minutely-precip
 ---
 
 分钟级降水Android SDK（临近预报）支持中国1公里精度的未来2小时每5分钟降雨预报数据。

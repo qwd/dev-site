@@ -1,7 +1,7 @@
 ---
 title: 实时天气
 tag: [guide, android, weather, now]
-ref: 1-android-weather-now
+ref: 1-sdk-android-weather-now
 ---
 
 实时天气数据，支持中国3000+市县区和海外20万个城市实时天气数据，包括实时温度、体感温度、风力风向、相对湿度、大气压强、降水量、能见度、露点温度、云量等。

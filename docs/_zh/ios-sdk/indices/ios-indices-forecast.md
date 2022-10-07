@@ -1,5 +1,5 @@
 ---
-title: 天气生活指数
+title: 天气指数预报
 tag: [guide, ios, indices, forecast]
 ref: 1-sdk-ios-indices-forecast
 ---

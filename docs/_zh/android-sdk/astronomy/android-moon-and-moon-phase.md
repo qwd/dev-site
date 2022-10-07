@@ -1,7 +1,7 @@
 ---
 title: 月升月落和月相
 tag: [guide, android, astronomy, moon]
-ref: 2-sdk-android-astronomy
+ref: 2-sdk-android-moon
 ---
 
 获取未来60天全球城市月升月落和逐小时的月相数据。

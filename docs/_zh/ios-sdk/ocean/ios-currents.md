@@ -1,7 +1,7 @@
 ---
 title: 潮流
 tag: [guide, ios, ocean, currents]
-ref: 9-sdk-ios-ocean-currents
+ref: 2-sdk-ios-ocean-currents
 ---
 
 未来10天全球潮流数据，包括潮流流速和流向。

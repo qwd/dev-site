@@ -2,7 +2,7 @@
 title: Top City
 tag: [guide, ios, geo, top-city]
 description: Get a list of popular cities around the world.
-ref: 2-sdk-ios-geo
+ref: 2-sdk-ios-geo-top
 ---
 
 Get a list of popular cities around the world.

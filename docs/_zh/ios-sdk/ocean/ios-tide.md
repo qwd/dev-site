@@ -1,7 +1,7 @@
 ---
 title: 潮汐
 tag: [guide, ios, ocean, tide]
-ref: 9-sdk-ios-ocean-tide
+ref: 1-sdk-ios-tide
 ---
 
 未来10天全球潮汐数据，包括满潮、干潮高度和时间，逐小时潮汐数据。

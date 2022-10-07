@@ -1,7 +1,7 @@
 ---
 title: Minutely Precipitation
 tag: [guide, ios, minutely, precip]
-ref: 1-ios-weather-minutely
+ref: 1-sdk-ios-minutely-precip
 ---
 
 Get minute-level precipitation forecast data every 5 minutes for the next 2 hours in China.

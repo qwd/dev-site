@@ -1,7 +1,7 @@
 ---
 title: 分钟级降水
 tag: [guide, ios, minutely, precip]
-ref: 1-ios-minutely-precipitation
+ref: 1-sdk-ios-minutely-precip
 ---
 
 分钟级降水提供中国地区未来2小时内每5分钟降水数据、降水类型以及未来2小时的降水概况信息。

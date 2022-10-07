@@ -1,7 +1,7 @@
 ---
 title: Sunrise and Sunset
 tag: [guide, ios, astronomy, sun]
-ref: 8-sdk-ios-sun
+ref: 1-sdk-ios-sun
 ---
 
 Get the sunrise and sunset times for any location around the world for the next 60 days.
