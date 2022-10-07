@@ -1,0 +1,5 @@
+{% assign variable = site.documents | where: "lang", page.lang | where: "tag", page.tag[2] | where: "tag", page.tag[3] | sort: "weight"  %}
+<span class="mr-2 mr-md-3 d-inline-block">{{ site.data.t[page.lang].platform }}:</span>
+{% for item in variable %}
+<a class="d-inline-block px-2 py-1 mr-2 mr-md-3 border-r10 no-underline border-blue-link {% if item.tag[1] == page.tag[1] %}active{% endif %}" href={{ item.url }}>{{ item.tag[1] | replace: 'api', 'API' | replace: 'ios', 'iOS' | replace: 'android', 'Android' }}</a>
+{% endfor %}

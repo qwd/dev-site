@@ -25,12 +25,10 @@
     <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml?{{ site.data.v.favicon }}">
     <meta name="theme-color" content="#1a2226">
     <!-- main style -->
-    <link rel="preload" href="/assets/css/style.css?{{ site.data.v.style }}" as="style" />
-    <link rel="stylesheet" href="/assets/css/style.css?{{ site.data.v.style }}" />
+    <link rel="preload" href="/assets/css/style.css?{{ site.time | date: "%s" }}" as="style" />
+    <link rel="stylesheet" href="/assets/css/style.css?{{ site.time | date: "%s" }}" />
     <!--[if lt IE 9]>
-    <script src="/assets/js/html5shiv.min.js" type="text/javascript"></script>
-    <script src="/assets/js/respond.min.js" type="text/javascript"></script>
-    <script src="/assets/js/rem.js" type="text/javascript"></script>
+    <meta http-equiv="refresh" content="0; url=https://dev.qweather.com/upgrade-browser/">
     <![endif]-->
     <!-- webmaster_verifications -->
     <meta name="google-site-verification" content="{{ site.webmaster_verifications.google }}" />
@@ -40,11 +38,10 @@
 </head>
 <body>
     {% include main-nav.html %}
-    {% if page.layout == "docs" %}
-    {% include doc-bc.html %}
+    {% if page.ref != "docs-home" and page.collection == "zh" or page.collection == "en"  %}
+    {% include docs-bc.html %}
     {% endif %}
     {{ content }}
     {% include footer.html %}
 </body>
-
 </html>

@@ -1,0 +1,26 @@
+.docs-home {
+  .start {
+    background-color: $color-link;
+    min-height: 300px;
+  }
+  .start, .resource {
+    ul {
+      columns: 2;
+    }
+  }
+  .bp, .resource {
+    background-color: $color-fa;
+    min-height: 300px;
+  }
+  .help {
+    background-color: #7482A9;
+    min-height: 300px;
+  }
+  .lib {
+    background-color: $color-purple;
+    min-height: 300px;
+  }
+  .data {
+    background-color: $color-fa;
+  }
+}

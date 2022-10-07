@@ -1,0 +1,39 @@
+{%- for section in site.data.contents.reference_docs -%}
+<div class="nav-section start mb-2 pb-2">
+    {%- assign overview = site.documents | where: "lang", page.lang | where: "ref", section.overview  | first -%}
+    <h4 class="mb-2"><a class="dark-link" href="{{ overview.url }}">{{ overview.title }}</a></h4>
+    <ul class="clear-list">
+        {%- for item in section.list -%}
+        {%- assign docs = site.documents | where: "lang", page.lang | where: "ref", item.name | first -%}
+        <li class="mb-1 {% if docs.url == page.url %}active{% endif %}">
+            <a class="grey-link px-2" href="{{ docs.url }}">{{ docs.title }}</a>
+            {%- if page.tag.last != "overview" and item.sub and page.tag[0] == docs.tag[0]  -%}
+            <div class="sub-nav ml-2 mt-1 pl-2">
+                <ul class="clear-list">
+                    {%- for subitem in item.sub -%}
+                    {%- assign subdocs = site.documents | where: "lang", page.lang  | where: "ref", subitem.subname   | first -%}
+                    <li class="mb-1 {% if subdocs.url == page.url %}active{% endif %}">
+                        <a class="dark-link px-2" href="{{ subdocs.url  }}">{{ subdocs.title }}</a>
+                    </li>
+                    {%- endfor -%}
+                </ul>
+            </div>
+            {%- endif -%}
+            {% if page.tag.first == "guide" and page.tag[3] != "overview" and page.tag[2] == docs.tag[2]  %}
+            <div class="sub-nav ml-2 mt-1 pl-2">
+                <ul class="clear-list">
+                    {%- for subitem in item.data -%}
+                    {%- assign subdocs = site.documents | where: "lang", page.lang  | where_exp: "platform", "platform.tag[1] == page.tag[1]" | where_exp: "data", "data.tag[2] == page.tag[2]" | where_exp: "type", "type.tag[3] == subitem.type"   | first -%}
+                    <li class="mb-1 {% if subdocs.url == page.url %}active{% endif %}">
+                        <a class="dark-link px-2" href="{{ subdocs.url  }}">{{ subdocs.title }}</a>
+                    </li>
+                    {%- endfor -%}
+                </ul>
+            </div>
+            {%- endif -%}
+        </li>
+        {%- endfor -%}
+    </ul>
+</div>
+{%- endfor -%}
+

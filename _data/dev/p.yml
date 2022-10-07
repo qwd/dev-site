@@ -1,0 +1,352 @@
+# name: name of parameter
+# text: description of parameter, need Chinese and English version
+# rqd: whether this parameter is required, if not, leave it blank or set to false
+
+key:
+  name: key
+  text:
+    zh: |-
+     用户认证key，请参考[如何获取你的KEY](/docs/configuration/project-and-key/)。支持[数字签名](/docs/resource/signature-auth/)方式进行认证。例如 `key=123456789ABC`
+    en: |-
+     API authentication key, please refer to [How To Get Your Key](/en/docs/configuration/project-and-key/). Support [Signature Authentication](/en/docs/resource/signature-auth/). Example: `key=12334567890ABC` 
+  rqd: true
+key-ios:
+  name: appKey
+  text:
+    zh: |-
+     用户认证key，请参考[如何获取你的KEY](/docs/configuration/project-and-key/)。例如 `appKey=123456789ABC`
+    en: |-
+     API authentication key, please refer to [How To Get Your Key](/en/docs/configuration/project-and-key/). 
+
+     For example: `appKey=12334567890ABC` 
+  rqd: true
+location: 
+  name: location
+  text: 
+    zh: 需要查询地区的[LocationID](/docs/resource/glossary#locationid)或以英文逗号分隔的[经度,纬度坐标](/docs/resource/glossary#coordinate)（十进制，最多支持小数点后两位），LocationID可通过[城市搜索](/docs/api/geo/)服务获取。例如 `location=101010100` 或 `location=116.41,39.92`
+    en: |-
+     The location to be queried, support [LocationID](/en/docs/resource/glossary#locationid) or comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate) (decimal, up to 2 decimal places), LocationID can be obtained by [GeoAPI](/en/docs/api/geo/). Example: `location=101010100` or `location=116.41,39.92`
+  rqd: true
+location-geo: 
+  name: location
+  text: 
+    zh: 需要查询地区的名称，支持文字、以英文逗号分隔的[经度,纬度坐标](/docs/resource/glossary#coordinate)（十进制，最多支持小数点后两位）、[LocationID](/docs/resource/glossary#locationid)或[Adcode](/docs/resource/glossary/#adcode)（仅限中国城市）。例如 `location=北京` 或 `location=116.41,39.92`
+    en: |-
+     The location to be queried, support text, [LocationID](/en/docs/resource/glossary#locationid), comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate) (decimal, up to 2 decimal places), [Adcode](/docs/resource/glossary/#adcode)(Chinese cities only). 
+     
+     For example: `location=beijing` or `location=116.41,39.92`
+  rqd: true
+location-coord:
+  name: location
+  text: 
+    zh: 需要查询地区的以英文逗号分隔的[经度,纬度坐标](/docs/resource/glossary#coordinate)（十进制，最多支持小数点后两位）。例如 `location=116.41,39.92`
+    en: |-
+     The comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate) (decimal, up to 2 decimal places) of the location to be queried.
+
+     For example: `location=116.41,39.92`
+  rqd: true
+location-id: 
+  name: location
+  text: 
+    zh: |-
+     需要查询的地区，仅支持[LocationID](/docs/resource/glossary#locationid)，LocationID可通过[城市搜索服务](/docs/api/geo/)获取。例如 `location=101010100`
+    en: |-
+     The location to be queried, only support [LocationID](/en/docs/resource/glossary#locationid) and LocationID can be obtained by [GeoAPI](/en/docs/api/geo/). 
+     
+     For example: `location=101010100`
+  rqd: true
+location-p6: 
+  name: location
+  text: 
+    zh: |-
+     需要查询的潮流站点，请填写潮流站点的[LocationID](/docs/resource/glossary#locationid)，LocationID可通过[POI搜索服务](/docs/api/geo/poi-lookup/)获取。例如 `location=P66981`
+    en: |-
+     The currents station to be queried, need [LocationID](/en/docs/resource/glossary#locationid) and LocationID can be obtained by [POI Lookup](/en/docs/api/geo/poi-lookup/). 
+     
+     For example: `location=P66981`
+  rqd: true
+location-p2: 
+  name: location
+  text: 
+    zh: |-
+     需要查询的潮汐站点，请填写潮汐站点的[LocationID](/docs/resource/glossary#locationid)，LocationID可通过[POI搜索服务](/docs/api/geo/poi-lookup/)获取。例如 `location=P2951`
+    en: |-
+     The tide station to be queried, need [LocationID](/en/docs/resource/glossary#locationid) and LocationID can be obtained by [POI Lookup](/en/docs/api/geo/poi-lookup/). 
+     
+     For example: `location=P2951`
+  rqd: true
+location-android:
+  rqd: true
+  name: location
+  text: 
+    zh: |-
+     需要查询地区的[LocationID](/docs/resource/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/resource/glossary#coordinate)（十进制，最多支持小数点后两位），LocationID可通过[GeoAPI](/docs/android-sdk/android-geo/)服务获取。例如： `location=101010100` 或 `location=116.41,39.92`
+    en: |-
+     The city to be queried, support [LocationID](/en/docs/resource/glossary#locationid) or comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate) (decimal, up to 2 decimal places), LocationID can be obtained by [GeoAPI](/en/docs/android-sdk/android-geo/). 
+location-ios:
+  rqd: true
+  name: location
+  text: 
+    zh: |-
+     需要查询地区的[LocationID](/docs/resource/glossary#locationid)或以逗号分隔的[经度/纬度坐标](/docs/resource/glossary#coordinate)（十进制，最多支持小数点后两位），LocationID可通过[GeoAPI](/docs/ios-sdk/ios-geo/)服务获取。例如： `location=101010100` 或 `location=116.41,39.92`
+    en: |-
+     The city to be queried, support [LocationID](/en/docs/resource/glossary#locationid) or  comma-separated [longitude and latitude](/en/docs/resource/glossary#coordinate) (decimal, up to 2 decimal places), LocationID can be obtained by [GeoAPI](/en/docs/ios-sdk/ios-geo/). 
+location-id-android: 
+  name: location
+  text: 
+    zh: |-
+     需要查询的地区，仅支持[LocationID](/docs/resource/glossary#locationid)，LocationID可通过[城市搜索服务](/docs/android-sdk/android-geo/)获取。例如 `location=101010100`
+    en: |-
+     The location to be queried, only support [LocationID](/en/docs/resource/glossary#locationid) and LocationID can be obtained by [GeoAPI](/en/docs/android-sdk/android-geo/). 
+     
+     For example: `location=101010100`
+  rqd: true
+location-id-ios: 
+  name: location
+  text: 
+    zh: |-
+     需要查询的地区，仅支持[LocationID](/docs/resource/glossary#locationid)，LocationID可通过[城市搜索服务](/docs/ios-sdk/ios-geo/)获取。例如 `location=101010100`
+    en: |-
+     The location to be queried, only support [LocationID](/en/docs/resource/glossary#locationid) and LocationID can be obtained by [GeoAPI](/en/docs/ios-sdk/ios-geo/). 
+     
+     For example: `location=101010100`
+  rqd: true
+gzip: 
+  name: gzip
+  text:
+    zh: |
+     对API接口进行压缩，可以极大的减少API接口访问延迟，减少缓存空间，提高接口连接成功率。**默认开启gzip**
+     - `y` 使用gzip方式压缩，默认
+     - `n` 不使用压缩
+    en: |
+     Enable Gzip can greatly reduce the latency of API access, save network traffic.
+     - <code>y</code> enable gzip, **default**
+     - <code>n</code> disable gzip
+lang: 
+  name: lang
+  text: 
+    en: |
+     Multi-language setting, see [language code](/en/docs/resource/language/) for available value. If data does not match the language you set, it will return results in English or its native language. 
+    zh: |
+     多语言设置，更多语言可选值参考[语言代码](/docs/resource/language/)。当数据不匹配你设置的语言时，将返回英文或其本地语言结果。
+lang-zhen: 
+  name: lang
+  text: 
+    en: |
+     Multi-language settings, only support Chinese and English for this data. The available value are `lang=zh` and `lang=en`
+    zh: |
+     多语言设置，本数据**仅支持中文和英文**，可选值是`lang=zh` 和 `lang=en`
+lang-sdk:
+  name: lang
+  text:
+    zh: |-
+     多语言设置，当数据不匹配你设置的语言时，将返回英文或其本地语言结果。可选语言请参考[多语言参数](/docs/resource/language/)。
+    en: |-
+     Multi-language, **default Chinese**, if data does not match the language you set, it will return in English or its native language. Language parameter please refer to [Language](/en/docs/resource/language/)
+lang-zhen-sdk: 
+  name: lang
+  text: 
+    en: |
+     Multi-language settings, only support Chinese and English for this data. The available value are `lang=zh` and `lang=en`
+    zh: |
+     多语言设置，**默认中文**，本数据**仅支持中文和英文**。可选语言请参考[多语言参数](/docs/resource/language/)。
+unit: 
+  name: unit
+  text: 
+    en: |-
+     Set weather data unit, the available value are `unit=m` for metric(default) and `unit=i` for imperial. See more about [Unit](/en/docs/resource/unit).
+    zh: |-
+     数据单位设置，可选值包括`unit=m`（公制单位，默认）和`unit=i`（英制单位）。更多选项和说明参考[度量衡单位](/docs/resource/unit)。
+unit-sdk: 
+  name: unit
+  text: 
+    en: |-
+     Set weather data unit, the available value are `unit=m` for metric(default) and `unit=i` for imperial. See more about [Unit](/en/docs/resource/unit).
+    zh: |-
+     数据单位设置，可选值包括`unit=m`（公制单位，默认）和`unit=i`（英制单位）。更多选项和说明参考[度量衡单位](/docs/resource/unit)。
+idx-type:
+  rqd: true
+  name: type
+  text: 
+    en: |-
+     Weather indices type ID, including car wash index, clothing index, fishing index, etc. You can get multiple types of weather indices at one time, and multiple types are separated by comma, e.g., `type=3,5`, and all indices type see [Indices Info](/en/docs/resource/indices-info/).
+    zh: |-
+     生活指数的类型ID，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数，多个类型用英文`,`分割。例如`type=3,5`。具体生活指数的ID和等级参考[天气指数信息](/docs/resource/indices-info/)。各项生活指数并非适用于所有城市。
+idx-type-android:
+  rqd: true
+  name: IndicesType
+  text: 
+    en: |-
+     Weather indices type, including car wash index, clothing index, fishing index, etc. You can get multiple types of weather indices at one time, add multiple types to the same array. All indices type see [Indices Info](/en/docs/resource/indices-info/).
+    zh: |-
+     生活指数的类型，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数，多个类型请添加进同一数组。各项生活指数并非适用于所有城市。具体生活指数的ID和等级参考[天气指数信息](/docs/resource/indices-info/)。  
+idx-type-ios:
+  rqd: true
+  name: indices
+  text: 
+    en: |-
+     Weather indices type ID, including car wash index, clothing index, fishing index, etc. You can get multiple types of weather indices at one time. All indices type see [Indices Info](/en/docs/resource/indices-info/).
+    zh: |-
+     生活指数的类型，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数。各项生活指数并非适用于所有城市。具体生活指数的ID和等级参考[天气指数信息](/docs/resource/indices-info/)。  
+date:
+  rqd: true
+  name: date
+  text: 
+    en: |-
+     Set date, format is yyyyMMdd, e.g., `date=20200531`
+    zh: |-
+     查询日期，格式为yyyyMMdd，例如 `date=20170809`
+date60:
+  rqd: true
+  name: date
+  text: 
+    en: |-
+     Set the date, up to 60 days in the future (including today). The date format is yyyyMMdd. Example: `date=20200531`
+    zh: |-
+     选择日期，最多可选择未来60天（包含今天）的数据。日期格式为yyyyMMdd，例如 `date=20200531`
+date10:
+  rqd: true
+  name: date
+  text: 
+    en: |-
+     Set the date, up to 10 days in the future (including today). The date format is yyyyMMdd. Eexample: `date=20200531`
+    zh: |-
+     选择日期，最多可选择未来10天（包含今天）的数据。日期格式为yyyyMMdd，例如 `date=20200531`
+date10back:
+  rqd: true
+  name: date
+  text: 
+    en: |-
+     Set the date, up to the most recent 10 days. The date format is yyyyMMdd. Example: `date=20200531`
+    zh: |-
+     选择日期，最多可选择最近10天（不包含今天）的数据。日期格式为yyyyMMdd，例如 `date=20200531`
+time:
+  rqd: true
+  name: time
+  text: 
+    en: |-
+     Set time, format is HHmm, 24-hour, e.g., `time=1230`
+    zh: |-
+     查询时间，格式为HHmm，24时制，例如 `time=1230`
+tz:
+  rqd: true
+  name: tz
+  text: 
+    en: |-
+     Location time zone, e.g., `tz=0800` or `tz=-0530`
+    zh: |-
+     查询地区所在时区，例如`tz=0800`或`tz=-0530`
+alt:
+  rqd: true
+  name: alt
+  text: 
+    en: |-
+     Location altitude, in meters, e.g., `alt=43`
+    zh: |-
+     海拔高度，单位为米，例如`alt=43`
+stormid:
+  rqd: true
+  name: stormid
+  text: 
+    en: |-
+     The storm ID that needs to be queried, StormID can be obtained by [Storm List API](/en/docs/api/tropical-cyclone/storm-list/), e.g., `stormid=NP2018`  
+    zh: |-
+     需要查询的台风ID，StormID可通过[台风查询API](/docs/api/tropical-cyclone/storm-list/)获取。例如 `stormid=NP2018`
+stormid-sdk:
+  rqd: true
+  name: stormid
+  text: 
+    en: |-
+     The storm ID that needs to be queried, StormID can be obtained by [Storm List](#storm-list), e.g., `stormid=NP2018`  
+    zh: |-
+     需要查询的台风ID，StormID可通过[台风列表](#storm-list)获取。例如 `stormid=NP2018`
+basin:
+  rqd: true
+  name: basin
+  text: 
+    en: |-
+     The basin where the storm needs to be queried. For now, only support `NP`.
+     - `AL` North Atlantic
+     - `EP` Eastern Pacific
+     - `NP` NorthWest Pacific
+     - `SP` SouthWestern Pacific
+     - `NI` North Indian North Indian Ocean
+     - `SI` South Indian South Indian Ocean
+    zh: |-
+     需要查询的台风所在的流域，例如中国处于西北太平洋，即 `basin=NP`。当前仅支持`NP`。
+     - `AL` North Atlantic 北大西洋
+     - `EP` Eastern Pacific 东太平洋
+     - `NP` NorthWest Pacific 西北太平洋
+     - `SP` SouthWestern Pacific 西南太平洋
+     - `NI` North Indian 北印度洋
+     - `SI` South Indian 南印度洋
+year:
+  rqd: true
+  name: year
+  text: 
+    en: |-
+     Support to query storm of this year and last year, e.g., `year=2020` 
+    zh: |-
+     支持查询本年度和上一年度的台风，例如：`year=2020`, `year=2019`
+range:
+  name: range
+  text: 
+    en: |-
+     Set to search only within a certain country or region. The country and region name needs to use [country code ISO 3166](/en/docs/resource/glossary#iso-3166). If this parameter is not set, the search range will be all cities. Example: `range=cn`
+    zh: |-
+     搜索范围，可设定只在某个国家或地区范围内进行搜索，国家和地区名称需使用[ISO 3166 所定义的国家代码](/docs/resource/glossary#iso-3166)。如果不设置此参数，搜索范围将在所有城市。例如 `range=cn`
+range-warning:
+  rqd: true
+  name: range
+  text: 
+    en: |-
+     Set country or region. See [supported countries or regions](/en/docs/resource/warning-info/#supported-regions) for Weather Warning, [ISO 3166](/en/docs/resource/glossary#iso-3166) format. Example: `range=cn` 
+    zh: |-
+     选择指定的国家或地区。天气预警支持的国家或地区请参考[这里](/docs/resource/warning-info/#supported-regions)，使用[ISO 3166](/docs/resource/glossary#iso-3166)格式。例如`range=cn`
+number:
+  name: number
+  text: 
+    en: |-
+     Number of the results in response, from 1 to 20, 10 is the default.
+    zh: |-
+     返回结果的数量，取值范围1-20，默认返回10个结果。
+adm:
+  name: adm
+  text: 
+    en: |-
+     Superior administrative divisions of a city, useful for excluding cities with similar names or for filtering results. Example `adm = beijing` 
+    zh: |-
+     城市的上级行政区划，可设定只在某个行政区划范围内进行搜索，用于排除重名城市或对结果进行过滤。例如 `adm=beijing`
+geo-type:
+  rqd: true
+  name: type
+  text: 
+    en: |-
+     Choose to search for a certain type of POI. 
+     
+     - `scenic` Scenic Spot
+     - `CSTA` Currents Station
+     - `TSTA` Tide Station
+    zh: |-
+     POI类型，可选择搜索某一类型的POI。
+     - `scenic` 景点
+     - `CSTA` 潮流站点
+     - `TSTA` 潮汐站点  
+city:
+  name: city
+  text: 
+    en: |-
+     Search for POI within a given city. The city name can be text or the city's LocationID. 
+
+     > The city name is an exact match. It is recommended to use LocaitonID. If the text cannot be matched, the data returned will be empty.
+    zh: |-
+     选择POI所在城市，可设定只搜索在特定城市内的POI信息。城市名称可以是文字或城市的LocationID。**默认不限制特定城市**。
+
+     > 城市名称为精准匹配，建议使用LocaitonID，如文字无法匹配，则数据返回为空。
+radius:
+  name: radius
+  text: 
+    en: |-
+     Set search radius, the value range is 1-50, in kilometers. **5 by default**. 
+    zh: |-
+     搜索范围，可设置搜索半径，取值范围1-50，单位：公里。**默认5公里**。

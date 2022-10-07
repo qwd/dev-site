@@ -1,36 +1,37 @@
 name: 
-  zh: 和风天气开发平台
+  zh: 和风天气开发服务
   en: Dev.QWeather
 brand:
   zh: 和风天气
   en: QWeather
 description: 
-  zh: 高效强大的天气API，天气SDK和天气插件
-  en: Powerful weather API/SDK and weather widget
-timezone: Asia/Shanghai
+  zh: 强大、丰富的天气数据服务
+  en: Powerful and Various Weather Data Services
 url: https://dev.qweather.com
-exturl:
-  attr: https://www.qweather.com
-  cdn: https://cdn.qweather.com
+logo: https://cdn.qweather.com/media/qw-logo-s-dark-800.png
+timezone: Asia/Shanghai
+lang: zh
+license: Code for MIT, content for CC-BY-4.0
+links:
+  qweather: https://www.qweather.com
+  id: https://id.qweather.com
+  console: https://console.qweather.com
+  blog: https://blog.qweather.com
   icons: https://icons.qweather.com
   widget: https://widget.qweather.com
-  api: https://api.qweather.com
-  devapi: https://devapi.qweather.com
-  geoapi: https://geoapi.qweather.com
-  datasetapi: https://datasetapi.qweather.com
-lang: zh
-logo: https://cdn.qweather.com/media/qw-logo-s-dark-800.png
-license:
-  code: MIT | https://github.com/qwd/docs/blob/master/LICENSE
-  content: CC BY 4.0 | https://creativecommons.org/licenses/by/4.0/
-attribution: qweather.com
-github: https://github.com/qwd
-icp:
-  number: 京ICP备15048401号-11
-  url: "https://beian.miit.gov.cn"
-nis:
-  number: 京公网安备11010502042548号
-  url: "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502042548"
+  api: https://api.qweather.com/v7
+  devapi: https://devapi.qweather.com/v7
+  geoapi: https://geoapi.qweather.com/v2
+  datasetapi: https://datasetapi.qweather.com/v1
+  github: https://github.com/qwd
+  mit: https://github.com/qwd/docs/blob/master/LICENSE
+  ccby4: https://creativecommons.org/licenses/by/4.0/
+  icp:
+    number: 京ICP备15048401号-11
+    url: https://beian.miit.gov.cn
+  nis:
+    number: 京公网安备11010502042548号
+    url: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502042548
 webmaster_verifications:
   google: WFu5M6w9XiYrf3hgUBLxCA1Jrgb_CWTzXTPycVIqngg
   bing: EDFBFE217D2B905D82BE1D5A1BC9AB28
@@ -38,8 +39,7 @@ webmaster_verifications:
 
 defaults:
 - scope:
-    path: pages_zh
-    type: pages
+    path: pages
   values:
     layout: html
     lang: zh
@@ -47,60 +47,45 @@ defaults:
     seo:
       type: WebPage
 - scope:
-    path: pages_en
-    type: pages
+    path: pages/en
   values:
-    layout: html
     lang: en
     permalink: "/en/:basename/"
-    seo:
-      type: WebPage
 - scope:
-    path: pages_zh/help
-    type: pages
+    path: docs/_zh
   values:
-    layout: faq-page
-    lang: zh
-    permalink: "/help/:basename/"
-    seo:
-      type: FAQPage
-- scope:
-    path: pages_en/help
-    type: pages
-  values:
-    layout: faq-page
-    lang: en
-    permalink: "/en/help/:basename/"
-    seo:
-      type: FAQPage
-- scope:
-    path: _docs_zh
-    type: docs_zh
-  values:
-    layout: docs
+    layout: article
     lang: zh
     seo:
       type: Article
     toc: true
 - scope:
-    path: _docs_en
-    type: docs_en
+    path: docs/_en
   values:
-    layout: docs
+    layout: article
     lang: en
-    seo:
-      type: Article
     toc: true
+- scope:
+    path: docs/_zh/android-sdk
+  values:
+    weight: 3
+- scope:
+    path: docs/_en/android-sdk
+  values:
+    weight: 3
+
+collections_dir: docs
 collections:
-  docs_zh:
+  zh:
     permalink: "/docs/:path/"
     output: true
-  docs_en:
+  en:
     permalink: "/en/docs/:path/"
     output: true
   snippets:
-    output: false
     permalink: "/snippets/:path/"
+    output: false
+
 sass:
   sass_dir: _sass
   style: compressed
@@ -113,5 +98,5 @@ exclude:
 - build.sh
 
 plugins:
-# - jekyll-sitemap
+- jekyll-sitemap
 - jekyll-redirect-from

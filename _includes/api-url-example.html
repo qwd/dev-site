@@ -1,0 +1,8 @@
+{%- assign flag = page.tag[2] | append: '-' | append: page.tag[3] -%}
+{% for item in site.data.dev.api-endpoint[flag].example %}
+{{ item.title[page.lang] | markdownify }}
+<!-- <pre><code>curl -L -X GET {{ item.link}}</code></pre> -->
+{% highlight bash %}
+curl -L -X GET --compressed '{{ item.link}}'
+{% endhighlight %}
+{% endfor %}

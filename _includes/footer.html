@@ -1,64 +1,67 @@
-<footer>
-  <div class="footer-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6">
-          <section class="left">
-            <div class="brand">
-              <a href="{{ site.url }}">
-                <img src="/assets/images/logo-s-light.png" width="30" alt="QWeather Logo"/><h3>{{ site.name[page.lang] }}</h3>
-              </a>
-            </div>
-            <div class="subtitle">
-              {{ site.data.t[page.lang].footer-des}}
-            </div>
-            <div class="goto-qw no-underline">
-              <a href="https://www.qweather.com" target="_blank" role="button" rel="noopener noreferrer">{{ site.data.t[page.lang].goto-qw }}</a>
-            </div>
-          </section>
+<footer class="pt-5">
+  <div class="container mb-4">
+    <div class="content row">
+      <div class="col-12 col-md-5 text-md-left text-center">
+        <a class="no-underline light-link mb-4 d-inline-block" href="{{ site.url }}">
+          <img class="d-inline-block" src="/assets/images/logo-s-light.png" alt="QWeather Logo" width="30">
+          <h3 class="color-white d-inline-block">{{ site.name[page.lang] }}</h3>
+        </a>
+        <div class="mb-4">
+          <a class="light-link mr-1" href="https://qweather.com{%- if page.lang == "en" -%}/en{%- endif -%}/contact/" target="_blank" rel="noopener noreferrer">{{ site.data.t[page.lang].contact }}</a>&bull;
+          <a class="light-link mx-1" href="{{site.links.blog}}" target="_blank" rel="noopener noreferrer">{{ site.data.t[page.lang].blog }}</a>&bull;
+          <a class="light-link ml-1" href="{{site.links.github}}" target="_blank" rel="noopener noreferrer">Github</a>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
-          <section class="right">
-            <div class="row">
-              <div class=" col-xs-5 col-sm-4 col-md-5">
-                <h3>{{ site.data.t[page.lang].doc}}</h3>
-                <ul>
-                  {%- for item in site.data.data-list.featdoc.list -%}
-                  {%- assign docs = site.documents | where: "lang", page.lang | where: "ref", item.name | first %}
-                  <li><a href="{{ docs.url }}">{{ docs.title }}</a></li>  
-                  {%- endfor -%}
-                </ul>
-              </div>
-              <div class="col-xs-3 col-sm-4 col-md-3">
-                <h3>{{ site.data.t[page.lang].help}}</h3>
-                <ul>
-                  {%- assign faqs = site.pages | where: "lang", page.lang | where: "tag", "faq" | sort: "ref" -%}
-                  {%- for item in faqs %}
-                  <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-                  {%- endfor %}
-                </ul>
-              </div>
-              <div class="col-xs-4 col-sm-4 col-md-4">
-                <h3>{{ site.data.t[page.lang].more}}</h3>
-                <ul>
-                  <li><a href="{{ site.exturl.attr }}{%- if page.lang == "en" -%}/en{%- endif -%}/app/" target="_blank" rel="noopener noreferrer">{{ site.data.t[page.lang].getapp }}</a></li>
-                  <li><a href="{{ site.exturl.attr }}{%- if page.lang == "en" -%}/en{%- endif -%}/contact" target="_blank" rel="noopener noreferrer" >{{ site.data.t[page.lang].contact }}</a></li>
-                  <li><a href="{{ site.exturl.attr }}{%- if page.lang == "en" -%}/en{%- endif -%}/terms/developers-tos" target="_blank" rel="noopener noreferrer" >{{ site.data.t[page.lang].tos }}</a></li>
-                  <li><a href="{{ site.exturl.attr }}{%- if page.lang == "en" -%}/en{%- endif -%}/terms/privacy" target="_blank" rel="noopener noreferrer" >{{ site.data.t[page.lang].privacy }}</a></li>
-                  <li><a href="{{ site.exturl.attr }}{%- if page.lang == "en" -%}/en{%- endif -%}/terms/disclaimer" target="_blank" rel="noopener noreferrer" >{{ site.data.t[page.lang].disclaimer }}</a></li>
-                </ul>
-              </div>
-            </div>
-          </section>
+        <div class="mb-4 mb-md-0">
+          <label class="mr-2" id="lang" for="">Language</label>
+          {% include lang-switch.html %}
         </div>
+      </div>
+      <div class="col-4 col-md text-md-left text-center">
+        <h3 class="color-light mb-4">{{ site.data.t[page.lang].doc}}</h3>
+        <ul class="clear-list">
+          {%- for item in site.data.contents.footer.docs -%}
+          {%- assign docs = site.documents | concat: site.pages | where: "lang", page.lang | where: "ref", item.name | first -%}
+          <li class="mb-2"><a class="light-link" href="{{ docs.url }}">{{ docs.title }}</a></li>  
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="col-4 col-md text-md-left text-center">
+        <h3 class="color-light mb-4">{{ site.data.t[page.lang].feats}}</h3>
+        <ul class="clear-list">
+          {%- for item in site.data.contents.footer.feats -%}
+          {%- assign docs = site.documents | concat: site.pages | where: "lang", page.lang | where: "ref", item.name | first -%}
+          <li class="mb-2"><a class="light-link" href="{{ docs.url }}">{{ docs.title }}</a></li>  
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="col-4 col-md text-md-left text-center">
+        <h3 class="color-light mb-4">{{ site.data.t[page.lang].more}}</h3>
+        <ul class="clear-list">
+          {%- for item in site.data.contents.footer.products -%}
+          <li class="mb-2"><a class="light-link" href="{{ item.link }}">{{ item.name[page.lang] }}</a></li> 
+          {%- endfor -%}
+        </ul>
       </div>
     </div>
   </div>
-  <div class="footer-copyright">
+  <div class="terms">
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6">&copy; {{ site.time | date: "%Y" }} {{ site.data.t[page.lang].footer-copyright }}</div>
-        <div class="col-xs-12 col-sm-12 col-md-6 text-right"><a href={{ site.icp.url }} target="_blank" rel="noopener noreferrer">{{ site.icp.number }}</a> &nbsp; <a href={{ site.nis.url }} target="_blank" rel="noopener noreferrer">{{ site.nis.number }}</a></div>
+        <div class="col-12 col-md-auto mb-2 mb-md-0">
+          <ul class="clear-list">
+            <li class="mr-2 go-left">
+              &copy; {{ site.time | date: "%Y" }} <a class="light-link" href="https://www.qweather.com/en/" target="_blank" rel="noopener noreferrer">QWeather</a>
+            </li>
+            {%- for item in site.data.contents.footer.terms -%}
+            <li class="mr-2 go-left">
+              <a class="light-link" href="{{site.links.qweather}}{%- if page.lang == "en" -%}/en{%- endif -%}{{item.link}}" target="_blank" rel="noopener noreferrer">{{item.name[page.lang]}}</a>
+            </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+        <div class="col-12 col-md text-md-right">
+          <a class="light-link" href={{ site.links.icp.url }} target="_blank" rel="noopener noreferrer">{{ site.links.icp.number }}</a>
+        </div>
       </div>
     </div>
   </div>

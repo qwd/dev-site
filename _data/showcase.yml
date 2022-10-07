@@ -1,0 +1,135 @@
+# -------------------------
+# **仅限基于开源许可证的作品**
+# -------------------------
+#
+# 如何添加作品
+# 1. 在下方找你的主要开发语言，并添加作品信息。如果没有你使用的语言，请自行添加。
+# 2. 复制下列模版，并粘贴到你的开发语言下。粘贴的位置无所谓，按字母顺序排序。
+# 3. 提交PR
+#
+# 模板
+# - language: "可选, 仅在没有你的开发语言时使用，否则不需要复制这一行"
+#   works:
+#     - name: "必选, 作品名称"
+#       description: "必选, 你的作品简介，不超过100个字"
+#       code: "必选, 可以查看或下载作品源代码的链接，一般应该是你的代码仓库"
+#       screenshot: "可选, 一张你的作品截图的链接"
+#       author: "必选, 你的名字"
+#       website: "可选, 你的博客/网站或社交媒体链接"
+#
+# ----------------------------------------------
+# **Works under any open-source license only**
+# ----------------------------------------------
+#
+# How to add your work
+# 1. Find your primary programming language below and add information about your work. If the language is not available, please add it by yourself.
+# 2. Copy the template below and paste it under your programming language. No matter where you paste, it will always be sorted alphabetically.
+# 3. Submit the PR
+#
+# Template
+# - language: "optional, only need this line when your language is not available"
+#   works:
+#     - name: "required, name of your work"
+#       description: "required, short description of your work, no more than 100 words"
+#       code: "required, source code url, typically it should be your code repository"
+#       screenshot: "optional, screenshot url of your work"
+#       author: "required, your name"
+#       website: "optional, your blog/website or social media url"
+
+
+
+- language: C
+  works:
+    - name: heweather-api-c
+      description: 如何使用 C语言访问和风天气的数据接口，http + ssl
+      code: https://github.com/xlofhappy/heweather-api-c
+      author: 笑乐
+      website: https://github.com/xlofhappy
+- language: C#
+  works:
+    - name: MyWeather UWP
+      description: UWP天气应用  UWP weather APP
+      code: https://github.com/Grergo/MyWeather
+      author: Grergo
+- language: C++
+  works:
+    - name: Weather
+      author: JX Cheng
+      code: https://github.com/chengjianxi/Weather
+      description: Weather 是使用 C++ & Qt Quick 开发的一款天气 App，理论上可以在 Windows、Mac OS、Linux、Android、iOS 等平台上运行。 A weather app developed using C++ & Qt Quick. It can be used on Windows, Mac OS, Linux, Android, iOS and other platforms Run on.
+    - name: ESP8266_Heweather
+      author: Ldufan
+      code: https://github.com/Ldufan/ESP8266_Heweather
+      description: Arduino开发平台使用ESP8266获取和风天气的第三方库。 Arduino development platform uses ESP8266 to obtain third-party libraries for QWeather.
+- language: Dart
+  works:
+    - name: OpenWeatherPlus-Flutter
+      author: Daniel Dai
+      code: https://github.com/danieldai/OpenWeatherPlus-Flutter
+      description: Opensource weather app built with Flutter & fish-redux, backed by free weather data from heweather.com (用Flutter和fish-redux开发的开源天气APP) 
+    - name: flutter_qweather
+      author: CyJaySong
+      code: https://github.com/fluttercandies/flutter_qweather
+      description: Flutter 和风天气插件，支持安卓和iOS平台。 Flutter plugin for QWeather, support Android and iOS.
+- language: Java
+  works:
+    - name: heWeather.java.sdk
+      author: dongjunchen1993
+      code: https://github.com/dongjunchen1993/heWeather.java.sdk
+      description:  和风天气JAVA语言的SDK QWeather JAVA language SDK
+    - name: OpenWeatherPlus-Android
+      author: QWeather
+      code: https://github.com/qwd/OpenWeatherPlus-Android
+      description: 基于和风的开源天气APP Android版 Open source weather APP for Android
+- language: Go
+  works:
+    - name: go-heweather
+      author: Ink-33
+      code: https://github.com/Ink-33/go-heweather
+      description: 和风天气的非官方Golang SDK。Golang SDK for QWeather
+- language: JavaScript
+  works:
+    - name: Météo weather
+      author: Venthan
+      code: https://github.com/Venthanx/Weather
+      description: a MBE style weather web based on VUE
+    - name: 基于和风天气api和vue.js
+      author: ruiruiruiruirain
+      code: https://github.com/ruiruiruiruirain/myweather
+      description: 基于和风天气api和vue.js  Based on QWeather API and vue.js
+- language: Kotlin
+  works:
+    - name: 夏风天气
+      author: Vast Gui
+      code: https://github.com/SakurajimaMaii/XiaFengWeather
+      description: 一款基于MVVM架构开发的天气应用，提供近十天天气预报，空气质量查看以及城市搜索等功能。
+- language: Objective-C
+  works:
+    - name: OpenWeatherPlus-iOS
+      author: QWeather
+      code: https://github.com/qwd/OpenWeatherPlus-iOS
+      description: 基于和风的开源天气APP iOS版。Open source weather APP for iOS
+- language: PHP
+  works:
+    - name: weather
+      author: zhoubohan
+      code: https://github.com/zhoubohan/weather
+      description: 一个基于和风天气的php包扩展。A PHP package extension based on QWeather.
+- language: Python
+  works:
+    - name: QWeather
+      author: RTAkland
+      code: https://github.com/MarkusJoe/QWeather
+      description: 一个使用和风天气API获取天气信息并通过SMTP发送到邮箱的python小项目。Send QWeather to mailbox via STMP.
+    - name: QWeatherBot
+      author: daya0576
+      code: https://github.com/daya0576/he-weather-bot
+      description: 基于和风 API 的 Telegram 天气预报机器人。Telegram weather robot based on QWeather API.
+    - name: api-QWeather
+      author: Ayayaneru
+      code: https://github.com/Ayayaneru/api-QWeather
+      description: Python-调用和风天气接口示范 并尝试实现一些小功能。
+    - name: QWeatherAPI-Python
+      author: Zeyu Zhang
+      code: https://github.com/InTereSTingHE/QWeatherAPI-Python
+      description: 和风天气API调用python实现。

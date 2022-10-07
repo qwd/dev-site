@@ -1,81 +1,43 @@
 {%- if page.version == "s6" %}
 <a class="new-version-alart fixed-top" href="/docs/api/">{{ site.data.t[page.lang].s6warning }}</a>
 {%- else %}
-<nav class="qw-navbar">
-  <div class="container">
-    <div class="navbar-brand hidden-xs hidden-sm">
-      <a href="{%- if page.lang == "en" %}/en{%- endif %}/">
-        <img src="/assets/images/logo-s-dark.png" alt="{{ site.name[page.lang] }}"><span>{{ site.name[page.lang] }}</span>
+<nav class="main-nav container-fluid">
+  <div class="row">
+    <div class="brand col-auto">
+      <a class="dark-link no-underline py-2 d-inline-block" href="{%- if page.lang == "en" %}/en{%- endif %}/">
+        <img class="logo d-inline-block mr-2" width="30" src="/assets/images/logo-s-dark.png" alt="{{ site.name[page.lang] }}">
+        <span class="sitename d-inline-block text-bold">{{site.name[page.lang] }}</span>
       </a>
     </div>
-    <div class="go-left  hidden-xs hidden-sm">
-      <ul class="navbar-item site-item">
-        <li {%- if page.ref == "home" %} class="active"{%- endif %}>
-          <a href="{%- if page.lang == "en" %}/en{%- endif %}/">{{ site.data.t[page.lang].home }}</a>
-        </li>
-        <li {%- if page.collection == "docs_en" or page.collection == "docs_zh" %} class="active"{%- endif %}>
-          <a href="{%- if page.lang == "en" %}/en{%- endif %}/docs/">{{ site.data.t[page.lang].doc }}</a>
-        </li>
-        <li>
-          <a href="{{ site.exturl.icons }}{%- if page.lang == "en" %}/en/{%- endif %}">{{ site.data.t[page.lang].icons }}</a>
-        </li>
-        <li>
-          <a href="{{ site.exturl.widget }}{%- if page.lang == "en" %}/en/{%- endif %}">{{ site.data.t[page.lang].widget }}</a>
-        </li>
-        <li {%- if page.tag == "faq" %} class="active"{%- endif %}>
-          <a href="{%- if page.lang == "en" %}/en{%- endif %}/help/general/">{{ site.data.t[page.lang].help }}</a>
-        </li>
-        <li {%- if page.ref == "price" %} class="active"{%- endif %}>
-          <a href="{%- if page.lang == "en" %}/en{%- endif %}/price/">{{ site.data.t[page.lang].price }}</a>
-        </li>
-      </ul>
+    <div class="second-menu col-auto order-sm-last ml-auto">
+      <a class="menu-console no-underline link-color border-r10 text-bold small d-inline-block"
+        href="https://id.qweather.com/#/login?redirect=https://console.qweather.com{%- if page.lang == "en"%}&lang=en{%- endif %}"
+        target="_blank" rel="noopener noreferrer">{{ site.data.t[page.lang].console }}</a>
     </div>
-      <div class="go-right hidden-xs hidden-sm">
-        <ul class="navbar-item site-sub-item">
-          <li class="qw-lang">
-            {%- include lang-selector.html %}
-          </li>
-          <li class="console">
-            <a href="https://id.qweather.com/#/login?redirect=https://console.qweather.com{%- if page.lang == "en" %}&lang=en{%- endif %}" target="_blank" rel="noopener noreferrer">{{ site.data.t[page.lang].console }}</a>
-          </li>
-          <li class="login">
-            <a href="https://id.qweather.com/#/register?redirect=https://console.qweather.com{%- if page.lang == "en" %}&lang=en{%- endif %}" target="_blank" rel="noopener noreferrer">{{ site.data.t[page.lang].register }}</a>
-          </li>
-        </ul>
-      </div>
-
-    <!-- for mobile  -->
-    <div class="navbar-brand-mobile visible-xs-block visible-sm-block">
-      <a href="{%- if page.lang == "en" %}/en{%- endif %}/">
-        <img src="/assets/images/logo-s-dark.png" alt="{{ site.name[page.lang] }}"><span>{{ site.name[page.lang] }}</span>
-      </a>
-      <span class="qw-lang">
-        {%- include lang-selector.html %}
-      </span>
-    </div>
-    <div class="navbar-item-mobile visible-xs-block visible-sm-block">
-      <ul>
-        <li {%- if page.ref == "home" %} class="active"{%- endif %}>
-          <a href="{%- if page.lang == "en" %}/en{%- endif %}/">{{ site.data.t[page.lang].home }}</a>
+    <div class="menu col-12 col-sm-auto flex-sm-grow-1 flex-md-grow-0">
+      <ul class="clear-list d-flex">
+        <li class="mr-auto mr-md-2  {%- if page.ref=="home" %} active{%- endif %}">
+          <a class="dark-link no-underline" href="{%- if page.lang == "en" %}/en{%- endif %}/">{{ site.data.t[page.lang].home }}</a>
         </li>
-        <li {%- if page.collection == "docs_en" or page.collection == "docs_zh" %} class="active"{%- endif %}>
-          <a href="{%- if page.lang == "en" %}/en{%- endif %}/docs/">{{ site.data.t[page.lang].doc }}</a>
+        <li class="mr-auto mr-md-2  {%- if page.collection=="en" or page.collection=="zh" %} active{%- endif %}">
+          <a class="dark-link no-underline" href="{%- if page.lang == "en" %}/en{%- endif %}/docs/">{{ site.data.t[page.lang].doc }}</a>
         </li>
-        <li>
-          <a href="{{ site.exturl.icons }}{%- if page.lang == "en" %}/en/{%- endif %}">{{ site.data.t[page.lang].icons }}</a>
+        <li class="mr-auto mr-md-2 ">
+          <a class="dark-link no-underline" target="_blank" rel="noopener noreferrer" href="{{ site.links.icons }}{%- if page.lang == "en" %}/en/{%- endif %}">{{ site.data.t[page.lang].icons }}</a>
         </li>
-        <li>
-          <a href="{{ site.exturl.widget }}{%- if page.lang == "en" %}/en/{%- endif %}">{{ site.data.t[page.lang].widget }}</a>
+        <li class="mr-auto mr-md-2  {%- if page.ref=="showcase-home" %} active{%- endif %}">
+          <a class="dark-link no-underline" href="{%- if page.lang == "en" %}/en{%- endif %}/showcase/">{{ site.data.t[page.lang].showcase }}</a>
+        <li class="mr-auto mr-md-2  {%- if page.ref=="faq" %} active{%- endif %}">
+          <a class="dark-link no-underline" href="{%- if page.lang == "en" %}/en{%- endif %}/help/">{{ site.data.t[page.lang].help }}</a>
         </li>
-        <li {%- if page.tag == "faq" %} class="active"{%- endif %}>
-          <a href="{%- if page.lang == "en" %}/en{%- endif %}/help/general/">{{ site.data.t[page.lang].help }}</a>
+        <li class="mr-auto mr-md-2  {%- if page.ref=="price" %} active{%- endif %}">
+          <a class="dark-link no-underline" href="{%- if page.lang == "en" %}/en{%- endif %}/price/">{{ site.data.t[page.lang].price }}</a>
         </li>
-        <li {%- if page.ref == "price" %} class="active"{%- endif %}>
-          <a href="{%- if page.lang == "en" %}/en{%- endif %}/price/">{{ site.data.t[page.lang].price }}</a>
+        {%- comment -%}
+        <li class="d-none d-md-block">
+          <a class="dark-link no-underline" target="_blank" rel="noopener noreferrer" href="{{site.links.blog}}">{{ site.data.t[page.lang].blog }}</a>
         </li>
-        <li class="login">
-          <a href="https://id.qweather.com/#/register?redirect=https://console.qweather.com{%- if page.lang == "en" %}&lang=en{%- endif %}" target="_blank" rel="noopener noreferrer">{{ site.data.t[page.lang].login }}</a>
-        </li>
+        {%- endcomment -%}
       </ul>
     </div>
   </div>

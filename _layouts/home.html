@@ -1,0 +1,84 @@
+---
+layout: html
+---
+<main class="homepage">
+    <div id="weather-bg" class="hero hero-default">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="banner col-12 text-center mb-2">
+                    <img src="/assets/images/hp-cloudy.png" alt="" width="300">
+                </div>
+                <div class="headline headline col-12 text-center">
+                    <h1 class="color-white">{{ site.data.t[page.lang].hp-slogan }}</h1>
+                    <h1 class="color-white mb-4">{{ site.data.t[page.lang].hp-slogan-2 }}</h1>
+                    <a class="d-inline-block btn-link btn-link-blue btn-link-xl text-bold mb-4" href="http://">{{ site.data.t[page.lang].hp-regnow}}</a>
+                    <p class="color-light">{{ site.data.t[page.lang].hp-current-ver }}: API v{{site.data.v.api.version}} · SDK {{site.data.v.ios.version}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="feats pb-5">
+        <div class="container">
+            <div class="row mb-md-5">
+                <div class="col-12 col-md-6 mb-5 mb-md-0">
+                    <div class="feat-card border-r10">
+                        <img class="d-block card-bg service-data width100" src="/assets/images/hp-feat-data.png" alt="">
+                        <div class="card-content p-4">
+                            <h3 class="mb-4">{{ site.data.t[page.lang].hp-data }}</h3>
+                            <p>{{ site.data.t[page.lang].hp-data-desc }}</p>
+                        </div>
+                        <div class="card-footer p-4">
+                            <a href="{% if page.lang == "en" %}/en{% endif %}/docs/features/service-and-data/">{{ site.data.t[page.lang].hp-data-refer }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-5 mb-md-0">
+                    <div class="feat-card border-r10">
+                        <img class="d-block card-bg devtools width100" src="/assets/images/hp-feat-devtools.png" alt="">
+                        <div class="card-content p-4">
+                            <h3 class="mb-4">{{ site.data.t[page.lang].hp-dev }}</h3>
+                            <p>{{ site.data.t[page.lang].hp-dev-desc }}</p>
+                        </div>
+                        <div class="card-footer p-4">
+                            <a href="{% if page.lang == "en" %}/en{% endif %}/docs/api/">{{ site.data.t[page.lang].hp-dev-refer }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-md-5">
+                <div class="col-12 col-md-6 mb-5 mb-md-0">
+                    <div class="feat-card border-r10">
+                        <img class="d-block card-bg worldwide width100" src="/assets/images/hp-feat-global.png" alt="">
+                        <div class="card-content p-4">
+                            <h3 class="mb-4">{{ site.data.t[page.lang].hp-ww }}</h3>
+                            <p>{{ site.data.t[page.lang].hp-ww-desc }}</p>
+                        </div>
+                        <div class="card-footer p-4">
+                            <a href="{% if page.lang == "en" %}/en{% endif %}/docs/features/global-deployment/">{{ site.data.t[page.lang].hp-ww-refer }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-5 mb-md-0">
+                    <div class="feat-card border-r10">
+                        <img class="d-block card-bg price width100" src="/assets/images/hp-feat-price.png" alt="">
+                        <div class="card-content p-4">
+                            <h3 class="mb-4">{{ site.data.t[page.lang].hp-price }}</h3>
+                            <p>{{ site.data.t[page.lang].hp-price-desc }}</p>
+                        </div>
+                        <div class="card-footer p-4">
+                            <a href="{% if page.lang == "en" %}/en{% endif %}/price/">{{ site.data.t[page.lang].hp-price-refer }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="start-card border-r10 p-4">
+                <h2 class="color-font my-4">{{ site.data.t[page.lang].hp-intro-try }}</h2>
+                {{ site.data.t[page.lang].hp-intro-try-desc | markdownify }}
+                <h2 class="color-font my-4">{{ site.data.t[page.lang].hp-intro-more}}</h2>
+                {{ site.data.t[page.lang].hp-intro-more-desc | markdownify }}
+                <h2 class="color-font my-4">{{ site.data.t[page.lang].hp-intro-org }}</h2>
+                {{ site.data.t[page.lang].hp-intro-org-desc | markdownify }}
+            </div>
+        </div>
+    </div>
+</main>

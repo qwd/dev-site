@@ -1,0 +1,52 @@
+- data: 
+    zh: 天气预报
+    en: Weather
+  incl: [1-api-weather-now, 2-api-weather-daily-forecast, 3-api-weather-hourly-forecast]
+  excl:
+    zh: 不含每日预报（10-30天）与每小时预报（72-168小时）
+    en: Excludes 10-30 daily forecast and 72-168 hourly forecast
+  price: [0.001,0.0009,0.0007,0.0005,0.0004,0.0003]
+- data: 
+    zh: 扩展天气
+    en: Extend Weather
+  incl: [2-api-weather-daily-forecast, 3-api-weather-hourly-forecast]
+  excl:
+    zh: 仅每日预报（10-30天）以及每小时预报（72-168小时）
+    en: Only for 10-30 daily forecast and 72-168 hourly forecast
+  price: [0.002,0.0018,0.0014,0.001,0.0008,0.0006]
+- data: 
+    ref: 0-api-minutely
+  incl: [1-api-minutely-precipitation]
+  price: [0.001,0.0009,0.0007,0.0005,0.0004,0.0003]
+- data: 
+    ref: 0-api-grid-weather
+  incl: [1-api-gird-weather-now,2-api-grid-weather-daily-forecast,3-api-grid-weather-hourly-forecast]
+  price: [0.001,0.0009,0.0007,0.0005,0.0004,0.0003]
+- data: 
+    ref: 0-api-warning
+  incl: [1-api-weather-warning,2-api-weather-warning-city-list]
+  price: [0.001,0.0009,0.0007,0.0005,0.0004,0.0003]
+- data: 
+    ref: 0-api-indices
+  incl: [1-api-indices-forecast]
+  price: [0.001,0.0009,0.0007,0.0005,0.0004,0.0003]
+- data: 
+    ref: 0-api-air
+  incl: [1-api-air-now,2-api-air-daily-forecast]
+  price: [0.001,0.0009,0.0007,0.0005,0.0004,0.0003]
+- data: 
+    ref: 0-api-time-machine
+  incl: [1-api-historical-weather,2-api-historical-air]
+  price: [0.002,0.0018,0.0014,0.001,0.0008,0.0006]
+- data: 
+    ref: 0-api-tropical
+  incl: [1-api-storm-list,2-api-storm-track,3-api-storm-forecast]
+  price: [0.005,0.004,0.0035,0.0025,0.002,0.001]
+- data: 
+    ref: 0-api-ocean
+  incl: [1-api-tide,2-api-currents]
+  price: [0.005,0.004,0.0035,0.0025,0.002,0.001]
+- data: 
+    ref: 0-api-astronomy
+  incl: [1-api-sun,2-api-moon,3-api-solar-elevation-angle]
+  price: [0.0001,0.0009,0.0007,0.0005,0.0004,0.0003]

@@ -1,0 +1,158 @@
+reference_docs:
+  - overview: start-overview
+    list: 
+      - name: feat-overview
+        sub:
+          - subname: feat-service
+          - subname: feat-global
+          - subname: feat-performance
+      - name:	config-overview
+        sub:
+          - subname: config-project
+          - subname: config-api
+          - subname: config-ios
+          - subname: config-android
+      - name: account-overview
+        sub:
+          - subname: account-manage
+          - subname: account-contact
+          - subname: account-developers
+          - subname: account-suspension
+  - overview: 0-api-overview
+    list:
+      - name: 0-api-geo
+        data: 
+          - type: city-lookup
+          - type: top-city
+      - name: 0-api-weather
+        data: 
+          - type: now
+          - type: daily
+          - type: hourly
+      - name: 0-api-minutely
+        data: 
+          - type: precip
+      - name: 0-api-grid-weather
+        data: 
+          - type: now
+          - type: daily
+          - type: hourly
+      - name: 0-api-warning
+        data: 
+          - type: now
+          - type: list
+      - name: 0-api-indices
+        data: 
+          - type: forecast
+      - name: 0-api-air
+        data: 
+          - type: now
+          - type: daily
+      - name: 0-api-time-machine
+        data: 
+          - type: weather
+          - type: air
+      - name: 0-api-tropical
+        data: 
+          - type: forecast
+          - type: track
+          - type: list
+      - name: 0-api-ocean
+        data: 
+          - type: tide
+          - type: currents
+      - name: 0-api-solar-radiation
+        data: 
+          - type: hourly
+      - name: 0-api-astronomy
+        data: 
+          - type: sun
+          - type: moon
+          - type: solar-elevation-angle
+  - overview: res-overview
+    list: 
+      - name: res-glossary
+      - name: res-status-code
+      - name: res-lang
+      - name: res-icons
+      - name: res-location-list
+      - name: res-auth
+      - name: res-unit
+      - name: res-warning
+      - name: res-indices
+      - name: res-air
+  - overview: bp-overview
+    list: 
+      - name: bp-na
+      - name: bp-opz
+      - name: bp-gzip
+      - name: bp-cache
+      - name: bp-protact
+  - overview: finance-overview
+    list: 
+      - name: finance-subscription
+      - name:	finance-billing
+      - name:	finance-pricing
+      - name: finance-splans
+      - name:	finance-vat-invoice
+  - overview: terms-overview
+    list: 
+      - name: terms-restriction
+      - name: terms-attribution
+      - name: terms-license
+      - name: terms-tos
+footer:
+  docs:
+    - name: start-overview
+    - name: config-overview
+    - name: 0-api-overview
+    - name: finance-overview
+    - name: bp-overview
+    - name: res-overview
+  feats:
+    - name: feat-service
+    - name: feat-global
+    - name: feat-performance
+  products:
+    - name: 
+        zh: 天气预报
+        en: Weather
+      link: https://www.qweather.com
+    - name: 
+        zh: 天气地图
+        en: Weather Map
+      link: https://map.qweather.com
+    - name: 
+        zh: 下载APP
+        en: Get APP
+      link: https://www.qweather.com/app/
+  terms:
+    - name: 
+        zh: 服务条款
+        en: Terms
+      link: /terms/developers-tos/
+    - name: 
+        zh: 隐私政策
+        en: Privacy
+      link: /terms/privacy
+    - name: 
+        zh: 免责声明
+        en: Disclaimer
+      link: /terms/disclaimer/
+price-more:
+  - title:
+      zh: 我可以免费试用吗?
+      en: Can I try it for free?
+    link: /help/#can-i-try-it-for-free
+  - title:
+      zh: 什么是一次请求?
+      en: What is a request?
+    link: /help/#what-is-a-request
+  - title: 
+      zh: 是否有更多折扣?
+      en: Need More Requests
+    link: /help/#are-there-more-discounts-if-i-have-a-high-volume-of-requests
+  - title:
+      zh: 价格是否含税?
+      en: Do the pricing include VAT?
+    link: /help/#do-the-pricing-include-vat

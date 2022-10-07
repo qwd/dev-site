@@ -1,0 +1,14 @@
+<select id="change-language" onchange="if (this.value) window.location.href=this.value">
+  {%- if site.pages %}
+  {%- assign node = site.pages | where: "ref", page.ref | sort: 'lang' %}
+  {%- for item in node %}
+  <option value="{{ item.url }}"{%- if page.lang == item.lang %} selected="selected"{%- endif %}>{{ site.data.t[item.lang].langname }}</option>
+  {%- endfor %}
+  {%- endif %}
+  {%- if site.documents %}
+  {%- assign node = site.documents | where: "ref", page.ref | sort: 'lang' %}
+  {%- for item in node %}
+  <option value="{{ item.url }}"{%- if page.lang == item.lang %} selected="selected"{%- endif %}>{{ site.data.t[item.lang].langname }}</option>
+  {%- endfor %}
+  {%- endif %}
+</select>

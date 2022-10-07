@@ -1,52 +1,126 @@
 ---
 layout: html
 ---
-
-{%- assign flag = page.url | split: "/" | last -%}
-{% if page.tag == "overview" %}
-<div class="colorful {{ flag }}">
+<section class="masthead docs">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-7">
-                <h1>{{ page.title }}</h1>
-                <p>{{ page.description }}</p>
-                {%- if flag == "android-sdk" or flag == "ios-sdk" %}
-                <a class="btn btn-std" href="{{ site.data.v[flag].dllink }}" role="button"><i class="ifq-download"></i>&nbsp;{{ site.data.t[page.lang].download }} {{page.title}}<span class="sdkv">v{{ site.data.v[flag].version }}</span></a>
-                <span class="sdkmd5">MD5:{{ site.data.v[flag].md5 }}</span>
-                {%- endif %}
+        <h1>{{ page.title }}</h1>
+        <p class="text-center">{{ page.description}}</p>
+    </div>
+</section>
+<main class="docs-home container-lg pb-5">
+    <section class="row refer-content mb-4">
+        <div class="col-12 col-md-12 col-lg-5 mb-4 mb-lg-0">
+            <div class="start card border-r10 p-4">
+                {%- assign start_docs = site.data.contents.reference_docs | where: "overview", "start-overview" -%}
+                {%- assign finance_docs = site.data.contents.reference_docs | where: "overview", "finance-overview" -%}
+                {%- assign start_with_finance = start_docs | concat: finance_docs -%}
+                {%- for item in start_docs -%}
+                {%- assign overview = site.documents | where: "lang", page.lang | where: "ref", item.overview | first -%}
+                <h2 class="color-white mb-4"><a class="light-link" href="{{ overview.url }}">{{ overview.title }}</a></h2>
+                {%- endfor %}
+                <ul class="clear-list">
+                    {% for section in start_with_finance -%}
+                    {%- for item in section.list -%}
+                    {%- assign docs = site.documents | where: "lang", page.lang | where: "ref", item.name | first -%}
+                    <li class="mb-2">
+                        <a class="light-link" href="{{docs.url}}">{{ docs.title }}</a>
+                    </li>
+                    {% endfor -%}
+                    {%- endfor %}
+                </ul>
             </div>
         </div>
-    </div>
-</div>
-{% endif %}
-
-<div class="main-content">
-    <div class="container">
-        <div class="row">
-            <div class="{% if page.toc %}col-xs-12 col-sm-12 col-md-9{% else %}col-xs-12 col-sm-12{% endif %}">
-                <article>
-                    {% if page.tag != "overview" %}
-                    <section class="article-headline">
-                        <div class="edit-this-docs go-right hidden-sm hidden-xs">
-                            <a href="https://github.com/qwd/dev-site/edit/master/{{ page.path }}" target="_blank" rel="noopener noreferrer"><i class="ifq-pencil"></i>&nbsp;{{ site.data.t[page.lang].edit }}</a>
-                        </div>
-                        <h1>{{ page.title}}</h1>
-                        {%- if page.tag == "ios-sdk" -%}<span class="sdk-v small">{{ site.data.t[page.lang].apply }} iOS
-                            SDK v{{ site.data.v.ios-sdk.version }}+</span>{%- endif -%}
-                        {%- if page.tag == "android-sdk" -%}<span class="sdk-v small">{{ site.data.t[page.lang].apply }}
-                            Android SDK v{{ site.data.v.android-sdk.version }}</span>{%- endif -%}
-                        {% endif %}
-                    </section>
-                    <section class="doc-content">
-                        {% include anchor_headings.html html=content  h_min=2 h_max=3 anchorBody='<i class="ifq-link-horizontal"></i>' anchorClass="anchor-link no-underline" anchorTitle="Permalink" %}
-                    </section>
-                </article>
+        <div class="col-12 col-md-6 col-lg mb-4 mb-md-0">
+            <div class="resource border-r10 p-4">
+                {% assign res_docs = site.data.contents.reference_docs | where: "overview", "res-overview" -%}
+                {%- for section in res_docs -%}
+                {%- assign overview = site.documents | where: "lang", page.lang | where: "ref", section.overview  | first -%}
+                <h2 class="mb-4"><a class="dark-link" href="{{ overview.url }}">{{ overview.title }}</a></h2>
+                <ul class="clear-list">
+                    {% for item in section.list -%}
+                    {%- assign docs = site.documents | where: "lang", page.lang | where: "ref", item.name | first -%}
+                    <li class="mb-2">
+                        <a class="dark-link" href="{{docs.url}}">{{ docs.title }}</a>
+                    </li>
+                    {% endfor -%}
+                </ul>
+                {% endfor -%}
             </div>
-            {% if page.toc %}
-            <div class="col-md-3 hidden-sm hidden-xs">
-                {% include right-sidebar.html %}
-            </div>
-            {% endif %}
         </div>
-    </div>
-</div>
+        <div class="col-12 col-md-6 col-lg">
+            <div class="bp border-r10 p-4">
+                {% assign bp_docs = site.data.contents.reference_docs | where: "overview", "bp-overview" -%}
+                {% for section in bp_docs -%}
+                {%- assign overview = site.documents | where: "lang", page.lang | where: "ref", section.overview  | first -%}
+                <h2 class="mb-4"><a class="dark-link" href="{{ overview.url }}">{{ overview.title }}</a></h2>
+                <ul class="clear-list">
+                    {%- for item in section.list -%}
+                    {%- assign docs = site.documents | where: "lang", page.lang | where: "ref", item.name | first -%}
+                    <li class="mb-2">
+                        <a class="dark-link" href="{{docs.url}}">{{ docs.title }}</a>
+                    </li>
+                    {% endfor -%}
+                </ul>
+                {% endfor -%}
+            </div>
+        </div>
+    </section>
+    <section class="row dev-docs">
+        {%- assign arranged_guide = site.data.contents.reference_docs | where: "overview", "0-api-overview" -%}
+        {%- for group in arranged_guide -%}
+        {%- for section in group.list -%}
+        {%- assign overview = site.documents | where: "lang", page.lang | where: "ref", section.name | first -%}
+        <div class="col-12 mb-4">
+            <div class="data border-r10 p-3">
+                <h2 class="mb-4">{{ overview.title }}</h2>
+                <p class="mb-4">{{ overview.description }}</p>
+                <div class="row">
+                    {%- for item in section.data -%}
+                    {%- assign product_type = site.documents | where: "lang", page.lang | where_exp: "data", "data.tag[2] == overview.tag[2]"  | where_exp: "type", "type.tag[3] == item.type" | sort: "weight" -%}
+                    {%- assign product_type_name = product_type | first-%}
+                    <div class="col-12 col-md-auto mb-2 mb-md-0">
+                        <h4 class="mb-2">{{ product_type_name.title }}</h4>
+                        <ul class="clear-list d-flex">
+                            {% for docs in product_type %}
+                            <li class="mr-2">
+                                <a class="border-blue-link d-inline-block px-2 border-r10 no-underline" href="{{ docs.url }}">{{ docs.tag[1] | replace: 'api', 'API' | replace: 'ios', 'iOS' | replace: 'android', 'Android' }}</a>      
+                            </li>  
+                            {%- endfor -%}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {%- endfor -%}
+        {%- endfor -%}  
+    </section>
+    <section class="row help-lib">
+        <div class="col-12 col-md-6 mb-4 mb-md-0">
+            {%- assign showcase_card = site.pages | where: "ref", "showcase-home" | where: "lang", page.lang -%}
+            {%- for item in showcase_card -%}
+            <a class="d-block light-link no-underline lib border-r10 p-4" href="{{ item.url }}">
+                <h2 class="color-white mb-4">{{ item.title }}</h2>
+                <p>{{ item.description }}</p>
+            </a>
+            {%- endfor -%}
+        </div>
+        <div class="col-12 col-md-6 mb-4 mb-md-0">
+            {%- assign faq_card = site.pages | where: "ref", "faq" | where: "lang", page.lang -%}
+            {%- for item in faq_card -%}
+            <a class="d-block light-link no-underline help border-r10 p-4" href="{{ item.url }}">
+                <h2 class="color-white mb-4">{{ item.title }}</h2>
+                <p>{{ item.description }}</p>
+                <ul>
+                    <li>{{ site.data.t[page.lang].fi-q-general}}</li>
+                    <li>{{ site.data.t[page.lang].fi-q-dev}}</li>
+                    <li>{{ site.data.t[page.lang].fi-q-license}}</li>
+                    <li>{{ site.data.t[page.lang].fi-q-finance}}</li>
+                    <li>{{ site.data.t[page.lang].fi-q-user}}</li>
+                    <li>{{ site.data.t[page.lang].fi-q-term}}</li>
+                </ul>
+            </a>    
+            {%- endfor -%}
+        </div>
+    </section>
+</main>

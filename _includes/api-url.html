@@ -1,29 +1,17 @@
-{% assign flag = page.url | split: "/" | last %}
-{% for item in site.data.api-endpoint[flag] %}
-{% case page.data %}
-{% when "geo" %}
-<div class="request-url">
-    <code>{{- site.exturl.geoapi }}/{{ page.version }}{{ item.path }}?[{{- site.data.t[page.lang].rp }}]</code>
+<div class="request-url mb-3">
+    {%- assign flag = page.tag[2] | append: '-' | append: page.tag[3] -%}
+    {% for item in site.data.dev.api-endpoint[flag].endpoint %}
+    {%- case page.tag[2] -%}
+        {%- when "geo" -%}
+        <pre><code>{{ site.links.geoapi }}{{ item.path }}?[{{- site.data.t[page.lang].rp }}]</code></pre>
+        {%- else -%}
+        {%- if forloop.length > 1 -%}
+        <span class="my-3 d-block text-bold">{{- item.name[page.lang] -}}</span>    
+        {%- endif -%}
+        <pre><code>{{ site.links.api }}{{ item.path }}?[{{- site.data.t[page.lang].rp }}]</code></pre>
+    {%- endcase -%}
+    {% endfor %}
+    {%- if include.dev == true -%}
+    {{ site.data.t[page.lang].api-url-note | markdownify }}    
+    {%- endif -%}
 </div>
-{% when "historical" %}
-<div class="request-url">
-    <code>{{- site.exturl.datasetapi }}/{{ page.version }}{{ item.path }}?[{{- site.data.t[page.lang].rp }}]</code>
-</div>
-{% else %}
-<div class="request-url">
-    {% if forloop.length > 1 %}
-    <h4>{{- item.name[page.lang] -}}</h4>
-    {% endif %}
-    <ul>
-        <li>
-            {{ site.data.t[page.lang].bizapi }}<code>{{- site.exturl.api }}/{{- page.version }}{{- item.path }}?[{{- site.data.t[page.lang].rp }}]</code>
-        </li>
-        {% unless item.biz-only %}
-        <li>
-            {{ site.data.t[page.lang].devapi }}<code>{{- site.exturl.devapi }}/{{- page.version }}{{- item.path }}?[{{- site.data.t[page.lang].rp }}]</code>
-        </li>
-        {% endunless %}
-    </ul>
-</div>
-{% endcase %}
-{% endfor %}

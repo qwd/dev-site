@@ -1,0 +1,139 @@
+home: Home
+widget: Widget
+icons: Icons
+showcase: Showcase
+library: Library
+see-library: See Code Library
+price: Price
+blog: Blog
+console: Console
+register: Register
+login: Login
+logout: Logout
+more: More
+auto: Auto
+getapp: Get APP
+tos: Term of Service
+privacy: Privacy
+about: About
+screenshot: Screenshot
+disclaimer: Disclaimer
+contact: Contact
+contact-us: Contact us
+owp: Open Weather Plus
+s6warning: Here is the Weather API version S6, which will be offline on December 31st, 2021 and it is now unavailable for new users. Click to view the latest API service.
+footer-des: Simple · Efficient · Powerful Weather Service
+footer-copyright: |-
+  &copy; 2021 <a href="https://www.qweather.com/en/" target="_blank" rel="noopener noreferrer">QWeather</a>. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> Hosted by <a href="https://github.com/qwd" target="_blank" rel="noopener noreferrer">Github</a>
+goto-qw: See more weather? Go to QWeather
+params: Parameters
+description: Description
+bizapi: Pro
+devapi: Dev
+rp: params
+docs: Documentation
+doc: Docs
+feats: Features
+docs-category: Docs Category
+docs-list: Documentation List
+glossary: Glossary
+opt: optional
+rqd: required
+tocnav: On This Page
+faq: FAQ
+help: Help
+help-des: Looking for help? Check here for purchase, invoice, pricing, account and more.
+resource: Resource
+utility: Utility
+download: Download
+langname: English
+langcode: EN
+free: Free
+see: See
+apply: For
+edit: Edit
+learn: Learn more
+data: Data
+available: Available
+platform: Platform
+api-response-note: The response is in JSON format and is [Gzip compressed](/en/docs/best-practices/gzip/), all fields are Strings.
+api-url-note: For Free subscription, change the API Host to `devapi.qweather.com`. See [data available for Free subscription](/en/docs/finance/subscription/#comparison).
+di-weather-sdk: Weather SDK
+di-weather-api: Weather API
+di-resource: Utility Resource
+hp-slogan: Build a beautiful weather program
+hp-slogan-2: to drive your business
+hp-slogan-desc: API / SDK / 插件 / APP
+hp-data: Weather Data 
+hp-data-desc: QWeather Develop Service is based on advanced meteorological algorithms and provides a powerful weather service, to help you display weather or drive your business decisions.
+hp-data-refer: See Service and Data
+hp-dev: Developer Friendly
+hp-dev-desc: RESTful APIs and out-of-the-box SDKs make your development work easier.
+hp-dev-refer: See Develop Guide
+hp-ww: Worldwide
+hp-ww-desc: We provides global deployment capability, so you no longer have to struggle with localization issues or complex network environments around the world.
+hp-ww-refer: See Global Deployment
+hp-price: Flexible Pricing
+hp-price-desc: We support Pay as you go billing model, pay only for the services you actually use, no upfront payments, no hidden fees, start and stop whenever you want.
+hp-price-refer: See Price
+hp-intro-try: Try it out
+hp-intro-try-desc: Very easy! <a href="https://id.qweather.com/#/register?redirect=https%3A%2F%2Fconsole.qweather.com" target="_blank" rel="noopener noreferrer">Register</a> and create a Project and KEY with free subscription based to get weather data. See [Quick Start](/en/docs/start/).
+hp-intro-more: Learn more
+hp-intro-more-desc: We provide useful documentation for your development, including [Develop Guide](/docs/api/), [Resource](/en/docs/resource/), [Best Practices](/en/docs/best-practices/) and [Showcases](/en/showcase/).
+hp-intro-org: Enterprise Customization
+hp-intro-org-desc: Contact our <a href="https://www.qweather.com/en/contact" target="_blank" rel="noopener noreferrer">business experts</a> for a complete weather solution.
+hp-regnow: Free Registration
+hp-current-ver: Current version
+hp-client: Who is using...
+pi-ourprice: Our Price
+pi-desc: Flexible, Transparent and Affordable
+pi-payg: Pay as you go
+pi-payg-desc: |-
+  QWeather Develop services are all based on pay as you go billing model, you only pay for the services you actually use, no large upfront, no hidden fees, start and stop whenever you want, and no fees when you stop.
+pi-payg-more: See Billing and Payment
+pi-payg-unit: per Requests
+pi-saving-plans: Saving Plans
+pi-saving-plans-desc: |- 
+  If you have a high volume of requests, you can save significant cost with the Savings Plan.
+
+  Savings Plans is a discount plan that offers lower pay as you go pricing, in exchange, you need to prepay the committed usage amount.
+pi-saving-plans-more: See Saving Plans
+pi-tier-title: Pricing, more use more save
+pi-tier-desc: Pay as you go is tiered pricing, with the higher requests, the lower cost per request. 
+pi-tier-see: Click to see the price of the services
+pi-calc: Price Calculator
+pi-calc-desc: You can easily use the price calculator to estimate your monthly cost.
+pi-calc-go: Calculate (login required)
+pi-org: Organization
+pi-org-desc: |-
+  For enterprise customers with a large volume of requests (usually million or more requests per day), we offer additional solutions:
+  - More discounts
+  - Higher performance service resources
+  - Higher availability
+  - Customized solutions
+  - 7x24 technical support
+pi-free-subs: Free Subscription
+pi-free-subs-desc: |-
+  Free Subscription supports limited weather services and requests, it is under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> license. For eligible developers in mainland China, more free requests is also available.
+pi-free-subs-more: See Free Subscription
+pi-more: More
+pi-req-mo: Requests(per month)
+pi-price-req: Price(per request)
+pi-tier1: 0-30,0000
+pi-tier2: Next 70,0000
+pi-tier3: Next 4 million
+pi-tier4: Next 5 million
+pi-tier5: Next 40 million
+pi-tier6: Over 50 million
+si-biref: Welcome to share your code, you can edit <a href="https://github.com/qwd/dev-site/edit/master/_data/showcase.yml" target="_blank" rel="noopener noreferrer">this file</a> and submit a PR. See <a href="https://blog.qweather.com/post/share-your-work/" target="_blank" rel="noopener noreferrer">how to share code</a> to learn more.
+si-note: We cannot guarantee the availability of these works, please contact the author. 
+fi-q-general: General
+fi-q-dev: Development
+fi-q-license: License
+fi-q-finance: Finance and Cost
+fi-q-user: Account Management
+fi-q-term: Legal Terms
+ub-title: Upgrade Your Browser
+ub-desc: Unfortunately, QWeather does not support outdated browsers. It is recommended to use the latest versions of the following modern browsers to access our service, which provide a better and safer Internet surfing experience.
+ub-note: For security reasons, please download browsers only from their official website
+ub-support: If you still have problems, please send an email to support@qwaether.com
