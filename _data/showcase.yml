@@ -119,7 +119,7 @@
   works:
     - name: QWeather
       author: RTAkland
-      code: https://github.com/MarkusJoe/QWeather
+      code: https://github.com/MarkusJoe/QWeatherReporter
       description: 一个使用和风天气API获取天气信息并通过SMTP发送到邮箱的python小项目。Send QWeather to mailbox via STMP.
     - name: QWeatherBot
       author: daya0576

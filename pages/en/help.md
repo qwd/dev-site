@@ -43,7 +43,7 @@ Our API uses Gzip compression, which will greatly reduce your network traffic, s
 
 ### What is the API url for Free Subscription?
 
-The API url for Free Subscription is `devapi.qweather.com`, for more configuration of free subscription, please refer to [API configuration](/en/docs/configuration/api-config/), [iOS configuration](/en/docs/configuration/ios-sdk- config/) and [Android-config](/en/docs/configuration/android-sdk-config/).
+The API url for Free Subscription is `devapi.qweather.com`, for more configuration of free subscription, please refer to [API configuration](/en/docs/configuration/api-config/), [iOS configuration](/en/docs/configuration/ios-sdk-config/) and [Android-config](/en/docs/configuration/android-sdk-config/).
 
 ### What happens when I run out of free subscription requests?
 
@@ -89,7 +89,7 @@ Yes. With Free/Standard and Pro subscriptions, you can use it for any purpose, i
 
 ### Is attribution required?
 
-Yes. Regardless of the license, you must include attribution and a statement of some data sources as required. Refer to [attribution](/en/en/docs/terms/attribution/).
+Yes. Regardless of the license, you must include attribution and a statement of some data sources as required. Refer to [attribution](/en/docs/terms/attribution/).
 
 ## Finance and Cost
 
@@ -97,7 +97,7 @@ Yes. Regardless of the license, you must include attribution and a statement of 
 
 Standard subscriptions use a pay as you go (a.k.a volume-based) pricing model that doesn't need you to pay a lot of money up front or for services you don't use - you only pay for you actually use. When you stop using it, you don't need to pay anything else. 
 
-In addition, pay as you go pricing is a tiered price, meaning that the more you use, the lower the unit price. Please refer to [Pay-as-you-go Pricing](/en/docs/finance/pricing/) and [Billing System](/en/en/docs/finance/billing-and-payment/).
+In addition, pay as you go pricing is a tiered price, meaning that the more you use, the lower the unit price. Please refer to [Pay-as-you-go Pricing](/en/docs/finance/pricing/) and [Billing System](/en/docs/finance/billing-and-payment/).
 
 ### What is subscription?
 

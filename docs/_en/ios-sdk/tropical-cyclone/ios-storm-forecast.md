@@ -6,7 +6,7 @@ ref: 3-sdk-ios-storm-forecast
 
 Storm Forecast iOS SDK provides tropical cyclones location, level, pressure, wind speed for major ocean basins around the world.
 
-> **Note:** For inactive storms, the response data is **NULL**, please get the storms status by [Storm List](/en/docs/ios-sdk/tropical/storm-list/) first.
+> **Note:** For inactive storms, the response data is **NULL**, please get the storms status by [Storm List](/en/docs/ios-sdk/tropical-cyclone/ios-storm-list/) first.
 
 
 | Interface code (Enum)             | Interface     | Class                 |

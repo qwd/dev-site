@@ -11,7 +11,7 @@ ref: config-project
 
 ## Create Project
 
-1. Go to [Console - Project](https://conslole.qweather.com/#/apps), and click the "Create Project" button.
+1. Go to [Console - Project](https://console.qweather.com/#/apps), and click the "Create Project" button.
 2. Set Project name, Project name can be up to 20 characters. You can modify the name later.
 3. Select [Subscription](/en/docs/finance/subscription/). If you choose Standard subscription, please ensure that your balance is ≥ ¥10.
 4. Select the platform of KEY, KEY can not be used across platforms. Create the first KEY at this time, you can create more KEYs later.

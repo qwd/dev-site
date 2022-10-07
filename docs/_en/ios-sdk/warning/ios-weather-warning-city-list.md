@@ -6,7 +6,7 @@ ref: 2-sdk-ios-weather-warning-city-list
 
 Get a list of cities for the specified country or region where weather warnings are currently in effect.
 
-See also [Weather warning API](/en/docs/ios-sdk/warning/weather-warning/) to get warning details.
+See also [Weather warning API](/en/docs/ios-sdk/warning/ios-weather-warning/) to get warning details.
 
 > For more warning information, see [Warning Info](/en/docs/resource/warning-info/).
 

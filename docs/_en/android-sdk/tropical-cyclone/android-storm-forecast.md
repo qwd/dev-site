@@ -6,7 +6,7 @@ ref: 3-sdk-android-storm-forecast
 
 Storm Forecast provides tropical cyclones information for a specific tropical cyclone, the data including forecast tropical cyclones location, level, pressure, wind and etc.
 
-> **Note:** For inactive storms, the returned data is **NULL**, please get the storms status by [Storm List](/en/docs/android-sdk/tropical/storm-list/) first.
+> **Note:** For inactive storms, the returned data is **NULL**, please get the storms status by [Storm List](/en/docs/android-sdk/tropical-cyclone/android-storm-list/) first.
 
 
 | Interface Code| Interface          | Class  |
