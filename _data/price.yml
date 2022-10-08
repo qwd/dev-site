@@ -1,4 +1,8 @@
 - data: 
+    ref: 0-api-geo
+  incl: [1-api-city-lookup,2-api-top-city]
+  price: [0.0005,0.00045,0.00035,0.00025,0.0002,0.00015]
+- data: 
     zh: 天气预报
     en: Weather
   incl: [1-api-weather-now, 2-api-weather-daily-forecast, 3-api-weather-hourly-forecast]
