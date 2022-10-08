@@ -1,0 +1,42 @@
+---
+layout: html
+---
+<section class="masthead showcase">
+    <div class="container">
+        <h1>{{ page.title }}</h1>
+        <p class="text-center">{{ page.description }}</p>
+    </div>
+</section>
+<main class="main-content narrow container">
+    <div class="article">
+        <section class="showcase-content mb-5 p-5 border-r10">
+            <div class="brief mb-5">
+                <p>🙏❤️👍</p>
+                <p>{{ site.data.t[page.lang].si-biref }}</p>
+                <p class="italic small text-underline color-grey-76">
+                    {{ site.data.t[page.lang].si-note }}
+                </p>
+            </div>
+            {%- assign arranged_show = site.data.showcase | sort: 'language' -%}
+            {%- for showcase in arranged_show -%}
+            <div class="works-list mb-5">
+                <h2 class="pb-3 mb-3 works-lang">{{ showcase.language }}</h2>
+                {% assign arranged_works = showcase.works | sort: 'name' -%}
+                {% for work in arranged_works %}
+                <div class="works-item ml-3 mb-4">
+                    <a class="work-name d-inline-block mb-2" href="{{ work.code }}" target="_blank" rel="noopener noreferrer">{{ work.name }}</a>
+                    <div class="work-meta d-flex mb-2">
+                        <a class="d-block btn-link btn-link-sm btn-link-purple mr-2" href="{{ work.website | default: work.code }}" target="_blank" rel="noopener noreferrer">@{{ work.author }}</a>
+                        {%- if work.screenshot or work.screenshot != nil -%}
+                        <a class="d-block btn-link btn-link-sm btn-link-pink" href="{{ work.screenshot }}" target="_blank" rel="noopener noreferrer">{{ site.data.t[page.lang].screenshot }}</a>
+                        {%- endif %}
+                    </div>
+                    <p class="d-block">{{ work.description | strip_html | truncate: 200 }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+
+</main>

@@ -1,0 +1,109 @@
+.homepage {
+  .hero {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      // background-color: #1f080b;
+      .headline {
+          h1 {
+              font-size: 4rem;
+              line-height: 1.5;
+              letter-spacing: 1.2px;
+          }
+      }
+      .banner {
+        img {
+          max-width: 100%;
+        }
+      }
+      .weather-icon {
+        height: 80px;
+      }
+      &.hero-default {
+        // background: linear-gradient(30deg, #00b8f8, #5ac3cf, #fbac5a 95%);
+        background: linear-gradient(180deg, rgba(240, 254, 255, 0.3), rgba(245, 245, 247, 1) 90%),
+            radial-gradient(ellipse at top right, #fbac5a, transparent 50%), 
+            radial-gradient(ellipse at top left, #0084f8, transparent 50%), 
+            radial-gradient(ellipse at center top, #1e8c98, transparent 50%), 
+            radial-gradient(ellipse at center bottom, #b8cfff, transparent 50%), 
+            radial-gradient(ellipse at center, #079b9d, transparent 50%),
+            radial-gradient(ellipse at bottom left, #6dc2ff, transparent 50%), 
+            radial-gradient(ellipse at bottom right, #ac82f4, transparent 40%);
+        background-color: #93d3e9;
+
+        .weather-icon {
+          background-image: url(/assets/images/hp-cloudy.png);
+          background-size: 100%;
+          background-repeat: no-repeat;
+        }
+      }
+      &.hero-sunny {
+        background: linear-gradient(200deg, #ffe4c8, #c7fffd 60%, #A6E8FF);
+
+        .weather-icon {
+          background-image: url(/assets/images/hp-sunny.png);
+          background-size: 100%;
+          background-repeat: no-repeat;
+        }
+      }
+      &.hero-cloudy {
+        background: linear-gradient(200deg, #D0DAE8, #CCD4DF 60%, #A5B3C5);
+
+        .weather-icon {
+          background-image: url(/assets/images/hp-cloudy.png);
+          background-size: 100%;
+          background-repeat: no-repeat;
+        }
+      }
+      &.hero-rain {
+        background: linear-gradient(200deg, #DBEBFF, #DDE5F4 60%, #BECDDD);
+
+        .weather-icon {
+          background-image: url(/assets/images/hp-rain.png);
+          background-size: 100%;
+          background-repeat: no-repeat;
+        }
+      }
+      &.hero-snow {
+        background: linear-gradient(200deg, #D2F0FD, #E6F8FE 60%, #F8FFFF);
+
+        .weather-icon {
+          background-image: url(/assets/images/hp-snow.png);
+          background-size: 100%;
+          background-repeat: no-repeat;
+        }
+      }
+  }
+  .feats {
+    background: linear-gradient(to bottom, #F5F5F7, #fff);
+    background-color: #F5F5F7;
+    padding-top: 40px;
+    .feat-card {
+      // box-shadow: 0 2px 5px 2px rgba(184, 184, 184, .1);
+      box-shadow: 0 2px 5px 2px rgba(184, 184, 184, .2);
+
+      .card-bg {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        &.service-data {
+          background-color: #EEF7FF;
+        }
+        &.devtools {
+          background-color: #efeaff;
+        }
+        &.worldwide {
+          background-color: #f3f3f3;
+        }
+        &.price {
+          background-color: #FFF6E8;
+        }
+      }
+      .card-content {
+        min-height: 200px;
+      }
+    }
+    .start-card {
+      background-color: $color-light-blue;
+      // color: $color-fa;
+    }
+  }
+}

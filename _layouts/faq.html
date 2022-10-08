@@ -1,0 +1,21 @@
+---
+layout: html
+---
+<section class="masthead faq">
+    <div class="container">
+        <h1>{{ page.title }}</h1>
+        <p class="text-center">{{ page.description }}</p>
+    </div>
+</section>
+<main class="main-content narrow container">
+    <div class="article">
+        <section class="faq-content p-5 border-r10">
+            <div class="mb-5">
+                {% include toc.html html=content h_min=2 h_max=3 class='clear-list' item_class='faq-toc-item-%level%' submenu_class='pt-2' %}
+            </div>
+            <div class="border-r10">
+                {% include anchor_headings.html html=content h_min=2 h_max=3 anchorBody='<i class="ifq-link-horizontal"></i>' anchorClass="anchor-link no-underline" anchorTitle="Permalink" %}
+            </div>       
+        </section>
+    </div>
+</main>

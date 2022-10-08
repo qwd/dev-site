@@ -7,117 +7,15 @@ footer {
   font-size: 1.4rem;
   letter-spacing: $letter-space;
   min-height: 280px;
-
-  a, a:hover, a:active, a:focus {
-    color: #fff;
+  h3, img {
+    vertical-align: middle;
+  }
+  .terms {
+    min-height: 40px;
+    background-color: #2B2C2E;
+    margin-bottom: 0;
+    padding: 10px 0;
+    line-height: 20px;
+    font-size: $small-font-size;
   }
 }
-
-.footer-content {
-  min-height: 160px;
-  margin: 40px 0;
-
-  .left {
-    .brand {
-      margin-bottom: 10px;
-      img {
-        height: 30px;
-        width: 30px;
-        margin-right: 10px;
-        display: inline-block;
-        vertical-align: middle;
-      }
-
-      h3 {
-        font-size: 2.4rem;
-        font-weight: bold;
-        line-height: 30px;
-        vertical-align: middle;
-        display: inline-block;
-        color: #fff;
-      }
-      a {
-        text-decoration: none;
-      }
-    }
-    .subtitle {
-      line-height: $line-height;
-      padding-bottom: 10px;
-      a {
-        padding: 0 2px;
-      }
-    }
-    .goto-qw {
-      a {
-        color: $font-color;
-        font-weight: bold;
-        padding: 10px;
-        background-image: linear-gradient(to right, #fae9ef, #d8d8ff, #ebf2fc);
-        background-color: #d8d8ff ;
-        border-radius: 14px;
-        line-height: 20px;
-        display: inline-block;
-        // &:hover,
-        // &:focus,
-        // &:active,
-        // &:visited {
-        //   text-decoration: none;
-        // }
-      }
-    }
-  }
-  .right {
-    h3 {
-      margin-bottom: 2rem;
-      font-size: $font-size;
-      color: #c0c0c0;
-
-      a {
-        color: #fff;
-      }
-
-      text-align: center;
-    }
-
-    ul {
-      padding: 0;
-      list-style: none;
-      margin: 0;
-      text-align: center;
-    }
-
-    li {
-      padding-bottom: 10px;
-      padding-left: 0;
-    }
-
-    li:last-of-type {
-      padding-bottom: 0;
-    }
-  }
-}
-
-.footer-copyright {
-  min-height: 40px;
-  background-color: #2B2C2E;
-  margin-bottom: 0;
-  padding: 10px 0;
-  line-height: 20px;
-  font-size: $small-font-size;
-}
-
-// responsive 
-
-@media (max-width: 767px) {
-  .footer-content {
-    .left {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-  }
-  .footer-copyright {
-    .text-right {
-      text-align: left;
-    }
-  }
-  }

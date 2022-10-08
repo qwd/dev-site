@@ -1,0 +1,127 @@
+---
+layout: html
+---
+<section class="masthead price">
+    <div class="container">
+        <h1>{{ page.title }}</h1>
+        <p class="text-center">{{ site.data.t[page.lang].pi-desc }}</p>
+    </div>
+</section>
+<main class="price-homepage container pb-5">
+    <section class="payment-system row mb-5">
+        <div class="col-md-6 col-12 mb-5 mb-md-0">
+            <div class="price-card payg p-4">
+                <img src="/assets/images/pi-payg-cart.png" alt="" width="240" class="mx-auto mb-4 d-block">
+                <!-- <span class="d-block mb-2">标准订阅</span> -->
+                <h2 class="mb-5">{{ site.data.t[page.lang].pi-payg }}</h2>
+                <div class="card-brief-with-height mb-5">
+                    {{ site.data.t[page.lang].pi-payg-desc | markdownify }}
+                </div>
+                <a class="d-block" href="{%- if page.lang == "en" -%}/en{%- endif -%}/docs/finance/billing-and-payment/">{{ site.data.t[page.lang].pi-payg-more }}</a>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="price-card splan p-4">
+                <img src="/assets/images/pi-savingpot.png" alt="" width="240" class="mx-auto mb-4 d-block">
+                <!-- <span class="d-block mb-2">标准订阅</span> -->
+                <h2 class="mb-5">{{ site.data.t[page.lang].pi-saving-plans }}</h2>
+                <div class="card-brief-with-height mb-5">
+                    {{ site.data.t[page.lang].pi-saving-plans-desc | markdownify }}
+                </div>
+                <a class="d-block" href="{%- if page.lang == "en" -%}/en{%- endif -%}/docs/finance/saving-plans/">{{ site.data.t[page.lang].pi-saving-plans-more }}</a>
+            </div>
+        </div>
+    </section>
+    <section class="pricing row mb-5">
+        <div class="col-12">
+            <div class="price-card tier p-4">
+                <h2 class="mb-5">{{ site.data.t[page.lang].pi-tier-title }}</h2>
+                <div class="card-brief">
+                    <p>{{ site.data.t[page.lang].pi-tier-desc }}</p>
+                    <p>{{ site.data.t[page.lang].pi-tier-see }}:</p>
+                </div>
+                <div class="price-by-service row">
+                    {% for group in site.data.price %}
+                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                        {% assign group_doc = site.documents | where: "lang", page.lang | where: "ref", group.data.ref | first %}
+                        <a class="d-block service-card p-3 border-r10 no-underline color-font" href="{%- if page.lang == "en" -%}/en{%- endif -%}/docs/finance/pricing/#{%- if group.data.ref -%}{{ group_doc.url | split: "/" | last }}{%- else -%}{{ group.data.en | slugify }}{%- endif -%}">
+                            {%- if group.data.ref -%}
+                            <h4 class="mb-3">{{ group_doc.title }}</h4>
+                            {%- else -%}
+                            <h4 class="mb-3">{{ group.data[page.lang] }}<sup>{{ forloop.index | replace: "1", "*" | replace: "2", "+" }}</sup></h4>
+                            {%- endif -%}
+                            <div class="price-content{{- forloop.index }} d-none d-sm-block">
+                                <ul class="clear-list">
+                                    {% for incl_data in group.incl %}
+                                    {%- assign incl_doc = site.documents | where: "lang", page.lang | where: "ref",incl_data | first -%}
+                                    <li class="small mb-1">{{ incl_doc.title }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {%- if group.excl -%}
+                                <p class="mb-3 small italic text-underline color-grey">
+                                    <sup><strong>{{ forloop.index | replace: "1", "*" | replace: "2", "+" }}</strong></sup>{{ group.excl[page.lang]}}
+                                </p>
+                                {%- endif -%}
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+    </section>
+    <section class="price-calc row mb-5">
+        <div class="col-12">
+            <div class="price-card calc px-4 py-5">
+                <div class="row">
+                    <div class="col-md-auto col-12 text-center mb-4 mb-md-0">
+                        <img src="/assets/images/pi-calc.png" alt="" width="160">
+                    </div>
+                    <div class="col">
+                        <h2 class="mb-4" style="color: #fff;">{{ site.data.t[page.lang].pi-calc }}</h2>
+                        <div class="card-calc-brief-with-height">
+                            <p>{{ site.data.t[page.lang].pi-calc-desc }}</p>
+                        </div>
+                        <a href="https://console.qweather.com/" class="btn-link btn-link-md btn-link-blue d-inline-block">{{ site.data.t[page.lang].pi-calc-go }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ent-and-free row mb-5">
+        <div class="col-md-6 col-12 mb-5 mb-md-0">
+            <div class="price-card ent p-4">
+                <!-- <span class="d-block mb-2">高级订阅</span> -->
+                <h2 class="mb-5">{{ site.data.t[page.lang].pi-org }}</h2>
+                <div class="card-brief-with-height mb-5">
+                    {{ site.data.t[page.lang].pi-org-desc | markdownify }}
+                </div>
+                <a class="d-block" href="https://www.qweather.com{%- if page.lang == "en" -%}/en{%- endif -%}/contact" target="_blank">{{ site.data.t[page.lang].contact-us }}</a>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="price-card free p-4">
+                <!-- <span class="d-block mb-2">免费订阅</span> -->
+                <h2 class="mb-5">{{ site.data.t[page.lang].pi-free-subs }}</h2>
+                <div class="card-brief-with-height mb-5">
+                    <p>
+                        {{ site.data.t[page.lang].pi-free-subs-desc  }}
+                    </p> 
+                </div>
+                <a class="d-block" href="{%- if page.lang == "en" -%}/en{%- endif -%}/docs/finance/saving-plans/">{{ site.data.t[page.lang].pi-free-subs-more  }}</a>
+            </div>
+        </div>
+    </section>
+    <section class="more text-center mb-5">
+        <h2 class="mb-4">{{site.data.t[page.lang].pi-more}}</h2>
+        <ul class="clear-list">
+            {% for item in site.data.contents.price-more %}
+            <li class="pb-2 big">
+                <a class="dark-link" href="{% if page.lang == "en" %}/en{% endif %}{{ item.link }}">{{ item.title[page.lang] }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section class="register text-center">
+        <a href="https://id.qweather.com/#/register?redirect=https://console.qweather.com{% if page.lang == "en" %}&lang=en{% endif %}" class="border-blue-link no-underline d-inline-block px-5 py-3 border-r10 big ">{{ site.data.t[page.lang].hp-regnow }}</a>
+    </section>
+</main>

@@ -1,0 +1,45 @@
+<!-- for pc -->
+<section class="doc-bc small d-none d-sm-block sticky-top">
+  <div class="container-fluid">
+    <ul class="clear-list d-flex">
+      {%- capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{%- endcapture %}
+      {%- assign splitted_url_parts = page_url_without_index_html | split: '/' %}
+      {%- capture forLoopMaxInt %}{{ splitted_url_parts.size | minus:1 }}{%- endcapture %}
+      {%- for i in (1..forLoopMaxInt) %}
+      {%- capture current_breadcrumb_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/index.html{%- endcapture%}
+      {%- capture current_breadcrumb_md_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{%- endcapture %}
+      {%- capture next_prepender %}{{next_prepender}}/{{ splitted_url_parts[i] }}{%- endcapture %}
+      {%- assign docs_collection_by_lang = site.documents | where: "lang", page.lang %}
+      {%- for breadcrumb_page in docs_collection_by_lang %}
+      {%- if current_breadcrumb_url == breadcrumb_page.url or current_breadcrumb_md_url == breadcrumb_page.url %}
+      {%- assign j = forLoopMaxInt | plus: 0 %}
+      <li class="py-2 mr-1 {%- if i==j %} active{%- endif %}">
+        {%- capture breadcrumb_page_page_url_without_index_html %}{{ breadcrumb_page.url | remove: "index.html"}}{%- endcapture %}
+        <a class="d-inline-block no-underline text-lighter" href="{{ site.baseurl }}{{ breadcrumb_page_page_url_without_index_html }}">{{ breadcrumb_page.title }}</a>
+      </li>
+      {%- endif %}
+      {%- endfor %}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- for mobile -->
+<section class="doc-bc-mobile sticky-top d-block d-sm-none">
+  <div class="container-fluid">
+    <select onchange="if (this.value) window.location.href=this.value">
+      <option value="">{{ site.data.t[page.lang].docs-category}}</option>
+      {%- for section in site.data.contents.reference_docs  -%}
+      {%- assign overview = site.documents | where: "lang", page.lang | where: "ref", section.overview | first %} 
+      <optgroup label="{{ overview.title }}">
+        {%- for item in section.list -%}
+        {%- assign docs = site.documents | where: "lang", page.lang | where: "ref", item.name | first %}
+        <option value="{{ docs.url }}">
+          {{- docs.title -}}
+        </option>
+        {%- endfor -%}
+      </optgroup>
+      {%- endfor %}
+    </select>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+---
+layout: article
+---
+{{ page.description | markdownify }}
+{{ content }}
+{% assign arranged_overview = site.data.contents.reference_docs | where: "overview", page.ref -%}
+{% for section in arranged_overview -%}
+<ul>
+    {%- for item in section.list -%}
+    {%- assign docs = site.documents | where: "lang", page.lang | where: "ref", item.name | first -%}
+    <li>
+        <a href="{{docs.url}}">{{ docs.title }}</a>
+    </li>
+    {% endfor -%}
+</ul>
+{% endfor -%}

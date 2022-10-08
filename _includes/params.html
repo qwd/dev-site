@@ -4,10 +4,13 @@ Multiple parameters are separated by spaces, e.g. {% include prams.html p="lang 
 {%- endcomment -%}
 <div class="request-param">
     {%- assign param = include.p | split: " "  -%}
-    {%- for item in param -%}
-    <h5 {%- if site.data.p[item].rqd %} class="rqd"{%- endif -%}>{{ site.data.p[item].name }}</h5>
-    {{ site.data.p[item].text[page.lang] | markdownify }}
-    {%- endfor -%}
+    <ul>
+        {%- for item in param -%}
+        <li class="mb-4">
+            <code class="mr-1">{{ site.data.dev.p[item].name }}</code> {%- if site.data.dev.p[item].rqd %}<span class="mr-1 italic small text-bold">({{ site.data.t[page.lang].rqd }})</span>{%- endif -%} {{ site.data.dev.p[item].text[page.lang] | markdownify | remove: '<p>' | remove: '</p>' }}
+        </li> 
+        {%- endfor -%}
+    </ul>
 </div>
 
 

@@ -1,0 +1,58 @@
+@media (max-width: 991px) {
+  .docs-home {
+    .start {
+      min-height: auto;
+
+      ul {
+        columns: 3;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    // padding-top: 116px;
+    margin-bottom: 468px;
+  }
+
+  .docs-home {
+    .start,
+    .bp,
+    .resource {
+      min-height: auto;
+    }
+  }
+
+    table {
+    display: block;
+    width: 100%;
+    min-height: .01%;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+
+@media (max-width: 575px) {
+  body:lang(en) {
+    margin-bottom: 510px;
+  }
+  .homepage {
+    .hero {
+      .headline {
+        h1 {
+          font-size: 3.2rem;
+        }
+      }
+    }
+  }
+  .docs-home {
+    .start {
+      ul {
+        columns: 2;
+      }
+    }
+  }
+}

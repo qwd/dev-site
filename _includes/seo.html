@@ -1,17 +1,14 @@
-    {%- comment -%}
-    Set "noindex" for seo false pages, e.g. 404.html
-    {%- endcomment -%}
+    {%- comment -%}Set "noindex" for seo false pages, e.g. 404.html{%- endcomment -%}
     {%- if page.seo == false %}
     <title>{{ page.title }}</title>
     <meta name="robots" content="noindex">     
     {%- else %}
-    {%- comment -%}
-    Set a variety of titles for title/og/json-ld
-    {%- endcomment -%}        
-    {%- if page.tag and page.tag != "overview" %}
-    {%- assign upcase_tag = page.tag | upcase -%}
-    {%- capture seotitle_w_sitename -%}{{ page.title }} - {{ upcase_tag }} | {{ site.name[page.lang] }}{%- endcapture -%}
-    {%- capture seotitle -%}{{ page.title }} - {{ upcase_tag }}{%- endcapture -%}
+    {%- comment -%}Set a variety of titles for title/og/json-ld{%- endcomment -%} 
+    {%- assign desc_from_content = page.content | markdownify | split: "</p>" | first | strip_html | strip  -%}
+    {%- assign platform = page.tag[1] | replace: 'ios', 'iOS' | replace: 'api', 'API' | replace: 'android', 'Android' -%}        
+    {%- if page.tag.first == "guide" and page.tag.last != "overview" %}
+    {%- capture seotitle_w_sitename -%}{{ page.title }} for {{ platform }} | {{ site.name[page.lang] }}{%- endcapture -%}
+    {%- capture seotitle -%}{{ page.title }} for {{ platform }}{%- endcapture -%}
     {%- elsif page.ref == "home" %}
     {%- capture seotitle_w_sitename -%}{{ site.name[page.lang] }} ~ {{site.description[page.lang]}}{%- endcapture -%}
     {%- capture seotitle -%}{{ site.name[page.lang] }}{%- endcapture -%}
@@ -19,20 +16,17 @@
     {%- capture seotitle_w_sitename -%}{{ page.title }} | {{ site.name[page.lang] }}{%- endcapture -%}
     {%- capture seotitle -%}{{ page.title }}{%- endcapture -%}           
     {%- endif %}
-    {%- comment -%}
-    Adjust the page.image URL to match the absolute or relative URL
-    {%- endcomment -%}
+    {%- comment -%}Adjust the page.image URL to match the absolute or relative URL{%- endcomment -%}
     {%- assign page_img = page.image | split: "/" -%}
     {%- unless page_img.first == "https:" or page_img.first == "http:" -%}
     {%- capture seo_img_url -%}{{ site.url }}{{ page.image }}{%- endcapture -%}
     {%- else -%}
     {%- capture seo_img_url -%}{{ page.image }}{%- endcapture -%}
     {%- endunless -%}
-    {%- comment -%}
-    Set seo meta tags for pages and documents
-    {%- endcomment -%}  
+    
+    {%- comment -%}Set seo meta tags for pages and documents{%- endcomment -%}  
     <title>{{ seotitle_w_sitename }}</title>
-    <meta name="description" content="{{ page.description }}" />
+    <meta name="description" content="{{ page.description | default: desc_from_content }}" />
     <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
     <meta property="og:title" content="{{ seotitle }}" />
     <meta property="og:locale" content="{{ page.lang }}" />
@@ -40,7 +34,7 @@
     {%- if page.image %}
     <meta property="og:image" content="{{ seo_img_url }}" />    
     {%- endif %}
-    <meta property="og:description" content="{{ page.description }}" />
+    <meta property="og:description" content="{{ page.description | default: desc_from_content }}" />
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="og:site_name" content="{{ site.name[page.lang] }}" />
     <meta property="og:type" content="{{page.seo.type}}" />
@@ -51,7 +45,7 @@
             "@type": "{{page.seo.type}}",
             "headline": "{{ seotitle }}",
             "dateModified":"{{page.date | date_to_xmlschema }}",
-            "description": "{{ page.description }}",    
+            "description": "{{ page.description | default: desc_from_content }}",    
             "url":"{{ site.url }}{{ page.url }}",
             {%- if page.image %}
             "image" : "{{ seo_img_url }}",

@@ -1,7 +1,7 @@
 <div class="api-snippets">
-        {% assign url_split = page.url | split: "/" | last %}
-        {% assign flag = url_split | append: "-"  | append: page.lang | append: "-json/" |  prepend: "/snippets/" %}
-        {% assign code = site.snippets | where: "url", flag %}
+        {{ site.data.t[page.lang].api-response-note | markdownify }}
+        {%- assign flag = page.tag[2] | append: '-' | append: page.tag[3] -%}
+        {% assign code = site.snippets | where: "title", flag %}
         {% for sample in code %}
         {{ sample.content | markdownify }}
         {% endfor %}

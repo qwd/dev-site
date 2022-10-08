@@ -23,58 +23,43 @@ See _data/response.yml
 {%- assign prefix_array = include.prefix | split: " " -%}
 {%- assign num = type_array.size | minus: 1 -%}
 
-<table class="md-in-table">
-    <thead>
-        <tr>
-            <th>{{ site.data.t[page.lang].params}}</th>
-            <th>{{ site.data.t[page.lang].description}}</th>
-        </tr>
-    </thead>
-    <tbody>
-        {%- comment -%}basic fields{%- endcomment %}
-        <tr>
-            <td><code class="no-bg">{{ site.data.response.code.name }}</code></td>
-            <td>{{ site.data.response.code.desc[page.lang] | markdownify -}}</td>
-        </tr>
-        {%- if show_update == 1 %}
-        <tr>
-            <td><code class="no-bg">{{ site.data.response.update.name }}</code></td>
-            <td>{{ site.data.response.update.desc[page.lang] | markdownify }}</td>
-        </tr> 
-        {%- endif %}
-        {%- if show_fxlink == 1 %}
-        <tr>
-            <td><code class="no-bg">{{ site.data.response.fxlink.name }}</code></td>
-            <td>{{ site.data.response.fxlink.desc[page.lang] | markdownify }}</td>
-        </tr> 
-        {%- endif %}
-        {%- comment -%}data fields with type{%- endcomment %}     
-        {%- if isType %}
-        {%- for i in (0..num) %}
-        {%- assign group_by_type = site.data.response[include.group] | where: "type", type_array[{{i}}]  -%}
-        {%- assign prefix_by_type = prefix_array[{{i}}] | append: "." -%}
-        {%- for item in group_by_type %}
-        <tr>
-            <td><code class="no-bg">{%- if prefix_by_type != "nil." %}{{ prefix_by_type }}{%- endif %}{{ item.name }}</code></td>
-            <td>{{ item.desc[page.lang] | markdownify }}</td>
-        </tr>
-        {%- endfor %}
-        {%- endfor %}
-        {%- comment -%}data fields without type{%- endcomment -%} 
-        {%- else %}
-        {%- for item in site.data.response[include.group] -%}
-        <tr>
-            <td><code class="no-bg">{%- if include.prefix != "nil" %}{{ include.prefix | append: "." }}{%- endif %}{{ item.name }}</code></td>
-            <td>{{ item.desc[page.lang] | markdownify }}</td>
-        </tr>
-        {%- endfor -%}
-        {%- endif %}
-        {%- comment -%}refer fields{%- endcomment -%}
-        {%- for item in site.data.response.refer -%}
-        <tr>
-            <td><code class="no-bg">refer.{{ item.name }}</code></td>
-            <td>{{ item.desc[page.lang] | markdownify }}</td>
-        </tr>  
-        {%- endfor -%}
-    </tbody>
-</table>
+<ul>
+    <li class="mb-4">
+        <code>{{ site.data.dev.response.code.name }}</code> {{ site.data.dev.response.code.desc[page.lang] | markdownify | remove: '<p>' | remove: '</p>' -}}
+    </li>
+    {%- if show_update == 1 %}
+    <li class="mb-4">
+        <code>{{ site.data.dev.response.update.name }}</code> {{ site.data.dev.response.update.desc[page.lang] | markdownify | remove: '<p>' | remove: '</p>' }}
+    </li> 
+    {%- endif %}
+    {%- if show_fxlink == 1 %}
+    <li class="mb-4">
+        <code>{{ site.data.dev.response.fxlink.name }}</code> {{ site.data.dev.response.fxlink.desc[page.lang] | markdownify | remove: '<p>' | remove: '</p>' }}
+    </li> 
+    {%- endif %}
+    {%- comment -%}data fields with type{%- endcomment %}     
+    {%- if isType %}
+    {%- for i in (0..num) %}
+    {%- assign group_by_type = site.data.dev.response[include.group] | where: "type", type_array[{{i}}]  -%}
+    {%- assign prefix_by_type = prefix_array[{{i}}] | append: "." -%}
+    {%- for item in group_by_type %}
+    <li class="mb-4">
+        <code>{%- if prefix_by_type != "nil." %}{{ prefix_by_type }}{%- endif %}{{ item.name }}</code> {{ item.desc[page.lang] | markdownify | remove: '<p>' | remove: '</p>' }}
+    </li>
+    {%- endfor %}
+    {%- endfor %}
+    {%- comment -%}data fields without type{%- endcomment -%} 
+    {%- else %}
+    {%- for item in site.data.dev.response[include.group] -%}
+    <li class="mb-4">
+        <code>{%- if include.prefix != "nil" %}{{ include.prefix | append: "." }}{%- endif %}{{ item.name }}</code> {{ item.desc[page.lang] | markdownify | remove: '<p>' | remove: '</p>' }}
+    </li>
+    {%- endfor -%}
+    {%- endif %}
+    {%- comment -%}refer fields{%- endcomment -%}
+    {%- for item in site.data.dev.response.refer -%}
+    <li class="mb-4">
+        <code>refer.{{ item.name }}</code> {{ item.desc[page.lang] | markdownify | remove: '<p>' | remove: '</p>' }}
+    </li>  
+    {%- endfor -%}
+</ul>
