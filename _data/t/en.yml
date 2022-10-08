@@ -2,8 +2,6 @@ home: Home
 widget: Widget
 icons: Icons
 showcase: Showcase
-library: Library
-see-library: See Code Library
 price: Price
 blog: Blog
 console: Console
@@ -22,9 +20,6 @@ contact: Contact
 contact-us: Contact us
 owp: Open Weather Plus
 s6warning: Here is the Weather API version S6, which will be offline on December 31st, 2021 and it is now unavailable for new users. Click to view the latest API service.
-footer-des: Simple · Efficient · Powerful Weather Service
-footer-copyright: |-
-  &copy; 2021 <a href="https://www.qweather.com/en/" target="_blank" rel="noopener noreferrer">QWeather</a>. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> Hosted by <a href="https://github.com/qwd" target="_blank" rel="noopener noreferrer">Github</a>
 goto-qw: See more weather? Go to QWeather
 params: Parameters
 description: Description
@@ -42,7 +37,6 @@ rqd: required
 tocnav: On This Page
 faq: FAQ
 help: Help
-help-des: Looking for help? Check here for purchase, invoice, pricing, account and more.
 resource: Resource
 utility: Utility
 download: Download
@@ -56,11 +50,9 @@ learn: Learn more
 data: Data
 available: Available
 platform: Platform
+quick-start: Quick Start
 api-response-note: The response is in JSON format and is [Gzip compressed](/en/docs/best-practices/gzip/), all fields are Strings.
 api-url-note: For Free subscription, change the API Host to `devapi.qweather.com`. See [data available for Free subscription](/en/docs/finance/subscription/#comparison).
-di-weather-sdk: Weather SDK
-di-weather-api: Weather API
-di-resource: Utility Resource
 hp-slogan: Build a beautiful weather program
 hp-slogan-2: to drive your business
 hp-slogan-desc: API / SDK / 插件 / APP
@@ -77,7 +69,7 @@ hp-price: Flexible Pricing
 hp-price-desc: We support Pay as you go billing model, pay only for the services you actually use, no upfront payments, no hidden fees, start and stop whenever you want.
 hp-price-refer: See Price
 hp-intro-try: Try it out
-hp-intro-try-desc: Very easy! <a href="https://id.qweather.com/#/register?redirect=https%3A%2F%2Fconsole.qweather.com" target="_blank" rel="noopener noreferrer">Register</a> and create a Project and KEY with free subscription based to get weather data. See [Quick Start](/en/docs/start/).
+hp-intro-try-desc: Very easy! <a href="https://id.qweather.com/#/register?redirect=https%3A%2F%2Fconsole.qweather.com" target="_blank" rel="noopener noreferrer">Sign up</a> and create a Project and KEY with free subscription to get weather data. See [Quick Start](/en/docs/start/).
 hp-intro-more: Learn more
 hp-intro-more-desc: We provide useful documentation for your development, including [Develop Guide](/docs/api/), [Resource](/en/docs/resource/), [Best Practices](/en/docs/best-practices/) and [Showcases](/en/showcase/).
 hp-intro-org: Enterprise Customization

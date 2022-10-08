@@ -5,8 +5,9 @@
       // background-color: #1f080b;
       .headline {
           h1 {
-              // font-size: 3.6rem;
+              font-size: 4rem;
               line-height: 1.5;
+              letter-spacing: 1.2px;
           }
       }
       .banner {
@@ -18,7 +19,16 @@
         height: 80px;
       }
       &.hero-default {
-        background: linear-gradient(210deg, #fbac5a, #5ac3cf 60%, #00b8f8);
+        // background: linear-gradient(30deg, #00b8f8, #5ac3cf, #fbac5a 95%);
+        background: linear-gradient(180deg, rgba(240, 254, 255, 0.3), rgba(245, 245, 247, 1) 90%),
+            radial-gradient(ellipse at top right, #fbac5a, transparent 50%), 
+            radial-gradient(ellipse at top left, #0084f8, transparent 50%), 
+            radial-gradient(ellipse at center top, #1e8c98, transparent 50%), 
+            radial-gradient(ellipse at center bottom, #b8cfff, transparent 50%), 
+            radial-gradient(ellipse at center, #079b9d, transparent 50%),
+            radial-gradient(ellipse at bottom left, #6dc2ff, transparent 50%), 
+            radial-gradient(ellipse at bottom right, #ac82f4, transparent 40%);
+        background-color: #93d3e9;
 
         .weather-icon {
           background-image: url(/assets/images/hp-cloudy.png);
@@ -66,7 +76,7 @@
   .feats {
     background: linear-gradient(to bottom, #F5F5F7, #fff);
     background-color: #F5F5F7;
-    padding-top: 60px;
+    padding-top: 40px;
     .feat-card {
       // box-shadow: 0 2px 5px 2px rgba(184, 184, 184, .1);
       box-shadow: 0 2px 5px 2px rgba(184, 184, 184, .2);

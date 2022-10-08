@@ -39,6 +39,15 @@
   body:lang(en) {
     margin-bottom: 510px;
   }
+  .homepage {
+    .hero {
+      .headline {
+        h1 {
+          font-size: 3.2rem;
+        }
+      }
+    }
+  }
   .docs-home {
     .start {
       ul {

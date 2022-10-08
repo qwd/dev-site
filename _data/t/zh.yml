@@ -3,8 +3,6 @@ widget: 插件
 icons: 图标
 showcase: 展示
 products: 天气产品
-library: 代码库
-see-library: 浏览示例代码库
 price: 价格
 blog: 博客
 console: 控制台
@@ -23,9 +21,6 @@ contact: 联系
 contact-us: 联系我们
 owp: 天气普拉斯
 s6warning: 和风天气API S6版将于2021年12月31日停止技术支持并于2022年12月31日停止服务，请使用最新版本
-footer-des: 一个简单 · 高效 · 强大的天气数据服务
-footer-copyright: |-
-  &copy; 2021 <a href="https://www.qweather.com" target="_blank" rel="noopener noreferrer">QWeather</a> 本站由<a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a>驱动运行在<a href="https://github.com/qwd" target="_blank" rel="noopener noreferrer">Github</a>
 goto-qw: 查询更多天气？访问和风天气
 params: 参数
 description: 描述
@@ -45,7 +40,6 @@ toctopic: 帮助导航
 see-json: 查看返回Json
 faq: 常见问题
 help: 帮助
-help-des: 寻求帮助吗？在这里查看如何购买、申请发票、定价、账号相关等常见问题的解答
 resource: 资源
 utility: 实用
 download: 下载
@@ -59,14 +53,11 @@ learn: 了解更多
 data: 数据
 available: 适用
 platform: 平台
+quick-start: 快速开始
 api-response-note: 返回数据是JSON格式并进行了[Gzip压缩](/docs/best-practices/gzip/)，数据类型均为字符串。
 api-url-note: 如果是免费订阅，将上述API Host更改为`devapi.qweather.com`。参考[免费订阅可用的数据](/docs/finance/subscription/#comparison)。
-di-weather-sdk: 天气数据SDK
-di-weather-api: 天气数据 Web API
-di-resource: Utility Resource
 hp-slogan: 创建一个漂亮的天气项目
 hp-slogan-2: 驱动你的业务
-hp-slogan-desc: API / SDK / 插件 / APP
 hp-data: 强大的气象数据 
 hp-data-desc: 和风天气开发服务基于先进的气象和人工智能算法，为开发者和企业提供了强大、丰富的天气数据服务，帮助你在应用中展示天气，或助力你的业务决策。
 hp-data-refer: 查看服务和数据
@@ -80,7 +71,7 @@ hp-price: 灵活的定价
 hp-price-desc: 我们支持按量计费模式，只需要为你真正使用的服务付费，无需预付，没有隐藏费用，随时开始和停止。
 hp-price-refer: 查看价格
 hp-intro-try: 试试看
-hp-intro-try-desc: 非常简单！注册，根据[快速开始](/docs/start/)文档创建免费订阅的项目和KEY即可获取天气数据。
+hp-intro-try-desc: 非常简单！<a href="https://id.qweather.com/#/register?redirect=https%3A%2F%2Fconsole.qweather.com" target="_blank" rel="noopener noreferrer">注册</a>，根据[快速开始](/docs/start/)文档创建免费订阅的项目和KEY即可获取天气数据。
 hp-intro-more: 了解更多
 hp-intro-more-desc: 我们提供了详实的文档用于你的开发，包括[开发文档](/docs/api/)、[实用资料](/docs/resource/)、[最佳实践](/docs/best-practices/)以及其他开发者提供的[作品展示](/showcase/)。
 hp-intro-org: 企业定制
