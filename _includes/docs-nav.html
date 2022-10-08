@@ -19,7 +19,7 @@
                 </ul>
             </div>
             {%- endif -%}
-            {% if page.tag.first == "guide" and page.tag[3] != "overview" and page.tag[2] == docs.tag[2]  %}
+            {% if page.tag.first == "guide" and page.tag.last != "overview" and page.tag[2] == docs.tag[2]  %}
             <div class="sub-nav ml-2 mt-1 pl-2">
                 <ul class="clear-list">
                     {%- for subitem in item.data -%}
