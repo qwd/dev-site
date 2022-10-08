@@ -9,7 +9,7 @@ ref: res-location-list
 
 QWeather provides weather data services for 150,000 cities and variety of POIs around the world. In addition to obtaining city information through the GeoAPI, we also provide Location IDs for some cities and POIs.
 
-> Please use [GeoAPI](https://dev.qweather.com/en/docs/api/geo/) to get more city and POI data.
+> Please use [GeoAPI](https://dev.qweather.com/en/docs/api/geoapi/) to get more city and POI data.
 > 
 > City and POI data can change for many reasons, so this list will be updated from time to time.
 
