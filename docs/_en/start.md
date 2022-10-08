@@ -6,72 +6,73 @@ permalink: /en/docs/start/
 ref: start-overview
 ---
 
-欢迎使用和风天气开发服务，本片文档将介绍一些入门步骤和基本概念，便于你快速开始以及了解和风天气开发服务是如何运行的。
+Welcome to QWeather Develop Service, this document will introduce some basic steps and concepts for getting started and understanding how we work.
+## Getting Started
 
-## 快速开始
+#### Step 1 Register an account
 
-#### 第一步 注册帐号
+You need a QWeather account first, please refer to [Account Management](/en/docs/account/) for more details.
 
-首先你需要一个和风天气的帐号，关于帐号的说明文档，请参考[帐号管理](/docs/account/)。
+<a href="https://id.qweather.com/#/register?redirect=https%3A%2F%2Fconsole.qweather.com" target="_blank" rel="noopener noreferrer">Sign up now!</a>
 
-[点击注册！](https://id.qweather.com/#/register?redirect=https%3A%2F%2Fconsole.qweather.com)
+#### Step 1  Create a Project and KEY
 
-#### 第二步 创建项目和KEY
+Go to [Console - Project](https://console.qweather.com/#apps)，click the "Create Project" button in the upper right corner. Refer to [Project and KEY](/en/docs/configuration/project-and-key/).
 
-在[控制台](https://console.qweather.com/)的左侧导航中，选择**项目管理**，并点击右上角的“创建项目”按钮。参考[项目和KEY](/docs/configuration/project-and-key/)。
+When you create a Project, you need to choose a subscription, for example, Free subscription or Standard subscription. Refer to [Subscription](/en/docs/finance/subscription/).
 
-在创建项目时，需要同时选择一种订阅，例如：免费订阅、标准订阅或高级订阅，我们这里暂时以免费订阅为例。参考[订阅](/docs/finance/subscription/)。
+#### Step 3 Retrieve Data
 
-#### 第三步 获取数据
-
-在浏览器中输入下列API地址(请将最后的KEY替换成你在上一步创建的KEY)：
-
-```
-https://devapi.qweather.com/v7/weather/now?location=101010100&key=你的KEY
-```
-
-如果在上一步选择的是标准订阅，请确保你的帐号可用额度>0，并在浏览器中输入下列API地址：
+Enter the following API URL in your browser (please replace the last KEY with the one you created in the previous step):
 
 ```
-https://api.qweather.com/v7/weather/now?location=101010100&key=你的KEY
+https://devapi.qweather.com/v7/weather/now?location=101010100&key=Your-KEY
 ```
 
-此时你应该就可以获得北京市的实时天气数据了。不过请注意，免费订阅仅支持有限的数据和请求量，请参考[订阅对比](/docs/finance/subscription/#comparison)。
+If you chose a Standard subscription in the previous step, please ensure that your account balance > 0 and enter the following API URL in your browser:
 
-参考更多[开发文档](/docs/api/)。
+```
+https://api.qweather.com/v7/weather/now?location=101010100&key=Your-KEY
+```
 
-## 费用
+Now, you should be able to get real-time weather data for Beijing. However, please note that the Free subscription only supports a limited data and requests, please refer to [Subscription comparison](/en/docs/finance/subscription/#comparison).
 
-当你使用标准订阅或高级订阅时，根据你的请求量，你需要支付订阅费用。
+#### Step 4 More Data
 
-我们的计费方式为按量计费，并采用阶梯价，意味着你的请求量越多，单价越低，并且当你停止使用时，你不需要支付任何费用。请参考[按量计费定价](/docs/finance/pricing/)和[账单和支付](/docs/finance/billing-and-payment/)。
+Follow the [Develop Guide](/en/docs/api/) to get more data.
 
-如果你的请求量较多，你也可以使用节省计划来大幅降低你的成本，了解[节省计划](/docs/finance/saving-plans/)。
+## Cost
 
-对于中国大陆地区的用户，我们的价格已经包含增值税，如需要开具增值税发票请参考[增值税发票](/docs/finance/vat-invoice/)。
+You will need to pay for a Standard subscription or Pro subscription.
 
-## 更多资料
+Our billing is Pay-as-you-go model with tiered pricing, meaning that the more requests you make, the lower unit price, and you pay nothing when you stop using it. Please refer to [Pricing](/en/docs/finance/pricing/) and [Billing and Payment](/en/docs/finance/billing-and-payment/).
 
-在开发过程中，这些实用资料可以帮助你更高效的完成工作。
+If you have a high volume of requests, you can also use Saving Plans to significantly reduce your costs, learn about [Saving Plans](/en/docs/finance/saving-plans/).
 
-#### 特性和概念
+For users in mainland China, our price is VAT included, please refer to [VAT Invoice](/en/docs/finance/vat-invoice/).
 
-了解和风天气开发平台所提供的多种特性功能和开发概念。访问[特性和概念](/docs/features/)。
+## More Resources
 
-#### 开发配置
+These useful resources can help you get your work done more efficiently during the development process.
 
-在使用API或SDK之前，你需要做一些简单的配置工作，对于使用免费订阅的用户，还需要一些额外的配置。访问[开发配置](/docs/configuration/)。
+#### Features
 
-#### 实用资料
+Learn about the many features available with QWeather Develop Service. See [Features](/en/docs/features/).
 
-你可以在这里找到关于状态码、天气图标、多语言、城市列表等实用资料。访问[实用资料](/docs/resource/)。
+#### Development Configuration
 
-#### 最佳实践
+Before using the API or SDK, you will need to do some simple configuration, and for those using the free subscription, some additional configuration will be required. See [Configuration](/en/docs/configuration/).
 
-介绍了一些使用我们服务的常见做法和经验，以便你能够快速的、稳定的获取你需要的数据。访问[最佳实践](/docs/best-practices/)。
+#### Resources
 
-#### 条款、限制和许可证
+You can find status codes, weather icons, multi-language, city list and etc at [Resource](/en/docs/resource/).
 
-为了提供一个更加公平、高效、合规的开发环境，你需要同意我们的各项服务条款，并在在许可证允许的范围内使用和风天气开发服务。参考[条款](/docs/terms/)。
+#### Best Practices
+
+Here are some common practices and experiences when using our services so you can get the data quickly and easily. See [Best Practices](/en/docs/best-practices/).
+
+#### Terms and licenses
+
+In order to provide a fairer, more efficient and compliant development environment, you need to agree to our various terms of service. See [Terms](/en/docs/terms/).
 
 

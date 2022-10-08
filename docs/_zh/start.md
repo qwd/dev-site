@@ -14,7 +14,7 @@ ref: start-overview
 
 首先你需要一个和风天气的帐号，关于帐号的说明文档，请参考[帐号管理](/docs/account/)。
 
-[点击注册！](https://id.qweather.com/#/register?redirect=https%3A%2F%2Fconsole.qweather.com)
+<a href="https://id.qweather.com/#/register?redirect=https%3A%2F%2Fconsole.qweather.com" target="_blank" rel="noopener noreferrer">点击注册!</a>
 
 #### 第二步 创建项目和KEY
 
@@ -38,7 +38,9 @@ https://api.qweather.com/v7/weather/now?location=101010100&key=你的KEY
 
 此时你应该就可以获得北京市的实时天气数据了。不过请注意，免费订阅仅支持有限的数据和请求量，请参考[订阅对比](/docs/finance/subscription/#comparison)。
 
-参考更多[开发文档](/docs/api/)。
+#### 第四步 更多数据
+
+参考[开发文档](/docs/api/)获取更多数据。
 
 ## 费用
 
@@ -54,9 +56,9 @@ https://api.qweather.com/v7/weather/now?location=101010100&key=你的KEY
 
 在开发过程中，这些实用资料可以帮助你更高效的完成工作。
 
-#### 特性和概念
+#### 特性
 
-了解和风天气开发平台所提供的多种特性功能和开发概念。访问[特性和概念](/docs/features/)。
+了解和风天气开发平台所提供的多种特性功能和开发概念。访问[特性](/docs/features/)。
 
 #### 开发配置
 
