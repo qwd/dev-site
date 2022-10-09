@@ -12,7 +12,7 @@ ref: config-api
 
 ## 了解API地址和参数
 
-通常来讲，一个完整的API请求URL由scheme，host，port，path和query parameters组成。（当然，在不同程序中可能叫法不一样，我们仅以[RFC 3986](https://tools.ietf.org/html/rfc3986)为参考）
+通常来讲，一个完整的API请求URL由scheme，host，port，path和query parameters组成。（当然，在不同程序中可能叫法不一样，我们仅以[RFC 3986](https://www.rfc-editor.org/rfc/rfc3986)为参考）
 
 ```
 https://api.qweather.com/v7/weather/now?location=xxx&key=xxx

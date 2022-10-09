@@ -53,7 +53,7 @@ Please see [Subscription Comparison](#comparison) for the specific specification
 | **GeoAPI** | &#10003; | &#10003; | &#10003; |
 | **Weather** | Real-time<br>Hourly forecast(24h)<br>Daily forecast(3-7d) | Real-time<br>Hourly forecast(24-168h)<br>Daily forecast(3-30d) | Real-time<br>Hourly forecast(24-168h)<br>Daily forecast(3-30d) |
 | **Minutely-Precipitation** | &#10003; | &#10003; | &#10003; |
-| **Grid Weather** | &#10003; | &#10003; | &#10003; |
+| **Grid Weather** | Real-time<br>Hourly forecast(24h)<br>Daily forecast(3-7d) | Real-time<br>Hourly forecast(24-72h)<br>Daily forecast(3-7d) | Real-time<br>Hourly forecast(24-72h)<br>Daily forecast(3-7d) |
 | **Warning** | &#10003; | &#10003; | &#10003; |
 | **Indices** | &#10003; | &#10003; | &#10003; |
 | **Air Quality** | &#10003; | &#10003; | &#10003; |
@@ -72,7 +72,7 @@ Please see [Subscription Comparison](#comparison) for the specific specification
 | **Edge Acceleration** | &times; | &times; | &#10003; |
 | **Custom API URL** | &times; | &times; | &#10003; |
 | **License** | CC BY-SA 4.0 | QWeather EULA   | QWeather EULA  |
-| **Support** | &times; | &times; | &#10003; |
+| **Support** | &times; | Email/Ticket | Phone/Email/Ticket  |
 | **Contract** | &times; | &times; | On Demand |
 
 ## Restriction

@@ -12,7 +12,7 @@ Make sure you have created a Project and Web API KEY, otherwise refer to [Projec
 
 ## Understanding API URL
 
-Generally, a complete API request URL consists of scheme, host, port, path and query parameters. (Of course, it may be called differently in different programs, we only refer to [RFC 3986](https://tools.ietf.org/html/rfc3986))
+Generally, a complete API request URL consists of scheme, host, port, path and query parameters. (Of course, it may be called differently in different programs, we only refer to [RFC 3986](https://www.rfc-editor.org/rfc/rfc3986))
 
 ```
 https://api.qweather.com/v7/weather/now?location=xxx&key=xxx
