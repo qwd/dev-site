@@ -83,6 +83,10 @@
       description: 基于和风的开源天气APP Android版 Open source weather APP for Android
 - language: Go
   works:
+    - name: qweather-sdk-go
+      author: taadis
+      code: https://github.com/taadis/qweather-sdk-go
+      description: 和风天气开发者工具包（Go语言）。QWeather SDK for the Go programming language.
     - name: go-heweather
       author: Ink-33
       code: https://github.com/Ink-33/go-heweather
