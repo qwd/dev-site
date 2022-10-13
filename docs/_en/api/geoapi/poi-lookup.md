@@ -8,7 +8,7 @@ POI Lookup API provides basic information of POI(scenic spot, tide stations, cur
 
 ## Request URL
 
-{% include api-url.html flag="poi-lookup" %}
+{% include api-url.html flag="geo-poi-lookup" %}
 
 ## Request Parameters
 

@@ -8,7 +8,7 @@ ref: 4-api-poi-range
 
 ## 请求URL
 
-{% include api-url.html flag="poi-range" %}
+{% include api-url.html flag="geo-poi-range" %}
 
 ## 请求参数
 

@@ -8,7 +8,7 @@ POI Range API provides the ability to query all POI information within a specifi
 
 ## Request URL
 
-{% include api-url.html flag="poi-range" %}
+{% include api-url.html flag="geo-poi-range" %}
 
 ## Request Parameters
 

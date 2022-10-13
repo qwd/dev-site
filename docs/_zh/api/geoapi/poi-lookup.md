@@ -8,7 +8,7 @@ ref: 3-api-poi-lookup
 
 ## 请求URL
 
-{% include api-url.html flag="poi-lookup" %}
+{% include api-url.html flag="geo-poi-lookup" %}
 
 ## 请求参数
 
