@@ -24,6 +24,8 @@ reference_docs:
         data: 
           - type: city-lookup
           - type: top-city
+          - type: poi-lookup
+          - type: poi-range
       - name: 0-api-weather
         data: 
           - type: now

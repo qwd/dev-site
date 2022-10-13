@@ -20,7 +20,7 @@ geo-top-city:
       name:
         zh: 热门城市查询
         en: Top City
-poi-lookup:
+geo-poi-lookup:
   example:
     - link: https://geoapi.qweather.com/v2/poi/lookup?type=scenic&location=jings&key=YOUR_KEY
       title: 
@@ -31,7 +31,7 @@ poi-lookup:
       name:
         zh: POI搜索
         en: POI Lookup
-poi-range:
+geo-poi-range:
   example:
     - link: https://geoapi.qweather.com/v2/poi/range?location=116.40528,39.90498&type=scenic&radius=10&key=YOUR_KEY
       title: 
