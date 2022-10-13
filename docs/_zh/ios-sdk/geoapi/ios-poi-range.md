@@ -1,6 +1,6 @@
 ---
 title: POI范围搜索
-tag: [guide, api, geo, poi-range]
+tag: [guide, ios, geo, poi-range]
 ref: 4-sdk-ios-geo-poi-range
 ---
 

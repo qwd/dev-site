@@ -1,7 +1,7 @@
 ---
 title: POI Range
 tag: [guide, ios, geo, poi-range]
-ref: 4-sdk-ios-geo-poi-poi-range
+ref: 4-sdk-ios-geo-poi-range
 ---
 
 POI Range iOS SDK provides the ability to query all POI information within a specified area.
