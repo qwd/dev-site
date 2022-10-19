@@ -42,7 +42,6 @@ Or visit our [Github repo](https://github.com/qwd/Icons) for source code of QWea
 | 151       | Cloudy                  | &#10060; | &#9989;  |
 | 152       | Few Clouds              | &#10060; | &#9989;  |
 | 153       | Partly Cloudy           | &#10060; | &#9989;  |
-| 154       | Overcast                | &#9989; | &#9989;  |
 | 300       | Shower Rain             | &#9989;  | &#10060; |
 | 301       | Heavy Shower Rain       | &#9989;  | &#10060; |
 | 302       | Thundershower           | &#9989;  | &#9989;  |
