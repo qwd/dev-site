@@ -44,7 +44,7 @@ geo-poi-range:
         en: POI Range
 weather-now:
   example:
-    - link: https://geoapi.qweather.com/v2/city/lookup?location=beij&key=YOUR_KEY
+    - link: https://api.qweather.com/v7/weather/now?location=101010100&key=YOUR_KEY
       title: 
         zh: 北京实况天气
         en: Real-tiem weather for Beijing
@@ -307,8 +307,8 @@ astronomy-solar-elevation-angle:
   example:
     - link: https://api.qweather.com/v7/astronomy/solar-elevation-angle?location=120.34,36.08&alt=43&date=20210220&time=1230&tz=0800&key=YOUR_KEY
       title: 
-        zh: 太阳高度家 
-        en: Solar elevation angle
+        zh: 120.34,36.08位置在2021-02-20T12:30+0800时的太阳高度角
+        en: Solar elevation angle at 120.34,36.08 at 2021-02-20T12:30+0800
   endpoint:
     - path: /astronomy/solar-elevation-angle
       name:
@@ -317,10 +317,10 @@ astronomy-solar-elevation-angle:
       biz-only: true
 solar-radiation-hourly:
   example:
-    - link: https://geoapi.qweather.com/v2/city/lookup?location=beij&key=YOUR_KEY
+    - link: https://api.qweather.com/v7/solar-radiation/24h?location=116.41,39.92&key=YOUR_KEY
       title: 
-        zh: 搜索关键字beij 
-        en: Lookup the keyword "beij"
+        zh: 116.41,39.92位置的未来24小时辐照预报
+        en: Forecast for the next 24 hours at 116.41,39.92
   endpoint:
     - path: /solar-radiation/24h
       name: 
