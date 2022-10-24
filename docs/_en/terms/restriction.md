@@ -16,7 +16,7 @@ Refer to [Developers Terms of Service - Section 4.1](https://www.qweather.com/en
 
 When your data response is not `code=2xx`, you should check your program as this is an invalid request. For all invalid requests, if it exceeds a reasonable range, it will be regarded as an attack on our services. At this time, you may no longer be able to use our service or your account will be suspended.
 
-Refer to [Optimize Requests](/en/docs/best-practices/optimize-requests/) and [Developers Terms of Service - Section 4.7](https://www.qweather.com/terms/developers-tos).
+Refer to [Optimize Requests](/en/docs/best-practices/optimize-requests/) and [Developers Terms of Service - Section 4.7](https://www.qweather.com/en/terms/developers-tos).
 
 ## Outstanding
 
@@ -34,7 +34,7 @@ Refer to [Attribution](/en/docs/terms/attribution/).
 
 Due to geographic data sources requirements and copyright license restrictions, when you use [GeoAPI](/docs/api/geoapi/), you are not allowed to bulk cache or download this data, or create indexes by saving this geographic data, otherwise you will violate the data source copyright or face legal risks.
 
-Refer to [Developers License](https://www.qweather.com/terms/developers-license).
+Refer to [Developers License](https://www.qweather.com/en/terms/developers-eula).
 
 ## Account suspension
 
