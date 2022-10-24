@@ -57,14 +57,14 @@ weather:
     type: [daily, gdaily]
   - name: sunrise
     desc:
-      zh: 日出时间
-      en: Sunrise time
+      zh: 日出时间。**在高纬度地区可能为空**
+      en: Sunrise time. **Maybe null in high latitude area**
     example: 07:34
     type: [daily]
   - name: sunset
     desc:
-      zh: 日落时间
-      en: Sunset time
+      zh: 日落时间。**在高纬度地区可能为空**
+      en: Sunset time. **Maybe null in high latitude area**
     example: 07:34
     type: [daily]
   - name: moonrise
@@ -588,14 +588,14 @@ astro:
     type: [moon]
   - name: sunrise
     desc:
-      zh: 日出时间
-      en: Sunrise time
+      zh: 日出时间。**在高纬度地区可能为空**
+      en: Sunrise time. **Maybe null in high latitude area** 
     example: 2013-12-30T05:44+08:00
     type: [sun]
   - name: sunset
     desc:
-      zh: 日落时间
-      en: Sunrise time
+      zh: 日落时间。**在高纬度地区可能为空**
+      en: Sunrise time. **Maybe null in high latitude area**
     example: 2013-12-30T17:02+08:00
     type: [sun]
   - name: solarElevationAngle
@@ -851,14 +851,14 @@ hisweather:
     type: [daily]
   - name: sunrise
     desc:
-      zh: 当天日出时间
-      en: Sunrise time
+      zh: 当天日出时间。**在高纬度地区可能为空**
+      en: Sunrise time. **Maybe null in high latitude area**
     example: 07:34
     type: [daily]
   - name: sunset
     desc:
-      zh: 当天日落时间
-      en: Sunset time
+      zh: 当天日落时间。**在高纬度地区可能为空**
+      en: Sunset time. **Maybe null in high latitude area**
     example: 07:34
     type: [daily]
   - name: moonrise
