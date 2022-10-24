@@ -5,6 +5,11 @@ layout: html
     <div id="weather-bg" class="hero hero-default">
         <div class="container">
             <div class="row justify-content-center">
+                {%- if site.data.announce.url != nil %}
+                <div class="announce col-12 text-center">
+                    &#128227; <a class="grey-link" href="{{ site.data.announce.url }}" target="_blank" rel="noopener noreferrer">{{ site.data.announce.title[page.lang] }}</a>
+                </div>                    
+                {% endif -%}
                 <div class="banner col-12 text-center mb-2">
                     <img src="/assets/images/hp-cloudy.png" alt="" width="300">
                 </div>
