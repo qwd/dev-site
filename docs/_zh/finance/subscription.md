@@ -16,7 +16,7 @@ ref: finance-subscription
 
 > **提示：** 免费订阅在开发前需要进行额外的配置，请参考[API配置](/docs/configuration/api-config/)、[iOS SDK配置](/docs/configuration/ios-sdk-config/)和[Android SDK配置](/docs/configuration/android-sdk-config/)。
 
-对于中小开发者来说，和风天气开发服务的免费订阅提供的基本了天气服务。在免费订阅下，你可以每天有限次数的使用大部分的天气服务，另外我们为免费订阅提供了[知识共享 署名-相同方式共享 4.0 国际 许可协议](https://creativecommons.org/licenses/by-sa/4.0/deed.zh-Hans)，这样在符合上述许可的条件下，你可以自由的使用，甚至包括商业用途。参考我们的[许可证](/docs/terms/license/)文档。
+对于中小开发者来说，和风天气开发服务的免费订阅提供了基本的天气服务。在免费订阅下，你可以每天有限次数的使用大部分的天气服务，另外我们为免费订阅提供了[知识共享 署名-相同方式共享 4.0 国际 许可协议](https://creativecommons.org/licenses/by-sa/4.0/deed.zh-Hans)，这样在符合上述许可的条件下，你可以自由的使用，甚至包括商业用途。参考我们的[许可证](/docs/terms/license/)文档。
 
 免费订阅可使用的天气服务和其他规格请参考下方的[订阅对比](/docs/finance/subscription/#comparison)。
 
