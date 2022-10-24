@@ -1,0 +1,7 @@
+# add the latest announcement in homepage
+# delete url value for hide announcement section
+
+title:
+  zh: S6系列产品即将下线停止服务
+  en: S6 series products will be shut down soon
+url: https://blog.qweather.com/announce/s6-will-be-shut-down-soon/
