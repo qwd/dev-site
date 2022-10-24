@@ -34,7 +34,7 @@ ref: terms-restriction
 
 由于地理信息版权方要求以及版权许可限制，当你使用和风天气开发服务中的[地理信息服务](/docs/api/geoapi/)时，你不能批量缓存或下载这些数据，也不允许通过保存这些地理数据建立索引，否则你将侵犯数据源版权或面临法律风险。
 
-参考[开发许可证](https://www.qweather.com/terms/developers-license)。
+参考[开发者许可协议](https://www.qweather.com/terms/developers-eula)。
 
 ## 帐号冻结
 

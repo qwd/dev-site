@@ -10,7 +10,7 @@ QWeather Develop Service provide the following licenses and also mark the curren
 
 ## QWeather Developers License
 
-[Standard Subscription](/en/docs/finance/subscription/#standard-subscription) is under [QWeather Developers License](https://www.qweather.com/terms/developers-license)。
+[Standard Subscription](/en/docs/finance/subscription/#standard-subscription) is under [QWeather Developers License](https://www.qweather.com/en/terms/developers-eula)。
 
 ## Attribution-ShareAlike 4.0 (CC BY-SA 4.0)
 

@@ -10,7 +10,7 @@ ref: terms-license
 
 ## 和风开发许可证
 
-当你使用[标准订阅](/docs/finance/subscription/#standard-subscription)时，将使用[和风开发许可证](https://www.qweather.com/terms/developers-license)。
+当你使用[标准订阅](/docs/finance/subscription/#standard-subscription)时，将使用[和风开发者许可协议](https://www.qweather.com/terms/developers-eula)。
 
 ## 署名-相同方式共享 4.0 国际 (CC BY-SA 4.0)
 
