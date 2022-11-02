@@ -17,6 +17,7 @@
   }
 
   .docs-home {
+
     .start,
     .bp,
     .resource {
@@ -24,7 +25,7 @@
     }
   }
 
-    table {
+  table {
     display: block;
     width: 100%;
     min-height: .01%;
@@ -33,12 +34,20 @@
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
+  .main-content {
+    .article {
+      .figimg {
+        width: 100%;
+      }
+    }
+  }
 }
 
 @media (max-width: 575px) {
   body:lang(en) {
     margin-bottom: 510px;
   }
+
   .homepage {
     .hero {
       .headline {
@@ -48,6 +57,7 @@
       }
     }
   }
+
   .docs-home {
     .start {
       ul {
