@@ -22,7 +22,7 @@ ref: config-project
 
 1. Click the "Add KEY" button on the Project card.
 2. Select the platform of KEY, KEY can not be used across platforms, means the KEY of Web API cannot be used in Android SDK and vice versa.
-3. Enter [iOS Bundle ID](/en/docs/resource/glossary/#ios-bundle-identifier) or [Android Package Name](/en/docs/resource/glossary/#android-package-name) when you select iOS/Android SDK platform。
+3. Enter [iOS Bundle ID](/en/docs/resource/glossary/#ios-bundle-identifier) or [Android Package Name](/en/docs/resource/glossary/#android-package-name) when you select iOS/Android SDK platform.
 4. Set KEY name.
 5. Click "Create" button.
 
