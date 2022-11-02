@@ -12,7 +12,6 @@ layout: html
         <div class="col-md-6 col-12 mb-5 mb-md-0">
             <div class="price-card payg p-4">
                 <img src="/assets/images/pi-payg-cart.png" alt="" width="240" class="mx-auto mb-4 d-block">
-                <!-- <span class="d-block mb-2">标准订阅</span> -->
                 <h2 class="mb-5">{{ site.data.t[page.lang].pi-payg }}</h2>
                 <div class="card-brief-with-height mb-5">
                     {{ site.data.t[page.lang].pi-payg-desc | markdownify }}
@@ -23,7 +22,6 @@ layout: html
         <div class="col-md-6 col-12">
             <div class="price-card splan p-4">
                 <img src="/assets/images/pi-savingpot.png" alt="" width="240" class="mx-auto mb-4 d-block">
-                <!-- <span class="d-block mb-2">标准订阅</span> -->
                 <h2 class="mb-5">{{ site.data.t[page.lang].pi-saving-plans }}</h2>
                 <div class="card-brief-with-height mb-5">
                     {{ site.data.t[page.lang].pi-saving-plans-desc | markdownify }}
@@ -90,7 +88,6 @@ layout: html
     <section class="ent-and-free row mb-5">
         <div class="col-md-6 col-12 mb-5 mb-md-0">
             <div class="price-card ent p-4">
-                <!-- <span class="d-block mb-2">高级订阅</span> -->
                 <h2 class="mb-5">{{ site.data.t[page.lang].pi-org }}</h2>
                 <div class="card-brief-with-height mb-5">
                     {{ site.data.t[page.lang].pi-org-desc | markdownify }}
@@ -100,14 +97,13 @@ layout: html
         </div>
         <div class="col-md-6 col-12">
             <div class="price-card free p-4">
-                <!-- <span class="d-block mb-2">免费订阅</span> -->
                 <h2 class="mb-5">{{ site.data.t[page.lang].pi-free-subs }}</h2>
                 <div class="card-brief-with-height mb-5">
                     <p>
                         {{ site.data.t[page.lang].pi-free-subs-desc  }}
                     </p> 
                 </div>
-                <a class="d-block" href="{%- if page.lang == "en" -%}/en{%- endif -%}/docs/finance/saving-plans/">{{ site.data.t[page.lang].pi-free-subs-more  }}</a>
+                <a class="d-block" href="{%- if page.lang == "en" -%}/en{%- endif -%}/docs/finance/subscription/">{{ site.data.t[page.lang].pi-free-subs-more  }}</a>
             </div>
         </div>
     </section>

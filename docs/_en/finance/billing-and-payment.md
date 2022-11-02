@@ -174,4 +174,4 @@ For purchases made by users in other countries, the billed amount does not inclu
 
 ## Suspension
 
-When the status of a bill is outstanding, you will be temporarily unable to use our services. If the outstanding bill is more than 30 days old, your account will be suspended and you will still have to pay your outstanding amount. See [Account Suspension](/docs/account/suspension/)。
+When the status of a bill is outstanding, you will be temporarily unable to use our services. If the outstanding bill is more than 30 days old, your account will be suspended and you will still have to pay your outstanding amount. See [Account Suspension](/docs/account/suspension/).

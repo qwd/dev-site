@@ -35,7 +35,7 @@ Building an API URL is not difficult for most developers, but we still strongly 
 
 ## Gzip
 
-QWeather's Web API uses Gzip for compression by default, which will greatly reduce network traffic and speed up requests. See [Best Practices - Gzip](/en/docs/best-practices/gzip/)。
+QWeather's Web API uses Gzip for compression by default, which will greatly reduce network traffic and speed up requests. See [Best Practices - Gzip](/en/docs/best-practices/gzip/).
 
 ## Try it out
 
