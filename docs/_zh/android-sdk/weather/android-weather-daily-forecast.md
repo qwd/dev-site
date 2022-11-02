@@ -77,10 +77,10 @@ QWeather.getWeather15D(Context context, String location, QWeather.OnResultWeathe
 | 属性              | 说明                | 示例值     |
 | ----------------- | ------------------- | ---------- |
 | getFxDate         | 预报日期            | 2013-12-30 |
-| getSunrise        | 日出时间            | 07:36      |
-| getSunset         | 日落时间            | 16:58      |
-| getMoonRise       | 月升时间            | 04:47      |
-| getMoonSet        | 月落时间            | 14:59      |
+| getSunrise        | [日出时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**     | 07:36      |
+| getSunset         | [日落时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**    | 16:58      |
+| getMoonRise       | 当天[月升时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**            | 04:47      |
+| getMoonSet        | 当天[月落时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**            | 14:59      |
 | getMoonPhase      | 月相名称            | 满月       |
 | getMoonPhaseIcon      | 月相图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载            | 804    |
 | getTempMax        | 最高温度            | 4          |

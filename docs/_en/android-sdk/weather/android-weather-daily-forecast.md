@@ -79,10 +79,10 @@ Properties of WeatherDailyBean
 | Property | Description | Example |
 | ----------------- | ------------------- | ---------- |
 | getFxDate | Forecast Date | 2013-12-30 |
-| getSunrise | Sunrise Time | 07:36 |
-| getSunset | Sunset Time | 16:58 |
-| getMoonRise | Moonrise time | 04:47 |
-| getMoonSet | Moonset time | 14:59 |
+| getSunrise | [Sunrise time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area** | 07:36 |
+| getSunset | [Sunset time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area** | 16:58 |
+| getMoonRise | [Moonrise time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null** | 04:47 |
+| getMoonSet | [Moonset time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null** | 14:59 |
 | getMoonPhase | Moon Phase Name | Full Moon |
 | getMoonPhaseIcon      | Icon code for moon phase, free to download [QWeather Icons](/en/docs/resource/icons/)            | 804    |
 | getTempMax | The highest temperature of the day | 4 |

@@ -83,6 +83,7 @@ reference_docs:
       - name: res-warning
       - name: res-indices
       - name: res-air
+      - name: res-sunmoon
   - overview: bp-overview
     list: 
       - name: bp-na

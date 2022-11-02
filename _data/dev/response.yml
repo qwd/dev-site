@@ -57,32 +57,40 @@ weather:
     type: [daily, gdaily]
   - name: sunrise
     desc:
-      zh: 日出时间。**在高纬度地区可能为空**
-      en: Sunrise time. **Maybe null in high latitude area**
+      zh: >-
+       [日出时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**
+      en: >-
+       [Sunrise time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**
     example: 07:34
     type: [daily]
   - name: sunset
     desc:
-      zh: 日落时间。**在高纬度地区可能为空**
-      en: Sunset time. **Maybe null in high latitude area**
+      zh: >-
+       [日落时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**
+      en: >-
+       [Sunset time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**
     example: 07:34
     type: [daily]
   - name: moonrise
     desc:
-      zh: 当天24小时内月亮升起的时间。**可能为空**
-      en: Moonrise time of current day. **Maybe null**
+      zh: 当天[月升时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**
+      en: >-
+       [Moonrise time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**
     example: 07:34
     type: [daily]
   - name: moonset
     desc:
-      zh: 当天24小时内月亮落下的时间。**可能为空**
-      en: Moonset time of current day. **Maybe null**
+      zh: 当天[月落时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**
+      en: >-
+       [Moonset time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**
     example: 07:34
     type: [daily]
   - name: moonPhase
     desc:
-      zh: 月相名称
-      en: Moon phase name
+      zh: >-
+       [月相名称](/docs/resource/sun-moon-info/#moon-phase)
+      en: >-
+       [Moon phase name](/en/docs/resource/sun-moon-info/#moon-phase)
     example: Full Moon
     type: [daily]
   - name: moonPhaseIcon
@@ -546,14 +554,16 @@ geo_poi:
 astro:
   - name: moonrise
     desc:
-      zh: 当天24小时内月亮升起的时间。**可能为空**
-      en: Moonrise time of current day. **Maybe null**
+      zh: 当天[月升时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**
+      en: >-
+       [Moonrise time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**
     example: 2013-12-30T13:19+08:00
     type: [moon]
   - name: moonset
     desc:
-      zh: 当天24小时内月亮落下的时间。**可能为空**
-      en: Moonset time of current day. **Maybe null**
+      zh: 当天[月落时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**
+      en: >-
+       [Moonset time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**
     example: 2013-12-31T23:31+08:00
     type: [moon]
   - name: moonPhase.fxTime
@@ -570,8 +580,10 @@ astro:
     type: [moon]
   - name: moonPhase.name
     desc:
-      zh: 月相名字
-      en: Moon Phase Name
+      zh: >-
+       [月相名称](/docs/resource/sun-moon-info/#moon-phase)
+      en: >-
+       [Moon phase name](/en/docs/resource/sun-moon-info/#moon-phase)
     example: First Quarter Moon
     type: [moon]
   - name: moonPhase.icon
@@ -588,14 +600,18 @@ astro:
     type: [moon]
   - name: sunrise
     desc:
-      zh: 日出时间。**在高纬度地区可能为空**
-      en: Sunrise time. **Maybe null in high latitude area** 
+      zh: >-
+       [日出时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**
+      en: >-
+       [Sunrise time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area** 
     example: 2013-12-30T05:44+08:00
     type: [sun]
   - name: sunset
     desc:
-      zh: 日落时间。**在高纬度地区可能为空**
-      en: Sunrise time. **Maybe null in high latitude area**
+      zh: >-
+       [日落时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**
+      en: >-
+       [Sunset time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**
     example: 2013-12-30T17:02+08:00
     type: [sun]
   - name: solarElevationAngle
@@ -851,32 +867,39 @@ hisweather:
     type: [daily]
   - name: sunrise
     desc:
-      zh: 当天日出时间。**在高纬度地区可能为空**
-      en: Sunrise time. **Maybe null in high latitude area**
+      zh: >-
+       当天[日出时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**
+      en: >-
+       [Sunrise time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**
     example: 07:34
     type: [daily]
   - name: sunset
     desc:
-      zh: 当天日落时间。**在高纬度地区可能为空**
-      en: Sunset time. **Maybe null in high latitude area**
+      zh: >-
+       [日落时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**
+      en: >-
+       [Sunset time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**
     example: 07:34
     type: [daily]
   - name: moonrise
     desc:
-      zh: 当天月升时间。**可能为空**
-      en: Moonrise time of current day. **Maybe null**
+      zh: 当天[月升时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**
+      en: >-
+       [Moonrise time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**
     example: 07:34
     type: [daily]
   - name: moonset
     desc:
-      zh: 当天24小时内月亮落下的时间。**可能为空**
-      en: Moonset time of current day. **Maybe null**
+      zh: 当天[月落时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**
+      en: >-
+       [Moonset time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**
     example: 07:34
     type: [daily]
   - name: moonPhase
     desc:
-      zh: 当天月相名称
-      en: Moon phase name
+      zh: 当天[月相名称](/docs/resource/sun-moon-info/#moon-phase)
+      en: >-
+       [Moon phase name](/en/docs/resource/sun-moon-info/#moon-phase)
     example: Full Moon
     type: [daily]
   - name: tempMax

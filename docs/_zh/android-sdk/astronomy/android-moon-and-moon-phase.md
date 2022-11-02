@@ -30,8 +30,8 @@ QWeather.getMoon(Context context, String location, Lang lang, String date, final
 | -------------------- | -------------------------- | ------------------------- |
 | getCode              | 状态码，具体含义请参考[状态码](/docs/resource/status-code/)                   | Code       |
 | getRefer             | Refer 数据来源以及数据授权 | Refer                     |
-| getMoonrise       | 月升                   | 2017-10-25T01:34+08:00           |
-| getMoonset       | 月落                   | 2017-10-25T04:34+08:00           |
+| getMoonrise       | 当天[月升时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**                   | 2017-10-25T01:34+08:00           |
+| getMoonset       | 当天[月落时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**                   | 2017-10-25T04:34+08:00           |
 | getMoonPhaseBeanList | 月相信息                   | List\<MoonPhaseBean> |
 
 **Refer**
