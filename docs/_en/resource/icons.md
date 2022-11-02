@@ -93,13 +93,13 @@ Or visit our [Github repo](https://github.com/qwd/Icons) for source code of QWea
 | 514       | Heavy fog               | &#9989;  | &#9989;  |
 | 515       | Extra heavy fog         | &#9989;  | &#9989;  |
 | 800       | new-moon                | &#9989;  | &#9989;  |
-| 801       | waxing-crescent         | &#9989;  | &#9989;  |
-| 802       | first-quarter           | &#9989;  | &#9989;  |
-| 803       | waxing-gibbous          | &#9989;  | &#9989;  |
+| 801       | Northern hemisphere: Waxing crescent<br>Southern hemisphere: Waning crescent  | &#9989;  | &#9989;  |
+| 802       | Northern hemisphere: First quarter<br>Southern hemisphere: Last quarter    | &#9989;  | &#9989;  |
+| 803       | Northern hemisphere: Waxing gibbous<br>Southern hemisphere: Waning gibbous   | &#9989;  | &#9989;  |
 | 804       | full-moon               | &#9989;  | &#9989;  |
-| 805       | waning-gibbous          | &#9989;  | &#9989;  |
-| 806       | last-quarter            | &#9989;  | &#9989;  |
-| 807       | waning-crescent         | &#9989;  | &#9989;  |
+| 805       | Northern hemisphere: Waning gibbous<br>Southern hemisphere: Waxing gibbous   | &#9989;  | &#9989;  |
+| 806       | Northern hemisphere: Last quarter<br>Southern hemisphere: First quarter   | &#9989;  | &#9989;  |
+| 807       | Northern hemisphere: Waning crescent<br>Southern hemisphere: Waxing gibbous    | &#9989;  | &#9989;  |
 | 900       | Hot                     | &#9989;  | &#9989;  |
 | 901       | Cold                    | &#9989;  | &#9989;  |
 | 999       | Unknown                 | &#9989;  | &#9989;  |

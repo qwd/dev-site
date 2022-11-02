@@ -60,10 +60,10 @@ QWeather.getHistoricalWeather(Context context, String location, String date, Lan
 | 属性         | 说明     | 示例值     |
 | ------------ | -------- | ---------- |
 | getDate      | 预报日期 | 2013-12-30 |
-| getSunrise   | 日出时间 | 07:36      |
-| getSunset    | 日落时间 | 16:58      |
-| getMoonRise  | 月升时间 | 04:47      |
-| getMoonSet   | 月落时间 | 14:59      |
+| getSunrise   | [日出时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空** | 07:36      |
+| getSunset    | [日落时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空** | 16:58      |
+| getMoonRise  | 当天[月升时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空** | 04:47      |
+| getMoonSet   | 当天[月落时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空** | 14:59      |
 | getMoonPhase | 月相     | 满月       |
 | getTempMax   | 最高温度 | 4          |
 | getTempMin   | 最低温度 | -5         |

@@ -30,8 +30,8 @@ Properties of MoonBean
 | -------------------- | -------------------------- | ------------------------- |
 | getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getRefer | Reference data, includes data source, statements and license | Refer |
-| getMoonrise       | Moonrise time                   | 2017-10-25T01:34+08:00           |
-| getMoonset       | Moonset time                   | 2017-10-25T04:34+08:00           |
+| getMoonrise       | [Moonrise time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**                   | 2017-10-25T01:34+08:00           |
+| getMoonset       | [Moonset time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**                   | 2017-10-25T04:34+08:00           |
 | getMoonPhaseBeanList | Moon phase data                   | List\<MoonPhaseBean> |
 
 **Refer**

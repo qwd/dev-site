@@ -42,6 +42,21 @@
       display: block;
     }
 
+    .figimg {
+      margin:0 auto 10px auto;
+      padding: 8px;
+      border: 1px solid $color-grey-2;
+      background-color: #e9ecef;
+      text-align: center;
+      width: 80%;
+      img {
+        margin: 0 auto 10px auto;
+      }
+      em {
+        font-size: 14px;
+      }
+    }
+
     li {
       margin-bottom: 5px;
     }

@@ -30,8 +30,8 @@ QWeather.getSun(Context context, String location, Lang lang, String date, final 
 | -------------------- | -------------------------- | ------------------------- |
 | getCode              | 状态码，具体含义请参考[状态码](/docs/resource/status-code/)                   | Code       |
 | getRefer             | Refer 数据来源以及数据授权 | Refer                     |
-| getSunrise           | 日出                   | 2017-10-25T06:01+08:00           |
-| getSunset            | 日落                   | 2017-10-25T18:01+08:00           |
+| getSunrise           | [日出时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**                   | 2017-10-25T06:01+08:00           |
+| getSunset            | [日落时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**                   | 2017-10-25T18:01+08:00           |
 
 **Refer**
 
