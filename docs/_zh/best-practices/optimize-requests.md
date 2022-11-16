@@ -8,7 +8,7 @@ ref: bp-opz
 
 为了更有效的使用和风天气开发服务，你需要尽量优化你的请求。这篇文档将介绍几种常见的优化方式。
 
-## 构建合法的URL
+## 构建合法的URL {#building-a-valid-url}
 
 当你使用API获取数据的时候，会通过URL向我们发起请求，例如：
 
@@ -18,13 +18,13 @@ https://api.qweather.com/v7/weather/3d?parameters
 
 一般来说，这段请求URL不会出现错误，但是在传递一些特殊的参数和值的时候需要特别注意：
 
-### 不要使用空格
+### 不要使用空格 {#no-space}
 
 请求链接中不要输入一个空格，这通常发生在复制粘贴的情况下，这种错误可能不会被立即发现，因此需要你在复制粘贴的时候特别注意。
 
 > **例如:** 通常我们会复制粘贴KEY，根据不同的系统或软件，有可能被复制的内容的前后存在空格，当你完成粘贴后，需要将这些空格删除。
 
-### 使用标准的URI规范字符
+### 使用标准的URI规范字符 {#use-standard-uri-syntax}
 
 你可能需要在API的请求地址中拼接多个参数或值，这些内容会采用特殊符号进行分割，例如坐标的值通过`,`分割经度和维度，而不要使用中文`，`
 
@@ -34,23 +34,23 @@ https://api.qweather.com/v7/weather/3d?parameters
 
 对于非ASCII字符集以内的字符，如`北京市`，你需要对这些字符进行[URL encoding](https://zh.wikipedia.org/wiki/百分号编码)
 
-## 安全的请求
+## 安全的请求 {#secure-requests}
 
 请不要在网页中直接编写URL请求或共享这段URL，这有可能泄露你的敏感信息，使用HTTPS、签名认证等方式可以有效的保护你的敏感信息。关于如果保护KEY及其他发送请求时携带的敏感信息，请参考[保护你的KEY](/docs/best-practices/protect-data-key/)。
 
-## 处理错误
+## 处理错误 {#handle-errors}
 
 当你遇到返回的数据中`code`字段的值不是`2xx`的时候，代表你的请求出现了错误，此时你需要暂停请求并妥善的处理这些错误，否则极端情况下，你可能会违反我们的[使用限制](/docs/terms/restriction/)而被冻结帐号。
 
 > **例如:** 当你传入了错误的参数或KEY，将返回`400`或`403`，此时你应该暂停这一次的请求，排除故障后再继续。否则当产生大量请求错误时，我们可能会冻结你的帐号。
 
-### 了解状态码
+### 了解状态码 {#understanding-status-codes}
 
 在API/SDK返回的数据中，`code`字段代表当前请求的状态，返回的值和含义与[HTTP Status Code](https://developer.mozilla.org/zh-CN/docs/web/http/status)类似，并略有修改。
 
 完整的解释说明请参考[状态码](/docs/resource/status-code/)。
 
-### 使用指数退避算法处理错误
+### 使用指数退避算法处理错误 {#using-exponential-backoff-to-handle-errors}
 
 当出现错误的时候，请停止请求并进行检查，待故障排除后再恢复请求。然而一些错误并非由于请求不符合规范而导致的，例如超过每分钟请求限制，没有足够的余额等等，这时你应该使用[指数退避算法](https://en.wikipedia.org/wiki/Exponential_backoff)优化请求。
 
@@ -77,7 +77,7 @@ https://api.qweather.com/v7/weather/3d?parameters
 
 等待期不应是无限的，如果连续出现20次错误，那么此时的等待期就已经长达291个小时，这显然是不现实的。因此你需要为等待期设置一个最大值，当达到这个值时，则不再增加c的取值。我们的建议是`c = 10`。
 
-## 按需请求
+## 按需请求 {#requests-on-need}
 
 仅在需要天气数据的时候再进行请求。
 
