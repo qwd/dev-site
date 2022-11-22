@@ -1,11 +1,11 @@
 ---
-title: iOS SDK配置
-tag: [config, ios]
+title: QWeather-SDK配置
+tag: [config, ios, macos]
 description: KEY是获取和风天气服务的密钥（或称之为token、认证信息），当你创建项目的时候会创建第一个KEY。本片文档将详细介绍KEY的使用方法。
 ref: config-ios
 ---
 
-这篇文档将介绍如何配置和风天气开发服务中的iOS SDK。
+这篇文档将介绍如何配置和风天气开发服务中的iOS、macOS SDK。
 
 ## 下载
 
@@ -15,19 +15,42 @@ ref: config-ios
 
 ## 创建项目和KEY
 
-请确保你已经创建了一个iOS SDK的KEY，否则请参考[项目和KEY](/docs/configuration/project-and-key/)。
+请确保你已经创建了一个SDK的KEY，否则请参考[项目和KEY](/docs/configuration/project-and-key/)。
 
 ## 适配版本
 
-iOS 8.0 及以上
+iOS 9.0 及以上， macOS 10.10 及以上
 
 ## 工程配置
 
 **手动配置**
 
-本 framework 采用 Objective-C 编译，将 framework 包导入到项目中即可
+1. 添加[AFNetworking(4.0.0+)](https://github.com/AFNetworking/AFNetworking)
+2. 将 QWeather.xcframework 包导入到iOS或macOS Target 中
 
-如果工程是由swift编写：
+**使用Cocoapods配置**
+
+1. 在项目根目录创建Podfile文件
+2. 在ios或者macOS target 中添加 ***pod 'QWeather-SDK'***
+3. 用终端进入工程根目录执行 ***pod install***
+
+>Podfile示例：
+```
+   target 'YourTargetName-iOS' do
+    pod 'QWeather-SDK'
+   end
+
+   target 'YourTargetName-macOS' do
+    pod 'QWeather-SDK'
+   end
+```
+**引用**
+
+```objc
+ #import <QWeather/QWeather.h>
+```
+
+**如果工程是由swift编写**
 
 1. 在Swift工程主目录下新建一个OC类，如果是项目第一次创建OC类的话，会弹出如图的提示窗。这个提示窗就是是否建立Swift-OC的桥接文件的弹窗提示。
 2. 点击**Create Bridging Header**，Xcode会自动创建一个头文件。这个头文件，就是Swift-OC的桥接文件
@@ -35,12 +58,6 @@ iOS 8.0 及以上
 4. sdk需要开启定位权限，在Info.plist里配置：
    NSLocationWhenInUseUsageDescription
    NSLocationAlwaysAndWhenInUseUsageDescription两项
-
-**引用库**
-
-~~~objc
- AFNetworking(4.0.0+)
-~~~
 
 **注意事项**
 
