@@ -7,61 +7,97 @@ ref: config-ios
 
 这篇文档将介绍如何配置和风天气开发服务中的iOS SDK。
 
-## 下载
+和风天气iOS SDK支持下列操作系统：
 
-|版本|日期|MD5|下载|
-|---|---|---|---|
-|{{ site.data.v.ios.version }}|{{ site.data.v.ios.date }}|{{ site.data.v.ios.md5 }}|[下载]({{ site.data.v.ios.dllink }})|
+- iOS 9.0 及以上
+- macOS 10.10 及以上
 
-## 创建项目和KEY
+> **提示：**和风天气iOS SDK同样包含了macOS SDK。
+
+## 第1步: 创建项目和KEY
 
 请确保你已经创建了一个iOS SDK的KEY，否则请参考[项目和KEY](/docs/configuration/project-and-key/)。
 
-## 适配版本
+## 第2步: 安装SDK
 
-iOS 8.0 及以上
+和风天气iOS SDK支持下列安装方式：
 
-## 工程配置
+### 使用CocoaPods
 
-**手动配置**
+和风天气iOS SDK可以通过[CocoaPods](https://cocoapods.org/)进行安装。CocoaPods是一种开源依赖库管理器，如果你还未安装CocoaPods，请参考[CocoaPods快速开始](https://guides.cocoapods.org/using/getting-started.html)。下列步骤假设你已经完成了CocoaPods的安装和设置。
 
-本 framework 采用 Objective-C 编译，将 framework 包导入到项目中即可
+1. 在项目根目录创建名为`Podfile`的文件
+2. 在`Podfile`文件中添加如下内容并保存：
+   - iOS
+     ```
+     target 'YourTargetName-iOS' do
+        pod 'QWeather-SDK'
+     end
+     ```
+   - macOS
+     ```
+     target 'YourTargetName-macOS' do
+        pod 'QWeather-SDK'
+     end
+     ```
+3. 打开终端，进入包含`Podfile`的目录，运行：
+   ```
+   pod install
+   ```
 
-如果工程是由swift编写：
+**更新SDK**
 
-1. 在Swift工程主目录下新建一个OC类，如果是项目第一次创建OC类的话，会弹出如图的提示窗。这个提示窗就是是否建立Swift-OC的桥接文件的弹窗提示。
-2. 点击**Create Bridging Header**，Xcode会自动创建一个头文件。这个头文件，就是Swift-OC的桥接文件
-3. 在Swift-OC桥接文件里将本framework类进行声明，即可以使用。
-4. sdk需要开启定位权限，在Info.plist里配置：
-   NSLocationWhenInUseUsageDescription
-   NSLocationAlwaysAndWhenInUseUsageDescription两项
+打开终端，进入包含`Podfile`的目录，运行：
 
-**引用库**
+```
+pod update
+```
 
-~~~objc
- AFNetworking(4.0.0+)
-~~~
+这将SDK升级到最新版本。
 
-**注意事项**
+### 手动安装
 
-* 若产生崩溃`unrecognized selector sent to ...`，请在**Build Settings**中的**Other Linker Flags**里加上`-ObjC`
-* framework不提供日志功能，错误信息可由以下回调函数`getError`中获得
-  
-    ```objc
-    - (void)weatherWithInquireType:(INQUIRE_TYPE)inquireType
-                         WithSuccess:(void(^)(id responseObject))getSuccess
-                    faileureForError:(void(^)(NSError *error))getError;
-    ```
+你可以选择手动安装和风天气iOS SDK。
 
-## 数据访问配置
- 
-### 配置Public ID和KET
+1. 下载SDK：[QWeather_iOS_SDK_Pub_V{{ site.data.v.ios.version }}]({{ site.data.v.ios.dllink }}) <br>*MD5: {{ site.data.v.ios.md5 }}*
+2. 将 `QWeather.xcframework` 包导入到iOS或macOS Target中
+3. 添加[AFNetworking(4.0.0+)](https://github.com/AFNetworking/AFNetworking)
 
-在 AppDelegate 中添加 `publicId` 和 `appkey`
+> **如果工程是由swift编写**
+>
+> 1. 在Swift工程主目录下新建一个OC类，如果是项目第一次创建OC类的话，会弹出提示窗: 是否建立Swift-OC的桥接文件。
+> 2. 点击**Create Bridging Header**，Xcode会自动创建一个头文件。这个头文件，就是Swift-OC的桥接文件。
+> 3. 在Swift-OC桥接文件里将本framework类进行声明，即可以使用。
+> 4. SDK需要开启定位权限，在Info.plist里配置：
+> 
+>    ```
+>    NSLocationWhenInUseUsageDescription
+>    NSLocationAlwaysAndWhenInUseUsageDescription
+>    ```
+
+> **注意：**
+>
+> * 若产生崩溃`unrecognized selector sent to ...`，请在**Build Settings**中的**Other Linker Flags**里加上`-ObjC`
+> * framework不提供日志功能，错误信息可由以下回调函数`getError`中获得
+>   
+>    ```objc
+>    - (void)weatherWithInquireType:(INQUIRE_TYPE)inquireType
+>                         WithSuccess:(void(^)(id responseObject))getSuccess
+>                    faileureForError:(void(^)(NSError *error))getError;
+>    ```
+{:.bqwarning}
+
+## 第3步: 配置密钥和订阅版本
+
+在 `AppDelegate`文件中配置API密钥信息和选择订阅版本:
+
+### 配置Public ID和KEY
+
+将代码中的`Your_KEY`和`Your_Public_ID`替换为你项目中的KEY和Public ID
 
 ```objc
- QWeatherConfigInstance.publicID = @"";
- QWeatherConfigInstance.appKey = @"";
+QWeatherConfigInstance.publicID = @"Your_Public_ID";
+QWeatherConfigInstance.appKey = @"Your_KEY";
 ```
 
 ### 配置项目的订阅版本
@@ -79,7 +115,7 @@ iOS 8.0 及以上
 
 - 高级订阅：调用`-(void)changeDomain:(NSString *)domain`接口修改SDK的访问域名
 
-## 数据访问示例代码
+## 示例代码
 
 在需要使用的地方加入以下代码输入所需参数即可，返回为对应类型的数据模型
   
@@ -94,6 +130,8 @@ iOS 8.0 及以上
  * @param lang     多语言，默认为简体中文
  * @param unit     单位选择，公制（m）或英制（i），默认为公制单位
  */
+
+#import <QWeather/QWeather.h>
 
 AllWeatherInquieirs *qWeather = [AllWeatherInquieirs sharedInstance];//或AllWeatherInquieirs *qWeather     = [[AllWeatherInquieirs alloc] init];
 qWeather.appType = APP_TYPE_BIZ;
