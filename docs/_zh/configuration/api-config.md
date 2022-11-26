@@ -1,5 +1,5 @@
 ---
-title: API配置
+title: API 配置
 tag: [config, api]
 ref: config-api
 ---
