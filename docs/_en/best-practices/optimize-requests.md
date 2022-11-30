@@ -50,7 +50,7 @@ In the data response, `code` represents the status of the current request, and i
 
 When an error occurs, please stop the request before troubleshooting. However some errors are not caused by requests that do not meet the specification, such as exceeding the queries per minute limit(QPM), not having enough balance, etc. In this case you should use the [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) to optimize the request.
 
-> **For example:** when your got a `429` status code, means you exceeded the QPM, you should now add a waiting period of **x** seconds before the next request starts. If the next request still returns `402`, double the waiting period, send another request, and so on, continuing to extend the waiting period until no more error status codes.
+> **For example:** when your got a `429` status code, means you exceeded the QPM, you should now add a waiting period of **x** seconds before the next request starts. If the next request still returns `429`, double the waiting period, send another request, and so on, continuing to extend the waiting period until no more error status codes.
 
 Simple formula:
 
