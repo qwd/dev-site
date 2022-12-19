@@ -30,7 +30,7 @@ ref: start-overview
 https://devapi.qweather.com/v7/weather/now?location=101010100&key=你的KEY
 ```
 
-如果在上一步选择的是标准订阅，请确保你的帐号可用额度>0，并在浏览器中输入下列API地址：
+如果在上一步选择的是标准订阅，请确保你的帐号可用额度≥10，并在浏览器中输入下列API地址：
 
 ```
 https://api.qweather.com/v7/weather/now?location=101010100&key=你的KEY
@@ -74,6 +74,6 @@ https://api.qweather.com/v7/weather/now?location=101010100&key=你的KEY
 
 #### 条款、限制和许可证
 
-为了提供一个更加公平、高效、合规的开发环境，你需要同意我们的各项服务条款，并在在许可证允许的范围内使用和风天气开发服务。参考[条款](/docs/terms/)。
+为了提供一个更加公平、高效、合规的开发环境，你需要同意我们的各项服务条款，并在许可证允许的范围内使用和风天气开发服务。参考[条款](/docs/terms/)。
 
 
