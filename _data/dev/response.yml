@@ -701,7 +701,15 @@ ocean:
       zh: 海水高度，单位：米
       en: The height of the wave, in meters
     example: 2.370
-    type: [ttable, thourly]
+    type: [ttable]
+  - name: height
+    desc:
+      zh: >-
+       海水高度，单位：米。**对于一些地点，此数据可能为空**
+      en: >-
+       The height of the wave, in meters, **maybe null for some POI**
+    example: 2.370
+    type: [thourly]
   - name: type
     desc:
       zh: 满潮（H）或干潮（L）
