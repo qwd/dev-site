@@ -20,7 +20,7 @@ For time-sensitive data, you should not set too long a cache time, for example, 
 
 ## Flexible
 
-Caching should be flexible, you should not set the same caching policy for all data or all times, otherwise your program can have fatal errors or crashes, so you must pay attention to the following scenarios.
+Caching should be flexible, you should not set the same caching policy for all data or all times, otherwise your program may have fatal errors or crashes, so you must pay attention to the following scenarios.
 
 - Cross-day, users may not be able to view the full weather data or may cause your app to have fatal errors.
   > **For example:** For daily forecasts, users view the 7-day forecast at 23:00, after 00:00, if you do not refresh the cache, the first day of the 7-day forecast that users see will become the previous day or only the 6-day forecast, and in extreme cases, your program may also report an error.
