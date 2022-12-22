@@ -1,5 +1,5 @@
 ---
-title: Weather Icons
+title: Icons Info
 tag: resource
 description: QWeather Icons is a beautiful weather icon and weather icon font in SVG format for easy embedding in websites or APPs. QWeather Icons is open source project and you can use it for any project or redesign these icons for free.
 redirect_from: /en/docs/start/icons/
@@ -30,6 +30,10 @@ Or visit our [Github repo](https://github.com/qwd/Icons) for source code of QWea
 
 > **Please note**: icons and icon codes are constantly being updated, including additions, modifications and deletions, you have to make sure that your program is compatible so that these changes do not cause errors!
 {:.bqwarning}
+
+### Weather icons
+
+Some weather conditions will return different icons depending on day and night. For example: sunny day will response `100` (which is a sun icon) and clear night will response `150` (which is a moon icon).
 
 | Icon code | Weather                 | Day      | Night    |
 | --------- | ----------------------- | -------- | -------- |
@@ -92,18 +96,30 @@ Or visit our [Github repo](https://github.com/qwd/Icons) for source code of QWea
 | 513       | Severe haze             | &#9989;  | &#9989;  |
 | 514       | Heavy fog               | &#9989;  | &#9989;  |
 | 515       | Extra heavy fog         | &#9989;  | &#9989;  |
-| 800       | new-moon                | &#9989;  | &#9989;  |
-| 801       | Northern hemisphere: Waxing crescent<br>Southern hemisphere: Waning crescent  | &#9989;  | &#9989;  |
-| 802       | Northern hemisphere: First quarter<br>Southern hemisphere: Last quarter    | &#9989;  | &#9989;  |
-| 803       | Northern hemisphere: Waxing gibbous<br>Southern hemisphere: Waning gibbous   | &#9989;  | &#9989;  |
-| 804       | full-moon               | &#9989;  | &#9989;  |
-| 805       | Northern hemisphere: Waning gibbous<br>Southern hemisphere: Waxing gibbous   | &#9989;  | &#9989;  |
-| 806       | Northern hemisphere: Last quarter<br>Southern hemisphere: First quarter   | &#9989;  | &#9989;  |
-| 807       | Northern hemisphere: Waning crescent<br>Southern hemisphere: Waxing gibbous    | &#9989;  | &#9989;  |
 | 900       | Hot                     | &#9989;  | &#9989;  |
 | 901       | Cold                    | &#9989;  | &#9989;  |
 | 999       | Unknown                 | &#9989;  | &#9989;  |
 
+### Moon phase icons
+
+The Moon phase icon will automatically adapt to the Moon phase style in the northern and southern hemispheres. For example, the Moon phase is First quarter, then API response will be `802` in the northern hemisphere and `806` in the southern hemisphere. 
+
+Learn more about [Moon phase](/en/docs/resource/sun-moon-info/#moon-phase).
+
+| Icon code | Moon Phase(Northern hemisphere) | Moon Phase(Southern hemisphere) |
+| -------- | ------------------------------- | ------------------------------- |
+| 800      | New-moon                        | New-moon                        |
+| 801      | Waxing crescent                 | Waning crescent                 |
+| 802      | First quarter                   | Last quarter                    |
+| 803      | Waxing gibbous                  | Waning gibbous                  |
+| 804      | Full-moon                       | Full-moon                       |
+| 805      | Waning gibbous                  | Waxing gibbous                  |
+| 806      | Last quarter                    | First quarter                   |
+| 807      | Waning crescent                 | Waxing crescent                 |
+
+### Weather warning icons
+
+Weather warning icons corresponds to `warning.type`, refer to [Warning type](/en/docs/resource/warning-info/#warning-type) for the currently supported `warning.type`.
 
 ## Copyright and License
 
