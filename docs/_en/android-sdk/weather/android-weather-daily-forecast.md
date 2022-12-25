@@ -91,14 +91,14 @@ Properties of WeatherDailyBean
 | getIconNight | Icon codes for night weather conditions, free to download [weather icons](/en/docs/resource/icons/) | 100 |
 | getTextDay | Weather conditions for daytime | Sunny |
 | getTextNight | Weather conditions for night | Sunny |
-| getWind360Day | Daytime wind direction in azimuth degree | 310 |
-| getWind360Night | Nightly wind direction in azimuth degree | 310 |
-| getWindDirDay | Daytime wind direction | NW wind |
-| getWindDirNight | Nightly wind direction | NW wind |
-| getWindScaleDay | Daytime wind scale | 1-2 |
-| getWindScaleNight | Nightly wind scale | 1-2 |
-| getWindSpeedDay | Daytime wind speed, km/h | 14 |
-| getWindSpeedNight | Nightly wind speed, km/h | 14 |
+| getWind360Day | Daytime [wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree | 310 |
+| getWind360Night | Nightly [wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree | 310 |
+| getWindDirDay | Daytime [wind direction](/en/docs/resource/wind-info/#wind-direction) | NW wind |
+| getWindDirNight | Nightly [wind direction](/en/docs/resource/wind-info/#wind-direction) | NW wind |
+| getWindScaleDay | Daytime [wind scale](/en/docs/resource/wind-info/#wind-scale) | 1-2 |
+| getWindScaleNight | Nightly [wind scale](/en/docs/resource/wind-info/#wind-scale) | 1-2 |
+| getWindSpeedDay | Daytime [wind speed](/en/docs/resource/wind-info/#wind-speed), km/h | 14 |
+| getWindSpeedNight | Nightly [wind speed](/en/docs/resource/wind-info/#wind-speed), km/h | 14 |
 | getHumidity | Relative humidity in percent | 37 |
 | getPrecip | Precipitation | 0 |
 | getPressure | Atmospheric pressure | 1018 |

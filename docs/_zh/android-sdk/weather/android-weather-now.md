@@ -54,10 +54,10 @@ QWeather.getWeatherNow(Context context, String location, QWeather.OnResultWeathe
 | getTemp      | 温度，默认单位：摄氏度     | 21               |
 | getIcon      | 实况天气状况代码           | 100              |
 | getText      | 实况天气状况代码           | 晴               |
-| getWind360   | 风向360角度                | 305              |
-| getWindDir   | 风向                       | 西北             |
-| getWindScale | 风力                       | 3-4              |
-| getWindSpeed | 风速，公里/小时            | 15               |
+| getWind360   | [风向](/docs/resource/wind-info/#wind-direction)360角度                | 305              |
+| getWindDir   | [风向](/docs/resource/wind-info/#wind-direction)                       | 西北             |
+| getWindScale | [风力等级](/docs/resource/wind-info/#wind-scale)                       | 3-4              |
+| getWindSpeed | [风速](/docs/resource/wind-info/#wind-speed)，公里/小时            | 15               |
 | getHumidity  | 相对湿度                   | 40               |
 | getPrecip    | 降水量                     | 0                |
 | getPressure  | 大气压强                   | 1020             |

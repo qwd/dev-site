@@ -131,50 +131,50 @@ weather:
     type: [daily, gdaily]
   - name: wind360Day
     desc:
-      zh: 预报白天风向360角度
-      en: Daytime wind direction in azimuth degree
+      zh: 预报白天[风向](/docs/resource/wind-info/#wind-direction)360角度
+      en: Daytime [wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree
     example: 187
     type: [daily, gdaily]
   - name: windDirDay
     desc:
-      zh: 预报白天风向
-      en: Daytime wind direction
+      zh: 预报白天[风向](/docs/resource/wind-info/#wind-direction)
+      en: Daytime [wind direction](/en/docs/resource/wind-info/#wind-direction)
     example: NE
     type: [daily, gdaily]
   - name: windScaleDay
     desc:
-      zh: 预报白天风力等级
-      en: Daytime wind scale
+      zh: 预报白天[风力等级](/docs/resource/wind-info/#wind-scale)
+      en: Daytime [wind scale](/en/docs/resource/wind-info/#wind-scale)
     example: 3
     type: [daily, gdaily]
   - name: windSpeedDay
     desc:
-      zh: 预报白天风速，公里/小时
-      en: Daytime wind speed, KM/H
+      zh: 预报白天[风速](/docs/resource/wind-info/#wind-speed)，公里/小时
+      en: Daytime [wind speed](/en/docs/resource/wind-info/#wind-speed), KM/H
     example: 9
     type: [daily, gdaily]
   - name: wind360Night
     desc:
-      zh: 预报夜间风向360角度
-      en: Nightly wind direction in azimuth degree
+      zh: 预报夜间[风向](/docs/resource/wind-info/#wind-direction)360角度
+      en: Nightly [wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree
     example: 89
     type: [daily, gdaily]
   - name: windDirNight
     desc:
-      zh: 预报夜间当天风向
-      en: Nightly Wind direction
+      zh: 预报夜间当天[风向](/docs/resource/wind-info/#wind-direction)
+      en: Nightly [wind direction](/en/docs/resource/wind-info/#wind-direction)
     example: 139
     type: [daily, gdaily]
   - name: windScaleNight
     desc:
-      zh: 预报夜间风力等级
-      en: Nightly wind scale
+      zh: 预报夜间[风力等级](/docs/resource/wind-info/#wind-scale)
+      en: Nightly [wind scale](/en/docs/resource/wind-info/#wind-scale)
     example: 3-4
     type: [daily, gdaily]
   - name: windSpeedNight
     desc:
-      zh: 预报夜间风速，公里/小时
-      en: Nightly wind speed, KM/H
+      zh: 预报夜间[风速](/docs/resource/wind-info/#wind-speed)，公里/小时
+      en: Nightly [wind speed](/en/docs/resource/wind-info/#wind-speed), KM/H
     example: 3-4
     type: [daily, gdaily]
   - name: precip
@@ -215,26 +215,34 @@ weather:
     type: [now, hourly,ghourly,gnow]
   - name: wind360
     desc:
-      zh: 风向360角度
-      en: Wind direction in azimuth degree
+      zh: >-
+       [风向](/docs/resource/wind-info/#wind-direction)360角度
+      en: >-
+       [Wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree
     example: 134
     type: [now, hourly, ghourly, gnow]
   - name: windDir
     desc:
-      zh: 风向
-      en: Wind direction
+      zh: >-
+       [风向](/docs/resource/wind-info/#wind-direction)
+      en: >-
+       [Wind direction](/en/docs/resource/wind-info/#wind-direction)
     example: NE
     type: [now, hourly,ghourly,gnow]
   - name: windScale
     desc:
-      zh: 风力等级
-      en: Wind scale
+      zh: >-
+       [风力等级](/docs/resource/wind-info/#wind-scale)
+      en: >-
+       [Wind scale](/en/docs/resource/wind-info/#wind-scale)
     example: 3
     type: [now, hourly,ghourly,gnow]
   - name: windSpeed
     desc:
-      zh: 风速，公里/小时
-      en: Wind speed, KM/H
+      zh: >-
+       [风速](/docs/resource/wind-info/#wind-speed)，公里/小时
+      en: >-
+       [Wind speed](/en/docs/resource/wind-info/#wind-speed), KM/H
     example: 15
     type: [now, hourly, ghourly, gnow]
   - name: humidity
@@ -952,26 +960,26 @@ hisweather:
     type: [hourly]
   - name: wind360
     desc:
-      zh: 当天每小时风向360角度
-      en: Hourly wind direction in azimuth degree
+      zh: 当天每小时[风向](/docs/resource/wind-info/#wind-direction)360角度
+      en: Hourly [wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree
     example: 134
     type: [hourly]
   - name: windDir
     desc:
-      zh: 当天每小时风向
-      en: Hourly wind direction
+      zh: 当天每小时[风向](/docs/resource/wind-info/#wind-direction)
+      en: Hourly [wind direction](/en/docs/resource/wind-info/#wind-direction)
     example: NE
     type: [hourly]
   - name: windScale
     desc:
-      zh: 当天每小时风力
-      en: Hourly wind scale
+      zh: 当天每小时[风力等级](/docs/resource/wind-info/#wind-scale)
+      en: Hourly [wind scale](/en/docs/resource/wind-info/#wind-scale)
     example: 3
     type: [hourly]
   - name: windSpeed
     desc:
-      zh: 当天每小时风速，公里/小时
-      en: Hourly wind speed, KM/H
+      zh: 当天每小时[风速](/docs/resource/wind-info/#wind-speed)，公里/小时
+      en: Hourly [wind speed](/en/docs/resource/wind-info/#wind-speed), KM/H
     example: 15
     type: [hourly]
   - name: humidity
