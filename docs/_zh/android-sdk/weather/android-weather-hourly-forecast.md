@@ -73,10 +73,10 @@ QWeather.getWeather168Hourly(Context context, String location, QWeather.OnResult
 | getTemp      | 温度                                     | 2                |
 | getIcon      | 天气状况代码                             | 101              |
 | getText      | 天气状况代码                             | 多云             |
-| getWind360   | 风向360角度                              | 290              |
-| getWindDir   | 风向                                     | 西北             |
-| getWindScale | 风力                                     | 3-4              |
-| getWindSpeed | 风速，公里/小时                          | 15               |
+| getWind360   | [风向](/docs/resource/wind-info/#wind-direction)360角度                              | 290              |
+| getWindDir   | [风向](/docs/resource/wind-info/#wind-direction)                                     | 西北             |
+| getWindScale | [风力等级](/docs/resource/wind-info/#wind-scale)                                     | 3-4              |
+| getWindSpeed | [风速](/docs/resource/wind-info/#wind-speed)，公里/小时                          | 15               |
 | getHumidity  | 相对湿度                                 | 30               |
 | getPrecip    | 逐小时预报降水量，默认单位：毫米         | 1.2              |
 | getPop       | 逐小时预报降水概率，百分比数值，可能为空 | 5                |

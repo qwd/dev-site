@@ -75,10 +75,10 @@ Properties of WeatherHourlyBean
 | getTemp | Temperature | 2 |
 | getIcon | Icon code of weather conditions, free to download [weather icons](/en/docs/resource/icons/) | 101 |
 | getText |  Weather conditions | Cloudy |
-| getWind360 | Wind direction in azimuth degree | 290 |
-| getWindDir | Wind direction | NW |
-| getWindScale | Wind scale | 3-4 |
-| getWindSpeed ​​| Wind speed, km/h | 15 |
+| getWind360 | [Wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree | 290 |
+| getWindDir | [Wind direction](/en/docs/resource/wind-info/#wind-direction) | NW |
+| getWindScale | [Wind scale](/en/docs/resource/wind-info/#wind-scale) | 3-4 |
+| getWindSpeed ​​| [Wind speed](/en/docs/resource/wind-info/#wind-speed), km/h | 15 |
 | getHumidity | Relative humidity in percent | 30 |
 | getPrecip | Precipitation | 1.2 |
 | getPop | Probability of precipitation, in percent, **may be null** | 5 |

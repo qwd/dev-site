@@ -57,10 +57,10 @@ Properties of WeatherNowBean
 | getTemp | Temperature | 21 |
 | getIcon | Icon code of weather conditions, free to download [weather icons](/en/docs/resource/icons/) | 100 |
 | getText | Weather conditions | Sunny |
-| getWind360 | Wind direction in azimuth degree | 305 |
-| getWindDir | Wind direction | NW |
-| getWindScale | Wind scale | 3-4 |
-| getWindSpeed ​​| Wind speed, km/h | 15 |
+| getWind360 | [Wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree | 305 |
+| getWindDir | [Wind direction](/en/docs/resource/wind-info/#wind-direction) | NW |
+| getWindScale | [Wind scale](/en/docs/resource/wind-info/#wind-scale) | 3-4 |
+| getWindSpeed ​​| [Wind speed](/en/docs/resource/wind-info/#wind-speed), km/h | 15 |
 | getHumidity | Relative humidity in percent | 40 |
 | getPrecip | Precipitation | 0 |
 | getPressure | Atmospheric pressure | 1020 |

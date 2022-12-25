@@ -79,10 +79,10 @@ QWeather.getHistoricalWeather(Context context, String location, String date, Lan
 | getTemp      | 温度                                   | 2                |
 | getIcon      | 天气状况代码                           | 101              |
 | getText      | 天气状况代码                           | 多云             |
-| getWind360   | 风向360角度                            | 290              |
-| getWindDir   | 风向                                   | 西北             |
-| getWindScale | 风力                                   | 3-4              |
-| getWindSpeed | 风速                                   | 15               |
+| getWind360   | [风向](/docs/resource/wind-info/#wind-direction)360角度                            | 290              |
+| getWindDir   | [风向](/docs/resource/wind-info/#wind-direction)                                   | 西北             |
+| getWindScale | [风力等级](/docs/resource/wind-info/#wind-scale)                                   | 3-4              |
+| getWindSpeed | [风速](/docs/resource/wind-info/#wind-speed)                                   | 15               |
 | getHumidity  | 湿度                                   | 30               |
 | getPressure  | 大气压强                               | 1030             |
 | getPrecip    | 逐小时预报降水量，默认单位：毫米       | 1.2              |
