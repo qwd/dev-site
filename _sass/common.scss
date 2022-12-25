@@ -530,7 +530,53 @@ a {
   }
 }
 
+// footnote
 
+.footnote::before {
+  content: "[";
+}
+
+.footnote::after {
+  content: "]";
+}
+
+.footnotes {
+  padding: 15px;
+  margin: 40px 0 20px;
+  color: $color-grey;
+  font-size: 1.4rem;
+  background-color: $color-fa;
+  border-radius: 8px;
+  // border: 1px solid #abf0ff;
+
+  & p:last-child,
+  & ul:last-child,
+  & ol:last-child {
+    margin-bottom: 0;
+  }
+  &:lang(zh) {
+    &::before {
+      content: "本文参考资料";
+      display: block;
+      font-size: 1.6rem;
+      font-weight: bold;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #333;
+    }
+  }
+  &:lang(en) {
+    &::before {
+      content: "References";
+      display: block;
+      font-size: 1.6rem;
+      font-weight: bold;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #333;
+    }
+  }
+}
 
 /* table */
 table {
