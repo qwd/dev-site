@@ -80,6 +80,7 @@ reference_docs:
       - name: res-location-list
       - name: res-auth
       - name: res-unit
+      - name: res-wind
       - name: res-warning
       - name: res-indices
       - name: res-air
