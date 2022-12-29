@@ -58,8 +58,34 @@ type,type_deprecated,type_name_zh,type_name_en
 1057,11B57,道路冰雪,Road Ice and Snow
 1058,11B58,雷暴大风,Thunderstorm and Gale
 1059,11B59,持续低温,Continuous Low Temperature
+1060,,能见度不良,Low Visibility
 1061,11B61,浓浮沉,Strong Dust
-1064,11B64,短时强降雨,Short-lived Heavy Shower Rain
+1062,,海区大风,Gale at Sea
+1063,,短历时强降水,Short Duration Heavy Precipitation
+1064,,短时强降雨,Short-lived Heavy Shower Rain
+1065,,海区大雾,Sea Fog
+1066,,中暑气象条件,Heat Stroke Conditions
+1067,,重污染天气,Heavy Pollution Weather
+1068,,一氧化碳中毒气象条件,CO Poisoning Weather Conditions
+1069,,感冒等呼吸道疾病气象条件,Respiratory Disease Weather Conditions
+1071,,腹泻等肠道疾病气象条件,Intestinal Diseases Weather Conditions
+1072,,心脑血管疾病气象条件,Cardiovascular Diseases Weather Conditions
+1073,,洪涝灾害气象风险,Flooding Weather Risk
+1074,,重污染气象条件,Heavy Pollution Weather Conditions
+1075,,城市内涝气象风险,Urban Flooding Weather Risk
+1076,,洪水灾害气象风险,Flooding Weather Risk
+1077,,森林火险气象风险,Wildfire Weather Risk
+1078,,气象干旱,Meteorological Drought
+1079,,农业气象风险,Agricultural Weather Risk
+1080,,强季风,Strong Monsoon
+1081,,电线积冰,Ice Accretion on Wires
+1082,,脑卒中气象风险,Stroke Weather Risk
+1084,,森林（草原）火灾气象风险,Wildfire (Grassland) Risk
+1085,,雷雨强风,Thunderstorms and strong winds
+1086,,低温凝冻,Low Temperature Freeze
+1087,,低温冷害,Low Temperature Damage
+1088,,全国农业气象灾害风险,National Agricultural Meteorological Risk
+1089,,冬小麦干热风灾害风险预警,Dry Hot Winds Risk for Winter Wheat
 1101,,洪水,Flood
 1302,,泥石流,Mudflow
 1402,,风暴潮,Storm Surge
@@ -70,6 +96,9 @@ type,type_deprecated,type_name_zh,type_name_en
 1605,,火灾危险,Fire Danger
 1606,,新界北部水浸特别报告,Special Announcement on Flooding in the northern New Territories
 1607,,寒冷天气,Cold Weather
+1701,,低温特报,Cold Surge Advisory
+1702,,陆上强风,Wind
+1703,,降雨特报,Rain
 2001,,大风,Wind
 2002,,强降雪和结冰,Snow-ice
 2003,,大雾,Fog
