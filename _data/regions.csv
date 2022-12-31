@@ -216,7 +216,7 @@ Svalbard and Jan Mayen,斯瓦尔巴和扬马延,SJ,SJM,744,ISO 3166-2:SJ,false,,
 Sweden,瑞典,SE,SWE,752,ISO 3166-2:SE,true,true,
 Switzerland,瑞士,CH,CHE,756,ISO 3166-2:CH,true,true,
 Syrian Arab Republic,叙利亚,SY,SYR,760,ISO 3166-2:SY,true,,
-"Taiwan, Province of China",中国台湾省,TW,TWN,158,ISO 3166-2:TW,false,,true
+"Taiwan, Province of China",中国台湾省,TW,TWN,158,ISO 3166-2:TW,false,true,true
 Tajikistan,塔吉克斯坦,TJ,TJK,762,ISO 3166-2:TJ,true,,
 "Tanzania, United Republic of",坦桑尼亚,TZ,TZA,834,ISO 3166-2:TZ,true,,
 Thailand,泰国,TH,THA,764,ISO 3166-2:TH,true,,
