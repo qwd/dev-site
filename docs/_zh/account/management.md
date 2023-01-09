@@ -6,21 +6,21 @@ ref: account-manage
 
 使用和风天气的开发服务，你需要一个和风天气的帐号，在这里你可以了解如何注册、登录、找回密码以及管理你的帐号。
 
-## 注册
+## 注册 {#register}
 
 注册和风天气帐号非常简单，请访问[和风天气用户中心](https://id.qweather.com/#/register)。
 
 你需要提供有效的电子邮箱和手机号码来完成注册，当你设置密码的时候，为了帐号安全，请不要选择一个简单的密码或与你的其他帐号相同的密码，我们推荐使用至少18位且包含字母、数字和特殊符号的密码。
 
-## 登录
+## 登录 {#login}
 
 如果你绑定了社交帐号（我们支持的社交帐号包括微信/Apple ID/Google），则可以通过这些社交帐号直接登录。或者使用注册的电子邮箱/手机号码+密码的方式进行登录。
 
-## 找回密码
+## 找回密码 {#password-reset}
 
 如果你忘记了你的密码，请通过[用户中心](https://id.qweather.com/#/forget/process/start)重置你的密码，但前提是你注册的电子邮箱或手机号码可以获取到重置密码的验证信息。
 
-## Lost registration information and password
+## 忘记注册信息和密码 {#lost-registration-information-and-password}
 
 如果你的注册邮箱或手机已经不可用，或忘记了注册邮箱或手机，请按照如下方式提交申请：
 
@@ -31,7 +31,7 @@ ref: account-manage
 
 > **提示：**考虑到安全因素，你的申请我们无法保证通过审核，无论你是否提交了足够的信息，如果你的申请未能通过审核，我们不会进行告知。
 
-## 修改联系方式
+## 修改联系方式 {#edit-contact-information}
 
 你可以通过[控制台-设置-帐号管理](https://console-test.qweather.com/#/user/space)修改你的电子邮箱和手机号码。修改成功后立即生效。
 
