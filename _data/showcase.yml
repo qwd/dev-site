@@ -107,6 +107,11 @@
       author: Vast Gui
       code: https://github.com/SakurajimaMaii/XiaFengWeather
       description: 一款基于MVVM架构开发的天气应用，提供近十天天气预报，空气质量查看以及城市搜索等功能。
+  works:
+    - name: QWeatherSDK
+      author: RTAkland
+      code: https://github.com/RTAkland/QWeatherSDK
+      description: 基于和风天气 Web API开发的非官方Kotlin/Java SDK. Unofficial Kotlin/Java SDK based on Web API development.
 - language: Objective-C
   works:
     - name: OpenWeatherPlus-iOS
@@ -123,7 +128,7 @@
   works:
     - name: QWeather
       author: RTAkland
-      code: https://github.com/MarkusJoe/QWeatherReporter
+      code: https://github.com/RTAkland/QWeatherReporter
       description: 一个使用和风天气API获取天气信息并通过SMTP发送到邮箱的python小项目。Send QWeather to mailbox via STMP.
     - name: QWeatherBot
       author: daya0576
