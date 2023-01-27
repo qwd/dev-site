@@ -107,7 +107,6 @@
       author: Vast Gui
       code: https://github.com/SakurajimaMaii/XiaFengWeather
       description: 一款基于MVVM架构开发的天气应用，提供近十天天气预报，空气质量查看以及城市搜索等功能。
-  works:
     - name: QWeatherSDK
       author: RTAkland
       code: https://github.com/RTAkland/QWeatherSDK
