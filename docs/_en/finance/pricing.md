@@ -13,6 +13,7 @@ Pay as you go is tiered pricing, with the higher requests, the lower cost per re
 - **Billing unit:** pre request. See [What is a request](/en/help/#what-is-a-request).
 - **Billing cycle:** monthly
 - **Accrued charges cycle:** hourly
+- **Minimum billing amount:** ¥0.01. Under ¥0.01 will be billed as ¥0.01
 
 > **For example:** you have 1,000,000 requests per month, the monthly cost is: (300,000 requests x ¥0.001) + (700,000 requests x ¥0.0009) = ¥930
 
