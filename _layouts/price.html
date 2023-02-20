@@ -46,7 +46,7 @@ layout: html
                             {%- if group.data.ref -%}
                             <h4 class="mb-3">{{ group_doc.title }}</h4>
                             {%- else -%}
-                            <h4 class="mb-3">{{ group.data[page.lang] }}<sup>{{ forloop.index | replace: "1", "*" | replace: "2", "+" }}</sup></h4>
+                            <h4 class="mb-3">{{ group.data[page.lang] }}<sup>{{ forloop.index | replace: "2", "*" | replace: "3", "+" }}</sup></h4>
                             {%- endif -%}
                             <div class="price-content{{- forloop.index }} d-none d-sm-block">
                                 <ul class="clear-list">
@@ -57,7 +57,7 @@ layout: html
                                 </ul>
                                 {%- if group.excl -%}
                                 <p class="mb-3 small italic text-underline color-grey">
-                                    <sup><strong>{{ forloop.index | replace: "1", "*" | replace: "2", "+" }}</strong></sup>{{ group.excl[page.lang]}}
+                                    <sup><strong>{{ forloop.index | replace: "2", "*" | replace: "3", "+" }}</strong></sup>{{ group.excl[page.lang]}}
                                 </p>
                                 {%- endif -%}
                             </div>
