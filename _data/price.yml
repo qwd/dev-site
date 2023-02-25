@@ -4,7 +4,7 @@
   price: [0.0005,0.00045,0.00035,0.00025,0.00015,0.0001]
 - data: 
     zh: 天气服务
-    en: Weather
+    en: Weather Service
   incl: [0-api-weather, 0-api-grid-weather, 0-api-minutely, 0-api-warning, 0-api-indices]
   excl:
     zh: |- 
@@ -14,7 +14,7 @@
   price: [0.001,0.0009,0.0007,0.0005,0.0003,0.0002]
 - data: 
     zh: 天气服务(扩展)
-    en: Weather(Extend)
+    en: Weather Service(Extend)
   incl: [0-api-weather, 0-api-grid-weather]
   excl:
     zh: |-
