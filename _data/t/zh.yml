@@ -56,6 +56,7 @@ platform: 平台
 quick-start: 快速开始
 api-response-note: 返回数据是JSON格式并进行了[Gzip压缩](/docs/best-practices/gzip/)，数据类型均为字符串。
 api-url-note: 如果是免费订阅，将上述API Host更改为`devapi.qweather.com`。参考[免费订阅可用的数据](/docs/finance/subscription/#comparison)。
+doc-incl-data-pricing: 价格适用于下列数据服务
 hp-slogan: 创建一个漂亮的天气项目
 hp-slogan-2: 驱动你的业务
 hp-data: 强大的气象数据 
