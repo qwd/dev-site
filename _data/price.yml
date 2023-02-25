@@ -3,37 +3,25 @@
   incl: [1-api-city-lookup,2-api-top-city]
   price: [0.0005,0.00045,0.00035,0.00025,0.00015,0.0001]
 - data: 
-    zh: 天气预报
+    zh: 天气服务
     en: Weather
-  incl: [1-api-weather-now, 2-api-weather-daily-forecast, 3-api-weather-hourly-forecast]
+  incl: [0-api-weather, 0-api-grid-weather, 0-api-minutely, 0-api-warning, 0-api-indices]
   excl:
-    zh: 不含每日预报（10-30天）与每小时预报（72-168小时）
-    en: Excludes 10-30 daily forecast and 72-168 hourly forecast
+    zh: |- 
+     **注意:** 下列定价不适用于超过7天的每日预报或超过24小时的每小时预报，此类数据参考[天气服务(扩展)](/docs/finance/pricing/#weather-extend)。
+    en: |-
+     **Note:** The following pricing is not available for daily forecast over 7 days or hourly forecast over 24 hours, refer to [Weather (Extend)](/en/docs/finance/pricing/#weather-extend) instead.
   price: [0.001,0.0009,0.0007,0.0005,0.0003,0.0002]
 - data: 
-    zh: 扩展天气
-    en: Extend Weather
-  incl: [2-api-weather-daily-forecast, 3-api-weather-hourly-forecast]
+    zh: 天气服务(扩展)
+    en: Weather(Extend)
+  incl: [0-api-weather, 0-api-grid-weather]
   excl:
-    zh: 仅每日预报（10-30天）以及每小时预报（72-168小时）
-    en: Only for 10-30 daily forecast and 72-168 hourly forecast
+    zh: |-
+     **注意:** 本定价仅限城市天气和格点天气中超过7天的每日预报或超过24小时的每小时预报。
+    en: |-
+     **Note:** This pricing is only available for daily forecast over 7 days or hourly forecast over 24 hours for the above data services.
   price: [0.002,0.0018,0.0014,0.001,0.0007,0.0005]
-- data: 
-    ref: 0-api-minutely
-  incl: [1-api-minutely-precipitation]
-  price: [0.001,0.0009,0.0007,0.0005,0.0003,0.0002]
-- data: 
-    ref: 0-api-grid-weather
-  incl: [1-api-gird-weather-now,2-api-grid-weather-daily-forecast,3-api-grid-weather-hourly-forecast]
-  price: [0.001,0.0009,0.0007,0.0005,0.0003,0.0002]
-- data: 
-    ref: 0-api-warning
-  incl: [1-api-weather-warning,2-api-weather-warning-city-list]
-  price: [0.001,0.0009,0.0007,0.0005,0.0003,0.0002]
-- data: 
-    ref: 0-api-indices
-  incl: [1-api-indices-forecast]
-  price: [0.001,0.0009,0.0007,0.0005,0.0004,0.0003]
 - data: 
     ref: 0-api-air
   incl: [1-api-air-now,2-api-air-daily-forecast]

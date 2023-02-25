@@ -7,17 +7,17 @@
 {%- endif -%}
 <div class="price-content{{- forloop.index }} {% if forloop.first %}default{% endif %}">
     <div class="data-desc mb-3">
-        <p>For 
+        <p class="mr-2">{{ site.data.t[page.lang]doc-incl-data-pricing }}:</p>
+        <p>
             {% for incl_data in group.incl %}
-            {%- assign incl_doc = site.documents | where: "lang", page.lang | where: "ref", incl_data | first -%}
-            <span><a href="{{ incl_doc.url }}">{{ incl_doc.title | split: ',' }}</a></span>
-            {% endfor %}           
+            {%- assign incl_doc = site.documents | where: "lang", page.lang | where: "ref", incl_data | first  -%}
+                <span class="mr-2">&bull; <a href="{{ incl_doc.url }}">{{ incl_doc.title }}</a></span>
+            {% endfor %} 
         </p>
         {%- if group.excl -%}
-        <p class="mb-3 italic text-underline">
-            <sup><strong>*</strong></sup>{{ group.excl[page.lang]}}
-        </p>
-            
+        <blockquote class="bqwarning">
+            {{ group.excl[page.lang] | markdownify }}
+        </blockquote>
         {%- endif -%}
     </div>
     

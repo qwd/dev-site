@@ -55,15 +55,14 @@ layout: html
                                     <li class="small mb-1">{{ incl_doc.title }}</li>
                                     {% endfor %}
                                 </ul>
-                                {%- if group.excl -%}
-                                <p class="mb-3 small italic text-underline color-grey">
-                                    <sup><strong>{{ forloop.index | replace: "2", "*" | replace: "3", "+" }}</strong></sup>{{ group.excl[page.lang]}}
-                                </p>
-                                {%- endif -%}
                             </div>
                         </a>
                     </div>
                     {% endfor %}
+                </div>
+                <div class="price-footnote">
+                    <p class="small italic">* 天气服务: 不含每日预报(10-30天)与每小时预报(72-168小时)</p>
+                    <p class="small italic">+ 天气服务(扩展): 仅每日预报(10-30天)以及每小时预报(72-168小时)</p>
                 </div>
             </div>
     </section>
