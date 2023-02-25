@@ -61,8 +61,8 @@ layout: html
                     {% endfor %}
                 </div>
                 <div class="price-footnote">
-                    <p class="small italic">* 天气服务: 不含每日预报(10-30天)与每小时预报(72-168小时)</p>
-                    <p class="small italic">+ 天气服务(扩展): 仅每日预报(10-30天)以及每小时预报(72-168小时)</p>
+                    <p class="small italic">* {{ site.data.t[page.lang].pi-tier-weather-remark}}</p>
+                    <p class="small italic">+ {{ site.data.t[page.lang].pi-tier-weather-extend-remark}}</p>
                 </div>
             </div>
     </section>

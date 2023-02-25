@@ -99,6 +99,8 @@ pi-saving-plans-more: 了解节省计划
 pi-tier-title: 价格，越用越省
 pi-tier-desc: 按量计费采取阶梯价的方式，请求量越大，单价成本越低。使用节省计划同样适用阶梯价并在此基础上提供折扣。
 pi-tier-see: 点击查看不同服务的价格
+pi-tier-weather-remark: 不适用于超过7天的每日预报或超过24小时的每小时预报。
+pi-tier-weather-extend-remark: 仅限超过7天的每日预报或超过24小时的每小时预报。
 pi-calc: 价格计算器
 pi-calc-desc: 你可以方便的使用价格计算器来预估你的每月账单费用，或者了解需要购买多少金额的节省计划。
 pi-calc-go: 计算(需要登录)

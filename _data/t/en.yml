@@ -94,6 +94,8 @@ pi-saving-plans-more: See Saving Plans
 pi-tier-title: Pricing, more use more save
 pi-tier-desc: Pay as you go is tiered pricing, with the higher requests, the lower cost per request. 
 pi-tier-see: Click to see the price of the services
+pi-tier-weather-remark: Not available for daily forecast over 7 days or hourly forecast over 24 hours.
+pi-tier-weather-extend-remark: Only available for daily forecast over 7 days or hourly forecast over 24 hours.
 pi-calc: Price Calculator
 pi-calc-desc: You can easily use the price calculator to estimate your monthly cost.
 pi-calc-go: Calculate (login required)
