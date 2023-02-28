@@ -1,6 +1,6 @@
 - data: 
     ref: 0-api-geo
-  incl: [1-api-city-lookup,2-api-top-city]
+  incl: [1-api-city-lookup,2-api-top-city, 3-api-poi-lookup, 4-api-poi-range]
   price: [0.0005,0.00045,0.00035,0.00025,0.00015,0.0001]
 - data: 
     zh: 天气服务
