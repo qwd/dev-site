@@ -19,7 +19,7 @@ Pay as you go is tiered pricing, with the higher requests, the lower cost per re
 
 ## Pricing
 
-Pay as you go is tiered pricing, the total request volume is calculated as the sum of each data service in the price table.
+Pay as you go is tiered pricing, the progressive request volume is calculated as the sum of each data contained in a single service.
 
 > **For example:** you requested 300000 real-time weather, 700000 warnings, 300000 real-time air quality and 100000 air quality forecast in a month, your total requests for the month are: 1,000,000 for weather services and 400,000 for air quality, and the cost for the month is: [(300,000 requests x ¥0.001) + (700,000 requests x ¥0.0009)] + [(300,000 requests x ¥0.001) + (100,000 requests x ¥0.0009)] = ¥1,320
 
