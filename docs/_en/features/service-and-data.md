@@ -31,10 +31,10 @@ We support weather data services in China (including Hong Kong, Macau and Taiwan
 | Hourly forecast          | 1 hr            | Hourly    | 1-168 hrs  | Global     |
 | Real-time POI Weather    | 1 hr            | Real-time | Real-time  | Global     |
 | POI Daily forecast       | 8 hrs           | Daily     | 1-7 days   | Global     |
-| Real-time Weather (Gird) | 20 min          | Real-time | Realtime   | Global      |
-| Daily forecast (Gird)    | 12 hrs          | Daily     | 1-7 days   | Global      |
-| Hourly forecast (Gird)   | 1 hr            | Hourly    | 1-72 hrs   | Global      |
-| Minute Precip (Gird)     | 5 min           | 5 min     | 1-2 hrs    | China      |
+| Real-time Weather (Grid) | 20 min          | Real-time | Realtime   | Global      |
+| Daily forecast (Grid)    | 12 hrs          | Daily     | 1-7 days   | Global      |
+| Hourly forecast (Grid)   | 1 hr            | Hourly    | 1-72 hrs   | Global      |
+| Minute Precip (Grid)     | 5 min           | 5 min     | 1-2 hrs    | China      |
 
 ### Weather Indices
 

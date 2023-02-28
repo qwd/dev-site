@@ -1,7 +1,7 @@
 ---
 title: Grid Weather Real-time 
 tag: [guide, api, grid-weather, now]
-ref: 1-api-gird-weather-now
+ref: 1-api-grid-weather-now
 ---
 
 Get high-precision real-time weather at any latitude and longitude around the world.
