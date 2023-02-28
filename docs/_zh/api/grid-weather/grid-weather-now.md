@@ -1,7 +1,7 @@
 ---
 title: 格点实时天气
 tag: [guide, api, grid-weather, now]
-ref: 1-api-gird-weather-now
+ref: 1-api-grid-weather-now
 ---
 
 基于全球任意坐标的高精度实时天气，精确到3-5公里范围，包括：温度、湿度、大气压、天气状况、风力、风向等。
