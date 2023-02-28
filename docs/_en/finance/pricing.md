@@ -17,9 +17,15 @@ Pay as you go is tiered pricing, with the higher requests, the lower cost per re
 
 > **For example:** you have 1,000,000 requests per month, the monthly cost is: (300,000 requests x ¥0.001) + (700,000 requests x ¥0.0009) = ¥930
 
-If you will continuously use our service, you can purchase [Saving Plans](/en/docs/finance/saving-plans/) to significantly reduce the cost.
-
 ## Pricing
+
+Pay as you go is tiered pricing, the progressive request volume is calculated as the sum of each data contained in a single service.
+
+> **For example:** you requested 300000 real-time weather, 700000 warnings, 300000 real-time air quality and 100000 air quality forecast in a month, your total requests for the month are: 1,000,000 for weather services and 400,000 for air quality, and the cost for the month is: [(300,000 requests x ¥0.001) + (700,000 requests x ¥0.0009)] + [(300,000 requests x ¥0.001) + (100,000 requests x ¥0.0009)] = ¥1,320
+
+[Saving Plans](/en/docs/finance/saving-plans/) can significantly reduce the cost.
+
+For users with a large volume of requests (usually million or more requests per day), please contact our business experts for a better solution.
 
 {% include price-table.html %}
 

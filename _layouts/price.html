@@ -55,15 +55,14 @@ layout: html
                                     <li class="small mb-1">{{ incl_doc.title }}</li>
                                     {% endfor %}
                                 </ul>
-                                {%- if group.excl -%}
-                                <p class="mb-3 small italic text-underline color-grey">
-                                    <sup><strong>{{ forloop.index | replace: "2", "*" | replace: "3", "+" }}</strong></sup>{{ group.excl[page.lang]}}
-                                </p>
-                                {%- endif -%}
                             </div>
                         </a>
                     </div>
                     {% endfor %}
+                </div>
+                <div class="price-footnote">
+                    <p class="small italic">* {{ site.data.t[page.lang].pi-tier-weather-remark}}</p>
+                    <p class="small italic">+ {{ site.data.t[page.lang].pi-tier-weather-extend-remark}}</p>
                 </div>
             </div>
     </section>

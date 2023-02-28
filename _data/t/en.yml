@@ -53,6 +53,7 @@ platform: Platform
 quick-start: Quick Start
 api-response-note: The response is in JSON format and is [Gzip compressed](/en/docs/best-practices/gzip/), all fields are Strings.
 api-url-note: For Free subscription, change the API Host to `devapi.qweather.com`. See [data available for Free subscription](/en/docs/finance/subscription/#comparison).
+doc-incl-data-pricing: Pricing for the following data services
 hp-slogan: Build a beautiful weather program
 hp-slogan-2: to drive your business
 hp-slogan-desc: API / SDK / 插件 / APP
@@ -93,6 +94,8 @@ pi-saving-plans-more: See Saving Plans
 pi-tier-title: Pricing, more use more save
 pi-tier-desc: Pay as you go is tiered pricing, with the higher requests, the lower cost per request. 
 pi-tier-see: Click to see the price of the services
+pi-tier-weather-remark: Not available for daily forecast over 7 days or hourly forecast over 24 hours.
+pi-tier-weather-extend-remark: Only available for daily forecast over 7 days or hourly forecast over 24 hours.
 pi-calc: Price Calculator
 pi-calc-desc: You can easily use the price calculator to estimate your monthly cost.
 pi-calc-go: Calculate (login required)
