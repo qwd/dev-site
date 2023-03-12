@@ -1,0 +1,35 @@
+name: Upload to OSS
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1.2' 
+          bundler-cache: true 
+          cache-version: 0
+      - name: Build with Jekyll
+        run: JEKYLL_ENV=production bundle exec jekyll build
+      - name: upload files to OSS
+        if: ${{ github.ref == 'refs/heads/master' }}
+        uses: fangbinwei/aliyun-oss-website-action@v1
+        with:
+          skipSetting: true
+          accessKeyId: ${{ secrets.OSS_AK_ID }}
+          accessKeySecret: ${{ secrets.OSS_AK_SECRET }}
+          bucket: ${{ secrets.OSS_BUCKET }}
+          endpoint: ${{ secrets.OSS_ENDPOINT }}
+          folder: _site
+          
+          
+    
