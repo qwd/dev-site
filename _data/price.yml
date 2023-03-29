@@ -42,3 +42,13 @@
     ref: 0-api-astronomy
   incl: [1-api-sun,2-api-moon,3-api-solar-elevation-angle]
   price: [0.001,0.0008,0.0006,0.0004,0.0003,0.0002]
+- data: 
+    ref: 0-api-solar-radiation
+  incl: [1-api-solar-radiation-hourly-forecast]
+  noTier: true
+  excl:
+    zh: |-
+     **注意:** 太阳辐照暂不支持阶梯价格，如果你的日均请求量超过500次，请发送邮件至<sales@qweather.com>，我们的商务专家将为你制定更划算的方案。
+    en: |-
+     **Note:** Solar radiation does not support tiered pricing at this time, if your daily requests are over 500, please send email to <sales@qweather.com>, our business experts will design a more cost-effective solution for you.
+  price: [0.45]
