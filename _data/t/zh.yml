@@ -125,6 +125,7 @@ pi-tier3: 之后的400万次
 pi-tier4: 之后的500万次
 pi-tier5: 之后的4000万次
 pi-tier6: 超过5000万次
+pi-notier: 任意次数
 si-biref: 欢迎分享你的代码，你可以修改<a href="https://github.com/qwd/dev-site/edit/master/_data/showcase.yml" target="_blank" rel="noopener noreferrer">这个文件</a>并提交一个PR，或查看<a href="https://blog.qweather.com/post/share-your-work/" target="_blank" rel="noopener noreferrer">如何分享代码</a>的文章。
 si-note: 我们无法确保这些代码的有效性，请与作者联系。如有争议或版权问题，请与我们联系。
 fi-q-general: 一般问题
