@@ -32,8 +32,12 @@
             {%- for price in group.price -%}
             <tr>
                 <td>
+                    {% if group.noTier %}
+                    {{ site.data.t[page.lang]pi-notier }}
+                    {% else %}
                     {% assign tier = forloop.index | prepend: "pi-tier" %}
                     {{ site.data.t[page.lang][tier]}}
+                    {% endif %}
                     </td>
                 <td>CNY {{ price }}</td>
             </tr>    

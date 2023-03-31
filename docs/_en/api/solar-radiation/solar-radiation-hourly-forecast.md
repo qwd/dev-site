@@ -6,11 +6,12 @@ ref: 1-api-solar-radiation-hourly-forecast
 
 Get the net solar radiation, diffuse solar radiation and direct solar radiation for any coordinate position in the world.
 
-> Solar Radiation data is currently available to specific users only, please find out [how to request a trial](https://blog.qweather.com/announce/solar-radiation-trial/)
-
 ## Request URL
 
 {% include api-url.html flag="solar-radiation-hourly-forecast" %}
+
+> **Note:** Hourly Forecast (72hrs) may be missing the last few hours data under some conditions.
+{:.bqwarning}
 
 ## Request Parameters
 

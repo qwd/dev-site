@@ -6,11 +6,12 @@ ref: 1-api-solar-radiation-hourly-forecast
 
 太阳辐射API支持获取全球任意坐标的辐射数据，包括净太阳辐射，太阳散射辐射和太阳直接辐射。
 
-> 太阳辐照数据目前仅限特定用户申请使用，请了解[如何申请试用](https://blog.qweather.com/announce/solar-radiation-trial/)。
-
 ## 请求URL
 
 {% include api-url.html flag="solar-radiation-hourly-forecast" %}
+
+> **注意：**在一些特殊情况下，未来72小时预报有可能会缺少最后若干小时的数据。
+{:.bqwarning}
 
 ## 请求参数
 
