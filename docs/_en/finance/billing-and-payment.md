@@ -171,7 +171,7 @@ On the billing payment date, your balance should be positive, means balance ≥ 
 
 ### Add Balance
 
-You can add balance with multiple [payment methods](#payment-methods).
+You can add balance with multiple [payment methods](#payment-methods). To add balance is also for paying unpaid/outstanding bills.
 
 The minimum amount for payment is ¥0.01 or the amount of unpaid/outstanding billing.
 
@@ -182,9 +182,9 @@ The minimum amount for payment is ¥0.01 or the amount of unpaid/outstanding bil
 You can withdraw the balance at any time, just follow these conditions:
 
 - Balance greater than ¥1.
-- There are no Standard or Pro subscription in your account
-- No unpaid bills or outstanding bills
-- Account is not suspended
+- There are no Standard or Pro Subscription in your account, or have purchased a Saving Plan/Resource Plan that can be used to pay for a Standard/Pro Subscription. 
+- No unpaid bills or outstanding bills.
+- Account is not suspended.
 
 **5% processing fee** will be charged when withdrawing the balance. To withdraw the balance, please submit a ticket.
 
