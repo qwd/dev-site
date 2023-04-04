@@ -3,7 +3,6 @@ title: warning-now
 ---
 ```json
 {
-{
   "code": "200",
   "updateTime": "2023-04-03T14:20+08:00",
   "fxLink": "https://www.qweather.com/severe-weather/shanghai-101020100.html",
