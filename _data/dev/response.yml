@@ -811,9 +811,9 @@ warning:
   - name: level
     desc:
       zh: |-
-       [预警等级（弃用）](/docs/resource/warning-info/#level-deprecated)，**该字段已弃用，使用`severity`和`severityColor`代替**
+       [预警等级（已弃用）](/docs/resource/warning-info/#level-deprecated)，**不要再使用这个字段**，该字段已弃用，目前返回为空或未更新的值。请使用`severity`和`severityColor`代替
       en: |-
-       [Warning level(deprecated)](/en/docs/resource/warning-info/#level-deprecated), **this field is deprecated and uses `severity` and `severityColor` instead**
+       [Warning level (deprecated)](/en/docs/resource/warning-info/#level-deprecated), **Do not use `warning.level` anymore**, this field is deprecated and the value will be null or out of date. Please uses `severity` and `severityColor` instead
     example: Yellow
     type: [warning]
   - name: severity
