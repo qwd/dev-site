@@ -18,7 +18,7 @@ Android 4.4+
 
 ## Create Project and KEY
 
-Make sure you have created a Project and Web API KEY, otherwise refer to [Project and KEY](/en/docs/configuration/project-and-key/).
+Make sure you have created a Project and Android SDK KEY, otherwise refer to [Project and KEY](/en/docs/configuration/project-and-key/).
 
 ## Project configuration
 
