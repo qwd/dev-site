@@ -9,7 +9,7 @@ ios:
   version: "4.12"
   date: 2023-04-09
   dllink: https://a.hecdn.net/download/api_sdk/QWeather_iOS_SDK_Pub_V4.12.zip
-  md5: c54af7563417ae32e35aa2a90c821959
+  md5: 06e28b7ac1d63ff59084005aee4d032e
 api:
   version: "7.13"
   date: 2022-12-30
