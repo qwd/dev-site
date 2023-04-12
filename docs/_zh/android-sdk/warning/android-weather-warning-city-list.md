@@ -25,7 +25,7 @@ ref: 2-sdk-android-warning-city-list
  * @param context  上下文
  * @param listener 网络访问回调接口
  */
-QWeather.getWarningList(Context context, final QWeather.OnResultWarningListListener listener);
+QWeather.getWarningList(Context context, Range range, final QWeather.OnResultWarningListListener listener);
 ```
 
 ### WarningListBean属性
@@ -35,6 +35,14 @@ QWeather.getWarningList(Context context, final QWeather.OnResultWarningListListe
 | getCode        | 接口状态     | [Status Code](/docs/resource/status-code/)     |
 | getUpdateTime  | 接口更新时间 | 2017-10-25T12:34+08:00            |
 | getWarningBean | 灾害预警     | List&lt;WarningListBean&gt; |
+| getRefer | Refer 数据来源以及数据授权 | Refer       |
+
+**Refer**
+
+| 属性           | 说明         | 示例值             |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | 原始数据来源 | QWeather      |
+| getLicenseList | 使用许可     | QWeather Developers License |
 
 **WarningListBeanBase 预警信息**
 

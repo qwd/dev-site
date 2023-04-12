@@ -25,7 +25,7 @@ See also [Weather warning Android SDK](/en/docs/android-sdk/warning/android-weat
  * @param context context
  * @param listener network access callback interface
  */
-QWeather.getWarningList(Context context, final QWeather.OnResultWarningListListener listener);
+QWeather.getWarningList(Context context, Range range, final QWeather.OnResultWarningListListener listener);
 ```
 
 ### Properties
@@ -37,6 +37,14 @@ Properties of WarningListBean
 | getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T12:34+08:00 |
 | getWarningBean | Weather warning | List&lt;WarningListBean&gt; |
+| getRefer | Reference data, includes data source, statements and license | Refer |
+
+**Refer**
+
+| Property | Description | Example |
+| -------------- | ------------ | ------------------ |
+| getSourcesList | Data source and other statements | QWeather |
+| getLicenseList | Data license | QWeather Developers License |
 
 **WarningListBeanBase Warning Information**
 

@@ -29,7 +29,7 @@ title: indices-forecast
       "QWeather"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

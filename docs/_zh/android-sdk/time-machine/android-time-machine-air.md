@@ -38,15 +38,15 @@ QWeather.getHistoricalAir(Context context, String location, String date, Lang la
 
 | 属性           | 说明         | 示例值             |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | qweather.com      |
-| getLicenseList | 使用许可     | commercial license |
+| getSourcesList | 原始数据来源 | QWeather      |
+| getLicenseList | 使用许可     | QWeather Developers License |
 
 **Basic**
 
 | 属性          | 说明                     | 示例值               |
 | ------------- | ------------------------ | -------------------- |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/historical/beijing-101010100.html |
 
 **AirHourlyBean 历史当天逐小时空气质量数据**
 
@@ -58,7 +58,7 @@ QWeather.getHistoricalAir(Context context, String location, String date, Lang la
 | getLevel    | 实时空气质量指数等级              | 2                |
 | getCategory | 实时空气质量指数级别              | 良               |
 | getPm10     | pm10                              | 78               |
-| getPm2p5    | pm25                              | 66               |
+| getPm2p5    | pm2.5                              | 66               |
 | getNo2      | 二氧化氮                          | 40               |
 | getSo2      | 二氧化硫                          | 30               |
 | getCo       | 一氧化碳                          | 0.3               |

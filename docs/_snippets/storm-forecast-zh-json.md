@@ -6,7 +6,7 @@ title: storm-forecast
 {
   "code": "200",
   "updateTime": "2021-07-27T03:00+00:00",
-  "fxLink": "http://hfx.link/1",
+  "fxLink": "https://www.qweather.com",
   "forecast": [
     {
       "fxTime": "2021-07-27T20:00+08:00",
@@ -91,7 +91,7 @@ title: storm-forecast
       "NMC"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

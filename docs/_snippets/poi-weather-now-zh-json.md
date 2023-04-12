@@ -9,7 +9,7 @@ title: 景点实况天气
 {
   "code": "200",
   "updateTime": "2021-02-07T18:15+08:00",
-  "fxLink": "http://hfx.link/1",
+  "fxLink": "https://www.qweather.com",
   "now": {
     "obsTime": "2021-02-07T18:10+08:00",
     "temp": "5",
@@ -27,7 +27,7 @@ title: 景点实况天气
       "Weather China"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

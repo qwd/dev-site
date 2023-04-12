@@ -37,12 +37,12 @@ QWeather.getSun(Context context, String location, Lang lang, String date, final 
 
 | 属性           | 说明         | 示例值             |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | qweather.com      |
-| getLicenseList | 使用许可     | commercial license |
+| getSourcesList | 原始数据来源 | QWeather      |
+| getLicenseList | 使用许可     | QWeather Developers License |
 
 **Basic**
 
 | 属性          | 说明                     | 示例值               |
 | ------------- | ------------------------ | -------------------- |
 | getUpdateTime | [数据最近更新时间](/docs/resource/glossary/#update-time)             | 2017-10-25T04:34+08:00   |
-| getFxLink     | 当前数据的响应式页面，便于嵌入网站或应用 | http://hfx.link/ae45 |
+| getFxLink     | 当前数据的响应式页面，便于嵌入网站或应用 | https://www.qweather.com/weather/beijing-101010100.html |

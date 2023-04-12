@@ -44,14 +44,14 @@ Properties of StormTrackBean
 | Property           | Description         | Example             |
 | -------------- | ------------ | ------------------ |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time)  | 2017-10-25T04:34+08:00      |
-| getFxLink |Responsive web page of this data, for embedded in website or APP  | http://hfx.link/1 |
+| getFxLink |Responsive web page of this data, for embedded in website or APP  | https://www.qweather.com |
 
 **Refer**
 
 | Property           | Description         | Example             |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | qweather.com      |
-| getLicenseList | Data license     | commercial license |
+| getSourcesList | Data source and other statements | QWeather      |
+| getLicenseList | Data license     | QWeather Developers License |
 
 
 **StormTrackNowBean**

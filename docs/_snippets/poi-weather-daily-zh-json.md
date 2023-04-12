@@ -96,7 +96,7 @@ title: 景点7天预报
       "Weather China"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

@@ -6,7 +6,7 @@ title: minutely-precip
 {
   "code": "200",
   "updateTime": "2021-12-16T18:55+08:00",
-  "fxLink": "http://hfx.link/1",
+  "fxLink": "https://www.qweather.com",
   "summary": "95分钟后雨就停了",
   "minutely": [
     {
@@ -135,7 +135,7 @@ title: minutely-precip
       "QWeather"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

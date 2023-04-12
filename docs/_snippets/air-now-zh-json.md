@@ -386,7 +386,7 @@ title: air-now
       "cnemc"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

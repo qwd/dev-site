@@ -17,9 +17,11 @@ With the City Lookup, you can get the basic information of the city, including t
 ### Sample Code
 
 ```java
+QWeather.getGeoCityLookup(Context context, String location, String adm, Range range, int number, Lang lang, final QWeather.OnResultGeoListener listener);
+
 QWeather.getGeoCityLookup(Context context, String location, Range range, int number, Lang lang, final QWeather.OnResultGeoListener listener);
 
-QWeather.getGeoCityLookup(Context context, Range range, final QWeather.OnResultGeoBeansListener listener);
+QWeather.getGeoCityLookup(Context context, String location, int number, Lang lang, final QWeather.OnResultGeoBeansListener listener);
 
 QWeather.getGeoCityLookup(Context context, String location, final QWeather.OnResultGeoBeansListener listener);
 ```
@@ -38,8 +40,8 @@ Properties of GeoBean
 
 | Property | Description | Example |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | qweather.com |
-| getLicenseList | Data license | commercial license |
+| getSourcesList | Data source and other statements | QWeather |
+| getLicenseList | Data license | QWeather Developers License |
 
 
 **LocationBean Basic Information**
@@ -58,4 +60,4 @@ Properties of GeoBean
 | getIsDst |Is the location currently observing Daylight Saving time<br />`1` in daylight saving time <br /> `0` not in daylight saving time | 0 |
 | getType | Type of the location | city |
 | getRank | [Location Rank](/en/docs/resource/glossary/#rank) | 10 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/weather/zhuozi-101080402.html |

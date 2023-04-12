@@ -400,7 +400,7 @@ title: weather-hourly
       "ECMWF"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

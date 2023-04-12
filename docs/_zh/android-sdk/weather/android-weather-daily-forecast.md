@@ -12,6 +12,7 @@ ref: 2-sdk-android-weather-daily-forecast
 | getWeather7D| 7天预报天气数据    | WeatherDailyBean |
 | getWeather10D| 10天预报天气数据  | WeatherDailyBean |
 | getWeather15D| 15天预报天气数据  | WeatherDailyBean |
+| getWeather30D| 30天预报天气数据  | WeatherDailyBean |
 
 ### 接口参数说明
 
@@ -23,30 +24,37 @@ ref: 2-sdk-android-weather-daily-forecast
 /**
  * 获取3天预报数据
  */
-QWeather.getWeather3D(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherDailyListener listener) ;
+QWeather.getWeather3D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener) ;
 
 QWeather.getWeather3D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
 
 /**
  * 获取7天预报数据
  */
-QWeather.getWeather7D(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherDailyListener listener) ;
+QWeather.getWeather7D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener) ;
 
 QWeather.getWeather7D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
 
 /**
  * 获取10天预报数据
  */
-QWeather.getWeather10D(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherDailyListener listener) ;
+QWeather.getWeather10D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener) ;
 
 QWeather.getWeather10D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
 
 /**
  * 获取15天预报数据
  */
-QWeather.getWeather15D(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherDailyListener listener) ;
+QWeather.getWeather15D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener) ;
 
 QWeather.getWeather15D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
+
+/**
+ * 获取30天预报数据
+ */
+QWeather.getWeather30D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener) ;
+
+QWeather.getWeather30D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
 ```
 
 ### WeatherDailyBean属性
@@ -62,15 +70,15 @@ QWeather.getWeather15D(Context context, String location, QWeather.OnResultWeathe
 
 | 属性           | 说明         | 示例值             |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | qweather.com      |
-| getLicenseList | 使用许可     | commercial license |
+| getSourcesList | 原始数据来源 | QWeather      |
+| getLicenseList | 使用许可     | QWeather Developers License |
 
 **Basic**
 
 | 属性          | 说明                     | 示例值               |
 | ------------- | ------------------------ | -------------------- |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/weather/beijing-101010100.html |
 
 **DailyBean 天气预报**
 
@@ -82,7 +90,7 @@ QWeather.getWeather15D(Context context, String location, QWeather.OnResultWeathe
 | getMoonRise       | 当天[月升时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**            | 04:47      |
 | getMoonSet        | 当天[月落时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**            | 14:59      |
 | getMoonPhase      | 月相名称            | 满月       |
-| getMoonPhaseIcon      | 月相图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载            | 804    |
+| getMoonPhaseIcon  | 月相图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载            | 804    |
 | getTempMax        | 最高温度            | 4          |
 | getTempMin        | 最低温度            | -5         |
 | getIconDay        | 白天天气状况代码    | 100        |
@@ -98,7 +106,7 @@ QWeather.getWeather15D(Context context, String location, QWeather.OnResultWeathe
 | getWindSpeedDay   | 白天[风速](/docs/resource/wind-info/#wind-speed)，公里/小时 | 14         |
 | getWindSpeedNight | 夜间[风速](/docs/resource/wind-info/#wind-speed)，公里/小时 | 14         |
 | getHumidity       | 相对湿度            | 37         |
-| getPrecip         | 降水量              | 0          |
+| getPrecip         | 降水量              | 0.0          |
 | getPressure       | 大气压强            | 1018       |
 | getCloud          | 当天云量            | 23         |
 | getUvIndex        | 紫外线强度指数      | 3          |

@@ -5,7 +5,7 @@ title: ocean-tide
 {
   "code": "200",
   "updateTime": "2021-02-04T05:02+08:00",
-  "fxLink": "http://hfx.link/1",
+  "fxLink": "https://www.qweather.com",
   "tideTable": [
     {
       "fxTime": "2021-02-06T03:48+08:00",
@@ -131,7 +131,7 @@ title: ocean-tide
       "qweather.com"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

@@ -19,14 +19,14 @@ Get minute-level precipitation forecast data every 5 minutes for the next 2 hour
 ### Sample Code
 
 ```java
-QWeather.getMinuteLy(Context context, String location,QWeather.OnResultMinutelyListener listener);
+QWeather.getMinutely(Context context, String location, QWeather.OnResultMinutelyListener listener);
 
-QWeather.getMinuteLy(Context context, String location, Lang lang, QWeather.OnResultMinutelyListener listener);
+QWeather.getMinutely(Context context, String location, Lang lang, QWeather.OnResultMinutelyListener listener);
 ```
 
 ### Properties
 
-Properties of MinutelyBean
+Properties of GridMinutelyBean
 
 | Property | Description | Example |
 | --------------- | -------------------------- | ------ -------------- |
@@ -40,15 +40,15 @@ Properties of MinutelyBean
 
 | Property | Description | Example |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | qweather.com |
-| getLicenseList | Data license | commercial license |
+| getSourcesList | Data source and other statements | QWeather |
+| getLicenseList | Data license | QWeather Developers License |
 
 **Basic**
 
 | Property | Description | Example |
 | ------------- | ------------------------ | ---------- ---------- |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com |
 
 **Minutely precipitation in the next two hours and 5 minutes**
 

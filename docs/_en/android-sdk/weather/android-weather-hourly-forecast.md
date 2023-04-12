@@ -22,21 +22,21 @@ Get hourly weather forecasts for cities around the world for the next 24-168 hou
 /**
  *  24-hour forecast data
  */
-QWeather.getWeather24Hourly(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherHourlyListener listener);
+QWeather.getWeather24Hourly(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherHourlyListener listener);
 
 QWeather.getWeather24Hourly(Context context, String location, QWeather.OnResultWeatherHourlyListener listener);
 
 /**
  *  72-hour forecast data
  */
-QWeather.getWeather72Hourly(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherHourlyListener listener);
+QWeather.getWeather72Hourly(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherHourlyListener listener);
 
 QWeather.getWeather72Hourly(Context context, String location, QWeather.OnResultWeatherHourlyListener listener);
 
 /**
  *  168 hours forecast data
  */
-QWeather.getWeather168Hourly(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherHourlyListener listener);
+QWeather.getWeather168Hourly(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherHourlyListener listener);
 
 QWeather.getWeather168Hourly(Context context, String location, QWeather.OnResultWeatherHourlyListener listener);
 
@@ -57,15 +57,15 @@ Properties of WeatherHourlyBean
 
 | Property | Description | Example |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | qweather.com |
-| getLicenseList | Data license | commercial license |
+| getSourcesList | Data source and other statements | QWeather |
+| getLicenseList | Data license | QWeather Developers License |
 
 **Basic**
 
 | Property | Description | Example |
 | ------------- | ------------------------ | ---------- ---------- |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/weather/beijing-101010100.html |
 
 **HourlyBean Hourly Weather**
 
@@ -80,9 +80,9 @@ Properties of WeatherHourlyBean
 | getWindScale | [Wind scale](/en/docs/resource/wind-info/#wind-scale) | 3-4 |
 | getWindSpeed ​​| [Wind speed](/en/docs/resource/wind-info/#wind-speed), km/h | 15 |
 | getHumidity | Relative humidity in percent | 30 |
-| getPrecip | Precipitation | 1.2 |
 | getPop | Probability of precipitation, in percent, **may be null** | 5 |
+| getPrecip | Precipitation | 1.2 |
 | getPressure | Atmospheric pressure | 1030 |
-| getDew | Dew point temperature | 5 |
 | getCloud | Cloud cover in percent | 15 |
+| getDew | Dew point temperature | 5 |
 

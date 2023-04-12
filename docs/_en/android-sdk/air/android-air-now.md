@@ -37,15 +37,15 @@ Properties of AirNowBean
 
 | Property | Description | Example |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | qweather.com |
-| getLicenseList | Data license | commercial license |
+| getSourcesList | Data source and other statements | QWeather |
+| getLicenseList | Data license | QWeather Developers License |
 
 **Basic**
 
 | Property | Description | Example |
 | ------------- | ------------------------ | ------------- |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/air/beijing-101010100.html |
 
 **NowBean**
 
@@ -57,7 +57,7 @@ Properties of AirNowBean
 | getLevel | Real-time air quality index level  | 2 |
 | getCategory | Real-time air quality index category  | Good |
 | getPm10 | PM10 | 78 |
-| getPm2p5 | PM25 | 66 |
+| getPm2p5 | PM2.5 | 66 |
 | getNo2 | Nitrogen dioxide | 40 |
 | getSo2 | Sulfur dioxide | 30 |
 | getCo | Carbon monoxide | 0.3 |

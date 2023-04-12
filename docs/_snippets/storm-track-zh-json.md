@@ -6,7 +6,7 @@ title: storm-track
 {
   "code": "200",
   "updateTime": "2021-07-27T03:00+00:00",
-  "fxLink": "http://hfx.link/1",
+  "fxLink": "https://www.qweather.com",
   "isActive": "1",
   "now": {
     "pubTime": "2021-07-27T10:54+08:00",
@@ -4502,7 +4502,7 @@ title: storm-track
       "NMC"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

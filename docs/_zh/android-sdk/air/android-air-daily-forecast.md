@@ -31,7 +31,7 @@ QWeather.getAir5D(Context context, String location, Lang lang, QWeather.OnResult
 | 属性        | 说明                       | 示例值                |
 | ----------- | -------------------------- | --------------------- |
 | getCode     | 接口状态                   | [Status Code](/docs/resource/status-code/)   |
-| getAirDaily | 空气质量 AQI 7天预报       | List&lt;DailyBean&gt; |
+| getAirDaily | 空气质量 AQI 5天预报       | List&lt;DailyBean&gt; |
 | getRefer    | Refer 数据来源以及数据授权 | Refer                 |
 | getBasic    | Basic 基础信息             | Basic                 |
 
@@ -39,15 +39,15 @@ QWeather.getAir5D(Context context, String location, Lang lang, QWeather.OnResult
 
 | 属性           | 说明         | 示例值             |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | qweather.com      |
-| getLicenseList | 使用许可     | commercial license |
+| getSourcesList | 原始数据来源 | QWeather      |
+| getLicenseList | 使用许可     | QWeather Developers License |
 
 **Basic**
 
 | 属性          | 说明                     | 示例值               |
 | ------------- | ------------------------ | -------------------- |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/air/beijing-101010100.html |
 
 **DailyBean AQI城市逐天预报**
 

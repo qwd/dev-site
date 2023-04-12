@@ -48,7 +48,7 @@ title: air-daily
       "cnemc"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

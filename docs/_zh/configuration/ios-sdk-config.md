@@ -61,7 +61,7 @@ pod update
 
 1. 下载SDK：[QWeather_iOS_SDK_Pub_V{{ site.data.v.ios.version }}]({{ site.data.v.ios.dllink }}) <br>*MD5: {{ site.data.v.ios.md5 }}*
 2. 将 `QWeather.xcframework` 包导入到iOS或macOS Target中
-3. 添加[AFNetworking(4.0.0+)](https://github.com/AFNetworking/AFNetworking)
+3. 添加[Alamofire(5.6.4+)](https://github.com/Alamofire/Alamofire)
 
 > **如果工程是由swift编写**
 >

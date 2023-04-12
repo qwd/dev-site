@@ -35,7 +35,7 @@ refer:
     desc:
       zh: 数据许可或版权声明，**可能为空**
       en: Data license, **may be null**
-    example: commercial license
+    example: QWeather Developers License
 weather:
   - name: obsTime
     desc:
@@ -611,7 +611,7 @@ astro:
       zh: >-
        [日出时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**
       en: >-
-       [Sunrise time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area** 
+       [Sunrise time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**
     example: 2013-12-30T05:44+08:00
     type: [sun]
   - name: sunset
@@ -653,19 +653,19 @@ radiation:
       en: Hourly forecast time
     type: [radiation]
   - name: net
-    desc: 
+    desc:
       zh: 净太阳辐射，W/m<sup>2</sup>
       en: Net surface solar radiation, W/m<sup>2</sup>
     type: [radiation]
   - name: diffuse
-    desc: 
+    desc:
       zh: 太阳散射辐射，W/m<sup>2</sup>
-      en: Diffuse solar radiation, W/m<sup>2</sup> 
+      en: Diffuse solar radiation, W/m<sup>2</sup>
     type: [radiation]
   - name: direct
-    desc: 
+    desc:
       zh: 太阳直接辐射，W/m<sup>2</sup>
-      en: Direct solar radiation, W/m<sup>2</sup> 
+      en: Direct solar radiation, W/m<sup>2</sup>
     type: [radiation]
 ocean:
   - name: fxTime
@@ -933,6 +933,18 @@ hisweather:
       zh: 当天总降水量，默认单位：毫米
       en: Estimated total precipitation for the day
     example: 3
+    type: [daily]
+  - name: pressure
+    desc:
+      zh: 大气压强，默认单位：百帕
+      en: Atmospheric pressure, hPa
+    example: 1020
+    type: [daily]
+  - name: humidity
+    desc:
+      zh: 当天每小时相对湿度，百分比数值
+      en: Hourly relative humidity in percent
+    example: 35
     type: [daily]
   - name: time
     desc:

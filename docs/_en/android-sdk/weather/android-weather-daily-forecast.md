@@ -8,10 +8,11 @@ Get weather daily forecasts for the next 3-30 days for cities around the world.
 
 | Interface Code| Interface  | Class |
 | ---------------- | ------------- | ---------------- |
-| getWeather3D| 3-day forecast weather data  | WeatherDailyBean |
-| getWeather7D| 7-day forecast weather data  | WeatherDailyBean |
-| getWeather10D| 10-day forecast weather data  | WeatherDailyBean |
-| getWeather15D| 15-day forecast weather data  | WeatherDailyBean |
+| getWeather3D| 3-days forecast weather data  | WeatherDailyBean |
+| getWeather7D| 7-days forecast weather data  | WeatherDailyBean |
+| getWeather10D| 10-days forecast weather data  | WeatherDailyBean |
+| getWeather15D| 15-days forecast weather data  | WeatherDailyBean |
+| getWeather30D| 30-days forecast weather data  | WeatherDailyBean |
 
 ### Parameter
 
@@ -21,32 +22,39 @@ Get weather daily forecasts for the next 3-30 days for cities around the world.
 
 ```java
 /**
- * Get 3-day forecast data
+ * Get 3-days forecast data
  */
-QWeather.getWeather3D(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherDailyListener listener);
+QWeather.getWeather3D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener);
 
 QWeather.getWeather3D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
 
 /**
- * Get 7-day forecast data
+ * Get 7-days forecast data
  */
-QWeather.getWeather7D(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherDailyListener listener);
+QWeather.getWeather7D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener);
 
 QWeather.getWeather7D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
 
 /**
- * Get 10-day forecast data
+ * Get 10-days forecast data
  */
-QWeather.getWeather10D(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherDailyListener listener);
+QWeather.getWeather10D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener);
 
 QWeather.getWeather10D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
 
 /**
- * Get 15-day forecast data
+ * Get 15-days forecast data
  */
-QWeather.getWeather15D(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherDailyListener listener);
+QWeather.getWeather15D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener);
 
 QWeather.getWeather15D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
+
+/**
+ * Get 30-days forecast data
+ */
+QWeather.getWeather30D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener);
+
+QWeather.getWeather30D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
 ```
 
 ### Properties
@@ -64,15 +72,15 @@ Properties of WeatherDailyBean
 
 | Property | Description | Example |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | qweather.com |
-| getLicenseList | Data license | commercial license |
+| getSourcesList | Data source and other statements | QWeather |
+| getLicenseList | Data license | QWeather Developers License |
 
 **Basic**
 
 | Property | Description | Example |
 | ------------- | ------------------------ | ---------- ---------- |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/weather/beijing-101010100.html |
 
 **DailyBean Weather Forecast**
 
@@ -100,7 +108,7 @@ Properties of WeatherDailyBean
 | getWindSpeedDay | Daytime [wind speed](/en/docs/resource/wind-info/#wind-speed), km/h | 14 |
 | getWindSpeedNight | Nightly [wind speed](/en/docs/resource/wind-info/#wind-speed), km/h | 14 |
 | getHumidity | Relative humidity in percent | 37 |
-| getPrecip | Precipitation | 0 |
+| getPrecip | Precipitation | 0.0 |
 | getPressure | Atmospheric pressure | 1018 |
 | getCloud | Cloud cover in percent | 23 |
 | getUvIndex | UV index | 3 |

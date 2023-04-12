@@ -184,7 +184,7 @@ title: moon-and-moon-phase
       "QWeather"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

@@ -34,24 +34,25 @@ QWeather.getGeoPoiLookup(Context context, String location, Type type, final QWea
 
 | 属性           | 说明         | 示例值             |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | qweather.com      |
-| getLicenseList | 使用许可     | commercial license |
+| getSourcesList | 原始数据来源 | QWeather      |
+| getLicenseList | 使用许可     | QWeather Developers License |
 
 
 **POI 基础信息**
 
 | 属性         | 说明                                                              | 示例值    |
 | ------------ | ----------------------------------------------------------------- | --------- |
-| getName      | Poi名称                                                           | 南山区    |
-| getId        | PoiID                                                             | 101280604 |
-| getLon       | Poi经度                                                           | 22.53122  |
-| getLat       | Poi纬度                                                           | 113.92942 |
-| getAdm2      | 该Poi的上级行政区划名称                                           | 深圳市    |
-| getAdm1      | 该Poi所属一级行政区域                                             | 广东省    |
+| getName      | Poi名称                                                           | 北京动物园    |
+| getId        | PoiID                                                             | 10101020006A |
+| getLon       | Poi经度                                                           | 116.33000  |
+| getLat       | Poi纬度                                                           | 39.93000 |
+| getAdm2      | 该Poi的上级行政区划名称                                           | 北京    |
+| getAdm1      | 该Poi所属一级行政区域                                             | 北京    |
 | getCountry   | 该Poi所属国家名称                                                 | 中国      |
 | getTz        | 该Poi所在时区                                                     | Asia/Shanghai    |
 | getUtcOffset | 该Poi目前与UTC时间偏移的小时数                                    | +08:00    |
 | getIsDst     | 该Poi是否当前处于夏令时,1 表示当前处于夏令时,0 表示当前不是夏令时 | 0         |
-| getType      | 该Poi的属性                                                       | city      |
+| getType      | 该Poi的属性                                                       | scenic      |
 | getRank      | 地区评分                                                          | 10        |
+| getFxLink    | 该Poi的天气预报网页链接                                             | https://www.qweather.com |
 

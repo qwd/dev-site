@@ -36,23 +36,24 @@ Properties of GeoPoiBean
 
 | Property | Description | Example |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | qweather.com |
-| getLicenseList | Data license | commercial license |
+| getSourcesList | Data source and other statements | QWeather |
+| getLicenseList | Data license | QWeather Developers License |
 
 
 **Poi**
 
 | Property | Description | Example |
 | ------------ | ------------------------------------ ----------------------------- | --------- |
-| getName | POI name | Nanshan District |
-| getId | Location ID | 101280604 |
-| getLon | Longitude of the POI | 22.53122 |
-| getLat | Latitude of the POI | 113.92942 |
-| getAdm2 | Name of the superior administrative division of the POI | Shenzhen |
-| getAdm1 | The first-level administrative region to which the POI belongs | Guangdong Province |
+| getName | POI name | Beijing Zoo |
+| getId | Location ID | 10101020006A |
+| getLon | Longitude of the POI | 116.33000 |
+| getLat | Latitude of the POI | 39.93000 |
+| getAdm2 | Name of the superior administrative division of the POI | Beijing |
+| getAdm1 | The first-level administrative region to which the POI belongs | Beijing |
 | getCountry | Country name of the POI | China |
 | getTz | [Timezone](/en/docs/resource/glossary/#timezone) of the POI | Asia/Shanghai |
 | getUtcOffset | The number of hours offset between local time and UTC time, refer to [UTC-Offset](/en/docs/resource/glossary/#utc-offset) | +08:00 |
 | getIsDst | Is the location currently observing Daylight Saving time<br />`1` in daylight saving time <br /> `0` not in daylight saving time | 0 |
 | getType | POI type | scenic |
 | getRank | [Location Rank](/en/docs/resource/glossary/#rank) | 10 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com |
