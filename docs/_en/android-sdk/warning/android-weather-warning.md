@@ -61,15 +61,14 @@ Properties of WarningBean
 | getStartTime | Warning start time, **may be null** | 2017-10-25T12:03+08:00 |
 | getEndTime | End time of warning, **may be null** | 2017-10-25T12:03+08:00 |
 | getStatus | Warning status, **may be null**<br />`active` Early warning or first warning<br />`update` Warning information update<br />`cancel` cancel warning | active |
-| getLevel | Warning level，(may be removed in future) | yellow |
-| getType | Warning type | 11B12 |
-| getTypeName | Warning type name | Raiden |
+| getSeverity     | [Warning severity](/en/docs/resource/warning-info/#severity)     | Moderate                                                             |
+| getSeverityColor     | [Preferred color for severity](/en/docs/resource/warning-info/#severity-color), **may be null**    | Blue                                                             |
+| getType      | [Warning type ID](/en/docs/resource/warning-info/#warning-type)    | 1014                                                             |
+| getTypeName      | [Warning type name](/en/docs/resource/warning-info/#warning-type)  | Lightning                                                             |
+| getUrgency      | [The urgency of the warning message](/en/docs/resource/warning-info/#urgency), **may be null**     | Immediate                                                             |
+| getCertainty      | [The certainty of the warning message](/en/docs/resource/warning-info/#certainty), **may be null**     | Likely                                                             |
 | getText | Detailed description of the warning | Shenzhen Meteorological Bureau distributed a yellow warning signal for mine-laying electricity at 12:59 on October 04. Please pay attention to defense. |
 | getRelated | Related warning id | related warning id of current warning, **may be null** |
-| getUrgency | Urgency | [The urgency of the warning message](/en/docs/resource/warning-info/#urgency), **may be null** |
-| getCertainty | Certainty | [The certainty of the warning message](/en/docs/resource/warning-info/#certainty), **may be null** |
-| getSeverity | Warning severity | [Warning severity](/en/docs/resource/warning-info/#severity) |
-| getSeverityColor | Preferred color for severity | [Preferred color for severity](/en/docs/resource/warning-info/#severity-color), **may be null** |
 
 ### Warning Level and Type
 

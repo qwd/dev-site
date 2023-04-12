@@ -56,12 +56,12 @@ ref: res-warning
 
 你可以根据`warning.endTime`来预估一条预警信息的失效时间，或者当你更新数据的时候无法再获取当之前相同ID的预警信息时，代表这一条预警已经过期或失效。
 
-## 预警等级（弃用） {#level-deprecated}
+## 预警等级（已弃用） {#level-deprecated}
 
 `warning.level`代表预警信息的等级。
 
-> **警告：**目前该字段已弃用，使用[严重等级](/docs/resource/warning-info/#severity)和[严重等级颜色](/docs/resource/warning-info/#severity-color)替代。
-{:.bqwarning}
+> **警告：**不要再使用`warning.level`，这个字段已弃用，目前返回为空或未更新的值，未来可能会被完全移除。请使用[严重等级](/docs/resource/warning-info/#severity)和[严重等级颜色](/docs/resource/warning-info/#severity-color)替代。
+{:.bqdanger}
 
 ## 严重等级 {#severity}
 

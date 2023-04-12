@@ -59,8 +59,8 @@ You can use `warning.endTime` to estimate when a warning message will expire, or
 
 `warning.level` represents the level of the warning information.
 
-> **Warning:** This field is currently deprecated, replaced with [severity](/en/docs/resource/warning-info/#severity) and [severity color](/en/docs/resource/warning-info/#severity-color).
-{:.bqwarning}
+> **Warning:** Do not use `warning.level` anymore, this field is currently deprecated and the value will be null or out of date, it will be removed completely in the future. Please replaced with [severity](/en/docs/resource/warning-info/#severity) and [severity color](/en/docs/resource/warning-info/#severity-color).
+{:.bqdanger}
 
 ## Severity
 
