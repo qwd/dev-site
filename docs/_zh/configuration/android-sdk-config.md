@@ -14,7 +14,7 @@ ref: config-android
 
 ## 创建项目和KEY
 
-请确保你已经创建了一个iOS SDK的KEY，否则请参考[项目和KEY](/docs/configuration/project-and-key/)。
+请确保你已经创建了一个Android SDK的KEY，否则请参考[项目和KEY](/docs/configuration/project-and-key/)。
 
 ## 适配版本
 
