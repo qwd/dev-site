@@ -103,7 +103,7 @@ title: weather-daily
       "ECMWF"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

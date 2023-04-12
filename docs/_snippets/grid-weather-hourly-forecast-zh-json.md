@@ -5,7 +5,7 @@ title: grid-weather-hourly
 {
   "code": "200",
   "updateTime": "2021-12-16T19:27+08:00",
-  "fxLink": "http://hfx.link/1",
+  "fxLink": "https://www.qweather.com",
   "hourly": [
     {
       "fxTime": "2021-12-16T12:00+00:00",
@@ -373,7 +373,7 @@ title: grid-weather-hourly
       "QWeather"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

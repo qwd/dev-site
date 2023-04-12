@@ -79,15 +79,15 @@ title: geo-top-city
       "isDst": "0",
       "type": "city",
       "rank": "25",
-      "fxLink": "http://hfx.link/1tvn1"
+      "fxLink": "https://www.qweather.comtvn1"
     }
   ],
   "refer": {
     "sources": [
-      "qweather.com"
+      "QWeather"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

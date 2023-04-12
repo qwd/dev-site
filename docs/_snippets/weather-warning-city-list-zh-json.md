@@ -101,7 +101,7 @@ title: warning-list
       "QWeather"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

@@ -18,7 +18,7 @@ Get real-time weather data for 200,000+ cities around the world, including tempe
 ### Sample Code
 
 ```java
-QWeather.getWeatherNow(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherNowListener listener);
+QWeather.getWeatherNow(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherNowListener listener);
 
 QWeather.getWeatherNow(Context context, String location, QWeather.OnResultWeatherNowListener listener);
 ```
@@ -30,7 +30,7 @@ Properties of WeatherNowBean
 | Property | Description | Example |
 | -------- | -------------------------- | ----------- |
 | getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
-| getNow | Real-tiem weather | NowBaseBean |
+| getNow | Real-time weather | NowBaseBean |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getBasic | Basic Information | Basic |
 
@@ -38,15 +38,15 @@ Properties of WeatherNowBean
 
 | Property | Description | Example |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | qweather.com |
-| getLicenseList | Data license | commercial license |
+| getSourcesList | Data source and other statements | QWeather |
+| getLicenseList | Data license | QWeather Developers License |
 
 **Basic**
 
 | Property | Description | Example |
 | ------------- | ------------------------ | ---------- ---------- |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/ae45 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/weather/beijing-101010100.html |
 
 **NowBaseBean Live Weather**
 
@@ -66,4 +66,4 @@ Properties of WeatherNowBean
 | getPressure | Atmospheric pressure | 1020 |
 | getVis | Visibility | 10 |
 | getCloud | Cloud cover in percent | 23 |
-| getDew | Dew point temperature | 23 |
+| getDew | Dew point temperature | -1 |

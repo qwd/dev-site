@@ -11,10 +11,10 @@ title: astronomy-sun
   "sunset": "2021-02-20T17:57+08:00",
   "refer": {
     "sources": [
-      "qweather.com"
+      "QWeather"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

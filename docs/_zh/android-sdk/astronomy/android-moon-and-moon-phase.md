@@ -38,15 +38,15 @@ QWeather.getMoon(Context context, String location, Lang lang, String date, final
 
 | 属性           | 说明         | 示例值             |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | qweather.com      |
-| getLicenseList | 使用许可     | commercial license |
+| getSourcesList | 原始数据来源 | QWeather      |
+| getLicenseList | 使用许可     | QWeather Developers License |
 
 **Basic**
 
 | 属性          | 说明                     | 示例值               |
 | ------------- | ------------------------ | -------------------- |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34     |
-| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/weather/beijing-101010100.html |
 
 
 **MoonPhaseBean**

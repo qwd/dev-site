@@ -19,7 +19,7 @@ title: geo-poi-lookup
       "isDst": "0",
       "type": "scenic",
       "rank": "67",
-      "fxLink": "http://hfx.link/1"
+      "fxLink": "https://www.qweather.com"
     },
     {
       "name": "静思园",
@@ -34,15 +34,15 @@ title: geo-poi-lookup
       "isDst": "0",
       "type": "scenic",
       "rank": "86",
-      "fxLink": "http://hfx.link/1"
+      "fxLink": "https://www.qweather.com"
     }
   ],
   "refer": {
     "sources": [
-      "qweather.com"
+      "QWeather"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

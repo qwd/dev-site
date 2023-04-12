@@ -5,7 +5,7 @@ title: ocean-currents
 {
   "code": "200",
   "updateTime": "2021-02-16T05:02+07:00",
-  "fxLink": "http://hfx.link/1",
+  "fxLink": "https://www.qweather.com",
   "currentsTable": [
     {
       "dir360": "293",
@@ -155,7 +155,7 @@ title: ocean-currents
       "qweather.com"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

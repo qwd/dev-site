@@ -17,12 +17,12 @@ ref: 1-sdk-android-minutely-precip
 ### 示例代码
 
 ```java
-QWeather.getMinuteLy(Context context, String location,QWeather.OnResultMinutelyListener listener);
+QWeather.getMinutely(Context context, double longitude, double latitude, QWeather.OnResultMinutelyListener listener);
 
-QWeather.getMinuteLy(Context context, String location, Lang lang, QWeather.OnResultMinutelyListener listener);
+QWeather.getMinutely(Context context, double longitude, double latitude, Lang lang, QWeather.OnResultMinutelyListener listener);
 ```
 
-### MinutelyBean属性
+### GridMinutelyBean属性
 
 | 属性            | 说明                       | 示例值               |
 | --------------- | -------------------------- | -------------------- |
@@ -36,20 +36,20 @@ QWeather.getMinuteLy(Context context, String location, Lang lang, QWeather.OnRes
 
 | 属性           | 说明         | 示例值             |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | qweather.com      |
-| getLicenseList | 使用许可     | commercial license |
+| getSourcesList | 原始数据来源 | QWeather      |
+| getLicenseList | 使用许可     | QWeather Developers License |
 
 **Basic**
 
 | 属性          | 说明                     | 示例值               |
 | ------------- | ------------------------ | -------------------- |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com |
 
 **Minutely 未来两小时5分钟降水量**
 
 | 属性      | 说明                       | 示例值           |
 | --------- | -------------------------- | ---------------- |
-| getFxTime | 时间，格式yyyy-MM-dd HH:mm | 2013-12-30T20:35+08:00 |
+| getFxTime | 时间 | 2013-12-30T20:35+08:00 |
 | getPrecip | 降水量                     | 10               |
 | getType   | 降水类型                   | rain             |

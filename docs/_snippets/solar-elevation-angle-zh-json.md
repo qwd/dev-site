@@ -14,7 +14,7 @@ title: astronomy-solar-elevation-angle
       "qweather.com"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

@@ -31,7 +31,7 @@ title: weather-now
       "ECMWF"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

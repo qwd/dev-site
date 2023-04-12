@@ -5,7 +5,7 @@ title: grid-weather-now
 {
   "code": "200",
   "updateTime": "2021-12-16T18:25+08:00",
-  "fxLink": "http://hfx.link/1",
+  "fxLink": "https://www.qweather.com",
   "now": {
     "obsTime": "2021-12-16T10:00+00:00",
     "temp": "-1",
@@ -26,7 +26,7 @@ title: grid-weather-now
       "QWeather"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

@@ -335,10 +335,10 @@ title: time-machine-weather
   ],
   "refer": {
     "sources": [
-      "qweather.com"
+      "QWeather"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

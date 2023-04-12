@@ -184,7 +184,7 @@ title: astronomy-moon
       "QWeather"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

@@ -6,7 +6,7 @@ title: storm-list
 {
   "code": "200",
   "updateTime": "2020-12-31T16:00+00:00",
-  "fxLink": "http://hfx.link/1",
+  "fxLink": "https://www.qweather.com",
   "storm": [
     {
       "id": "NP_2022",
@@ -175,7 +175,7 @@ title: storm-list
       "NMC"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

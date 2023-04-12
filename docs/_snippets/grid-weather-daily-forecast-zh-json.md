@@ -5,7 +5,7 @@ title: grid-weather-daily
 {
   "code": "200",
   "updateTime": "2021-12-16T18:30+08:00",
-  "fxLink": "http://hfx.link/1",
+  "fxLink": "https://www.qweather.com",
   "daily": [
     {
       "fxDate": "2021-12-16",
@@ -73,7 +73,7 @@ title: grid-weather-daily
       "QWeather"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

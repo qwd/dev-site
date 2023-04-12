@@ -8,7 +8,7 @@ ref: 1-sdk-android-geo-city-lookup
 
 | 接口代码| 接口说明          | 数据类  |
 | -------- | ---------------- | ------- |
-| getGeoGityLookup| 城市查询  | GeoBean |
+| getGeoCityLookup| 城市查询  | GeoBean |
 
 ### 接口参数说明
 
@@ -17,9 +17,11 @@ ref: 1-sdk-android-geo-city-lookup
 ### 示例代码
 
 ```java
+QWeather.getGeoCityLookup(Context context, String location, String adm, Range range, int number, Lang lang, final QWeather.OnResultGeoListener listener);
+
 QWeather.getGeoCityLookup(Context context, String location, Range range, int number, Lang lang, final QWeather.OnResultGeoListener listener);
 
-QWeather.getGeoCityLookup(Context context, Range range, final QWeather.OnResultGeoBeansListener listener) ;
+QWeather.getGeoCityLookup(Context context, String location, int number, Lang lang, final QWeather.OnResultGeoBeansListener listener);
 
 QWeather.getGeoCityLookup(Context context, String location, final QWeather.OnResultGeoBeansListener listener);
 ```
@@ -36,8 +38,8 @@ QWeather.getGeoCityLookup(Context context, String location, final QWeather.OnRes
 
 | 属性           | 说明         | 示例值             |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | qweather.com      |
-| getLicenseList | 使用许可     | commercial license |
+| getSourcesList | 原始数据来源 | QWeather      |
+| getLicenseList | 使用许可     | QWeather Developers License |
 
 
 **LocationBean 基础信息**
@@ -56,4 +58,4 @@ QWeather.getGeoCityLookup(Context context, String location, final QWeather.OnRes
 | getIsDst     | 该地区/城市是否当前处于夏令时,1: 表示当前处于夏令时, 0: 表示当前不是夏令时 | 0                    |
 | getType      | 该地区／城市的属性                                                      | city                 |
 | getRank      | 该地区／城市评分                                                        | 10                   |
-| getFxLink    | 城市的天气预报网页链接                                                  | http://hfx.link/ae45 |
+| getFxLink    | 城市的天气预报网页链接                                                  | https://www.qweather.com/weather/zhuozi-101080402.html |

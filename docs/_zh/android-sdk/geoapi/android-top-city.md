@@ -34,8 +34,8 @@ QWeather.getGeoTopCity(Context context, final QWeather.OnResultGeoBeansListener 
 
 | 属性           | 说明         | 示例值             |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | qweather.com      |
-| getLicenseList | 使用许可     | commercial license |
+| getSourcesList | 原始数据来源 | QWeather      |
+| getLicenseList | 使用许可     | QWeather Developers License |
 
 
 **LocationBean 基础信息**
@@ -54,5 +54,5 @@ QWeather.getGeoTopCity(Context context, final QWeather.OnResultGeoBeansListener 
 | getIsDst     | 该地区/城市是否当前处于夏令时,1 表示当前处于夏令时,0 表示当前不是夏令时      | 0                    |
 | getType      | 该地区／城市的属性                                                      | city                 |
 | getRank      | 该地区／城市评分                                                        | 10                   |
-| getFxLink    | 城市的天气预报网页链接                                                  | http://hfx.link/ae45 |
+| getFxLink    | 城市的天气预报网页链接                                                  | https://www.qweather.com/weather/zhuozi-101080402.html |
 

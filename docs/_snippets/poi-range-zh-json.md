@@ -19,7 +19,7 @@ title: geo-poi-range
       "isDst": "0",
       "type": "scenic",
       "rank": "86",
-      "fxLink": "http://hfx.link/1"
+      "fxLink": "https://www.qweather.com"
     },
     {
       "name": "故宫博物院",
@@ -34,7 +34,7 @@ title: geo-poi-range
       "isDst": "0",
       "type": "scenic",
       "rank": "67",
-      "fxLink": "http://hfx.link/1"
+      "fxLink": "https://www.qweather.com"
     },
     {
       "name": "北京市规划展览馆",
@@ -49,7 +49,7 @@ title: geo-poi-range
       "isDst": "0",
       "type": "scenic",
       "rank": "68",
-      "fxLink": "http://hfx.link/1"
+      "fxLink": "https://www.qweather.com"
     },
     {
       "name": "老舍茶馆",
@@ -64,7 +64,7 @@ title: geo-poi-range
       "isDst": "0",
       "type": "scenic",
       "rank": "86",
-      "fxLink": "http://hfx.link/1"
+      "fxLink": "https://www.qweather.com"
     },
     {
       "name": "景山公园",
@@ -79,15 +79,15 @@ title: geo-poi-range
       "isDst": "0",
       "type": "scenic",
       "rank": "67",
-      "fxLink": "http://hfx.link/1"
+      "fxLink": "https://www.qweather.com"
     }
   ],
   "refer": {
     "sources": [
-      "qweather.com"
+      "QWeather"
     ],
     "license": [
-      "commercial license"
+      "QWeather Developers License"
     ]
   }
 }

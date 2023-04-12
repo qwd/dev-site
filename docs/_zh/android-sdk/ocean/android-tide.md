@@ -35,14 +35,14 @@ QWeather.getOceanTide(Context context, String location, String date, OnResultOce
 | 属性           | 说明         | 示例值             |
 | -------------- | ------------ | ------------------ |
 | getUpdateTime | 接口更新时间 | 2017-10-25T04:34+08:00      |
-| getFxLink | 当前数据的响应式页面，便于嵌入网站或应用  | http://hfx.link/1 |
+| getFxLink | 当前数据的响应式页面，便于嵌入网站或应用  | https://www.qweather.com |
 
 **Refer**
 
 | 属性           | 说明         | 示例值             |
 | -------------- | ------------ | ------------------ |
 | getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | commercial license |
+| getLicenseList | 使用许可     | QWeather Developers License |
 
 
 **TideTableBase**

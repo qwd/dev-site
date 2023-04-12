@@ -40,15 +40,15 @@ QWeather.getWarning(Context context, String location, Lang lang, final QWeather.
 
 | 属性           | 说明         | 示例值             |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | qweather.com      |
-| getLicenseList | 使用许可     | commercial license |
+| getSourcesList | 原始数据来源 | QWeather      |
+| getLicenseList | 使用许可     | QWeather Developers License |
 
 **Basic**
 
 | 属性          | 说明                     | 示例值               |
 | ------------- | ------------------------ | -------------------- |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/severe-weather/beijing-101010100.html |
 
 **WarningBeanBase 预警信息**
 
@@ -61,11 +61,15 @@ QWeather.getWarning(Context context, String location, Lang lang, final QWeather.
 | getStartTime | 预警开始时间                       | 2017-10-25T12:03+08:00                                |
 | getEndTime   | 预警结束时间                       | 2017-10-25T12:03+08:00                                |
 | getStatus    | 预警状态                           | 预警中                                                           |
-| getLevel     | 预警等级：蓝黄橙红白               | 黄色                                                             |
+| getLevel     | 预警等级：蓝黄橙红白，以后该字段可能被移除               | 黄色                                                             |
 | getType      | 预警类型，全部类型参考本文简介     | 雷电                                                             |
 | getTypeName      | 预警类型，全部类型参考本文简介     | 雷电                                                             |
 | getText      | 预警详细信息                       | 深圳市气象局于10月04日12时59分发布雷电黄色预警信号，请注意防御。 |
 | getRelated      | 与本条预警相关联的预警ID，当预警状态为cancel或update时返回。可能为空 | 10102010020210513101500714846231 |
+| getUrgency      | [预警信息的紧迫程度](/docs/resource/warning-info/#urgency)，**可能为空** |  |
+| getCertainty      | [预警信息的确定性](/docs/resource/warning-info/#certainty)，**可能为空** |  |
+| getSeverity      | [预警严重等级](/docs/resource/warning-info/#severity) |  |
+| getSeverityColor      | [Warning severity](/en/docs/resource/warning-info/#severity) |  |
 
 
 ### 预警类型和等级

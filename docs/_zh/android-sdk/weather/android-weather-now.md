@@ -17,7 +17,7 @@ ref: 1-sdk-android-weather-now
 ### 示例代码
 
 ```java
-QWeather.getWeatherNow(Context context, String location, Lang lang, Unit unit,QWeather.OnResultWeatherNowListener listener) ;
+QWeather.getWeatherNow(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherNowListener listener) ;
 
 QWeather.getWeatherNow(Context context, String location, QWeather.OnResultWeatherNowListener listener);
 ```
@@ -35,15 +35,15 @@ QWeather.getWeatherNow(Context context, String location, QWeather.OnResultWeathe
 
 | 属性           | 说明         | 示例值             |
 | -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | qweather.com      |
-| getLicenseList | 使用许可     | commercial license |
+| getSourcesList | 原始数据来源 | QWeather      |
+| getLicenseList | 使用许可     | QWeather Developers License |
 
 **Basic**
 
 | 属性          | 说明                     | 示例值               |
 | ------------- | ------------------------ | -------------------- |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | http://hfx.link/ae45 |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/weather/beijing-101010100.html |
 
 **NowBaseBean 实况天气**
 
@@ -52,8 +52,8 @@ QWeather.getWeatherNow(Context context, String location, QWeather.OnResultWeathe
 | getObsTime   | 实况观测时间               | 2013-12-30T13:14+08:00 |
 | getFeelsLike | 体感温度，默认单位：摄氏度 | 23               |
 | getTemp      | 温度，默认单位：摄氏度     | 21               |
-| getIcon      | 实况天气状况代码           | 100              |
-| getText      | 实况天气状况代码           | 晴               |
+| getIcon      | 天气状况代码           | 100              |
+| getText      | 天气状况代码           | 晴               |
 | getWind360   | [风向](/docs/resource/wind-info/#wind-direction)360角度                | 305              |
 | getWindDir   | [风向](/docs/resource/wind-info/#wind-direction)                       | 西北             |
 | getWindScale | [风力等级](/docs/resource/wind-info/#wind-scale)                       | 3-4              |
@@ -63,5 +63,5 @@ QWeather.getWeatherNow(Context context, String location, QWeather.OnResultWeathe
 | getPressure  | 大气压强                   | 1020             |
 | getVis       | 能见度，默认单位：公里     | 10               |
 | getCloud     | 云量                       | 23               |
-| getDew       | 实况云量                   | 23               |
+| getDew       | 露点温度                   | -1               |
 
