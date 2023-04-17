@@ -1,0 +1,59 @@
+name: Build and deploy to Pages
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1.2' 
+          bundler-cache: true 
+          cache-version: 0
+      - name: Build with Jekyll
+        run: JEKYLL_ENV=production bundle exec jekyll build
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v1
+
+  deploy:
+    needs: build
+    if: ${{ github.ref == 'refs/heads/master' }}
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+  
+  oss:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts from build
+        uses: actions/download-artifact@v3
+        with: 
+          name: github-pages
+      - name: Unpack artifacts
+        run: mkdir ghp-for-oss && tar -xvf artifact.tar -C ghp-for-oss
+      - name: Upload files to OSS
+        uses: fangbinwei/aliyun-oss-website-action@v1
+        with:
+          skipSetting: true
+          accessKeyId: ${{ secrets.OSS_AK_ID }}
+          accessKeySecret: ${{ secrets.OSS_AK_SECRET }}
+          bucket: ${{ secrets.OSS_BUCKET }}
+          endpoint: ${{ secrets.OSS_ENDPOINT }}
+          folder: ghp-for-oss
