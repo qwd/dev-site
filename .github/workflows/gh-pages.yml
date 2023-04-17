@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -22,8 +21,6 @@ jobs:
       - name: Build with Jekyll
         run: JEKYLL_ENV=production bundle exec jekyll build
       - name: Upload pages artifact
-        # uploads an artifact with 'github-pages' name from './_site' by default
-        # Archive artifact to artifact.tar
         uses: actions/upload-pages-artifact@v1
 
   deploy:
@@ -39,23 +36,19 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
   
   oss:
     needs: deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Download artifacts 
-        # download 'github-pages' atrifact from build
+      - name: Download artifacts from build
         uses: actions/download-artifact@v3
         with: 
           name: github-pages
       - name: Unpack artifacts
-        # unpack 'artifact.tar' to 'ghpages' folder
-        run: |
-          mkdir ghpage
-          tar -xvf artifact.tar -C ghpage
-      - name: upload files to OSS
+        run: mkdir ghp-for-oss && tar -xvf artifact.tar -C ghp-for-oss
+      - name: Upload files to OSS
         uses: fangbinwei/aliyun-oss-website-action@v1
         with:
           skipSetting: true
@@ -63,4 +56,4 @@ jobs:
           accessKeySecret: ${{ secrets.OSS_AK_SECRET }}
           bucket: ${{ secrets.OSS_BUCKET }}
           endpoint: ${{ secrets.OSS_ENDPOINT }}
-          folder: ghpages
+          folder: ghp-for-oss
