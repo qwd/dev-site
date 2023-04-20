@@ -113,8 +113,6 @@ QWeatherConfigInstance.appKey = @"Your_KEY";
     QWeatherConfigInstance.appType = APP_TYPE_DEV;
     ```
 
-- 高级订阅：调用`-(void)changeDomain:(NSString *)domain`接口修改SDK的访问域名
-
 ## 示例代码
 
 在需要使用的地方加入以下代码输入所需参数即可，返回为对应类型的数据模型

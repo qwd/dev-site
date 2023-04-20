@@ -56,7 +56,7 @@ pod update
 
 1. Download SDK: [QWeather_iOS_SDK_Pub_V{{ site.data.v.ios.version }}]({{ site.data.v.ios.dllink }}) <br>*MD5: {{ site.data.v.ios.md5 }}*
 2. Add `QWeather.xcframework` to iOS/macOS Target.
-3. Add [AFNetworking(4.0.0+)](https://github.com/AFNetworking/AFNetworking).
+3. Add [Alamofire(5.6.4+)](https://github.com/Alamofire/Alamofire).
 
 > **If the project is written by swift:**
 >
@@ -107,7 +107,6 @@ QWeatherConfigInstance.appKey = @"Your_KEY";
     ```objc
     QWeatherConfigInstance.appType = APP_TYPE_DEV;
     ```
-- Pro subscription: Call the `-(void)changeDomain:(NSString *)domain` interface to modify the SDK access domain name
 
 ## Sample Code
 
@@ -127,7 +126,7 @@ Add the following code where you need to use, enter the required parameters, and
 
 AllWeatherInquieirs *qWeather = [AllWeatherInquieirs sharedInstance];//or AllWeatherInquieirs *qWeather = [[AllWeatherInquieirs alloc] init];
 qWeather.appType = APP_TYPE_BIZ;
-qWeather.location = @"";
+qWeather.location = @"101010300";
 qWeather.lang = @"";//or qWeather.languageType = @"";
 qWeather.unit = @"";//or qWeather.unitType = @"";
 
