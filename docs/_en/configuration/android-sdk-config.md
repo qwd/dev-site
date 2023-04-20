@@ -97,7 +97,7 @@ Call different methods according to your needs. The parameters in the interface 
  * @param listener network access result callback
  */
 
-QWeather.getWeatherNow(MainActivity.this, "CN101010100", Lang.ZH_HANS, Unit.METRIC, new QWeather.OnResultWeatherNowListener() {
+QWeather.getWeatherNow(MainActivity.this, "101010300", Lang.ZH_HANS, Unit.METRIC, new QWeather.OnResultWeatherNowListener() {
     @Override
     public void onError(Throwable e) {
         Log.i(TAG, "getWeather onError: "+ e);

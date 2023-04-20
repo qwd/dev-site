@@ -97,7 +97,7 @@ HeConfig.switchToBizService();
  * @param listener 网络访问结果回调
  */
 
-QWeather.getWeatherNow(MainActivity.this, "CN101010100", Lang.ZH_HANS, Unit.METRIC, new QWeather.OnResultWeatherNowListener() {
+QWeather.getWeatherNow(MainActivity.this, "101010300", Lang.ZH_HANS, Unit.METRIC, new QWeather.OnResultWeatherNowListener() {
     @Override
     public void onError(Throwable e) {
         Log.i(TAG, "getWeather onError: " + e);
