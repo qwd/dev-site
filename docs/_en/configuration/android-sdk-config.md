@@ -8,9 +8,9 @@ This document will introduce how to configure the Android SDK in the QWeather De
 
 ## Download 
 
-|Version|Update|MD5|Download|
-|---|---|---|---|
-|{{ site.data.v.android.version }}|{{ site.data.v.android.date }}|{{ site.data.v.android.md5 }}|[下载]({{ site.data.v.android.dllink }})|
+|Version|Update|MD5| Download                                     |
+|---|---|---|----------------------------------------------|
+|{{ site.data.v.android.version }}|{{ site.data.v.android.date }}|{{ site.data.v.android.md5 }}| [Download]({{ site.data.v.android.dllink }}) |
 
 ## OS requirement
 
