@@ -61,7 +61,7 @@ Please see [Subscription Comparison](#comparison) for the specific specification
 | **Time Machine** | &times; | &#10003; | &#10003; |
 | **Tropical Cyclone** | &times; | &#10003; | &#10003; |
 | **Ocean** | &times; | &#10003; | &#10003; |
-| **Solar Radiation** | &times; | &times; | &#10003; |
+| **Solar Radiation** | &times; | &#10003; | &#10003; |
 | **Server** | Shared | Shared for business     | Dedicated |
 | **SLA** | &times; | 99.5% | 99.95% |
 | **QPM** | 100 | 3000 | 50000+ |
