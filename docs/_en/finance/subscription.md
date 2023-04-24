@@ -61,7 +61,7 @@ Please see [Subscription Comparison](#comparison) for the specific specification
 | **Time Machine** | &times; | &#10003; | &#10003; |
 | **Tropical Cyclone** | &times; | &#10003; | &#10003; |
 | **Ocean** | &times; | &#10003; | &#10003; |
-| **Solar Radiation** | &times; | &times; | &#10003; |
+| **Solar Radiation** | &times; | &#10003; | &#10003; |
 | **Server** | Shared | Shared for business     | Dedicated |
 | **SLA** | &times; | 99.5% | 99.95% |
 | **QPM** | 100 | 3000 | 50000+ |
@@ -71,7 +71,7 @@ Please see [Subscription Comparison](#comparison) for the specific specification
 | **Data Center** | 2  | 4  | 10 |
 | **Edge Acceleration** | &times; | &times; | &#10003; |
 | **Custom API URL** | &times; | &times; | &#10003; |
-| **License** | CC BY-SA 4.0 | QWeather EULA   | QWeather EULA  |
+| **License** | [CC BY-SA 4.0](/en/docs/terms/license/) | [QWeather EULA](/en/docs/terms/license/)   | [QWeather EULA](/en/docs/terms/license/)  |
 | **Support** | &times; | Email/Ticket | Phone/Email/Ticket  |
 | **Contract** | &times; | &times; | On Demand |
 
