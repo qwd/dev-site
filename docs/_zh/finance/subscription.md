@@ -71,7 +71,7 @@ ref: finance-subscription
 | **数据节点**      | 2个 | 4个  | 10个|
 | **边缘加速**      | &times;| &times;  | &#10003;  |
 | **自定义API地址** | &times;| &times;  | &#10003;  |
-| **许可证**        | CC BY-SA 4.0 | 和风开发许可  | 和风开发许可   |
+| **许可证**        | [CC BY-SA 4.0](/docs/terms/license/) | [和风开发许可](/docs/terms/license/)  | [和风开发许可](/docs/terms/license/)   |
 | **技术支持**      | &times;  | 电子邮件/工单 | 电话/电子邮件/工单 |
 | **合同**          | &times; | &times;  | 按需 |
 

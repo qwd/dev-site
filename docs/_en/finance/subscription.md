@@ -71,7 +71,7 @@ Please see [Subscription Comparison](#comparison) for the specific specification
 | **Data Center** | 2  | 4  | 10 |
 | **Edge Acceleration** | &times; | &times; | &#10003; |
 | **Custom API URL** | &times; | &times; | &#10003; |
-| **License** | CC BY-SA 4.0 | QWeather EULA   | QWeather EULA  |
+| **License** | [CC BY-SA 4.0](/en/docs/terms/license/) | [QWeather EULA](/en/docs/terms/license/)   | [QWeather EULA](/en/docs/terms/license/)  |
 | **Support** | &times; | Email/Ticket | Phone/Email/Ticket  |
 | **Contract** | &times; | &times; | On Demand |
 
