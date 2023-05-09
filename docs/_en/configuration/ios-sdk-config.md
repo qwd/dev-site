@@ -52,11 +52,18 @@ Open a terminal and go to the directory containing the `Podfile` and run:
 pod update
 ```
 
+### Swift Package Manager
+
+You can also use Swift Package Manager to integrate iOS SDK, please refer to [Adding package dependencies to your app](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app).
+
+* SDK URL: [https://github.com/qwd/iOS-SDK.git](https://github.com/qwd/iOS-SDK.git)
+* Dependency Rule: Up to Next Major Version 4.14.0 < 5.0.0
+
+
 ### Manual install
 
 1. Download SDK: [QWeather_iOS_SDK_Pub_V{{ site.data.v.ios.version }}]({{ site.data.v.ios.dllink }}) <br>*MD5: {{ site.data.v.ios.md5 }}*
 2. Add `QWeather.xcframework` to iOS/macOS Target.
-3. Add [Alamofire(5.6.4+)](https://github.com/Alamofire/Alamofire).
 
 > **If the project is written by swift:**
 >

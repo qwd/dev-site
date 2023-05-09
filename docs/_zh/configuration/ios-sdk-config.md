@@ -55,13 +55,19 @@ pod update
 
 这将SDK升级到最新版本。
 
+### Swift Package Manager
+
+iOS SDK支持使用Swift Package Manager集成，具体步骤请参考[Adding package dependencies to your app](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app)
+
+* SDK URL: [https://github.com/qwd/iOS-SDK.git](https://github.com/qwd/iOS-SDK.git)
+* Dependency Rule: Up to Next Major Version 4.14.0 < 5.0.0
+
 ### 手动安装
 
 你可以选择手动安装和风天气iOS SDK。
 
 1. 下载SDK：[QWeather_iOS_SDK_Pub_V{{ site.data.v.ios.version }}]({{ site.data.v.ios.dllink }}) <br>*MD5: {{ site.data.v.ios.md5 }}*
 2. 将 `QWeather.xcframework` 包导入到iOS或macOS Target中
-3. 添加[Alamofire(5.6.4+)](https://github.com/Alamofire/Alamofire)
 
 > **如果工程是由swift编写**
 >
