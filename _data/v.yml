@@ -1,10 +1,10 @@
 style: 20230410
 favicon: 20230410
 android:
-  version: "4.14"
-  date: 2023-05-08
-  dllink: https://a.hecdn.net/download/api_sdk/QWeather_Public_Android_V4.14.jar
-  md5: 97b35d1d55fd42f1db28542f05374b8c
+  version: "4.15"
+  date: 2023-06-07
+  dllink: https://a.hecdn.net/download/api_sdk/QWeather_Public_Android_V4.15.jar
+  md5: a5faea2cabaeebb688646e03b2c9faef
 ios:
   version: "4.14"
   date: 2023-05-08
