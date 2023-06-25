@@ -32,7 +32,7 @@ QWeather.getWarningList(Context context, Range range, final QWeather.OnResultWar
 
 | 属性           | 说明         | 示例值                      |
 | -------------- | ------------ | --------------------------- |
-| getCode        | 接口状态     | [Status Code](/docs/resource/status-code/)     |
+| getCode        | 参考[状态码](/docs/resource/status-code/)      | 200    |
 | getUpdateTime  | 接口更新时间 | 2017-10-25T12:34+08:00            |
 | getWarningBean | 灾害预警     | List&lt;WarningListBean&gt; |
 | getRefer | Refer 数据来源以及数据授权 | Refer       |

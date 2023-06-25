@@ -24,7 +24,7 @@ QWeather.getSolarElevationAngle(Context context, String location, String date, S
 
 | 属性                 | 说明                       | 示例值                    |
 | -------------------- | -------------------------- | ------------------------- |
-| getCode              | 状态码，具体含义请参考[状态码](/docs/resource/status-code/)                   | Code       |
+| getCode              | 参考[状态码](/docs/resource/status-code/)                    | 200       |
 | getRefer             | Refer 数据来源以及数据授权 | Refer                     |
 | getSolarElevationAngle       | 太阳高度角                   | 70.73  |
 | getSolarAzimuthAngle       |  太阳方位角，正北顺时针方向角度   | 205.95      |

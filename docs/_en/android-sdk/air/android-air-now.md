@@ -27,7 +27,7 @@ Properties of AirNowBean
 
 | Property | Description | Example |
 | -------------------- | -------------------------- |------------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getAirNowStationBean | Real-time AQI for monitoring station | List&lt;AirNowStationBean&gt; |
 | getNow | Real-time AQI for cities | NowBean |
 | getRefer | Reference data, includes data source, statements and license | Refer |

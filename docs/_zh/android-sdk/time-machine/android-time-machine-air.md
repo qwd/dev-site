@@ -29,7 +29,7 @@ QWeather.getHistoricalAir(Context context, String location, String date, Lang la
 
 | 属性              | 说明                       | 示例值                    |
 | ----------------- | -------------------------- | ------------------------- |
-| getCode           | 接口状态                   | [Status Code](/docs/resource/status-code/)    |
+| getCode           | 参考[状态码](/docs/resource/status-code/)                    | 200   |
 | getRefer          | Refer 数据来源以及数据授权 | Refer                     |
 | getBasic          | Basic 基础信息             | Basic                     |
 | getAirHourlyBeans | 当天逐小时空气质量数据     | List&lt;AirHourlyBean&gt; |

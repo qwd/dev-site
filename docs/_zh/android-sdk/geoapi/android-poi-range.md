@@ -26,7 +26,7 @@ QWeather.getGeoPoiRange(Context context, String location, int number, Type type,
 
 | 属性       | 说明     | 示例值          |
 | ---------- | -------- | ------------- |
-| getCode    | 接口状态 | [Status Code](/docs/resource/status-code/) |
+| getCode    | 参考[状态码](/docs/resource/status-code/)  | 200|
 | getPoiList | 城市数据 | List&lt;Poi&gt; |
 
 **Refer**

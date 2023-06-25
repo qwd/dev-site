@@ -26,7 +26,7 @@ QWeather.getGeoTopCity(Context context, final QWeather.OnResultGeoBeansListener 
 
 | 属性            | 说明     | 示例值                   |
 | --------------- | -------- | ------------------------ |
-| getCode         | 接口状态 | [Status Code](/docs/resource/status-code/)   |
+| getCode         | 参考[状态码](/docs/resource/status-code/)  | 200  |
 | getLocationBean | 城市数据 | List&lt;LocationBean&gt; |
 
 

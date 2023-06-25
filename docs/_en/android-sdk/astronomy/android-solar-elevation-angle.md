@@ -26,7 +26,7 @@ Properties of SolarElevationAngleBean
 
 | Property | Description | Example |
 | -------------------- | -------------------------- | ------------------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getSolarElevationAngle       | Solar elevation angle                   | 70.73  |
 | getSolarAzimuthAngle       |  Solar azimuth angle   | 205.95      |

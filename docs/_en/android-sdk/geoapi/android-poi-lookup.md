@@ -28,7 +28,7 @@ Properties of GeoPoiBean
 
 | Property | Description | Example |
 | ---------- | -------- | --------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getPoiList | City data | List&lt;Poi&gt; |
 
 

@@ -31,7 +31,7 @@ Properties of WarningBean
 
 | Property | Description | Example |
 | --------------- | -------------------------- | ------ --------------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getBeanBaseList | Disaster Warning | List&lt;WarningBeanBase&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getBasic | Basic Information | Basic |

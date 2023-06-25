@@ -26,7 +26,7 @@ Properties of AirDailyBean
 
 | Property | Description | Example |
 | ----------- | -------------------------- | --------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getAirDaily | Air quality 5-day forecast | List&lt;DailyBean&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getBasic | Basic Information | Basic |

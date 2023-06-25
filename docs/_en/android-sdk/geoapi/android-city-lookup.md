@@ -32,7 +32,7 @@ Properties of GeoBean
 
 | Property | Description | Example |
 | --------------- | -------- | ------------------------ |
-| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getLocationBean | City data | List&lt;LocationBean&gt; |
 
 

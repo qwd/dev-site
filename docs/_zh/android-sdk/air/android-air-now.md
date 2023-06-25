@@ -24,7 +24,7 @@ QWeather.getAirNow(Context context, String location, Lang lang, QWeather.OnResul
 
 | 属性                 | 说明                       | 示例值                        |
 | -------------------- | -------------------------- | ----------------------------- |
-| getCode              | 接口状态                   | [Status Code](/docs/resource/status-code/)     |
+| getCode              | 参考[状态码](/docs/resource/status-code/)                    | 200    |
 | getAirNowStationBean | AQI站点实况                | List&lt;AirNowStationBean&gt; |
 | getNow               | AQI城市实况                | NowBean                       |
 | getRefer             | Refer 数据来源以及数据授权 | Refer                         |
