@@ -7,9 +7,8 @@ code:
   name: code
   desc:
      zh: >-
-      API状态码，具体含义请参考[状态码](/docs/resource/status-code/)
-     en: >-
-      API status code, please refer to [Status Code](/en/docs/resource/status-code/)
+      请参考[状态码](/docs/resource/status-code/)
+     en: See [Status Code](/en/docs/resource/status-code/)
   example: 200
 update:
   name: updateTime
@@ -95,8 +94,9 @@ weather:
     type: [daily]
   - name: moonPhaseIcon
     desc:
-      zh: 月相图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载
-      en: Icon code for moon phase, free to download [QWeather Icons](/en/docs/resource/icons/)
+      zh: 月相[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
+      en: >-
+       [Icon code](/en/docs/resource/icons/) for moon phase. See also [QWeather Icons](https://icons.qweather.com/en/)
     example: Full Moon
     type: [daily]
   - name: tempMax
@@ -111,8 +111,9 @@ weather:
     type: [daily, gdaily]
   - name: iconDay
     desc:
-      zh: 预报白天天气状况的图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载
-      en: Icon code for daytime weather conditions, free to download [weather icons](/en/docs/resource/icons/)
+      zh: 预报白天天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
+      en: >-
+       [Icon code](/en/docs/resource/icons/) for daytime weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)
     type: [daily, gdaily]
   - name: textDay
     desc:
@@ -121,8 +122,9 @@ weather:
     type: [daily, gdaily]
   - name: iconNight
     desc:
-      zh: 预报夜间天气状况的图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载
-      en: Icon codes for night weather conditions, free to download [weather icons](/en/docs/resource/icons/)
+      zh: 预报夜间天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
+      en: >-
+       [Icon code](/en/docs/resource/icons/) for night weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)
     type: [daily, gdaily]
   - name: textNight
     desc:
@@ -203,8 +205,9 @@ weather:
     type: [now, forecast]
   - name: icon
     desc:
-      zh: 天气状况和图标的代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载
-      en: Icon code of weather conditions, free to download [weather icons](/en/docs/resource/icons/)
+      zh: 天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
+      en: >-
+       [Icon code](/en/docs/resource/icons/) for weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)
     example: 100
     type: [now, hourly,ghourly,gnow]
   - name: text
@@ -300,8 +303,8 @@ minutely:
     example: *fxtime
   - name: minutely.precip
     desc:
-      zh: 10分钟累计降水量，单位毫米
-      en: Accumulated precipitation in 10 minutes, unit is millimeter.
+      zh: 5分钟累计降水量，单位毫米
+      en: Accumulated precipitation in 5 minutes, unit is millimeter.
     example: 10
   - name: minutely.type
     desc:
@@ -596,8 +599,9 @@ astro:
     type: [moon]
   - name: moonPhase.icon
     desc:
-      zh: 月相图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载
-      en: Icon code for moon phase, free to download [QWeather Icons](/en/docs/resource/icons/)
+      zh: 月相[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
+      en: >-
+       [Icon code](/en/docs/resource/icons/) for moon phase. See also [QWeather Icons](https://icons.qweather.com/en/)
     example: First Quarter Moon
     type: [moon]
   - name: moonPhase.illumination
@@ -960,8 +964,9 @@ hisweather:
     type: [hourly]
   - name: icon
     desc:
-      zh: 当天每小时天气状况图标的代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载
-      en: Icon code of weather conditions, free to download [weather icons](/en/docs/resource/icons/)
+      zh: 当天每小时天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
+      en: >-
+       [Icon code](/en/docs/resource/icons/) for hourly weather conditions of the day. See also [QWeather Icons](https://icons.qweather.com/en/)
     example: 100
     type: [hourly]
   - name: text

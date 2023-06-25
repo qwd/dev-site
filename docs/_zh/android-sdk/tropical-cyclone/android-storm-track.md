@@ -27,7 +27,7 @@ QWeather.getStormTrack(Context context, String stormId, OnResultTropicalStormTra
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
-| getCode         | 接口状态 | [Status Code](/docs/resource/status-code/)        |
+| getCode         | 参考[状态码](/docs/resource/status-code/)  | 200       |
 | getBasic         | 更新信息 | Basic       |
 | getRefer         | Refer 数据来源以及数据授权 | Refer  |
 | getIsActive         | 是否为活跃台风<br />`1` 活跃台风 <br /> `0` 停编 | 0  |

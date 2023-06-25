@@ -30,7 +30,7 @@ QWeather.getAir5D(Context context, String location, Lang lang, QWeather.OnResult
 
 | 属性        | 说明                       | 示例值                |
 | ----------- | -------------------------- | --------------------- |
-| getCode     | 接口状态                   | [Status Code](/docs/resource/status-code/)   |
+| getCode     | 参考[状态码](/docs/resource/status-code/)                    | 200  |
 | getAirDaily | 空气质量 AQI 5天预报       | List&lt;DailyBean&gt; |
 | getRefer    | Refer 数据来源以及数据授权 | Refer                 |
 | getBasic    | Basic 基础信息             | Basic                 |

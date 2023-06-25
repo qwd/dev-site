@@ -48,7 +48,7 @@ Properties of WeatherHourlyBean
 
 | Property | Description | Example |
 | --------- | -------------------------- | ------------ ---------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getHourly | HourlyBean Hourly Weather | List&lt;HourlyBean&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getBasic | Basic Information | Basic |
@@ -73,7 +73,7 @@ Properties of WeatherHourlyBean
 | ------------ | ------------------------------------ ---- | ---------------- |
 | getFxTime | Forecast time | 2013-12-30T13:00+08:00 |
 | getTemp | Temperature | 2 |
-| getIcon | Icon code of weather conditions, free to download [weather icons](/en/docs/resource/icons/) | 101 |
+| getIcon | [Icon code](/en/docs/resource/icons/) for weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/) | 101 |
 | getText |  Weather conditions | Cloudy |
 | getWind360 | [Wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree | 290 |
 | getWindDir | [Wind direction](/en/docs/resource/wind-info/#wind-direction) | NW |

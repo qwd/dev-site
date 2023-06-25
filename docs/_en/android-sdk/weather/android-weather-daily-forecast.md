@@ -63,7 +63,7 @@ Properties of WeatherDailyBean
 
 | Property | Description | Example |
 | -------- | -------------------------- | ------------- -------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getDaily | Daily forecast weather | List&lt;DailyBean&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getBasic | Basic Information | Basic |
@@ -92,11 +92,11 @@ Properties of WeatherDailyBean
 | getMoonRise | [Moonrise time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null** | 04:47 |
 | getMoonSet | [Moonset time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null** | 14:59 |
 | getMoonPhase | Moon Phase Name | Full Moon |
-| getMoonPhaseIcon      | Icon code for moon phase, free to download [QWeather Icons](/en/docs/resource/icons/)            | 804    |
+| getMoonPhaseIcon      | [Icon code](/en/docs/resource/icons/) for moon phase. See also [QWeather Icons](https://icons.qweather.com/en/)  | 804    |
 | getTempMax | The highest temperature of the day | 4 |
 | getTempMin | The lowest temperature of the day | -5 |
-| getIconDay | Icon code for daytime weather conditions, free to download [weather icons](/en/docs/resource/icons/) | 100 |
-| getIconNight | Icon codes for night weather conditions, free to download [weather icons](/en/docs/resource/icons/) | 100 |
+| getIconDay | [Icon code](/en/docs/resource/icons/) for daytime weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)| 100 |
+| getIconNight | [Icon code](/en/docs/resource/icons/) for night weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/) | 150 |
 | getTextDay | Weather conditions for daytime | Sunny |
 | getTextNight | Weather conditions for night | Sunny |
 | getWind360Day | Daytime [wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree | 310 |

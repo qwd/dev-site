@@ -29,7 +29,7 @@ Properties of WeatherNowBean
 
 | Property | Description | Example |
 | -------- | -------------------------- | ----------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getNow | Real-time weather | NowBaseBean |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getBasic | Basic Information | Basic |
@@ -55,7 +55,7 @@ Properties of WeatherNowBean
 | getObsTime | Observation time | 2013-12-30T13:14+08:00 |
 | getFeelsLike | Real feels like temperature | 23 |
 | getTemp | Temperature | 21 |
-| getIcon | Icon code of weather conditions, free to download [weather icons](/en/docs/resource/icons/) | 100 |
+| getIcon | [Icon code](/en/docs/resource/icons/) for weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/) | 100 |
 | getText | Weather conditions | Sunny |
 | getWind360 | [Wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree | 305 |
 | getWindDir | [Wind direction](/en/docs/resource/wind-info/#wind-direction) | NW |

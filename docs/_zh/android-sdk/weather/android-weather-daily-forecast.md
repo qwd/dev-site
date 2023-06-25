@@ -61,7 +61,7 @@ QWeather.getWeather30D(Context context, String location, QWeather.OnResultWeathe
 
 | 属性     | 说明                       | 示例值                |
 | -------- | -------------------------- | --------------------- |
-| getCode  | 接口状态                   | [Status Code](/docs/resource/status-code/)   |
+| getCode  | 参考[状态码](/docs/resource/status-code/)                    | 200  |
 | getDaily | DailyBean 逐天天气         | List&lt;DailyBean&gt; |
 | getRefer | Refer 数据来源以及数据授权 | Refer                 |
 | getBasic | Basic 基础信息             | Basic                 |
@@ -89,14 +89,14 @@ QWeather.getWeather30D(Context context, String location, QWeather.OnResultWeathe
 | getSunset         | [日落时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**    | 16:58      |
 | getMoonRise       | 当天[月升时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**            | 04:47      |
 | getMoonSet        | 当天[月落时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**            | 14:59      |
-| getMoonPhase      | 月相名称            | 满月       |
-| getMoonPhaseIcon  | 月相图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载            | 804    |
+| getMoonPhase      | [月相名称](/docs/resource/sun-moon-info/#moon-phase)            | 满月       |
+| getMoonPhaseIcon  | 月相[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)            | 804    |
 | getTempMax        | 最高温度            | 4          |
 | getTempMin        | 最低温度            | -5         |
-| getIconDay        | 白天天气状况代码    | 100        |
-| getIconNight      | 晚间天气状况代码    | 100        |
-| getTextDay        | 白天天气状况描述    | 晴         |
-| getTextNight      | 晚间天气状况描述    | 晴         |
+| getIconDay        | 白天天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)    | 100        |
+| getIconNight      | 夜间天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)    | 150        |
+| getTextDay        | 白天天气状况文字描述，包括阴晴雨雪等    | 晴         |
+| getTextNight      | 晚间天气状况文字描述，包括阴晴雨雪等    | 晴         |
 | getWind360Day     | 白天[风向](/docs/resource/wind-info/#wind-direction)360角度     | 310        |
 | getWind360Night   | 夜间[风向](/docs/resource/wind-info/#wind-direction)360角度     | 310        |
 | getWindDirDay     | 白天[风向](/docs/resource/wind-info/#wind-direction)            | 西北风     |

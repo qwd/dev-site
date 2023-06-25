@@ -30,7 +30,7 @@ Properties of GridMinutelyBean
 
 | Property | Description | Example |
 | --------------- | -------------------------- | ------ -------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getSummary | Precipitation description | No precipitation in the next 2 hours |
 | getMinutelyList | Minutely data | List&lt;Minutely&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
@@ -55,5 +55,5 @@ Properties of GridMinutelyBean
 | Property | Description | Example |
 | --------- | -------------------------- | ------------ ---- |
 | getFxTime | Forecast time | 2013-12-30T20:35+08:00 |
-| getPrecip | Precipitation | 10 |
+| getPrecip | Accumulated precipitation in 5 minutes, unit is millimeter | 10 |
 | getType | Type of precipitation <br />`rain`<br />`snow` | rain |

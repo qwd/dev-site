@@ -31,7 +31,7 @@ QWeather.getWarning(Context context, String location, Lang lang, final QWeather.
 
 | 属性            | 说明                       | 示例值                      |
 | --------------- | -------------------------- | --------------------------- |
-| getCode         | 接口状态                   | [Status Code](/docs/resource/status-code/)   |
+| getCode         | 参考[状态码](/docs/resource/status-code/)                    | 200  |
 | getBeanBaseList | 灾害预警                   | List&lt;WarningBeanBase&gt; |
 | getRefer        | Refer 数据来源以及数据授权 | Refer                       |
 | getBasic        | Basic 基础信息             | Basic                       |

@@ -26,7 +26,7 @@ QWeather.getWeatherNow(Context context, String location, QWeather.OnResultWeathe
 
 | 属性     | 说明                       | 示例值      |
 | -------- | -------------------------- | ----------- |
-| getCode  | 接口状态                   | [Status Code](/docs/resource/status-code/)  |
+| getCode  | 参考[状态码](/docs/resource/status-code/)      | 200  |
 | getNow   | NowBean 实况天气           | NowBaseBean |
 | getRefer | Refer 数据来源以及数据授权 | Refer       |
 | getBasic | Basic 基础信息             | Basic       |
@@ -52,8 +52,8 @@ QWeather.getWeatherNow(Context context, String location, QWeather.OnResultWeathe
 | getObsTime   | 实况观测时间               | 2013-12-30T13:14+08:00 |
 | getFeelsLike | 体感温度，默认单位：摄氏度 | 23               |
 | getTemp      | 温度，默认单位：摄氏度     | 21               |
-| getIcon      | 天气状况代码           | 100              |
-| getText      | 天气状况代码           | 晴               |
+| getIcon      | 天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)           | 100              |
+| getText      | 天气状况的文字描述，包括阴晴雨雪等天气状态的描述           | 晴               |
 | getWind360   | [风向](/docs/resource/wind-info/#wind-direction)360角度                | 305              |
 | getWindDir   | [风向](/docs/resource/wind-info/#wind-direction)                       | 西北             |
 | getWindScale | [风力等级](/docs/resource/wind-info/#wind-scale)                       | 3-4              |

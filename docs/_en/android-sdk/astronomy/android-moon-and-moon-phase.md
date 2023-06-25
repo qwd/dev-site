@@ -28,7 +28,7 @@ Properties of MoonBean
 
 | Property | Description | Example |
 | -------------------- | -------------------------- | ------------------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getMoonrise       | [Moonrise time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**                   | 2017-10-25T01:34+08:00           |
 | getMoonset       | [Moonset time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**                   | 2017-10-25T04:34+08:00           |
@@ -56,4 +56,4 @@ Properties of MoonBean
 | getValue        | Moon phase value               | 0.25                   |
 | getName         | Moon Phase Name               | 上弦月                 |
 | getIllumination | Moon illuminance in percent | 30                     |
-| getIcon | Icon code for moon phase, free to download [QWeather Icons](/en/docs/resource/icons/) | 802                     |
+| getIcon | [Icon code](/en/docs/resource/icons/) for moon phase. See also [QWeather Icons](https://icons.qweather.com/en/) | 802                     |

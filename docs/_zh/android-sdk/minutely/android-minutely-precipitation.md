@@ -26,7 +26,7 @@ QWeather.getMinutely(Context context, double longitude, double latitude, Lang la
 
 | 属性            | 说明                       | 示例值               |
 | --------------- | -------------------------- | -------------------- |
-| getCode         | 接口状态                   | [Status Code](/docs/resource/status-code/)   |
+| getCode         | 参考[状态码](/docs/resource/status-code/)                    | 200  |
 | getSummary      | 分钟降水描述               | 未来2小时无降雨      |
 | getMinutelyList | 临近预报                   | List&lt;Minutely&gt; |
 | getRefer        | Refer 数据来源以及数据授权 | Refer                |
@@ -51,5 +51,5 @@ QWeather.getMinutely(Context context, double longitude, double latitude, Lang la
 | 属性      | 说明                       | 示例值           |
 | --------- | -------------------------- | ---------------- |
 | getFxTime | 时间 | 2013-12-30T20:35+08:00 |
-| getPrecip | 降水量                     | 10               |
+| getPrecip | 5分钟累计降水量，单位毫米                     | 10               |
 | getType   | 降水类型                   | rain             |

@@ -34,7 +34,7 @@ Properties of WarningListBean
 
 | Property | Description | Example |
 | -------------- | ------------ | --------------------- ------ |
-| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T12:34+08:00 |
 | getWarningBean | Weather warning | List&lt;WarningListBean&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |

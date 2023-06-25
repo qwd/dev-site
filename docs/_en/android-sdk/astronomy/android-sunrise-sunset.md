@@ -28,7 +28,7 @@ Properties of SunBean
 
 | Property | Description | Example |
 | -------------------- | -------------------------- |- ------------------------ |
-| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getSunrise | [Sunrise time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area** | 2017-10-25T06:01+08:00 |
 | getSunset | [Sunset time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area** | 2017-10-25T18:01+08:00 |

@@ -46,7 +46,7 @@ QWeather.getWeather168Hourly(Context context, String location, QWeather.OnResult
 
 | 属性      | 说明                       | 示例值                 |
 | --------- | -------------------------- | ---------------------- |
-| getCode   | 接口状态                   | [Status Code](/docs/resource/status-code/)  |
+| getCode   | 参考[状态码](/docs/resource/status-code/)                    | 200 |
 | getHourly | HourlyBean 逐小时天气      | List&lt;HourlyBean&gt; |
 | getRefer  | Refer 数据来源以及数据授权 | Refer                  |
 | getBasic  | Basic 基础信息             | Basic                  |
@@ -71,8 +71,8 @@ QWeather.getWeather168Hourly(Context context, String location, QWeather.OnResult
 | ------------ | ---------------------------------------- | ---------------- |
 | getFxTime    | 预报时间           | 2013-12-30T13:00+08:00 |
 | getTemp      | 温度                                     | 2                |
-| getIcon      | 天气状况代码                             | 101              |
-| getText      | 天气状况代码                             | 多云             |
+| getIcon      | 天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)                             | 101              |
+| getText      | 气状况的文字描述，包括阴晴雨雪等                             | 多云             |
 | getWind360   | [风向](/docs/resource/wind-info/#wind-direction)360角度                              | 290              |
 | getWindDir   | [风向](/docs/resource/wind-info/#wind-direction)                                     | 西北             |
 | getWindScale | [风力等级](/docs/resource/wind-info/#wind-scale)                                     | 3-4              |

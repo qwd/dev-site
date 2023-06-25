@@ -28,7 +28,7 @@ QWeather.getMoon(Context context, String location, Lang lang, String date, final
 
 | 属性                 | 说明                       | 示例值                    |
 | -------------------- | -------------------------- | ------------------------- |
-| getCode              | 状态码，具体含义请参考[状态码](/docs/resource/status-code/)                   | Code       |
+| getCode              | 参考[状态码](/docs/resource/status-code/)                    | 200       |
 | getRefer             | Refer 数据来源以及数据授权 | Refer                     |
 | getMoonrise       | 当天[月升时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**                   | 2017-10-25T01:34+08:00           |
 | getMoonset       | 当天[月落时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**                   | 2017-10-25T04:34+08:00           |
@@ -55,6 +55,6 @@ QWeather.getMoon(Context context, String location, Lang lang, String date, final
 | --------------- | ---------------------- | ---------------------- |
 | getFxTime       | 月相逐小时预报时间     | 2013-12-31T23:31+08:00 |
 | getValue        | 月相数值               | 0.25                   |
-| getName         | 月相名字               | 上弦月                 |
+| getName         | [月相名称](/docs/resource/sun-moon-info/#moon-phase)               | 上弦月                 |
 | getIllumination | 月亮照明度，百分比数值 | 30                     |
-| getIcon | 月相图标代码，图标可通过[天气状况和图标](/docs/resource/icons/)下载 | 802                     |
+| getIcon | 月相[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/) | 802                     |

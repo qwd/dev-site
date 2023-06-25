@@ -32,7 +32,7 @@ Properties of HistoricalAirBean
 
 | Property | Description | Example |
 | ----------------- | -------------------------- | ------------------------- |
-| getCode | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | Code |
+| getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 | getBasic | Basic Information | Basic |
 | getAirHourlyBeans | Hourly air quality data for the day | List&lt;AirHourlyBean&gt; |
