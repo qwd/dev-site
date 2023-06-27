@@ -47,7 +47,7 @@ weather-now:
     - link: https://api.qweather.com/v7/weather/now?location=101010100&key=YOUR_KEY
       title: 
         zh: 北京实况天气
-        en: Real-tiem weather for Beijing
+        en: Real-time weather for Beijing
   endpoint:
     - path: /weather/now
       name:
