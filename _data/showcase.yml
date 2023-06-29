@@ -81,6 +81,10 @@
       author: QWeather
       code: https://github.com/qwd/OpenWeatherPlus-Android
       description: 基于和风的开源天气APP Android版 Open source weather APP for Android
+    - name: MyWeather
+      author: Zhik
+      code: https://github.com/lanqiaoZzz/MyWeather
+      description: 基于《第一行代码_v2》与和风天气、仿华为天气界面的开源天气APP
 - language: Go
   works:
     - name: qweather-sdk-go
