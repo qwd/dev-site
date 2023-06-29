@@ -16,6 +16,8 @@ ref: res-auth
   
 `sign`: 数字签名
 
+`以及其他接口必要参数`
+
 ## 创建签名
 
 1. 将请求参数格式化为“key=value”格式，如“k1=v1”、“k2=v2”、“k3=v3”；
@@ -102,9 +104,10 @@ public static char[] encodeHex(byte[] data) {
 let privateKey = 'XXXXX';
 let parameters = {};
 parameters['location'] = '101010100';
-parameters['username'] = 'PublicKey';
+parameters['publicid'] = 'PublicID';
 parameters['t'] = '1590123123';
-parameters['w'] = " ";
+// 接口必要的参数
+parameters['required'] = " ";
 
 function getSignature(parameterObject, privateKey) {
     var keys = [];
