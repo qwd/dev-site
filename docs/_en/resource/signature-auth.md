@@ -16,6 +16,10 @@ For more security of API request, we recommend that you use the Signature Authen
 
 - `sign`: Signature
 
+- `other required parameters of API`
+
+
+
 ## Create Signature
 
 1. Format the request parameters in "key=value" format, such as "k1=v1", "k2=v2", "k3 =v3".
@@ -98,9 +102,10 @@ $sign = md5($str);
 let privateKey = 'XXXXX';
 let parameters = {};
 parameters['location'] = '101010100';
-parameters['username'] = 'PublicKey';
+parameters['publicid'] = 'PublicID';
 parameters['t'] = '1590123123';
-parameters['w'] = " ";
+// other required parameters of API
+parameters['required'] = " ";
 
 function getSignature(parameterObject, privateKey) {
     var keys = [];
