@@ -97,6 +97,12 @@
       description: 和风天气的非官方Golang SDK。Golang SDK for QWeather
 - language: JavaScript
   works:
+    - name: "杰森气象"
+      description: "基于和风天气开发的微信小程序、天气查询、AQI指数、实时定位、7日天气预报、24h天气预报……"
+      code: "https://github.com/PDPENG/jason-weather-share/"
+      screenshot: "https://img.coder-jason.cn/wx-mini-weather/qrcode.jpg"
+      author: "攻城狮杰森"
+      website: "https://blog.csdn.net/m0_51269961"
     - name: Météo weather
       author: Venthan
       code: https://github.com/Venthanx/Weather
