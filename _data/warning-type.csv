@@ -1,134 +1,298 @@
-type,type_deprecated,type_name_zh,type_name_en
-1001,11B01,台风,Typhoon
-1002,11B02,龙卷风,Tornado
-1003,11B03,暴雨,Rainstorm
-1004,11B04,暴雪,Snow Storm
-1005,11B05,寒潮,Cold Wave
-1006,11B06,大风,Gale
-1007,11B07,沙尘暴,Sandstorm
-1008,11B08,低温冻害,Low Temperature Freeze
-1009,11B09,高温,High Temperature
-1010,11B10,热浪,Heat Wave
-1011,11B11,干热风,Dry Hot Air
-1012,11B12,下击暴流,Downburst
-1013,11B13,雪崩,Avalanche
-1014,11B14,雷电,Lightning
-1015,11B15,冰雹,Hail
-1016,11B16,霜冻,Frost
-1017,11B17,大雾,Heavy Fog
-1018,11B18,低空风切变,Low-Level Wind Shearl
-1019,11B19,霾,Haze
-1020,11B20,雷雨大风,Thunder Gust
-1021,11B21,道路结冰,Road Icing
-1022,11B22,干旱,Drought
-1023,11B23,海上大风,Gale at Sea
-1024,11B24,高温中暑,Heat Stroke
-1025,11B25,森林火险,Wildfire
-1026,11B26,草原火险,Grassland Fire
-1027,11B27,冰冻,Freeze
-1028,11B28,空间天气,Space Weather
-1029,11B29,重污染,Heavy Air Pollution
-1030,11B30,低温雨雪冰冻,Low Temperature Rain and Snow
-1031,11B31,强对流,Strong Convection
-1032,11B32,臭氧,Ozone
-1033,11B33,大雪,Heavy Snow
-1034,11B34,寒冷,Cold
-1035,11B35,连阴雨,Continuous Rain
-1036,11B36,渍涝风险,Waterlogging
-1037,11B37,地质灾害气象风险,Geological Hazard
-1038,11B38,强降雨,Heavy Rainfall
-1039,11B39,强降温,Severely Falling Temperature
-1040,11B40,雪灾,Snow Disaster
-1041,11B41,森林（草原）火险,Wildfire (Grassland)
-1042,11B42,医疗气象,Medical Meteorology
-1043,11B43,雷暴,Thunderstorm
-1044,11B44,停课信号,School Closure
-1045,11B45,停工信号,Factory Closure
-1046,11B46,海上风险,Maritime Risk
-1047,11B47,春季沙尘天气,Spring Dust
-1048,11B48,降温,Falling Temperature
-1049,11B49,台风暴雨,Typhoon and Rainstorm
-1050,11B50,严寒,Severe Cold
-1051,11B51,沙尘,Sand Dust
-1052,11B52,海上雷雨大风,Sea Thunderstorms
-1053,11B53,海上大雾,Sea Fog
-1054,11B54,海上雷电,Sea Thunder
-1055,11B55,海上台风,Sea Typhoon
-1056,11B56,低温,Low Temperature
-1057,11B57,道路冰雪,Road Ice and Snow
-1058,11B58,雷暴大风,Thunderstorm and Gale
-1059,11B59,持续低温,Continuous Low Temperature
-1060,,能见度不良,Low Visibility
-1061,11B61,浓浮沉,Strong Dust
-1062,,海区大风,Gale at Sea
-1063,,短历时强降水,Short Duration Heavy Precipitation
-1064,,短时强降雨,Short-lived Heavy Shower Rain
-1065,,海区大雾,Sea Fog
-1066,,中暑气象条件,Heat Stroke Conditions
-1067,,重污染天气,Heavy Pollution Weather
-1068,,一氧化碳中毒气象条件,CO Poisoning Weather Conditions
-1069,,感冒等呼吸道疾病气象条件,Respiratory Disease Weather Conditions
-1071,,腹泻等肠道疾病气象条件,Intestinal Diseases Weather Conditions
-1072,,心脑血管疾病气象条件,Cardiovascular Diseases Weather Conditions
-1073,,洪涝灾害气象风险,Flooding Weather Risk
-1074,,重污染气象条件,Heavy Pollution Weather Conditions
-1075,,城市内涝气象风险,Urban Flooding Weather Risk
-1076,,洪水灾害气象风险,Flooding Weather Risk
-1077,,森林火险气象风险,Wildfire Weather Risk
-1078,,气象干旱,Meteorological Drought
-1079,,农业气象风险,Agricultural Weather Risk
-1080,,强季风,Strong Monsoon
-1081,,电线积冰,Ice Accretion on Wires
-1082,,脑卒中气象风险,Stroke Weather Risk
-1084,,森林（草原）火灾气象风险,Wildfire (Grassland) Risk
-1085,,雷雨强风,Thunderstorms and strong winds
-1086,,低温凝冻,Low Temperature Freeze
-1087,,低温冷害,Low Temperature Damage
-1088,,全国农业气象灾害风险,National Agricultural Meteorological Risk
-1089,,冬小麦干热风灾害风险预警,Dry Hot Winds Risk for Winter Wheat
-1101,,洪水,Flood
-1302,,泥石流,Mudflow
-1402,,风暴潮,Storm Surge
-1601,,炎热,Very Hot Weather
-1602,,强烈季风信号,Strong Monsoon Signal
-1603,,山泥倾泻,Landslip
-1604,,热带气旋,Tropical Cyclone
-1605,,火灾危险,Fire Danger
-1606,,新界北部水浸特别报告,Special Announcement on Flooding in the northern New Territories
-1607,,寒冷天气,Cold Weather
-1701,,低温特报,Cold Surge Advisory
-1702,,陆上强风,Strong Wind Advisory
-1703,,降雨特报,Rainfall Advisory
-2001,,大风,Wind
-2002,,强降雪和结冰,Snow-ice
-2003,,大雾,Fog
-2004,,海岸风险,Coastal Event
-2005,,森林火险,Forest Fire
-2006,,雨,Rain
-2007,,大雨洪水,Rain-flood
-2008,,冻雨和结冰,"Freezing rain, icing"
-2009,,地面霜,Ground Frost
-2010,,扬尘风,Dust Raising Winds
-2011,,强地面风,Strong Surface Winds
-2012,,炎热,Hot Day
-2013,,夜间炎热,Warm Night
-2014,,寒冷,Cold Day
-2015,,雷暴和闪电,Thunderstorm and Lightning
-2016,,冰雹风暴,Hailstorm
-2017,,海况风险,Sea area warning
-2018,,渔业风险,Fishermen warning
-2019,,低湿度,Low Humidity
-2020,,累计降水风险,Accumulated Rain
-2021,,冲浪风险,Hazardous Surf Warning 
-2022,,海上大风,Marine Wind Warning
-2023,,道路天气风险,Road Weather Alert
-2024,,雷雨,Thunder Rain
-2025,,雷雨大雾,Thunder rain and Fog
-2026,,破坏性大风,Damaging Winds
-2027,,草原火灾条件,Veld Fire Conditions
-2028,,天气预警建议,Weather Advisory
-2052,,大雪,Snow
-2053,,Zonda Wind,Zonda Wind
-2054,,风暴,Storm
-9998,,天气预警,Severe Weather Warning 
-9999,11B99,其他,Other
+type,type_name_zh,type_name_en
+1001,台风,Typhoon
+1002,龙卷风,Tornado
+1003,暴雨,Rainstorm
+1004,暴雪,Snow Storm
+1005,寒潮,Cold Wave
+1006,大风,Gale
+1007,沙尘暴,Sandstorm
+1008,低温冻害,Low Temperature Freeze
+1009,高温,High Temperature
+1010,热浪,Heat Wave
+1011,干热风,Dry Hot Winds
+1012,下击暴流,Downburst
+1013,雪崩,Avalanche
+1014,雷电,Lightning
+1015,冰雹,Hail
+1016,霜冻,Frost
+1017,大雾,Heavy Fog
+1018,低空风切变,Low-Level Wind Shearl
+1019,霾,Haze
+1020,雷雨大风,Thunder Gust
+1021,道路结冰,Road Icing
+1022,干旱,Drought
+1023,海上大风,Gale at Sea
+1024,高温中暑,Heat Stroke
+1025,森林火险,Wildfire
+1026,草原火险,Grassland Fire
+1027,冰冻,Freeze
+1028,空间天气,Space Weather
+1029,重污染,Heavy Air Pollution
+1030,低温雨雪冰冻,Low Temperature Rain and Snow
+1031,强对流,Strong Convection
+1032,臭氧,Ozone
+1033,大雪,Heavy Snow
+1034,寒冷,Cold
+1035,连阴雨,Continuous Rain
+1036,渍涝风险,Waterlogging
+1037,地质灾害气象风险,Geological Hazard
+1038,强降雨,Heavy Rainfall
+1039,强降温,Severely Falling Temperature
+1040,雪灾,Snow Disaster
+1041,森林（草原）火险,Wildfire (Grassland)
+1042,医疗气象,Medical Meteorology
+1043,雷暴,Thunderstorm
+1044,停课信号,School Closure
+1045,停工信号,Factory Closure
+1046,海上风险,Maritime Risk
+1047,春季沙尘天气,Spring Dust
+1048,降温,Falling Temperature
+1049,台风暴雨,Typhoon and Rainstorm
+1050,严寒,Severe Cold
+1051,沙尘,Sand Dust
+1052,海上雷雨大风,Sea Thunderstorms
+1053,海上大雾,Sea Fog
+1054,海上雷电,Sea Thunder
+1055,海上台风,Sea Typhoon
+1056,低温,Low Temperature
+1057,道路冰雪,Road Ice and Snow
+1058,雷暴大风,Thunderstorm and Gale
+1059,持续低温,Continuous Low Temperature
+1060,能见度不良,Low Visibility
+1061,浓浮沉,Strong Dust
+1062,海区大风,Gale at Sea
+1063,短历时强降水,Short Duration Heavy Precipitation
+1064,短时强降雨,Short-lived Heavy Rain
+1065,海区大雾,Sea Fog
+1066,中暑气象条件,Heat Stroke Conditions
+1067,重污染天气,Heavy Pollution Weather
+1068,一氧化碳中毒气象条件,CO Poisoning Weather Conditions
+1069,感冒等呼吸道疾病气象条件,Respiratory Disease Weather Conditions
+1071,腹泻等肠道疾病气象条件,Intestinal Diseases Weather Conditions
+1072,心脑血管疾病气象条件,Cardiovascular Diseases Weather Conditions
+1073,洪涝灾害气象风险,Flooding Weather Risk
+1074,重污染气象条件,Heavy Pollution Weather Conditions
+1075,城市内涝气象风险,Urban Flooding Weather Risk
+1076,洪水灾害气象风险,Flooding Weather Risk
+1077,森林火险气象风险,Wildfire Weather Risk
+1078,气象干旱,Meteorological Drought
+1079,农业气象风险,Agricultural Weather Risk
+1080,强季风,Strong Monsoon
+1081,电线积冰,Ice Accretion on Wires
+1082,脑卒中气象风险,Stroke Weather Risk
+1084,森林（草原）火灾气象风险,Wildfire (Grassland) Risk
+1085,雷雨强风,Thunderstorms and strong winds
+1086,低温凝冻,Low Temperature Freeze
+1087,低温冷害,Low Temperature Damage
+1088,全国农业气象灾害风险,National Agricultural Meteorological Risk
+1089,冬小麦干热风灾害风险预警,Dry Hot Winds Risk for Winter Wheat
+1302,泥石流,Mudflow
+1101,洪水,Flood
+1402,风暴潮,Storm Surge
+1601,炎热,Very Hot Weather
+1602,强烈季风信号,Strong Monsoon Signal
+1603,山泥倾泻,Landslip
+1604,热带气旋,Tropical Cyclone
+1605,火灾危险,Fire Danger
+1606,新界北部水浸特别报告,Special Announcement on Flooding in the northern New Territories
+1607,寒冷天气,Cold Weather
+1608,雷暴,Thunderstorm
+1609,暴雨,Rainstorm
+1610,霜冻,Frost
+1701,低温特报,Cold Surge Advisory
+1702,陆上强风,Wind
+1703,降雨特报,Rain
+1801,强烈季风信号（黑球）,Strong Monsoon Signal
+1802,风暴潮,Storm Surge
+1803,热带气旋,Tropical Cyclone
+1804,暴雨,Rainstorm
+1805,雷暴,Thunderstorm
+2001,大风,Wind
+2002,强降雪和结冰,Snow-ice
+2003,大雾,Fog
+2004,海岸风险,Coastal Event
+2005,森林火险,Forest Fire
+2006,雨,Rain
+2007,大雨洪水,Rain-flood
+2029,雷暴,Thunderstorm
+2030,高温,High Temperature
+2031,低温,Low Temperature
+2032,雪崩,Avalanches
+2033,洪水,Flooding
+2050,大雨,Rain
+2051,大风,Wind
+2052,大雪,Snow
+2053,Zonda wind,Zonda wind
+2054,暴风,Storm
+2070,扬尘风,Dust Raising Winds
+2071,强地面风,Strong Surface Winds
+2072,炎热,Hot Day
+2073,夜间炎热,Warm Night
+2074,寒冷,Cold Day
+2075,雷暴和闪电,Thunderstorm and Lightning
+2076,冰雹风暴,Hailstorm
+2077,海况风险,Sea area warning
+2078,渔业风险,Fishermen warning
+2079,大雪,Heavy Snow
+2080,沙尘暴,Dust Storm
+2081,热浪,Heat Wave
+2082,寒潮,Cold Wave
+2083,大雾,Fog
+2084,强降雨,Heavy Rain
+2085,地面霜,Ground Frost
+2100,大雾,Fog
+2101,雷雨,Thunder Rain
+2102,雷暴,Thunder Storm
+2103,小雨,Light Rain
+2104,大雨,Heavy Rain
+2105,风,Fresh Wind
+2106,雷暴和沙尘,Thunderstorm and Dust
+2107,沙尘,Dust
+2108,高海浪,High Wave
+2109,霜,Frost
+2111,能见度降低,Drop in Visibility
+2120,低湿度,Low Humidity
+2121,累计降水风险,Accumulated Rain
+2122,寒潮,Cold Wave
+2123,龙卷风,Tornado
+2124,雷暴,Thunderstorm
+2125,冰雹,Hail
+2126,强降雨,Heavy Rainfall
+2127,大风,Gale
+2128,热浪,Heat Wave
+2129,寒冷,Cold
+2130,霜冻,Frost
+2131,干旱,Drought
+2132,森林火险,Forest Fire
+2133,大雪,Heavy Snow
+2134,强降温,Severely Falling Temperature
+2135,暴雨,Rainstorm
+2150,大风,Wind
+2151,降雪和结冰,Snow Ice
+2152,冰冻,Freeze
+2153,雷暴,Thunderstorms
+2154,大雾,Fog
+2155,高温,High Temperature
+2156,低温,Low Temperature
+2157,海岸风险,Coastal Event
+2158,森林火险,Forest Fire
+2159,雪崩,Avalanches
+2160,雨,Rain
+2161,洪水,Flood
+2162,大雨洪水,Rain Flood
+2163,泥石流,Mudflow
+2164,沙尘暴,Duststorm
+2165,冻雨和结冰,Freezing rain and icing
+2166,其他,Other Dangers
+2190,雷暴,Severe Thunderstorms
+2191,破坏性大风,Damaging Winds
+2192,草原火灾条件,Veld Fire Conditions
+2193,天气预警建议,Weather Advisory
+2300,危险海域警报,Hazardous Seas Warning
+2301,重度冷冻喷雾警报,Heavy Freezing Spray Warning
+2302,红旗警报,Red Flag Warning
+2303,冰冻警报,Freeze Warning
+2304,强冰冻警报,Hard Freeze Warning
+2305,极寒警报,Extreme Cold Warning
+2306,风寒警报,Wind Chill Warning
+2307,大风警报,Gale Warning
+2308,过热警报,Excessive Heat Warning
+2309,湖泊效应雪警报,Lake Effect Snow Warning
+2311,扬尘警报,Blowing Dust Warning
+2312,沙尘暴警报,Dust Storm Warning
+2313,风暴警报,Storm Warning
+2314,热带风暴警报,Tropical Storm Warning
+2315,大风警报,High Wind Warning
+2316,高海浪警报,High Surf Warning
+2317,洪水警报,Flood Warning
+2318,湖岸洪水警报,Lakeshore Flood Warning
+2319,沿海洪水警报,Coastal Flood Warning
+2320,灰烬警报,Ashfall Warning
+2321,火山警报,Volcano Warning
+2322,地震预警,Earthquake Warning
+2323,雪崩警报,Avalanche Warning
+2324,冬季风暴警报,Winter Storm Warning
+2325,冰风暴警报,Ice Storm Warning
+2326,暴风雪警报,Snow Squall Warning
+2327,暴风雪警报,Blizzard Warning
+2328,特别海洋警报,Special Marine Warning
+2330,台风警报,Typhoon Warning
+2331,飓风警报,Hurricane Warning
+2332,飓风警报,Hurricane Force Wind Warning
+2333,风暴潮警报,Storm Surge Warning
+2341,山洪警报,Flash Flood Warning
+2343,强雷暴警报,Severe Thunderstorm Warning
+2345,强风警报,Extreme Wind Warning
+2346,龙卷风警报,Tornado Warning
+2348,海啸警报,Tsunami Warning
+2349,火灾天气关注,Fire Weather Watch
+2350,冰冻关注,Freeze Watch
+2351,强冰冻关注,Hard Freeze Watch
+2352,风寒关注,Wind Chill Watch
+2353,极寒关注,Extreme Cold Watch
+2354,过热关注,Excessive Heat Watch
+2355,大风关注,High Wind Watch
+2356,洪水关注,Flood Watch
+2357,湖岸洪水关注,Lakeshore Flood Watch
+2358,沿海洪水关注,Coastal Flood Watch
+2359,重度冷冻喷雾关注,Heavy Freezing Spray Watch
+2360,危险海域关注,Hazardous Seas Watch
+2361,冬季风暴关注,Winter Storm Watch
+2362,大风警戒,Gale Watch
+2363,雪崩关注,Avalanche Watch
+2364,风暴关注,Storm Watch
+2365,热带风暴关注,Tropical Storm Watch
+2366,台风关注,Typhoon Watch
+2367,飓风关注,Hurricane Force Wind Watch
+2368,飓风关注,Hurricane Watch
+2369,风暴潮关注,Storm Surge Watch
+2370,山洪关注,Flash Flood Watch
+2371,强雷暴关注,Severe Thunderstorm Watch
+2372,龙卷风关注,Tornado Watch
+2373,海啸关注,Tsunami Watch
+2374,空气不易扩散通知,Air Stagnation Advisory
+2375,低水位通知,Low Water Advisory
+2376,冷冻喷雾通知,Freezing Spray Advisory
+2377,冻雾通知,Freezing Fog Advisory
+2378,灰烬通知,Ashfall Advisory
+2379,霜冻通知,Frost Advisory
+2380,大风通知,Wind Advisory
+2381,湖风通知,Lake Wind Advisory
+2382,扬尘通知,Blowing Dust Advisory
+2383,粉尘通知,Dust Advisory
+2384,大风通知,Brisk Wind Advisory
+2385,小型船只风险通知,Small Craft Advisory
+2386,小型船只风速通知,Small Craft Advisory For Winds
+2387,河流入口小型船只通知,Small Craft Advisory For Rough Bar
+2388,危险海域小型船只通知,Small Craft Advisory For Hazardous Seas
+2389,浓烟通知,Dense Smoke Advisory
+2390,浓雾通知,Dense Fog Advisory
+2391,海浪高涨通知,High Surf Advisory
+2392,沿海洪水通知,Coastal Flood Advisory
+2393,湖岸洪水通知,Lakeshore Flood Advisory
+2394,水文通知,Hydrologic Advisory
+2395,洪水通知,Flood Advisory
+2396,高温通知,Heat Advisory
+2397,风寒通知,Wind Chill Advisory
+2398,冬季天气通知,Winter Weather Advisory
+2399,雪崩通知,Avalanche Advisory
+2400,海啸通知,Tsunami Advisory
+2409,洪水报告,Flood Statement
+2411,水文展望,Hydrologic Outlook
+2412,危险天气展望,Hazardous Weather Outlook
+2413,空气质量警报,Air Quality Alert
+2414,极端火灾危险,Extreme Fire Danger
+2415,海洋天气报告,Marine Weather Statement
+2416,特殊天气报告,Special Weather Statement
+2417,湖岸洪水报告,Lakeshore Flood Statement
+2418,沿海洪水报告,Coastal Flood Statement
+2419,海滩危害报告,Beach Hazards Statement
+2420,激流报告,Rip Current Statement
+2421,热带低气压当地报告,Tropical Depression Local Statement
+2422,热带风暴当地报告,Tropical Storm Local Statement
+2423,当地台风报告,Typhoon Local Statement
+2424,当地飓风报告,Hurricane Local Statement
+2425,恶劣天气报告,Severe Weather Statement
+2426,山洪暴发报告,Flash Flood Statement
+9998,天气预警,Severe Weather Warning
+9999,其他预警,Other Warning
