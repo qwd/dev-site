@@ -11,10 +11,10 @@ ios:
   dllink: https://a.hecdn.net/download/api_sdk/QWeather_iOS_SDK_Pub_V4.17.zip
   md5: ddedb09235363920b408e1a6cc9434ad
 api:
-  version: "7.13"
-  date: 2022-12-30
+  version: "7.14"
+  date: 2023-08-01
 geoapi:
-  version: 2.0
+  version: "2.0"
   date: 2022-12-18
 
 

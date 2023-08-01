@@ -76,7 +76,7 @@ type,type_name_zh,type_name_en
 1076,洪水灾害气象风险,Flooding Weather Risk
 1077,森林火险气象风险,Wildfire Weather Risk
 1078,气象干旱,Meteorological Drought
-1079,农业气象风险,Agricultural Weather Risk
+1079,农业气象风险,Agro-Meteorological Risk
 1080,强季风,Strong Monsoon
 1081,电线积冰,Ice Accretion on Wires
 1082,脑卒中气象风险,Stroke Weather Risk
@@ -84,7 +84,7 @@ type,type_name_zh,type_name_en
 1085,雷雨强风,Thunderstorms and strong winds
 1086,低温凝冻,Low Temperature Freeze
 1087,低温冷害,Low Temperature Damage
-1088,全国农业气象灾害风险,National Agricultural Meteorological Risk
+1088,全国农业气象灾害风险,National Agro-Meteorological Risk
 1089,冬小麦干热风灾害风险预警,Dry Hot Winds Risk for Winter Wheat
 1302,泥石流,Mudflow
 1101,洪水,Flood
@@ -294,5 +294,4 @@ type,type_name_zh,type_name_en
 2424,当地飓风报告,Hurricane Local Statement
 2425,恶劣天气报告,Severe Weather Statement
 2426,山洪暴发报告,Flash Flood Statement
-9998,天气预警,Severe Weather Warning
 9999,其他预警,Other Warning
