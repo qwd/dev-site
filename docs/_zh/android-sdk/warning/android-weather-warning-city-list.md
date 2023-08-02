@@ -1,7 +1,7 @@
 ---
 title: 天气预警城市列表
 tag: [guide, android, warning, list]
-ref: 2-sdk-android-warning-city-list
+ref: 2-sdk-android-weather-warning-city-list
 ---
 
 获取指定国家或地区当前正在发生预警的城市列表。你可以通过这个列表快速的了解到当前国家或地区都有哪些地方正在发生天气预警。
