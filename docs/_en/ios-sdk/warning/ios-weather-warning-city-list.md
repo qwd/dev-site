@@ -6,9 +6,12 @@ ref: 2-sdk-ios-weather-warning-city-list
 
 Get a list of cities for the specified country or region where weather warnings are currently in effect.
 
-See also [Weather warning API](/en/docs/ios-sdk/warning/ios-weather-warning/) to get warning details.
+See also [Weather warning iOS SDK](/en/docs/ios-sdk/warning/ios-weather-warning/) to get warning details.
 
-> For more warning information, see [Warning Info](/en/docs/resource/warning-info/).
+> **Note:** Weather Warning City List only supports China (including Hong Kong, Macao and China Taiwan) now. For other countries and regions, please use [Weather Warning](/en/docs/ios-sdk/warning/ios-weather-warning/).
+{:.bqwarning}
+
+> **Tips:** For more warning description, see [Resource - Warning Info](/en/docs/resource/warning-info/).
 
 
 | Interface code (Enum)    | Interface              | Class            |

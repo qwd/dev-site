@@ -8,7 +8,10 @@ Get a list of cities for the specified country or region where weather warnings 
 
 See also [Weather warning Android SDK](/en/docs/android-sdk/warning/android-weather-warning/) to get warning details.
 
-> For more warning information, see [Warning Info](/en/docs/resource/warning-info/).
+> **Note:** Weather Warning City List only supports China (including Hong Kong, Macao and China Taiwan) now. For other countries and regions, please use [Weather Warning](/en/docs/android-sdk/warning/android-weather-warning/).
+{:.bqwarning}
+
+> **Tips:** For more warning description, see [Resource - Warning Info](/en/docs/resource/warning-info/).
 
 | Interface Code| Interface  | Class |
 | ---------------- | -------------- | --------------- |

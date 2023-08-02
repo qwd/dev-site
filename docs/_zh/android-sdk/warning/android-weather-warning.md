@@ -1,14 +1,12 @@
 ---
-title: 天气预警信息
+title: 天气灾害预警
 tag: [guide, android, warning, now]
 ref: 1-sdk-android-weather-warning
 ---
 
 天气灾害预警Android SDK可以获取中国及全球多个国家或地区官方发布的实时天气灾害预警数据。
 
-> 使用天气预警API，你需要了解更多[预警信息](/docs/resource/warning-info/)。
-
-> 你也可以先通过[天气预警城市列表API](/docs/android-sdk/warning/android-weather-warning-city-list/)获取到指定国家或地区当前发生预警的所有城市列表。
+> **提示：**关于更多天气预警数据的说明，请参考[实用资料-预警信息](/docs/resource/warning-info/)。
 
 | 接口代码| 接口说明        | 数据类      |
 | ------------ | ---------- | ----------- |
@@ -16,7 +14,7 @@ ref: 1-sdk-android-weather-warning
 
 ### 接口参数说明
 
-{% include params.html p="location-android lang-zhen-sdk" %}
+{% include params.html p="location-android lang-warning" %}
 
 ### 示例代码
 

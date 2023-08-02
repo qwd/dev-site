@@ -6,7 +6,7 @@ ref: 1-api-weather-warning
 
 Get officially issued real-time severe weather warning data around the world.
 
-> **Hint:** For the implementation of weather warnings, see [Warning Info](/docs/resource/warning-info/) in advance.
+> **Hint:** For the implementation of weather warnings, see [Resource - Warning Info](/en/docs/resource/warning-info/) in advance.
 
 ## Request URL
 
@@ -18,7 +18,7 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 
 {% include params.html p="key location" %}
 
-{% include params.html p="lang-zhen" %}
+{% include params.html p="lang-warning" %}
 
 ## Request Example
 

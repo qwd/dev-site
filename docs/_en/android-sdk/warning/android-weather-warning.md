@@ -6,7 +6,7 @@ ref: 1-sdk-android-weather-warning
 
 Get officially issued real-time severe weather warning data around the world.
 
-> For more warning information, see [Warning Info](/en/docs/resource/warning-info/).
+> **Tips:** For more warning description, see [Resource - Warning Info](/en/docs/resource/warning-info/).
 
 | Interface Code| Interface  | Class |
 | ------------ | ---------- | ----------- |
@@ -14,7 +14,7 @@ Get officially issued real-time severe weather warning data around the world.
 
 ### Parameter
 
-{% include params.html p="location-android lang-zhen-sdk" %}
+{% include params.html p="location-android lang-warning" %}
 
 ### Sample Code
 
