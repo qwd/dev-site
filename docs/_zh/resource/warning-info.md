@@ -16,8 +16,6 @@ ref: res-warning
 
 天气灾害预警并非适用于所有城市，我们将不断的扩展这些数据，目前和风天气预警服务支持的国家或地区如下：
 
-> **提示：**你可以使用`range`参数通过[预警城市列表](/docs/api/warning/weather-warning-city-list/)获取该国家的所有预警城市信息。
-
 > **注意：**天气预警基于各国政府部门的官方数据，当官方数据无法正常发布时，我们可能会临时下线遇到问题的国家。
 {:.bqwarning}
 
@@ -40,7 +38,7 @@ ref: res-warning
   </tbody>
 </table>
 
-## 多语言
+## 多语言 {#supported-language}
 
 天气预警可能不适用于所有[我们支持的语言](/docs/resource/language/)，请参考下列场景：
 

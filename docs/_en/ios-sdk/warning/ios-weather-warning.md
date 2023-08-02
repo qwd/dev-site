@@ -6,7 +6,7 @@ ref: 1-sdk-ios-weather-warning
 
 Get officially issued real-time severe weather warning data around the world.
 
-> For more warning information, see [Warning Info](/en/docs/resource/warning-info/).
+> **Tips:** For more warning description, see [Resource - Warning Info](/en/docs/resource/warning-info/).
 
 | Interface code (Enum) | Interface       | Class            |
 | --------------------- | --------------- | ---------------- |
@@ -16,11 +16,8 @@ Get officially issued real-time severe weather warning data around the world.
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-ios" %}
+{% include params.html p="location-ios key-ios lang-warning" %}
 
-> Weather warnings are not available in all cities, see [supported countries or regions for weather warnings](/en/docs/resource/warning-info/#supported-regions).
-
-{% include params.html p="key-ios lang-zhen-sdk" %}
 
 ### Sample Code
 

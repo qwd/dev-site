@@ -6,7 +6,7 @@ ref: 1-api-weather-warning
 
 天气灾害预警API可以获取中国及全球多个国家或地区官方发布的实时天气灾害预警数据。
 
-> **提示：**天气预警有较多规则和需要注意的事项，在开始使用天气预警之前，你应该先阅读[预警信息](/docs/resource/warning-info/)
+> **提示：**天气预警有较多规则和需要注意的事项，在开始使用天气预警之前，你应该先阅读[实用资料-预警信息](/docs/resource/warning-info/)。
 
 ## 请求URL
 
@@ -16,7 +16,7 @@ ref: 1-api-weather-warning
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="key location lang-zhen" %}
+{% include params.html p="key location lang-warning" %}
 
 ## 请求示例
 

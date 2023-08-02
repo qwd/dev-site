@@ -7,4 +7,4 @@ permalink: /en/docs/api/warning/
 ref: 0-api-warning
 ---
 
-Learn more about [supported countries or regions](/en/docs/resource/warning-info/#supported-regions), [warning-level](/en/docs/resource/warning-info/#warning-level) and [warning-type](/en/docs/resource/warning-info/#warning-type).
+Learn more about [supported countries or regions](/en/docs/resource/warning-info/#supported-regions), [warning severity](/en/docs/resource/warning-info/#severity) and [warning type](/en/docs/resource/warning-info/#warning-type).

@@ -19,8 +19,6 @@ Weather warnings are not available for all cities, we will continue to expand th
 > **Note:** Weather warning are based on official data from government departments in each country. When official data is not released properly, we may temporarily take offline the country where the failure occurred.
 {:.bqwarning}
 
-> **Hint:** You can use the `range` parameter to get a list of all warning cities for that country or regions via [Warning City List API](/en/docs/api/warning/weather-warning-city-list/).
-
 <table>
   <thead>
     <tr>
