@@ -4,11 +4,12 @@ tag: [guide, ios, warning, list]
 ref: 2-sdk-ios-weather-warning-city-list
 ---
 
-获取指定国家或地区当前正在发生预警的城市列表。你可以通过这个列表快速的了解到当前国家或地区都有哪些地方正在发生天气预警。
+获取指定国家或地区当前正在发生天气灾害预警的城市列表，根据这些城市列表再查询对应城市的[天气灾害预警](/docs/ios-sdk/warning/ios-weather-warning/)。
 
-根据这些城市列表再查询详细的[预警数据](/docs/api/warning/weather-warning/)。
+> **注意：**目前天气预警城市列表仅适用于获取中国（包括港澳台）城市列表。其他国家和地区，请使用[天气灾害预警](/docs/ios-sdk/warning/ios-weather-warning/)。
+{:.bqwarning}
 
-> 关于天气预警数据的更多信息，可以参考[实用资料-预警信息](/docs/resource/warning-info/)。
+> **提示：**关于更多天气预警数据的说明，请参考[实用资料-预警信息](/docs/resource/warning-info/)。
 
 | 接口代码（枚举）         | 接口             | 数据类           |
 | ------------------------ | ---------------- | ---------------- |
