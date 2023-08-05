@@ -86,9 +86,37 @@ type,type_name_zh,type_name_en
 1087,低温冷害,Low Temperature Damage
 1088,全国农业气象灾害风险,National Agro-Meteorological Risk
 1089,冬小麦干热风灾害风险预警,Dry Hot Winds Risk for Winter Wheat
-1302,泥石流,Mudflow
-1101,洪水,Flood
-1402,风暴潮,Storm Surge
+1201,洪水,Flood
+1202,内涝,Waterlogging
+1203,水库重大险情,Reservoir Danger
+1204,堤防重大险情,Dike Danger
+1205,凌汛灾害,Ice Flood
+1206,渍涝,Waterlogged
+1207,洪涝,Flood
+1208,枯水,Dry Water
+1209,中小河流洪水和山洪气象风险,Flood and flash flood in small and medium rivers
+1210,农村人畜饮水困难,Difficulty drinking water for rural people and animals
+1211,中小河流洪水气象风险,Flood in small and medium rivers
+1212,防汛抗旱风险提示,Flood and Drought Advisory
+1213,城市内涝风险,Urban Waterlogging Risk
+1214,山洪灾害事件,Flash Flood
+1215,农业干旱,Agricultural Drought
+1216,城镇缺水,Urban Water Shortage
+1217,生态干旱,Ecological Drought
+1218,灾害风险预警,Disaster Risk Early Warning
+1219,山洪灾害气象风险,Meteorological Risk of Flash Flood
+1221,水利旱情,Water Conservancy and Drought
+1241,滑坡事件,Landslide
+1242,泥石流事件,Debris Flows
+1243,山体崩塌事件,Landslide Event
+1244,地面塌陷事件,Ground Collapses
+1245,地裂缝事件,Ground Fissure
+1246,地面沉降事件,Land Subsidence
+1247,火山喷发事件,Volcanic Eruption
+1248,地质灾害气象风险,Geological Hazard Meteorological Risk
+1249,地质灾害气象,Geological Hazard Weather
+1250,地质灾害,Geological hazard
+1251,地质灾害风险,Geological hazard Risk
 1601,炎热,Very Hot Weather
 1602,强烈季风信号,Strong Monsoon Signal
 1603,山泥倾泻,Landslip
