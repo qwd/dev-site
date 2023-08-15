@@ -12,3 +12,4 @@ ref: account-overview
 - [Developers](/en/docs/account/developers/)
 - [Recipients](/en/docs/account/recipients/)
 - [Suspension](/en/docs/account/suspension/)
+- [Inactive Account](/en/docs/account/inactive/)
