@@ -18,6 +18,7 @@ reference_docs:
           - subname: account-contact
           - subname: account-developers
           - subname: account-suspension
+          - subname: account-inactive
   - overview: 0-api-overview
     list:
       - name: 0-api-geo
