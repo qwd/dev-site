@@ -216,6 +216,24 @@ type,type_name_zh,type_name_en
 2191,破坏性大风,Damaging Winds
 2192,草原火灾条件,Veld Fire Conditions
 2193,天气预警建议,Weather Advisory
+2200,雷雨,Thunderstorm
+2201,飑,Squall
+2202,空气质量,Air Quality
+2203,降雨,Rainfall
+2204,大雾,Fog
+2205,炎热,Heat
+2207,野火,Wildfire
+2208,大风,Wind
+2209,冻雨,Freezing Rain
+2210,龙卷风,Tornado
+2211,暴风雪,Blizzard
+2212,天气预警,Weather
+2213,冬季风暴,Winter Storm
+2214,冻毛毛雨,Freezing Drizzle
+2215,大雪,Snowfall
+2216,吹雪,Blowing Snow
+2217,极端寒冷,Extreme Cold
+2218,霜冻,Frost
 2300,危险海域警报,Hazardous Seas Warning
 2301,重度冷冻喷雾警报,Heavy Freezing Spray Warning
 2302,红旗警报,Red Flag Warning
