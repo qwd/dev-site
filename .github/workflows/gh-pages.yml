@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master
+    paths: 
+      - '_data/**'
+      - 'docs/**'
+      - 'pages/**'
   workflow_dispatch:
 
 jobs:
@@ -41,19 +45,18 @@ jobs:
   oss:
     needs: deploy
     runs-on: ubuntu-latest
+    env:
+      UPLOAD_DIR: ghp-for-oss
     steps:
       - name: Download artifacts from build
         uses: actions/download-artifact@v3
         with: 
           name: github-pages
       - name: Unpack artifacts
-        run: mkdir ghp-for-oss && tar -xvf artifact.tar -C ghp-for-oss
-      - name: Upload files to OSS
-        uses: fangbinwei/aliyun-oss-website-action@v1
-        with:
-          skipSetting: true
-          accessKeyId: ${{ secrets.OSS_AK_ID }}
-          accessKeySecret: ${{ secrets.OSS_AK_SECRET }}
-          bucket: ${{ secrets.OSS_BUCKET }}
-          endpoint: ${{ secrets.OSS_ENDPOINT }}
-          folder: ghp-for-oss
+        run: mkdir ${{ env.UPLOAD_DIR }} && tar -xvf artifact.tar -C ${{ env.UPLOAD_DIR }}
+      - name: Setup ossutil
+        run: |
+          curl https://gosspublic.alicdn.com/ossutil/install.sh | sudo bash
+          ossutil64 config -e ${{ secrets.OSS_ENDPOINT }} -i ${{ secrets.OSS_AK_ID }} -k ${{ secrets.OSS_AK_SECRET }}
+      - name: Upload to oss
+        run: ossutil64 sync -uf ${{ env.UPLOAD_DIR }} oss://${{ secrets.OSS_BUCKET }} --delete --disable-dir-object
