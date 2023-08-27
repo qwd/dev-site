@@ -12,7 +12,7 @@ ios:
   md5: ddedb09235363920b408e1a6cc9434ad
 api:
   version: "7.15"
-  date: 2023-08-01
+  date: 2023-08-26
 geoapi:
   version: "2.0"
   date: 2022-12-18
