@@ -95,6 +95,10 @@
       author: Ink-33
       code: https://github.com/Ink-33/go-heweather
       description: 和风天气的非官方Golang SDK。Golang SDK for QWeather
+    - name: qweather-go
+      author: equationzhao
+      code: https://github.com/Equationzhao/qweather-go
+      description: 和风天气 go SDK
 - language: JavaScript
   works:
     - name: Météo weather
