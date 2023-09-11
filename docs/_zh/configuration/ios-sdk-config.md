@@ -1,7 +1,7 @@
 ---
 title: iOS SDK配置
 tag: [config, ios]
-description: KEY是获取和风天气服务的密钥（或称之为token、认证信息），当你创建项目的时候会创建第一个KEY。本片文档将详细介绍KEY的使用方法。
+description: KEY是获取和风天气服务的密钥（或称之为token、认证信息），当你创建项目的时候会创建第一个KEY。本篇文档将详细介绍KEY的使用方法。
 ref: config-ios
 ---
 
