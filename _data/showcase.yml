@@ -119,6 +119,10 @@
       author: RTAkland
       code: https://github.com/RTAkland/QWeatherSDK
       description: 基于和风天气 Web API开发的非官方Kotlin/Java SDK. Unofficial Kotlin/Java SDK based on Web API development.
+    - name: Compose-Weather
+      author: KnightWood
+      code: https://github.com/Knightwood/compose-weather
+      description: 完全使用Jetpack Compose打造的Material3风格的天气应用，动态切换主题，android12以上可莫奈取色，天气功能相对完善。
 - language: Objective-C
   works:
     - name: OpenWeatherPlus-iOS
