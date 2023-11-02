@@ -117,6 +117,10 @@ type,type_name_zh,type_name_en
 1249,地质灾害气象,Geological Hazard Weather
 1250,地质灾害,Geological hazard
 1251,地质灾害风险,Geological hazard Risk
+1271,空气污染事件,Air Pollution Incident
+1272,空气重污染,Heavy Air Pollution
+1273,大气污染,Air Pollution
+1274,重污染天气,Heavy Pollution Weather
 1601,炎热,Very Hot Weather
 1602,强烈季风信号,Strong Monsoon Signal
 1603,山泥倾泻,Landslip
