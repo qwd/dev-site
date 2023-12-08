@@ -18,6 +18,7 @@ See _data/response.yml
 {%- endcomment -%}
 {%- assign show_fxlink = include.fxlink | default: 1 -%}
 {%- assign show_update = include.update  | default: 1 -%}
+{%- assign show_refer = include.refer  | default: 1 -%}
 {%- assign isType = include.type  | default: false -%}
 {%- assign type_array = include.type | split: " " -%}
 {%- assign prefix_array = include.prefix | split: " " -%}
@@ -58,8 +59,11 @@ See _data/response.yml
     {%- endif %}
     {%- comment -%}refer fields{%- endcomment -%}
     {%- for item in site.data.dev.response.refer -%}
+    {%- if show_refer == 1 -%}
     <li class="mb-4">
         <code>refer.{{ item.name }}</code> {{ item.desc[page.lang] | markdownify | remove: '<p>' | remove: '</p>' }}
-    </li>  
+    </li>       
+    {%- endif -%}
+
     {%- endfor -%}
 </ul>
