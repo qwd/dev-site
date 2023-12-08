@@ -8,13 +8,16 @@ ref: 3-api-weather-hourly-forecast
 
 ## 请求URL
 
-{% include api-url.html flag="weather-hourly" dev=true %}
+{% include api-url.html apidata="weather-hourly-24h weather-hourly-72h weather-hourly-168h" title=true dev=true %}
+
   
 ## 请求参数
 
-请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
-
 {% include params.html p="location key lang unit" %}
+
+## 请求示例
+
+{% include api-url-example.html apidata="weather-hourly-24h" %}
 
 ## 返回数据
 

@@ -10,7 +10,7 @@ Get hourly weather forecasts at any latitude and longitude in the world, includi
 
 ## Request URL
 
-{% include api-url.html flag="weather-grid-hourly" dev=true %}
+{% include api-url.html apidata="grid-weather-hourly-24h grid-weather-hourly-72h" title=true dev=true %}
 
 ## Request Parameters
 
@@ -20,7 +20,7 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 
 ## Request Example
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="grid-weather-hourly-24h" %}
 
 ## Response
 

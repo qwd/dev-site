@@ -8,7 +8,7 @@ ref: 2-api-grid-weather-daily-forecast
 
 ## 请求URL
 
-{% include api-url.html dev=true %}
+{% include api-url.html apidata="grid-weather-daily-3d grid-weather-daily-7d" title=true dev=true %}
 
 ## 请求参数
 
@@ -18,7 +18,7 @@ ref: 2-api-grid-weather-daily-forecast
 
 ## 请求示例
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="grid-weather-daily-3d" %}
 
 ## 返回数据
 

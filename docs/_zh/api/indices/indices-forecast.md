@@ -11,7 +11,7 @@ ref: 1-api-indices-forecast
 
 ## 请求URL
 
-{% include api-url.html flag="indices" dev=true %}
+{% include api-url.html apidata="indices-forecast-1d indices-forecast-3d" title=true dev=true %}
 
 ## 请求参数
 
@@ -21,7 +21,7 @@ ref: 1-api-indices-forecast
 
 ## 请求示例
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="indices-forecast-1d" %}
 
 ## 返回数据
 

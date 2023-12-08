@@ -8,7 +8,7 @@ ref: 3-api-grid-weather-hourly-forecast
 
 ## 请求URL
 
-{% include api-url.html flag="weather-grid-hourly" dev=true %}
+{% include api-url.html apidata="grid-weather-hourly-24h grid-weather-hourly-72h" title=true dev=true %}
 
 ## 请求参数
 
@@ -18,7 +18,7 @@ ref: 3-api-grid-weather-hourly-forecast
 
 ## 请求示例
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="grid-weather-hourly-24h" %}
 
 ## 返回数据
 

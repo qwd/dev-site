@@ -12,7 +12,7 @@ In addition, GeoAPI - City Lookup can also help you to implement fuzzy search in
 
 ## Request URL
 
-{% include api-url.html flag="city-lookup" %}
+{% include api-url.html apidata="geo-city-lookup" %}
 
 ## Request Parameters
 
@@ -34,7 +34,7 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 
 ## Request Example
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="geo-city-lookup" %}
 
 ## Response
 
