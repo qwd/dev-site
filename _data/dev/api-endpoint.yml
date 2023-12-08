@@ -1,358 +1,357 @@
 geo-city-lookup:
-  example:
-    - link: https://geoapi.qweather.com/v2/city/lookup?location=beij&key=YOUR_KEY
-      title: 
-        zh: 搜索关键字beij 
-        en: Lookup the keyword "beij"
-  endpoint:    
-    - path: /city/lookup
-      name:
-        zh: 城市信息搜索
-        en: City Lookup
+  endpoint:
+    path: /v2/city/lookup
+    name:
+      zh: 城市信息搜索
+      en: City Lookup
+  demo: 
+    link: https://geoapi.qweather.com/v2/city/lookup?location=beij&key=YOUR_KEY
+    name:
+      zh: 搜索关键字beij 
+      en: Lookup the keyword "beij"
 geo-top-city:
-  example:
-    - link: https://geoapi.qweather.com/v2/city/top?number=5&range=cn&key=YOUR_KEY
-      title: 
-        zh: 中国热门城市前5位 
-        en: Top 5 cities in China
+  demo:
+    link: https://geoapi.qweather.com/v2/city/top?number=5&range=cn&key=YOUR_KEY
+    name: 
+      zh: 中国热门城市前5位 
+      en: Top 5 cities in China
   endpoint:
-    - path: /city/top
-      name:
-        zh: 热门城市查询
-        en: Top City
+    path: /v2/city/top
+    name:
+      zh: 热门城市查询
+      en: Top City
 geo-poi-lookup:
-  example:
-    - link: https://geoapi.qweather.com/v2/poi/lookup?type=scenic&location=jings&key=YOUR_KEY
-      title: 
-        zh: 搜索关键字jings
-        en: Lookup keyword "jings"
+  demo:
+    link: https://geoapi.qweather.com/v2/poi/lookup?type=scenic&location=jings&key=YOUR_KEY
+    name: 
+      zh: 搜索关键字jings
+      en: Lookup keyword "jings"
   endpoint:
-    - path: /poi/lookup
-      name:
-        zh: POI搜索
-        en: POI Lookup
+    path: /v2/poi/lookup
+    name:
+      zh: POI搜索
+      en: POI Lookup
 geo-poi-range:
-  example:
-    - link: https://geoapi.qweather.com/v2/poi/range?location=116.40528,39.90498&type=scenic&radius=10&key=YOUR_KEY
-      title: 
-        zh: 北京市中心附近10公里景点 
-        en: Scenic zone within a 10 km radius
+  demo:
+    link: https://geoapi.qweather.com/v2/poi/range?location=116.40528,39.90498&type=scenic&radius=10&key=YOUR_KEY
+    name: 
+      zh: 北京市中心附近10公里景点 
+      en: Scenic zone within a 10 km radius
   endpoint:
-    - path: /poi/range
-      name:
-        zh: POI范围搜索
-        en: POI Range
+    path: /v2/poi/range
+    name:
+      zh: POI范围搜索
+      en: POI Range
 weather-now:
-  example:
-    - link: https://api.qweather.com/v7/weather/now?location=101010100&key=YOUR_KEY
-      title: 
-        zh: 北京实况天气
-        en: Real-time weather for Beijing
+  demo:
+    link: https://api.qweather.com/v7/weather/now?location=101010100&key=YOUR_KEY
+    name: 
+      zh: 北京实况天气
+      en: Real-time weather for Beijing
   endpoint:
-    - path: /weather/now
-      name:
-        zh: 实况天气
-        en: Real-time
-weather-daily:
-  example:
-    - link: https://api.qweather.com/v7/weather/3d?location=101010100&key=YOUR_KEY
-      title:
-        zh: 北京3天预报
-        en: 3-day forecast for Beijing
+    path: /v7/weather/now
+    name:
+      zh: 实况天气
+      en: Real-time
+weather-daily-3d:
+  demo:
+    link: https://api.qweather.com/v7/weather/3d?location=101010100&key=YOUR_KEY
+    name:
+      zh: 北京3天预报
+      en: 3-day forecast for Beijing
   endpoint:
-    - path: /weather/3d
-      name:
-        zh: 3天预报
-        en: 3 Days Forecast
-    - path: /weather/7d
-      name:
-        zh: 7天预报
-        en: 7 Days Forecast
-    - path: /weather/10d
-      name:
-        zh: 10天预报
-        en: 10 Days Forecast
-      biz-only: true
-    - path: /weather/15d
-      name:
-        zh: 15天预报
-        en: 15 Days Forecast
-      biz-only: true
-    - path: /weather/30d
-      name:
-        zh: 30天预报
-        en: 30 Days Forecast
-      biz-only: true
-weather-hourly:
-  example:
-    - link: https://api.qweather.com/v7/weather/24h?location=101010100&key=YOUR_KEY
-      title: 
-        zh: 北京未来24小时逐小时天气
-        en: 24 Hours forecast for Beijing
+    path: /v7/weather/3d
+    name:
+      zh: 3天预报
+      en: 3 Days Forecast
+weather-daily-7d:
   endpoint:
-    - path: /weather/24h
-      name:
-        zh: 逐小时预报（未来24小时）
-        en: Hourly Forecast (24hrs)
-    - path: /weather/72h
-      name:
-        zh: 逐小时预报（未来72小时）
-        en: Hourly Forecast (72hrs)
-      biz-only: true
-    - path: /weather/168h
-      name:
-        zh: 逐小时预报（未来168小时）
-        en: Hourly Forecast (168hrs)
-      biz-only: true
+    path: /v7/weather/7d
+    name:
+      zh: 7天预报
+      en: 7 Days Forecast
+weather-daily-10d:
+  endpoint:
+    path: /v7/weather/10d
+    name:
+      zh: 10天预报
+      en: 10 Days Forecast
+weather-daily-15d:
+  endpoint:
+    path: /v7/weather/15d
+    name:
+      zh: 15天预报
+      en: 15 Days Forecast
+weather-daily-30d:
+  endpoint:
+    path: /v7/weather/30d
+    name:
+      zh: 30天预报
+      en: 30 Days Forecast
+weather-hourly-24h:
+  endpoint:
+    path: /v7/weather/24h
+    name:
+      zh: 逐小时预报（未来24小时）
+      en: Hourly Forecast (24hrs)
+  demo: 
+    link: https://api.qweather.com/v7/weather/24h?location=101010100&key=YOUR_KEY
+    name:
+      zh: 北京未来24小时逐小时天气
+      en: 24 Hours forecast for Beijing
+weather-hourly-72h:
+  endpoint:
+    path: /v7/weather/72h
+    name:
+      zh: 逐小时预报（未来72小时）
+      en: Hourly Forecast (72hrs)
+weather-hourly-168h:
+  endpoint:
+    path: /v7/weather/168h
+    name:
+      zh: 逐小时预报（未来168小时）
+      en: Hourly Forecast (168hrs)
 minutely-precip:
-  example:
-    - link: https://api.qweather.com/v7/minutely/5m?location=116.38,39.91&key=YOUR_KEY
-      title: 
-        zh: 基于116.38N, 39.91E的分钟降水预报
-        en: Minutely precipitation for 116.38N, 39.91E
+  demo:
+    link: https://api.qweather.com/v7/minutely/5m?location=116.38,39.91&key=YOUR_KEY
+    name: 
+      zh: 基于116.38N, 39.91E的分钟降水预报
+      en: Minutely precipitation for 116.38N, 39.91E
   endpoint:
-    - path: /minutely/5m
-      name:
-        zh: 分钟级降水
-        en: Minutely Forecast
-      biz-only: true
+    path: /v7/minutely/5m
+    name:
+      zh: 分钟级降水
+      en: Minutely Forecast
 grid-weather-now:
-  example:
-    - link: https://api.qweather.com/v7/grid-weather/now?location=116.41,39.92&key=YOUR_KEY
-      title: 
-        zh: 基于116.41N, 39.92E的格点实况天气
-        en: Real-time grid weather for 116.41N, 39.92E
+  demo:
+    link: https://api.qweather.com/v7/grid-weather/now?location=116.41,39.92&key=YOUR_KEY
+    name: 
+      zh: 基于116.41N, 39.92E的格点实况天气
+      en: Real-time grid weather for 116.41N, 39.92E
   endpoint:
-    - path: /grid-weather/now
-      name:
-        zh: 格点实况天气
-        en: Real-time by Grid
-      biz-only: true
-grid-weather-daily:
-  example:
-    - link: https://api.qweather.com/v7/grid-weather/3d?location=116.41,39.92&key=YOUR_KEY
-      title: 
-        zh: 基于116.41N, 39.92E的格点3天预报 
-        en: Grid weather 3-day forecast for 116.41N, 39.92E
+    path: /v7/grid-weather/now
+    name:
+      zh: 格点实况天气
+      en: Real-time by Grid
+grid-weather-daily-3d:
+  demo:
+    link: https://api.qweather.com/v7/grid-weather/3d?location=116.41,39.92&key=YOUR_KEY
+    name: 
+      zh: 基于116.41N, 39.92E的格点3天预报 
+      en: Grid weather 3-day forecast for 116.41N, 39.92E
   endpoint:
-    - path: /grid-weather/3d
-      name:
-        zh: 格点3天预报
-        en: 3 Days Forecast by Grid
-      biz-only: true
-    - path: /grid-weather/7d
-      name:
-        zh: 格点7天预报
-        en: 7 Days Forecast by Grid
-      biz-only: true
-grid-weather-hourly:
-  example:
-    - link: https://api.qweather.com/v7/grid-weather/24h?location=116.41,39.92&key=YOUR_KEY
-      title: 
-        zh: 基于116.41N, 39.92E的格点未来预报（24小时）  
-        en: Grid weather hourly forecast(24H) for 116.41N, 39.92E
+    path: /v7/grid-weather/3d
+    name:
+      zh: 格点3天预报
+      en: 3 Days Forecast by Grid
+grid-weather-daily-7d:
   endpoint:
-    - path: /grid-weather/24h
-      name:
-        zh: 逐小时预报（未来24小时）
-        en: Hourly Forecast by Grid (24hrs)
-      biz-only: true
-    - path: /grid-weather/72h
-      name:
-        zh: 逐小时预报（未来72小时）
-        en: Hourly Forecast by Grid (72hrs)
-      biz-only: true
-indices-forecast:
-  example:
-    - link: https://api.qweather.com/v7/indices/1d?type=1,2&location=101010100&key=YOUR_KEY
-      title: 
-        zh: 北京市运动指数与洗车指数
-        en: Sport and car wash indices for Beijing
+    path: /v7/grid-weather/7d
+    name:
+      zh: 格点7天预报
+      en: 7 Days Forecast by Grid
+grid-weather-hourly-24h:
+  demo:
+    link: https://api.qweather.com/v7/grid-weather/24h?location=116.41,39.92&key=YOUR_KEY
+    name: 
+      zh: 基于116.41N, 39.92E的格点未来预报（24小时）  
+      en: Grid weather hourly forecast(24H) for 116.41N, 39.92E
   endpoint:
-    - path: /indices/1d
-      name:
-        zh: 当天生活指数
-        en: Today Indices
-    - path: /indices/3d
-      name:
-        zh: 未来3天生活指数
-        en: 3 Days of Indices
-      biz-only: true
+    path: /v7/grid-weather/24h
+    name:
+      zh: 逐小时预报（未来24小时）
+      en: Hourly Forecast by Grid (24hrs)
+grid-weather-hourly-72h:
+  endpoint:
+    path: /v7/grid-weather/72h
+    name:
+      zh: 逐小时预报（未来72小时）
+      en: Hourly Forecast by Grid (72hrs)
+indices-forecast-1d:
+  endpoint:
+    path: /v7/indices/1d
+    name:
+      zh: 当天生活指数
+      en: Today Indices
+  demo:
+    link: https://api.qweather.com/v7/indices/1d?type=1,2&location=101010100&key=YOUR_KEY
+    name: 
+      zh: 北京市运动指数与洗车指数
+      en: Sport and car wash indices for Beijing
+indices-forecast-3d:
+  endpoint:
+    path: /v7/indices/3d
+    name:
+      zh: 未来3天生活指数
+      en: 3 Days of Indices
 warning-now:
-  example:
-    - link: https://api.qweather.com/v7/warning/now?location=101230201&lang=en&key=YOUR_KEY
-      title: 
-        zh: 厦门市预警 
-        en: Weather warning message for Xiamen
+  demo:
+    link: https://api.qweather.com/v7/warning/now?location=101230201&lang=en&key=YOUR_KEY
+    name: 
+      zh: 厦门市预警 
+      en: Weather warning message for Xiamen
   endpoint:
-    - path: /warning/now
-      name:
-        zh: 天气灾害预警
-        en: Severe Weather
+    path: /v7/warning/now
+    name:
+      zh: 天气灾害预警
+      en: Severe Weather
 warning-list:
-  example:
-    - link: https://api.qweather.com/v7/warning/list?range=cn&key=YOUR_KEY
-      title: 
-        zh: 中国灾害预警城市列表 
-        en: Warning city list for China
+  demo:
+    link: https://api.qweather.com/v7/warning/list?range=cn&key=YOUR_KEY
+    name: 
+      zh: 中国灾害预警城市列表 
+      en: Warning city list for China
   endpoint: 
-    - path: /warning/list
-      name:
-        zh: 天气灾害预警城市列表
-        en: Severe Weather City List
+    path: /v7/warning/list
+    name:
+      zh: 天气灾害预警城市列表
+      en: Severe Weather City List
 air-now:
-  example:
-    - link: https://api.qweather.com/v7/air/now?location=101010100&key=YOUR_KEY
-      title: 
-        zh: 北京市实时空气质量
-        en: Real-time air quality for Beijing
+  demo:
+    link: https://api.qweather.com/v7/air/now?location=101010100&key=YOUR_KEY
+    name: 
+      zh: 北京市实时空气质量
+      en: Real-time air quality for Beijing
   endpoint:
-    - path: /air/now
-      name:
-        zh: 实时空气质量
-        en: Real-time
+    path: /v7/air/now
+    name:
+      zh: 实时空气质量
+      en: Real-time
 air-daily:
-  example:
-    - link: https://api.qweather.com/v7/air/5d?location=101010100&key=YOUR_KEY
-      title: 
-        zh: 北京空气质量5天预报 
-        en: Air quality daily forecast for Beijing
+  demo:
+    link: https://api.qweather.com/v7/air/5d?location=101010100&key=YOUR_KEY
+    name: 
+      zh: 北京空气质量5天预报 
+      en: Air quality daily forecast for Beijing
   endpoint:
-    - path: /air/5d
-      name:
-        zh: 空气质量5天预报
-        en: 5 Days Forecast
-      biz-only: true
+    path: /v7/air/5d
+    name:
+      zh: 空气质量5天预报
+      en: 5 Days Forecast
 time-machine-weather:
-  example:
-    - link: https://api.qweather.com/v7/historical/weather?location=101010100&date=20200725&key=YOUR_KEY
-      title: 
-        zh: 北京天气历史数据，替换`date=20200725`为最近10天的日期。
-        en: Historical weather data for Beijing, replace "date=20200725" with the last 10 days.
+  demo:
+    link: https://api.qweather.com/v7/historical/weather?location=101010100&date=20200725&key=YOUR_KEY
+    name: 
+      zh: 北京天气历史数据，替换`date=20200725`为最近10天的日期。
+      en: Historical weather data for Beijing, replace "date=20200725" with the last 10 days.
   endpoint:
-    - path: /historical/weather
-      name:
-        zh: 历史天气数据
-        en: Historical Weather
+    path: /v7/historical/weather
+    name:
+      zh: 历史天气数据
+      en: Historical Weather
 time-machine-air:
-  example:
-    - link: https://api.qweather.com/v7/historical/air?location=101010100&date=20200725&key=YOUR_KEY
-      title: 
-        zh: 北京空气质量历史数据，替换`date=20200725`为最近10天的日期
-        en: Historical air quality data for Beijing, replace "date=20200725" with the last 10 days.
+  demo:
+    link: https://api.qweather.com/v7/historical/air?location=101010100&date=20200725&key=YOUR_KEY
+    name: 
+      zh: 北京空气质量历史数据，替换`date=20200725`为最近10天的日期
+      en: Historical air quality data for Beijing, replace "date=20200725" with the last 10 days.
   endpoint:
-    - path: /historical/air
-      name:
-        zh: 历史空气质量数据
-        en: Historical Air Quality
+    path: /v7/historical/air
+    name:
+      zh: 历史空气质量数据
+      en: Historical Air Quality
 storm-list:
-  example:
-    - link: https://api.qweather.com/v7/tropical/storm-list?basin=NP&year=2020&key=YOUR_KEY
-      title: 
-        zh: 西北太平洋2020年台风列表
-        en: Storm list for NorthWest Pacific in 2020
+  demo:
+    link: https://api.qweather.com/v7/tropical/storm-list?basin=NP&year=2020&key=YOUR_KEY
+    name: 
+      zh: 西北太平洋2020年台风列表
+      en: Storm list for NorthWest Pacific in 2020
   endpoint:
-    - path: /tropical/storm-list
-      name:
-        zh: 台风查询
-        en: Storm List
-      biz-only: true
+    path: /v7/tropical/storm-list
+    name:
+      zh: 台风查询
+      en: Storm List
 storm-track:
-  example:
-    - link: https://api.qweather.com/v7/tropical/storm-track?stormid=NP_2021&key=YOUR_KEY
-      title: 
-        zh: 2021年烟花台风路径 
-        en: Typhoon In-Fa in 2021
+  demo:
+    link: https://api.qweather.com/v7/tropical/storm-track?stormid=NP_2021&key=YOUR_KEY
+    name: 
+      zh: 2021年烟花台风路径 
+      en: Typhoon In-Fa in 2021
   endpoint:
-    - path: /tropical/storm-track
-      name:
-        zh: 台风路径
-        en: Tropical Cyclones Track
-      biz-only: true
+    path: /v7/tropical/storm-track
+    name:
+      zh: 台风路径
+      en: Tropical Cyclones Track
 storm-forecast:
-  example:
-    - link: https://api.qweather.com/v7/tropical/storm-forecast?stormid=NP_2106&key=YOUR_KEY
-      title: 
-        zh: 2021年烟花台风预报 
-        en: Typhoon In-Fa forecast in 2021
+  demo:
+    link: https://api.qweather.com/v7/tropical/storm-forecast?stormid=NP_2106&key=YOUR_KEY
+    name: 
+      zh: 2021年烟花台风预报 
+      en: Typhoon In-Fa forecast in 2021
   endpoint:
-    - path: /tropical/storm-forecast
-      name:
-        zh: 台风预报
-        en: Tropical Cyclones Forecast
-      biz-only: true
+    path: /v7/tropical/storm-forecast
+    name:
+      zh: 台风预报
+      en: Tropical Cyclones Forecast
 astronomy-sun:
-  example:
-    - link: https://api.qweather.com/v7/astronomy/sun?location=101010100&date=20210220&key=YOUR_KEY
-      title: 
-        zh: 北京2021年2月20日日出日落时间，替换`date=20210220`为未来60天的日期。
-        en: Sunrise and sunset on 2021-02-20 for Beijing, replace `date=20210220` with next 60 days.
+  demo:
+    link: https://api.qweather.com/v7/astronomy/sun?location=101010100&date=20210220&key=YOUR_KEY
+    name: 
+      zh: 北京2021年2月20日日出日落时间，替换`date=20210220`为未来60天的日期。
+      en: Sunrise and sunset on 2021-02-20 for Beijing, replace `date=20210220` with next 60 days.
   endpoint:
-    - path: /astronomy/sun
-      name:
-        zh: 日出日落
-        en: Sunrise and sunset
+    path: /v7/astronomy/sun
+    name:
+      zh: 日出日落
+      en: Sunrise and sunset
 astronomy-moon:
-  example:
-    - link: https://api.qweather.com/v7/astronomy/moon?location=101010100&date=20211120&key=YOUR_KEY
-      title: 
-        zh: 北京2021年11月20日月出月落时间和月相，替换`date=20211120`为未来60天的日期。
-        en: Moon rise, moon set and moon phase on 2021-11-20 for Beijing, replace `date=20211120` with next 60 days.
+  demo:
+    link: https://api.qweather.com/v7/astronomy/moon?location=101010100&date=20211120&key=YOUR_KEY
+    name: 
+      zh: 北京2021年11月20日月出月落时间和月相，替换`date=20211120`为未来60天的日期。
+      en: Moon rise, moon set and moon phase on 2021-11-20 for Beijing, replace `date=20211120` with next 60 days.
   endpoint:
-    - path: /astronomy/moon
-      name:
-        zh: 月升月落和月相
-        en: Moon and Moon Phase
+    path: /v7/astronomy/moon
+    name:
+      zh: 月升月落和月相
+      en: Moon and Moon Phase
 astronomy-solar-elevation-angle:
-  example:
-    - link: https://api.qweather.com/v7/astronomy/solar-elevation-angle?location=120.34,36.08&alt=43&date=20210220&time=1230&tz=0800&key=YOUR_KEY
-      title: 
-        zh: 120.34,36.08位置在2021-02-20T12:30+0800时的太阳高度角
-        en: Solar elevation angle at 120.34,36.08 at 2021-02-20T12:30+0800
+  demo:
+    link: https://api.qweather.com/v7/astronomy/solar-elevation-angle?location=120.34,36.08&alt=43&date=20210220&time=1230&tz=0800&key=YOUR_KEY
+    name: 
+      zh: 120.34,36.08位置在2021-02-20T12:30+0800时的太阳高度角
+      en: Solar elevation angle at 120.34,36.08 at 2021-02-20T12:30+0800
   endpoint:
-    - path: /astronomy/solar-elevation-angle
-      name:
-        zh: 太阳高度角
-        en: Solar Elevation Angle
-      biz-only: true
-solar-radiation-hourly:
-  example:
-    - link: https://api.qweather.com/v7/solar-radiation/24h?location=116.41,39.92&key=YOUR_KEY
-      title: 
-        zh: 116.41,39.92位置的未来24小时辐照预报
-        en: Forecast for the next 24 hours at 116.41,39.92
+    path: /v7/astronomy/solar-elevation-angle
+    name:
+      zh: 太阳高度角
+      en: Solar Elevation Angle
+solar-radiation-hourly-24h:
+  demo:
+    link: https://api.qweather.com/v7/solar-radiation/24h?location=116.41,39.92&key=YOUR_KEY
+    name: 
+      zh: 116.41,39.92位置的未来24小时辐照预报
+      en: Forecast for the next 24 hours at 116.41,39.92
   endpoint:
-    - path: /solar-radiation/24h
-      name: 
-        zh: 逐小时预报（未来24小时）
-        en: Hourly Forecast (24hrs)
-      biz-only: true
-    - path: /solar-radiation/72h
-      name: 
-        zh: 逐小时预报（未来72小时）
-        en: Hourly Forecast (72hrs)
-      biz-only: true
+    path: /v7/solar-radiation/24h
+    name: 
+      zh: 逐小时预报（未来24小时）
+      en: Hourly Forecast (24hrs)
+solar-radiation-hourly-72h:
+  endpoint:
+    path: /v7/solar-radiation/72h
+    name: 
+      zh: 逐小时预报（未来72小时）
+      en: Hourly Forecast (72hrs)
 ocean-tide:
-  example:
-    - link: https://api.qweather.com/v7/ocean/tide?location=P2951&date=20210206&key=YOUR_KEY
-      title: 
-        zh: 大连2021年02月06日潮汐数据 
-        en: Dalian tide table on 2021-02-06
+  demo:
+    link: https://api.qweather.com/v7/ocean/tide?location=P2951&date=20210206&key=YOUR_KEY
+    name: 
+      zh: 大连2021年02月06日潮汐数据 
+      en: Dalian tide table on 2021-02-06
   endpoint:
-    - path: /ocean/tide
-      name:
-        zh: 潮汐
-        en: Tide
-      biz-only: true
+    path: /v7/ocean/tide
+    name:
+      zh: 潮汐
+      en: Tide
 ocean-currents:
-  example:
-    - link: https://api.qweather.com/v7/ocean/currents?location=P66981&date=20210310&key=YOUR_KEY
-      title: 
-        zh: 珠江口2021年02月16日潮流数据 
-        en: ZHUJIANG ESTURAY‘s currents on 2021-02-16 
+  demo:
+    link: https://api.qweather.com/v7/ocean/currents?location=P66981&date=20210310&key=YOUR_KEY
+    name: 
+      zh: 珠江口2021年02月16日潮流数据 
+      en: ZHUJIANG ESTURAY‘s currents on 2021-02-16 
   endpoint:
-    - path: /ocean/currents
-      name:
-        zh: 潮流
-        en: Currents
-      biz-only: true
+    path: /v7/ocean/currents
+    name:
+      zh: 潮流
+      en: Currents

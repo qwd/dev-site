@@ -19,10 +19,10 @@ links:
   blog: https://blog.qweather.com
   icons: https://icons.qweather.com
   widget: https://widget.qweather.com
-  api: https://api.qweather.com/v7
-  devapi: https://devapi.qweather.com/v7
-  geoapi: https://geoapi.qweather.com/v2
-  datasetapi: https://datasetapi.qweather.com/v1
+  api: https://api.qweather.com
+  devapi: https://devapi.qweather.com
+  geoapi: https://geoapi.qweather.com
+  datasetapi: https://datasetapi.qweather.com
   github: https://github.com/qwd
   mit: https://github.com/qwd/docs/blob/master/LICENSE
   ccby4: https://creativecommons.org/licenses/by/4.0/

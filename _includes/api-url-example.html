@@ -1,8 +1,6 @@
-{%- assign flag = page.tag[2] | append: '-' | append: page.tag[3] -%}
-{% for item in site.data.dev.api-endpoint[flag].example %}
-{{ item.title[page.lang] | markdownify }}
-<!-- <pre><code>curl -L -X GET {{ item.link}}</code></pre> -->
+{%- assign apidata_default = page.tag[2] | append: '-' | append: page.tag[3] -%}
+{%- assign apidata = include.apidata | default: apidata_default -%}
+{{ site.data.dev.api-endpoint[apidata].demo.name[page.lang] | markdownify }}
 {% highlight bash %}
-curl -L -X GET --compressed '{{ item.link}}'
+curl -L -X GET --compressed '{{- site.data.dev.api-endpoint[apidata].demo.link }}'
 {% endhighlight %}
-{% endfor %}

@@ -1,17 +1,21 @@
 <div class="request-url mb-3">
-    {%- assign flag = page.tag[2] | append: '-' | append: page.tag[3] -%}
-    {% for item in site.data.dev.api-endpoint[flag].endpoint %}
-    {%- case page.tag[2] -%}
-        {%- when "geo" -%}
-        <pre><code>{{ site.links.geoapi }}{{ item.path }}?[{{- site.data.t[page.lang].rp }}]</code></pre>
-        {%- else -%}
-        {%- if forloop.length > 1 -%}
-        <span class="my-3 d-block text-bold">{{- item.name[page.lang] -}}</span>    
-        {%- endif -%}
-        <pre><code>{{ site.links.api }}{{ item.path }}?[{{- site.data.t[page.lang].rp }}]</code></pre>
-    {%- endcase -%}
-    {% endfor %}
-    {%- if include.dev == true -%}
-    {{ site.data.t[page.lang].api-url-note | markdownify }}    
+    {%- comment -%} setup default apidata from tags {%- endcomment -%}
+    {%- assign apidata_default = page.tag[2] | append: '-' | append: page.tag[3] -%}
+    {%- assign apidata = include.apidata | default: apidata_default | split: " " -%}
+    {%- comment -%} setup default apihost from tags {%- endcomment -%}
+    {%- if page.tag[2] == "geo" -%}
+    {%- assign apihost_default = site.links.geoapi -%}    
+    {%- else -%}
+    {%- assign apihost_default = site.links.api -%}      
     {%- endif -%}
+    {%- assign apihost = include.apihost | default: apihost_default -%}
+    {% for item in apidata %}
+        {% if include.title == true -%}
+        <span class="my-3 d-block text-bold">{{- site.data.dev.api-endpoint[item].endpoint.name[page.lang] -}}</span>    
+        {% endif -%}
+        <pre><code>{{ apihost }}{{ site.data.dev.api-endpoint[item].endpoint.path }}?&#123;{{- site.data.t[page.lang].rp }}&#125;</code></pre>
+    {%- endfor -%}
+    {% if include.dev == true -%}
+    {{ site.data.t[page.lang].api-url-note | markdownify }}    
+    {%- endif %}
 </div>
