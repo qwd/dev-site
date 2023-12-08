@@ -111,24 +111,13 @@ location-id-ios:
      
      For example: `location=101010100`
   rqd: true
-gzip: 
-  name: gzip
-  text:
-    zh: |
-     对API接口进行压缩，可以极大的减少API接口访问延迟，减少缓存空间，提高接口连接成功率。**默认开启gzip**
-     - `y` 使用gzip方式压缩，默认
-     - `n` 不使用压缩
-    en: |
-     Enable Gzip can greatly reduce the latency of API access, save network traffic.
-     - <code>y</code> enable gzip, **default**
-     - <code>n</code> disable gzip
 lang: 
   name: lang
   text: 
     en: |
-     Multi-language setting, see [Language code](/en/docs/resource/language/) for available value. If data does not match the language you set, it will return results in English or its native language. 
+     Multi-language setting, please check out [Language](/en/docs/resource/language/) in order to understand how our multi-language works and how to set up multi-language.
     zh: |
-     多语言设置，更多语言可选值参考[语言代码](/docs/resource/language/)。当数据不匹配你设置的语言时，将返回英文或其本地语言结果。
+     多语言设置，请阅读[多语言](/docs/resource/language/)文档，以便了解我们的多语言是如果工作的以及数据是否支持多语言。
 lang-warning: 
   name: lang
   text: 
