@@ -30,7 +30,7 @@ ref: 1-api-city-lookup
 > 
 > 如请求参数仅为`location=chaoyang`时，返回的结果包括北京市的朝阳区、辽宁省的朝阳市以及长春市的朝阳区
 
-{% include params.html p="range number lang" %}
+{% include params.html p="range number lang-def" %}
 
 ## 请求示例
 

@@ -12,7 +12,7 @@ ref: 2-sdk-android-geo-top
 
 ### 接口参数说明
 
-{% include params.html p="range number lang-sdk" %}
+{% include params.html p="range number lang-def" %}
 
 ### 示例代码
 

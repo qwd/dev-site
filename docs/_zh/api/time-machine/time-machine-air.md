@@ -17,7 +17,7 @@ ref: 2-api-historical-air
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="location-id date10back key lang" %}
+{% include params.html p="location-id date10back key lang-def" %}
 
 ## 请求示例
 

@@ -14,7 +14,7 @@ Get hourly weather forecasts for cities around the world for the next 24-168 hou
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location key lang unit" %}
+{% include params.html p="location key lang-def unit" %}
 
 ## Request Example
 

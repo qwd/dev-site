@@ -14,7 +14,7 @@ Get hourly weather forecasts for cities around the world for the next 24-168 hou
 
 ### Parameter
 
-{% include params.html p="location-android lang-sdk unit-sdk" %}
+{% include params.html p="location-android lang-def unit-sdk" %}
 
 ### Sample Code
 

@@ -16,7 +16,7 @@ Get the last 10 days of air quality history data.
 
 ### Parameter
 
-{% include params.html p="location-id date10back lang-sdk" %}
+{% include params.html p="location-id date10back lang-def" %}
 
 ### Sample Code
 

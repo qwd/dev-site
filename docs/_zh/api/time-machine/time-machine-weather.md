@@ -24,7 +24,7 @@ ref: 1-api-historical-weather
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="location-id date10back key lang unit" %}
+{% include params.html p="location-id date10back key lang-def unit" %}
 
 ## 请求示例
 

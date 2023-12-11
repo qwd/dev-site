@@ -16,7 +16,7 @@ ref: 2-sdk-android-weather-daily-forecast
 
 ### 接口参数说明
 
-{% include params.html p="location-android lang-sdk unit-sdk" %}
+{% include params.html p="location-android lang-def unit-sdk" %}
 
 ### 示例代码
 

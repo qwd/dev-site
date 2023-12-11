@@ -18,7 +18,7 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 
 {% include params.html p="key location" %}
 
-{% include params.html p="lang-warning" %}
+{% include params.html p="lang-def" %}
 
 ## Request Example
 

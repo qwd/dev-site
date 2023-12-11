@@ -13,7 +13,7 @@ ref: 3-api-weather-hourly-forecast
   
 ## 请求参数
 
-{% include params.html p="location key lang unit" %}
+{% include params.html p="location key lang-def unit" %}
 
 ## 请求示例
 

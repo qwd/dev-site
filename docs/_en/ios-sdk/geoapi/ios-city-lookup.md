@@ -14,7 +14,7 @@ City Lookup provides reverse geocoding, geolocation lookup services, supports mu
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="key-ios location-geo lang-sdk adm range number" %}
+{% include params.html p="key-ios location-geo lang-def adm range number" %}
 
 ### Sample Code
 

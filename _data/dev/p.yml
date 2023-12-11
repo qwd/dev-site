@@ -111,41 +111,13 @@ location-id-ios:
      
      For example: `location=101010100`
   rqd: true
-lang: 
+lang-def: 
   name: lang
   text: 
     en: |
      Multi-language setting, please see [Language](/en/docs/resource/language/) to find out how our multi-language works and how to set up.
     zh: |
-     多语言设置，请阅读[多语言](/docs/resource/language/)文档，以便了解我们的多语言是如何工作、如何设置以及数据是否支持多语言。
-lang-warning: 
-  name: lang
-  text: 
-    en: |
-     Multi-language setting, see [Language code](/en/docs/resource/language/) and [Supported language for warning](/en/docs/resource/warning-info/#supported-language). 
-    zh: |
-     多语言设置，参考[语言代码](/docs/resource/language/)以及[天气预警支持的语言](/docs/resource/warning-info/#supported-language)。
-lang-zhen: 
-  name: lang
-  text: 
-    en: |
-     Multi-language settings, only support Chinese and English for this data. The available value are `lang=zh` and `lang=en`
-    zh: |
-     多语言设置，本数据**仅支持中文和英文**，可选值是`lang=zh` 和 `lang=en`
-lang-sdk:
-  name: lang
-  text:
-    zh: |-
-     多语言设置，当数据不匹配你设置的语言时，将返回英文或其本地语言结果。可选语言请参考[多语言参数](/docs/resource/language/)。
-    en: |-
-     Multi-language, **default Chinese**, if data does not match the language you set, it will return in English or its native language. Language parameter please refer to [Language](/en/docs/resource/language/)
-lang-zhen-sdk: 
-  name: lang
-  text: 
-    en: |
-     Multi-language settings, only support Chinese and English for this data. The available value are `lang=zh` and `lang=en`
-    zh: |
-     多语言设置，**默认中文**，本数据**仅支持中文和英文**。可选语言请参考[多语言参数](/docs/resource/language/)。
+     多语言设置，请阅读[多语言](/docs/resource/language/)文档，了解我们的多语言是如何工作、如何设置以及数据是否支持多语言。
 unit: 
   name: unit
   text: 

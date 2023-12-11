@@ -12,7 +12,7 @@ POI Range Android SDK provides the ability to query all POI information within a
 
 ### Parameter
 
-{% include params.html p="location-coord geo-type radius number lang-sdk" %}
+{% include params.html p="location-coord geo-type radius number lang-def" %}
 
 ### Sample Code
 

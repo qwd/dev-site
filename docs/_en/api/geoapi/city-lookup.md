@@ -30,7 +30,7 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 >
 > If without `adm`, like `location=chaoyang`, the returned results include Chaoyang District in Beijing, Chaoyang City in Liaoning Province, and Chaoyang District in Changchun City
 
-{% include params.html p="range number lang" %}
+{% include params.html p="range number lang-def" %}
 
 ## Request Example
 

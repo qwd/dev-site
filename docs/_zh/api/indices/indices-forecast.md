@@ -17,7 +17,7 @@ ref: 1-api-indices-forecast
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="location key idx-type lang-zhen" %}
+{% include params.html p="location key idx-type lang-def" %}
 
 ## 请求示例
 

@@ -17,7 +17,7 @@ Get weather indices forecast data for cities in China and around the world.
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location key idx-type lang-zhen" %}
+{% include params.html p="location key idx-type lang-def" %}
 
 ## Request Example
 

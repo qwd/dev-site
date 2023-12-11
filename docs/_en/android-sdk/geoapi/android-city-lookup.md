@@ -12,7 +12,7 @@ With the City Lookup, you can get the basic information of the city, including t
 
 ### Parameter
 
-{% include params.html p="location-geo adm range number lang-sdk" %}
+{% include params.html p="location-geo adm range number lang-def" %}
 
 ### Sample Code
 

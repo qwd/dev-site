@@ -22,7 +22,7 @@ Get the last 10 days of weather history data.
 
 ### Parameter
 
-{% include params.html p="location-id-android date10back lang-sdk unit-sdk" %}
+{% include params.html p="location-id-android date10back lang-def unit-sdk" %}
 
 ### Sample Code
 

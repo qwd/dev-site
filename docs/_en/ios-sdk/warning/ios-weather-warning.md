@@ -16,7 +16,7 @@ Get officially issued real-time severe weather warning data around the world.
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-ios key-ios lang-warning" %}
+{% include params.html p="location-ios key-ios lang-def" %}
 
 
 ### Sample Code

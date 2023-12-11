@@ -14,7 +14,7 @@ Get weather daily forecasts for the next 3-30 days for cities around the world.
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location key lang unit" %}
+{% include params.html p="location key lang-def unit" %}
 
 ## Request Example
 

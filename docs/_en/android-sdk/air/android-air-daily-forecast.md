@@ -12,7 +12,7 @@ Air Quality Daily Forecast API for Chinese cities, including AQI, air quality le
 
 ### Parameter
 
-{% include params.html p="location-android lang-sdk" %}
+{% include params.html p="location-android lang-def" %}
 
 ### Sample Code
 
