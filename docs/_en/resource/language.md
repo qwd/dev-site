@@ -1,18 +1,50 @@
 ---
 title: Language
 tag: resource
-toc: false
-description: QWeather supports more than 30 languages ​​including Chinese, English, German, French, Spanish, Italian, Japanese, Korean, Russian, Thai, etc., and can be called at any time with the lang parameter
+description: QWeather supports 30+ popular languages and the official language of the country or region where it is located, ​​including Chinese, English, German, French, Spanish, Italian, Japanese, Korean, Russian, Thai, etc., and can be called at any time with the lang parameter.
 redirect_from: /en/docs/start/language/
 ref: res-lang
 ---
 
-QWeather supports more than 30 languages ​​including Chinese, English, German, French, Spanish, Italian, Japanese, Korean, Russian, Thai, etc. The following are the multi-language parameters in the API or SDK.
+QWeather supports 30+ languages and the official language of the country or region where it is located.
 
-> The default language is Chinese, if some city names do not have Chinese, use English or local language instead.
+## Default language
 
-> Some data (such as weather indices, warning details) only support local language or English.
-{:.bqwarning}
+Multi-language is optional, the default value is the official language of the country or region, if there is no official language or there are multiple official languages, we will choose the most popular or widely used language, for example:
+
+- New York: English
+- Montreal: English
+- Bengaluru: Hindi
+
+## Fallback order
+
+If some data does not respond to your language setting, it will fall back to the next supported language in the following order:
+
+Multi-language **is not set**, the default language will be used, the order is:
+
+```
+Official language > English
+```
+
+A specified language **is set**, the order is: 
+
+```
+Specified language > Official language > English
+```
+
+## Exception
+
+Most of the data supports multi-language and official languages, the following table lists which data cannot fully support multi-language.
+
+| Data  | Supported Languages | Note  |
+| --- | --- | --- |
+| [Weather Indices](/en/docs/api/indices/) | Chinese, English |     |
+| [Weather Warning](/en/docs/api/warning/) | Partial | See [Warning Info - Supported language](/en/docs/resource/warning-info/#supported-language) |
+| [Minutely Forecast](/en/docs/api/minutely/minutely-precipitation/) | Chinese, English |     |
+
+## Language code
+
+You can specify the language of the data using the query parameter `lang`, here is the multi-language code in the API or SDK.
 
 | Language name | API code | iOS SDK  |Android SDK  |
 | ----------| -------------- |-------------------- |-- ------ |
@@ -42,7 +74,7 @@ QWeather supports more than 30 languages ​​including Chinese, English, Germa
 | Czech | cs |LANGUAGE_TYPE_CS |CS |
 | Estonian | et |LANGUAGE_TYPE_ET |ET |
 | Vietnamese | vi |LANGUAGE_TYPE_VI |VI |
-| Filipino | fil |LANGUAGE_TYPE_FIL |fFIL |
+| Filipino | fil |LANGUAGE_TYPE_FIL |FIL |
 | Finnish | fi |LANGUAGE_TYPE_FI |FI |
 | Hebrew | he |LANGUAGE_TYPE_HE |HE |
 | Icelandic | is |LANGUAGE_TYPE_IS |IS |

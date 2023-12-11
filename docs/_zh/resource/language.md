@@ -1,17 +1,51 @@
 ---
 title: 多语言
 tag: resource
-toc: false
-description: 和风天气支持30+种主流语言及所在地区的当地语言，包括中英德法西意日韩俄泰等多语言，你可以使用lang参数随时调用。
+description: 和风天气支持30+种主流语言及所在地区的官方语言，包括中英德法西意日韩俄泰等多语言，你可以使用lang参数随时调用。
 redirect_from: /docs/start/language/
 ref: res-lang
 ---
 
-和风天气支持30+种主流语言，包括中英德法西意日韩俄泰等多语言，你可以使用lang参数随时调用。以下是在API或SDK中的多语言参数。
+和风天气支持30+种主流语言以及所在国家或地区的官方语言。
 
-> **提示：**默认语言为中文，如一些城市名称没有中文的，使用英文或本地语言代替。
+## 默认语言 {#default-language}
 
-> **注意：**某些数据（如生活指数、灾害预警的详情）中的部分内容仅支持本地语言或英语。
+多语言是可选项，默认值是所在国家或地区的官方语言，如不存在官方语言或有多种官方语言，我们将选择其中最为流行或使用人数较高的语言，例如：
+
+- 纽约：英语
+- 蒙特利尔：英语
+- 班加罗尔：印地语
+
+## 回退顺序 {#fallback-order}
+
+如果一些数据无法响应你的语言设置时，将按照下列规则回退到下一个所支持的语言：
+
+**没有设置**多语言时，将使用默认语言，顺序是：
+
+```
+官方语言 > 英语
+```
+
+**设置**了一个指定语言时，顺序是：
+
+```
+指定语言 > 官方语言 > 英语
+```
+
+## 例外 {#exception}
+
+大部分数据支持多语言和官方语言，但是一些数据可能不支持所有的语言选项，请参考下列表格查看哪些数据无法完全支持多语言。
+
+| 数据  | 可用语言 | 备注  |
+| --- | --- | --- |
+| [天气指数](/docs/api/indices/) | 中文，英文 |     |
+| [天气预警](/docs/api/warning/) | 部分多语言 | 参考[预警信息-多语言](/docs/resource/warning-info/#supported-language) |
+| [分钟降水](/docs/api/minutely/minutely-precipitation/) | 中文，英文 |     |
+
+
+## 多语言代码 {#language-code}
+
+你可以使用查询参数`lang`设置数据的语言，以下是在API或SDK中的多语言代码。
 
 | 语言名称  | API 代码        | iOS SDK常量属性       |Android SDK常量属性 | 
 | ----------| --------------  |-------------------- |-------- |
@@ -41,7 +75,7 @@ ref: res-lang
 | 捷克语    | cs            |LANGUAGE_TYPE_CS     |CS       |
 | 爱沙尼亚语| et            |LANGUAGE_TYPE_ET     |ET       |
 | 越南语    | vi            |LANGUAGE_TYPE_VI     |VI       |
-| 菲律宾语  | fil           |LANGUAGE_TYPE_FIL    |fFIL     |
+| 菲律宾语  | fil           |LANGUAGE_TYPE_FIL    |FIL     |
 | 芬兰语    | fi            |LANGUAGE_TYPE_FI     |FI       |
 | 希伯来语  | he            |LANGUAGE_TYPE_HE     |HE       |
 | 冰岛语    | is            |LANGUAGE_TYPE_IS     |IS       |

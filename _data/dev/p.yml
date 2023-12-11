@@ -115,9 +115,9 @@ lang:
   name: lang
   text: 
     en: |
-     Multi-language setting, please check out [Language](/en/docs/resource/language/) in order to understand how our multi-language works and how to set up multi-language.
+     Multi-language setting, please see [Language](/en/docs/resource/language/) to find out how our multi-language works and how to set up.
     zh: |
-     多语言设置，请阅读[多语言](/docs/resource/language/)文档，以便了解我们的多语言是如果工作的以及数据是否支持多语言。
+     多语言设置，请阅读[多语言](/docs/resource/language/)文档，以便了解我们的多语言是如何工作、如何设置以及数据是否支持多语言。
 lang-warning: 
   name: lang
   text: 
