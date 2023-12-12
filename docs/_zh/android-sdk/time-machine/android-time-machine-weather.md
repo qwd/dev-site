@@ -21,7 +21,7 @@ ref: 1-sdk-android-historical-weather
 
 ### 接口参数说明
 
-{% include params.html p="location-id-android date10back lang-def unit-sdk" %}
+{% include params.html p="location-id-android date10back lang-def unit-def" %}
 
 ### 示例代码
 

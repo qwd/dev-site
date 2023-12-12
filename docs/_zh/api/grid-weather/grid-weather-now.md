@@ -14,7 +14,7 @@ ref: 1-api-grid-weather-now
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="location-coord key lang-def unit" %}
+{% include params.html p="location-coord key lang-def unit-def" %}
 
 ## 请求示例
 

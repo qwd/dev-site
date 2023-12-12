@@ -16,7 +16,7 @@ Get daily weather forecasts at any latitude and longitude in the world, includin
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="key location-coord lang-def unit" %}
+{% include params.html p="key location-coord lang-def unit-def" %}
 
 ## Request Example
 

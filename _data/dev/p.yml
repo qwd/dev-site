@@ -118,14 +118,7 @@ lang-def:
      Multi-language setting, please see [Language](/en/docs/resource/language/) to find out how our multi-language works and how to set up.
     zh: |
      多语言设置，请阅读[多语言](/docs/resource/language/)文档，了解我们的多语言是如何工作、如何设置以及数据是否支持多语言。
-unit: 
-  name: unit
-  text: 
-    en: |-
-     Set weather data unit, the available value are `unit=m` for metric(default) and `unit=i` for imperial. See more about [Unit](/en/docs/resource/unit).
-    zh: |-
-     数据单位设置，可选值包括`unit=m`（公制单位，默认）和`unit=i`（英制单位）。更多选项和说明参考[度量衡单位](/docs/resource/unit)。
-unit-sdk: 
+unit-def: 
   name: unit
   text: 
     en: |-

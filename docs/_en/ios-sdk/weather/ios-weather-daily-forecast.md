@@ -17,7 +17,7 @@ Get weather daily forecasts for the next 3-15 days for cities around the world.
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-ios key-ios lang-def unit-sdk" %}
+{% include params.html p="location-ios key-ios lang-def unit-def" %}
 
 ### Sample Code
 

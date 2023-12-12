@@ -16,7 +16,7 @@ Get weather daily forecasts for the next 3-30 days for cities around the world.
 
 ### Parameter
 
-{% include params.html p="location-android lang-def unit-sdk" %}
+{% include params.html p="location-android lang-def unit-def" %}
 
 ### Sample Code
 

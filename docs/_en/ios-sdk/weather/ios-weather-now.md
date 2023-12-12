@@ -14,7 +14,7 @@ Get real-time weather data for 200,000+ cities around the world, including tempe
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-ios key-ios lang-def unit-sdk" %}
+{% include params.html p="location-ios key-ios lang-def unit-def" %}
 
 ### Sample Code
 

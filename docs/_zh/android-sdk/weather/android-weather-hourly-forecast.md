@@ -14,7 +14,7 @@ ref: 3-sdk-android-weather-hourly-forecast
 
 ### 接口参数说明
 
-{% include params.html p="location-android lang-def unit-sdk" %}
+{% include params.html p="location-android lang-def unit-def" %}
 
 ### 示例代码
 
