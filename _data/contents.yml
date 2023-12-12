@@ -49,6 +49,8 @@ reference_docs:
           - type: forecast
       - name: 0-api-air
         data: 
+          - type: now-v1
+          - type: station-v1
           - type: now
           - type: daily
       - name: 0-api-time-machine

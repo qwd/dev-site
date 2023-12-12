@@ -312,6 +312,96 @@ minutely:
       en: Type of precipitation, `rain` and `snow`
     example: rain
 air:
+  - name: aqi.code
+    desc:
+      zh: 空气质量指数Code
+      en: Code of air quality index 
+    type: [now-v1, daily-v1]
+  - name: aqi.name
+    desc:
+      zh: 空气质量指数的名字
+      en: Name of air quality index 
+    type: [now-v1, daily-v1]
+  - name: aqi.value
+    desc:
+      zh: 空气质量指数的值
+      en: Value of air quality index 
+    type: [now-v1, daily-v1]
+  - name: aqi.level
+    desc:
+      zh: 空气质量指数等级，可能为空
+      en: Level of air quality index 
+    type: [now-v1, daily-v1]
+  - name: aqi.category
+    desc:
+      zh: 空气质量指数级别，可能为空
+      en: Category of air quality index 
+    type: [now-v1, daily-v1]
+  - name: aqi.color
+    desc:
+      zh: 空气质量指数级别的颜色，RGBA值，可能为空
+      en: Category color of air quality index, RGBA format
+    type: [now-v1, daily-v1]
+  - name: aqi.primaryPollutant.code
+    desc:
+      zh: 空气质量指数的首要污染物的Code，空气质量为优时，返回值为`NA`
+      en: The primary pollutant code. If `level=1`, return `NA`
+    type: [now-v1, daily-v1]
+  - name: aqi.primaryPollutant.name
+    desc:
+      zh: 空气质量指数的首要污染物的名字，空气质量为优时，返回值为`NA`
+      en: The primary pollutant. If `level=1`, return `NA`
+    type: [now-v1, daily-v1]
+  - name: polutant.code
+    desc:
+      zh: 污染物的Code
+      en: The pollutant code.
+    type: [now-v1, station-v1]
+  - name: polutant.name
+    desc:
+      zh: 污染物的名字
+      en: The primary name.
+    type: [now-v1, station-v1]
+  - name: pollutant.concentration.value
+    desc:
+      zh: 污染物的浓度值
+      en: Concentration values of pollutants.
+    type: [now-v1, station-v1]
+  - name: pollutant.concentration.unit
+    desc:
+      zh: 污染物的浓度值的单位
+      en: Units for concentration values of pollutants.
+    type: [now-v1, station-v1]
+  - name: pollutant.index.value
+    desc:
+      zh: 污染物的空气质量指数
+      en: Air quality index value for pollutant.
+    type: [now-v1, station-v1]
+  - name: pollutant.index.level
+    desc:
+      zh: 污染物的空气质量指数等级，可能为空
+      en: Air quality index level for pollutant, maybe NULL.
+    type: [now-v1, station-v1]
+  - name: pollutant.index.category
+    desc:
+      zh: 污染物的空气质量指数级别，可能为空
+      en: Air quality index category for pollutant, maybe NULL.
+    type: [now-v1, station-v1]
+  - name: station.id
+    desc:
+      zh: AQI相关联的监测站Location ID，可能为空
+      en: Location ID of the monitoring station
+    type: [now-v1]
+  - name: station.name
+    desc:
+      zh: AQI相关联的监测站名称
+      en: The name of the monitoring station
+    type: [now-v1]
+  - name: source
+    desc:
+      zh: 数据来源或提供商名字以及他们的声明，必须与空气质量数据一起展示。可能为空
+      en: Data source or provider name and their declaration, which must be displayed with the air quality data. May be NULL
+    type: [now-v1, station-v1]
   - name: name
     desc:
       zh: 监测站名称
