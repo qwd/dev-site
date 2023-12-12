@@ -16,7 +16,7 @@ ref: 1-api-sun
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="key location date60" %}
+{% include params.html p="key location-def date60" %}
 
 ## 请求示例
 

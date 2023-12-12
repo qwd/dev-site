@@ -23,7 +23,7 @@ ref: 7-sdk-ios-historical-weather
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-{% include params.html p="location-id-ios date10back key-ios lang-def unit-def" %}
+{% include params.html p="location-id date10back key-ios lang-def unit-def" %}
 
 ### 示例代码
 

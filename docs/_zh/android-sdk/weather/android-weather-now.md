@@ -12,7 +12,7 @@ ref: 1-sdk-android-weather-now
 
 ### 接口参数说明
 
-{% include params.html p="location-android lang-def unit-def" %}
+{% include params.html p="location-def lang-def unit-def" %}
 
 ### 示例代码
 

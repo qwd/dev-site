@@ -12,7 +12,7 @@ Real-time air quality for Chinese cities and 1,700 monitoring stations, includin
 
 ### Parameter
 
-{% include params.html p="location-android lang-def" %}
+{% include params.html p="location-def lang-def" %}
 
 ### Sample Code
 

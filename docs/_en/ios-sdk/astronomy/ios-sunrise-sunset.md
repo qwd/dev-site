@@ -15,7 +15,7 @@ Get the sunrise and sunset times for any location around the world for the next 
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-ios date60 key-ios" %}
+{% include params.html p="location-def date60 key-ios" %}
 
 ### Sample Code
 

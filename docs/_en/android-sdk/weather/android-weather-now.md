@@ -13,7 +13,7 @@ Get real-time weather data for 200,000+ cities around the world, including tempe
 
 ### Parameter
 
-{% include params.html p="location-android lang-def unit-def" %}
+{% include params.html p="location-def lang-def unit-def" %}
 
 ### Sample Code
 

@@ -12,7 +12,7 @@ Get the sunrise and sunset times for any location around the world for the next 
 
 ### Parameter
 
-{% include params.html p="location-android date60" %}
+{% include params.html p="location-def date60" %}
 
 ### Sample Code
 

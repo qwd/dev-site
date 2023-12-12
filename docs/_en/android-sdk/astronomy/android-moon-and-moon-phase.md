@@ -12,7 +12,7 @@ Get moonrise and moonset and hourly moon phase data for the next 60 days at any 
 
 ### Parameter
 
-{% include params.html p="location-android date60" %}
+{% include params.html p="location-def date60" %}
 
 ### Sample Code
 

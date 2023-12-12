@@ -14,7 +14,7 @@ Get moonrise and moonset and hourly moon phase data for the next 60 days at any 
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-ios date60 key-ios lang-def" %}
+{% include params.html p="location-def date60 key-ios lang-def" %}
 
 ### Sample Code
 

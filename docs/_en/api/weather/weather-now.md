@@ -16,7 +16,7 @@ Get real-time weather data for 200,000+ cities around the world, including tempe
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html flag="weather" p="key location lang-def unit-def"%}
+{% include params.html flag="weather" p="key location-def lang-def unit-def"%}
 
 ## Request Example
 

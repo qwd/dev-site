@@ -18,7 +18,7 @@ Get weather indices forecast data for cities in China and around the world.
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-android idx-type-android" %}
+{% include params.html p="location-def idx-type-android" %}
 
 ### Sample Code
 
