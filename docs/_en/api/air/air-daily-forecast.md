@@ -14,7 +14,7 @@ Air Quality Daily Forecast API for Chinese cities, including AQI, air quality le
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="key location lang" %}
+{% include params.html p="key location-def lang-def" %}
 
 ## Request Example
 

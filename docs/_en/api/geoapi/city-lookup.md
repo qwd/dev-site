@@ -12,7 +12,7 @@ In addition, GeoAPI - City Lookup can also help you to implement fuzzy search in
 
 ## Request URL
 
-{% include api-url.html flag="city-lookup" %}
+{% include api-url.html apidata="geo-city-lookup" %}
 
 ## Request Parameters
 
@@ -30,11 +30,11 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 >
 > If without `adm`, like `location=chaoyang`, the returned results include Chaoyang District in Beijing, Chaoyang City in Liaoning Province, and Chaoyang District in Changchun City
 
-{% include params.html p="range number lang" %}
+{% include params.html p="range number lang-def" %}
 
 ## Request Example
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="geo-city-lookup" %}
 
 ## Response
 

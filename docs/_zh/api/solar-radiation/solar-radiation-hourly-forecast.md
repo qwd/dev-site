@@ -8,7 +8,7 @@ ref: 1-api-solar-radiation-hourly-forecast
 
 ## 请求URL
 
-{% include api-url.html flag="solar-radiation-hourly-forecast" %}
+{% include api-url.html apidata="solar-radiation-hourly-24h solar-radiation-hourly-72h" title=true %}
 
 > **注意：**在一些特殊情况下，未来72小时预报有可能会缺少最后若干小时的数据。
 {:.bqwarning}
@@ -21,7 +21,7 @@ ref: 1-api-solar-radiation-hourly-forecast
 
 ## 请求示例
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="solar-radiation-hourly-24h" %}
 
 ## 返回数据
 

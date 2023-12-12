@@ -16,9 +16,9 @@ Get officially issued real-time severe weather warning data around the world.
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="key location" %}
+{% include params.html p="key location-def" %}
 
-{% include params.html p="lang-warning" %}
+{% include params.html p="lang-def" %}
 
 ## Request Example
 

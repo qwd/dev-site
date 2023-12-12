@@ -12,7 +12,7 @@ ref: 4-sdk-android-geo-poi-range
 
 ### 接口参数说明
 
-{% include params.html p="location-coord geo-type radius number lang-sdk" %}
+{% include params.html p="location-coord geo-type radius number lang-def" %}
 
 ### 示例代码
 

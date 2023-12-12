@@ -19,7 +19,7 @@ Get hourly weather forecasts for cities around the world for the next 24-168 hou
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-ios key-ios lang-sdk unit-sdk" %}
+{% include params.html p="location-def key-ios lang-def unit-def" %}
 
 ### Sample Code
 

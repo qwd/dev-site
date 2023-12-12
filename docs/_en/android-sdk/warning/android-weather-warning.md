@@ -14,7 +14,7 @@ Get officially issued real-time severe weather warning data around the world.
 
 ### Parameter
 
-{% include params.html p="location-android lang-warning" %}
+{% include params.html p="location-def lang-def" %}
 
 ### Sample Code
 

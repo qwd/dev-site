@@ -12,7 +12,7 @@ POI Lookup API provides basic information of POI(scenic spot, tide stations, cur
 
 ### Parameter
 
-{% include params.html p="location-geo geo-type city number lang-sdk" %}
+{% include params.html p="location-geo geo-type city number lang-def" %}
 
 ### Sample Code
 

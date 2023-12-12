@@ -16,7 +16,7 @@ Get high-precision real-time weather at any latitude and longitude around the wo
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-coord key lang unit" %}
+{% include params.html p="location-coord key lang-def unit-def" %}
 
 ## Request Example
 

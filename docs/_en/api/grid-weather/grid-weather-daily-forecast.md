@@ -10,17 +10,17 @@ Get daily weather forecasts at any latitude and longitude in the world, includin
 
 ## Request URL
 
-{% include api-url.html flag="weather-grid-daily" dev=true %}
+{% include api-url.html apidata="grid-weather-daily-3d grid-weather-daily-7d" title=true dev=true %}
 
 ## Request Parameters
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="key location-coord lang unit" %}
+{% include params.html p="key location-coord lang-def unit-def" %}
 
 ## Request Example
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="grid-weather-daily-3d" %}
 
 ## Response
 

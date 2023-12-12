@@ -14,7 +14,7 @@ ref: 2-api-top-city
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值，参数之间使用 `&`进行分隔。
 
-{% include params.html p="key range number lang" %}
+{% include params.html p="key range number lang-def" %}
 
 ## 请求示例
 

@@ -11,17 +11,17 @@ Get weather indices forecast data for cities in China and around the world.
 
 ## Request URL
 
-{% include api-url.html flag="indices" dev=true %}
+{% include api-url.html apidata="indices-forecast-1d indices-forecast-3d" title=true dev=true %}
 
 ## Request Parameters
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location key idx-type lang-zhen" %}
+{% include params.html p="key location-def idx-type lang-def" %}
 
 ## Request Example
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="indices-forecast-1d" %}
 
 ## Response
 

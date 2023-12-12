@@ -17,7 +17,7 @@ Get a list of popular cities around the world.
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="key-ios lang-sdk range number" %}
+{% include params.html p="key-ios lang-def range number" %}
 
 ### Sample Code
 

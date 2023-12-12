@@ -12,7 +12,7 @@ ref: 2-sdk-android-air-daily-forecast
 
 ### 接口参数说明
 
-{% include params.html p="location-android lang-sdk" %}
+{% include params.html p="location-def lang-def" %}
 
 ### 示例代码
 

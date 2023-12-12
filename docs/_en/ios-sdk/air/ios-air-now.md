@@ -14,7 +14,7 @@ Real-time air quality for Chinese cities and 1,700 monitoring stations, includin
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-ios key-ios lang-sdk" %}
+{% include params.html p="location-def key-ios lang-def" %}
 
 ### Sample Code
 

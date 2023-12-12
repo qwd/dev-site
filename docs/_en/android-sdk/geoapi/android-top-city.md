@@ -15,7 +15,7 @@ Get a list of popular cities around the world.
 
 ### Parameter
 
-{% include params.html p="range number lang-sdk" %}
+{% include params.html p="range number lang-def" %}
 
 ### Sample Code
 

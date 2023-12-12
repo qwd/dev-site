@@ -8,17 +8,17 @@ ref: 2-api-weather-daily-forecast
 
 ## 请求URL
 
-{% include api-url.html flag="weather-daily" dev=true %}
+{% include api-url.html apidata="weather-daily-3d weather-daily-7d weather-daily-10d weather-daily-15d weather-daily-30d" title=true dev=true %}
   
 ## 请求参数
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="location key lang unit" %}
+{% include params.html p="key location-def lang-def unit-def" %}
 
 ## 请求示例
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="weather-daily-3d" %}
 
 ## 返回数据
 

@@ -12,7 +12,7 @@ ref: 1-sdk-android-minutely-precip
 
 ### 接口参数说明
 
-{% include params.html p="location-coord lang-zhen-sdk" %}
+{% include params.html p="location-coord lang-def" %}
 
 ### 示例代码
 

@@ -11,17 +11,17 @@ ref: 1-api-indices-forecast
 
 ## 请求URL
 
-{% include api-url.html flag="indices" dev=true %}
+{% include api-url.html apidata="indices-forecast-1d indices-forecast-3d" title=true dev=true %}
 
 ## 请求参数
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="location key idx-type lang-zhen" %}
+{% include params.html p="key location-def idx-type lang-def" %}
 
 ## 请求示例
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="indices-forecast-1d" %}
 
 ## 返回数据
 

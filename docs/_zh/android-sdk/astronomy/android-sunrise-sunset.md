@@ -14,7 +14,7 @@ ref: 1-sdk-android-sun
 
 ### 接口参数说明
 
-{% include params.html p="location-android date60" %}
+{% include params.html p="location-def date60" %}
 
 ### 示例代码
 

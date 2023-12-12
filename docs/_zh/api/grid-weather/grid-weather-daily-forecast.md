@@ -8,17 +8,17 @@ ref: 2-api-grid-weather-daily-forecast
 
 ## 请求URL
 
-{% include api-url.html dev=true %}
+{% include api-url.html apidata="grid-weather-daily-3d grid-weather-daily-7d" title=true dev=true %}
 
 ## 请求参数
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="key location-coord lang unit" %}
+{% include params.html p="key location-coord lang-def unit-def" %}
 
 ## 请求示例
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="grid-weather-daily-3d" %}
 
 ## 返回数据
 

@@ -14,7 +14,7 @@ ref: 2-sdk-ios-air-daily-forecast
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-{% include params.html p="location-ios key-ios lang-sdk" %}
+{% include params.html p="location-def key-ios lang-def" %}
 
 ### 示例代码
 

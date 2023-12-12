@@ -8,17 +8,17 @@ Get hourly weather forecasts for cities around the world for the next 24-168 hou
 
 ## Request URL
 
-{% include api-url.html flag="weather-hourly" dev=true %}
+{% include api-url.html apidata="weather-hourly-24h weather-hourly-72h weather-hourly-168h" title=true dev=true %}
   
 ## Request Parameters
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location key lang unit" %}
+{% include params.html p="key location-def lang-def unit-def" %}
 
 ## Request Example
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="weather-hourly-24h" %}
 
 ## Response
 

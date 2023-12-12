@@ -15,7 +15,7 @@ ref: 2-sdk-android-historical-air
 
 ### 接口参数说明
 
-{% include params.html p="location-id date10back lang-sdk" %}
+{% include params.html p="location-id date10back lang-def" %}
 
 ### 示例代码
 
