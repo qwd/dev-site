@@ -334,33 +334,43 @@ air:
     type: [now-v1, daily-v1]
   - name: aqi.category
     desc:
-      zh: 空气质量指数级别，可能为空
+      zh: 空气质量指数类别，可能为空
       en: Category of air quality index 
     type: [now-v1, daily-v1]
   - name: aqi.color
     desc:
-      zh: 空气质量指数级别的颜色，RGBA值，可能为空
+      zh: 空气质量指数类别的颜色，RGBA值，可能为空
       en: Category color of air quality index, RGBA format
     type: [now-v1, daily-v1]
   - name: aqi.primaryPollutant.code
     desc:
-      zh: 空气质量指数的首要污染物的Code，空气质量为优时，返回值为`NA`
-      en: The primary pollutant code. If `level=1`, return `NA`
+      zh: 首要污染物的Code，可能为空
+      en: The primary pollutant code, maybe NULL.
     type: [now-v1, daily-v1]
   - name: aqi.primaryPollutant.name
     desc:
-      zh: 空气质量指数的首要污染物的名字，空气质量为优时，返回值为`NA`
-      en: The primary pollutant. If `level=1`, return `NA`
+      zh: 首要污染物的名字，可能为空
+      en: Name of primary pollutant, maybe NULL.
     type: [now-v1, daily-v1]
-  - name: polutant.code
+  - name: aqi.primaryPollutant.fullName
+    desc:
+      zh: 首要污染物的全称，可能为空
+      en: Full name of primary pollutant, maybe NULL.
+    type: [now-v1, daily-v1]
+  - name: pollutant.code
     desc:
       zh: 污染物的Code
       en: The pollutant code.
     type: [now-v1, station-v1]
-  - name: polutant.name
+  - name: pollutant.name
     desc:
       zh: 污染物的名字
-      en: The primary name.
+      en: Name of pollutant.
+    type: [now-v1, station-v1]
+  - name: pollutant.fullName
+    desc:
+      zh: 污染物的全称
+      en: Full name of pollutant.
     type: [now-v1, station-v1]
   - name: pollutant.concentration.value
     desc:
@@ -372,30 +382,30 @@ air:
       zh: 污染物的浓度值的单位
       en: Units for concentration values of pollutants.
     type: [now-v1, station-v1]
-  - name: pollutant.index.value
+  - name: pollutant.subIndex.value
     desc:
-      zh: 污染物的空气质量指数
-      en: Air quality index value for pollutant.
-    type: [now-v1, station-v1]
-  - name: pollutant.index.level
+      zh: 污染物的分指数。通常，空气质量指数取自各项污染物分指数中的最高值，可能为空
+      en: Sub-index for pollutant. Typically, the AQI is taken as the highest of the sub-indices of the various pollutants, maybe NULL.
+    type: [now-v1]
+  - name: pollutant.subIndex.level
     desc:
-      zh: 污染物的空气质量指数等级，可能为空
-      en: Air quality index level for pollutant, maybe NULL.
-    type: [now-v1, station-v1]
-  - name: pollutant.index.category
+      zh: 污染物的分指数等级，可能为空
+      en: Sub-index level for pollutant, maybe NULL.
+    type: [now-v1]
+  - name: pollutant.subIndex.category
     desc:
-      zh: 污染物的空气质量指数级别，可能为空
-      en: Air quality index category for pollutant, maybe NULL.
-    type: [now-v1, station-v1]
+      zh: 污染物的分指数类别，可能为空
+      en: Sub-index category for pollutant, maybe NULL.
+    type: [now-v1]
   - name: station.id
     desc:
       zh: AQI相关联的监测站Location ID，可能为空
-      en: Location ID of the monitoring station
+      en: Location ID of the monitoring station for this AQI reference, maybe NULL.
     type: [now-v1]
   - name: station.name
     desc:
       zh: AQI相关联的监测站名称
-      en: The name of the monitoring station
+      en: Name of the monitoring station for this AQI reference, maybe NULL.
     type: [now-v1]
   - name: source
     desc:

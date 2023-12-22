@@ -213,18 +213,24 @@ air-now-v1:
       zh: 北京市实时空气质量
       en: Real-time air quality for Beijing
   endpoint:
-    path: /airquality/v1/now/{LocationID/Coordinate}
+    path: /airquality/v1/now/{LocationID}
     name:
-      zh: 实时空气质量
-      en: Real-time
+      zh: 使用LocationID查询
+      en: Using LocationID
+air-now-v1-coor:
+  endpoint:
+    path: /airquality/v1/now/{latitude}/{longitude}
+    name:
+      zh: 使用坐标查询
+      en: Using coordinates
 air-station-v1:
   demo:
-    link: https://api.qweather.com/airquality/v1/now/station/P1345?key=YOUR_KEY
+    link: https://api.qweather.com/airquality/v1/station/P58911?key=YOUR_KEY
     name: 
       zh: 北京市实时空气质量
       en: Real-time air quality for Beijing
   endpoint:
-    path: /airquality/v1/now/station/{LocationID}
+    path: /airquality/v1/station/{LocationID}
     name:
       zh: 空气质量监测站实时数据
       en: Real-time

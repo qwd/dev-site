@@ -13,7 +13,7 @@
         {% if include.title == true -%}
         <span class="my-3 d-block text-bold">{{- site.data.dev.api-endpoint[item].endpoint.name[page.lang] -}}</span>    
         {% endif -%}
-        <pre><code>{{ apihost }}{{ site.data.dev.api-endpoint[item].endpoint.path }}?&#123;{{- site.data.t[page.lang].rp }}&#125;</code></pre>
+        <pre><code>{{ apihost }}{{ site.data.dev.api-endpoint[item].endpoint.path }}?&#123;{{- site.data.t[page.lang].qp }}&#125;</code></pre>
     {%- endfor -%}
     {% if include.dev == true -%}
     {{ site.data.t[page.lang].api-url-note | markdownify }}    

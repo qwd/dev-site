@@ -11,11 +11,13 @@ ref: 1-api-air-now-v1
 
 ## 请求URL
 
-{% include api-url.html apidata="air-now-v1" apiver=nil dev=true %}
+{% include api-url.html apidata="air-now-v1 air-now-v1-coor" title=true dev=true %}
 
-## 请求参数
+## 路径参数
 
-请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
+{% include params.html p="p-location-id p-lon p-lat" %}
+
+## 查询参数
 
 {% include params.html p="key lang-def" %}
 

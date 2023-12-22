@@ -275,3 +275,31 @@ radius:
      Set search radius, the value range is 1-50, in kilometers. **5 by default**. 
     zh: |-
      搜索范围，可设置搜索半径，取值范围1-50，单位：公里。**默认5公里**。
+p-location-id-aqsta:
+  name: LocationID
+  text: 
+    en: |-
+     LocationID of air quality monitoring station, LocationID can be obtained by [GeoAPI](/en/docs/api/geoapi/). For example `P58911`
+    zh: |-
+     空气质量监测站的LocationID，LocationID可通过[GeoAPI](/docs/api/geoapi/)获取。例如 `P58911`
+  rqd: true
+p-location-id:
+  name: LocationID
+  text: 
+    en: |-
+     [LocationID](/docs/resource/glossary/#locationid) of the desired city, LocationID can be obtained by [GeoAPI](/en/docs/api/geoapi/). For example `101010100`
+    zh: |-
+     所需查询城市的[LocationID](/docs/resource/glossary/#locationid)，LocationID可通过[GeoAPI](/docs/api/geoapi/)获取。例如 `101010100`
+  rqd: true
+p-lat:
+  name: latitude
+  text: 
+    en: The latitude of the desired location. Decimal format, up to 2 decimal places. For example `39.92`
+    zh: 所需位置的纬度。十进制，最多支持小数点后两位。例如 `39.92`
+  rqd: true
+p-lon:
+  name: longitude
+  text: 
+    en: The longitude of the desired location. Decimal format, up to 2 decimal places. For example `116.41`
+    zh: 所需位置的经度。十进制，最多支持小数点后两位。例如 `116.41` 
+  rqd: true

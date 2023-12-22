@@ -10,11 +10,13 @@ Global air quality real-time data, we provide AQI and pollutant concentration ba
 
 ## Request URL
 
-{% include api-url.html apidata="air-now-v1" apiver=nil dev=true %}
+{% include api-url.html apidata="air-now-v1 air-now-v1-coor" title=true dev=true %}
 
-## Request Parameters
+## Path Parameters
 
-请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
+{% include params.html p="p-location-id p-lon p-lat" %}
+
+## Query Parameters
 
 {% include params.html p="key lang-def" %}
 
