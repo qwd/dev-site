@@ -1,12 +1,12 @@
 ---
-title: Monitoring Station Data(beta)
-tag: [guide, api, air, station-v1]
+title: Monitoring Station Data(v1-beta)
+tag: [guide, api, aq-v1, station-v1]
 ref: 1-api-air-station-v1
 ---
 
 Real-time data from global air quality monitoring stations, providing pollutant concentration from monitoring stations in each country or region.
 
-> **Note:** Monitoring Station Data v1 is currently in beta and there is no charge for standard subscriptions at this time. Data may vary when the official release.
+> **Note:** New Monitoring Station Data v1 is currently in beta and there is no charge for standard subscriptions at this time. Data may vary when the official release.
 {:.bqwarning}
 
 > **Warning:** Monitoring Station Data is experimental and for reference only, it may be affected by various factors, we cannot ensure the availability of this data, please use the air quality data as a priority.

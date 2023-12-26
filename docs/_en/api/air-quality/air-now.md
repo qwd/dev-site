@@ -1,33 +1,31 @@
 ---
-title: Real-time Air Quality
-tag: [guide, api, air, now]
-ref: 1-api-air-now
+title: Real-time Air Quality (beta)
+tag: [guide, api, aq-v1, now-v1]
+ref: 1-api-air-now-v1
 ---
+Global air quality real-time data, we provide AQI and pollutant concentration based on the local standard of each country or region, you can check the current hourly real-time data of the city or monitoring station.
 
-Real-time air quality for Chinese cities and 1,700 monitoring stations, including AQI, air quality levels, primary pollutants, PM10, PM2.5, ozone, nitrogen dioxide sulfur dioxide and carbon monoxide values.
+> **Note:** New Air Quality v1 is currently in beta and there is no charge for standard subscriptions at this time. Data may vary when the official release.
+{:.bqwarning}
 
 ## Request URL
 
-{% include api-url.html flag="air-now" dev=true %}
+{% include api-url.html apidata="air-now-v1 air-now-v1-coor" title=true dev=true %}
 
-## Request Parameters
+## Path Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+{% include params.html p="p-location-id p-lon p-lat" %}
 
-{% include params.html p="key location-def lang-def" %}
+## Query Parameters
+
+{% include params.html p="key lang-def" %}
 
 ## Request Example
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="air-now-v1" dev=true %}
 
 ## Response
 
-{% include api-snippet.html flag="air-now" %}
+{% include api-snippet.html flag="air-now-v1" %}
 
-> `station`, the air data from monitoring station are only response for cities in [POI-Air-Monitoring-Station-List](https://github.com/qwd/LocationList/blob/master/POI-Air-Monitoring-Station-List-latest.csv).
-
-{% include api-response.html group="air" type="now station" prefix="now station" %}
-
-### Air Quality Index Level
-
-See [Air Quality Info](/en/docs/resource/air-info/).
+{% include api-response.html group="air" type="now-v1" prefix="nil" refer="0"  %}

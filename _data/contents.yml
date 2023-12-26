@@ -47,10 +47,12 @@ reference_docs:
       - name: 0-api-indices
         data: 
           - type: forecast
-      - name: 0-api-air
+      - name: 0-api-aq-v1
         data: 
           - type: now-v1
           - type: station-v1
+      - name: 0-api-air
+        data: 
           - type: now
           - type: daily
       - name: 0-api-time-machine

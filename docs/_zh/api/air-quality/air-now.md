@@ -1,33 +1,32 @@
 ---
-title: 实时空气质量
-tag: [guide, api, air, now]
-ref: 1-api-air-now
+title: 实时空气质量(beta)
+tag: [guide, api, aq-v1, now-v1]
+ref: 1-api-air-now-v1
 ---
 
-实时空气质量API，支持中国3000+市县区以及1700+国控站点实时空气质量的查询，包括AQI数值、空气质量等级、首要污染物、PM10、PM2.5、臭氧、二氧化氮、二氧化硫、一氧化碳数值。
+全球空气质量实时数据，我们提供了基于各个国家或地区当地规则的AQI以及污染物浓度值，你可以查询指定城市的当前小时实时数据。
+
+> 注意：全新的实时空气质量目前处于beta阶段，标准订阅暂不收取费用。数据内容在正式发布后可能会有所不同。
+{:.bqwarning}
 
 ## 请求URL
 
-{% include api-url.html flag="air-now" dev=true %}
+{% include api-url.html apidata="air-now-v1 air-now-v1-coor" title=true dev=true %}
 
-## 请求参数
+## 路径参数
 
-请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
+{% include params.html p="p-location-id p-lon p-lat" %}
 
-{% include params.html p="key location-def lang-def" %}
+## 查询参数
+
+{% include params.html p="key lang-def" %}
 
 ## 请求示例
 
-{% include api-url-example.html %}
+{% include api-url-example.html apidata="air-now-v1" dev=true %}
 
 ## 返回数据
 
-{% include api-snippet.html flag="air-now" %}
+{% include api-snippet.html flag="air-now-v1" %}
 
-> **提示：**`station`字段，即监测站数据仅限在[空气质量监测站列表](https://github.com/qwd/LocationList/blob/master/POI-Air-Monitoring-Station-List-latest.csv)中的城市返回。
-
-{% include api-response.html group="air" type="now station" prefix="now station"  %}
-
-## 空气质量指数等级
-
-请查看[空气质量信息](/docs/resource/air-info/)。
+{% include api-response.html group="air" type="now-v1" prefix="nil" refer="0"  %}
