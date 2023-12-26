@@ -11,11 +11,11 @@ ref: 1-api-air-now-v1
 
 ## 请求URL
 
-{% include api-url.html apidata="air-now-v1 air-now-v1-coor" title=true dev=true %}
+{% include api-url.html apidata="air-now-v1" dev=true %}
 
 ## 路径参数
 
-{% include params.html p="p-location-id p-lon p-lat" %}
+{% include params.html p="p-location-id" %}
 
 ## 查询参数
 
