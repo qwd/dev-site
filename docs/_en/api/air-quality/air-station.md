@@ -1,5 +1,5 @@
 ---
-title: Monitoring Station Data(v1-beta)
+title: Monitoring Station Data(beta)
 tag: [guide, api, aq-v1, station-v1]
 ref: 1-api-air-station-v1
 ---
