@@ -314,8 +314,10 @@ minutely:
 air:
   - name: aqi.code
     desc:
-      zh: 空气质量指数Code
-      en: Code of air quality index 
+      zh: |-
+       [空气质量指数](/docs/resource/air-info/#supported-aqis)Code
+      en: |-
+       Code of [air quality index](/en/docs/resource/air-info/#supported-aqis) 
     type: [now-v1, daily-v1]
   - name: aqi.name
     desc:
@@ -339,13 +341,15 @@ air:
     type: [now-v1, daily-v1]
   - name: aqi.color
     desc:
-      zh: 空气质量指数类别的颜色，RGBA值，可能为空
-      en: Category color of air quality index, RGBA format
+      zh: 空气质量指数的颜色，RGB格式
+      en: RGB color for AQI
     type: [now-v1, daily-v1]
   - name: aqi.primaryPollutant.code
     desc:
-      zh: 首要污染物的Code，可能为空
-      en: The primary pollutant code, maybe NULL.
+      zh: |-
+       [首要污染物](/docs/resource/air-info/#primary-pollutant)的Code，可能为空
+      en: |-
+       The [primary pollutant](/en/docs/resource/air-info/#primary-pollutant) code, maybe NULL.
     type: [now-v1, daily-v1]
   - name: aqi.primaryPollutant.name
     desc:
@@ -359,8 +363,10 @@ air:
     type: [now-v1, daily-v1]
   - name: pollutant.code
     desc:
-      zh: 污染物的Code
-      en: The pollutant code.
+      zh: |-
+       [污染物](/docs/resource/air-info/#pollutants)的Code
+      en: |-
+       The [pollutant](/en/docs/resource/air-info/#pollutants) code.
     type: [now-v1, station-v1]
   - name: pollutant.name
     desc:
@@ -384,8 +390,10 @@ air:
     type: [now-v1, station-v1]
   - name: pollutant.subIndex.value
     desc:
-      zh: 污染物的分指数。通常，空气质量指数取自各项污染物分指数中的最高值，可能为空
-      en: Sub-index for pollutant. Typically, the AQI is taken as the highest of the sub-indices of the various pollutants, maybe NULL.
+      zh: |-
+       [污染物的分指数](/docs/resource/air-info/#pollutant-sub-index)，可能为空
+      en: |-
+       [Sub-index for pollutant](/en/docs/resource/air-info/#pollutant-sub-index), maybe NULL.
     type: [now-v1]
   - name: pollutant.subIndex.level
     desc:

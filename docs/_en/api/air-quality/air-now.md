@@ -8,6 +8,8 @@ Global air quality real-time data, we provide AQI and pollutant concentration ba
 > **Note:** New Air Quality v1 is currently in beta and there is no charge for standard subscriptions at this time. Data may vary when the official release.
 {:.bqwarning}
 
+> **Hint:** It is recommended to read the [Air Quality Info](/en/docs/resource/air-info/) for details on index types, pollutants, supported countries, etc.
+
 ## Request URL
 
 {% include api-url.html apidata="air-now-v1" dev=true %}
