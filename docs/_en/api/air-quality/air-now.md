@@ -28,6 +28,6 @@ Global air quality real-time data, we provide AQI and pollutant concentration ba
 
 ## Response
 
-{% include api-snippet.html flag="air-now-v1" %}
+{% include api-snippet.html %}
 
 {% include api-response.html group="air" type="now-v1" prefix="nil" refer="0"  %}

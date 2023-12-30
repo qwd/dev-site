@@ -29,6 +29,6 @@ ref: 1-api-air-now-v1
 
 ## 返回数据
 
-{% include api-snippet.html flag="air-now-v1" %}
+{% include api-snippet.html %}
 
 {% include api-response.html group="air" type="now-v1" prefix="nil" refer="0"  %}

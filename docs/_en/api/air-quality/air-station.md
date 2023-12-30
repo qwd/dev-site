@@ -30,6 +30,6 @@ Real-time data from global air quality monitoring stations, providing pollutant 
 
 ## Response
 
-{% include api-snippet.html flag="air-station-v1" %}
+{% include api-snippet.html snippet="aq-v1-station-v1" %}
 
-{% include api-response.html group="air" type="station-v1" prefix="nil" refer="0"  %}
+{% include api-response.html group="air" type="station-v1" prefix="nil" fxlink="0" refer="0"  %}

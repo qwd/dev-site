@@ -208,10 +208,10 @@ warning-list:
       en: Severe Weather City List
 air-now-v1:
   demo:
-    link: https://api.qweather.com/airquality/v1/now/101010100?key=YOUR_KEY
+    link: https://api.qweather.com/airquality/v1/now/101020100?key=YOUR_KEY
     name: 
-      zh: 北京市实时空气质量
-      en: Real-time air quality for Beijing
+      zh: 上海实时空气质量
+      en: Real-time air quality for Shanghai
   endpoint:
     path: /airquality/v1/now/{LocationID}
     name:
@@ -225,10 +225,10 @@ air-now-v1-coor:
       en: Using coordinates
 air-station-v1:
   demo:
-    link: https://api.qweather.com/airquality/v1/station/P58911?key=YOUR_KEY
+    link: https://api.qweather.com/airquality/v1/station/P53763?key=YOUR_KEY
     name: 
-      zh: 北京市实时空气质量
-      en: Real-time air quality for Beijing
+      zh: 监测站P53763(Los Angeles)的污染物监测数据
+      en: Pollutant monitoring data from station P53763 (Los Angeles)
   endpoint:
     path: /airquality/v1/station/{LocationID}
     name:
