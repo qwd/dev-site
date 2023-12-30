@@ -26,6 +26,7 @@ description: Description
 bizapi: Pro
 devapi: Dev
 rp: params
+qp: QueryParams
 docs: Documentation
 doc: Docs
 feats: Features
@@ -51,7 +52,7 @@ data: Data
 available: Available
 platform: Platform
 quick-start: Quick Start
-api-response-note: The response is in JSON format and is [Gzip compressed](/en/docs/best-practices/gzip/), all fields are Strings.
+api-response-note: The response is in JSON format and is [Gzip compressed](/en/docs/best-practices/gzip/).
 api-url-note: For Free subscription, change the API Host to `devapi.qweather.com`. See [data available for Free subscription](/en/docs/finance/subscription/#comparison).
 doc-incl-data-pricing: Pricing for the following data services
 hp-slogan: Build a beautiful weather program

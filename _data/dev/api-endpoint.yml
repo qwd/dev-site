@@ -206,6 +206,34 @@ warning-list:
     name:
       zh: 天气灾害预警城市列表
       en: Severe Weather City List
+air-now-v1:
+  demo:
+    link: https://api.qweather.com/airquality/v1/now/101020100?key=YOUR_KEY
+    name: 
+      zh: 上海实时空气质量
+      en: Real-time air quality for Shanghai
+  endpoint:
+    path: /airquality/v1/now/{LocationID}
+    name:
+      zh: 使用LocationID查询
+      en: Using LocationID
+air-now-v1-coor:
+  endpoint:
+    path: /airquality/v1/now/{latitude}/{longitude}
+    name:
+      zh: 使用坐标查询
+      en: Using coordinates
+air-station-v1:
+  demo:
+    link: https://api.qweather.com/airquality/v1/station/P53763?key=YOUR_KEY
+    name: 
+      zh: 监测站P53763(Los Angeles)的污染物监测数据
+      en: Pollutant monitoring data from station P53763 (Los Angeles)
+  endpoint:
+    path: /airquality/v1/station/{LocationID}
+    name:
+      zh: 空气质量监测站实时数据
+      en: Real-time
 air-now:
   demo:
     link: https://api.qweather.com/v7/air/now?location=101010100&key=YOUR_KEY
