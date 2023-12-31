@@ -27,7 +27,7 @@ Weather warnings are not available for all cities, we will continue to expand th
     </tr>
   </thead>
   <tbody>
-  {%- assign warning_regions = site.data.regions | where: "isWarning", true -%}
+  {%- assign warning_regions = site.data.table.regions | where: "isWarning", true -%}
   {%- assign name = "name-" | append: page.lang -%}
   {% for item in warning_regions %}
     <tr>
@@ -147,7 +147,7 @@ We also provide warning icons, please go to [QWeather Icons](https://icons.qweat
     </tr>
   </thead>
   <tbody>
-  {% for item in site.data.warning-type %}
+  {% for item in site.data.table.warning-type %}
     <tr>
       <td>{{ item.type }}</td>
       <td>{%- if page.lang == "zh" -%}{{ item.type_name_zh  }}{%- else -%}{{ item.type_name_en }}{%- endif -%}</td>
