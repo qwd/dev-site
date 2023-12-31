@@ -27,7 +27,7 @@ ref: res-warning
     </tr>
   </thead>
   <tbody>
-  {%- assign warning_regions = site.data.regions | where: "isWarning", true -%}
+  {%- assign warning_regions = site.data.table.regions | where: "isWarning", true -%}
   {%- assign name = "name-" | append: page.lang -%}
   {% for item in warning_regions %}
     <tr>
@@ -148,7 +148,7 @@ ref: res-warning
     </tr>
   </thead>
   <tbody>
-  {% for item in site.data.warning-type %}
+  {% for item in site.data.table.warning-type %}
     <tr>
       <td>{{ item.type }}</td>
       <td>{%- if page.lang == "zh" -%}{{ item.type_name_zh  }}{%- else -%}{{ item.type_name_en }}{%- endif -%}</td>
