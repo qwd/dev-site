@@ -32,7 +32,7 @@ According to the policy of tax administration, we will adjust the tax rate, whic
 
 ## Invoice item
 
-\*研发和技术服务*气象服务
+信息技术服务/软件服务/气象服务
 
 ## Invoice format
 

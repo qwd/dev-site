@@ -48,7 +48,7 @@ ref: finance-vat-invoice
 
 ## 发票项目 {#invoice-item}
 
-\*研发和技术服务*气象服务
+信息技术服务/软件服务/气象服务
 
 ## 发票格式 {#invoice-format}
 
