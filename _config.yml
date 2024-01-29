@@ -96,6 +96,7 @@ exclude:
 - LICENSE
 - test
 - build.sh
+- .github
 
 plugins:
 - jekyll-sitemap
