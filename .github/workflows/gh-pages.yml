@@ -25,7 +25,7 @@ jobs:
       - name: Build with Jekyll
         run: JEKYLL_ENV=production bundle exec jekyll build
       - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
 
   deploy:
     needs: build
@@ -40,7 +40,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
   
   oss:
     needs: deploy
@@ -49,7 +49,7 @@ jobs:
       UPLOAD_DIR: ghp-for-oss
     steps:
       - name: Download artifacts from build
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with: 
           name: github-pages
       - name: Unpack artifacts
