@@ -2,6 +2,8 @@ code,name,fullname_zh,fullname_en,units,units_apiv7
 pm10,PM 10,颗粒物（粒径小于等于10µm）,Inhalable particulate matter (<10µm),μg/m³,μg/m³
 pm2p5,PM 2.5,颗粒物（粒径小于等于2.5µm）,Fine particulate matter (<2.5µm),μg/m³,μg/m³
 co,CO,一氧化碳,Carbon monoxide,"mg/m³,μg/m³,ppm",μg/m³
-no2,NO2,二氧化氮,Nitrogen dioxide,"μg/m³, ppb",μg/m³
-so2,SO2,二氧化硫,Sulfur dioxide,"μg/m³, ppb",μg/m³
-o3,O3,臭氧,Ozone,"μg/m³, ppb",μg/m³
+no,NO,一氧化氮,Nitric oxide,ppm,-
+no2,NO2,二氧化氮,Nitrogen dioxide,"μg/m³, ppb, ppm",μg/m³
+so2,SO2,二氧化硫,Sulfur dioxide,"μg/m³, ppb, ppm",μg/m³
+o3,O3,臭氧,Ozone,"μg/m³, ppb, ppm",μg/m³
+nmhc,NMHC,非甲烷总烃,Non-methane hydrocarbons,ppmC,-
