@@ -8,25 +8,25 @@ ref: feat-global
 
 使用全球部署能力不需要你进行额外的配置，这一切几乎都是自动化的。
 
-## 多语言
+## 多语言 {#multi-language}
 
 和风天气开发服务支持30+语言和本地语言，你只需要简单的在请求中添加多语言参数即可。
 
 查看[我们支持的语言](/docs/resource/language/)。
 
-## 单位转换
+## 单位转换 {#unit-conversion}
 
 和风天气开发服务提供公制单位和英制单位的选项，对于不同国家和地区的用户，你可以为他们设置合适的单位。
 
 查看[单位](/docs/resource/unit/)。
 
-## 全球城市覆盖
+## 全球城市覆盖 {#global-city-coverage}
 
 目前我们已经为全球超过20万个城市或地区提供气象服务，使用我们的地理信息服务，可以轻松的获取这些城市的信息。
 
 查看[地理信息服务](/docs/api/geoapi/)。
 
-## 全球加速
+## 全球加速 {#global-acceleration}
 
 ![global-server](/assets/images/content/global-server-flow.png)
 

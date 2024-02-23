@@ -8,7 +8,7 @@ ref: res-auth
 
 为了提供更安全的API认证，我们推荐你使用数字签名认证方式进行接口访问的认证，数字签名方式是一种替代单独API KEY的更安全的接口访问方式，它会对请求参数加密后得到的签名字串进行身份验证。
 
-## 签名参数
+## 签名参数 {#parameters}
   
 `publicid`: 公共ID，每个KEY都对应一个公共ID，可在[控制台](https://console.qweather.com)查看
 
@@ -18,7 +18,7 @@ ref: res-auth
 
 `以及其他接口必要参数`
 
-## 创建签名
+## 创建签名 {#create-signature}
 
 1. 将请求参数格式化为“key=value”格式，如“k1=v1”、“k2=v2”、“k3=v3”；
 2. 去除请求参数中值为空的参数

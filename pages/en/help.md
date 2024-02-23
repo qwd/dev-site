@@ -33,7 +33,7 @@ Yes, based on QWeather's global data center and CDN edge acceleration capabiliti
 
 ## Development
 
-### 204/400/401/402/403/404/429 status code
+### Status code 204/400/401/402/403/404/429 
 
 When the above status code is retrieved, it means there may be some issues with your request, refer to [Status Code](/en/docs/resource/status-code/).
 
@@ -75,7 +75,7 @@ Please contact your business manager.
 
 ### Is there any sample code?
 
-Please refer to the examples in the development guide or [showcase](/en/showcase/) and [best-practices](/en/docs/best-practices/).
+Please refer to the examples in the [development guide](/en/docs/api/) or [showcase](/en/showcase/) and [best-practices](/en/docs/best-practices/).
 
 ### More development questions
 

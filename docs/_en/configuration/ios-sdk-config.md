@@ -21,7 +21,7 @@ Make sure you have created a Project and iOS SDK KEY, otherwise refer to [Projec
 
 iOS SDK supports the following installation methods:
 
-### Use CocoaPods
+### CocoaPods
 
 QWeather iOS SDK can be installed via [CocoaPods](https://cocoapods.org/). CocoaPods is an open source dependency manager, if you haven't installed CocoaPods yet, please refer to [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html). The following steps assume that you have already completed the installation and setup of CocoaPods.
 

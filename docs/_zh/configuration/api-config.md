@@ -6,11 +6,11 @@ ref: config-api
 
 在开始使用和风天气API服务之前，你需要进行一些简单的配置和准备工作。
 
-## 创建项目和KEY
+## 创建项目和KEY {#create-project-and-key}
 
 请确保已经创建了项目和Web API KEY，否则请参考[项目和KEY](/docs/configuration/project-and-key/)。
 
-## 了解API地址和参数
+## 了解API地址和参数 {#understanding-api-url}
 
 通常来讲，一个完整的API请求URL由scheme，host，port，path和query parameters组成。（当然，在不同程序中可能叫法不一样，我们仅以[RFC 3986](https://www.rfc-editor.org/rfc/rfc3986)为参考）
 
@@ -33,11 +33,11 @@ scheme        host   (port)   path        query parameters
 
 对于大部分开发者来说，构建一个API URL并非难事，但我们仍然强烈建议你阅读[最佳实践-优化请求](/docs/best-practices/optimize-requests/)文档，了解发送API请求的一些常见问题和经验。
 
-## Gzip解压
+## Gzip
 
 请注意，和风天气开发服务的API均使用Gzip进行了压缩，这将极大的减少网络流量，加快请求。因此，当你在开发过程中，需要对返回的数据进行解压。请参考[最佳实践-Gzip](/docs/best-practices/gzip/)。
 
-## 尝试一下
+## 尝试一下 {#try-it-out}
 
 请复制并粘贴下列链接到你的浏览器中，看看返回了哪些内容。注意链接最后的参数`key`要换成你自己的KEY。
 
