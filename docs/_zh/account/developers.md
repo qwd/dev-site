@@ -17,7 +17,7 @@ ref: account-developers
 |增值税发票|增值税电子普通发票|增值税电子普通发票|增值税专用发票<br />增值税电子普通发票|
 |技术支持|工单|工单|工单、电子邮件|
 
-## 注册开发者
+## 注册开发者 {#enroll-certified-developer}
 
 注册开发者需要对你的帐号进行实名认证，访问[控制台-设置-用户信息](https://console-test.qweather.com/#/user/space)，在上方点击注册开发者。
 
@@ -52,7 +52,7 @@ ref: account-developers
 
 最后点击“提交审核”按钮，进入审核流程。审核通过后，你的企业开发者信息将完成变更。
 
-## 取消开发者注册
+## 取消开发者注册 {#cancel-certified-developer}
 
 一旦注册为开发者后，你无法主动取消。如果你不再使用和风天气开发服务，你可以删除你的帐号。
 

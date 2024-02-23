@@ -10,7 +10,7 @@ ref: res-icons
 
 <a href="https://icons.qweather.com">![图标截图](/assets/images/content/qweather-icon-screenshot-new.png)</a>
 
-## 下载和使用
+## 下载和使用 {#download-and-usage}
 
 你可以通过多种方式[下载和安装和风天气图标](https://icons.qweather.com/install/)，包括npm、CDN或直接下载。
 
@@ -18,7 +18,7 @@ ref: res-icons
 
 访问[和风天气图标](https://icons.qweather.com)了解更多关于安装和使用的信息，并可以[浏览全部图标](https://icons.qweather.com/icons/)。
 
-## 源代码
+## 源代码 {#source-code}
 
 ```
 git clone https://github.com/qwd/Icons.git
@@ -31,7 +31,7 @@ git clone https://github.com/qwd/Icons.git
 > **注意：**图标和图标代码将不断的更新，包括新增、修改和删除，因此你必须对你的程序进行适配，以便在发生变化的时候不会导致错误出现！
 {:.bqwarning}
 
-### 天气图标
+### 天气图标 {#weather-icons}
 
 一些天气状况会根据白天和晚上返回不同的图标，例如：白天的晴天将返回`100`（是一个太阳图标），夜间的晴天将返回`150`（是一个月亮图标）。
 
@@ -100,7 +100,7 @@ git clone https://github.com/qwd/Icons.git
 | 901      | 冷               | &#9989;    | &#9989;    |
 | 999      | 未知             | &#9989;    | &#9989;    |
 
-### 月相图标
+### 月相图标 {#moon-phase-icons}
 
 月相图标将自动适应南北半球的月相样式。例如今天的月相是上弦月，那么在北半球我们将返回`802`，而在南半球返回`806`。关于更多月相的说明请参考[月相](/docs/resource/sun-moon-info/#moon-phase)。
 
@@ -115,11 +115,11 @@ git clone https://github.com/qwd/Icons.git
 | 806      | 下弦月         | 上弦月         |
 | 807      | 残月           | 蛾眉月         |
 
-### 预警图标
+### 预警图标 {#weather-warning-icons}
 
 预警图标的代码和`warning.type`相对应，关于目前支持的`warning.type`请参考[预警类型](/docs/resource/warning-info/#warning-type)。
 
-## 版权和许可
+## 版权和许可 {#copyright-and-license}
 
 版权所属 [QWeather](https://www.qweather.com/)
 
@@ -127,7 +127,7 @@ git clone https://github.com/qwd/Icons.git
 
 图标 [知识共享署名4.0](https://creativecommons.org/licenses/by/4.0/deed.zh)
 
-## 早期版本
+## 早期版本 {#previous-versions}
 
 > **注意：**早期版本不再提供任何更新，有可能与目前最新的天气图标代码不匹配
 {:.bqwarning}
