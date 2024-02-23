@@ -55,7 +55,7 @@ ref: bp-cache
 | 台风             | 活跃期 20分钟<br />非活跃期60分钟 | 10-60分钟          |
 | 太阳辐照         | 6小时                             | 3-6小时            |
 
-## 限制
+## 限制 {#restrictions}
 
 你不能缓存、提取、批量存储GeoAPI中提供的所有数据，这将违反我们的[使用限制](/docs/terms/restriction/)和[服务条款](https://www.qweather.com/terms/developers-tos)。
 

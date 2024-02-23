@@ -6,21 +6,21 @@ ref: config-android
 
 这篇文档将介绍如何配置和风天气开发服务中的Android SDK。
      
-## 下载 
+## 下载 {#download}
 
 |版本|日期|MD5|下载|
 |---|---|---|---|
 |{{ site.data.v.android.version }}|{{ site.data.v.android.date }}|{{ site.data.v.android.md5 }}|[下载]({{ site.data.v.android.dllink }})|
 
-## 创建项目和KEY
+## 创建项目和KEY {#create-project-and-key}
 
 请确保你已经创建了一个Android SDK的KEY，否则请参考[项目和KEY](/docs/configuration/project-and-key/)。
 
-## 适配版本
+## 适配版本 {#os-requirement}
 
 Android 4.4+
 
-## 工程配置
+## 工程配置 {#project-configuration}
 
 1. 解压文件，将文件夹内jar放入您的工程，并且引用
 2. 配置Android Manifest 添加权限
@@ -58,7 +58,7 @@ Android 4.4+
  -keep class com.qweather.sdk.** { *;}
 ```
  
-## 数据访问配置
+## 数据访问配置 {#data-access-configuration}
 
 **日志功能**
 

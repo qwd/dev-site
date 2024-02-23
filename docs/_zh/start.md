@@ -8,7 +8,7 @@ ref: start-overview
 
 欢迎使用和风天气开发服务，本篇文档将介绍一些入门步骤和基本概念，便于你快速开始以及了解和风天气开发服务是如何运行的。
 
-## 快速开始
+## 快速开始 {#getting-started}
 
 #### 第一步 注册帐号
 
@@ -42,7 +42,7 @@ https://api.qweather.com/v7/weather/now?location=101010100&key=你的KEY
 
 参考[开发文档](/docs/api/)获取更多数据。
 
-## 费用
+## 费用 {#cost}
 
 当你使用标准订阅或高级订阅时，根据你的请求量，你需要支付订阅费用。
 
@@ -52,7 +52,7 @@ https://api.qweather.com/v7/weather/now?location=101010100&key=你的KEY
 
 对于中国大陆地区的用户，我们的价格已经包含增值税，如需要开具增值税发票请参考[增值税发票](/docs/finance/vat-invoice/)。
 
-## 更多资料
+## 更多资料 {#more-resources}
 
 在开发过程中，这些实用资料可以帮助你更高效的完成工作。
 

@@ -13,7 +13,7 @@ ref: res-wind
 
 风向角度以正北为0°，顺时针旋转360度。风向方位通常采用16个方位，即将360°平分为16份，正北=0°（360°），正东=90°，正南=180°，正西=270°。我国一般采用8个方位来预报风向[^1]，因此对于中国地区的城市，我们仅提供8个方位的风向方位数值，在中国以外的城市和全部格点化数据中继续采用16方位。如果你希望在中国城市也使用16方位，可以通过风向角度进行换算。
 
-### 16位风向方位
+### 16位风向方位 {#16-wind-directions}
 
 ![风向16方位图](/assets/images/content/wind-direction-rose.png)
 *风向16方位图。(图片由QWeather创作并基于[CC BY 4.0许可](https://creativecommons.org/licenses/by/4.0/deed.zh)发布，下载[原图](https://github.com/qwd/dev-site/raw/master/assets/images/content/wind-direction-rose.png))*
@@ -40,7 +40,7 @@ ref: res-wind
 | 西北风     | NW       | 315         | 303.75 - 326.25 |
 | 西北偏北风 | NNW      | 337.5       | 326.25 - 348.75 |
 
-### 中国8位风向方位
+### 中国8位风向方位 {#8-wind-directions}
 
 适用于中国城市天气数据的8位风向方位和特殊值如下：
 
@@ -78,7 +78,7 @@ ref: res-wind
 
 其中`V`是海平面以上10米处的等效风速，`B`是蒲福级数。例如，B = 9.5 与 24.5 m/s 相关，等于“蒲福风级10级”的下限。
 
-### 风级的对应关系
+### 风级的对应关系 {#scale-description}
 
 #### 标准蒲福风级0-12
 

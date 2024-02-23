@@ -9,7 +9,7 @@ ref: finance-vat-invoice
 > **注意：**请认真阅读本篇文档，了解我们如何向你开具增值税发票、增值税发票的类型、开票时间以及开票限制，必要时请将本篇文档发送给你的财务人员查看。
 {:.bqwarning}
 
-## 申请流程
+## 申请流程 {#apply-introduction}
 
 访问[控制台](https://console.qweather.com)：
 
@@ -87,7 +87,7 @@ ref: finance-vat-invoice
 * 超过12个月的账单，无法申请发票。
 * 增值税专用发票仅限[企业开发者](/docs/account/developers/)申请。
 
-## 其他
+## 其他 {#Other}
 
 如果你对发票有其他问题，请与你的商务专员联系或提交工单。
 

@@ -14,15 +14,15 @@ ref: config-ios
 
 > **提示：**和风天气iOS SDK同样包含了macOS SDK。
 
-## 第1步: 创建项目和KEY
+## 第1步: 创建项目和KEY {#step-1-create-project-and-key}
 
 请确保你已经创建了一个iOS SDK的KEY，否则请参考[项目和KEY](/docs/configuration/project-and-key/)。
 
-## 第2步: 安装SDK
+## 第2步: 安装SDK {#step-2-install-sdk}
 
 和风天气iOS SDK支持下列安装方式：
 
-### 使用CocoaPods
+### CocoaPods {#cocoapods}
 
 和风天气iOS SDK可以通过[CocoaPods](https://cocoapods.org/)进行安装。CocoaPods是一种开源依赖库管理器，如果你还未安装CocoaPods，请参考[CocoaPods快速开始](https://guides.cocoapods.org/using/getting-started.html)。下列步骤假设你已经完成了CocoaPods的安装和设置。
 
@@ -62,7 +62,7 @@ iOS SDK支持使用Swift Package Manager集成，具体步骤请参考[Adding pa
 * SDK URL: [https://github.com/qwd/iOS-SDK.git](https://github.com/qwd/iOS-SDK.git)
 * Dependency Rule: Up to Next Major Version 4.14.0 < 5.0.0
 
-### 手动安装
+### 手动安装 {#manual-install}
 
 你可以选择手动安装和风天气iOS SDK。
 
@@ -93,11 +93,11 @@ iOS SDK支持使用Swift Package Manager集成，具体步骤请参考[Adding pa
 >    ```
 {:.bqwarning}
 
-## 第3步: 配置密钥和订阅版本
+## 第3步: 配置密钥和订阅版本 {#step-3-setup-key-and-subscription}
 
 在 `AppDelegate`文件中配置API密钥信息和选择订阅版本:
 
-### 配置Public ID和KEY
+### 配置Public ID和KEY {#setup-public-id-and-key}
 
 将代码中的`Your_KEY`和`Your_Public_ID`替换为你项目中的KEY和Public ID
 
@@ -106,7 +106,7 @@ QWeatherConfigInstance.publicID = @"Your_Public_ID";
 QWeatherConfigInstance.appKey = @"Your_KEY";
 ```
 
-### 配置项目的订阅版本
+### 配置项目的订阅版本 {#setup-subscription}
 
 - 标准订阅：
 
@@ -119,7 +119,7 @@ QWeatherConfigInstance.appKey = @"Your_KEY";
     QWeatherConfigInstance.appType = APP_TYPE_DEV;
     ```
 
-## 示例代码
+## 示例代码 {#sample-code}
 
 在需要使用的地方加入以下代码输入所需参数即可，返回为对应类型的数据模型
   

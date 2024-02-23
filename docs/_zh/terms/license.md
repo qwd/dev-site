@@ -8,11 +8,11 @@ ref: terms-license
 
 > **提示：**在你遵守下列许可证的要求下，这些许可证均赋予你更多自由的权利，以及适用于任何用途（包括商业用途）。然而除和风开发许可证以外，我们无法针对其他许可证给出更多建议或解释，请访问各个许可证的链接查看原文，或与你的法律顾问进行讨论。
 
-## 和风开发许可证
+## 和风开发许可证 {#qweather-developers-license}
 
 当你使用[标准订阅](/docs/finance/subscription/#standard-subscription)时，将使用[和风开发者许可协议](https://www.qweather.com/terms/developers-eula)。
 
-## 署名-相同方式共享 4.0 国际 (CC BY-SA 4.0)
+## 署名-相同方式共享 4.0 国际 (CC BY-SA 4.0) {#attribution-sharealike-40-cc-by-sa-40}
 
 当你使用[免费订阅](/docs/finance/subscription/#free-subscription)时，除[地理信息数据](/docs/api/geoapi/)以外的数据和服务将使用[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh)许可证。
 
