@@ -4,7 +4,7 @@ tag: [finance, vat]
 ref: finance-vat-invoice
 ---
 
-For users in China, our price include VAT and you can apply for a VAT invoice when your bill is paid. We support to issue VAT e-invoice and VAT special invoice.
+For users in China, our price include VAT and you can apply for a VAT invoice when your bill is paid.
 
 > **Note:** Please read this document carefully to understand how we issue VAT invoices to you and send this document to your finance professional for review if necessary.
 {:.bqwarning}
@@ -36,31 +36,24 @@ According to the policy of tax administration, we will adjust the tax rate, whic
 
 ## Invoice format
 
-**VAT e-invoice** is PDF and OFD formats, [see example](/assets/images/content/e-vat-sample.jpg).
+**Fully Digitalized E-Invoice (FDEI)**. See [Announcement of the Beijing Municipal Tax Bureau for Taxation on the Pilot Work of Fully Digitalized E-Invoice](https://www.beijing.gov.cn/zhengce/zhengcefagui/202312/t20231207_3493065.html)。
 
-> **Hint:** According to the State Taxation Administration Announcement No. 1 of 2020 [关于增值税发票综合服务平台等事项的公告](http://www.chinatax.gov.cn/chinatax/n810341/n810765/c101653/202001/c5149326/content.html), the VAT e-invoice use e-signature instead of special invoice stamp.
+FDEI sample:
 
-**VAT special invoice** is a paper invoice, [see example](/assets/images/content/vat-sample.jpg).
-
-> **Hint:** VAT special invoice is issued by [Beijing Electronic Taxation Bureau of State Taxation Administration](https://etax.beijing.chinatax.gov.cn/xxmh/html/index.html), due to the rules of the invoicing system, the payee, reviewer and invoicer in the invoice are system generated and cannot be changed. If you have any questions about this, please call 010-62212366 to clarify.
+* [VAT general invoice](/assets/images/content/vat-sample.jpg)
+* [VAT special invoice](/assets/images/content/vat-s-sample.jpg)
 
 ## Delivery and Download
 
-VAT e-invoice will be sent to your email within 10 business days after your application. You can also download it at [Console - Finance - Vat invoice](https://console.qweather.com/#/invoice).
-
-VAT special invoice will be issued and express delivered to your address around the 20th of each month (postponed in case of holidays). If you miss this date, the invoicing time will be delayed to the 20th of the next month, please be patient.
-
-> **Note:** If the amount of VAT special invoice is less than CNY 1000, you need to pay the shipping fee.
-{:.bqwarning}
+Invoice will be issued and sent to your email within 10 business days after your application. You can also download it at [Console - Finance - Vat invoice](https://console.qweather.com/#/invoice).
 
 ## Modify invoice
 
-Before the invoice is issued, you can cancel the invoice application at any time in order to modify the information. If there is an error or need to modify the invoice after it is issued, please submit a ticket for modification:
+Before the invoice is issued, you can cancel the invoice application at any time in order to modify the information. 
 
-* For VAT e-invoice, you can apply to modify the invoice for any reason without additional cost, but the modification is limited to 3 times per year.
-* For VAT special invoice, if the invoice need to be modified due to the reasons of the applicant, each modification needs to bear the full cost of mailing the invoices. The modification is limited to 3 times per year.
+If there is an error or need to modify the invoice after it is issued, please submit a ticket for modification and the modification is limited to 3 times per year.
 
-> **Hint:** Please submit the application for modification within 12 months after the invoice is issued.
+> **Hint:** Please submit your modification within 12 months after the invoice is issued.
 
 ## Restriction
 
