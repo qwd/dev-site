@@ -20,22 +20,26 @@ ref: res-air
 <table>
   <thead>
     <tr>
-      <th>Code</th>
-      <th>名称</th>
+      <th>AQI</th>
       <th>取值范围</th>
       <th>级别</th>
       <th>类别</th>
+      <th>颜色</th>
     </tr>
   </thead>
   <tbody>
   {%- assign sort_aqi = site.data.table.aqis | sort: 'code' -%}
   {% for item in sort_aqi %}
     <tr>
-        <td><code>{{ item.code }}</code></td>
-        <td>{{ item.name  }}</td>
+        <td>
+          <ul class="clear-list">
+            <li>{{ item.name  }}</li>
+            <li>Code: <code>{{ item.code }}</code></li>
+          </ul>
+        </td>
         <td>
             <ul class="clear-list">
-            {%- assign range_array = item.value_threshold | split: "," -%}
+            {%- assign range_array = item.range_threshold | split: "," -%}
             {% for range in range_array %}
                 <li>{{ range }}</li>
             {% endfor %}
@@ -43,7 +47,7 @@ ref: res-air
         </td>
         <td>
             <ul class="clear-list">
-            {%- assign lv_array = item.levels | split: "," -%}
+            {%- assign lv_array = item.level | split: "," -%}
             {% for lv in lv_array %}
                 <li>{{ lv }}</li>
             {% endfor %}
@@ -51,16 +55,26 @@ ref: res-air
         </td>
         <td>
             <ul class="clear-list">
-            {%- assign cate_array = item.categories_zh | split: "," -%}
+            {%- assign cate_array = item.category_zh | split: "," -%}
             {% for cate in cate_array %}
                 <li>{{ cate }}</li>
             {% endfor %}
             </ul>
         </td>
+        <td>
+            <ul class="clear-list">
+            {%- assign color_array = item.color_rgb | split: "|" -%}
+            {% for color in color_array %}
+                <li>{{ color }}</li>
+            {% endfor %}
+            </ul>
+        </td>  
     </tr>
   {% endfor %}  
   </tbody>
 </table>
+
+*下载完整表格：[aqis.csv](https://raw.githubusercontent.com/qwd/dev-site/master/_data/table/aqis.csv)*
 
 ## 污染物 {#pollutants}
 
