@@ -85,6 +85,12 @@
       author: Zhik
       code: https://github.com/lanqiaoZzz/MyWeather
       description: 基于《第一行代码_v2》与和风天气、仿华为天气界面的开源天气APP
+    - name: "Micro Weather(Fuyi Weather)"
+      description: "集地理信息与天气预报为一体的天气预报类小程序，界面精美，使用便捷。【致敬：和风天气】"
+      code: "https://github.com/zhou-fuyi/micro-weather-wechat"
+      screenshot: "https://cdn.jsdelivr.net/gh/zhou-fuyi/micro-weather-docs/refs/imgs/v1/1.jpg"
+      author: "Fuyi Atlas"
+      website: "https://fuyi-atlas.github.io"
 - language: Go
   works:
     - name: qweather-sdk-go
