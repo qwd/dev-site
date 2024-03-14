@@ -21,7 +21,7 @@ ref: 1-api-air-now-v1
 
 ## 查询参数
 
-{% include params.html p="key lang-def" %}
+{% include params.html p="key lang-def aq-pollutant aq-sta" %}
 
 ## 请求示例
 
@@ -31,4 +31,4 @@ ref: 1-api-air-now-v1
 
 {% include api-snippet.html %}
 
-{% include api-response.html group="air" type="now-v1" prefix="nil" refer="0"  %}
+{% include api-response.html group="air" type="now-v1" prefix="nil" fxlink="0" refer="0"  %}

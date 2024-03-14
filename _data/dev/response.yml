@@ -324,10 +324,26 @@ air:
       zh: 空气质量指数的名字
       en: Name of air quality index 
     type: [now-v1, daily-v1]
+  - name: aqi.defaultLocalAqi
+    desc:
+      zh: |-
+       是否是[默认/推荐的当地AQI](/docs/resource/air-info/#default-local-aqi)
+      en: |-
+       [Is the default/preferred local AQI](/en/docs/resource/air-info/#default-local-aqi)
+    type: [now-v1, daily-v1]
   - name: aqi.value
     desc:
-      zh: 空气质量指数的值
-      en: Value of air quality index 
+      zh: |-
+       [空气质量指数的值](/docs/resource/air-info/#aqi-value)
+      en: |-
+       [Value of air quality index](/en/docs/resource/air-info/#aqi-value) 
+    type: [now-v1, daily-v1]
+  - name: aqi.valueDisplay
+    desc:
+      zh: |-
+       [空气质量指数的值的文本显示](/docs/resource/air-info/#aqi-value)
+      en: |-
+       [Display name of the AQI value](/en/docs/resource/air-info/#aqi-value)
     type: [now-v1, daily-v1]
   - name: aqi.level
     desc:
@@ -361,6 +377,23 @@ air:
       zh: 首要污染物的全称，可能为空
       en: Full name of primary pollutant, maybe NULL.
     type: [now-v1, daily-v1]
+  - name: aqi.health.effect
+    desc:
+      zh: |-
+       [空气质量对健康的影响](/docs/resource/air-info/#health-effects-and-advice)，可能为空
+      en: |-
+       [Health effects of air quality](/en/docs/resource/air-info/#health-effects-and-advice), maybe NULL.
+    type: [now-v1, daily-v1]
+  - name: aqi.health.advice.generalPopulation
+    desc:
+      zh: 对一般人群的健康指导意见，可能为空
+      en: Health advice for general population, maybe NULL.
+    type: [now-v1, daily-v1]
+  - name: aqi.health.advice.sensitivePopulation
+    desc:
+      zh: 对敏感人群的健康指导意见，可能为空
+      en: Health advice for sensitive population, maybe NULL.
+    type: [now-v1, daily-v1]
   - name: pollutant.code
     desc:
       zh: |-
@@ -391,19 +424,14 @@ air:
   - name: pollutant.subIndex.value
     desc:
       zh: |-
-       [污染物的分指数](/docs/resource/air-info/#pollutant-sub-index)，可能为空
+       [污染物的分指数的数值](/docs/resource/air-info/#pollutant-sub-index)，可能为空
       en: |-
-       [Sub-index for pollutant](/en/docs/resource/air-info/#pollutant-sub-index), maybe NULL.
+       [Sub-index value for pollutant](/en/docs/resource/air-info/#pollutant-sub-index), maybe NULL.
     type: [now-v1]
-  - name: pollutant.subIndex.level
+  - name: pollutant.subIndex.valueDisplay
     desc:
-      zh: 污染物的分指数等级，可能为空
-      en: Sub-index level for pollutant, maybe NULL.
-    type: [now-v1]
-  - name: pollutant.subIndex.category
-    desc:
-      zh: 污染物的分指数类别，可能为空
-      en: Sub-index category for pollutant, maybe NULL.
+      zh: 污染物的分指数数值的显示名称
+      en: Sub-index for display, maybe NULL.
     type: [now-v1]
   - name: station.id
     desc:
