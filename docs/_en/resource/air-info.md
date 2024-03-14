@@ -17,65 +17,72 @@ Different countries and regions have their own air quality indices, correspondin
 
 The AQI may have different standards or different calculation methods in some countries and regions. [Air Quality v1 (beta)](/en/docs/api/air-quality/) will provide one or more types of AQI data according to local standards. The following are the AQIs we support and their corresponding value ranges, categories, etc.
 
-<table>
-  <thead>
-    <tr>
-      <th>AQI</th>
-      <th>Value</th>
-      <th>Level</th>
-      <th>Category</th>
-      <th>Color</th>
-    </tr>
-  </thead>
-  <tbody>
-  {%- assign sort_aqi = site.data.table.aqis | sort: 'code' -%}
-  {% for item in sort_aqi %}
-    <tr>
-        <td>
-          <ul class="clear-list">
-            <li>{{ item.name  }}</li>
-            <li>Code: <code>{{ item.code }}</code></li>
-          </ul>
-        </td>
-        <td>
-            <ul class="clear-list">
-            {%- assign range_array = item.range_threshold | split: "," -%}
-            {% for range in range_array %}
-                <li>{{ range }}</li>
-            {% endfor %}
-            </ul>
-        </td>
-        <td>
-            <ul class="clear-list">
-            {%- assign lv_array = item.level | split: "," -%}
-            {% for lv in lv_array %}
-                <li>{{ lv }}</li>
-            {% endfor %}
-            </ul>
-        </td>
-        <td>
-            <ul class="clear-list">
-            {%- assign cate_array = item.category_en | split: "," -%}
-            {% for cate in cate_array %}
-                <li>{{ cate }}</li>
-            {% endfor %}
-            </ul>
-        </td>
-        <td>
-            <ul class="clear-list">
-            {%- assign color_array = item.color_rgb | split: "|" -%}
-            {% for color in color_array %}
-                <li>{{ color }}</li>
-            {% endfor %}
-            </ul>
-        </td> 
-    </tr>
-  {% endfor %}  
-  </tbody>
-</table>
+{% include aqi-table.html %}
 
 *Download entire table for the above: [aqis.csv](https://raw.githubusercontent.com/qwd/dev-site/master/_data/table/aqis.csv)*
 
+### AQI value
+
+The AQI is not always a number, and some national standards or at certain category, the AQI is described using text. For example, the Canadian AQHI has a value range of 1-10+, and obviously "10+" is a text. For easier calculation and display consistent with the standard, we provide two expressions for the AQI value:
+
+* `aqi.value` Numeric type values, this includes AQIs expressed numerically as well as AQIs expressed in text, which we convert to integers for developers to calculate.
+* `aqi.valueDisplay` String type value, for direct display. It is fully compliant with the local AQI standard format, so it is recommended to use this field when displaying to your users.
+
+In the Canadian example, if the current AQI category is "Very High Risk":
+
+```json
+{
+  "aqi": [
+    {
+      "value": 11,
+      "valueDisplay": "10+"
+    }
+  ]
+}
+```
+
+### Default Local AQI
+
+Some cities have multiple AQIs, which helps cover more usage scenarios. Also, we set default AQIs based on local regulations, customs or practices, so if you only want to show one of these AQIs and are not sure which one to show, you can use `aqi.defaultLocalAqi` to help choose.
+
+For example, in Singapore, it is usual to use the 1-Hour PM2.5 to indicate the current air quality, while PSI 24H is more used for forecast and overview. In this case, the real-time AQI will recommend 1-Hour PM2.5 (SG) as the default AQI.
+
+```json
+{
+  "aqi": [
+    {
+      "name": "PSI 24H (SG)",
+      "defaultLocalAqi": false
+    },
+    {
+      "name": "1-Hour PM2.5 (SG)",
+      "defaultLocalAqi": true
+    }
+  ]
+}
+```
+
+> **Hint:** The default AQI is not mandatory, so you should choose the most appropriate AQI for your product.
+
+In addition, when there are multiple AQIs, the [Pollutant sub-index](#pollutant-sub-index) will be prioritized to be calculated based on the default AQI's standard.
+
+### Health effects and advice
+
+Air quality has a direct impact on human health. We provide information on health effects and advice in the API, and for most people, health advice can be helpful in guiding their actions and responding as promptly as possible when air pollution occurs. 
+
+Health advice will be provided separately according to healthy populations and sensitive populations, where sensitive populations are included:
+
+* Elderly
+* Pregnant women
+* Children
+* People with heart disease
+* People with respiratory diseases
+* Other people with unusual air sensitivity
+
+Health effects and advice are not available for all countries and regions.
+
+> **Warning:** Health effects and advice are not regulatory advice and do not have the force of law, and you should be aware of, or inform your users to: under any circumstances, people who are unwell should seek immediate medical attention and follow medical advice.
+{:.bqdanger}
 
 ## Pollutants
 
@@ -118,15 +125,32 @@ In addition, the measurement units for pollutant concentration also vary. Refer 
   </tbody>
 </table>
 
-## Pollutant sub-index
+### Pollutant sub-index
 
 > **Hint:** Pollutant sub-index are only available for [Air Quality v1 (beta)](/en/docs/api/air-quality/) and do not work for [API v7 (legacy)](/en/docs/api/air/).
 
-Sub-index is an index for each pollutant. Typically, the worst sub-index represents the current AQI, and the range of the sub-index is the same as the range of the corresponding AQI.
+The pollutant sub-index is the AQI for each pollutant. Usually, we need to calculate the sub-index first, and then the worst sub-index representation is the current AQI value, for example:
 
-## Primary pollutant
+```
+AQI = max {SUB-INDEX1,SUB-INDEX2,SUB-INDEX3,...SUB-INDEXn}
+```
 
-In general, the pollutant with the highest concentration value or the worst sub-index is the primary pollutant, but the primary pollutant may be null, depending on national and regional standards or when missing pollutant values make it impossible to calculate.
+The Pollutant sub-index gives us an idea of the current levels of each pollutant in the air quality and is also used to pick out the [primary pollutant](#primary-pollutant) for the current air quality.
+
+### Primary pollutant
+
+The pollutant with the highest concentration value or the worst pollutant sub-index is the primary pollutant, which represents the primary source of current air pollution.
+
+> **Hint:** Depending on local AQI standard, the primary pollutant may not be calculated, and in this case the primary pollutant is null.
+
+## Monitoring Station
+
+In most cities, we will refer to the data from nearby air quality monitoring stations for AQI calculation, you can use the `station=true` parameter in your request, this will return the station ID and name associated with this city.
+
+You can use the [Monitoring Station Data](/en/docs/api/air-quality/air-station/) to obtain values of pollutant concentrations measured at specific monitoring stations.
+
+> **Warning:** Monitoring stations may not be able to provide data for a variety of reasons, such as failures, maintenance, etc., and it is not possible to know when or if they will be restored.
+{:.bqwarning}
 
 ## China AQI
 
