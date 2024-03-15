@@ -208,7 +208,7 @@ warning-list:
       en: Severe Weather City List
 air-now-v1:
   demo:
-    link: https://api.qweather.com/airquality/v1/now/101020100?key=YOUR_KEY
+    link: https://api.qweather.com/airquality/v1/now/101020100?pollutant=true&station=true&key=YOUR_KEY
     name: 
       zh: 上海实时空气质量
       en: Real-time air quality for Shanghai
