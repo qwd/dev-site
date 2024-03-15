@@ -24,7 +24,7 @@ Global air quality real-time data, we provide AQI and pollutant concentration ba
 
 ## Request Example
 
-{% include api-url-example.html apidata="air-now-v1" dev=true %}
+{% include api-url-example.html apidata="air-now-v1" %}
 
 ## Response
 

@@ -25,7 +25,7 @@ ref: 1-api-air-now-v1
 
 ## 请求示例
 
-{% include api-url-example.html apidata="air-now-v1" dev=true %}
+{% include api-url-example.html apidata="air-now-v1" %}
 
 ## 返回数据
 
