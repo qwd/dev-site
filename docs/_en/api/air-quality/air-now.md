@@ -20,14 +20,14 @@ Global air quality real-time data, we provide AQI and pollutant concentration ba
 
 ## Query Parameters
 
-{% include params.html p="key lang-def" %}
+{% include params.html p="key lang-def aq-pollutant aq-sta" %}
 
 ## Request Example
 
-{% include api-url-example.html apidata="air-now-v1" dev=true %}
+{% include api-url-example.html apidata="air-now-v1" %}
 
 ## Response
 
 {% include api-snippet.html %}
 
-{% include api-response.html group="air" type="now-v1" prefix="nil" refer="0"  %}
+{% include api-response.html group="air" type="now-v1" prefix="nil" fxlink="0" refer="0"  %}

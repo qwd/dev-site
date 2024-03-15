@@ -4,33 +4,45 @@ title: aq-v1-now-v1
 ```json
 {
   "code": "200",
-  "updateTime": "2023-07-14T21:20+08:00",
-  "fxLink": "https://www.qweather.com/air/shanghai-101020100.html",
+  "updateTime": "2023-02-11T10:20+08:00",
   "aqi": [
     {
       "code": "cn-mee-1h",
-      "name": "AQI-1h (CN)",
-      "value": "53",
-      "level": "2",
-      "category": "良",
-      "color": "255,255,0",
-      "primaryPollutant": {
-        "code": "pm2p5",
-        "name": "PM 2.5",
-        "fullName": "颗粒物（粒径小于等于2.5µm）"
+      "name": "AQI-1H (CN)",
+      "defaultLocalAqi": true,
+      "value": 37,
+      "valueDisplay": "37",
+      "level": "1",
+      "category": "优",
+      "color": "0,228,0",
+      "health": {
+        "effect": "空气质量令人满意，基本无空气污染。",
+        "advice": {
+          "generalPopulation": "各类人群可正常活动。",
+          "sensitivePopulation": "各类人群可正常活动。"
+        }
       }
     },
     {
       "code": "cn-mee",
       "name": "AQI (CN)",
-      "value": "79",
+      "defaultLocalAqi": false,
+      "value": 55,
+      "valueDisplay": "55",
       "level": "2",
       "category": "良",
       "color": "255,255,0",
       "primaryPollutant": {
-        "code": "pm2p5",
-        "name": "PM 2.5",
-        "fullName": "颗粒物（粒径小于等于2.5µm）"
+        "code": "pm10",
+        "name": "PM 10",
+        "fullName": "颗粒物（粒径小于等于10µm）"
+      },
+      "health": {
+        "effect": "空气质量可接受，但某些污染物可能对极少数异常敏感人群健康有较弱影响。",
+        "advice": {
+          "generalPopulation": "一般人群可正常活动。",
+          "sensitivePopulation": "极少数异常敏感人群应减少户外活动。"
+        }
       }
     }
   ],
@@ -40,12 +52,12 @@ title: aq-v1-now-v1
       "name": "PM 2.5",
       "fullName": "颗粒物（粒径小于等于2.5µm）",
       "concentration": {
-        "value": "37",
+        "value": 25.0,
         "unit": "μg/m3"
       },
       "subIndex": {
-        "value": "53",
-        "category": "良"
+        "value": 37,
+        "valueDisplay": "37"
       }
     },
     {
@@ -53,12 +65,12 @@ title: aq-v1-now-v1
       "name": "PM 10",
       "fullName": "颗粒物（粒径小于等于10µm）",
       "concentration": {
-        "value": "54",
+        "value": 36.0,
         "unit": "μg/m3"
       },
       "subIndex": {
-        "value": "53",
-        "category": "良"
+        "value": 37,
+        "valueDisplay": "37"
       }
     },
     {
@@ -66,12 +78,12 @@ title: aq-v1-now-v1
       "name": "NO2",
       "fullName": "二氧化氮",
       "concentration": {
-        "value": "62",
+        "value": 41.0,
         "unit": "μg/m3"
       },
       "subIndex": {
-        "value": "32",
-        "category": "优"
+        "value": 21,
+        "valueDisplay": "21"
       }
     },
     {
@@ -79,12 +91,12 @@ title: aq-v1-now-v1
       "name": "O3",
       "fullName": "臭氧",
       "concentration": {
-        "value": "26",
+        "value": 49.0,
         "unit": "μg/m3"
       },
       "subIndex": {
-        "value": "9",
-        "category": "优"
+        "value": 16,
+        "valueDisplay": "16"
       }
     },
     {
@@ -92,12 +104,12 @@ title: aq-v1-now-v1
       "name": "SO2",
       "fullName": "二氧化硫",
       "concentration": {
-        "value": "5",
+        "value": 6.0,
         "unit": "μg/m3"
       },
       "subIndex": {
-        "value": "2",
-        "category": "优"
+        "value": 3,
+        "valueDisplay": "3"
       }
     },
     {
@@ -105,12 +117,12 @@ title: aq-v1-now-v1
       "name": "CO",
       "fullName": "一氧化碳",
       "concentration": {
-        "value": "0.6",
+        "value": 0.5,
         "unit": "mg/m3"
       },
       "subIndex": {
-        "value": "7",
-        "category": "优"
+        "value": 6,
+        "valueDisplay": "6"
       }
     }
   ],
@@ -156,6 +168,10 @@ title: aq-v1-now-v1
       "name": "宝山庙行"
     },
     {
+      "id": "P51755",
+      "name": "崇明上实东滩"
+    },
+    {
       "id": "P59043",
       "name": "嘉定南翔"
     },
@@ -189,7 +205,7 @@ title: aq-v1-now-v1
     }
   ],
   "source": [
-    "中国环境监测总站 (CNEMC)。1小时实时数据仅供参考，未经过完整的审核程序进行修订和确认。"
+    "中国环境监测总站 (CNEMC)。数据仅为当天参考值，未经过完整的审核程序进行修订和确认，不适用评价达标状况或任何正式评估。"
   ]
 }
 ```

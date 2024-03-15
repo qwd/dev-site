@@ -1,0 +1,42 @@
+<table class="small">
+  <thead>
+    <tr>
+      <th>AQI</th>
+      <th>{{ site.data.t[page.lang].range}}</th>
+      <th>({{ site.data.t[page.lang].level}}) {{ site.data.t[page.lang].category}}</th>
+      <th>{{ site.data.t[page.lang].color}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%- assign sort_aqi = site.data.table.aqis | sort: 'code' -%}
+    {% for item in sort_aqi %}
+    {%- if page.lang == "zh" -%}
+    {%- assign cate_array = item.category_zh | split: "," -%}  
+    {%- else -%}
+    {%- assign cate_array = item.category_en | split: "," -%}  
+    {%- endif -%}
+    {%- assign range_array = item.range_threshold | split: "," -%}
+    {%- assign lv_array = item.level | split: "," -%}
+    {%- assign color_array = item.color_rgb | split: "|" -%}
+    <tr>
+      <td rowspan="{{ range_array | size }}">
+        <ul class="clear-list">
+          <li><strong>{{ item.name }}</strong></li>
+          <li><code>{{ item.code }}</code></li>
+          <li>{{ site.data.t[page.lang].pollutant }}: {{ item.pollutant_code }}</li>
+        </ul>
+      </td>
+      <td>{{ range_array[0] | replace: '-', ' ~ ' }}</td>
+      <td>({{ lv_array[0] }}) {{ cate_array[0] | lstrip }}</td>
+      <td style="background-color: rgb{{ color_array[0] }} ;"><span style=" color: rgb{{ color_array[0] }}; filter: grayscale(1) contrast(99) invert(1);">{{ color_array[0] }}</span></td>
+    </tr>
+    {% for range in range_array offset: 1 %}
+    <tr>
+      <td>{{ range | replace: '-', ' ~ ' }}</td>
+      <td>({{ lv_array[forloop.index] }}) {{ cate_array[forloop.index] | lstrip }}</td>
+      <td style="background-color: rgb{{ color_array[forloop.index] }};"><span style="color: rgb{{ color_array[forloop.index] }}; filter: grayscale(1) contrast(999) invert(1);">{{ color_array[forloop.index] }}</span></td>
+    </tr>
+    {% endfor %}
+    {% endfor %}
+  </tbody>
+</table>
