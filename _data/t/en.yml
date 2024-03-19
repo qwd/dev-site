@@ -127,7 +127,7 @@ pi-tier4: Next 5 million
 pi-tier5: Next 40 million
 pi-tier6: Over 50 million
 pi-notier: Any request
-si-biref: Welcome to share your code, you can edit <a href="https://github.com/qwd/dev-site/edit/master/_data/showcase.yml" target="_blank" rel="noopener noreferrer">this file</a> and submit a PR. See <a href="https://blog.qweather.com/post/share-your-work/" target="_blank" rel="noopener noreferrer">how to share code</a> to learn more.
+si-biref: Welcome to share your code for using QWeather dev service, you can edit <a href="https://github.com/qwd/dev-site/edit/master/_data/showcase.yml" target="_blank" rel="noopener noreferrer">this file</a> and submit a PR.
 si-note: We cannot guarantee the availability of these works, please contact the author. 
 fi-q-general: General
 fi-q-dev: Development
