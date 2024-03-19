@@ -2,6 +2,12 @@
 # **仅限基于开源许可证的作品**
 # -------------------------
 #
+# 作品要求 
+# - SDK或有趣的项目更优先
+# - 正常维护中的项目
+# - 完善的文档，可以轻松的根据文档在本地运行
+# - 没有恶意代码，不违反法律法规或公序良俗
+#
 # 如何添加作品
 # 1. 在下方找你的主要开发语言，并添加作品信息。如果没有你使用的语言，请自行添加。
 # 2. 复制下列模版，并粘贴到你的开发语言下。粘贴的位置无所谓，按字母顺序排序。
@@ -20,6 +26,12 @@
 # ----------------------------------------------
 # **Works under any open-source license only**
 # ----------------------------------------------
+#
+# Requirements
+# * SDK or interesting work are preferred
+# * Project under maintenance
+# * Well documented and easy to run locally
+# * No malicious code, does not violate laws or regulations or public order and morals
 #
 # How to add your work
 # 1. Find your primary programming language below and add information about your work. If the language is not available, please add it by yourself.
