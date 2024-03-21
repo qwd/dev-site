@@ -118,6 +118,6 @@ QPM (Query Per Minute), the number of requests per minute. Requests exceeding th
 
 The Wind Scale is used for direct display and is not recommended as an enumerated item; for example, if a higher level of wind appears in the future or the standard of the wind level is changed, if the enumeration item is used, it will not be matched. Please use it with caution.
 
-The Wind Scale is based on the wind speed, please refer to [Wind Speed ​​and Wind Speed ​​Comparison](https://www.qweather.com/en/blog/wind-speed-vs-wind-scale), and QWeather uses KM/H as the unit.
+The Wind Scale is based on the wind speed, please refer to [Wind Speed ​​and Wind Speed ​​Comparison](/en/docs/resource/wind-info/), and QWeather uses KM/H as the unit.
 
 When the Wind Scale is 0, the wind direction angle is -1, and the wind direction is **no continuous wind direction**.
