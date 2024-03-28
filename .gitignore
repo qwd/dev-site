@@ -37,12 +37,20 @@ $RECYCLE.BIN/
 *.code-workspace
 .history/
 
+# nodejs
+node_modules/
+
 # jekyll
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
 Gemfile.lock
+
+# hugo
+/resources/
+/public/
+.hugo_build.lock
 
 # Misc
 *.tmp
