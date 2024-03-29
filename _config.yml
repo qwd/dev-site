@@ -36,6 +36,11 @@ webmaster_verifications:
   google: WFu5M6w9XiYrf3hgUBLxCA1Jrgb_CWTzXTPycVIqngg
   bing: EDFBFE217D2B905D82BE1D5A1BC9AB28
   baidu: code-emsTMHxQLF
+algolia:
+  app_id: T25W3F5EZF
+  api_key: b6d7e64ad9d29597614562aa723ea028
+  index_name: qweather
+  container: "#docsearch"
 
 defaults:
 - scope:
