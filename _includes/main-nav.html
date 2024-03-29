@@ -33,11 +33,9 @@
         <li class="mr-auto mr-md-2  {%- if page.ref=="price" %} active{%- endif %}">
           <a class="dark-link no-underline" href="{%- if page.lang == "en" %}/en{%- endif %}/price/">{{ site.data.t[page.lang].price }}</a>
         </li>
-        {%- comment -%}
-        <li class="d-none d-md-block">
-          <a class="dark-link no-underline" target="_blank" rel="noopener noreferrer" href="{{site.links.blog}}">{{ site.data.t[page.lang].blog }}</a>
+        <li class="mr-auto mr-md-2">
+          <div id="docsearch"></div>
         </li>
-        {%- endcomment -%}
       </ul>
     </div>
   </div>
