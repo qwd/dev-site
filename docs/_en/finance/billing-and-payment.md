@@ -68,7 +68,7 @@ One of the advantages of Pay-as-you-go model is that you can start or stop at an
 
 When the bill is generated, we will automatically attempt to make the payment from your account balance. In addition to automatic payments, we also support recurring payments and manual payments.
 
-### Aautomatic Payment
+### Automatic Payment
 
 Standard subscription is billed by default using automatic payment. It will automatically deduct your balance from each hourly accrued charges, and your service may be suspended when the balance < 0.
 
@@ -95,11 +95,11 @@ Here are some payment scenarios that you may encounter. For these scenarios, we 
 - The monthly bill is generated on the 1st of each month
 - The payment date for recurring payment is the 10th of each month
 
-***Use Aautomatic Payment***
+***Use Automatic Payment***
 
 For each hour, the accrued charge is ¥1 (¥0.001 x 1000 requests) and is charged by your balance. After the 100th hour your balance will be 0 and you should add your balance in time, otherwise after the 101st hour your balance will be -¥1, which will cause your service to be disrupted and go into [outstanding status](#outstanding).
 
-***Use Aautomatic Payment and Saving Plans***
+***Use Automatic Payment and Saving Plans***
 
 For each hour, the accrued charge is ¥0.60 (¥0.001 x 0.6 saving rate x 1000 requests) and is charged by your Saving Plans. After the commitment amount of the Saving Plans is used up, the accrued charge per hour will be paid from your balance instead.
 
