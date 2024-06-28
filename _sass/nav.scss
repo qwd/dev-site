@@ -71,6 +71,11 @@
 }
 
 .docs-toc {
+  position: sticky;
+  align-self: flex-start;
+  top: 61px;
+  z-index: 10;
+
   ul {
     list-style: none;
     padding: 0;
