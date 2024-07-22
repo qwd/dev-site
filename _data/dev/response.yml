@@ -256,10 +256,16 @@ weather:
     type: [now, hourly, daily, gnow, ghourly, gdaily]
   - name: precip
     desc:
+      zh: 过去1小时降水量，默认单位：毫米
+      en: Accumulated precipitation in the last hour
+    example: 5
+    type: [now, gnow]
+  - name: precip
+    desc:
       zh: 当前小时累计降水量，默认单位：毫米
       en: Accumulated precipitation in the current hour
     example: 5
-    type: [now, hourly,ghourly,gnow]
+    type: [hourly,ghourly]
   - name: pop
     desc:
       zh: 逐小时预报降水概率，百分比数值，**可能为空**
