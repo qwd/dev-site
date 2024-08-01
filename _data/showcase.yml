@@ -171,3 +171,10 @@
       author: Zeyu Zhang
       code: https://github.com/InTereSTingHE/QWeatherAPI-Python
       description: 和风天气API调用python实现。
+- language: Rust
+  works:
+    - name: QWeather-SDK
+      description: 和风 API rust 客户端
+      code: https://github.com/foxzool/qweather-sdk
+      author: ZoOL
+
