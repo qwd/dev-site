@@ -35,6 +35,16 @@ refer:
       zh: 数据许可或版权声明，**可能为空**
       en: Data license, **may be null**
     example: QWeather Developers License
+metadata:
+  tag:
+    zh: 数据标签
+    en: Unique tag for this data
+  expireTime:
+    zh: 数据预计的过期时间
+    en: Possible expiration time of data
+  sources:
+    zh: 数据来源或提供商名字以及他们的声明，开发者必须将此内容与当前数据一起展示，**可能为空**
+    en: Data source or provider name and their declaration, developers must display this information with data. **May be null**
 weather:
   - name: obsTime
     desc:
@@ -318,142 +328,166 @@ minutely:
       en: Type of precipitation, `rain` and `snow`
     example: rain
 air:
-  - name: aqi.code
+  - name: forecastTime
+    desc:
+      zh: |-
+       预报时间，[ISO8601格式](/docs/resource/glossary/#date-time)
+      en: |-
+       Forecast time, [ISO8601 format](/docs/resource/glossary/#date-time)
+    type: [hourly-v1]
+  - name: forecastDate
+    desc:
+      zh: |-
+       预报日期，[ISO8601格式](/docs/resource/glossary/#date-time)
+      en: |-
+       Forecast date, [ISO8601 format](/docs/resource/glossary/#date-time)
+    type: [daily-v1]
+  - name: indexes.code
     desc:
       zh: |-
        [空气质量指数](/docs/resource/air-info/#supported-aqis)Code
       en: |-
        Code of [air quality index](/en/docs/resource/air-info/#supported-aqis) 
-    type: [now-v1, daily-v1]
-  - name: aqi.name
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.name
     desc:
       zh: 空气质量指数的名字
       en: Name of air quality index 
-    type: [now-v1, daily-v1]
-  - name: aqi.defaultLocalAqi
-    desc:
-      zh: |-
-       是否是[默认/推荐的当地AQI](/docs/resource/air-info/#default-local-aqi)
-      en: |-
-       [Is the default/preferred local AQI](/en/docs/resource/air-info/#default-local-aqi)
-    type: [now-v1, daily-v1]
-  - name: aqi.value
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.aqi
     desc:
       zh: |-
        [空气质量指数的值](/docs/resource/air-info/#aqi-value)
       en: |-
        [Value of air quality index](/en/docs/resource/air-info/#aqi-value) 
-    type: [now-v1, daily-v1]
-  - name: aqi.valueDisplay
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.aqiDisplay
     desc:
       zh: |-
        [空气质量指数的值的文本显示](/docs/resource/air-info/#aqi-value)
       en: |-
        [Display name of the AQI value](/en/docs/resource/air-info/#aqi-value)
-    type: [now-v1, daily-v1]
-  - name: aqi.level
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.level
     desc:
       zh: 空气质量指数等级，可能为空
       en: Level of air quality index 
-    type: [now-v1, daily-v1]
-  - name: aqi.category
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.category
     desc:
       zh: 空气质量指数类别，可能为空
       en: Category of air quality index 
-    type: [now-v1, daily-v1]
-  - name: aqi.color
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.color.red
     desc:
-      zh: 空气质量指数的颜色，RGB格式
-      en: RGB color for AQI
-    type: [now-v1, daily-v1]
-  - name: aqi.primaryPollutant.code
+      zh: 空气质量指数的颜色，RGBA中的red
+      en: Red in RGBA color for AQI
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.color.green
+    desc:
+      zh: 空气质量指数的颜色，RGBA中的green
+      en: Green in RGBA color for AQI
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.color.blue
+    desc:
+      zh: 空气质量指数的颜色，RGBA中的blue
+      en: Blue in RGBA color for AQI
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.color.alpha
+    desc:
+      zh: 空气质量指数的颜色，RGBA中的alpah
+      en: Alpha in RGBA color for AQI
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.primaryPollutant.code
     desc:
       zh: |-
        [首要污染物](/docs/resource/air-info/#primary-pollutant)的Code，可能为空
       en: |-
        The [primary pollutant](/en/docs/resource/air-info/#primary-pollutant) code, maybe NULL.
-    type: [now-v1, daily-v1]
-  - name: aqi.primaryPollutant.name
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.primaryPollutant.name
     desc:
       zh: 首要污染物的名字，可能为空
       en: Name of primary pollutant, maybe NULL.
-    type: [now-v1, daily-v1]
-  - name: aqi.primaryPollutant.fullName
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.primaryPollutant.fullName
     desc:
       zh: 首要污染物的全称，可能为空
       en: Full name of primary pollutant, maybe NULL.
-    type: [now-v1, daily-v1]
-  - name: aqi.health.effect
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.health.effect
     desc:
       zh: |-
        [空气质量对健康的影响](/docs/resource/air-info/#health-effects-and-advice)，可能为空
       en: |-
        [Health effects of air quality](/en/docs/resource/air-info/#health-effects-and-advice), maybe NULL.
-    type: [now-v1, daily-v1]
-  - name: aqi.health.advice.generalPopulation
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.health.advice.generalPopulation
     desc:
       zh: 对一般人群的健康指导意见，可能为空
       en: Health advice for general population, maybe NULL.
-    type: [now-v1, daily-v1]
-  - name: aqi.health.advice.sensitivePopulation
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: indexes.health.advice.sensitivePopulation
     desc:
       zh: 对敏感人群的健康指导意见，可能为空
       en: Health advice for sensitive population, maybe NULL.
-    type: [now-v1, daily-v1]
-  - name: pollutant.code
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: pollutants.code
     desc:
       zh: |-
        [污染物](/docs/resource/air-info/#pollutants)的Code
       en: |-
        The [pollutant](/en/docs/resource/air-info/#pollutants) code.
-    type: [now-v1, station-v1]
-  - name: pollutant.name
+    type: [now-v1, station-v1, daily-v1, hourly-v1]
+  - name: pollutants.name
     desc:
       zh: 污染物的名字
       en: Name of pollutant.
-    type: [now-v1, station-v1]
-  - name: pollutant.fullName
+    type: [now-v1, station-v1, daily-v1, hourly-v1]
+  - name: pollutants.fullName
     desc:
       zh: 污染物的全称
       en: Full name of pollutant.
-    type: [now-v1, station-v1]
-  - name: pollutant.concentration.value
+    type: [now-v1, station-v1, daily-v1, hourly-v1]
+  - name: pollutants.concentration.value
     desc:
       zh: 污染物的浓度值
       en: Concentration values of pollutants.
-    type: [now-v1, station-v1]
-  - name: pollutant.concentration.unit
+    type: [now-v1, station-v1, daily-v1, hourly-v1]
+  - name: pollutants.concentration.unit
     desc:
       zh: 污染物的浓度值的单位
       en: Units for concentration values of pollutants.
-    type: [now-v1, station-v1]
-  - name: pollutant.subIndex.value
+    type: [now-v1, station-v1, daily-v1, hourly-v1]
+  - name: pollutants.subIndexes.code
+    desc:
+      zh: |-
+       [污染物的分指数的Code](/docs/resource/air-info/#pollutant-sub-index)，可能为空
+      en: |-
+       Code of [air quality sub-index](/en/docs/resource/air-info/#pollutant-sub-index), maybe NULL.
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: pollutants.subIndexes.aqi
     desc:
       zh: |-
        [污染物的分指数的数值](/docs/resource/air-info/#pollutant-sub-index)，可能为空
       en: |-
        [Sub-index value for pollutant](/en/docs/resource/air-info/#pollutant-sub-index), maybe NULL.
-    type: [now-v1]
-  - name: pollutant.subIndex.valueDisplay
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: pollutants.subIndexes.aqiDisplay
     desc:
       zh: 污染物的分指数数值的显示名称
       en: Sub-index for display, maybe NULL.
-    type: [now-v1]
-  - name: station.id
+    type: [now-v1, daily-v1, hourly-v1]
+  - name: stations.id
     desc:
       zh: AQI相关联的监测站Location ID，可能为空
       en: Location ID of the monitoring station for this AQI reference, maybe NULL.
     type: [now-v1]
-  - name: station.name
+  - name: stations.name
     desc:
       zh: AQI相关联的监测站名称
       en: Name of the monitoring station for this AQI reference, maybe NULL.
     type: [now-v1]
-  - name: source
-    desc:
-      zh: 数据来源或提供商名字以及他们的声明，必须与空气质量数据一起展示。可能为空
-      en: Data source or provider name and their declaration, which must be displayed with the air quality data. May be NULL
-    type: [now-v1, station-v1]
   - name: name
     desc:
       zh: 监测站名称

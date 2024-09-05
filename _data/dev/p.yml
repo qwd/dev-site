@@ -303,13 +303,3 @@ p-lon:
     en: The longitude of the desired location. Decimal format, up to 2 decimal places. For example `116.41`
     zh: 所需位置的经度。十进制，最多支持小数点后两位。例如 `116.41` 
   rqd: true
-aq-pollutant:
-  name: pollutant
-  text: 
-    en: Pollutant concentration value in AQI, boolean and default `false`.
-    zh: 返回空气质量中的污染物数值，布尔值，默认`false`。 
-aq-sta:
-  name: station
-  text: 
-    en: Monitoring station ID and name, boolean and default `false`.
-    zh: 返回当前城市AQI所参考的监测站ID和名字，布尔值，默认`false`。 

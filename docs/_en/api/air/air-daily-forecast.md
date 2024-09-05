@@ -6,6 +6,8 @@ ref: 2-api-air-daily-forecast
 
 Air Quality Daily Forecast API for Chinese cities, including AQI, air quality levels, primary pollutants.
 
+> **Note:** [Air Quality API v1 (new)](/en/docs/api/air-quality/) is now available, please try to use and upgrade.
+
 ## Request URL
 
 {% include api-url.html dev=true%}
