@@ -16,6 +16,7 @@ See _data/response.yml
 - update: set to 0 will remove `updateTime`, 1 is default.
 - fxlink: set to 0 will remove `fxLink`, 1 is default.
 {%- endcomment -%}
+{%- assign show_statusCode = include.statusCode | default: 1 -%}
 {%- assign show_fxlink = include.fxlink | default: 1 -%}
 {%- assign show_update = include.update  | default: 1 -%}
 {%- assign show_refer = include.refer  | default: 1 -%}
@@ -23,11 +24,21 @@ See _data/response.yml
 {%- assign type_array = include.type | split: " " -%}
 {%- assign prefix_array = include.prefix | split: " " -%}
 {%- assign num = type_array.size | minus: 1 -%}
+{%- assign show_metadata = include.metadata | split: " "  -%}
 
 <ul>
+    {%- if show_metadata -%}
+    {% for item in show_metadata %}
+    <li class="mb-4">
+        <code>metadata.{{ item }}</code> {{ site.data.dev.response.metadata[item][page.lang] | markdownify | remove: '<p>' | remove: '</p>' }}
+    </li>       
+    {% endfor %}
+    {%- endif -%}
+    {%- if show_statusCode == 1 %}
     <li class="mb-4">
         <code>{{ site.data.dev.response.code.name }}</code> {{ site.data.dev.response.code.desc[page.lang] | markdownify | remove: '<p>' | remove: '</p>' -}}
-    </li>
+    </li>    
+    {%- endif %}
     {%- if show_update == 1 %}
     <li class="mb-4">
         <code>{{ site.data.dev.response.update.name }}</code> {{ site.data.dev.response.update.desc[page.lang] | markdownify | remove: '<p>' | remove: '</p>' }}
@@ -64,6 +75,5 @@ See _data/response.yml
         <code>refer.{{ item.name }}</code> {{ item.desc[page.lang] | markdownify | remove: '<p>' | remove: '</p>' }}
     </li>       
     {%- endif -%}
-
     {%- endfor -%}
 </ul>

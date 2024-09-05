@@ -3,15 +3,19 @@ title: aq-v1-station-v1
 ---
 ```json
 {
-  "code": "200",
-  "updateTime": "2023-08-30T09:40+00:00",
-  "pollutant": [
+  "metadata": {
+    "tag": "71f704ff6230d81546fee77b35952f0ec55bbdc7255eacd974a85006b7c1834f",
+    "sources": [
+      "European Environment Agency"
+    ]
+  },
+  "pollutants": [
     {
       "code": "pm2p5",
       "name": "PM 2.5",
       "fullName": "Fine particulate matter (<2.5µm)",
       "concentration": {
-        "value": "19",
+        "value": 17.0,
         "unit": "μg/m3"
       }
     },
@@ -20,7 +24,7 @@ title: aq-v1-station-v1
       "name": "PM 10",
       "fullName": "Inhalable particulate matter (<10µm)",
       "concentration": {
-        "value": "26",
+        "value": 47.0,
         "unit": "μg/m3"
       }
     },
@@ -29,8 +33,8 @@ title: aq-v1-station-v1
       "name": "NO2",
       "fullName": "Nitrogen dioxide",
       "concentration": {
-        "value": "12.3",
-        "unit": "ppb"
+        "value": 29.0,
+        "unit": "μg/m3"
       }
     },
     {
@@ -38,22 +42,10 @@ title: aq-v1-station-v1
       "name": "O3",
       "fullName": "Ozone",
       "concentration": {
-        "value": "30",
-        "unit": "ppb"
-      }
-    },
-    {
-      "code": "co",
-      "name": "CO",
-      "fullName": "Carbon monoxide",
-      "concentration": {
-        "value": "0.4",
-        "unit": "ppm"
+        "value": 45.73,
+        "unit": "μg/m3"
       }
     }
-  ],
-  "source": [
-    "EPA"
   ]
 }
 ```

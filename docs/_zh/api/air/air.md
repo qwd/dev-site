@@ -6,3 +6,5 @@ description: 中国3000+市县区及1700+监测站点的空气质量AQI数据，
 permalink: /docs/api/air/
 ref: 0-api-air
 ---
+
+> **注意：**[空气质量API v1（新版）](/docs/api/air-quality/)现已发布，请尝试使用并升级到新版本。

@@ -6,6 +6,8 @@ ref: 1-api-air-now
 
 Real-time air quality for Chinese cities and 1,700 monitoring stations, including AQI, air quality levels, primary pollutants, PM10, PM2.5, ozone, nitrogen dioxide sulfur dioxide and carbon monoxide values.
 
+> **Note:** [Air Quality API v1 (new)](/en/docs/api/air-quality/) is now available, please try to use and upgrade.
+
 ## Request URL
 
 {% include api-url.html flag="air-now" dev=true %}
