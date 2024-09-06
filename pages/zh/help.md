@@ -18,11 +18,11 @@ ref: faq
 
 ### 如何快速开始使用和风天气开发服务？ {#how-to-get-started-quickly-with-qweather-services}
 
-使用和风天气开发服务很简答，请参考[快速开始](/docs/start/)。
+使用和风天气开发服务很简单，请参考[快速开始](/docs/start/)。
 
 ### 和风天气服务覆盖了哪些国家和地区？ {#what-countries-and-regions-are-covered-by-the-qweather-service}
 
-对于不同的数据，覆盖范围有所不同。对于天气数据，我们支持全球200+国家和地区；对于预警数据，参考[预警信息-支持的国家或地区](/docs/resource/warning-info/#supported-regions)；对于分钟降水和空气质量，支持中国内地。
+不同的数据，覆盖范围有所不同。天气预报、海洋、太阳辐照、天文数据，支持全球范围；天气预警，请参考[预警信息-支持的国家或地区](/docs/resource/warning-info/#supported-regions)；空气质量，请参考[空气质量信息-支持的国家或地区](/docs/resource/air-info/#supported-regions)；分钟降水和热带气旋，支持中国地区。
 
 ### 我可以免费试用吗？ {#can-i-try-it-for-free}
 
@@ -36,7 +36,7 @@ ref: faq
 
 ### 出现204/400/401/402/403/404/429状态码 {#status-code-204400401402403404429}
 
-当出现上述状态码时，代表你的请求可能出现了一些问题，请参考[错误状态码](/docs/resource/status-code/)。
+当出现上述状态码时，代表你的请求可能出现了一些问题，请参考[错误状态码](/docs/resource/error-code/)。
 
 ### 获取到的数据是乱码 {#the-data-is-garbled}
 
