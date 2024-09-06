@@ -21,7 +21,7 @@ Using the QWeather Develop Service is simple, please refer to [Quick Start](/en/
 
 ### What countries and regions are covered by the QWeather service?
 
-For weather data, we support 200+ countries and regions worldwide, for warning data, refer to [warning-info-supported-countries-or-regions](/en/docs/resource/warning-info/#supported-regions), for minutely precipitation and air quality, Mainland China is supported.
+The coverage is varied by data. For Weather/Ocean/Solar Radiation/Astronomy, they are available worldwide. For Warning, refer to [Warning Info - Supported regions](/en/docs/resource/warning-info/#supported-regions). For Air Quality, refer to [Air Quality Info - Supported regions](/en/docs/resource/air-info/#supported-regions). For Minutely Precipitation and Tropical Cyclone, only available in China.
 
 ### Can I try it for free?
 
@@ -35,7 +35,7 @@ Yes, based on QWeather's global data center and CDN edge acceleration capabiliti
 
 ### Status code 204/400/401/402/403/404/429 
 
-When the above status code is retrieved, it means there may be some issues with your request, refer to [Status Code](/en/docs/resource/status-code/).
+When the above status code is retrieved, it means there may be some issues with your request, refer to [Status Code](/en/docs/resource/error-code/).
 
 ### The data is garbled
 
