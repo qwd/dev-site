@@ -233,7 +233,7 @@ Tuvalu,图瓦卢,TV,TUV,798,ISO 3166-2:TV,TRUE,,,
 Uganda,乌干达,UG,UGA,800,ISO 3166-2:UG,TRUE,,,
 Ukraine,乌克兰,UA,UKR,804,ISO 3166-2:UA,TRUE,,,
 United Arab Emirates,阿联酋,AE,ARE,784,ISO 3166-2:AE,TRUE,,,
-United Kingdom of Great Britain and Northern Ireland,英国,GB,GBR,826,ISO 3166-2:GB,TRUE,TRUE,TRUE,gb-defra
+United Kingdom of Great Britain and Northern Ireland,英国,GB,GBR,826,ISO 3166-2:GB,TRUE,TRUE,TRUE,"gb-defra,eu-eea"
 United States of America,美国,US,USA,840,ISO 3166-2:US,TRUE,TRUE,TRUE,"us-epa, us-epa-nc"
 United States Minor Outlying Islands,美国本土外小岛屿,UM,UMI,581,ISO 3166-2:UM,FALSE,,,
 Uruguay,乌拉圭,UY,URY,858,ISO 3166-2:UY,TRUE,,,

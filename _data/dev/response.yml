@@ -335,12 +335,19 @@ air:
       en: |-
        Forecast time, [ISO8601 format](/docs/resource/glossary/#date-time)
     type: [hourly-v1]
-  - name: forecastDate
+  - name: forecastStartTime
     desc:
       zh: |-
-       预报日期，[ISO8601格式](/docs/resource/glossary/#date-time)
+       预报数据的开始时间，[ISO8601格式](/docs/resource/glossary/#date-time)
       en: |-
-       Forecast date, [ISO8601 format](/docs/resource/glossary/#date-time)
+       The start time of the forecast data, [ISO8601 format](/docs/resource/glossary/#date-time)
+    type: [daily-v1]
+  - name: forecastEndTime
+    desc:
+      zh: |-
+       预报数据的结束时间，[ISO8601格式](/docs/resource/glossary/#date-time)
+      en: |-
+       The end time of the forecast data, [ISO8601 format](/docs/resource/glossary/#date-time)
     type: [daily-v1]
   - name: indexes.code
     desc:
