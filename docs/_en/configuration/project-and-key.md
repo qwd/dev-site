@@ -1,61 +1,58 @@
 ---
-title: Project and KEY
+title: Project and Credential
 tag: [config, project]
-description: The project is the container that hosts the QWeather service, and the KEY for get the service. The first step to start using the QWeather service is to create the project and KEY.
+description: Project and Credential are important configuration for QWeather API, this document will introduce how to set up them.
 ref: config-project
 ---
+**Project** and **Credential** are important configuration for QWeather API, this document will introduce how to set up them.
 
-**Project** is the container for QWeather Develop Service, which can also be understood as a product you need to develop, such as a "travel app" or a "graduation design".
+## Project
 
-**KEY** is the key (or token) to get the QWeather Develop Service, you can create multiple KEYs for different businesses in a Project, for example "for iOS" or "Test Only".
+**Project** is the container for QWeather API, which can also be understood as a product you need to develop, such as a "travel app" or a "graduation design".
 
-## Create Project
+### Create Project
 
 1. Go to [Console - Project](https://console.qweather.com/#/apps), and click the "Create Project" button.
 2. Set Project name, Project name can be up to 20 characters. You can modify the name later.
 3. Select [Subscription](/en/docs/finance/subscription/). If you choose Standard subscription, please ensure that your balance is ≥ ¥10.
-4. Select the platform of KEY, KEY can not be used across platforms. Create the first KEY at this time, you can create more KEYs later.
-5. Set KEY name.
-6. Click "Create" button.
+4. Click "Create" button.
 
-## Create KEY
+### Delete Project
 
-1. Click the "Add KEY" button on the Project card.
-2. Select the platform of KEY, KEY can not be used across platforms, means the KEY of Web API cannot be used in Android SDK and vice versa.
-3. Enter [iOS Bundle ID](/en/docs/resource/glossary/#ios-bundle-identifier) or [Android Package Name](/en/docs/resource/glossary/#android-package-name) when you select iOS/Android SDK platform.
-4. Set KEY name.
+> **Warning:** The deletion action is irrevocable, the Project and all credentials in this Project will be permanently deleted, and you can no longer use this Project and credentials for API authentication.
+{:.bqdanger}
+
+1. Click "Edit" button on the Project section.
+2. Click "Delete" button. 
+3. Enter the name of the Project and click “Delete” button to complete the deletion, or click the “Cancel” button to terminate the deletion.
+
+## Credential
+
+**Credentials** are used for API authentication, which include the Ed25519 key (for JWT authentication) and the API KEY. We recommend creating separate credentials for various usage scenarios, such as “For Website” or “Test Only”. Learn more about [API Security Guidelines](/en/docs/best-practices/security-guidelines/) and [API Authentication](/en/docs/authentication/).
+
+### Add Credential
+
+1. Go to [Console - Project](https://console.qweather.com/#/apps) and select any Project you want to add credentials to
+2. Click the "Add Credential" button on the Credentials section.
+3. Select authentication method, we recommend JWT for higher level security. See [JWT](/en/docs/authentication/jwt/) and [API KEY](/en/docs/authentication/apikey/).
+4. Set credential name.
 5. Click "Create" button.
 
-## Edit Project and KEY
+### Setup restrictions
 
-You can edit the name of the Project and KEY, edit the name will not affect your service.
+You can restrict the use of credentials to higher levels of security. See [Security Restrictions](/en/docs/best-practices/security-guidelines/#security-restriction).
 
-You can also edit the Bundle ID or Package Name, it may take some time to take effect, up to 4 hours, and the original bundle ID or Package Name bound after it takes effect will not be able to get the data again.
+### Delete credential
 
-## Delete Project
-
-> **Warning:** The deletion action is irrevocable, the Project and all KEYs in this Project will be permanently deleted, and you can no longer get data via this Project and KEYs.
+> **Warning:** The deletion is irrevocable, and you can no longer use this credential for API authentication.
 {:.bqdanger}
 
-1. Click "Edit" button on the Project card.
+1. Select the KEY you want to delete.
 2. Click "Delete" button. 
-3. You may need to confirm the delete action again.
+3. Enter the name of the KEY and click “Delete” button to complete the deletion, or click the “Cancel” button to terminate the deletion.
 
-## Delete KEY
+## Other rules
 
-> **Warning:** The deletion action is irrevocable, and you can not get data through this KEY again.
-{:.bqdanger}
-
-1. Select the KEY and click "Edit" button on the right.
-2. Click "Delete" button. 
-3. You may need to confirm the delete action again.
-
-## Restriction
-
-- Projects
-  - You can create up to 10 Projects in your account
-  - The subscription for Project cannot be changed, but the Project can be deleted, and the subscription is deleted at the same time.
-- KEY
-  - You can create up to 20 KEYs per Project.
-  - KEY can not be used across platforms, means the KEY of Web API cannot be used in Android SDK and vice versa.
+- Up to 10 Projects can be created.
+- Up to 20 Credentials can be added to each Project.
 

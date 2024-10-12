@@ -6,13 +6,13 @@ ref: config-api
 
 在开始使用和风天气API服务之前，你需要进行一些简单的配置和准备工作。
 
-## 创建项目和KEY {#create-project-and-key}
+## 创建项目和凭据 {#create-project-and-credential}
 
-请确保已经创建了项目和Web API KEY，否则请参考[项目和KEY](/docs/configuration/project-and-key/)。
+请确保已经创建了项目和凭据，请参考[项目和凭据](/docs/configuration/project-and-key/)和[身份认证](/docs/authentication/)。
 
 ## 了解API地址和参数 {#understanding-api-url}
 
-通常来讲，一个完整的API请求URL由scheme，host，port，path和query parameters组成。（当然，在不同程序中可能叫法不一样，我们仅以[RFC 3986](https://www.rfc-editor.org/rfc/rfc3986)为参考）
+通常来讲，一个完整的API请求URL由scheme，host，port，path，path parameters和query parameters组成。
 
 ```
 https://api.qweather.com/v7/weather/now?location=xxx&key=xxx
@@ -36,30 +36,5 @@ scheme        host   (port)   path        query parameters
 ## Gzip
 
 请注意，和风天气开发服务的API均使用Gzip进行了压缩，这将极大的减少网络流量，加快请求。因此，当你在开发过程中，需要对返回的数据进行解压。请参考[最佳实践-Gzip](/docs/best-practices/gzip/)。
-
-## 尝试一下 {#try-it-out}
-
-请复制并粘贴下列链接到你的浏览器中，看看返回了哪些内容。注意链接最后的参数`key`要换成你自己的KEY。
-
-- 如果你使用的是标准订阅，请复制下列链接：
-```
-https://api.qweather.com/v7/weather/3d?location=101010100&key=这里替换成你的key
-```
-
-- 如果你使用的是免费订阅，请复制下列链接：
-```
-https://devapi.qweather.com/v7/weather/3d?location=101010100&key=这里替换成你的key
-```
-
-如果一切正常，我们打开终端再试一下，请复制并粘贴下列命令到你的终端中。注意代码最后的参数`key`要换成你自己的KEY。
-
-- 如果你使用的是标准订阅，请复制下列代码：
-```bash
-curl -L -X GET --compressed 'https://api.qweather.com/v7/weather/3d?location=101010100&key=这里替换成你的key'
-```
-- 如果你使用的是免费订阅，请复制下列代码：
-```bash
-curl -L -X GET --compressed 'https://devapi.qweather.com/v7/weather/3d?location=101010100&key=这里替换成你的key'
-```
 
 好了，到此为止，API的配置和调试基本完成了，下一步请参考[开发文档](/docs/api/)，[实用资料](/docs/resource/)和[最佳实践](/docs/best-practices/)开始你的开发之旅吧！

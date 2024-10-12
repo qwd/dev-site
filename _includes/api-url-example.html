@@ -1,5 +1,7 @@
 {%- assign apidata_default = page.tag[2] | append: '-' | append: page.tag[3] -%}
 {%- assign apidata = include.apidata | default: apidata_default -%}
 {% highlight bash %}
-curl -L -X GET --compressed '{{- site.data.dev.api-endpoint[apidata].demo.link }}'
+curl -X GET --compressed \
+-H 'Authorization: Bearer your_token' \
+'{{- site.data.dev.api-endpoint[apidata].demo.link }}'
 {% endhighlight %}

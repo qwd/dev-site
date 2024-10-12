@@ -1,7 +1,6 @@
 ---
 title: iOS SDK配置
 tag: [config, ios]
-description: KEY是获取和风天气服务的密钥（或称之为token、认证信息），当你创建项目的时候会创建第一个KEY。本篇文档将详细介绍KEY的使用方法。
 ref: config-ios
 ---
 
@@ -14,9 +13,9 @@ ref: config-ios
 
 > **提示：**和风天气iOS SDK同样包含了macOS SDK。
 
-## 第1步: 创建项目和KEY {#step-1-create-project-and-key}
+## 第1步: 创建项目和凭据 {#step-1-create-project-and-credential}
 
-请确保你已经创建了一个iOS SDK的KEY，否则请参考[项目和KEY](/docs/configuration/project-and-key/)。
+请确保已经创建了项目和凭据，请参考[项目](/docs/configuration/project-and-key/)和[身份认证](/docs/authentication/)。
 
 ## 第2步: 安装SDK {#step-2-install-sdk}
 
@@ -99,7 +98,7 @@ iOS SDK支持使用Swift Package Manager集成，具体步骤请参考[Adding pa
 
 ### 配置Public ID和KEY {#setup-public-id-and-key}
 
-将代码中的`Your_KEY`和`Your_Public_ID`替换为你项目中的KEY和Public ID
+将代码中的`Your_KEY`和`Your_Public_ID`替换为你项目中的API KEY和凭据ID
 
 ```objc
 QWeatherConfigInstance.publicID = @"Your_Public_ID";

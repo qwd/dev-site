@@ -6,18 +6,6 @@ redirect_from: /docs/start/glossary/
 ref: res-glossary
 ---
 
-## Project
-
-**项目**是承载和风天气数据服务的容器，也可以理解为是你需要开发的一个产品，例如“旅游APP”或者“毕业设计”。查看[如何创建项目](/docs/configuration/project-and-key/)。
-
-## KEY
-
-**KEY**是获取和风天气开发服务的密钥（或称之为token，认证信息），在创建项目后，你可以为你的不同业务和需求创建KEY，例如“iOS正式环境”或“测试专用”。查看[如何创建KEY](/docs/configuration/project-and-key/)。
-
-## Public ID
-
-Public ID是用户某一个数据KEY的公钥，当你使用[数字加密签名](/docs/resource/signature-auth/)获取数据时，需要传递Public ID。
-
 ## Rank
 
 Rank值是表明一个城市或地区排名的数字，基于多种因素综合计算而来，例如：人口、面积、GDP、搜索热度等。取值范围为1-10，在定位搜索服务中，返回的结果除了关键字的相关性以外，也会参考该城市的Rank值。数值越大代表该城市或地区的人口越多、面积更大或更加热门。例如陕西省西安市的Rank值就要比黑龙江省牡丹江市西安区更高，当使用“西安”作为关键字定位的时候，西安市的排名要高于西安区。

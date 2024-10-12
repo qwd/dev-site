@@ -12,9 +12,9 @@ ref: config-android
 |---|---|---|---|
 |{{ site.data.v.android.version }}|{{ site.data.v.android.date }}|{{ site.data.v.android.md5 }}|[下载]({{ site.data.v.android.dllink }})|
 
-## 创建项目和KEY {#create-project-and-key}
+## 创建项目和凭据 {#create-project-and-credential}
 
-请确保你已经创建了一个Android SDK的KEY，否则请参考[项目和KEY](/docs/configuration/project-and-key/)。
+请确保已经创建了项目和凭据，请参考[项目](/docs/configuration/project-and-key/)和[身份认证](/docs/authentication/)。
 
 ## 适配版本 {#os-requirement}
 
