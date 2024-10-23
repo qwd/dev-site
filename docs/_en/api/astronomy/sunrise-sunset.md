@@ -14,7 +14,7 @@ Get the sunrise and sunset times for the next 60 days at any location worldwide.
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="key location-def date60" %}
+{% include params.html p="location-def date60" %}
 
 ## Request Example
 

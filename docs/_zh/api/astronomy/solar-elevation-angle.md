@@ -14,7 +14,7 @@ ref: 3-api-solar-elevation-angle
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="key location-coord date time tz alt" %}
+{% include params.html p="location-coord date time tz alt" %}
 
 ## 请求示例
 

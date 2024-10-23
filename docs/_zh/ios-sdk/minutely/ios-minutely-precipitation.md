@@ -14,7 +14,7 @@ ref: 1-sdk-ios-minutely-precip
 
 ### 接口参数
 
-{% include params.html p="location-coord key-ios lang-def" %}
+{% include params.html p="location-coord lang-def" %}
 
 ### 示例代码
 

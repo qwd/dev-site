@@ -14,7 +14,7 @@ ref: 1-api-tide
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="location-p2 date10 key" %}
+{% include params.html p="location-p2 date10" %}
 
 ## 请求示例
 

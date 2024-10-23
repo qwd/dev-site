@@ -14,7 +14,7 @@ Get the tropical cyclones location, level, pressure, windspeed, and track path o
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="stormid-sdk key-ios" %}
+{% include params.html p="stormid-sdk" %}
 
 ### Sample Code
 

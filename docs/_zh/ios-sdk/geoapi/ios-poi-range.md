@@ -15,7 +15,7 @@ ref: 4-sdk-ios-geo-poi-range
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-{% include params.html p="location-coord key-ios radius number lang-def" %}
+{% include params.html p="location-coord radius number lang-def" %}
 
 ### 示例代码
 

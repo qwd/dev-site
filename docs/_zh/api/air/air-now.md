@@ -16,7 +16,7 @@ ref: 1-api-air-now
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="key location-def lang-def" %}
+{% include params.html p="location-def lang-def" %}
 
 ## 请求示例
 

@@ -16,7 +16,7 @@ Real-time air quality for Chinese cities and 1,700 monitoring stations, includin
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="key location-def lang-def" %}
+{% include params.html p="location-def lang-def" %}
 
 ## Request Example
 

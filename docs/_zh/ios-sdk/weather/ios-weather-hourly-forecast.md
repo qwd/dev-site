@@ -16,7 +16,7 @@ ref: 3-sdk-ios-weather-hourly-forecast
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-{% include params.html p="location-def key-ios lang-def unit-def" %}
+{% include params.html p="location-def lang-def unit-def" %}
 
 ### 示例代码
 

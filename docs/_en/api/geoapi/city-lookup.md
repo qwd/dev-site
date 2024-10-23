@@ -24,7 +24,7 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 
 > **Duplicate name**, when the location is passed as text, cities with the same name may appear, such as Xi'an in Shaanxi Province, Xi'an District under Liaoyuan City in Jilin Province, and Xi'an District under Mudanjiang City in Heilongjiang Province. At this time, all results will be returned according to the [Rank](/en/docs/resource/glossary/#rank). In this case, you can use the `adm` parameter to further determine the city or region that needs to be queried, for example, `location=Xi’an&adm=Heilongjiang`
 
-{% include params.html p="key adm" %}
+{% include params.html p="adm" %}
 
 > If with `adm`, like `location=chaoyang&adm=beijing`, the returned results only include Chaoyang District in Beijing, not Chaoyang City in Liaoning Province
 >

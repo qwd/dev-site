@@ -13,7 +13,7 @@ ref: 1-sdk-ios-tide
 
 ### 请求参数
 
-{% include params.html p="location-p2 date10 key-ios" %}
+{% include params.html p="location-p2 date10" %}
 
 ### 示例代码
 

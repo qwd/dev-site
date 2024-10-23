@@ -14,7 +14,7 @@ Get a list of popular cities around the world.
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="key range number lang-def" %}
+{% include params.html p="range number lang-def" %}
 
 ## Request Example
 

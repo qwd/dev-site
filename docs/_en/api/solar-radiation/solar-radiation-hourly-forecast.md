@@ -17,7 +17,7 @@ Get the net solar radiation, diffuse solar radiation and direct solar radiation 
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="key location-coord" %}
+{% include params.html p="location-coord" %}
 
 ## Request Example
 

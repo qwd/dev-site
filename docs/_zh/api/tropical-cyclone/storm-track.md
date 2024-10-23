@@ -14,7 +14,7 @@ ref: 2-api-storm-track
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="stormid key" %}
+{% include params.html p="stormid" %}
 
 ## 请求示例
 

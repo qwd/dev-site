@@ -14,7 +14,7 @@ POI Range iOS SDK provides the ability to query all POI information within a spe
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-coord key-ios radius number lang-def" %}
+{% include params.html p="location-coord radius number lang-def" %}
 
 ### Sample Code
 

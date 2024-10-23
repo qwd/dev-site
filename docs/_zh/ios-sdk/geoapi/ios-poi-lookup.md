@@ -14,7 +14,7 @@ ref: 3-sdk-ios-geo-poi-lookup
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-{% include params.html p="location-geo key-ios geo-type city number lang-def" %}
+{% include params.html p="location-geo geo-type city number lang-def" %}
 
 ### 示例代码
 

@@ -19,7 +19,7 @@ Monitoring Station Data API provides pollutant concentration values from air qua
 
 ## Query Parameters
 
-{% include params.html p="key lang-def" %}
+{% include params.html p="lang-def" %}
 
 ## Request Example
 

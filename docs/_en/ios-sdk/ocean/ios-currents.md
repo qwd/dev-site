@@ -18,7 +18,7 @@ Currents data for the next 10 days, including currents speed, direction and hour
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-p6 date10 key-ios" %}
+{% include params.html p="location-p6 date10" %}
 
 ### Sample Code
 

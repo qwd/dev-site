@@ -15,7 +15,7 @@ Get a list of tropical cyclones for the last 2 years in major ocean basins aroun
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="basin year key" %}
+{% include params.html p="basin year" %}
 
 ## Request Example
 

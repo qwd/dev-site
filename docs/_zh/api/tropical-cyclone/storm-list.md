@@ -16,7 +16,7 @@ ref: 1-api-storm-list
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="basin year key" %}
+{% include params.html p="basin year" %}
 
 ## 请求示例
 

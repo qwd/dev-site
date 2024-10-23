@@ -14,7 +14,7 @@ ref: 2-api-currents
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="location-p6 date10 key" %}
+{% include params.html p="location-p6 date10" %}
 
 ## 请求示例
 

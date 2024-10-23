@@ -16,7 +16,7 @@ ref: 3-sdk-ios-storm-forecast
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-{% include params.html p="stormid-sdk key-ios" %}
+{% include params.html p="stormid-sdk" %}
 
 ### 示例代码
 
