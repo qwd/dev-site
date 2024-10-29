@@ -6,6 +6,8 @@ ref: auth-apikey
 
 API KEY is a common and simple authentication method. However, API KEY is less secure in some scenarios, we recommend using [JWT](/en/docs/authentication/jwt/) for authentication, especially for the apps can greatly improve security.
 
+> **Note:** To improve security, we will limit the volume of daily requests for authentication using API KEY from 2027-01-01.
+
 ## Generate API KEY
 
 You can log in to the Console to easily generate an API KEY:

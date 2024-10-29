@@ -114,3 +114,7 @@ Add the Token as a parameter to the `Authorization: Bearer` request header, for 
 curl -i -H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
 --compressed 'https://api.qweather.com/v7/weather/now?location=101010100'
 ```
+
+## JWT shell script
+
+Here is a [shell script](https://gist.github.com/QWRDA/027fd6df142a904f821ea64afb00548b) for JWT generation and quick testing. In a production environment, you should use your programming language and third-party libraries to generate JWTs.

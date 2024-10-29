@@ -4,7 +4,9 @@ tag: [auth, apikey]
 ref: auth-apikey
 ---
 
-API KEY是一种常见、操作简单的身份认证方式。然而API KEY在一些场景下安全性较低，我们推荐使用[JWT](/docs/authentication/jwt/)进行身份验证，尤其对于客户端可以极大地提高安全性。
+API KEY是一种常见、操作简单的身份认证方式。然而API KEY在一些场景下安全性较低，我们推荐使用[JWT](/docs/authentication/jwt/)进行身份验证，可以显著的提高安全等级。
+
+> **提示：**为了提高安全性，从2027年1月1日起，我们将限制使用API KEY进行身份认证的每日请求数量。
 
 ## 生成API KEY {#generate-api-key}
 

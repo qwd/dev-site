@@ -4,7 +4,7 @@ tag: [auth, jwt]
 ref: auth-jwt
 ---
 
-和风天气开发服务支持并推荐使用JWT（JSON Web Token）进行身份认证。无论在前端还是后端，JWT都能够显著的保护你的密钥或隐私信息，有效防止其他人伪造你的身份进行API请求。
+和风天气开发服务支持并推荐使用JWT（JSON Web Token）进行身份认证。无论在前端还是后端，JWT都能够显著的提高API安全等级，有效防止其他人伪造你的身份进行API请求。
 
 ## 前提 {#prerequisites}
 
@@ -61,7 +61,7 @@ openssl genpkey -algorithm ED25519 -out ed25519-private.pem \
 Header包括下列参数并保存为JSON对象格式：
 
 - `alg` 签名算法，请设置为**EdDSA**
-- `kid` 你的凭据ID，你可以在[控制台-项目管理](https://console.qweather.com/#/apps)中查看
+- `kid` 凭据ID，你可以在[控制台-项目管理](https://console.qweather.com/#/apps)中查看
 
 例如：
 
@@ -114,3 +114,7 @@ curl --compressed \
 -H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
 'https://api.qweather.com/v7/weather/now?location=101010100'
 ```
+
+## JWT Shell脚本 {#jwt-shell-script}
+
+这里提供了一个[Shell脚本](https://gist.github.com/QWRDA/027fd6df142a904f821ea64afb00548b)便于生成JWT和快速测试。在正式环境中，你应该使用你的开发语言和第三方库生成JWT。
