@@ -194,7 +194,7 @@ Saint Vincent and the Grenadines,圣文森特和格林纳丁斯,VC,VCT,670,ISO 3
 Samoa,萨摩亚,WS,WSM,882,ISO 3166-2:WS,TRUE,,,
 San Marino,圣马力诺,SM,SMR,674,ISO 3166-2:SM,TRUE,,,
 Sao Tome and Principe,圣多美和普林西比,ST,STP,678,ISO 3166-2:ST,TRUE,,,
-Saudi Arabia,沙特阿拉伯,SA,SAU,682,ISO 3166-2:SA,TRUE,,,
+Saudi Arabia,沙特阿拉伯,SA,SAU,682,ISO 3166-2:SA,TRUE,TRUE,,
 Senegal,塞内加尔,SN,SEN,686,ISO 3166-2:SN,TRUE,,,
 Serbia,塞尔维亚,RS,SRB,688,ISO 3166-2:RS,TRUE,TRUE,TRUE,eu-eea
 Seychelles,塞舌尔,SC,SYC,690,ISO 3166-2:SC,TRUE,,,
@@ -219,7 +219,7 @@ Syrian Arab Republic,叙利亚,SY,SYR,760,ISO 3166-2:SY,TRUE,,,
 "Taiwan, Province of China",中国台湾省,TW,TWN,158,ISO 3166-2:TW,FALSE,TRUE,TRUE,"tw-me,tw-me-1h"
 Tajikistan,塔吉克斯坦,TJ,TJK,762,ISO 3166-2:TJ,TRUE,,,
 "Tanzania, United Republic of",坦桑尼亚,TZ,TZA,834,ISO 3166-2:TZ,TRUE,,,
-Thailand,泰国,TH,THA,764,ISO 3166-2:TH,TRUE,,TRUE,th-pcd
+Thailand,泰国,TH,THA,764,ISO 3166-2:TH,TRUE,TRUE,TRUE,th-pcd
 Timor-Leste,东帝汶,TL,TLS,626,ISO 3166-2:TL,TRUE,,,
 Togo,多哥,TG,TGO,768,ISO 3166-2:TG,TRUE,,,
 Tokelau,托克劳,TK,TKL,772,ISO 3166-2:TK,FALSE,,,
