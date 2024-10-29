@@ -344,4 +344,13 @@ type,type_name_zh,type_name_en
 2424,当地飓风报告,Hurricane Local Statement
 2425,恶劣天气报告,Severe Weather Statement
 2426,山洪暴发报告,Flash Flood Statement
+2501,大雨,Heavy Rain
+2502,暴雨,Very Heavy Rain
+2521,中雨,Moderate Rain
+2522,雨,Light Rain
+2523,大雨,Heavy Rain
+2524,雾,Light Mist
+2525,扬尘,Raised Dust
+2526,大风,High Wind
+2527,浮尘,Dusty plankton
 9999,其他预警,Other Warning
