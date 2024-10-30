@@ -16,7 +16,7 @@ ref: 2-api-moon
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="key location-def date60 lang-def" %}
+{% include params.html p="location-def date60 lang-def" %}
 
 ## 请求示例
 

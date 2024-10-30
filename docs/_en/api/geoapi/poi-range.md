@@ -14,7 +14,7 @@ POI Range API provides the ability to query all POI information within a specifi
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-coord geo-type key radius number lang-def" %}
+{% include params.html p="location-coord geo-type radius number lang-def" %}
 
 ## Request Example
 

@@ -17,7 +17,7 @@ Storm Forecast iOS SDK provides tropical cyclones location, level, pressure, win
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="stormid-sdk key-ios" %}
+{% include params.html p="stormid-sdk" %}
 
 ### Sample Code
 

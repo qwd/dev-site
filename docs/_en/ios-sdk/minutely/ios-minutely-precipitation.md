@@ -14,7 +14,7 @@ Get minute-level precipitation forecast data every 5 minutes for the next 2 hour
 
 ### Request Parameters
 
-{% include params.html p="location-coord key-ios lang-def" %}
+{% include params.html p="location-coord lang-def" %}
 
 ### Sample Code
 

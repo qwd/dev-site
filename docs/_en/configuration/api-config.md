@@ -6,9 +6,9 @@ ref: config-api
 
 Before starting to use API service, you need to do some simple configuration and preparation.
 
-## Create Project and KEY
+## Create Project and Credential
 
-Make sure you have created a Project and Web API KEY, otherwise refer to [Project and KEY](/en/docs/configuration/project-and-key/).
+Make sure you have created a Project and Credential, see [Project and KEY](/en/docs/configuration/project-and-key/) and [Authentication](/en/docs/authentication/).
 
 ## Understanding API URL
 
@@ -36,17 +36,3 @@ Building an API URL is not difficult for most developers, but we still strongly 
 ## Gzip
 
 QWeather's Web API uses Gzip for compression by default, which will greatly reduce network traffic and speed up requests. See [Best Practices - Gzip](/en/docs/best-practices/gzip/).
-
-## Try it out
-
-Please copy and paste the following link into your browser and see what the response is. Replace the `key` with your own.
-
-- For Standard subscription, please copy the following link
-```
-https://api.qweather.com/v7/weather/3d?location=101010100&key=Your_key
-```
-
-- For Free subscription, please copy the following link
-```
-https://devapi.qweather.com/v7/weather/3d?location=101010100&key=Your_key
-```

@@ -24,7 +24,7 @@ ref: 1-api-city-lookup
 
 > **重名**，当location传递的为文字时，可能会出现重名的城市，例如陕西省西安市、吉林省辽源市下辖的西安区和黑龙江省牡丹江市下辖的西安区，此时会根据[Rank值](/docs/resource/glossary/#rank)排序返回所有结果。在这种情况下，可以通过`adm`参数的方式进一步确定需要查询的城市或地区，例如`location=西安&adm=黑龙江`
 
-{% include params.html p="key adm" %}
+{% include params.html p="adm" %}
 
 > 如请求参数为`location=chaoyang&adm=beijing`时，返回的结果只包括北京市的朝阳区，而不包括辽宁省的朝阳市
 > 

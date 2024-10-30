@@ -16,7 +16,7 @@ Get minute-level precipitation forecast data every 5 minutes for the next 2 hour
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-coord key lang-def" %}
+{% include params.html p="location-coord lang-def" %}
 
 ## Request Example
 

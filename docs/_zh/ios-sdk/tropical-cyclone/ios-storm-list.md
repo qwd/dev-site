@@ -17,7 +17,7 @@ ref: 1-sdk-ios-storm-list
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-{% include params.html p="basin year key-ios" %}
+{% include params.html p="basin year" %}
 
 ### 示例代码
 

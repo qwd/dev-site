@@ -23,7 +23,7 @@ Get the last 10 days of weather history data.
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-id date10back key lang-def unit-def" %}
+{% include params.html p="location-id date10back lang-def unit-def" %}
 
 ## Request Example
 

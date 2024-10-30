@@ -12,6 +12,10 @@ reference_docs:
           - subname: config-api
           - subname: config-ios
           - subname: config-android
+      - name:	auth-overview
+        sub:
+          - subname: auth-jwt
+          - subname: auth-apikey
       - name: account-overview
         sub:
           - subname: account-manage
@@ -85,7 +89,6 @@ reference_docs:
       - name: res-lang
       - name: res-icons
       - name: res-location-list
-      - name: res-auth
       - name: res-unit
       - name: res-wind
       - name: res-warning

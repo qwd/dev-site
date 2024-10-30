@@ -14,7 +14,7 @@ ref: 3-api-poi-lookup
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="location-geo geo-type key city number lang-def" %}
+{% include params.html p="location-geo geo-type city number lang-def" %}
 
 ## 请求示例
 

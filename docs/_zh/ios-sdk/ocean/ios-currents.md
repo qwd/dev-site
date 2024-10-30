@@ -14,7 +14,7 @@ ref: 2-sdk-ios-ocean-currents
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-{% include params.html p="location-p6 date10 key-ios" %}
+{% include params.html p="location-p6 date10" %}
 
 ### 示例代码
 

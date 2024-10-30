@@ -14,7 +14,7 @@ Global currents data for the next 10 days, including currents speed and directio
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-p6 date10 key" %}
+{% include params.html p="location-p6 date10" %}
 
 ## Request Example
 

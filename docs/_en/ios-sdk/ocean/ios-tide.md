@@ -14,7 +14,7 @@ Global tidal data for the next 10 days, including tide table and hourly tide for
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-p2 date10 key-ios" %}
+{% include params.html p="location-p2 date10" %}
 
 ### Sample Code
 

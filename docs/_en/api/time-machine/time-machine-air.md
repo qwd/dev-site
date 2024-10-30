@@ -16,7 +16,7 @@ Get the last 10 days of air quality history data.
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-id date10back key lang-def" %}
+{% include params.html p="location-id date10back lang-def" %}
 
 ## Request Example
 

@@ -2,24 +2,6 @@
 # text: description of parameter, need Chinese and English version
 # rqd: whether this parameter is required, if not, leave it blank or set to false
 
-key:
-  name: key
-  text:
-    zh: |-
-     用户认证key，请参考[如何获取你的KEY](/docs/configuration/project-and-key/)。支持[数字签名](/docs/resource/signature-auth/)方式进行认证。例如 `key=123456789ABC`
-    en: |-
-     API authentication key, please refer to [How To Get Your Key](/en/docs/configuration/project-and-key/). Support [Signature Authentication](/en/docs/resource/signature-auth/). Example: `key=12334567890ABC` 
-  rqd: true
-key-ios:
-  name: appKey
-  text:
-    zh: |-
-     用户认证key，请参考[如何获取你的KEY](/docs/configuration/project-and-key/)。例如 `appKey=123456789ABC`
-    en: |-
-     API authentication key, please refer to [How To Get Your Key](/en/docs/configuration/project-and-key/). 
-
-     For example: `appKey=12334567890ABC` 
-  rqd: true
 location-def: 
   name: location
   text: 

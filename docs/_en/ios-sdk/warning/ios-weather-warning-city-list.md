@@ -22,7 +22,7 @@ See also [Weather warning iOS SDK](/en/docs/ios-sdk/warning/ios-weather-warning/
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="range-warning key-ios" %}
+{% include params.html p="range-warning" %}
 
 ### Sample Code
 

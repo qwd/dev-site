@@ -2,6 +2,6 @@
 # delete url value for hide announcement section
 
 title:
-  zh: 全新空气质量API v1 beta已发布
-  en: New Air Quality API v1 beta released
-url: https://blog.qweather.com/post/new-air-quality-v1-released/
+  zh: 现已支持JSON Web Token身份认证
+  en: JSON Web Token is now supported
+url: https://blog.qweather.com/post/jwt-is-now-supported/

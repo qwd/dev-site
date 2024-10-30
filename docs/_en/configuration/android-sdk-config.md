@@ -16,9 +16,9 @@ This document will introduce how to configure the Android SDK in the QWeather De
 
 Android 4.4+
 
-## Create Project and KEY
+## Create Project and Credential
 
-Make sure you have created a Project and Android SDK KEY, otherwise refer to [Project and KEY](/en/docs/configuration/project-and-key/).
+Make sure you have created a Project and Credential, see [Project and KEY](/en/docs/configuration/project-and-key/) and [Authentication](/en/docs/authentication/).
 
 ## Project configuration
 

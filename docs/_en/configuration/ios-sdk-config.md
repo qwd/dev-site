@@ -4,7 +4,7 @@ tag: [config, ios]
 ref: config-ios
 ---
 
-This document will introduce how to configure the iOS SDK in the QWeather Develop Service.
+This document will introduce how to configure the iOS SDK for QWeather API.
 
 OS Requirement:
 
@@ -13,9 +13,9 @@ OS Requirement:
 
 > **Hint:** QWeather iOS SDK also includes macOS SDK.
 
-## Step 1: Create Project and KEY
+## Step 1: Create Project and Credential
 
-Make sure you have created a Project and iOS SDK KEY, otherwise refer to [Project and KEY](/en/docs/configuration/project-and-key/).
+Make sure you have created a Project and Credential, see [Project and KEY](/en/docs/configuration/project-and-key/) and [Authentication](/en/docs/authentication/).
 
 ## Step 2: Install SDK
 
@@ -95,7 +95,7 @@ Setup the API KEY and Subscription in the `AppDelegate`:
 
 ### Setup Public ID and KEY
 
-Replace `Your_KEY` and `Your_Public_ID` with your KEY and Public ID:
+Replace `Your_KEY` and `Your_Public_ID` with your KEY and credential ID:
 
 ```objc
 QWeatherConfigInstance.publicID = @"Your_Public_ID";

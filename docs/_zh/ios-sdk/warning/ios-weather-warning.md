@@ -17,7 +17,7 @@ ref: 1-sdk-ios-weather-warning
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-{% include params.html p="location-def key-ios lang-def" %}
+{% include params.html p="location-def lang-def" %}
 
 ### 示例代码
 

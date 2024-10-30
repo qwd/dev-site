@@ -18,7 +18,7 @@ ref: 1-api-air-hourly-v1
 
 ## 查询参数
 
-{% include params.html p="key lang-def" %}
+{% include params.html p="lang-def" %}
 
 ## 请求示例
 

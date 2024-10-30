@@ -15,7 +15,7 @@ Get global solar elevation angle and azimuth.
 
 If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-coord date time tz alt key-ios" %}
+{% include params.html p="location-coord date time tz alt" %}
 
 ### Sample Code
 

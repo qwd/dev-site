@@ -18,7 +18,7 @@ ref: 1-sdk-ios-indices-forecast
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-{% include params.html p="location-def key-ios idx-type-ios" %}
+{% include params.html p="location-def idx-type-ios" %}
 
 ### 示例代码
 

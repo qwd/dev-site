@@ -21,7 +21,7 @@ See also [Weather warning API](/en/docs/api/warning/weather-warning/) to get war
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="range-warning key" %}
+{% include params.html p="range-warning" %}
 
 ## Request Example
 

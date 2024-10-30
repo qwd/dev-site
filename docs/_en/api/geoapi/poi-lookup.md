@@ -14,7 +14,7 @@ POI Lookup API provides basic information of POI(scenic spot, tide stations, cur
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="location-geo geo-type key city number lang-def" %}
+{% include params.html p="location-geo geo-type city number lang-def" %}
 
 ## Request Example
 

@@ -19,7 +19,7 @@ ref: 2-api-weather-warning-city-list
 
 请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
 
-{% include params.html p="range-warning key" %}
+{% include params.html p="range-warning" %}
 
 ## 请求示例
 

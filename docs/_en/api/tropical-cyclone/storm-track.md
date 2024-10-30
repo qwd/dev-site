@@ -14,7 +14,7 @@ Get the tropical cyclones location, level, pressure, windspeed, and track path o
 
 All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
 
-{% include params.html p="stormid key" %}
+{% include params.html p="stormid" %}
 
 ## Request Example
 

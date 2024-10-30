@@ -6,18 +6,6 @@ redirect_from: /en/docs/start/glossary/
 ref: res-glossary
 ---
 
-## Project
-
-**Project** is the container for QWeather Develop Service, which can also be understood as a product you need to develop, such as a "travel app" or a "graduation design". See [how to setup Project](/en/docs/configuration/project-and-key/).
-
-## KEY
-
-**KEY** is the key (or token) to get the QWeather Develop Service, you can create multiple KEYs for different businesses in a Project, for example "for iOS" or "Test Only". [how to setup Key](/en/docs/configuration/project-and-key/).
-
-## Public ID
-
-Public ID is the public key of a certain data KEY of the user. When you use [Signature Authentication](/en/docs/resource/signature-auth/) to obtain data, you need to pass the Public ID.
-
 ## Rank
 
 Rank is an indication of the ranking of a city or region, it is calculated based on a variety of factors, such as: population, area, GDP, search popularity, etc. In GeoAPI, the response data will refer to the Rank value of the city in addition to the relevance of the keywords. The range of Rank is 1-10, 1 means that the city or region is more populous, larger or more popular.

@@ -63,6 +63,7 @@ level: 级别
 range: 取值范围
 color: 颜色
 pollutant: 污染物
+example-token-hint: 请将`your_token`替换为你的JWT或了解[身份认证](/docs/authentication/)
 hp-slogan: 创建一个漂亮的天气项目
 hp-slogan-2: 驱动你的业务
 hp-data: 强大的气象数据 

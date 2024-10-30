@@ -19,7 +19,7 @@ ref: 2-sdk-ios-weather-warning-city-list
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-{% include params.html p="range-warning key-ios" %}
+{% include params.html p="range-warning" %}
 
 ### 示例代码
 

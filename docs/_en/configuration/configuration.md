@@ -8,7 +8,7 @@ ref: config-overview
 
 {{ page.description | markdownify }}
 
-- [Project and KEY](/en/docs/configuration/project-and-key/)
+- [Project and Credential](/en/docs/configuration/project-and-key/)
 - [API Config](/en/docs/configuration/api-config/)
 - [iOS SDK Config](/en/docs/configuration/ios-sdk-config/)
 - [Android SDK Config](/en/docs/configuration/android-sdk-config/)
