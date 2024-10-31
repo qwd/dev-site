@@ -63,7 +63,6 @@ pollutant: Pollutant
 example-token-hint: Replace `your_token` with your JWT or learn more about [Authentication](/en/docs/authentication/)
 hp-slogan: Build a beautiful weather program
 hp-slogan-2: to drive your business
-hp-slogan-desc: API / SDK / 插件 / APP
 hp-data: Weather Data 
 hp-data-desc: QWeather Develop Service is based on advanced meteorological algorithms and provides a powerful weather service, to help you display weather or drive your business decisions.
 hp-data-refer: See Service and Data
@@ -84,7 +83,6 @@ hp-intro-org: Enterprise Customization
 hp-intro-org-desc: Contact our <a href="https://www.qweather.com/en/contact" target="_blank" rel="noopener noreferrer">business experts</a> for a complete weather solution.
 hp-regnow: Free Registration
 hp-current-ver: Current version
-hp-client: Who is using...
 pi-ourprice: Our Price
 pi-desc: Flexible, Transparent and Affordable
 pi-payg: Pay as you go
@@ -121,13 +119,16 @@ pi-free-subs-more: See Free Subscription
 pi-more: More
 pi-req-mo: Requests(per month)
 pi-price-req: Price(per request)
-pi-tier1: 0-30,0000
-pi-tier2: Next 70,0000
-pi-tier3: Next 4 million
-pi-tier4: Next 5 million
-pi-tier5: Next 40 million
-pi-tier6: Over 50 million
-pi-notier: Any request
+0: Any request
+300000: "300,000"
+700000: "700,000"
+4000000: 4 million
+5000000: 5 million
+40000000: 40 million
+50000000: 50 million
+100000000: 100 million
+over: Over
+next: Next
 si-biref: Welcome to share your code for using QWeather dev service, you can edit <a href="https://github.com/qwd/dev-site/edit/master/_data/showcase.yml" target="_blank" rel="noopener noreferrer">this file</a> and submit a PR.
 si-note: We cannot guarantee the availability of these works, please contact the author. 
 fi-q-general: General
