@@ -7,6 +7,8 @@ ref: finance-billing
 
 QWeather Develop Service's billing system based on the Pay-as-you-go model, it is a more transparent, simple and competitive pricing scheme. This document describes how the billing and payment system works.
 
+> **Hint**: The price calculation examples in this document are for reference only and final costs may vary slightly.
+
 ## Billing
 
 [Standard subscription](/en/docs/finance/subscription/) uses a Pay-as-you-go model, so you don't need to pay a lot of money up front or for services you don't use, you only need to pay for the part you actually use. In addition, pay as you go is tiered pricing, with the higher requests, the lower cost per request.
@@ -46,7 +48,7 @@ You get 10,000 real-time weather at 13:00-13:59, then after 14:00 an accrued cha
 You have requested a total of 1,000,000 real-time weather in August, and the formula for the tiered price is: 
 
 ```
-300,000 requests x ¥0.001 + 700,000 requests x ¥0.0009 = ¥930
+300,000 requests x ¥0.001 + 700,000 requests x ¥0.00088 = ¥916
 ```
 
 In September, you retrieved 1,000,000 real-time weather again and the formula is the same as last month.
@@ -107,29 +109,29 @@ For each hour, the accrued charge is ¥0.60 (¥0.001 x 0.6 saving rate x 1000 re
 
 For each hour, the accrued charge is ¥1 (¥0.001 x 1000 requests) and you do not need to make the payment now. The monthly bill generated on the 1st of the following month will look like:
 
-- Billing amount: ¥678 (¥0.001 x 300000 requests + ¥0.0009 x 420000 requests)
-- Amount due: ¥678
+- Billing amount: ¥669.6 (¥0.001 x 300000 requests + ¥0.00088 x 420000 requests)
+- Amount due: ¥669.6
 - Status: Unpaid
 
-Now, your balance will be -¥578 (¥100 balance - ¥678 amount due). You can pay ¥578 anytime before 23:59:59 on the 10th, otherwise on the 11th, your service will be disrupted and go into [outstanding status](#outstanding).
+Now, your balance will be -¥569.6 (¥100 balance - ¥669.6 amount due). You can pay ¥569.6 anytime before 23:59:59 on the 10th, otherwise on the 11th, your service will be disrupted and go into [outstanding status](#outstanding).
 
 ***Use Recurring Payment and Saving Plans***
 
 For each hour, the accrued charge is ¥0.6 (¥0.001 x 0.6 saving rate x 1000 requests) and will be paid by Saving Plans. Your monthly bill will look like: 
 
-- Billing amount: ¥406.8 (¥0.001 x 0.6 saving rate x 300000 requests + ¥0.0009 x 0.6 saving rate x 420000 requests)
+- Billing amount: ¥401.76 (¥0.001 x 0.6 saving rate x 300000 requests + ¥0.00088 x 0.6 saving rate x 420000 requests)
 - Amount due: ¥0
 - Status: Paid
 
-Now, your balance will be ¥100 and remaining commitment amount in Saving Plans is ¥93.2 (¥500 Saving Plans - ¥406.8 due amount). You do not need to make any further payments on this monthly bill.
+Now, your balance will be ¥100 and remaining commitment amount in Saving Plans is ¥98.24 (¥500 Saving Plans - ¥401.76 due amount). You do not need to make any further payments on this monthly bill.
 
 In the second month, your monthly bill will look like: 
 
-- Billing amount: ¥614.86 (¥0.001 x 0.6 saving rate x 155,334 requests + ¥0.001 x 144,666 requests + ¥0.0009 x 4,200,000 requests)
-- Amount due: ¥521.66（¥614.86 billing amount - ¥93.2 saving plans）
+- Billing amount: ¥607.48 (¥0.001 x 0.6 saving rate x 155,334 requests + ¥0.001 x 144,666 requests + ¥0.00088 x 4,200,000 requests)
+- Amount due: ¥509.24（¥607.48 billing amount - ¥98.24 saving plans）
 - Status: Unpaid
 
-Now, your balance will be -¥421.66 (¥100 balance - ¥521.66 amount due). You can pay ¥421.66 anytime before 23:59:59 on the 10th, otherwise on the 11th, your service will be disrupted and go into [outstanding status](#outstanding).
+Now, your balance will be -¥409.24 (¥100 balance - ¥509.24 amount due). You can pay ¥409.24 anytime before 23:59:59 on the 10th, otherwise on the 11th, your service will be disrupted and go into [outstanding status](#outstanding).
 
 ### Payment Methods
 

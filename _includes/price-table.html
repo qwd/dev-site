@@ -1,10 +1,5 @@
 {% for group in site.data.price %}
-{%- if group.data.ref -%}
-{% assign group_doc = site.documents | where: "lang", page.lang | where: "ref", group.data.ref | first %}
-<h3 id="{{group_doc.url | split: "/" | last}}">{{ group_doc.title }}</h3>
-{%- else -%}
 <h3 id="{{group.data.en | slugify}}">{{ group.data[page.lang] }}</h3>
-{%- endif -%}
 <div class="price-content{{- forloop.index }} {% if forloop.first %}default{% endif %}">
     <div class="data-desc mb-3">
         <p class="mr-2">{{ site.data.t[page.lang]doc-incl-data-pricing }}:</p>
@@ -20,7 +15,6 @@
         </blockquote>
         {%- endif -%}
     </div>
-    
     <table>
         <thead>
             <tr>
@@ -32,14 +26,15 @@
             {%- for price in group.price -%}
             <tr>
                 <td>
-                    {% if group.noTier %}
-                    {{ site.data.t[page.lang]pi-notier }}
-                    {% else %}
-                    {% assign tier = forloop.index | prepend: "pi-tier" %}
-                    {{ site.data.t[page.lang][tier]}}
-                    {% endif %}
+                    {%- if forloop.first -%}
+                    {{ site.data.t[page.lang][price.tier] | prepend: "0-"}}
+                    {%- elsif forloop.last -%}
+                    {{ site.data.t[page.lang]over }} {{ site.data.t[page.lang][price.tier] }}    
+                    {%- else -%}
+                    {{ site.data.t[page.lang]next }} {{ site.data.t[page.lang][price.tier] }}
+                    {%- endif -%}
                     </td>
-                <td>CNY {{ price }}</td>
+                <td>CNY {{ price.value }}</td>
             </tr>    
             {%- endfor -%}
         </tbody>

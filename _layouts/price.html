@@ -43,11 +43,13 @@ layout: html
                     <div class="col-6 col-md-4 col-lg-3 mb-4">
                         {% assign group_doc = site.documents | where: "lang", page.lang | where: "ref", group.data.ref | first %}
                         <a class="d-block service-card p-3 border-r10 no-underline color-font" href="{%- if page.lang == "en" -%}/en{%- endif -%}/docs/finance/pricing/#{%- if group.data.ref -%}{{ group_doc.url | split: "/" | last }}{%- else -%}{{ group.data.en | slugify }}{%- endif -%}">
-                            {%- if group.data.ref -%}
-                            <h4 class="mb-3">{{ group_doc.title }}</h4>
-                            {%- else -%}
-                            <h4 class="mb-3">{{ group.data[page.lang] }}<sup>{{ forloop.index | replace: "2", "*" | replace: "3", "+" }}</sup></h4>
-                            {%- endif -%}
+                            <h4 class="mb-3">{{ group.data[page.lang] }}
+                                {%- case group.data.en -%}
+                                    {%- when "Weather Service" -%}
+                                    <sup>*</sup>
+                                    {%- when "Weather Service(Extend)" -%}
+                                    <sup>+</sup>
+                                    {%- endcase -%}</h4>
                             <div class="price-content{{- forloop.index }} d-none d-sm-block">
                                 <ul class="clear-list">
                                     {% for incl_data in group.incl %}
