@@ -7,7 +7,7 @@ ref: finance-billing
 
 QWeather Develop Service's billing system based on the Pay-as-you-go model, it is a more transparent, simple and competitive pricing scheme. This document describes how the billing and payment system works.
 
-> **Hint**: The price calculation examples in this document are for reference only and final costs may vary slightly.
+> **Hint**: Price calculations in this document are estimates and final costs may vary slightly.
 
 ## Billing
 
