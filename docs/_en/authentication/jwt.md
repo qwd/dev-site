@@ -10,7 +10,7 @@ QWeather supports and recommends using JWT (JSON Web Token) for authentication. 
 
 QWeather uses the Ed25519 algorithm for signing, Ed25519 is an implementation of EdDSA (Edwards-curve Digital Signature Algorithm) using Curve25519 elliptic curves and SHA-512. You need to generate the private and public keys for Ed25519 in advance, where the private key is used for signing and kept by you, and the public key is used for us to verify the signature. This means that no one (including us) can forge your signature except you.
 
-#### Generate key
+#### Generate Ed25519 key
 
 Here is an introduction to creating an Ed25519 key using OpenSSL.
 
