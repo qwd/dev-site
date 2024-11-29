@@ -115,7 +115,7 @@ curl -i -H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ
 --compressed 'https://api.qweather.com/v7/weather/now?location=101010100'
 ```
 
-## JWT Demo {#jwt-demo}
+## JWT Demo
 
 Please replace `YOUR_KEY_ID`, `YOUR_PROJECT_ID`, `YOUR_PRIVATE_KEY` or `PATH_OF_YOUR_PRIVATE_KEY` in the code with your values.
 
