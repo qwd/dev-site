@@ -138,7 +138,11 @@ Now, your balance will be -¥409.24 (¥100 balance - ¥509.24 amount due). You c
 We offer a variety of payment methods.
 
 - **Alipay:** We recommend using Alipay for payment, it support credit and debit cards.
-- **Bank Transfer:** For organization developers in China, we support using bank transfer for payment. Please note that bank transfers require a 24-72 hour review time (which may be delayed in case of holidays), and real-time payment is not possible.
+- **Bank Transfer:** For organization developers in China, we support using bank transfer for payment:
+  - Your bank account name should be the same as your organization developer name, otherwise we will not add the amount to your account balance or refund it within 30 days.
+  - You need to **specify your Developer ID** when transferring funds so that we can quickly identify and prevent financial fraud, otherwise we will not add the transfer amount to your account balance, in this case **you have to submit a ticket and upload the corresponding bank statement**. 
+  - When the transfer is completed, you don't need to do anything, we will check the payment information and the amount, then add the transfer amount to your account balance and you will get the receipt via email.
+  - Bank transfer is subject to bank confirmation (may be delayed in case of holidays), real-time payment is not possible.
 - **Credit Card:** If you wish to pay by credit card, please use the credit card in Alipay.
 
 ### Outstanding
