@@ -10,7 +10,7 @@ ref: auth-jwt
 
 和风天气使用Ed25519算法进行签名，Ed25519是使用Curve25519椭圆曲线和SHA-512的EdDSA（Edwards-curve Digital Signature Algorithm）的一种实现。你需要提前生成Ed25519的私钥和公钥，其中私钥用于签名且由你自己保管，公钥用于我们对签名进行验证。这意味着除了你之外，任何人（包括我们）都无法伪造你的签名。
 
-### 生成Ed25519密钥 {#generate-ed25519-key}
+#### 生成Ed25519密钥 {#generate-ed25519-key}
 
 这里介绍一种使用OpenSSL创建Ed25519密钥的方法。
 
@@ -30,7 +30,7 @@ openssl genpkey -algorithm ED25519 -out ed25519-private.pem \
 - ed25519-private.pem，私钥，用于JWT认证的签名。你应该妥善安全的保管私钥。
 - ed25519-public.pem，公钥，用于签名的验证，需要上传到和风天气控制台
 
-### 上传公钥 {#upload-public-key}
+#### 上传公钥 {#upload-public-key}
 
 当你完成密钥对的生成后，你需要将其中的公钥添加到和风天气控制台，用于JWT身份验证。
 
@@ -54,9 +54,9 @@ openssl genpkey -algorithm ED25519 -out ed25519-private.pem \
 
 和风天气支持标准的[JWT协议和规范](https://datatracker.ietf.org/doc/html/rfc7519)，大部分情况下你不需要自己编写生成JWT的代码，几乎所有开发语言都有开源库用于JWT的生成，你可以在[JWT.io](https://jwt.io/libraries)查看这些库。
 
-一个完整的JWT包括三个部分：Header，Payload和Signature。我们将介绍每个部分必须传递的参数：
+一个完整的JWT包括三个部分：**Header**，**Payload**和**Signature**。我们将介绍每个部分必须传递的参数：
 
-### Header
+#### Header
 
 Header包括下列参数并保存为JSON对象格式：
 
@@ -72,7 +72,7 @@ Header包括下列参数并保存为JSON对象格式：
 }
 ```
 
-### Payload
+#### Payload
 
 Payload包括下列参数并保存为JSON对象格式：
 
@@ -93,11 +93,13 @@ Payload包括下列参数并保存为JSON对象格式：
 > **注意：**在Header和Payload中的信息是明文传输，所以仅添加上述指定的参数，不要添加任何其他敏感信息和无关参数。
 {:.bqdanger}
 
-### Signature
+#### Signature
 
 将Header和Payload分别进行Base64URL编码并用英文句号拼接在一起，使用你的私钥对其进行Ed25519算法的签名，之后对签名结果同样进行Base64URL编码。
 
-### 拼接在一起
+> **注意：**必须使用**Base64URL**编码，而不是Base64，两者有些许差别。
+
+#### 拼接在一起
 
 最后，请将Base64URL编码后的Header、Payload和Signature使用英文句号拼接在一起，组合为最终的Token，即 `header.payload.signature`，最终看起来像是：
 
@@ -115,6 +117,150 @@ curl --compressed \
 'https://api.qweather.com/v7/weather/now?location=101010100'
 ```
 
-## JWT Shell脚本 {#jwt-shell-script}
+## 生成JWT示例 {#jwt-demo}
 
-这里提供了一个[Shell脚本](https://gist.github.com/QWRDA/027fd6df142a904f821ea64afb00548b)便于生成JWT和快速测试。在正式环境中，你应该使用你的开发语言和第三方库生成JWT。
+请将代码中的`YOUR_KEY_ID`，`YOUR_PROJECT_ID`，`YOUR_PRIVATE_KEY`或`PATH_OF_YOUR_PRIVATE_KEY`替换为你的值。
+
+> **提示：**示例仅供参考和测试，我们不保证在任何环境下可以正常运行，请根据你的开发语言和环境进行适配。
+
+#### Java 8+
+
+需要依赖库 [ed25519-java](https://github.com/str4d/ed25519-java)
+
+```
+<dependency>
+    <groupId>net.i2p.crypto</groupId>
+    <artifactId>eddsa</artifactId>
+    <version>0.3.0</version>
+</dependency>
+```
+
+```java
+// Private key
+byte[] privateKeyBytes = Base64.getDecoder().decode("YOUR_PRIVATE_KEY".trim().replace("-----BEGIN PRIVATE KEY-----", "").replace("-----END PRIVATE KEY-----", ""));
+PKCS8EncodedKeySpec encoded = new PKCS8EncodedKeySpec(privateKeyBytes);
+PrivateKey privateKey = new EdDSAPrivateKey(encoded);
+
+// Header
+String headerJson = "{\"alg\": \"EdDSA\", \"kid\": \"YOUR_KEY_ID\"}";
+
+// Payload
+long iat = ZonedDateTime.now(ZoneOffset.UTC).toEpochSecond() - 30;
+long exp = iat + 900;
+String payloadJson = "{\"sub\": \"YOUR_PROJECT_ID\", \"iat\": " + iat + ", \"exp\": " + exp + "}";
+
+// Base64url header+payload
+String headerEncoded = Base64.getUrlEncoder().encodeToString(headerJson.getBytes(StandardCharsets.UTF_8));
+String payloadEncoded = Base64.getUrlEncoder().encodeToString(payloadJson.getBytes(StandardCharsets.UTF_8));
+String data = headerEncoded + "." + payloadEncoded;
+
+EdDSAParameterSpec spec = EdDSANamedCurveTable.getByName(EdDSANamedCurveTable.ED_25519);
+
+// Sign
+final Signature s = new EdDSAEngine(MessageDigest.getInstance(spec.getHashAlgorithm()));
+s.initSign(privateKey);
+s.update(data.getBytes(StandardCharsets.UTF_8));
+byte[] signature = s.sign();
+
+String signatureString = Base64.getUrlEncoder().encodeToString(signature);
+
+System.out.println("Signature: \n" + signatureString);
+
+// Print Token
+String jwt = data + "." + signatureString;
+System.out.println("JWT: \n" + jwt);
+```
+
+#### Node.js 16+
+
+需安装Jose依赖，`npm install jose`
+
+```js
+import {SignJWT, importPKCS8} from "jose";
+
+const YourPrivateKey = 'YOUR_PRIVATE_KEY'
+
+importPKCS8(YourPrivateKey, 'EdDSA').then((privateKey) => {
+  const customHeader = {
+    alg: 'EdDSA',
+    kid: 'YOUR_KEY_ID'
+  }
+  const iat = Math.floor(Date.now() / 1000) - 30;
+  const exp = iat + 900;
+  const customPayload = {
+    sub: 'YOUR_PROJECT_ID',
+    iat: iat,
+    exp: exp
+  }
+  new SignJWT(customPayload)
+    .setProtectedHeader(customHeader)
+    .sign(privateKey)
+    .then(token => console.log('JWT: ' + token))
+}).catch((error) => console.error(error))
+```
+
+#### Python3
+
+需要运行 `pip3 install PyJWT` 才能安装 `PyJWT` 包。
+
+```python
+#!/usr/bin/env python3
+import sys
+import time
+import jwt
+
+# Open PEM
+private_key = """YOUR_PRIVATE_KEY"""
+
+payload = {
+    'iat': int(time.time()) - 30,
+    'exp': int(time.time()) + 900,
+    'sub': 'YOUR_PROJECT_ID'
+}
+headers = {
+    'kid': 'YOUR_KEY_ID'
+}
+
+# Generate JWT
+encoded_jwt = jwt.encode(payload, private_key, algorithm='EdDSA', headers = headers)
+
+print(f"JWT:  {encoded_jwt}")
+```
+
+#### Shell
+
+```bash
+#!/bin/bash
+
+# Set `kid`, `sub` and `private_key_path`
+kid=YOUR_KEY_ID
+sub=YOUR_PROJECT_ID
+private_key_path=PATH_OF_YOUR_PRIVATE_KEY
+
+# Set `iat` and `exp`
+# `iat` defaults to the current time -30 seconds
+# `exp` defaults to `iat` +15 minutes
+iat=$(( $(date +%s) - 30 ))
+exp=$((iat + 900))
+
+# base64url encoded header and payload
+header_base64=$(printf '{"alg":"EdDSA","kid":"%s"}' "$kid" | openssl base64 -e | tr -d '=' | tr '/+' '_-' | tr -d '\n')
+payload_base64=$(printf '{"sub":"%s","iat":%d,"exp":%d}' "$sub" "$iat" "$exp" | openssl base64 -e | tr -d '=' | tr '/+' '_-' | tr -d '\n')
+header_payload="${header_base64}.${payload_base64}"
+
+# Save $header_payload as a temporary file for Ed25519 signature
+tmp_file=$(mktemp)
+echo -n "$header_payload" > "$tmp_file"
+
+# Sign with Ed25519
+signature=$(openssl pkeyutl -sign -inkey "$private_key_path" -rawin -in "$tmp_file" | openssl base64 | tr -d '=' | tr '/+' '_-' | tr -d '\n')
+
+# Delete temporary file
+rm -f "$tmp_file"
+
+# Generate JWT
+jwt="${header_payload}.${signature}"
+
+# Print Token
+echo "$jwt"
+```
