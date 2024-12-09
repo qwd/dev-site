@@ -6,7 +6,7 @@ ref: config-android
 
 这篇文档将介绍如何配置和风天气开发服务中的Android SDK。
 
-> Android SDK无需任何隐私信息或特殊权限，请不要向SDK发送用户隐私信息，这可能导致无法正确的获取数据。
+> **提示：**Android SDK无需任何隐私信息或特殊权限，请不要向SDK发送用户隐私信息，这可能导致无法正确的获取数据。
      
 ## 下载 {#download}
 
