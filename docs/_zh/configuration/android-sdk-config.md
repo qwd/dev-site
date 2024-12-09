@@ -5,6 +5,8 @@ ref: config-android
 ---
 
 这篇文档将介绍如何配置和风天气开发服务中的Android SDK。
+
+> Android SDK无需任何隐私信息或特殊权限，请不要向SDK发送用户隐私信息，这可能导致无法正确的获取数据。
      
 ## 下载 {#download}
 
@@ -30,9 +32,7 @@ Android 4.4+
 权限说明 | 代码
 --------- | -------------
 允许连接网络 | android.permission.INTERNET
-访问GPS定位 | android.permission.ACCESS_FINE_LOCATION
-访问设备状态 | android.permission.READ_PHONE_STATE
-访问WIFI状态 | android.permission.ACCESS_WIFI_STATE
+
 
 **引用库**
 

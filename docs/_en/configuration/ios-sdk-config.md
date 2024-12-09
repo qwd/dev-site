@@ -70,12 +70,7 @@ You can also use Swift Package Manager to integrate iOS SDK, please refer to [Ad
 > 1. Create a new OC class in the main directory of the Swift project. If the OC class is created for the first time in the project, a prompt window as shown in the figure will pop up. This prompt window is a pop-up prompt for whether to create a Swift-OC bridge file.
 > 2. Click **Create Bridging Header**, Xcode will automatically create a header file. This header file is the bridge file of Swift-OC
 > 3. Declare this framework class in the Swift-OC bridge file and it can be used.
-> 4. The sdk needs to enable the location permission, which is configured in Info.plist:
-> 
->    ```
->    NSLocationWhenInUseUsageDescription
->    NSLocationAlwaysAndWhenInUseUsageDescription
->    ```
+
 
 > **Warning:**
 >

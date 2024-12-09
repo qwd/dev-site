@@ -30,9 +30,6 @@ Make sure you have created a Project and Credential, see [Project and KEY](/en/d
 | Permission   | Code                                    |
 | ------------------------ | --------------------------------------- |
 | Allow network connection | android.permission.INTERNET             |
-| Access GPS location      | android.permission.ACCESS_FINE_LOCATION |
-| Access device status     | android.permission.READ_PHONE_STATE     |
-| Access WIFI status       | android.permission.ACCESS_WIFI_STATE    |
 
 **Reference Library**
 
