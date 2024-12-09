@@ -11,7 +11,7 @@ ref: config-ios
 - iOS 9.0 及以上
 - macOS 10.10 及以上
 
-> **提示：**和风天气iOS SDK同样包含了macOS SDK。
+> **提示：**iOS SDK同样包含了macOS SDK。iOS SDK无需任何隐私信息或特殊权限，请不要向SDK发送用户隐私信息，这可能导致无法正确的获取数据。
 
 ## 第1步: 创建项目和凭据 {#step-1-create-project-and-credential}
 
@@ -73,12 +73,6 @@ iOS SDK支持使用Swift Package Manager集成，具体步骤请参考[Adding pa
 > 1. 在Swift工程主目录下新建一个OC类，如果是项目第一次创建OC类的话，会弹出提示窗: 是否建立Swift-OC的桥接文件。
 > 2. 点击**Create Bridging Header**，Xcode会自动创建一个头文件。这个头文件，就是Swift-OC的桥接文件。
 > 3. 在Swift-OC桥接文件里将本framework类进行声明，即可以使用。
-> 4. SDK需要开启定位权限，在Info.plist里配置：
-> 
->    ```
->    NSLocationWhenInUseUsageDescription
->    NSLocationAlwaysAndWhenInUseUsageDescription
->    ```
 
 > **注意：**
 >
