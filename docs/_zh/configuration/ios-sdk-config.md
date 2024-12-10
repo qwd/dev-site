@@ -6,12 +6,14 @@ ref: config-ios
 
 这篇文档将介绍如何配置和风天气开发服务中的iOS SDK。
 
+> **隐私声明：**和风天气iOS SDK**不需要电话、位置、设备唯一标识符等任何特殊权限**，我们不会也无法通过本SDK收集用户隐私信息。
+
 和风天气iOS SDK支持下列操作系统：
 
 - iOS 9.0 及以上
 - macOS 10.10 及以上
 
-> **提示：**iOS SDK同样包含了macOS SDK。iOS SDK无需任何隐私信息或特殊权限，请不要向SDK发送用户隐私信息，这可能导致无法正确的获取数据。
+> **提示：**iOS SDK同样包含了macOS SDK。
 
 ## 第1步: 创建项目和凭据 {#step-1-create-project-and-credential}
 
@@ -19,7 +21,7 @@ ref: config-ios
 
 ## 第2步: 安装SDK {#step-2-install-sdk}
 
-和风天气iOS SDK支持下列安装方式：
+当前iOS SDK的最新版本是{{ site.data.v.ios.version }}([更新记录](https://blog.qweather.com/release/sdk/))，支持下列安装方式：
 
 ### CocoaPods {#cocoapods}
 

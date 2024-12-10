@@ -6,13 +6,13 @@ ref: config-android
 
 这篇文档将介绍如何配置和风天气开发服务中的Android SDK。
 
-> **提示：**Android SDK无需任何隐私信息或特殊权限，请不要向SDK发送用户隐私信息，这可能导致无法正确的获取数据。
+> **隐私声明：**和风天气Android SDK**不需要电话、位置、设备唯一标识符等任何特殊权限**，我们不会也无法通过本SDK收集用户隐私信息。
      
 ## 下载 {#download}
 
-|版本|日期|MD5|下载|
-|---|---|---|---|
-|{{ site.data.v.android.version }}|{{ site.data.v.android.date }}|{{ site.data.v.android.md5 }}|[下载]({{ site.data.v.android.dllink }})|
+|版本|日期|MD5|
+|---|---|---|
+|{{ site.data.v.android.version }} [下载]({{ site.data.v.android.dllink }})|{{ site.data.v.android.date }} [更新记录](https://blog.qweather.com/release/sdk/) |`{{ site.data.v.android.md5 }}`|
 
 ## 创建项目和凭据 {#create-project-and-credential}
 
