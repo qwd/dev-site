@@ -6,11 +6,13 @@ ref: config-android
 
 This document will introduce how to configure the Android SDK in the QWeather Develop Service.
 
+> **Privacy Disclaimer:** QWeather Android SDK **DOES NOT require any special permissions such as phone, location, device unique identifiers, etc.** We does not and cannot collect private data from this SDK. 
+
 ## Download 
 
-|Version|Update|MD5| Download                                     |
+|Version|Update|MD5| 
 |---|---|---|----------------------------------------------|
-|{{ site.data.v.android.version }}|{{ site.data.v.android.date }}|{{ site.data.v.android.md5 }}| [Download]({{ site.data.v.android.dllink }}) |
+|{{ site.data.v.android.version }} [Download]({{ site.data.v.android.dllink }})|{{ site.data.v.android.date }} [Release note](https://blog.qweather.com/release/sdk/)|`{{ site.data.v.android.md5 }}`|
 
 ## OS requirement
 

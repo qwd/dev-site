@@ -6,6 +6,8 @@ ref: config-ios
 
 This document will introduce how to configure the iOS SDK for QWeather API.
 
+> **Privacy Disclaimer:** QWeather iOS SDK **DOES NOT require any special permissions such as phone, location, device unique identifiers, etc.** We does not and cannot collect private data from this SDK. 
+
 OS Requirement:
 
 - iOS 9.0+
@@ -19,7 +21,7 @@ Make sure you have created a Project and Credential, see [Project and KEY](/en/d
 
 ## Step 2: Install SDK
 
-iOS SDK supports the following installation methods:
+The latest version of iOS SDK is {{ site.data.v.ios.version }}([Release note](https://blog.qweather.com/release/sdk/)), and it supports the following installation methods:
 
 ### CocoaPods
 
