@@ -93,11 +93,11 @@ You do not have permission to request this data at this time. You can submit a t
 
 Incorrect path or path parameter, the resource could not be found. Please note that you will not get response body for 404 errors.
 
-### TOO FAST
+### TOO MANY REQUESTS
 
 `HTTP response status code: 429`
 
-Your request rate is too fast and exceeds the QPM limit. You should take an interval before retrying, also if you have multiple devices, this interval should be staggered or randomized. See [Exponential Backoff](/en/docs/best-practices/optimize-requests/#using-exponential-backoff-to-handle-errors) for interval requests.
+Too many requests in a short time, exceeded the QPM limit or accumulated a lot of invalid requests. You must wait or fix the errors before retrying, otherwise ongoing 429 status may be recognized as abuse of server resources or DDoS attacks, which will suspend your account. See [Exponential Backoff](/en/docs/best-practices/optimize-requests/#using-exponential-backoff-to-handle-errors) for how to set the retry time.
 
 ### OVER FREE DAILY LIMIT
 
