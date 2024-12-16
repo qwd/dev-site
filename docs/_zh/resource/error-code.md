@@ -71,7 +71,7 @@ v2版本将错误进行了细分和更加详细的描述，以便用户可以更
 
 - 该请求是否与你的请求限制有冲突
 - 你的请求限制是否合理
-- 若果请求不是你发送的，请考虑你的凭据可能已经泄露
+- 如果请求不是你发送的，请考虑你的凭据可能已经泄露
 
 ### ERROR HOST
 
@@ -89,7 +89,7 @@ v2版本将错误进行了细分和更加详细的描述，以便用户可以更
 
 `HTTP response status code: 403`
 
-你暂时无权限请求这个数据。你可以提交工单向我们了解相信信息。
+你暂时无权限请求这个数据。你可以提交工单向我们了解详情。
 
 ### 404
 
@@ -97,11 +97,11 @@ v2版本将错误进行了细分和更加详细的描述，以便用户可以更
 
 输入了错误的路径或错误的路径参数，无法找到该资源。请注意，404错误不会返回response body。
 
-### TOO FAST
+### TOO MANY REQUESTS
 
 `HTTP response status code: 429`
 
-请求速度过快，超过了QPM限制。你需要暂停一小段时间再进行重试，同时如果你有多个设备，这个暂停的时间应该错开。请参考[指数退避算法](/docs/best-practices/optimize-requests/#using-exponential-backoff-to-handle-errors)。
+短时间内请求过多，超过了QPM限制或累积了大量错误请求。你必须等待一段时间或修复错误后再进行重试，否则持续的429状态可能会被认为是滥用服务资源或DDoS攻击，这将导致你的账号被冻结。关于如何设置重试时间，请参考[指数退避算法](/docs/best-practices/optimize-requests/#using-exponential-backoff-to-handle-errors)。
 
 ### OVER FREE DAILY LIMIT
 
