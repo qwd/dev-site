@@ -1,164 +1,43 @@
 - data: 
-    zh: GeoAPI
-    en: GeoAPI
-  incl: [1-api-city-lookup,2-api-top-city, 3-api-poi-lookup, 4-api-poi-range]
+    zh: 天气和环境
+    en: Weather and Environment
+  incl: [0-api-weather, 0-api-grid-weather, 0-api-minutely, 0-api-warning, 0-api-indices, 0-api-air,0-api-aq-v1, 0-api-time-machine, 0-api-geo, 0-api-astronomy]
   price: 
-    - tier: 300000
-      value: 0.0005
-    - tier: 700000
-      value: 0.00045
+    - tier: 50000
+      value: 0
+    - tier: 950000
+      value: 0.0007
     - tier: 4000000
-      value: 0.00035
+      value: 0.0005
     - tier: 5000000
-      value: 0.00025
+      value: 0.00035
     - tier: 40000000
       value: 0.00015
     - tier: 50000000
       value: 0.0001
-- data: 
-    zh: 天气服务
-    en: Weather Service
-  incl: [0-api-weather, 0-api-grid-weather, 0-api-minutely, 0-api-warning, 0-api-indices]
-  excl:
-    zh: |- 
-     **注意:** 下列定价不适用于超过7天的每日预报或超过24小时的每小时预报，此类数据参考[天气服务(扩展)](/docs/finance/pricing/#weather-extend)。
-    en: |-
-     **Note:** The following pricing is not available for daily forecast over 7 days or hourly forecast over 24 hours, refer to [Weather (Extend)](/en/docs/finance/pricing/#weather-extend) instead.
-  price: 
-    - tier: 300000
-      value: 0.001
-    - tier: 700000
-      value: 0.00088
-    - tier: 4000000
-      value: 0.0007
-    - tier: 5000000
-      value: 0.0005
-    - tier: 40000000
-      value: 0.00025
-    - tier: 50000000
-      value: 0.00018
     - tier: 100000000
-      value: 0.0001
+      value: ""
 - data: 
-    zh: 天气服务(扩展)
-    en: Weather Service(Extend)
-  incl: [0-api-weather, 0-api-grid-weather]
-  excl:
-    zh: |-
-     **注意:** 本定价仅限城市天气和格点天气中超过7天的每日预报或超过24小时的每小时预报。
-    en: |-
-     **Note:** This pricing is only available for daily forecast over 7 days or hourly forecast over 24 hours for the above data services.
+    zh: 台风和海洋
+    en: Storm and Ocean
+  incl: [0-api-tropical,0-api-ocean]
   price: 
-    - tier: 300000
-      value: 0.002
-    - tier: 700000
-      value: 0.0017
+    - tier: 1000000
+      value: 0.003
     - tier: 4000000
-      value: 0.0014
-    - tier: 5000000
-      value: 0.001
-    - tier: 40000000
-      value: 0.0006
-    - tier: 50000000
-      value: 0.0004
-    - tier: 100000000
-      value: 0.0003
-- data: 
-    zh: 空气质量
-    en: Air Quality 
-  incl: [0-api-air,0-api-aq-v1]
-  price: 
-    - tier: 300000
-      value: 0.001
-    - tier: 700000
-      value: 0.00088
-    - tier: 4000000
-      value: 0.0007
-    - tier: 5000000
-      value: 0.0005
-    - tier: 40000000
-      value: 0.00025
-    - tier: 50000000
-      value: 0.00018
-    - tier: 100000000
-      value: 0.0001
-- data: 
-    zh: 时光机
-    en: Time Machine
-  incl: [1-api-historical-weather,2-api-historical-air]
-  price: 
-    - tier: 300000
-      value: 0.002
-    - tier: 700000
-      value: 0.0018
-    - tier: 4000000
-      value: 0.0014
-    - tier: 5000000
-      value: 0.001
-    - tier: 40000000
-      value: 0.0008
-    - tier: 50000000
-      value: 0.0006
-- data: 
-    zh: 热带气旋（台风）
-    en: Tropical Cyclone
-  incl: [1-api-storm-list,2-api-storm-track,3-api-storm-forecast]
-  price: 
-    - tier: 300000
-      value: 0.005
-    - tier: 700000
-      value: 0.004
-    - tier: 4000000
-      value: 0.0035
-    - tier: 5000000
       value: 0.0025
-    - tier: 40000000
-      value: 0.002
-    - tier: 50000000
-      value: 0.001
-- data: 
-    zh: 海洋数据
-    en: Ocean
-  incl: [1-api-tide,2-api-currents]
-  price: 
-    - tier: 300000
-      value: 0.005
-    - tier: 700000
-      value: 0.004
-    - tier: 4000000
-      value: 0.0035
     - tier: 5000000
-      value: 0.0025
-    - tier: 40000000
-      value: 0.002
-    - tier: 50000000
-      value: 0.001
-- data: 
-    zh: 天文
-    en: Astronomy
-  incl: [1-api-sun,2-api-moon,3-api-solar-elevation-angle]
-  price: 
-    - tier: 300000
-      value: 0.001
-    - tier: 700000
-      value: 0.0008
-    - tier: 4000000
-      value: 0.0006
-    - tier: 5000000
-      value: 0.0004
-    - tier: 40000000
-      value: 0.0003
-    - tier: 50000000
-      value: 0.0002
+      value: 0.0015
+    - tier: 10000000
+      value: ""
 - data: 
     zh: 太阳辐照
     en: Solar Radiation
-  incl: [1-api-solar-radiation-hourly-forecast]
-  excl:
-    zh: |-
-     **注意:** 太阳辐照暂不支持阶梯价格，如果你的日均请求量超过500次，请发送邮件至<sales@qweather.com>，我们的商务专家将为你制定更划算的方案。
-    en: |-
-     **Note:** Solar radiation does not support tiered pricing at this time, if your daily requests are over 500, please send email to <sales@qweather.com>, our business experts will design a more cost-effective solution for you.
+  incl: [0-api-solar-radiation]
   price: 
-    - tier: 0
-      value: 0.4
+    - tier: 100000
+      value: 0.3
+    - tier: 400000
+      value: 0.2
+    - tier: 500000
+      value: ""
