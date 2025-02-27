@@ -40,18 +40,11 @@ layout: html
                 </div>
                 <div class="price-by-service row">
                     {% for group in site.data.price %}
-                    <div class="col-6 col-md-4 col-lg-3 mb-4">
-                        {% assign group_doc = site.documents | where: "lang", page.lang | where: "ref", group.data.ref | first %}
-                        <a class="d-block service-card p-3 border-r10 no-underline color-font" href="{%- if page.lang == "en" -%}/en{%- endif -%}/docs/finance/pricing/#{%- if group.data.ref -%}{{ group_doc.url | split: "/" | last }}{%- else -%}{{ group.data.en | slugify }}{%- endif -%}">
-                            <h4 class="mb-3">{{ group.data[page.lang] }}
-                                {%- case group.data.en -%}
-                                    {%- when "Weather Service" -%}
-                                    <sup>*</sup>
-                                    {%- when "Weather Service(Extend)" -%}
-                                    <sup>+</sup>
-                                    {%- endcase -%}</h4>
+                    <div class="col-6 col-md-4 mb-4">
+                        <a class="d-block service-card p-3 border-r10 no-underline color-font" href="{%- if page.lang == "en" -%}/en{%- endif -%}/docs/finance/pricing/#{{ group.data.en | slugify }}">
+                            <h4 class="mb-3">{{ group.data[page.lang] }}</h4>
                             <div class="price-content{{- forloop.index }} d-none d-sm-block">
-                                <ul class="clear-list">
+                                <ul class="clear-list" {% if forloop.first -%}style="columns: 2;"{%- endif -%}>
                                     {% for incl_data in group.incl %}
                                     {%- assign incl_doc = site.documents | where: "lang", page.lang | where: "ref",incl_data | first -%}
                                     <li class="small mb-1">{{ incl_doc.title }}</li>
@@ -61,10 +54,6 @@ layout: html
                         </a>
                     </div>
                     {% endfor %}
-                </div>
-                <div class="price-footnote">
-                    <p class="small italic">* {{ site.data.t[page.lang].pi-tier-weather-remark}}</p>
-                    <p class="small italic">+ {{ site.data.t[page.lang].pi-tier-weather-extend-remark}}</p>
                 </div>
             </div>
     </section>
