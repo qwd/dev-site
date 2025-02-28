@@ -2,18 +2,16 @@
 <h3 id="{{group.data.en | slugify}}">{{ group.data[page.lang] }}</h3>
 <div class="price-content{{- forloop.index }} {% if forloop.first %}default{% endif %}">
     <div class="data-desc mb-3">
-        <p class="mr-2">{{ site.data.t[page.lang]doc-incl-data-pricing }}:</p>
-        <p>
+        <p class="mr-2">{{ site.data.t[page.lang]doc-incl-data-pricing }}:
             {% for incl_data in group.incl %}
             {%- assign incl_doc = site.documents | where: "lang", page.lang | where: "ref", incl_data | first  -%}
-                <span class="mr-2">&bull; <a href="{{ incl_doc.url }}">{{ incl_doc.title }}</a></span>
-            {% endfor %} 
+            {%- if forloop.first %}
+            <span><a href="{{ incl_doc.url }}">{{ incl_doc.title pre }}</a> </span>
+            {%- else -%}
+            <span>&bull; <a href="{{ incl_doc.url }}">{{ incl_doc.title pre }}</a> </span>
+            {%- endif -%}
+            {%- endfor -%} 
         </p>
-        {%- if group.excl -%}
-        <blockquote class="bqwarning">
-            {{ group.excl[page.lang] | markdownify }}
-        </blockquote>
-        {%- endif -%}
     </div>
     <table>
         <thead>
@@ -24,17 +22,36 @@
         </thead>
         <tbody>
             {%- for price in group.price -%}
+            {% if price.tier == 0 and page.lang == "zh" %}
+                {% assign formattedTier = price.tier | replace: '0', '任意次数' %}
+            {% elsif price.tier == 0 and page.lang == "en" %}
+                {% assign formattedTier = price.tier | replace: '0', 'Any request' %}
+            {% elsif price.tier >= 10000 and 100000000 > price.tier and  page.lang == "zh" %}
+                {% assign formattedTier = price.tier | divided_by: 10000 | append: "万" %}
+            {% elsif price.tier >= 1000000 and page.lang == "en" %}
+                {% assign formattedTier = price.tier | divided_by: 1000000 | append: " million" %}
+            {% elsif price.tier >= 100000000 and page.lang == "zh" %}
+                {% assign formattedTier = price.tier | divided_by: 100000000 | append: "亿" %}
+            {% else %}
+                {% assign formattedTier = price.tier %}
+            {% endif %}
             <tr>
                 <td>
                     {%- if forloop.first -%}
-                    {{ site.data.t[page.lang][price.tier] | prepend: "0-"}}
+                    {{ formattedTier | prepend: "0~"}}
                     {%- elsif forloop.last -%}
-                    {{ site.data.t[page.lang]over }} {{ site.data.t[page.lang][price.tier] }}    
+                    {{ site.data.t[page.lang]over }} {{ formattedTier }}    
                     {%- else -%}
-                    {{ site.data.t[page.lang]next }} {{ site.data.t[page.lang][price.tier] }}
+                    {{ site.data.t[page.lang]next }} {{ formattedTier }}
                     {%- endif -%}
                     </td>
-                <td>CNY {{ price.value }}</td>
+                <td>
+                    {%- if price.value != empty -%}
+                    {{ price.value | prepend: 'CNY ' }}
+                    {% else %}
+                    {{ site.data.t[page.lang].contact-us }}   
+                    {%- endif -%}
+                    </td>
             </tr>    
             {%- endfor -%}
         </tbody>

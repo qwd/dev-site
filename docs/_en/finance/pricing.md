@@ -6,33 +6,26 @@ ref: finance-pricing
 
 QWeather Develop services are all based on pay as you go billing model, you only pay for the services you actually use, no large upfront, no hidden fees, start and stop whenever you want, and no fees when you stop.
 
-Pay as you go is tiered pricing, with the higher requests, the lower cost per request.
+Pay as you go is tiered pricing model, with the higher requests, the lower cost per request.
 
 ## Specifications 
 
 - **Billing unit:** pre request. See [What is a request](/en/help/#what-is-a-request).
 - **Billing cycle:** monthly
 - **Accrued charges cycle:** hourly
+- **Tiered price progression cycle:** monthly
 - **Minimum billing amount:** ¥0.01. Under ¥0.01 will be billed as ¥0.01
 
-> **Example:** you have 1,000,000 requests per month, the monthly cost is: (300,000 requests x ¥0.001) + (700,000 requests x ¥0.00088) = ¥916
+> **Example:** you have 1,000,000 requests per month, the monthly cost is: (50,000 requests x ¥0) + (950,000 requests x ¥0.0007) = ¥665
 >
 > *Note: this is an approximation and the final cost may vary slightly due to the actual request volume per hour.*
 
 ## Pricing
 
-Pay as you go is tiered pricing, the progressive request volume is calculated as the sum of each data contained in a single service.
-
-> **Example:** you requested 300000 real-time weather, 700000 warnings, 300000 real-time air quality and 100000 air quality forecast in a month, your total requests for the month are: 1,000,000 for weather services and 400,000 for air quality, and the cost for the month is: [(300,000 requests x ¥0.001) + (700,000 requests x ¥0.00088)] + [(300,000 requests x ¥0.001) + (100,000 requests x ¥0.00088)] = ¥1,304
->
-> *Note: this is an approximation and the final cost may vary slightly due to the actual request volume per hour.*
+Pay as you go is tiered pricing model, with tier requests calculated as the sum of the equests for each data item in the price groups. It is recommended that you use the [Price Calculator](https://console.qweather.com/#/calculator) to see the calculation process and estimate the monthly cost.
 
 [Saving Plans](/en/docs/finance/saving-plans/) can significantly reduce the cost.
 
-For users with a large volume of requests (usually million or more requests per day), please contact our business experts for a better solution.
+> **Note:** When your average daily request volume is over **1,000,000** (or **500** for solar irradiation), please email <sales@qweather.com> and our business experts will provide a more flexible and cost-effective solution for you.
 
 {% include price-table.html %}
-
-## Restrictions
-
-Pay as you go model is only supported for Standard and Pro subscriptions.

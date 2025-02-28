@@ -119,14 +119,6 @@ pi-free-subs-more: See Free Subscription
 pi-more: More
 pi-req-mo: Requests(per month)
 pi-price-req: Price(per request)
-0: Any request
-300000: "300,000"
-700000: "700,000"
-4000000: 4 million
-5000000: 5 million
-40000000: 40 million
-50000000: 50 million
-100000000: 100 million
 over: Over
 next: Next
 si-biref: Welcome to share your code for using QWeather dev service, you can edit <a href="https://github.com/qwd/dev-site/edit/master/_data/showcase.yml" target="_blank" rel="noopener noreferrer">this file</a> and submit a PR.
