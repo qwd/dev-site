@@ -174,7 +174,7 @@ See [Lost registration information and password](/en/docs/account/management/#lo
 
 ### How to modify developer identification?
 
-Individual developers can change to organization developers, and organization developers can update their organization information, refer to [Modify develpoers information](/en/docs/account/developers/#modify-developers).
+Individual developers can change to organization developers, and organization developers can update their organization information, refer to [Organization Developers](/en/docs/account/developers/).
 
 ## Legal Terms
 

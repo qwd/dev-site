@@ -9,7 +9,7 @@ ref: account-overview
 {{ page.description | markdownify}}
 
 - [Management](/en/docs/account/management/)
-- [Developers](/en/docs/account/developers/)
+- [Organization Developers](/en/docs/account/developers/)
 - [Recipients](/en/docs/account/recipients/)
 - [Suspension](/en/docs/account/suspension/)
 - [Inactive Account](/en/docs/account/inactive/)
