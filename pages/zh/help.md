@@ -174,7 +174,7 @@ ref: faq
 
 ### 如何变更开发者身份？ {#how-to-modify-developer-identification}
 
-个人开发者可以变更为企业开发者，企业开发者可以变更企业信息，参考[修改开发信息](/docs/account/developers/#modify-developers)。
+个人开发者可以变更为企业开发者，企业开发者可以变更企业信息，参考[企业开发](/docs/account/developers/)文档。
 
 ## 法律条款 {#legal-terms}
 

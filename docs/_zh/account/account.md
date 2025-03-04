@@ -9,7 +9,7 @@ ref: account-overview
 {{ page.description | markdownify}}
 
 - [用户管理](/docs/account/management/)
-- [注册开发者](/docs/account/developers/)
+- [企业开发者](/docs/account/developers/)
 - [通知接收人](/docs/account/recipients/)
 - [帐号冻结](/docs/account/suspension/)
 - [闲置帐号](/docs/account/inactive/)
