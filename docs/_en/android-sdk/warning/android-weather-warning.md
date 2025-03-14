@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 14:29:17
+ * @FilePath: /dev-site/docs/_en/android-sdk/warning/android-weather-warning.md
+-->
 ---
 title: Weather Warning
 tag: [guide, android, warning, now]
@@ -10,7 +16,7 @@ Get officially issued real-time severe weather warning data around the world.
 
 | Interface Code| Interface  | Class |
 | ------------ | ---------- | ----------- |
-| getWarning| Weather Warning  | WarningBean |
+| warningNow| Weather Warning  | WarningBaseResponse |
 
 ### Parameter
 
@@ -18,11 +24,9 @@ Get officially issued real-time severe weather warning data around the world.
 
 ### Sample Code
 
+
 ```java
-QWeather.getWarning(Context context, String location, final QWeather.OnResultWarningListener listener);
-
-QWeather.getWarning(Context context, String location, Lang lang, final QWeather.OnResultWarningListener listener);
-
+public void warningNow(WarningNowParameter parameter, Callback<WarningBaseResponse> callback);
 ```
 
 ### Properties
@@ -30,27 +34,21 @@ QWeather.getWarning(Context context, String location, Lang lang, final QWeather.
 Properties of WarningBean
 
 | Property | Description | Example |
-| --------------- | -------------------------- | ------ --------------------- |
+| --------------- | -------------------------- | --------------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getBeanBaseList | Disaster Warning | List&lt;WarningBeanBase&gt; |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/severe-weather/beijing-101010100.html |
+| getWarning | Disaster Warning | List&lt;Warning&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
-| getBasic | Basic Information | Basic |
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description | Type | Example |
+| -------- | ----------- | ---- | ------- |
+| getSources | Data source and other statements | List&lt;String&gt; | QWeather |
+| getLicense | Data license |  List&lt;String&gt;  | QWeather Developers License |
 
-**Basic**
-
-| Property | Description | Example |
-| ------------- | ------------------- | ------------------- |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/severe-weather/beijing-101010100.html |
-
-**WarningBeanBase Warning Information**
+**Warning Information**
 
 | Property | Description | Example |
 | ------------ | ---------------------------------- |----------- |

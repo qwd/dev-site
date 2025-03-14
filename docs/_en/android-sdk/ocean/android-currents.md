@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 14:28:31
+ * @FilePath: /dev-site/docs/_en/android-sdk/ocean/android-currents.md
+-->
 ---
 title: Currents
 tag: [guide, android, ocean, currents]
@@ -8,7 +14,7 @@ Currents data for the next 10 days, including currents speed, direction and hour
 
 | Interface Code| Interface          | Class  |
 | -------- | ---------------- | ------- |
-| getOceanCurrents| Currents data  | CurrentsBean |
+| oceanCurrents| Currents data  | OceanCurrentsBaseResponse |
 
 ### Parameter
 
@@ -17,37 +23,30 @@ Currents data for the next 10 days, including currents speed, direction and hour
 ### Sample Code
 
 ```java
-QWeather.getOceanCurrents(Context context, String location, String date, OnResultOceanTideListener listener);
+public void oceanCurrents(OceanParameter parameter, Callback<OceanCurrentsBaseResponse> callback)
 ```
 
 ### Properties
 
-Properties of CurrentsBean
+Properties of OceanCurrentsBaseResponse
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)         |
-| getBasic         | Basic Informatio | Basic       |
-| getRefer         | Reference data, includes data source, statements and license | Refer  |
-| getHourlyList | Hourly currents data | List\<CurrentsHourlyBase> |
-| getTableList | Currents table | List\<CurrentsTableBase> |
-
-**Basic**
-
-| Property           | Description         | Example             |
-| -------------- | ------------ | ------------------ |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time)  | 2017-10-25T04:34+08:00      |
 | getFxLink |Responsive web page of this data, for embedded in website or APP  | https://www.qweather.com |
+| getCurrentHourly | Hourly currents data | List\<CurrentsHourly> |
+| getCurrentsTable | Currents table | List\<CurrentsTable> |
+| getRefer         | Reference data, includes data source, statements and license | Refer  |
 
 **Refer**
 
-| Property           | Description         | Example             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather      |
-| getLicenseList | Data license     | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
-
-**CurrentsTableBase**
+**CurrentsTable**
 
 | Property         | Description                                                                    | Example               |
 | ------------ | ----------------------------------------------------- | -------------------- |
@@ -55,7 +54,7 @@ Properties of CurrentsBean
 | getSpeedMax        | Maximum speed, cm/sec              | 1.23            |
 | getDir360       | Currents direction in azimuth degree                              |    212    |
 
-**CurrentsHourlyBase**
+**CurrentsHourly**
 
 | Property         | Description                                                                    | Example               |
 | ------------ | ----------------------------------------------------- | -------------------- |

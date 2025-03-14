@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 16:47:51
+ * @FilePath: /dev-site/docs/_zh/android-sdk/geoapi/android-city-lookup.md
+-->
 ---
 title: 城市搜索
 tag: [guide, android, geo, city-lookup]
@@ -8,7 +14,7 @@ ref: 1-sdk-android-geo-city-lookup
 
 | 接口代码| 接口说明          | 数据类  |
 | -------- | ---------------- | ------- |
-| getGeoCityLookup| 城市查询  | GeoBean |
+| geoCityLookUp| 城市查询  | GeoCityLookupBaseResponse |
 
 ### 接口参数说明
 
@@ -17,35 +23,30 @@ ref: 1-sdk-android-geo-city-lookup
 ### 示例代码
 
 ```java
-QWeather.getGeoCityLookup(Context context, String location, String adm, Range range, int number, Lang lang, final QWeather.OnResultGeoListener listener);
-
-QWeather.getGeoCityLookup(Context context, String location, Range range, int number, Lang lang, final QWeather.OnResultGeoListener listener);
-
-QWeather.getGeoCityLookup(Context context, String location, int number, Lang lang, final QWeather.OnResultGeoBeansListener listener);
-
-QWeather.getGeoCityLookup(Context context, String location, final QWeather.OnResultGeoBeansListener listener);
+public void geoCityLookUp(GeoCityLookupParameter parameter, Callback<GeoCityLookupBaseResponse> callback);
 ```
 
-### GeoBean属性
+### GeoCityLookupBaseResponse 属性
 
 | 属性            | 说明     | 示例值                   |
 | --------------- | -------- | ------------------------ |
 | getCode         | 参考[状态码](/docs/resource/status-code/)  | 200 |
-| getLocationBean | 城市数据 | List&lt;LocationBean&gt; |
+| getLocation | 城市数据 | List&lt;Location&gt; |
+| getRefer         | Refer 数据来源以及数据授权 | Refer  |
 
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
 
-**LocationBean 基础信息**
+**Location 基础信息**
 
 | 属性         | 说明                                                                    | 示例值               |
-| ------------ | ----------------------------------------------------------------------- | -------------------- |
+| ------------ | --------------------------------------------------------- | -------------------- |
 | getName      | 地区／城市名称                                                          | 卓资                 |
 | getId        | 地区／城市ID                                                            | 101080402            |
 | getLon       | 地区／城市经度                                                          | 112.577702           |

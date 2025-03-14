@@ -7,10 +7,10 @@ ref: 3-sdk-android-weather-hourly-forecast
 Get hourly weather forecasts for cities around the world for the next 24-168 hours.
 
 | Interface Code| Interface  | Class |
-| ------------------- | -------------- | -------------- --- |
-| getWeather24H| 24-hour forecast weather data  | WeatherHourlyBean |
-| getWeather72H| 72-hour forecast weather data  | WeatherHourlyBean |
-| getWeather168H| 168-hour forecast weather data  | WeatherHourlyBean |
+| ------------------- | -------------- | ----------------- |
+| weather24h| 24-hour forecast weather data  | WeatherHourlyBaseResponse |
+| weather72h| 72-hour forecast weather data  | WeatherHourlyBaseResponse |
+| weather168h| 168-hour forecast weather data  | WeatherHourlyBaseResponse |
 
 ### Parameter
 
@@ -19,58 +19,48 @@ Get hourly weather forecasts for cities around the world for the next 24-168 hou
 ### Sample Code
 
 ```java
-/**
- *  24-hour forecast data
- */
-QWeather.getWeather24Hourly(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherHourlyListener listener);
-
-QWeather.getWeather24Hourly(Context context, String location, QWeather.OnResultWeatherHourlyListener listener);
+WeatherParameter parameter = new WeatherParameter("101120501");
 
 /**
- *  72-hour forecast data
+ * 24 hours forecast data
  */
-QWeather.getWeather72Hourly(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherHourlyListener listener);
-
-QWeather.getWeather72Hourly(Context context, String location, QWeather.OnResultWeatherHourlyListener listener);
+public void weather24h(WeatherParameter parameter, Callback<WeatherHourlyBaseResponse> callback);
 
 /**
- *  168 hours forecast data
+ * 72 hours forecast data
  */
-QWeather.getWeather168Hourly(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherHourlyListener listener);
+public void weather72h(WeatherParameter parameter, Callback<WeatherHourlyBaseResponse> callback);
 
-QWeather.getWeather168Hourly(Context context, String location, QWeather.OnResultWeatherHourlyListener listener);
+/**
+ * 168 hours forecast data
+ */
+public void weather168h(WeatherParameter parameter, Callback<WeatherHourlyBaseResponse> callback);
 
 ```
 
 ### Properties
 
-Properties of WeatherHourlyBean
+Properties of WeatherHourlyBaseResponse
 
 | Property | Description | Example |
-| --------- | -------------------------- | ------------ ---------- |
+| --------- | -------------------------- | ---------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getHourly | HourlyBean Hourly Weather | List&lt;HourlyBean&gt; |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/weather/beijing-101010100.html |
+| getHourly | WeatherHourly  Hourly Weather | List&lt;WeatherHourly&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
-| getBasic | Basic Information | Basic |
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description | Type | Example |
+| -------- | ----------- | ---- | ------- |
+| getSources | Data source and other statements | List&lt;String&gt; | QWeather |
+| getLicense | Data license |  List&lt;String&gt;  | QWeather Developers License |
 
-**Basic**
-
-| Property | Description | Example |
-| ------------- | ------------------------ | ---------- ---------- |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/weather/beijing-101010100.html |
-
-**HourlyBean Hourly Weather**
+**WeatherHourly Hourly Weather**
 
 | Property | Description | Example |
-| ------------ | ------------------------------------ ---- | ---------------- |
+| ------------ | ---------------------------------------- | ---------------- |
 | getFxTime | Forecast time | 2013-12-30T13:00+08:00 |
 | getTemp | Temperature | 2 |
 | getIcon | [Icon code](/en/docs/resource/icons/) for weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/) | 101 |

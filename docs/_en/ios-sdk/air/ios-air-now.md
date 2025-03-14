@@ -8,7 +8,7 @@ Real-time air quality for Chinese cities and 1,700 monitoring stations, includin
 
 | Interface code (Enum) | Interface                           | Class        |
 | -------------------------- | ------------------------------ | ------------ |
-| INQUIRE_TYPE_WEATHER_AIR_NOW| Air Quality Live              | AirBaseClass |
+| airNow:| Air Quality Live              | AirNowResponse |
 
 ### Request Parameters
 
@@ -18,20 +18,34 @@ If no optional parameters are set, the default value will be used.
 
 ### Sample Code
 
+Swift
+
+```swift
+   Task {
+        do {
+            let parameter = AirParameter.make(location: "101120501" lang:.ZH_HANS)
+            let response = try await QWeather.instance
+                .airNow(parameter)
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+   }
+```
+
+Objective-C
+
 ```objc
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-    QWeatherConfigInstance.location = @"101010100";
-    QWeatherConfigInstance.lang = @"";
-    QWeatherConfigInstance.unit = @"";
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_AIR_NOW WithSuccess:^(AirBaseClass *responseObject) {
-        
-        NSLog(@"Description->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+    AirParameter * parameter = [AirParameter makeWithLocation:@"101120501" lang:LangTypeZH_HANS];
+    [QWeatherObjc airNow:parameter completionHandler:^(AirNowResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
 ```
 

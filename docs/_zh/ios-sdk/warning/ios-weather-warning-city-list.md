@@ -11,9 +11,9 @@ ref: 2-sdk-ios-weather-warning-city-list
 
 > **提示：**关于更多天气预警数据的说明，请参考[实用资料-预警信息](/docs/resource/warning-info/)。
 
-| 接口代码（枚举）         | 接口             | 数据类           |
+| 接口代码         | 接口             | 数据类           |
 | ------------------------ | ---------------- | ---------------- |
-| INQUIRE_TYPE_WARNINGLIST | 灾害预警城市列表 | WarningListClass |
+| warningList: | 灾害预警城市列表 | WarningListResponse |
 
 ### 请求参数
 
@@ -23,19 +23,34 @@ ref: 2-sdk-ios-weather-warning-city-list
 
 ### 示例代码
 
+Swift
+
+```swift
+    Task{
+        do {
+            let parameter = WarningListParameter(range: .CN)
+            let response = try await QWeather.instance
+                .warningList(parameter)
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+    }
+```
+
+Objective-C
+
 ```objc
- 
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-    QWeatherConfigInstance.range = @"cn";
-    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_WARNINGLIST WithSuccess:^(WarningListClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+    WarningListParameter *parameter = [WarningListParameter makeWithRange:RangeTypeCN];
+    [QWeatherObjc warningList:parameter completionHandler:^(WarningListResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
 ```
 

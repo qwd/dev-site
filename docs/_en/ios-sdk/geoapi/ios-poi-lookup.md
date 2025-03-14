@@ -6,9 +6,9 @@ ref: 3-sdk-ios-geo-poi-lookup
 
 POI Lookup API provides basic information of POI(scenic spot, tide stations, currents stations, etc.)
 
-| Interface code (Enum)| Interface         | Class        |
+| Interface code | Interface         | Class        |
 | ---------- | --------------------------- | ------------ |
-| INQUIRE_TYPE_GEO_POI_LOOKUP| POI Lookup  | GeoBaseClass |
+| geoPoiLookup: | POI Lookup  | GeoPoiResponse |
 
 ### Request Parameters
 
@@ -18,19 +18,37 @@ If no optional parameters are set, the default value will be used.
 
 ### Sample Code
 
-```objc
+Swift
 
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-    QWeatherConfigInstance.location = @"beijing";
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_POI_LOOKUP WithSuccess:^(GeoBaseClass *responseObject) {
-        
-        NSLog(@"Description->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+```swift
+   Task{
+        do {
+            let response = try await QWeather.instance
+                .geoPoiLookup(.init(location: "116.41,39.92", type: .SCENIC))
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+   }
+```
+
+Objective-C
+
+```objc
+    GeoPoiLookupParameter *parameter = [GeoPoiLookupParameter  makeWithLocation:@"116.41,39.92"
+                                                                     type:PoiTypeSCENIC
+                                                                     city:nil
+                                                                   number:10
+                                                                     lang:LangTypeZH_HANS]
+    [QWeatherObjc geoPoiLookup:
+               completionHandler:^(GeoPoiResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
 ```
 

@@ -9,9 +9,9 @@ Get a list of popular cities around the world.
 
 ## Top City
 
-| Interface code (Enum)| Interface     | Class        |
-| --------- | ------------------------ | ------------ |
-|| INQUIRE_TYPE_GEO_TOPCITY Top city   | GeoBaseClass |
+| Interface code | Interface     | Class              |
+| -------------- | ------------- | ------------------ |
+| geoCityTop:    | Top city      | GeoCityTopResponse |
 
 ### Request Parameters
 
@@ -21,26 +21,40 @@ If no optional parameters are set, the default value will be used.
 
 ### Sample Code
 
-```objc
+Swift
 
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-    QWeatherConfigInstance.location = @"beijing";
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_TOPCITY WithSuccess:^(GeoBaseClass *responseObject) {
-        
-        NSLog(@"Description->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+```swift
+   Task{
+        do {
+            let response = try await QWeather.instance
+                .geoCityTop(.init(range: RangeType.CN))
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+   }
+```
+
+Objective-C
+
+```objc
+    GeoCityTopParameter *parameter = [GeoCityTopParameter makeWithRange:RangeTypeCN number:10 lang:LangTypeEN];
+    [QWeatherObjc geoCityTop:parameter completionHandler:^(GeoCityTopResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
 ```
 
 ### Response
 
 | Parameters | Description | Example |
-| ---------- | ----------- |------------ | -------------------- |
+| ---------- | ----------- |------------ |
 | code | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | 200 |
 | location.name | Location Name | Nanshan District |
 | location.cid | Location ID | 101280604 |

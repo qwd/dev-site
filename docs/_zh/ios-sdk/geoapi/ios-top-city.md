@@ -6,9 +6,9 @@ ref: 2-sdk-ios-geo-top
 
 获取全球各个国家国家热门城市列表，通过该列表可以让用户轻松查看各国主要城市的天气状况。
 
-| 接口代码（枚举）| 接口                  | 数据类       |
-| ------------ | ------------------------ | ------------ |
-| INQUIRE_TYPE_GEO_TOPCITY| 热门城市查询  | GeoBaseClass |
+| 接口代码      | 接口         | 数据类              |
+| ------------ | ----------- | ------------------ |
+| geoCityTop:  | 热门城市查询  | GeoCityTopResponse |
 
 ### 请求参数
 
@@ -18,21 +18,34 @@ ref: 2-sdk-ios-geo-top
 
 ### 示例代码
 
-```objc 
+Swift
 
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-    QWeatherConfigInstance.location = @"beijing";
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_TOPCITY WithSuccess:^(GeoBaseClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+```swift
+   Task{
+        do {
+            let response = try await QWeather.instance
+                .geoCityTop(.init(range: RangeType.CN))
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+   }
+```
+
+Objective-C
+
+```objc
+    GeoCityTopParameter *parameter = [GeoCityTopParameter makeWithRange:RangeTypeCN number:10 lang:LangTypeZH_HANS];
+    [QWeatherObjc geoCityTop:parameter completionHandler:^(GeoCityTopResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
-    
 ```
 
 ### 返回数据

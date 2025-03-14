@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 14:29:27
+ * @FilePath: /dev-site/docs/_en/android-sdk/weather/android-weather-daily-forecast.md
+-->
 ---
 title: Weather Daily Forecast
 tag: [guide, android, weather, daily]
@@ -8,11 +14,11 @@ Get weather daily forecasts for the next 3-30 days for cities around the world.
 
 | Interface Code| Interface  | Class |
 | ---------------- | ------------- | ---------------- |
-| getWeather3D| 3-days forecast weather data  | WeatherDailyBean |
-| getWeather7D| 7-days forecast weather data  | WeatherDailyBean |
-| getWeather10D| 10-days forecast weather data  | WeatherDailyBean |
-| getWeather15D| 15-days forecast weather data  | WeatherDailyBean |
-| getWeather30D| 30-days forecast weather data  | WeatherDailyBean |
+| weather3d| 3-days forecast weather data  | WeatherDailyBaseResponse |
+| weather7d| 7-days forecast weather data  | WeatherDailyBaseResponse |
+| weather10d| 10-days forecast weather data  | WeatherDailyBaseResponse |
+| weather15d| 15-days forecast weather data  | WeatherDailyBaseResponse |
+| weather30d| 30-days forecast weather data  | WeatherDailyBaseResponse |
 
 ### Parameter
 
@@ -21,68 +27,52 @@ Get weather daily forecasts for the next 3-30 days for cities around the world.
 ### Sample Code
 
 ```java
+WeatherParameter parameter = new WeatherParameter("101120501");
 /**
  * Get 3-days forecast data
  */
-QWeather.getWeather3D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener);
-
-QWeather.getWeather3D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
+public void weather3d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
 
 /**
  * Get 7-days forecast data
  */
-QWeather.getWeather7D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener);
-
-QWeather.getWeather7D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
+public void weather7d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
 
 /**
  * Get 10-days forecast data
  */
-QWeather.getWeather10D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener);
-
-QWeather.getWeather10D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
+public void weather10d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
 
 /**
  * Get 15-days forecast data
  */
-QWeather.getWeather15D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener);
-
-QWeather.getWeather15D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
-
+public void weather15d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
 /**
  * Get 30-days forecast data
  */
-QWeather.getWeather30D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener);
-
-QWeather.getWeather30D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
+public void weather30d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
 ```
 
 ### Properties
 
-Properties of WeatherDailyBean
+Properties of WeatherDailyBaseResponse
 
 | Property | Description | Example |
-| -------- | -------------------------- | ------------- -------- |
+| -------- | -------------------------- | --------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getDaily | Daily forecast weather | List&lt;DailyBean&gt; |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/weather/beijing-101010100.html |
+| getDaily | Daily forecast weather | List&lt;WeatherDaily&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
-| getBasic | Basic Information | Basic |
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description | Type | Example |
+| -------- | ----------- | ---- | ------- |
+| getSources | Data source and other statements | List&lt;String&gt; | QWeather |
+| getLicense | Data license |  List&lt;String&gt;  | QWeather Developers License |
 
-**Basic**
-
-| Property | Description | Example |
-| ------------- | ------------------------ | ---------- ---------- |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/weather/beijing-101010100.html |
-
-**DailyBean Weather Forecast**
+**WeatherDaily Weather Forecast**
 
 | Property | Description | Example |
 | ----------------- | ------------------- | ---------- |

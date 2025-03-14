@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 17:03:55
+ * @FilePath: /dev-site/docs/_zh/android-sdk/geoapi/android-top-city.md
+-->
 ---
 title: 热门城市查询
 tag: [guide, android, geo, top-city]
@@ -8,7 +14,7 @@ ref: 2-sdk-android-geo-top
 
 | 接口代码| 接口说明           | 数据类  |
 | ------------ | ------------- | ------- |
-| getGeoTopCity| 热门城市查询  | GeoBean |
+| geoCityTop | 热门城市查询  | GeoCityTopBaseResponse |
 
 ### 接口参数说明
 
@@ -17,31 +23,30 @@ ref: 2-sdk-android-geo-top
 ### 示例代码
 
 ```java
-QWeather.getGeoTopCity(Context context, int number, Range range, Lang lang, final QWeather.OnResultGeoBeansListener listener);
-
-QWeather.getGeoTopCity(Context context, final QWeather.OnResultGeoBeansListener listener);
+public void geoCityTop(GeoCityTopParameter parameter, Callback<GeoCityTopBaseResponse> callback);
 ```
 
-### GeoBean属性
+### GeoCityTopBaseResponse 属性
 
 | 属性            | 说明     | 示例值                   |
 | --------------- | -------- | ------------------------ |
 | getCode         | 参考[状态码](/docs/resource/status-code/)  | 200  |
-| getLocationBean | 城市数据 | List&lt;LocationBean&gt; |
+| getLocation | 城市数据 | List&lt;Location&gt; |
+| getRefer         | Refer 数据来源以及数据授权 | Refer  |
 
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License |
 
 
-**LocationBean 基础信息**
+**Location 基础信息**
 
 | 属性         | 说明                                                                    | 示例值               |
-| ------------ | ----------------------------------------------------------------------- | -------------------- |
+| ------------ | ------------------------------------------------------------- | -------------------- |
 | getName      | 地区／城市名称                                                          | 卓资                 |
 | getId        | 地区／城市ID                                                            | 101080402            |
 | getLon       | 地区／城市经度                                                          | 112.577702           |

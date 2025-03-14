@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 14:28:49
+ * @FilePath: /dev-site/docs/_en/android-sdk/time-machine/android-time-machine-weather.md
+-->
 ---
 title: Time Machine for Weather
 tag: [guide, android, time-machine, weather]
@@ -17,8 +23,8 @@ Get the last 10 days of weather history data.
 
 
 | Interface Code| Interface  | Class |
-| ------------ | -------------------- | --------------- --- |
-| getWeatherHistorical| Historical weather data  | HistoryWeatherBean |
+| ------------ | -------------------- | ------------------ |
+| historicalWeather| Historical weather data  | HistoricalWeatherResponse |
 
 ### Parameter
 
@@ -27,38 +33,31 @@ Get the last 10 days of weather history data.
 ### Sample Code
 
 ```java
-QWeather.getHistoricalWeather(Context context, String location, String date, QWeather.OnResultWeatherHistoricalBeanListener listener);
-
-QWeather.getHistoricalWeather(Context context, String location, String date, Lang lang, Unit unit,QWeather.OnResultWeatherHistoricalBeanListener listener)
+public void historicalWeather(HistoricalWeatherParameter parameter, Callback<HistoricalWeatherResponse> callback);
 ```
 
 ### Properties
 
-Properties of HistoryWeatherBean
+Properties of HistoricalWeatherResponse
 
 | Property | Description | Example |
 | -------------- | -------------------------- | ---------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getDailyBean | Overview of the daily forecast | DailyBean |
-| getHourlyBeans | Hourly data of the day | List&lt;HourlyBean&gt; |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/historical/beijing-101010100.html |
+| getWeatherDaily | Overview of the daily forecast | HistoricalWeatherDaily |
+| getWeatherHourly | Hourly data of the day | List&lt;HistoricalWeatherHourly&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
-| getBasic | Basic Information | Basic |
+
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| Property | Description | Example |
-| ------------- | ------------------------ | -------------------- |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/historical/beijing-101010100.html |
-
-**DailyBean**
+**HistoricalWeatherDaily**
 
 | Property | Description | Example |
 | ------------ | -------- | ---------- |
@@ -74,7 +73,7 @@ Properties of HistoryWeatherBean
 | getPrecip | Precipitation | 0 |
 | getPressure | Atmospheric pressure | 1018 |
 
-**HourlyBean**
+**HistoricalWeatherHourly**
 
 | Property | Description | Example |
 | ------------ | ------------------------------------- | ---------------- |

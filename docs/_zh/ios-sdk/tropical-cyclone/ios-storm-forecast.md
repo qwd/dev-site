@@ -8,9 +8,9 @@ ref: 3-sdk-ios-storm-forecast
 
 > **提示：**如果查询的台风已经结束，则返回的数据为空，建议先通过台风列表接口获取台风的状态。
 
-| 接口代码（枚举）            | 接口     | 数据类                 |
-| --------------------------- | -------- | ---------------------- |
-| INQUIRE_TYPE_STORM_FORECAST | 台风预报 | StormForecastBaseClass |
+| 接口代码                | 接口      | 数据类                 |
+| ---------------------- | -------- | --------------------- |
+| tropicalStormForecast: | 台风预报   | StormForecastResponse |
 
 ### 请求参数
 
@@ -20,18 +20,33 @@ ref: 3-sdk-ios-storm-forecast
 
 ### 示例代码
 
+Swift
+
+```swift
+    Task{
+        do {
+            let parameter = StormParameter(stormid: "NP_2421")
+            let response = try await QWeather.instance
+                .tropicalStormForecast(parameter)
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+    }
+```
+Objective-C
+
 ```objc
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-    QWeatherConfigInstance.stormID = @"NP_2102";
-    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_STORM_FORECAST WithSuccess:^(StormForecastBaseClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+    StormParameter *parameter = [StormParameter makeWithStormid:@"NP_2421"];
+    [QWeatherObjc tropicalStormForecast: completionHandler:^(StormForecastResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
 ```
      

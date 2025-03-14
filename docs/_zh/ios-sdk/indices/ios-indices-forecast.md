@@ -9,10 +9,10 @@ ref: 1-sdk-ios-indices-forecast
 - 中国天气生活指数：舒适度指数、洗车指数、穿衣指数、感冒指数、运动指数、旅游指数、紫外线指数、空气污染扩散条件指数、空调开启指数、过敏指数、太阳镜指数、化妆指数、晾晒指数、交通指数、钓鱼指数、防晒指数
 - 海外天气生活指数：运动指数、洗车指数、紫外线指数、钓鱼指数
 
-| 接口代码（枚举）        | 接口         | 数据类           |
-| ----------------------- | ------------ | ---------------- |
-| INQUIRE_TYPE_INDICES_1D | 当天生活指数 | IndicesBaseClass |
-| INQUIRE_TYPE_INDICES_3D | 3天生活指数  | IndicesBaseClass |
+| 接口代码    | 接口         | 数据类           |
+| ---------- | ------------ | --------------- |
+| indices1d: | 当天生活指数   | IndicesResponse |
+| indices3d: | 3天生活指数    | IndicesResponse |
 
 ### 请求参数
 
@@ -22,20 +22,57 @@ ref: 1-sdk-ios-indices-forecast
 
 ### 示例代码
 
-```objc
-    QWeatherConfigInstance.location = @"101010100";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-    QWeatherConfigInstance.indices = @[@(INDICES_TYPE_all)];
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_INDICES_1D WithSuccess:^(IndicesBaseClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
-    }];
+Swift
+
+```swift
+   Task{
+        do {
+            let parameter = IndicesParameter(location: "101120501", type: [.CW,.DRSG])
+
+            /**
+            * 获取1天生活指数数据
+            */
+            let _ = try await QWeather.instance.indices1d(parameter)
+            
+            /**
+            * 获取3天生活指数数据
+            */
+            let _ = try await QWeather.instance.indices3d(parameter)
+
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+   }
 ```
+
+Objective-C
+
+```objc
+    IndicesParameter *parameter = [IndicesParameter makeWithLocation:@"101120501" type:@[@(IndicesTypeCW),@(IndicesTypeDRSG)];
+
+    void (^handler)(IndicesResponse *, NSError *) = ^(IndicesResponse *response,
+        NSError *error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    };
+    
+    /**
+    * 获取1天生活指数数据
+    */
+    [QWeatherObjc indices1d:parameter lang:LangTypeZH_HANS] completionHandler:handler];
+
+    /**
+    * 获取3天生活指数数据
+    */
+    [QWeatherObjc indices3d:parameter lang:LangTypeZH_HANS] completionHandler:handler];
+```
+
 ### 返回数据
 
 {% include api-response.html group="indices" prefix="daily" %}

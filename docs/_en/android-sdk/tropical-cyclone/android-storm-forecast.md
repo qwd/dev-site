@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 14:28:56
+ * @FilePath: /dev-site/docs/_en/android-sdk/tropical-cyclone/android-storm-forecast.md
+-->
 ---
 title: Storm Forecast
 tag: [guide, android, storm, forecast]
@@ -11,7 +17,7 @@ Storm Forecast provides tropical cyclones information for a specific tropical cy
 
 | Interface Code| Interface          | Class  |
 | -------- | ---------------- | ------- |
-| getStormForecast| Storm forecast data  | StormForecastBean |
+| tropicalStormForecast | Storm forecast data  | StormForecastBaseResponse |
 
 ### Parameter
 
@@ -20,36 +26,29 @@ Storm Forecast provides tropical cyclones information for a specific tropical cy
 ### Sample Code
 
 ```java
-QWeather.getStormForecast(Context context, String stormId, OnResultTropicalStormForecastListener listener);
+public void tropicalStormForecast(StormParameter parameter, Callback<StormForecastBaseResponse> callback)
 ```
 
 ### Properties
 
-Properties of TideBean
+Properties of StormForecastBaseResponse
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)        |
-| getBasic         | Basic Informatio | Basic       |
-| getRefer         | Reference data, includes data source, statements and license | Refer  |
-| getForecastList | Storm forecast data | List<StormForecastBaseBean> |
-
-**Basic**
-
-| Property           | Description         | Example             |
-| -------------- | ------------ | ------------------ |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time)  | 2017-10-25T04:34+08:00      |
 | getFxLink |Responsive web page of this data, for embedded in website or APP  | https://www.qweather.com |
+| getForecast | Storm forecast data | List&lt;StormForecast&gt; |
+| getRefer         | Reference data, includes data source, statements and license | Refer  |
 
 **Refer**
 
-| Property           | Description         | Example             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather      |
-| getLicenseList | Data license     | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
-
-**StormForecastBaseBean**
+**StormForecast**
 
 | Property         | Description                                                                    | Example               |
 | ------------ | ----------------------------------------------------- | -------------------- |

@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 15:05:43
+ * @FilePath: /dev-site/docs/_en/android-sdk/ocean/android-tide.md
+-->
 ---
 title: Tide
 tag: [guide, android, ocean, tide]
@@ -7,9 +13,9 @@ ref: 1-sdk-android-tide
 Global tidal data for the next 10 days, including tide table and hourly tide forecast data.
 
 
-| Interface Code| Interface          | Class  |
-| -------- | ---------------- | ------- |
-| getOceanTide| Tide data  | TideBean |
+| Interface Code | Interface        | Class   |
+| -------------- | ---------------- | ------- |
+| oceanTide | Tide data  | OceanTideBaseResponse |
 
 ### Parameter
 
@@ -18,37 +24,30 @@ Global tidal data for the next 10 days, including tide table and hourly tide for
 ### Sample Code
 
 ```java
-QWeather.getOceanTide(Context context, String location, String date, OnResultOceanTideListener listener);
+public void oceanTide(OceanParameter parameter, Callback<OceanTideBaseResponse> callback)
 ```
 
 ### Properties
 
-Properties of TideBean
+Properties of OceanTideBaseResponse
 
-| Property            | Description     | Example                    |
+| Property        | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)        |
-| getBasic         | Basic Informatio | Basic       |
-| getRefer         | Reference data, includes data source, statements and license | Refer  |
-| getTideHourlyList | Hourly data | List\<TideHourlyBase> |
-| getTideTable | Tide table | List\<TideTableBase> |
-
-**Basic**
-
-| Property           | Description         | Example             |
-| -------------- | ------------ | ------------------ |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time)  | 2017-10-25T04:34+08:00      |
 | getFxLink |Responsive web page of this data, for embedded in website or APP  | https://www.qweather.com |
+| getTideHourly | Hourly data | List\<TideHourly> |
+| getTideTable | Tide table | List\<TideTable> |
+| getRefer         | Reference data, includes data source, statements and license | Refer  |
 
 **Refer**
 
-| Property           | Description         | Example             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather      |
-| getLicenseList | Data license     | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
-
-**TideTableBase**
+**TideTable**
 
 | Property         | Description                                                                    | Example               |
 | ------------ | ----------------------------------------------------- | -------------------- |
@@ -56,7 +55,7 @@ Properties of TideBean
 | getHeight        | The height of the wave, in meters                                       | 1.23            |
 | getType       | High tide (H) or Low tide (L)                              |    H    |
 
-**TideHourlyBase**
+**TideHourly**
 
 | Property         | Description                                                                    | Example               |
 | ------------ | ----------------------------------------------------- | -------------------- |

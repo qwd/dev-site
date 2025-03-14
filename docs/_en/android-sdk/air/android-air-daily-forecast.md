@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 18:31:17
+ * @FilePath: /dev-site/docs/_en/android-sdk/air/android-air-daily-forecast.md
+-->
 ---
 title: Air Quality Daily Forecast
 tag: [guide, android, air, daily]
@@ -8,7 +14,7 @@ Air Quality Daily Forecast API for Chinese cities, including AQI, air quality le
 
 | Interface | Interface Code | Class |
 | ------------------- | -------- | ------------ |
-| getAir5D| Air quality 5-day forecast  | AirDailyBean |
+| air5d| Air quality 5-day forecast  | AirDailyBaseResponse |
 
 ### Parameter
 
@@ -17,7 +23,7 @@ Air Quality Daily Forecast API for Chinese cities, including AQI, air quality le
 ### Sample Code
 
 ```java
-QWeather.getAir5D(Context context, String location, Lang lang, QWeather.OnResultAirDailyListener listener)
+public void air5d(AirParameter parameter, Callback<AirDailyBaseResponse> callback);
 ```
 
 ### Properties
@@ -27,25 +33,19 @@ Properties of AirDailyBean
 | Property | Description | Example |
 | ----------- | -------------------------- | --------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getAirDaily | Air quality 5-day forecast | List&lt;DailyBean&gt; |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/air/beijing-101010100.html |
+| getDaily | Air quality 5-day forecast | List&lt;AirDaily&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
-| getBasic | Basic Information | Basic |
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| Property | Description | Example |
-| ------------- | ------------------------ | -------------- |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/air/beijing-101010100.html |
-
-**DailyBean**
+**AirDaily**
 
 | Property | Description | Example |
 | ----------- | ----------------------------- | -------- |

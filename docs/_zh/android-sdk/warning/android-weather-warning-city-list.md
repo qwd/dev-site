@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 14:27:15
+ * @FilePath: /dev-site/docs/_zh/android-sdk/warning/android-weather-warning-city-list.md
+-->
 ---
 title: 天气预警城市列表
 tag: [guide, android, warning, list]
@@ -13,7 +19,7 @@ ref: 2-sdk-android-weather-warning-city-list
 
 | 接口代码| 接口说明                | 数据类          |
 | ---------------- | -------------- | --------------- |
-| getWarningList| 天气灾害预警集合  | WarningListBean |
+| getWarningList| 天气灾害预警集合  | WarningListBaseResponse |
 
 ### 接口参数说明
 
@@ -22,30 +28,26 @@ ref: 2-sdk-android-weather-warning-city-list
 ### 示例代码
 
 ```java
-/**
- * @param context  上下文
- * @param listener 网络访问回调接口
- */
-QWeather.getWarningList(Context context, Range range, final QWeather.OnResultWarningListListener listener);
+public void warningList(WarningListParameter parameter, Callback<WarningListBaseResponse> callback);
 ```
 
-### WarningListBean属性
+### WarningListBaseResponse属性
 
 | 属性           | 说明         | 示例值                      |
 | -------------- | ------------ | --------------------------- |
 | getCode        | 参考[状态码](/docs/resource/status-code/)      | 200    |
-| getUpdateTime  | 接口更新时间 | 2017-10-25T12:34+08:00            |
-| getWarningBean | 灾害预警     | List&lt;WarningListBean&gt; |
+| getUpdateTime | 接口更新时间             | 2023-04-03T14:20+08:00    |
+| getWarningLocList | 灾害预警     | List&lt;WarningLocation&gt; |
 | getRefer | Refer 数据来源以及数据授权 | Refer       |
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-**WarningListBeanBase 预警信息**
+**WarningLocation 预警信息**
 
 | 属性          | 说明         | 示例值    |
 | ------------- | ------------ | --------- |

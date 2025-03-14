@@ -8,9 +8,9 @@ Get officially issued real-time severe weather warning data around the world.
 
 > **Tips:** For more warning description, see [Resource - Warning Info](/en/docs/resource/warning-info/).
 
-| Interface code (Enum) | Interface       | Class            |
+| Interface code | Interface       | Class            |
 | --------------------- | --------------- | ---------------- |
-| INQUIRE_TYPE_WARNING  | Weather warning | WarningBaseClass |
+| warningNow:  | Weather warning | WarningBaseClass |
 
 ### Request Parameters
 
@@ -21,21 +21,34 @@ If no optional parameters are set, the default value will be used.
 
 ### Sample Code
 
+Swift
+
+```swift
+    Task {
+        do {
+            let parameter = WarningNowParameter(location: "101120501")
+            let response = try await QWeather.instance
+                .warningNow(parameter)
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+    }
+```
+
+Objective-C
+
 ```objc
- 
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-    QWeatherConfigInstance.location = @"101010100";
-    QWeatherConfigInstance.lang = @"";
-    QWeatherConfigInstance.unit = @"";
-    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_WARNING WithSuccess:^(WarningBaseClass *responseObject) {
-        
-        NSLog(@"Description->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+    WarningNowParameter *parameter = [WarningNowParameter makeWithLocation:@"101120501" lang:LangTypeZH_HANS];
+    [QWeatherObjc warningNow:parameter completionHandler:^(WarningResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
 ```
 

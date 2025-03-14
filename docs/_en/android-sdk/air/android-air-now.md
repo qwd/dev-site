@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 18:33:03
+ * @FilePath: /dev-site/docs/_en/android-sdk/air/android-air-now.md
+-->
 ---
 title: Real-time Air Quality
 tag: [guide, android, air, now]
@@ -8,7 +14,7 @@ Real-time air quality for Chinese cities and 1,700 monitoring stations, includin
 
 | Interface Code| Interface  | Class |
 | ---------------- | --------- | ---------- |
-| getAirNow| Real-time Air Quality  | AirNowBean |
+| airNow| Real-time Air Quality  | AirNowBaseResponse |
 
 ### Parameter
 
@@ -17,37 +23,30 @@ Real-time air quality for Chinese cities and 1,700 monitoring stations, includin
 ### Sample Code
 
 ```java
-QWeather.getAirNow(Context context, String location, Lang lang,
-QWeather.OnResultAirNowListener listener)
+public void airNow(AirParameter parameter, Callback<AirNowBaseResponse> callback);
 ```
 
 ### Properties
 
-Properties of AirNowBean
+Properties of AirNowBaseResponse
 
 | Property | Description | Example |
 | -------------------- | -------------------------- |------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getAirNowStationBean | Real-time AQI for monitoring station | List&lt;AirNowStationBean&gt; |
-| getNow | Real-time AQI for cities | NowBean |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/air/beijing-101010100.html |
+| getStation | Real-time AQI for monitoring station | List&lt;AirStation&gt; |
+| getNow | Real-time AQI for cities | AirNow |
 | getRefer | Reference data, includes data source, statements and license | Refer |
-| getBasic | Basic Information | Basic |
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| Property | Description | Example |
-| ------------- | ------------------------ | ------------- |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/air/beijing-101010100.html |
-
-**NowBean**
+**AirNow**
 
 | Property | Description | Example |
 | ----------- | --------------------------------- | ------------- |
@@ -63,7 +62,7 @@ Properties of AirNowBean
 | getCo | Carbon monoxide | 0.3 |
 | getO3 | Ozone | 20 |
 
-**AirNowStationBean**
+**AirStation**
 
 | Property | Description | Example |
 | ----------- | --------------------------------- | ------------ |

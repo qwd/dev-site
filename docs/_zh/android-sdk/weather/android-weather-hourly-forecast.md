@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 14:27:56
+ * @FilePath: /dev-site/docs/_zh/android-sdk/weather/android-weather-hourly-forecast.md
+-->
 ---
 title: 逐小时天气预报
 tag: [guide, android, weather, hourly]
@@ -8,9 +14,9 @@ ref: 3-sdk-android-weather-hourly-forecast
 
 | 接口代码| 接口说明                   | 数据类            |
 | ------------------- | -------------- | ----------------- |
-| getWeather24H| 24小时预报天气数据    | WeatherHourlyBean |
-| getWeather72H| 72小时预报天气数据    | WeatherHourlyBean |
-| getWeather168H| 168小时预报天气数据  | WeatherHourlyBean |
+| weather24h | 24小时预报天气数据    | WeatherHourlyBaseResponse |
+| weather72h | 72小时预报天气数据    | WeatherHourlyBaseResponse |
+| weather168h | 168小时预报天气数据  | WeatherHourlyBaseResponse |
 
 ### 接口参数说明
 
@@ -19,53 +25,43 @@ ref: 3-sdk-android-weather-hourly-forecast
 ### 示例代码
 
 ```java
+WeatherParameter parameter = new WeatherParameter("101120501");
+
 /**
  * 获取24小时预报数据
  */
-QWeather.getWeather24Hourly(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherHourlyListener listener);
-
-QWeather.getWeather24Hourly(Context context, String location, QWeather.OnResultWeatherHourlyListener listener);
+public void weather24h(WeatherParameter parameter, Callback<WeatherHourlyBaseResponse> callback);
 
 /**
  * 获取72小时预报数据
  */
-QWeather.getWeather72Hourly(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherHourlyListener listener) ;
-
-QWeather.getWeather72Hourly(Context context, String location, QWeather.OnResultWeatherHourlyListener listener);
+public void weather72h(WeatherParameter parameter, Callback<WeatherHourlyBaseResponse> callback);
 
 /**
  * 获取168小时预报数据
  */
-QWeather.getWeather168Hourly(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherHourlyListener listener) ;
-
-QWeather.getWeather168Hourly(Context context, String location, QWeather.OnResultWeatherHourlyListener listener);
+public void weather168h(WeatherParameter parameter, Callback<WeatherHourlyBaseResponse> callback);
 
 ```
 
-### WeatherHourlyBean属性
+### WeatherHourlyBaseResponse 属性
 
 | 属性      | 说明                       | 示例值                 |
 | --------- | -------------------------- | ---------------------- |
 | getCode   | 参考[状态码](/docs/resource/status-code/)                    | 200 |
-| getHourly | HourlyBean 逐小时天气      | List&lt;HourlyBean&gt; |
+| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/weather/beijing-101010100.html |
+| getHourly | WeatherHourly 逐小时天气      | List&lt;WeatherHourly&gt; |
 | getRefer  | Refer 数据来源以及数据授权 | Refer                  |
-| getBasic  | Basic 基础信息             | Basic                  |
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| 属性          | 说明                     | 示例值               |
-| ------------- | ------------------------ | -------------------- |
-| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/weather/beijing-101010100.html |
-
-**HourlyBean 逐小时天气**
+**WeatherHourly 逐小时天气**
 
 | 属性         | 说明                                     | 示例值           |
 | ------------ | ---------------------------------------- | ---------------- |

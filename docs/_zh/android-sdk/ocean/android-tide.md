@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 15:39:16
+ * @FilePath: /dev-site/docs/_zh/android-sdk/ocean/android-tide.md
+-->
 ---
 title: 潮汐
 tag: [guide, android, ocean, tide]
@@ -8,7 +14,7 @@ ref: 1-sdk-android-tide
 
 | 接口代码| 接口说明          | 数据类  |
 | -------- | ---------------- | ------- |
-| getOceanTide| 潮汐数据  | TideBean |
+| oceanTide | 潮汐数据  | OceanTideBaseResponse |
 
 ### 接口参数说明
 
@@ -17,35 +23,29 @@ ref: 1-sdk-android-tide
 ### 示例代码
 
 ```java
-QWeather.getOceanTide(Context context, String location, String date, OnResultOceanTideListener listener);
+public void oceanTide(OceanParameter parameter, Callback<OceanTideBaseResponse> callback);
 ```
 
-### TideBean属性
+### OceanTideBaseResponse 属性
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | 参考[状态码](/docs/resource/status-code/)  | 200       |
-| getBasic         | 更新信息 | Basic       |
-| getRefer         | Refer 数据来源以及数据授权 | Refer  |
-| getTideHourlyList | 潮汐小时数据 | List\<TideHourlyBase> |
-| getTideTable | 满潮或干潮数据 | List\<TideTableBase> |
-
-**Basic**
-
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
 | getUpdateTime | 接口更新时间 | 2017-10-25T04:34+08:00      |
 | getFxLink | 当前数据的响应式页面，便于嵌入网站或应用  | https://www.qweather.com |
+| getTideHourly | 潮汐小时数据 | List\<TideHourly> |
+| getTideTable | 满潮或干潮数据 | List\<TideTable> |
+| getRefer         | Refer 数据来源以及数据授权 | Refer  |
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
 
-**TideTableBase**
+**TideTable**
 
 | 属性         | 说明                                                                    | 示例值               |
 | ------------ | ----------------------------------------------------- | -------------------- |
@@ -53,7 +53,7 @@ QWeather.getOceanTide(Context context, String location, String date, OnResultOce
 | getHeight        | 海水高度，单位：米                                       | 1.23            |
 | getType       | 满潮（H）或干潮（L）                              |    H    |
 
-**TideHourlyBase**
+**TideHourly**
 
 | 属性         | 说明                                                                    | 示例值               |
 | ------------ | ----------------------------------------------------- | -------------------- |

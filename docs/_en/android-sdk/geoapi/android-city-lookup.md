@@ -8,7 +8,7 @@ With the City Lookup, you can get the basic information of the city, including t
 
 | Interface Code| Interface  | Class |
 | -------- | ---------------- | ------- |
-| getGeoGityLookup| City lookup  | GeoBean |
+| geoCityLookUp | City lookup  | GeoCityLookupBaseResponse |
 
 ### Parameter
 
@@ -17,13 +17,7 @@ With the City Lookup, you can get the basic information of the city, including t
 ### Sample Code
 
 ```java
-QWeather.getGeoCityLookup(Context context, String location, String adm, Range range, int number, Lang lang, final QWeather.OnResultGeoListener listener);
-
-QWeather.getGeoCityLookup(Context context, String location, Range range, int number, Lang lang, final QWeather.OnResultGeoListener listener);
-
-QWeather.getGeoCityLookup(Context context, String location, int number, Lang lang, final QWeather.OnResultGeoBeansListener listener);
-
-QWeather.getGeoCityLookup(Context context, String location, final QWeather.OnResultGeoBeansListener listener);
+public void geoCityLookUp(GeoCityLookupParameter parameter, Callback<GeoCityLookupBaseResponse> callback);
 ```
 
 ### Properties
@@ -33,18 +27,18 @@ Properties of GeoBean
 | Property | Description | Example |
 | --------------- | -------- | ------------------------ |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getLocationBean | City data | List&lt;LocationBean&gt; |
+| getLocation | City data | List&lt;Location&gt; |
 
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather   |
+| getLicense | Data license     | List&lt;String&gt; | QWeather Developers License |
 
 
-**LocationBean Basic Information**
+**Location Basic Information**
 
 | Property | Description | Example |
 | ------------ | ------------- | ------------- |

@@ -6,9 +6,9 @@ ref: 4-sdk-ios-geo-poi-range
 
 POI Range iOS SDK provides the ability to query all POI information within a specified area.
 
-| Interface code (Enum)| Interface       | Class        |
+| Interface code | Interface       | Class        |
 | --------- | -------------------------- | ------------ |
-| INQUIRE_TYPE_GEO_POI_RANGE| POI range  | GeoBaseClass |
+| geoPoiRange: | POI range  | GeoPoiResponse |
 
 ### Request Parameters
 
@@ -18,26 +18,45 @@ If no optional parameters are set, the default value will be used.
 
 ### Sample Code
 
+Swift
+
+```swift
+   Task{
+        do{
+            let response = try await QWeather.instance
+                        .geoPoiRange(.init(location: "113.88,22.45", type: .CSTA, radius: 50))
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+   }
+```
+
+Objective-C
+
 ```objc
-QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-    QWeatherConfigInstance.location = @"116.4,39.1";
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_POI_RANGE WithSuccess:^(GeoBaseClass *responseObject) {
-        
-        NSLog(@"Description->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+    GeoPoiRangeParameter *parameter = [GeoPoiRangeParameter makeWithLocation:@"116.41,39.92" 
+                                                            type:PoiTypeSCENIC 
+                                                            radius:50 
+                                                            number:10 
+                                                            lang:LangTypeZH_HANS
+                                                            ];
+    [QWeatherObjc geoPoiRange:parameter  completionHandler:^(GeoPoiResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
-    
 ```
 
 ### Response
 
 | Parameters | Description | Example |
-| ---------- | ----------- |------------ | -------------------- |
+| ---------- | ----------- |------------ |
 | code | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | 200 |
 | location.name | Location Name | Nanshan District |
 | location.cid | Location ID | 101280604 |

@@ -11,10 +11,10 @@ ref: res-unit
 
 ## 单位参数 {#unit-parameters}
 
-| 单位     | API请求参数 | iOS常量属性 | Android常量属性 |
-| -------- | ------- | ----------- | --------------- |
-| 公制单位 | m       | UNIT_TYPE_M | METRIC          |
-| 英制单位 | i       | UNIT_TYPE_I | IMPERIAL        |
+| 单位      | API请求参数 | iOS UnitType  | Android Unit  |
+| -------- | ---------- | ------------- | ------------- |
+| 公制单位  | m          | METRIC        | METRIC         |
+| 英制单位  | i          | IMPERIAL      | IMPERIAL       |
 
 ## 单位列表 {#unit-information}
 

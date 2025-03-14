@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 16:33:41
+ * @FilePath: /dev-site/docs/_en/android-sdk/geoapi/android-poi-lookup.md
+-->
 ---
 title: POI Lookup
 tag: [guide, android, geo, poi-lookup]
@@ -8,7 +14,7 @@ POI Lookup API provides basic information of POI(scenic spot, tide stations, cur
 
 | Interface Code| Interface  | Class |
 | ----------- | --------------- | ---------- |
-| getGeoPoiLookup| POI lookup  | GeoPoiBean |
+| geoPoiLookup| POI lookup  | GeoPoiBaseResponse |
 
 ### Parameter
 
@@ -17,33 +23,31 @@ POI Lookup API provides basic information of POI(scenic spot, tide stations, cur
 ### Sample Code
 
 ```java
-QWeather.getGeoPoiLookup(Context context, String location, String city, int number, Type type, Lang lang, final OnResultGeoPoiListener listener);
-
-QWeather.getGeoPoiLookup(Context context, String location, Type type, final QWeather.OnResultGeoPoiListener listener);
+public void geoPoiLookup(GeoPoiLookupParameter parameter, Callback<GeoPoiBaseResponse> callback);
 ```
 
-### Properties
+###  Properties
 
-Properties of GeoPoiBean
+Properties of GeoPoiBaseResponse
 
 | Property | Description | Example |
 | ---------- | -------- | --------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getPoiList | City data | List&lt;Poi&gt; |
+| getPoi | City data | List&lt;Poi&gt; |
 
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license     | List&lt;String&gt; | QWeather Developers License |
 
 
 **Poi**
 
 | Property | Description | Example |
-| ------------ | ------------------------------------ ----------------------------- | --------- |
+| ------------ | ----------------------- | --------- |
 | getName | POI name | Beijing Zoo |
 | getId | Location ID | 10101020006A |
 | getLon | Longitude of the POI | 116.33000 |

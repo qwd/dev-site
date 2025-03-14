@@ -15,9 +15,9 @@ Get the last 10 days of weather history data.
 > * City or coordinates
 > * Date range
 
-| Interface code (Enum)           | Interface              | Class                      |
-| ------------------------------- | ---------------------- | -------------------------- |
-| INQUIRE_TYPE_HISTORICAL_WEATHER | Historical weather     | WeatherHistoricalBaseClass |
+| Interface code      | Interface              | Class                      |
+| ------------------- | ---------------------- | -------------------------- |
+| historicalWeather:      | Historical weather     | HistoricalWeatherResponse      |
 
 ### Request Parameters
 
@@ -27,21 +27,45 @@ If no optional parameters are set, the default value will be used.
 
 ### Sample Code
 
+Swift
+
+```swift
+    Task{
+        do {
+            let threeDaysAgo = Calendar.current.date(byAdding: .day, value: -3, to: Date())!
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyyMMdd"
+            let date = formatter.string(from: threeDaysAgo)
+            let parameter = HistoricalWeatherParameter(location: "101120501", date: date)
+            let response = try await QWeather.instance
+                .historicalWeather(parameter)
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+    }
+```
+
+Objective-C
+
 ```objc
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-    QWeatherConfigInstance.location = @"101010100";
-    QWeatherConfigInstance.date = @"20200425";
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_HISTORICAL_WEATHER WithSuccess:^(WeatherHistoricalBaseClass *responseObject) {
-        
-        NSLog(@"Description->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+    NSDate * threeDaysAgo = [[NSCalendar currentCalendar] dateByAddingUnit:NSCalendarUnitDay value:-3 toDate:[NSDate date] options:0];
+    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyyMMdd"];
+    NSString * date = [formatter stringFromDate:threeDaysAgo];
+    HistoricalWeatherParameter * parameter = [HistoricalWeatherParameter makeWithLocation:@"101120501" date:date lang:LangTypeZH_HANS unit:UnitTypeMETRIC];
+    [QWeatherObjc historicalWeather:parameter completionHandler:^(HistoricalWeatherResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
 ```
+
 ### Response
 
 {% include api-response.html group="hisweather" type="daily hourly" prefix="weatherDaily weatherHourly" update=0 %}

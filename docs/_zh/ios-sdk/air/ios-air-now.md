@@ -6,9 +6,9 @@ ref: 1-sdk-ios-air-now
 
 实时空气质量iOS SDK，支持中国3000+市县区以及1700+国控站点实时空气质量的查询，包括AQI数值、空气质量等级、首要污染物、PM10、PM2.5、臭氧、二氧化氮、二氧化硫、一氧化碳数值。
 
-| 接口代码（枚举）| 接口                         | 数据类       |
+| 接口代码 | 接口                         | 数据类       |
 | --------------- | ---------------------------- | ------------ |
-| INQUIRE_TYPE_WEATHER_AIR_NOW| 空气质量实况     | AirBaseClass |
+| airNow: | 空气质量实况     | AirNowResponse |
 
 ### 请求参数
 
@@ -18,20 +18,34 @@ ref: 1-sdk-ios-air-now
 
 ### 示例代码
 
+Swift
+
+```swift
+   Task {
+        do {
+            let parameter = AirParameter.make(location: "101120501" lang:.ZH_HANS)
+            let response = try await QWeather.instance
+                .airNow(parameter)
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+   }
+```
+
+Objective-C
+
 ```objc
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-    QWeatherConfigInstance.location = @"101010100";
-    QWeatherConfigInstance.lang = @"";
-    QWeatherConfigInstance.unit = @"";
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_AIR_NOW WithSuccess:^(AirBaseClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+    AirParameter * parameter = [AirParameter makeWithLocation:@"101120501" lang:LangTypeZH_HANS];
+    [QWeatherObjc airNow:parameter completionHandler:^(AirNowResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
 ```
 

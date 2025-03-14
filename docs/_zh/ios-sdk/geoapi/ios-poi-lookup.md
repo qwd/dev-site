@@ -6,9 +6,9 @@ ref: 3-sdk-ios-geo-poi-lookup
 
 使用关键字和坐标查询POI信息（景点、火车站、飞机场、港口等）
 
-| 接口代码（枚举）| 接口                    | 数据类       |
-| ----------- | --------------------------- | ------------ |
-| INQUIRE_TYPE_GEO_POI_LOOKUP| POI搜索  | GeoBaseClass |
+| 接口代码 | 接口                    | 数据类       |
+| ----------- | ------------------ | ------------ |
+| geoPoiLookup: | POI搜索  | GeoPoiResponse |
 
 ### 请求参数
 
@@ -18,21 +18,38 @@ ref: 3-sdk-ios-geo-poi-lookup
 
 ### 示例代码
 
-```objc 
+Swift
 
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-    QWeatherConfigInstance.location = @"beijing";
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_POI_LOOKUP WithSuccess:^(GeoBaseClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+```swift
+   Task{
+        do {
+            let response = try await QWeather.instance
+                .geoPoiLookup(.init(location: "116.41,39.92", type: .SCENIC))
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+   }
+```
+
+Objective-C
+
+```objc
+    GeoPoiLookupParameter *parameter = [GeoPoiLookupParameter  makeWithLocation:@"116.41,39.92"
+                                                                     type:PoiTypeSCENIC
+                                                                     city:nil
+                                                                   number:10
+                                                                     lang:LangTypeZH_HANS]
+    [QWeatherObjc geoPoiLookup:
+               completionHandler:^(GeoPoiResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
-    
 ```
 
 ### 返回数据

@@ -6,9 +6,9 @@ ref: 2-sdk-ios-moon
 
 Get moonrise and moonset and hourly moon phase data for the next 60 days at any location worldwide.
 
-| Interface code (Enum)             | Interface           | Class        |
+| Interface code              | Interface           | Class        |
 | --------------------------- | -------------- | ------------- |
-| INQUIRE_TYPE_ASTRONOMY_MOON | Moonrise, moonset and moon phase data | MoonBaseModel |
+| astronomyMoon: | Moonrise, moonset and moon phase data | AstronomyMoonResponse |
 
 ### Request Parameters
 
@@ -18,20 +18,42 @@ If no optional parameters are set, the default value will be used.
 
 ### Sample Code
 
+Swift
+
+```swift
+   Task {
+         do {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyMMdd"
+            let date = formatter.string(from: Date())
+            let parameter = AstronomyMoonParameter(location: "101120501", date: date)
+            let response = try await QWeather.instance
+                .astronomyMoon(parameter)
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+   }
+```
+
+Objective-C
+
 ```objc
-QWeatherConfigInstance.publicID = @"publicID";
-QWeatherConfigInstance.appKey = @"key";
-QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-QWeatherConfigInstance.location = @"101010100";
-QWeatherConfigInstance.date = @"20200425";
-[QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_ASTRONOMY_MOON WithSuccess:^(MoonBaseModel  *responseObject) {
-        
-    NSLog(@"描述->%@",[responseObject description]);
-    
-} faileureForError:^(NSError *error) {
-    NSLog(@"error->%@",error);
-    
-}];
+    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyyMMdd"];
+    NSString * date = [formatter stringFromDate:[NSDate date]];
+    AstronomyMoonParameter * parameter = [AstronomyMoonParameter makeWithLocation:@"101120501" date:date lang:LangTypeZH_HANS];
+    [QWeatherObjc astronomyMoon:parameter 
+    completionHandler:^(AstronomyMoonResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 ```
 
 ### Response

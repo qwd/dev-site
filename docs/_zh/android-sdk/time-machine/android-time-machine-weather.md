@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-12 18:13:40
+ * @FilePath: /dev-site/docs/_zh/android-sdk/time-machine/android-time-machine-weather.md
+-->
 ---
 title: 天气时光机
 tag: [guide, android, time-machine, weather]
@@ -15,9 +21,9 @@ ref: 1-sdk-android-historical-weather
 > * 所需要的时间范围
 
 
-| 接口代码| 接口说明                  | 数据类             |
-| ------------ | -------------------- | ------------------ |
-| getWeatherHistorical| 历史天气数据  | HistoryWeatherBean |
+| 接口代码      | 接口说明           | 数据类             |
+| ------------ | --------------- | ------------------ |
+| historicalWeather | 历史天气数据  | HistoricalWeatherResponse |
 
 ### 接口参数说明
 
@@ -26,36 +32,28 @@ ref: 1-sdk-android-historical-weather
 ### 示例代码
 
 ```java
-QWeather.getHistoricalWeather(Context context, String location, String date, QWeather.OnResultWeatherHistoricalBeanListener listener) ;
-
-QWeather.getHistoricalWeather(Context context, String location, String date, Lang lang, Unit unit, QWeather.OnResultWeatherHistoricalBeanListener listener)
+public void historicalWeather(HistoricalWeatherParameter parameter, Callback<HistoricalWeatherResponse> callback);
 ```
 
-### HistoryWeatherBean属性
+### HistoricalWeatherResponse属性
 
 | 属性           | 说明                       | 示例值                 |
 | -------------- | -------------------------- | ---------------------- |
 | getCode        | 参考[状态码](/docs/resource/status-code/)                    | 200|
-| getDailyBean   | 当天概况                   | DailyBean              |
-| getHourlyBeans | 当天逐小时数据             | List&lt;HourlyBean&gt; |
+| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/historical/beijing-101010100.html |
+| getWeatherDaily  | 当天概况        | HistoricalWeatherDaily              |
+| getWeatherHourly | 当天逐小时数据   | List&lt;HistoricalWeatherHourly&gt; |
 | getRefer       | Refer 数据来源以及数据授权 | Refer                  |
-| getBasic       | Basic 基础信息             | Basic                  |
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather     |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| 属性          | 说明                     | 示例值               |
-| ------------- | ------------------------ | -------------------- |
-| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/historical/beijing-101010100.html |
-
-**DailyBean 基础信息**
+**HistoricalWeatherDaily 基础信息**
 
 | 属性         | 说明     | 示例值     |
 | ------------ | -------- | ---------- |
@@ -71,7 +69,7 @@ QWeather.getHistoricalWeather(Context context, String location, String date, Lan
 | getPrecip    | 降水量   | 0          |
 | getPressure  | 大气压强 | 1018       |
 
-**HourlyBean 基础信息**
+**HistoricalWeatherHourly 基础信息**
 
 | 属性         | 说明                                   | 示例值           |
 | ------------ | -------------------------------------- | ---------------- |

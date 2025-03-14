@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 14:28:40
+ * @FilePath: /dev-site/docs/_en/android-sdk/time-machine/android-time-machine-air.md
+-->
 ---
 title: Time Machine for Air Quality
 tag: [guide, android, time-machine, air]
@@ -9,10 +15,9 @@ Get the last 10 days of air quality history data.
 > Let's say, today is December 30, you can get data from Dec. 20 to Dec. 29.
 
 
-
 | Interface Code| Interface  | Class |
 | ---------------- | ---------------- | ---------------- |
-| getHistoricalAir| Historical air quality data  | HistoricalAirBean |
+| historicalAir| Historical air quality data  | HistoricalAirResponse |
 
 ### Parameter
 
@@ -21,37 +26,30 @@ Get the last 10 days of air quality history data.
 ### Sample Code
 
 ```java
-QWeather.getHistoricalAir(Context context, String location, String date, QWeather.OnResultAirHistoricalBeanListener listener);
-
-QWeather.getHistoricalAir(Context context, String location, String date, Lang lang, Unit unit, QWeather.OnResultAirHistoricalBeanListener listener)
+public void historicalAir(HistoricalAirParameter parameter, Callback<HistoricalAirResponse> callback);
 ```
 
 ### Properties
 
-Properties of HistoricalAirBean
+Properties of HistoricalAirResponse
 
 | Property | Description | Example |
 | ----------------- | -------------------------- | ------------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/historical/beijing-101010100.html |
+| getAirHourly | Hourly air quality data for the day | List&lt;HistoricalAirHourly&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
-| getBasic | Basic Information | Basic |
-| getAirHourlyBeans | Hourly air quality data for the day | List&lt;AirHourlyBean&gt; |
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
 
-| Property | Description | Example |
-| ------------- | ------------------------ | -------------------- |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/historical/beijing-101010100.html |
-
-**AirHourlyBean historical day by hour air quality data**
+**HistoricalAirHourly historical day by hour air quality data**
 
 | Property | Description | Example |
 | ----------- | --------------------------------- | --------------- |

@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 16:48:11
+ * @FilePath: /dev-site/docs/_zh/android-sdk/geoapi/android-poi-lookup.md
+-->
 ---
 title: POI搜索
 tag: [guide, android, geo, poi-lookup]
@@ -8,7 +14,7 @@ ref: 3-sdk-android-geo-poi-lookup
 
 | 接口代码| 接口说明            | 数据类     |
 | ----------- | --------------- | ---------- |
-| getGeoPoiLookup| POI搜索  | GeoPoiBean |
+| geoPoiLookup| POI搜索  | GeoPoiBaseResponse |
 
 ### 接口参数说明
 
@@ -17,25 +23,24 @@ ref: 3-sdk-android-geo-poi-lookup
 ### 示例代码
 
 ```java
-QWeather.getGeoPoiLookup(Context context, String location, String city, int number, Type type, Lang lang, final OnResultGeoPoiListener listener);
-
-QWeather.getGeoPoiLookup(Context context, String location, Type type, final QWeather.OnResultGeoPoiListener listener);
+public void geoPoiLookup(GeoPoiLookupParameter parameter, Callback<GeoPoiBaseResponse> callback);
 ```
 
-### GeoPoiBean属性
+### GeoPoiBaseResponse 属性
 
 | 属性       | 说明     | 示例值          |
 | ---------- | -------- | --------------- |
 | getCode    | 参考[状态码](/docs/resource/status-code/)  | 200 |
-| getPoiList | 城市数据 | List&lt;Poi&gt; |
+| getPoi | 城市数据 | List&lt;Poi&gt; |
+| getRefer         | Refer 数据来源以及数据授权 | Refer  |
 
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
 
 **POI 基础信息**

@@ -8,9 +8,9 @@ Get a list of tropical cyclones for the last 2 years in major ocean basins aroun
 > Only the coastal areas of China are supported now, i.e. `basin=NP`
 
 
-| Interface code (Enum)         | Interface     | Class             |
-| ----------------------- | -------- | ------------------ |
-| INQUIRE_TYPE_STORM_LIST | Storm list and IDs | StormListBaseClass |
+| Interface code     | Interface          | Class             |
+| ------------------ | ------------------ | ----------------- |
+| tropicalStormList: | Storm list and IDs | StormListResponse |
 
 ### Request Parameters
 
@@ -20,19 +20,34 @@ If no optional parameters are set, the default value will be used.
 
 ### Sample Code
 
+Swift
+
+```swift
+    Task{
+        do {
+            let parameter = StormListParameter(basin: .NP, year: 2024)
+            let response = try await QWeather.instance
+                .tropicalStormList(parameter)
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+    }
+```
+
+Objective-C
+
 ```objc
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-    QWeatherConfigInstance.basin = BASIN_TYPE_NP;
-    QWeatherConfigInstance.year = @"2021";
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_STORM_LIST WithSuccess:^(StormListBaseClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+    StormListParameter *parameter = [StormListParameter makeWithBasin:BasinTypeNP year:2024];
+    [QWeatherObjc tropicalStormList:parameter completionHandler:^(StormListResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
 ```
      

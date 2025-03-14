@@ -8,7 +8,7 @@ POI Range Android SDK provides the ability to query all POI information within a
 
 | Interface Code| Interface  | Class |
 | ----------- | -------------- | ---------- |
-| getGeoPoiRange| POI Range  | GeoPoiBean |
+| geoPoiRange| POI Range  | GeoPoiBaseResponse |
 
 ### Parameter
 
@@ -17,33 +17,32 @@ POI Range Android SDK provides the ability to query all POI information within a
 ### Sample Code
 
 ```java
-QWeather.getGeoPoiRange(Context context, String location, int radius, int number, Type type, Lang lang, final OnResultGeoPoiListener listener);
-
-QWeather.getGeoPoiRange(Context context, String location, int number, Type type, Lang lang, final OnResultGeoPoiListener listener);
+public void geoPoiRange(GeoPoiRangeParameter parameter, Callback<GeoPoiBaseResponse> callback);
 ```
 
 ### Properties
 
-Properties of GeoPoiBean
+Properties of GeoPoiBaseResponse
 
 | Property | Description | Example |
 | ---------- | -------- | --------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getPoiList | City data | List&lt;Poi&gt; |
+| getPoi | City data | List&lt;Poi&gt; |
+| getRefer | Reference data, includes data source, statements and license | Refer |
 
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license     | List&lt;String&gt; | QWeather Developers License |
 
 
 **Poi**
 
 | Property | Description | Example |
-| ------------ | ------------------------------------ ----------------------------- | --------- |
+| ------------ | ----------------------- | --------- |
 | getName | POI name | Beijing Zoo |
 | getId | Location ID | 10101020006A |
 | getLon | Longitude of the POI | 116.33000 |

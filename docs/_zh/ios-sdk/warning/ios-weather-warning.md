@@ -9,9 +9,9 @@ ref: 1-sdk-ios-weather-warning
 > **提示：**关于更多天气预警数据的说明，请参考[实用资料-预警信息](/docs/resource/warning-info/)。
 
 
-| 接口代码（枚举）     | 接口     | 数据类           |
+| 接口代码     | 接口     | 数据类           |
 | -------------------- | -------- | ---------------- |
-| INQUIRE_TYPE_WARNING | 灾害预警 | WarningBaseClass |
+| warningNow: | 灾害预警 | WarningResponse |
 
 ### 请求参数
 
@@ -21,21 +21,34 @@ ref: 1-sdk-ios-weather-warning
 
 ### 示例代码
 
+Swift
+
+```swift
+    Task {
+        do {
+            let parameter = WarningNowParameter(location: "101120501")
+            let response = try await QWeather.instance
+                .warningNow(parameter)
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+    }
+```
+
+Objective-C
+
 ```objc
- 
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-    QWeatherConfigInstance.location = @"101010100";
-    QWeatherConfigInstance.lang = @"";
-    QWeatherConfigInstance.unit = @"";
-    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_WARNING WithSuccess:^(WarningBaseClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+    WarningNowParameter *parameter = [WarningNowParameter makeWithLocation:@"101120501" lang:LangTypeZH_HANS];
+    [QWeatherObjc warningNow:parameter completionHandler:^(WarningResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
 ```
 

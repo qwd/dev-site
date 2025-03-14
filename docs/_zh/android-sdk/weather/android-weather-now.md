@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 14:28:08
+ * @FilePath: /dev-site/docs/_zh/android-sdk/weather/android-weather-now.md
+-->
 ---
 title: 实时天气
 tag: [guide, android, weather, now]
@@ -8,7 +14,7 @@ ref: 1-sdk-android-weather-now
 
 | 接口代码| 接口说明           | 数据类         |
 | ------------ | ------------- | -------------- |
-| getWeatherNow| 实况天气数据  | WeatherNowBean |
+| weatherNow| 实况天气数据  | WeatherNowBaseResponse |
 
 ### 接口参数说明
 
@@ -17,35 +23,27 @@ ref: 1-sdk-android-weather-now
 ### 示例代码
 
 ```java
-QWeather.getWeatherNow(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherNowListener listener) ;
-
-QWeather.getWeatherNow(Context context, String location, QWeather.OnResultWeatherNowListener listener);
+public void weatherNow(WeatherParameter parameter, Callback<WeatherNowBaseResponse> callback);
 ```
 
-### WeatherNowBean属性
+### WeatherNowBaseResponse属性
 
 | 属性     | 说明                       | 示例值      |
 | -------- | -------------------------- | ----------- |
 | getCode  | 参考[状态码](/docs/resource/status-code/)      | 200  |
-| getNow   | NowBean 实况天气           | NowBaseBean |
+| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/weather/beijing-101010100.html |
+| getNow   | WeatherNow 实况天气      | WeatherNow |
 | getRefer | Refer 数据来源以及数据授权 | Refer       |
-| getBasic | Basic 基础信息             | Basic       |
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| 属性          | 说明                     | 示例值               |
-| ------------- | ------------------------ | -------------------- |
-| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/weather/beijing-101010100.html |
-
-**NowBaseBean 实况天气**
+**WeatherNow 实况天气**
 
 | 属性         | 说明                       | 示例值           |
 | ------------ | -------------------------- | ---------------- |

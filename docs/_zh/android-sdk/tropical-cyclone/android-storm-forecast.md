@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 14:26:52
+ * @FilePath: /dev-site/docs/_zh/android-sdk/tropical-cyclone/android-storm-forecast.md
+-->
 ---
 title: 台风预报
 tag: [guide, android, storm, forecast]
@@ -10,7 +16,7 @@ ref: 3-sdk-android-storm-forecast
 
 | 接口代码| 接口说明          | 数据类  |
 | -------- | ---------------- | ------- |
-| getStormForecast| 台风预报数据  | StormForecastBean |
+| tropicalStormForecast| 台风预报数据  | StormForecastBaseResponse |
 
 ### 接口参数说明
 
@@ -19,34 +25,29 @@ ref: 3-sdk-android-storm-forecast
 ### 示例代码
 
 ```java
-QWeather.getStormForecast(Context context, String stormId, OnResultTropicalStormForecastListener listener);
+public void tropicalStormForecast(StormParameter parameter, Callback<StormForecastBaseResponse> callback)
 ```
 
-### TideBean属性
+### StormForecastBaseResponse属性
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | 参考[状态码](/docs/resource/status-code/)  | 200       |
-| getBasic         | 更新信息 | Basic       |
-| getRefer         | Refer 数据来源以及数据授权 | Refer  |
-| getForecastList | 台风预报数据 | List<StormForecastBaseBean> |
-
-**Basic**
-
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
 | getUpdateTime | 接口更新时间 | 2017-10-25T04:34+08:00      |
-| getFxLink | 所查询城市的天气预报网页  | https://www.qweather.com |
+| getFxLink     | 所查询城市的天气预报网页  | https://www.qweather.com |
+| getForecast   | 台风预报数据 | List&lt;StormForecast&gt; |
+| getRefer      | Refer 数据来源以及数据授权 | Refer  |
+
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
 
-**StormForecastBaseBean**
+**StormForecast**
 
 | 属性         | 说明                                                                    | 示例值               |
 | ------------ | ----------------------------------------------------- | -------------------- |

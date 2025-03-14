@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 15:43:34
+ * @FilePath: /dev-site/docs/_zh/android-sdk/minutely/android-minutely-precipitation.md
+-->
 ---
 title: 分钟级降水
 tag: [guide, android, minutely, precip]
@@ -8,7 +14,7 @@ ref: 1-sdk-android-minutely-precip
 
 | 接口代码| 接口说明       | 数据类       |
 | ---------- | ----------- | ------------ |
-| getMinutely | 分钟级降雨 | MinutelyBean |
+| minutely | 分钟级降雨 | MinutelyBaseResponse |
 
 ### 接口参数说明
 
@@ -17,34 +23,31 @@ ref: 1-sdk-android-minutely-precip
 ### 示例代码
 
 ```java
-QWeather.getMinutely(Context context, double longitude, double latitude, QWeather.OnResultMinutelyListener listener);
-
-QWeather.getMinutely(Context context, double longitude, double latitude, Lang lang, QWeather.OnResultMinutelyListener listener);
+public void minutely(MinutelyParameter parameter, Callback<MinutelyBaseResponse> callback);
 ```
 
-### GridMinutelyBean属性
+### MinutelyBaseResponse 属性
 
 | 属性            | 说明                       | 示例值               |
 | --------------- | -------------------------- | -------------------- |
 | getCode         | 参考[状态码](/docs/resource/status-code/)                    | 200  |
+| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com |
 | getSummary      | 分钟降水描述               | 未来2小时无降雨      |
-| getMinutelyList | 临近预报                   | List&lt;Minutely&gt; |
+| getMinutely | 临近预报                   | List&lt;Minutely&gt; |
 | getRefer        | Refer 数据来源以及数据授权 | Refer                |
-| getBasic        | Basic 基础信息             | Basic                |
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License |
 
 **Basic**
 
 | 属性          | 说明                     | 示例值               |
 | ------------- | ------------------------ | -------------------- |
-| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com |
 
 **Minutely 未来两小时5分钟降水量**
 

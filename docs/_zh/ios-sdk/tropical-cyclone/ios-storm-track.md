@@ -6,9 +6,9 @@ ref: 2-sdk-ios-storm-track
 
 台风实况和路径API提供全球主要海洋流域的台风实时位置、等级、气压、风力、速度以及活跃台风的轨迹路径。
 
-| 接口代码（枚举） | 接口 | 数据类 |
-| ---------------- || -------------- ---------------------- |
-| INQUIRE_TYPE_STORM_TRACK| 台风实况和路径   | StormNowTrackBaseClass |
+| 接口代码          | 接口           | 数据类                |
+| ---------------- | -------------- | ------------------- |
+| tropicalStormTrack:| 台风实况和路径   | StormTrackResponse |
 
 ### 请求参数
 
@@ -18,18 +18,34 @@ ref: 2-sdk-ios-storm-track
 
 ### 示例代码
 
+Swift
+
+```swift
+    Task{
+        do {
+            let parameter = StormParameter(stormid: "NP_2421")
+            let response = try await QWeather.instance
+                .tropicalStormTrack(parameter)
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+    }
+```
+
+Objective-C
+
 ```objc
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-    QWeatherConfigInstance.stormID = @"NP_2102";
-    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_STORM_TRACK WithSuccess:^(StormNowTrackBaseClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+    StormParameter *parmater = [StormParameter makeWithStormid:@"NP_2421"];
+    [QWeatherObjc tropicalStormTrack:parmater completionHandler:^(StormTrackResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
 ```
      

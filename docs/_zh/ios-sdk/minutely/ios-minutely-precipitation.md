@@ -8,9 +8,9 @@ ref: 1-sdk-ios-minutely-precip
 
 > 仅限中国地区。
 
-| 接口代码（枚举）             | 接口      | 数据类                   |
-| -------- | ----------------------------- | ------------------------ |
-|  INQUIRE_TYPE_WEATHER_MINUTELY| 分钟降水 | WeatherMinutelyBaseClass |
+| 接口代码   | 接口      | 数据类                   |
+| --------- | -------------- | ----------------- |
+|  minutely | 分钟降水 | MinutelyResponse |
 
 ### 接口参数
 
@@ -18,22 +18,35 @@ ref: 1-sdk-ios-minutely-precip
 
 ### 示例代码
 
+Swift
+
+```swift
+   Task{
+        do {
+            let parameter = MinutelyParameter(longitude: 116.41, latitude: 39.92)
+            let response = try await QWeather.instance
+                .minutely(parameter)
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+   }
+```
+
+Objective-C
+
 ```objc
- 
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-    QWeatherConfigInstance.location = @"116.41,39.92";
-    QWeatherConfigInstance.lang = @"";
-    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_WEATHER_MINUTELY WithSuccess:^(WeatherMinutelyBaseClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+    MinutelyParameter *parameter = [MinutelyParameter makeWithLongitude:116.41 latitude:39.92 lang:LangTypeZH_HANS];
+    [QWeatherObjc minutely:parameter completionHandler:^(MinutelyResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
- 
 ```
 
 ### 返回数据

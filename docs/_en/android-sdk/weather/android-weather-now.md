@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 14:30:10
+ * @FilePath: /dev-site/docs/_en/android-sdk/weather/android-weather-now.md
+-->
 ---
 title: Real-time Weather
 tag: [guide, android, weather, now]
@@ -9,7 +15,7 @@ Get real-time weather data for 200,000+ cities around the world, including tempe
 
 | Interface Code| Interface  | Class |
 | ------------ | ------------- | -------------- |
-| getWeatherNow| Real-time weather  | WeatherNowBean |
+| weatherNow | Real-time weather  | WeatherNowBaseResponse |
 
 ### Parameter
 
@@ -18,40 +24,32 @@ Get real-time weather data for 200,000+ cities around the world, including tempe
 ### Sample Code
 
 ```java
-QWeather.getWeatherNow(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherNowListener listener);
-
-QWeather.getWeatherNow(Context context, String location, QWeather.OnResultWeatherNowListener listener);
+public void weatherNow(WeatherParameter parameter, Callback<WeatherNowBaseResponse> callback);
 ```
 
 ### Properties
 
-Properties of WeatherNowBean
+Properties of WeatherNowBaseResponse
 
 | Property | Description | Example |
 | -------- | -------------------------- | ----------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getNow | Real-time weather | NowBaseBean |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/weather/beijing-101010100.html |
+| getNow | Real-time weather | WeatherNow |
 | getRefer | Reference data, includes data source, statements and license | Refer |
-| getBasic | Basic Information | Basic |
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description | Type | Example |
+| -------- | ----------- | ---- | ------- |
+| getSources | Data source and other statements | List&lt;String&gt; | QWeather |
+| getLicense | Data license |  List&lt;String&gt;  | QWeather Developers License |
 
-**Basic**
-
-| Property | Description | Example |
-| ------------- | ------------------------ | ---------- ---------- |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/weather/beijing-101010100.html |
-
-**NowBaseBean Live Weather**
+**WeatherNow Live Weather**
 
 | Property | Description | Example |
-| ------------ | -------------------------- | --------- ------- |
+| ------------ | -------------------------- | ---------------- |
 | getObsTime | Observation time | 2013-12-30T13:14+08:00 |
 | getFeelsLike | Real feels like temperature | 23 |
 | getTemp | Temperature | 21 |

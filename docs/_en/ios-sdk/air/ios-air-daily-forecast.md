@@ -7,9 +7,9 @@ ref: 2-sdk-ios-air-daily-forecast
 
 Air Quality Daily Forecast API for Chinese cities, including AQI, air quality levels, primary pollutants.
 
-| Interface code (Enum) | Interface                           | Class        |
+| Interface code | Interface                           | Class        |
 | -------------------------- | ------------------------------ | ------------ |
-| INQUIRE_TYPE_WEATHER_AIR_5D| Air quality 5-day forecast  ​​ | AirBaseClass |
+| air5d: | Air quality 5-day forecast    | AirDailyResponse |
 
 ### Request Parameters
 
@@ -19,20 +19,34 @@ If no optional parameters are set, the default value will be used.
 
 ### Sample Code
 
+Swift
+
+```swift
+   Task {
+        do {
+            let parameter = AirParameter.make(location: "101120501" lang:.ZH_HANS)
+            let response = try await QWeather.instance
+                .air5d(parameter)
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+   }
+```
+
+Objective-C
+
 ```objc
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-    QWeatherConfigInstance.location = @"101010100";
-    QWeatherConfigInstance.lang = @"";
-    QWeatherConfigInstance.unit = @"";
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_AIR_5D WithSuccess:^(AirBaseClass *responseObject) {
-        
-        NSLog(@"Description->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+    AirParameter * parameter = [AirParameter makeWithLocation:@"101120501" lang:LangTypeZH_HANS];
+    [QWeatherObjc air5d:parameter completionHandler:^(AirDailyResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
 ```
 

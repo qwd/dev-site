@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-12 17:22:13
+ * @FilePath: /dev-site/docs/_en/android-sdk/tropical-cyclone/android-storm-list.md
+-->
 ---
 title: Storm List
 tag: [guide, android, storm, list]
@@ -10,7 +16,7 @@ Get a list of tropical cyclones for the last 2 years in major ocean basins aroun
 
 | Interface Code| Interface          | Class  |
 | -------- | ---------------- | ------- |
-| getStormList| Storm list and IDs  | StormListBean |
+| tropicalStormList | Storm list and IDs  | StormListBaseResponse |
 
 ### Parameter
 
@@ -19,37 +25,31 @@ Get a list of tropical cyclones for the last 2 years in major ocean basins aroun
 ### Sample Code
 
 ```java
-QWeather.getStormList(Context context, String year, Basin basin, OnResultTropicalStormListListener listener);
+public void tropicalStormList(StormListParameter parameter, Callback<StormListBaseResponse> callback);
 ```
 
 ### Properties
 
-Properties of StormListBean
+Properties of StormListBaseResponse
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)        |
-| getBasic         | Basic Informatio | Basic       |
-| getRefer         | Reference data, includes data source, statements and license | Refer  |
-| getStormList | Storm list and IDs | List<StormBean> |
-
-
-**Basic**
-
-| Property           | Description         | Example             |
-| -------------- | ------------ | ------------------ |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time)  | 2017-10-25T04:34+08:00      |
 | getFxLink |Responsive web page of this data, for embedded in website or APP  | https://www.qweather.com |
+| getStorm | Storm list and IDs | List&lt;Storm&gt; |
+| getRefer  | Reference data, includes data source, statements and license | Refer  |
+
 
 **Refer**
 
-| Property           | Description         | Example             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather      |
-| getLicenseList | Data license     | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
 
-**StormBean**
+**Storm**
 
 | Property         | Description                                                                    | Example               |
 | ------------ | ----------------------------------------------------- | -------------------- |

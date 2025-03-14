@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 17:43:09
+ * @FilePath: /dev-site/docs/_zh/android-sdk/astronomy/android-moon-and-moon-phase.md
+-->
 ---
 title: 月升月落和月相
 tag: [guide, android, astronomy, moon]
@@ -10,7 +16,7 @@ ref: 2-sdk-android-moon
 
 | 接口代码| 接口说明          | 数据类      |
 | ------ | ---------- | ----------- |
-| getMoon| 太阳和月亮数据  | MoonBean |
+| astronomyMoon| 太阳和月亮数据  | AstronomyMoonBaseResponse |
 
 ### 接口参数说明
 
@@ -19,37 +25,30 @@ ref: 2-sdk-android-moon
 ### 示例代码
 
 ```java
-QWeather.getMoon(Context context, String location, String date, final OnResultMoonListener listener) ;
-
-QWeather.getMoon(Context context, String location, Lang lang, String date, final OnResultMoonListener listener)                                
+public void astronomyMoon(AstronomyMoonParameter parameter, Callback<AstronomyMoonBaseResponse> callback);                            
 ```
 
-### MoonBean 属性
+### AstronomyMoonBaseResponse 属性
 
 | 属性                 | 说明                       | 示例值                    |
 | -------------------- | -------------------------- | ------------------------- |
 | getCode              | 参考[状态码](/docs/resource/status-code/)                    | 200       |
-| getRefer             | Refer 数据来源以及数据授权 | Refer                     |
+| getUpdateTime | 接口更新时间             | 2017-10-25T04:34     |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/weather/beijing-101010100.html |
 | getMoonrise       | 当天[月升时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**                   | 2017-10-25T01:34+08:00           |
 | getMoonset       | 当天[月落时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**                   | 2017-10-25T04:34+08:00           |
-| getMoonPhaseBeanList | 月相信息                   | List\<MoonPhaseBean> |
+| getMoonPhase | 月相信息                   | List\<MoonPhase> |
+| getRefer             | Refer 数据来源以及数据授权 | Refer                     |
+
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| 属性          | 说明                     | 示例值               |
-| ------------- | ------------------------ | -------------------- |
-| getUpdateTime | 接口更新时间             | 2017-10-25T04:34     |
-| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/weather/beijing-101010100.html |
-
-
-**MoonPhaseBean**
+**MoonPhase**
 
 | 属性            | 说明                   | 示例值                 |
 | --------------- | ---------------------- | ---------------------- |

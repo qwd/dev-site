@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: 韩笑白
+ * @LastEditTime: 2025-03-13 16:09:35
+ * @FilePath: /dev-site/docs/_zh/android-sdk/indices/android-indices-forecast.md
+-->
 ---
 title: 天气指数预报
 tag: [guide, android, indices, forecast]
@@ -11,8 +17,8 @@ ref: 1-sdk-android-indices-forecast
 
 | 接口代码| 接口说明         | 数据类      |
 | ----------- | ------------ | ----------- |
-| getIndices1D| 1天生活指数  | IndicesBean |
-| getIndices3D| 3天生活指数  | IndicesBean |
+| indices1d| 1天生活指数  | IndicesBaseResponse |
+| indices3d| 3天生活指数  | IndicesBaseResponse |
 
 ### 请求参数
 
@@ -26,39 +32,32 @@ ref: 1-sdk-android-indices-forecast
 /**
  * 获取1天生活指数数据
  */
-QWeather.get1DIndices(Context context, String location, Lang lang, List<IndicesType> types, QWeather.OnResultIndicesListener listener);
+public void indices1d(IndicesParameter parameter, Callback<IndicesBaseResponse> callback);
 
 /**
  * 获取3天生活指数数据
  */
-QWeather.get3DIndices(Context context, String location, Lang lang, List<IndicesType> types, QWeather.OnResultIndicesListener listener) ;
+public void indices3d(IndicesParameter parameter, Callback<IndicesBaseResponse> callback);
 ```
 
-### IndicesBean属性
+### IndicesBaseResponse属性
 
 | 属性         | 说明                       | 示例值                |
 | ------------ | -------------------------- | --------------------- |
 | getCode      | 参考[状态码](/docs/resource/status-code/)                    | 200 |
-| getDailyList | 生活指数逐天预报数据       | List&lt;DailyBean&gt; |
+| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/indices/beijing-101010100.html |
+| getDaily | 生活指数逐天预报数据       | List&lt;Indices&gt; |
 | getRefer     | Refer 数据来源以及数据授权 | Refer                 |
-| getBasic     | Basic 基础信息             | Basic                 |
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| 属性          | 说明                     | 示例值               |
-| ------------- | ------------------------ | -------------------- |
-| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/indices/beijing-101010100.html |
-
-
-**DailyBean 当天生活指数**
+**Indices 当天生活指数**
 
 | 属性        | 说明         |
 | ----------- | ----------------------- |
