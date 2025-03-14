@@ -65,7 +65,7 @@ Swift
 Objective-C
 
 ```objc
-    WeatherParameter * parameter =[WeatherParameter makeWithLocation:@"101120501" lang:LangTypeZH_HANS unit:UnitTypeMETRIC];
+    WeatherParameter * parameter = [WeatherParameter instanceWithLocation:@"101120501" lang:@(LangTypeZH_HANS) unit:@(UnitTypeMETRIC)];
 
     void (^handler)(WeatherDailyResponse *, NSError *) = ^(WeatherDailyResponse *response,
         NSError *error) {

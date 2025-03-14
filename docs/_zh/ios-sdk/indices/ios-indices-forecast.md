@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 15:12:51
+ * @FilePath: /dev-site/docs/_zh/ios-sdk/indices/ios-indices-forecast.md
+-->
 ---
 title: 天气指数预报
 tag: [guide, ios, indices, forecast]
@@ -50,7 +56,7 @@ Swift
 Objective-C
 
 ```objc
-    IndicesParameter *parameter = [IndicesParameter makeWithLocation:@"101120501" type:@[@(IndicesTypeCW),@(IndicesTypeDRSG)];
+    IndicesParameter *parameter = [IndicesParameter instanceWithLocation:@"101120501" type:@[@(IndicesTypeCW),@(IndicesTypeDRSG)] lang:@(LangTypeZH_HANS)];
 
     void (^handler)(IndicesResponse *, NSError *) = ^(IndicesResponse *response,
         NSError *error) {

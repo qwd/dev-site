@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 16:06:04
+ * @FilePath: /dev-site/docs/_en/ios-sdk/geoapi/ios-poi-range.md
+-->
 ---
 title: POI Range
 tag: [guide, ios, geo, poi-range]
@@ -37,12 +43,11 @@ Swift
 Objective-C
 
 ```objc
-    GeoPoiRangeParameter *parameter = [GeoPoiRangeParameter makeWithLocation:@"116.41,39.92" 
-                                                            type:PoiTypeSCENIC 
-                                                            radius:50 
-                                                            number:10 
-                                                            lang:LangTypeZH_HANS
-                                                            ];
+    GeoPoiRangeParameter * parameter = [GeoPoiRangeParameter instanceWithLocation:@"116.41,39.92"
+                                                                             type:PoiTypeSCENIC
+                                                                           radius:@(50)
+                                                                           number:@(10)
+                                                                             lang:@(LangTypeZH_HANS)];
     [QWeatherObjc geoPoiRange:parameter  completionHandler:^(GeoPoiResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

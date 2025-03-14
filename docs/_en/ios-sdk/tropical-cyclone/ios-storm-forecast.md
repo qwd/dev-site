@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 15:50:50
+ * @FilePath: /dev-site/docs/_en/ios-sdk/tropical-cyclone/ios-storm-forecast.md
+-->
 ---
 title: Storm Forecast
 tag: [guide, ios, storm, forecast]
@@ -41,8 +47,8 @@ Swift
 Objective-C
 
 ```objc
-    StormParameter *parameter = [StormParameter makeWithStormid:@"NP_2421"];
-    [QWeatherObjc tropicalStormForecast: completionHandler:^(StormForecastResponse * _Nullable response, NSError * _Nullable error) {
+    StormParameter *parameter = [StormParameter instanceWithStormid:@"NP_2421"];
+    [QWeatherObjc tropicalStormForecast:parameter completionHandler:^(StormForecastResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);
         }

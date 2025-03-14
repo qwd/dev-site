@@ -1,7 +1,7 @@
 <!--
  * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-12 09:35:35
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 16:04:46
  * @FilePath: /dev-site/docs/_en/ios-sdk/indices/ios-indices-forecast.md
 -->
 ---
@@ -56,7 +56,7 @@ Swift
 Objective-C
 
 ```objc
-    IndicesParameter *parameter = [IndicesParameter makeWithLocation:@"101120501" type:@[@(IndicesTypeCW),@(IndicesTypeDRSG)]];
+    IndicesParameter *parameter = [IndicesParameter instanceWithLocation:@"101120501" type:@[@(IndicesTypeCW),@(IndicesTypeDRSG)] lang:@(LangTypeZH_HANS)];
 
     void (^handler)(IndicesResponse *, NSError *) = ^(IndicesResponse *response,
         NSError *error) {

@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 16:14:27
+ * @FilePath: /dev-site/docs/_en/ios-sdk/astronomy/ios-sunrise-sunset.md
+-->
 ---
 title: Sunrise and Sunset
 tag: [guide, ios, astronomy, sun]
@@ -45,7 +51,7 @@ Objective-C
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyyMMdd"];
     NSString * date = [formatter stringFromDate:[NSDate date]];
-    AstronomySunParameter * parameter = [AstronomySunParameter makeWithLocation:@"101120501" date:date];
+    AstronomySunParameter *parameter = [AstronomySunParameter instanceWithLocation:@"101120501" date:date];
     [QWeatherObjc astronomySun:parameter completionHandler:^(AstronomySunResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 16:15:40
+ * @FilePath: /dev-site/docs/_en/ios-sdk/astronomy/ios-moon-and-moon-phase.md
+-->
 ---
 title: Moon and Moon Phase
 tag: [guide, ios, astronomy, moon]
@@ -44,9 +50,8 @@ Objective-C
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyyMMdd"];
     NSString * date = [formatter stringFromDate:[NSDate date]];
-    AstronomyMoonParameter * parameter = [AstronomyMoonParameter makeWithLocation:@"101120501" date:date lang:LangTypeZH_HANS];
-    [QWeatherObjc astronomyMoon:parameter 
-    completionHandler:^(AstronomyMoonResponse * _Nullable response, NSError * _Nullable error) {
+    AstronomyMoonParameter *parameter = [AstronomyMoonParameter instanceWithLocation:@"101120501" date:date lang:@(LangTypeZH_HANS)];
+    [QWeatherObjc astronomyMoon:parameter completionHandler:^(AstronomyMoonResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);
         }

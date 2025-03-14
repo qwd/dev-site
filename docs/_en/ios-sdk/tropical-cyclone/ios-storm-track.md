@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 15:50:14
+ * @FilePath: /dev-site/docs/_en/ios-sdk/tropical-cyclone/ios-storm-track.md
+-->
 ---
 title: Storm Track
 tag: [guide, ios, storm, track]
@@ -38,8 +44,8 @@ Swift
 Objective-C
 
 ```objc
-    StormParameter *parmater = [StormParameter makeWithStormid:@"NP_2421"];
-    [QWeatherObjc tropicalStormTrack:parmater completionHandler:^(StormTrackResponse * _Nullable response, NSError * _Nullable error) {
+    StormParameter *parameter = [StormParameter instanceWithStormid:@"NP_2421"];
+    [QWeatherObjc tropicalStormTrack:parameter completionHandler:^(StormTrackResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);
         }

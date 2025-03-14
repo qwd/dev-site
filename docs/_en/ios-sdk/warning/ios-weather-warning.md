@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 15:48:50
+ * @FilePath: /dev-site/docs/_en/ios-sdk/warning/ios-weather-warning.md
+-->
 ---
 title: Weather Warning
 tag: [guide, ios, warning, now]
@@ -10,7 +16,7 @@ Get officially issued real-time severe weather warning data around the world.
 
 | Interface code | Interface       | Class            |
 | --------------------- | --------------- | ---------------- |
-| warningNow:  | Weather warning | WarningBaseClass |
+| warningNow:  | Weather warning | WarningResponse |
 
 ### Request Parameters
 
@@ -41,7 +47,7 @@ Swift
 Objective-C
 
 ```objc
-    WarningNowParameter *parameter = [WarningNowParameter makeWithLocation:@"101120501" lang:LangTypeZH_HANS];
+     WarningNowParameter *parameter = [WarningNowParameter instanceWithLocation:@"101120501" lang:@(LangTypeZH_HANS)];
     [QWeatherObjc warningNow:parameter completionHandler:^(WarningResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

@@ -38,7 +38,7 @@ Swift
 Objective-C
 
 ```objc
- WeatherParameter * parameter = [WeatherParameter makeWithLocation:@"101120501" lang:LangTypeZH_HANS unit:UnitTypeMETRIC];
+    WeatherParameter * parameter = [WeatherParameter instanceWithLocation:@"101120501" lang:@(LangTypeZH_HANS) unit:@(UnitTypeMETRIC)];
     [QWeatherObjc weatherNow:parameter completionHandler:^(WeatherNowResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

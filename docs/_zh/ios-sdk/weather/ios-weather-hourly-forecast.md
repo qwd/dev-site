@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 15:43:00
+ * @FilePath: /dev-site/docs/_zh/ios-sdk/weather/ios-weather-hourly-forecast.md
+-->
 ---
 title: 逐小时天气预报
 tag: [guide, ios, weather, hourly]
@@ -55,9 +61,7 @@ Swift
 Objective-C
 
 ```objc
-    WeatherParameter *parameter = [WeatherParameter makeWithLocation:@"101120501" 
-                                                        lang:LangTypeZH_HANS 
-                                                        unit:UnitTypeMETRIC];
+    WeatherParameter * parameter = [WeatherParameter instanceWithLocation:@"101120501" lang:@(LangTypeZH_HANS) unit:@(UnitTypeMETRIC)];
     
     void (^handler)(WeatherHourlyResponse *, NSError *) = ^(WeatherHourlyResponse *response,
         NSError *error) {

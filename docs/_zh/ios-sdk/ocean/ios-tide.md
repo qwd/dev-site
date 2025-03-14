@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 15:15:19
+ * @FilePath: /dev-site/docs/_zh/ios-sdk/ocean/ios-tide.md
+-->
 ---
 title: 潮汐
 tag: [guide, ios, ocean, tide]
@@ -45,7 +51,7 @@ Objective-C
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyyMMdd"];
     NSString * date = [formatter stringFromDate:sevenDaysAfter];
-    OceanParameter* parameter = [OceanParameter makeWithLocation:@"P2236" date:date];
+    OceanParameter *parameter = [OceanParameter instanceWithLocation:@"P2236" date:date];
     [QWeatherObjc oceanTide:parameter completionHandler:^(OceanTideResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

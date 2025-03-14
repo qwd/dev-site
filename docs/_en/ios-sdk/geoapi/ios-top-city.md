@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 16:05:22
+ * @FilePath: /dev-site/docs/_en/ios-sdk/geoapi/ios-top-city.md
+-->
 ---
 title: Top City
 tag: [guide, ios, geo, top-city]
@@ -40,7 +46,7 @@ Swift
 Objective-C
 
 ```objc
-    GeoCityTopParameter *parameter = [GeoCityTopParameter makeWithRange:RangeTypeCN number:10 lang:LangTypeEN];
+    GeoCityTopParameter *parameter = [GeoCityTopParameter instanceWithRange:@(RangeTypeCN) number:@(10) lang:@(LangTypeZH_HANS)];
     [QWeatherObjc geoCityTop:parameter completionHandler:^(GeoCityTopResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

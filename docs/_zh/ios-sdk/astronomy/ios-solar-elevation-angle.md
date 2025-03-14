@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 14:51:43
+ * @FilePath: /dev-site/docs/_zh/ios-sdk/astronomy/ios-solar-elevation-angle.md
+-->
 ---
 title: 太阳高度角
 tag: [guide, ios, astronomy, solar-elevation-angle]
@@ -58,16 +64,17 @@ Objective-C
     [timeFormatter setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"]];
     NSString * time = [formatter stringFromDate:current];
     
-    SolarElevationAngleParameter * parameter = [SolarElevationAngleParameter makeWithLocation:@"116.41,39.92" date:date time:time tz:@"0800" alt:@"43"]；
-    [QWeatherObjc astronomySolarElevationAngle:parameter 
-                               completionHandler:^(AstronomySolarElevationAngleResponse * _Nullable response, NSError * _Nullable error) {
+    SolarElevationAngleParameter *parameter = [SolarElevationAngleParameter instanceWithLocation:@"116.41,39.92" date:date time:time tz:@"0800" alt:@"43"];
+    
+    [QWeatherObjc astronomySolarElevationAngle:parameter completionHandler:^(AstronomySolarElevationAngleResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);
         }
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         }
-    }]
+    }];
+```
 
 ### 返回数据
 

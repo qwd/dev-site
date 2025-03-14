@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 15:52:56
+ * @FilePath: /dev-site/docs/_en/ios-sdk/ocean/ios-currents.md
+-->
 ---
 title: Currents
 tag: [guide, ios, ocean, currents]
@@ -50,7 +56,7 @@ Objective-C
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyyMMdd"];
     NSString * date = [formatter stringFromDate:sevenDaysAfter];
-    OceanParameter * parameter = [OceanParameter makeWithLocation:@"P66981" date:date]; 
+    OceanParameter *parameter = [OceanParameter instanceWithLocation:@"P66981" date:date];
     [QWeatherObjc oceanCurrents:parameter completionHandler:^(OceanCurrentsResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

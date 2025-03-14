@@ -1,7 +1,7 @@
 <!--
  * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-11 15:42:28
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 15:47:18
  * @FilePath: /dev-site/docs/_en/ios-sdk/weather/ios-weather-hourly-forecast.md
 -->
 ---
@@ -64,9 +64,7 @@ Swift
 Objective-C
 
 ```objc
-    WeatherParameter *parameter = [WeatherParameter makeWithLocation:@"101120501" 
-                                                        lang:LangTypeZH_HANS 
-                                                        unit:UnitTypeMETRIC];
+     WeatherParameter * parameter = [WeatherParameter instanceWithLocation:@"101120501" lang:@(LangTypeZH_HANS) unit:@(UnitTypeMETRIC)];
     
     void (^handler)(WeatherHourlyResponse *, NSError *) = ^(WeatherHourlyResponse *response,
         NSError *error) {

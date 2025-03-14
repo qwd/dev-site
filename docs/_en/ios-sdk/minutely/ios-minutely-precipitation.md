@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 15:53:28
+ * @FilePath: /dev-site/docs/_en/ios-sdk/minutely/ios-minutely-precipitation.md
+-->
 ---
 title: Minutely Precipitation
 tag: [guide, ios, minutely, precip]
@@ -38,8 +44,8 @@ Swift
 Objective-C
 
 ```objc
-    MinutelyParameter *parameter = [MinutelyParameter makeWithLongitude:116.41 latitude:39.92 lang:LangTypeZH_HANS];
-    [QWeatherObjc minutely:parameter completionHandler:^(MinutelyResponse * _Nullable response, NSError * _Nullable error) {
+    MinutelyParameter * paramater = [MinutelyParameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangTypeZH_HANS)];
+    [QWeatherObjc minutely:paramater completionHandler:^(MinutelyResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);
         }

@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 15:14:06
+ * @FilePath: /dev-site/docs/_zh/ios-sdk/minutely/ios-minutely-precipitation.md
+-->
 ---
 title: 分钟级降水
 tag: [guide, ios, minutely, precip]
@@ -38,7 +44,7 @@ Swift
 Objective-C
 
 ```objc
-    MinutelyParameter *parameter = [MinutelyParameter makeWithLongitude:116.41 latitude:39.92 lang:LangTypeZH_HANS];
+    MinutelyParameter * paramater = [MinutelyParameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangTypeZH_HANS)];
     [QWeatherObjc minutely:parameter completionHandler:^(MinutelyResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

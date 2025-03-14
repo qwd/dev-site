@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 15:05:09
+ * @FilePath: /dev-site/docs/_zh/ios-sdk/geoapi/ios-poi-lookup.md
+-->
 ---
 title: POI搜索
 tag: [guide, ios, geo, poi-lookup]
@@ -23,8 +29,9 @@ Swift
 ```swift
    Task{
         do {
+            let parameter = GeoPoiLookupParameter(location: "116.41,39.92", type: .SCENIC)
             let response = try await QWeather.instance
-                .geoPoiLookup(.init(location: "116.41,39.92", type: .SCENIC))
+                .geoPoiLookup(parameter)
         } catch QWeatherError.errorResponse(let error) {
             print(error)
         } catch {
@@ -36,13 +43,12 @@ Swift
 Objective-C
 
 ```objc
-    GeoPoiLookupParameter *parameter = [GeoPoiLookupParameter  makeWithLocation:@"116.41,39.92"
-                                                                     type:PoiTypeSCENIC
-                                                                     city:nil
-                                                                   number:10
-                                                                     lang:LangTypeZH_HANS]
-    [QWeatherObjc geoPoiLookup:
-               completionHandler:^(GeoPoiResponse * _Nullable response, NSError * _Nullable error) {
+    GeoPoiLookupParameter *parameter = [GeoPoiLookupParameter instanceWithLocation:@"116.41,39.92" 
+                                                type:PoiTypeSCENIC 
+                                                city:nil 
+                                                number:@(10) 
+                                                lang:@(LangTypeZH_HANS)];
+    [QWeatherObjc geoPoiLookup: parameter completionHandler:^(GeoPoiResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);
         }

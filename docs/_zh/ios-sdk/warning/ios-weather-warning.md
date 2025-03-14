@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2025-03-06 10:02:06
+ * @LastEditors: bolepichi
+ * @LastEditTime: 2025-03-14 15:41:33
+ * @FilePath: /dev-site/docs/_zh/ios-sdk/warning/ios-weather-warning.md
+-->
 ---
 title: 天气灾害预警
 tag: [guide, ios, warning, now]
@@ -41,7 +47,7 @@ Swift
 Objective-C
 
 ```objc
-    WarningNowParameter *parameter = [WarningNowParameter makeWithLocation:@"101120501" lang:LangTypeZH_HANS];
+    WarningNowParameter *parameter = [WarningNowParameter instanceWithLocation:@"101120501" lang:@(LangTypeZH_HANS)];
     [QWeatherObjc warningNow:parameter completionHandler:^(WarningResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);
