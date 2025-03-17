@@ -123,6 +123,45 @@ curl --compressed \
 
 > **提示：**示例仅供参考和测试，我们不保证在任何环境下可以正常运行，请根据你的开发语言和环境进行适配。
 
+#### Java 15+
+
+```java
+// Private key
+String privateKeyString = "YOUR PRIVATE KEY";
+privateKeyString = privateKeyString.replace("-----BEGIN PRIVATE KEY-----", "").replace("-----END PRIVATE KEY-----", "").trim();
+byte[] privateKeyBytes = Base64.getDecoder().decode(privateKeyString);
+PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(privateKeyBytes);
+KeyFactory keyFactory = KeyFactory.getInstance("EdDSA");
+PrivateKey privateKey = keyFactory.generatePrivate(keySpec);
+
+// Header
+String headerJson = "{\"alg\": \"EdDSA\", \"kid\": \"YOUR_KEY_ID\"}";
+
+// Payload
+long iat = ZonedDateTime.now(ZoneOffset.UTC).toEpochSecond() - 30;
+long exp = iat + 900;
+String payloadJson = "{\"sub\": \"YOUR_PROJECT_ID\", \"iat\": " + iat + ", \"exp\": " + exp + "}";
+
+// Base64url header+payload
+String headerEncoded = Base64.getUrlEncoder().encodeToString(headerJson.getBytes(StandardCharsets.UTF_8));
+String payloadEncoded = Base64.getUrlEncoder().encodeToString(payloadJson.getBytes(StandardCharsets.UTF_8));
+String data = headerEncoded + "." + payloadEncoded;
+
+// Sign
+Signature signer = Signature.getInstance("EdDSA");
+signer.initSign(privateKey);
+signer.update(data.getBytes(StandardCharsets.UTF_8));
+byte[] signature = signer.sign();
+
+String signatureString = Base64.getUrlEncoder().encodeToString(signature);
+
+String jwt = data + "." + signatureEncoded;
+
+// Print Token
+System.out.println("Signature:\n" + signatureEncoded);
+System.out.println("JWT:\n" + jwt);
+```
+
 #### Java 8+
 
 需要依赖库 [ed25519-java](https://github.com/str4d/ed25519-java)
@@ -137,7 +176,9 @@ curl --compressed \
 
 ```java
 // Private key
-byte[] privateKeyBytes = Base64.getDecoder().decode("YOUR_PRIVATE_KEY".trim().replace("-----BEGIN PRIVATE KEY-----", "").replace("-----END PRIVATE KEY-----", ""));
+String privateKeyString = "YOUR PRIVATE KEY";
+privateKeyString = privateKeyString.trim().replace("-----BEGIN PRIVATE KEY-----", "").replace("-----END PRIVATE KEY-----", "").trim();
+byte[] privateKeyBytes = Base64.getDecoder().decode(privateKeyString);
 PKCS8EncodedKeySpec encoded = new PKCS8EncodedKeySpec(privateKeyBytes);
 PrivateKey privateKey = new EdDSAPrivateKey(encoded);
 
