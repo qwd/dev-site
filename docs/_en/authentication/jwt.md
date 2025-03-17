@@ -121,6 +121,45 @@ Please replace `YOUR_KEY_ID`, `YOUR_PROJECT_ID`, `YOUR_PRIVATE_KEY` or `PATH_OF_
 
 > **Hint:** These demos are for reference and test only, we can't guarantee that they will work in any environment.
 
+#### Java 15+
+
+```java
+// Private key
+String privateKeyString = "YOUR PRIVATE KEY";
+privateKeyString = privateKeyString.replace("-----BEGIN PRIVATE KEY-----", "").replace("-----END PRIVATE KEY-----", "").trim();
+byte[] privateKeyBytes = Base64.getDecoder().decode(privateKeyString);
+PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(privateKeyBytes);
+KeyFactory keyFactory = KeyFactory.getInstance("EdDSA");
+PrivateKey privateKey = keyFactory.generatePrivate(keySpec);
+
+// Header
+String headerJson = "{\"alg\": \"EdDSA\", \"kid\": \"YOUR_KEY_ID\"}";
+
+// Payload
+long iat = ZonedDateTime.now(ZoneOffset.UTC).toEpochSecond() - 30;
+long exp = iat + 900;
+String payloadJson = "{\"sub\": \"YOUR_PROJECT_ID\", \"iat\": " + iat + ", \"exp\": " + exp + "}";
+
+// Base64url header+payload
+String headerEncoded = Base64.getUrlEncoder().encodeToString(headerJson.getBytes(StandardCharsets.UTF_8));
+String payloadEncoded = Base64.getUrlEncoder().encodeToString(payloadJson.getBytes(StandardCharsets.UTF_8));
+String data = headerEncoded + "." + payloadEncoded;
+
+// Sign
+Signature signer = Signature.getInstance("EdDSA");
+signer.initSign(privateKey);
+signer.update(data.getBytes(StandardCharsets.UTF_8));
+byte[] signature = signer.sign();
+
+String signatureString = Base64.getUrlEncoder().encodeToString(signature);
+
+String jwt = data + "." + signatureEncoded;
+
+// Print Token
+System.out.println("Signature:\n" + signatureEncoded);
+System.out.println("JWT:\n" + jwt);
+```
+
 #### Java 8+
 
 Required dependency: [ed25519-java](https://github.com/str4d/ed25519-java)
