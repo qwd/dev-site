@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 16:45:11
- * @FilePath: /dev-site/docs/_zh/android-sdk/geoapi/android-poi-range.md
--->
 ---
 title: POI范围搜索
 tag: [guide, android, geo, poi-range]
@@ -14,7 +8,7 @@ ref: 4-sdk-android-geo-poi-range
 
 | 接口代码| 接口说明           | 数据类     |
 | ----------- | -------------- | ---------- |
-| geoPoiRange| POI范围搜索  | GeoPoiBaseResponse |
+| geoPoiRange| POI范围搜索  | GeoPoiResponse |
 
 ### 接口参数说明
 
@@ -23,10 +17,10 @@ ref: 4-sdk-android-geo-poi-range
 ### 示例代码
 
 ```java
-public void geoPoiRange(GeoPoiRangeParameter parameter, Callback<GeoPoiBaseResponse> callback);
+public void geoPoiRange(GeoPoiRangeParameter parameter, Callback<GeoPoiResponse> callback);
 ```
 
-### GeoPoiBaseResponse 属性
+### GeoPoiResponse 属性
 
 | 属性       | 说明     | 示例值          |
 | ---------- | -------- | ------------- |

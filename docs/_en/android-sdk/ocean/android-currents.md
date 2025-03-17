@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 14:28:31
- * @FilePath: /dev-site/docs/_en/android-sdk/ocean/android-currents.md
--->
 ---
 title: Currents
 tag: [guide, android, ocean, currents]
@@ -14,7 +8,7 @@ Currents data for the next 10 days, including currents speed, direction and hour
 
 | Interface Code| Interface          | Class  |
 | -------- | ---------------- | ------- |
-| oceanCurrents| Currents data  | OceanCurrentsBaseResponse |
+| oceanCurrents| Currents data  | OceanCurrentsResponse |
 
 ### Parameter
 
@@ -23,12 +17,12 @@ Currents data for the next 10 days, including currents speed, direction and hour
 ### Sample Code
 
 ```java
-public void oceanCurrents(OceanParameter parameter, Callback<OceanCurrentsBaseResponse> callback)
+public void oceanCurrents(OceanParameter parameter, Callback<OceanCurrentsResponse> callback)
 ```
 
 ### Properties
 
-Properties of OceanCurrentsBaseResponse
+Properties of OceanCurrentsResponse
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |

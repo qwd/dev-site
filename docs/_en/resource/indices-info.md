@@ -16,7 +16,7 @@ Weather indices are not available for all countries or regions. Currently, for C
 > If "All indices" is selected, no other indices can be selected.
 {:.bqwarning}
 
-| Index types     | Web API | iOS IndicesType  | Android IndicesType |
+| Index types     | Web API | iOS Indices  | Android Indices |
 | --------------- | ------- | ----------------- | ----------- |
 | All indices     | 0       | ALL               | ALL         |
 | Sports          | 1       | SPT               | SPT         |
@@ -40,17 +40,17 @@ Weather indices are not available for all countries or regions. Currently, for C
 
 Swift:
 ```swift
-let _ = IndicesType.SPT
+let _ = Indices.SPT
 ```
 
 Objective-C:
 ```swift
-IndicesType indices = IndicesTypeSPT; 
+Indices indices = IndicesSPT; 
 ```
 
 Java:
 ```java
-IndicesType indices = IndicesType.SPT; 
+Indices indices = Indices.SPT; 
 ```
 
 ## Index Level

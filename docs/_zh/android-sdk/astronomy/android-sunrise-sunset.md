@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 17:13:16
- * @FilePath: /dev-site/docs/_zh/android-sdk/astronomy/android-sunrise-sunset.md
--->
 ---
 title: 日出日落
 tag: [guide, android, astronomy, sun]
@@ -16,7 +10,7 @@ ref: 1-sdk-android-sun
 
 | 接口代码| 接口说明          | 数据类      |
 | -------------- | ---------- | ----------- |
-| astronomySun| 日出日落  | AstronomySunBaseResponse |
+| astronomySun| 日出日落  | AstronomySunResponse |
 
 ### 接口参数说明
 
@@ -25,10 +19,10 @@ ref: 1-sdk-android-sun
 ### 示例代码
 
 ```java
-public void astronomySun(AstronomySunParameter parameter, Callback<AstronomySunBaseResponse> callback);                             
+public void astronomySun(AstronomySunParameter parameter, Callback<AstronomySunResponse> callback);                             
 ```
 
-### AstronomySunBaseResponse 属性
+### AstronomySunResponse 属性
 
 | 属性                 | 说明                       | 示例值                    |
 | -------------------- | -------------------------- | ------------------------- |

@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 14:30:10
- * @FilePath: /dev-site/docs/_en/android-sdk/weather/android-weather-now.md
--->
 ---
 title: Real-time Weather
 tag: [guide, android, weather, now]
@@ -15,7 +9,7 @@ Get real-time weather data for 200,000+ cities around the world, including tempe
 
 | Interface Code| Interface  | Class |
 | ------------ | ------------- | -------------- |
-| weatherNow | Real-time weather  | WeatherNowBaseResponse |
+| weatherNow | Real-time weather  | WeatherNowResponse |
 
 ### Parameter
 
@@ -24,12 +18,12 @@ Get real-time weather data for 200,000+ cities around the world, including tempe
 ### Sample Code
 
 ```java
-public void weatherNow(WeatherParameter parameter, Callback<WeatherNowBaseResponse> callback);
+public void weatherNow(WeatherParameter parameter, Callback<WeatherNowResponse> callback);
 ```
 
 ### Properties
 
-Properties of WeatherNowBaseResponse
+Properties of WeatherNowResponse
 
 | Property | Description | Example |
 | -------- | -------------------------- | ----------- |

@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 14:29:12
- * @FilePath: /dev-site/docs/_en/android-sdk/warning/android-weather-warning-city-list.md
--->
 ---
 title: Weather Warning City List
 tag: [guide, android, warning, list]
@@ -21,7 +15,7 @@ See also [Weather warning Android SDK](/en/docs/android-sdk/warning/android-weat
 
 | Interface Code| Interface  | Class |
 | ---------------- | -------------- | --------------- |
-| warningList| Weather warning city list  | WarningListBaseResponse |
+| warningList| Weather warning city list  | WarningListResponse |
 
 ### Parameter
 
@@ -30,7 +24,7 @@ See also [Weather warning Android SDK](/en/docs/android-sdk/warning/android-weat
 ### Sample Code
 
 ```java
-public void warningList(WarningListParameter parameter, Callback<WarningListBaseResponse> callback);
+public void warningList(WarningListParameter parameter, Callback<WarningListResponse> callback);
 ```
 
 ### Properties

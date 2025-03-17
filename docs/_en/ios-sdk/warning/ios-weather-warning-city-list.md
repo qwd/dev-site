@@ -45,7 +45,7 @@ Swift
 Objective-C
 
 ```objc
-    WarningListParameter *parameter = [WarningListParameter instanceWithRange:RangeTypeCN];
+    WarningListParameter *parameter = [WarningListParameter instanceWithRange:RangeCN];
     [QWeatherObjc warningList:parameter completionHandler:^(WarningListResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

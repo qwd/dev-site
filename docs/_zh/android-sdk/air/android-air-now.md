@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 18:25:03
- * @FilePath: /dev-site/docs/_zh/android-sdk/air/android-air-now.md
--->
 ---
 title: 实时空气质量
 tag: [guide, android, air, now]
@@ -14,7 +8,7 @@ ref: 1-sdk-android-air-now
 
 | 接口代码| 接口说明           | 数据类     |
 | ---------------- | --------- | ---------- |
-| airNow| 空气质量实况数据  | AirNowBaseResponse |
+| airNow| 空气质量实况数据  | AirNowResponse |
 
 ### 接口参数说明
 
@@ -23,10 +17,10 @@ ref: 1-sdk-android-air-now
 ### 示例代码
 
 ```java
-public void airNow(AirParameter parameter, Callback<AirNowBaseResponse> callback);
+public void airNow(AirParameter parameter, Callback<AirNowResponse> callback);
 ```
 
-### AirNowBean 属性
+### AirNowResponse 属性
 
 | 属性                 | 说明                       | 示例值                        |
 | -------------------- | -------------------------- | ----------------------------- |

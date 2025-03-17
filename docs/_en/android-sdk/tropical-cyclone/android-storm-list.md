@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-12 17:22:13
- * @FilePath: /dev-site/docs/_en/android-sdk/tropical-cyclone/android-storm-list.md
--->
 ---
 title: Storm List
 tag: [guide, android, storm, list]
@@ -16,7 +10,7 @@ Get a list of tropical cyclones for the last 2 years in major ocean basins aroun
 
 | Interface Code| Interface          | Class  |
 | -------- | ---------------- | ------- |
-| tropicalStormList | Storm list and IDs  | StormListBaseResponse |
+| tropicalStormList | Storm list and IDs  | StormListResponse |
 
 ### Parameter
 
@@ -25,12 +19,12 @@ Get a list of tropical cyclones for the last 2 years in major ocean basins aroun
 ### Sample Code
 
 ```java
-public void tropicalStormList(StormListParameter parameter, Callback<StormListBaseResponse> callback);
+public void tropicalStormList(StormListParameter parameter, Callback<StormListResponse> callback);
 ```
 
 ### Properties
 
-Properties of StormListBaseResponse
+Properties of StormListResponse
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |

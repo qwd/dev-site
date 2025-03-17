@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 16:04:46
- * @FilePath: /dev-site/docs/_en/ios-sdk/indices/ios-indices-forecast.md
--->
 ---
 title: Weather Indices Forecast
 tag: [guide, ios, indices, forecast]
@@ -17,8 +11,8 @@ Get weather indices forecast data for cities in China and around the world.
 
 | Interface code   | Interface             | Class            |
 | ---------------- | ------------------ | ---------------- |
-| indices1d: | Today Weather Indices           | IndicesResponse |
-| indices3d: | Weather Indices 3-days forecast | IndicesResponse |
+| indices1d: | Today Weather Indices           | IndicesDailyResponse |
+| indices3d: | Weather Indices 3-days forecast | IndicesDailyResponse |
 
 ### Request Parameters
 
@@ -56,9 +50,9 @@ Swift
 Objective-C
 
 ```objc
-    IndicesParameter *parameter = [IndicesParameter instanceWithLocation:@"101120501" type:@[@(IndicesTypeCW),@(IndicesTypeDRSG)] lang:@(LangTypeZH_HANS)];
+    IndicesParameter *parameter = [IndicesParameter instanceWithLocation:@"101120501" type:@[@(IndicesCW),@(IndicesDRSG)] lang:@(LangZH_HANS)];
 
-    void (^handler)(IndicesResponse *, NSError *) = ^(IndicesResponse *response,
+    void (^handler)(IndicesDailyResponse *, NSError *) = ^(IndicesDailyResponse *response,
         NSError *error) {
         if (response) {
             NSLog(@"%@", response.description);
@@ -71,12 +65,12 @@ Objective-C
     /**
     * Get 1-day weather indices data
     */
-    [QWeatherObjc indices1d:parameter lang:LangTypeZH_HANS completionHandler:handler];
+    [QWeatherObjc indices1d:parameter lang:LangZH_HANS completionHandler:handler];
 
     /**
     * Get 3-day weather indices data
     */
-    [QWeatherObjc indices3d:parameter lang:LangTypeZH_HANS completionHandler:handler];
+    [QWeatherObjc indices3d:parameter lang:LangZH_HANS completionHandler:handler];
 ```
 
 ### Response

@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 15:43:34
- * @FilePath: /dev-site/docs/_zh/android-sdk/minutely/android-minutely-precipitation.md
--->
 ---
 title: 分钟级降水
 tag: [guide, android, minutely, precip]
@@ -14,7 +8,7 @@ ref: 1-sdk-android-minutely-precip
 
 | 接口代码| 接口说明       | 数据类       |
 | ---------- | ----------- | ------------ |
-| minutely | 分钟级降雨 | MinutelyBaseResponse |
+| minutely | 分钟级降雨 | MinutelyResponse |
 
 ### 接口参数说明
 
@@ -23,10 +17,10 @@ ref: 1-sdk-android-minutely-precip
 ### 示例代码
 
 ```java
-public void minutely(MinutelyParameter parameter, Callback<MinutelyBaseResponse> callback);
+public void minutely(MinutelyParameter parameter, Callback<MinutelyResponse> callback);
 ```
 
-### MinutelyBaseResponse 属性
+### MinutelyResponse 属性
 
 | 属性            | 说明                       | 示例值               |
 | --------------- | -------------------------- | -------------------- |

@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 18:29:18
- * @FilePath: /dev-site/docs/_zh/android-sdk/air/android-air-daily-forecast.md
--->
 ---
 title: 空气质量预报
 tag: [guide, android, air, daily]
@@ -14,7 +8,7 @@ ref: 2-sdk-android-air-daily-forecast
 
 | 接口代码| 接口说明             | 数据类       |
 | ------------------- | -------- | ------------ |
-| air5d| 空气质量5天预报数据  | AirDailyBaseResponse |
+| air5d| 空气质量5天预报数据  | AirDailyResponse |
 
 ### 接口参数说明
 
@@ -28,11 +22,11 @@ ref: 2-sdk-android-air-daily-forecast
  * 空气质量5天预报数据
  */
 
-public void air5d(AirParameter parameter, Callback<AirDailyBaseResponse> callback);
+public void air5d(AirParameter parameter, Callback<AirDailyResponse> callback);
 
 ```
 
-### AirDailyBaseResponse 属性
+### AirDailyResponse 属性
 
 | 属性        | 说明                       | 示例值                |
 | ----------- | -------------------------- | --------------------- |

@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 14:27:22
- * @FilePath: /dev-site/docs/_zh/android-sdk/warning/android-weather-warning.md
--->
 ---
 title: 天气灾害预警
 tag: [guide, android, warning, now]
@@ -16,7 +10,7 @@ ref: 1-sdk-android-weather-warning
 
 | 接口代码| 接口说明        | 数据类      |
 | ------------ | ---------- | ----------- |
-| warningNow| 天气灾害预警  | WarningBaseResponse |
+| warningNow| 天气灾害预警  | WarningResponse |
 
 ### 接口参数说明
 
@@ -25,10 +19,10 @@ ref: 1-sdk-android-weather-warning
 ### 示例代码
 
 ```java
-public void warningNow(WarningNowParameter parameter, Callback<WarningBaseResponse> callback);
+public void warningNow(WarningNowParameter parameter, Callback<WarningResponse> callback);
 ```
 
-### WarningBean属性
+### WarningResponse 属性
 
 | 属性            | 说明                       | 示例值                      |
 | --------------- | -------------------------- | --------------------------- |

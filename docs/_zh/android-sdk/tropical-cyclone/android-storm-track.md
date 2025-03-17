@@ -11,7 +11,7 @@ ref: 2-sdk-android-storm-track
 
 | 接口代码| 接口说明          | 数据类  |
 | -------- | ---------------- | ------- |
-| tropicalStormTrack | 台风实况和路径数据  | StormTrackBaseResponse |
+| tropicalStormTrack | 台风实况和路径数据  | StormTrackResponse |
 
 ### 接口参数说明
 
@@ -20,10 +20,10 @@ ref: 2-sdk-android-storm-track
 ### 示例代码
 
 ```java
-public void tropicalStormTrack(StormParameter parameter, Callback<StormTrackBaseResponse> callback);
+public void tropicalStormTrack(StormParameter parameter, Callback<StormTrackResponse> callback);
 ```
 
-### StormTrackBaseResponse属性
+### StormTrackResponse属性
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |

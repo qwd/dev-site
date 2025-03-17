@@ -11,7 +11,7 @@ ref: res-unit
 
 ## 单位参数 {#unit-parameters}
 
-| 单位      | API请求参数 | iOS UnitType  | Android Unit  |
+| 单位      | API请求参数 | iOS Unit  | Android Unit  |
 | -------- | ---------- | ------------- | ------------- |
 | 公制单位  | m          | METRIC        | METRIC         |
 | 英制单位  | i          | IMPERIAL      | IMPERIAL       |

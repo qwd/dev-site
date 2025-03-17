@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 17:43:09
- * @FilePath: /dev-site/docs/_zh/android-sdk/astronomy/android-moon-and-moon-phase.md
--->
 ---
 title: 月升月落和月相
 tag: [guide, android, astronomy, moon]
@@ -16,7 +10,7 @@ ref: 2-sdk-android-moon
 
 | 接口代码| 接口说明          | 数据类      |
 | ------ | ---------- | ----------- |
-| astronomyMoon| 太阳和月亮数据  | AstronomyMoonBaseResponse |
+| astronomyMoon| 太阳和月亮数据  | AstronomyMoonResponse |
 
 ### 接口参数说明
 
@@ -25,10 +19,10 @@ ref: 2-sdk-android-moon
 ### 示例代码
 
 ```java
-public void astronomyMoon(AstronomyMoonParameter parameter, Callback<AstronomyMoonBaseResponse> callback);                            
+public void astronomyMoon(AstronomyMoonParameter parameter, Callback<AstronomyMoonResponse> callback);                            
 ```
 
-### AstronomyMoonBaseResponse 属性
+### AstronomyMoonResponse 属性
 
 | 属性                 | 说明                       | 示例值                    |
 | -------------------- | -------------------------- | ------------------------- |

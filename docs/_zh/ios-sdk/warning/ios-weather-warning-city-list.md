@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 15:24:07
- * @FilePath: /dev-site/docs/_zh/ios-sdk/warning/ios-weather-warning-city-list.md
--->
 ---
 title: 天气预警城市列表
 tag: [guide, ios, warning, list]
@@ -49,7 +43,7 @@ Swift
 Objective-C
 
 ```objc
-    WarningListParameter *parameter = [WarningListParameter instanceWithRange:RangeTypeCN];
+    WarningListParameter *parameter = [WarningListParameter instanceWithRange:RangeCN];
     [QWeatherObjc warningList:parameter completionHandler:^(WarningListResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

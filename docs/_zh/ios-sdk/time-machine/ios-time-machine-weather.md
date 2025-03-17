@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 15:16:40
- * @FilePath: /dev-site/docs/_zh/ios-sdk/time-machine/ios-time-machine-weather.md
--->
 ---
 title: 天气时光机
 tag: [guide, ios, time-machine, weather]
@@ -61,7 +55,7 @@ Objective-C
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyyMMdd"];
     NSString * date = [formatter stringFromDate:threeDaysAgo];
-    HistoricalWeatherParameter *parameter = [HistoricalWeatherParameter instanceWithLocation:@"101120501" date:date lang:@(LangTypeZH_HANS) unit:@(UnitTypeMETRIC)];
+    HistoricalWeatherParameter *parameter = [HistoricalWeatherParameter instanceWithLocation:@"101120501" date:date lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
     [QWeatherObjc historicalWeather:parameter completionHandler:^(HistoricalWeatherResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

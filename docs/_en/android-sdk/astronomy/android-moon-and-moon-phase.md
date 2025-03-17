@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 18:04:12
- * @FilePath: /dev-site/docs/_en/android-sdk/astronomy/android-moon-and-moon-phase.md
--->
 ---
 title: Moon and Moon Phase
 tag: [guide, android, astronomy, moon]
@@ -14,7 +8,7 @@ Get moonrise and moonset and hourly moon phase data for the next 60 days at any 
 
 | Interface Code| Interface    | Class      |
 | ------ | ---------- | ----------- |
-| astronomyMoon | Moonrise, moonset and moon phase data  | AstronomyMoonBaseResponse |
+| astronomyMoon | Moonrise, moonset and moon phase data  | AstronomyMoonResponse |
 
 ### Parameter
 
@@ -23,12 +17,12 @@ Get moonrise and moonset and hourly moon phase data for the next 60 days at any 
 ### Sample Code
 
 ```java
-public void astronomyMoon(AstronomyMoonParameter parameter, Callback<AstronomyMoonBaseResponse> callback);                                
+public void astronomyMoon(AstronomyMoonParameter parameter, Callback<AstronomyMoonResponse> callback);                                
 ```
 
 ### Properties
 
-Properties of AstronomyMoonBaseResponse
+Properties of AstronomyMoonResponse
 
 | Property | Description | Example |
 | -------------------- | -------------------------- | ------------------------- |

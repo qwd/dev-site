@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 14:28:56
- * @FilePath: /dev-site/docs/_en/android-sdk/tropical-cyclone/android-storm-forecast.md
--->
 ---
 title: Storm Forecast
 tag: [guide, android, storm, forecast]
@@ -17,7 +11,7 @@ Storm Forecast provides tropical cyclones information for a specific tropical cy
 
 | Interface Code| Interface          | Class  |
 | -------- | ---------------- | ------- |
-| tropicalStormForecast | Storm forecast data  | StormForecastBaseResponse |
+| tropicalStormForecast | Storm forecast data  | StormForecastResponse |
 
 ### Parameter
 
@@ -26,12 +20,12 @@ Storm Forecast provides tropical cyclones information for a specific tropical cy
 ### Sample Code
 
 ```java
-public void tropicalStormForecast(StormParameter parameter, Callback<StormForecastBaseResponse> callback)
+public void tropicalStormForecast(StormParameter parameter, Callback<StormForecastResponse> callback)
 ```
 
 ### Properties
 
-Properties of StormForecastBaseResponse
+Properties of StormForecastResponse
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |

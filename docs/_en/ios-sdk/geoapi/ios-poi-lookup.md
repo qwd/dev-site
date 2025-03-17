@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 16:06:36
- * @FilePath: /dev-site/docs/_en/ios-sdk/geoapi/ios-poi-lookup.md
--->
 ---
 title: POI Lookup
 tag: [guide, ios, geo, poi-lookup]
@@ -42,7 +36,7 @@ Swift
 Objective-C
 
 ```objc
-    GeoPoiLookupParameter *parameter = [GeoPoiLookupParameter  instanceWithLocation:@"116.41,39.92" type:PoiTypeSCENIC city:nil number:@(10) lang:@(LangTypeZH_HANS)];
+    GeoPoiLookupParameter *parameter = [GeoPoiLookupParameter  instanceWithLocation:@"116.41,39.92" type:PoiSCENIC city:nil number:@(10) lang:@(LangZH_HANS)];
     [QWeatherObjc geoPoiLookup: parameter completionHandler:^(GeoPoiResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

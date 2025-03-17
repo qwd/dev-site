@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 16:47:51
- * @FilePath: /dev-site/docs/_zh/android-sdk/geoapi/android-city-lookup.md
--->
 ---
 title: 城市搜索
 tag: [guide, android, geo, city-lookup]
@@ -14,7 +8,7 @@ ref: 1-sdk-android-geo-city-lookup
 
 | 接口代码| 接口说明          | 数据类  |
 | -------- | ---------------- | ------- |
-| geoCityLookUp| 城市查询  | GeoCityLookupBaseResponse |
+| geoCityLookUp| 城市查询  | GeoCityLookupResponse |
 
 ### 接口参数说明
 
@@ -23,10 +17,10 @@ ref: 1-sdk-android-geo-city-lookup
 ### 示例代码
 
 ```java
-public void geoCityLookUp(GeoCityLookupParameter parameter, Callback<GeoCityLookupBaseResponse> callback);
+public void geoCityLookUp(GeoCityLookupParameter parameter, Callback<GeoCityLookupResponse> callback);
 ```
 
-### GeoCityLookupBaseResponse 属性
+### GeoCityLookupResponse 属性
 
 | 属性            | 说明     | 示例值                   |
 | --------------- | -------- | ------------------------ |

@@ -18,7 +18,7 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 | -------- | -------- | ---- | ------ |
 | longitude | Float | true | 116.41 |
 | latitude | Float | true | 39.92 |
-| lang | LangType | false | ZH_HANS |
+| lang | Lang | false | ZH_HANS |
 
 ### Reqeust Example
 
@@ -42,7 +42,7 @@ Swift
 Objective-C
 
 ```objc
-    AirV1Parameter *parameter = [AirV1Parameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangTypeZH_HANS)];
+    AirV1Parameter *parameter = [AirV1Parameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS)];
     [QWeatherObjc airDaily:parameter completionHandler:^(AirV1DailyResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

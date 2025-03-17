@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 15:02:02
- * @FilePath: /dev-site/docs/_zh/ios-sdk/geoapi/ios-city-lookup.md
--->
 ---
 title: 城市搜索
 tag: [guide, ios, geo, city-lookup]
@@ -47,7 +41,7 @@ Swift
 Objective-C
 
 ```objc
-    GeoCityLookupParameter *parameter = [GeoCityLookupParameter instanceWithLocation:@"116.41,39.92" adm:nil range:@(RangeTypeCN) number:@(10) lang:@(LangTypeZH_HANS)];
+    GeoCityLookupParameter *parameter = [GeoCityLookupParameter instanceWithLocation:@"116.41,39.92" adm:nil range:@(RangeCN) number:@(10) lang:@(LangZH_HANS)];
     
     [QWeatherObjc geoCityLookup: parameter completionHandler:^(GeoCityLookupResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {

@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 15:39:16
- * @FilePath: /dev-site/docs/_zh/android-sdk/ocean/android-tide.md
--->
 ---
 title: 潮汐
 tag: [guide, android, ocean, tide]
@@ -14,7 +8,7 @@ ref: 1-sdk-android-tide
 
 | 接口代码| 接口说明          | 数据类  |
 | -------- | ---------------- | ------- |
-| oceanTide | 潮汐数据  | OceanTideBaseResponse |
+| oceanTide | 潮汐数据  | OceanTideResponse |
 
 ### 接口参数说明
 
@@ -23,10 +17,10 @@ ref: 1-sdk-android-tide
 ### 示例代码
 
 ```java
-public void oceanTide(OceanParameter parameter, Callback<OceanTideBaseResponse> callback);
+public void oceanTide(OceanParameter parameter, Callback<OceanTideResponse> callback);
 ```
 
-### OceanTideBaseResponse 属性
+### OceanTideResponse 属性
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |

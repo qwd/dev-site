@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 14:27:15
- * @FilePath: /dev-site/docs/_zh/android-sdk/warning/android-weather-warning-city-list.md
--->
 ---
 title: 天气预警城市列表
 tag: [guide, android, warning, list]
@@ -19,7 +13,7 @@ ref: 2-sdk-android-weather-warning-city-list
 
 | 接口代码| 接口说明                | 数据类          |
 | ---------------- | -------------- | --------------- |
-| getWarningList| 天气灾害预警集合  | WarningListBaseResponse |
+| getWarningList| 天气灾害预警集合  | WarningListResponse |
 
 ### 接口参数说明
 
@@ -28,10 +22,10 @@ ref: 2-sdk-android-weather-warning-city-list
 ### 示例代码
 
 ```java
-public void warningList(WarningListParameter parameter, Callback<WarningListBaseResponse> callback);
+public void warningList(WarningListParameter parameter, Callback<WarningListResponse> callback);
 ```
 
-### WarningListBaseResponse属性
+### WarningListResponse属性
 
 | 属性           | 说明         | 示例值                      |
 | -------------- | ------------ | --------------------------- |

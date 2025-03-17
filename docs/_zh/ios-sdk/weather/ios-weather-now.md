@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 15:42:04
- * @FilePath: /dev-site/docs/_zh/ios-sdk/weather/ios-weather-now.md
--->
 ---
 title: 实时天气
 tag: [guide, ios, weather, now]
@@ -44,7 +38,7 @@ Swift
 Objective-C
 
 ```objc
-    WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101120501" lang:@(LangTypeZH_HANS) unit:@(UnitTypeMETRIC)];
+    WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101120501" lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
     [QWeatherObjc weatherNow:parameter completionHandler:^(WeatherNowResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

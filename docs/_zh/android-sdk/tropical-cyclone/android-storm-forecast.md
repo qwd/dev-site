@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 14:26:52
- * @FilePath: /dev-site/docs/_zh/android-sdk/tropical-cyclone/android-storm-forecast.md
--->
 ---
 title: 台风预报
 tag: [guide, android, storm, forecast]
@@ -16,7 +10,7 @@ ref: 3-sdk-android-storm-forecast
 
 | 接口代码| 接口说明          | 数据类  |
 | -------- | ---------------- | ------- |
-| tropicalStormForecast| 台风预报数据  | StormForecastBaseResponse |
+| tropicalStormForecast| 台风预报数据  | StormForecastResponse |
 
 ### 接口参数说明
 
@@ -25,10 +19,10 @@ ref: 3-sdk-android-storm-forecast
 ### 示例代码
 
 ```java
-public void tropicalStormForecast(StormParameter parameter, Callback<StormForecastBaseResponse> callback)
+public void tropicalStormForecast(StormParameter parameter, Callback<StormForecastResponse> callback)
 ```
 
-### StormForecastBaseResponse属性
+### StormForecastResponse属性
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |

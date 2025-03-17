@@ -16,7 +16,7 @@ ref: res-indices
 > **注意：**当选择全部天气指数时，不能再选择其他指数。
 {:.bqwarning}
 
-| 天气指数类型           | API类型值 | iOS IndicesType  | Android IndicesType |
+| 天气指数类型           | API类型值 | iOS Indices  | Android Indices |
 | -------------------- | --------- | --------------- | ------------------- |
 | 全部天气指数           | 0         | ALL                | ALL              |
 | 运动指数              | 1         | SPT                | SPT              |
@@ -40,17 +40,17 @@ ref: res-indices
 
 Swift:
 ```swift
-let _ = IndicesType.SPT
+let _ = Indices.SPT
 ```
 
 Objective-C:
 ```swift
-IndicesType indices = IndicesTypeSPT; 
+Indices indices = IndicesSPT; 
 ```
 
 Java:
 ```java
-IndicesType indices = IndicesType.SPT; 
+Indices indices = Indices.SPT; 
 ```
 
 ## 天气指数等级 {#index-level}

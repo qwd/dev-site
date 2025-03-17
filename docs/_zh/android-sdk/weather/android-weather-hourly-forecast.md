@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 14:27:56
- * @FilePath: /dev-site/docs/_zh/android-sdk/weather/android-weather-hourly-forecast.md
--->
 ---
 title: 逐小时天气预报
 tag: [guide, android, weather, hourly]
@@ -14,9 +8,9 @@ ref: 3-sdk-android-weather-hourly-forecast
 
 | 接口代码| 接口说明                   | 数据类            |
 | ------------------- | -------------- | ----------------- |
-| weather24h | 24小时预报天气数据    | WeatherHourlyBaseResponse |
-| weather72h | 72小时预报天气数据    | WeatherHourlyBaseResponse |
-| weather168h | 168小时预报天气数据  | WeatherHourlyBaseResponse |
+| weather24h | 24小时预报天气数据    | WeatherHourlyResponse |
+| weather72h | 72小时预报天气数据    | WeatherHourlyResponse |
+| weather168h | 168小时预报天气数据  | WeatherHourlyResponse |
 
 ### 接口参数说明
 
@@ -30,21 +24,21 @@ WeatherParameter parameter = new WeatherParameter("101120501");
 /**
  * 获取24小时预报数据
  */
-public void weather24h(WeatherParameter parameter, Callback<WeatherHourlyBaseResponse> callback);
+public void weather24h(WeatherParameter parameter, Callback<WeatherHourlyResponse> callback);
 
 /**
  * 获取72小时预报数据
  */
-public void weather72h(WeatherParameter parameter, Callback<WeatherHourlyBaseResponse> callback);
+public void weather72h(WeatherParameter parameter, Callback<WeatherHourlyResponse> callback);
 
 /**
  * 获取168小时预报数据
  */
-public void weather168h(WeatherParameter parameter, Callback<WeatherHourlyBaseResponse> callback);
+public void weather168h(WeatherParameter parameter, Callback<WeatherHourlyResponse> callback);
 
 ```
 
-### WeatherHourlyBaseResponse 属性
+### WeatherHourlyResponse 属性
 
 | 属性      | 说明                       | 示例值                 |
 | --------- | -------------------------- | ---------------------- |

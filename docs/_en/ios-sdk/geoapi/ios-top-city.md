@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 16:05:22
- * @FilePath: /dev-site/docs/_en/ios-sdk/geoapi/ios-top-city.md
--->
 ---
 title: Top City
 tag: [guide, ios, geo, top-city]
@@ -33,7 +27,7 @@ Swift
    Task{
         do {
             let response = try await QWeather.instance
-                .geoCityTop(.init(range: RangeType.CN))
+                .geoCityTop(.init(range: Range.CN))
             print(response)
         } catch QWeatherError.errorResponse(let error) {
             print(error)
@@ -46,7 +40,7 @@ Swift
 Objective-C
 
 ```objc
-    GeoCityTopParameter *parameter = [GeoCityTopParameter instanceWithRange:@(RangeTypeCN) number:@(10) lang:@(LangTypeZH_HANS)];
+    GeoCityTopParameter *parameter = [GeoCityTopParameter instanceWithRange:@(RangeCN) number:@(10) lang:@(LangZH_HANS)];
     [QWeatherObjc geoCityTop:parameter completionHandler:^(GeoCityTopResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

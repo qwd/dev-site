@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 15:55:56
- * @FilePath: /dev-site/docs/_en/android-sdk/minutely/android-minutely-precipitation.md
--->
 ---
 title: Minutely Precipitation
 tag: [guide, android, minutely, precip]
@@ -16,7 +10,7 @@ Get minute-level precipitation forecast data every 5 minutes for the next 2 hour
 
 | Interface Code| Interface  | Class |
 | ---------- | ----------- | ------------ |
-| minutely | Minutely Precipitation  | MinutelyBaseResponse |
+| minutely | Minutely Precipitation  | MinutelyResponse |
 
 ### Parameter
 
@@ -25,12 +19,12 @@ Get minute-level precipitation forecast data every 5 minutes for the next 2 hour
 ### Sample Code
 
 ```java
-public void minutely(MinutelyParameter parameter, Callback<MinutelyBaseResponse> callback);
+public void minutely(MinutelyParameter parameter, Callback<MinutelyResponse> callback);
 ```
 
 ### Properties
 
-Properties of MinutelyBaseResponse
+Properties of MinutelyResponse
 
 | Property | Description | Example |
 | --------------- | -------------- | -------------- |

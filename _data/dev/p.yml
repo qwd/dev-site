@@ -81,7 +81,7 @@ idx-type:
      生活指数的类型ID，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数，多个类型用英文`,`分割。例如`type=3,5`。具体生活指数的ID和等级参考[天气指数信息](/docs/resource/indices-info/)。各项生活指数并非适用于所有城市。
 idx-type-android:
   rqd: true
-  name: IndicesType
+  name: Indices
   text: 
     en: |-
      Weather indices type, including car wash index, clothing index, fishing index, etc. You can get multiple types of weather indices at one time, add multiple types to the same array. All indices type see [Indices Info](/en/docs/resource/indices-info/).

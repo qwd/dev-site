@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 14:29:27
- * @FilePath: /dev-site/docs/_en/android-sdk/weather/android-weather-daily-forecast.md
--->
 ---
 title: Weather Daily Forecast
 tag: [guide, android, weather, daily]
@@ -14,11 +8,11 @@ Get weather daily forecasts for the next 3-30 days for cities around the world.
 
 | Interface Code| Interface  | Class |
 | ---------------- | ------------- | ---------------- |
-| weather3d| 3-days forecast weather data  | WeatherDailyBaseResponse |
-| weather7d| 7-days forecast weather data  | WeatherDailyBaseResponse |
-| weather10d| 10-days forecast weather data  | WeatherDailyBaseResponse |
-| weather15d| 15-days forecast weather data  | WeatherDailyBaseResponse |
-| weather30d| 30-days forecast weather data  | WeatherDailyBaseResponse |
+| weather3d| 3-days forecast weather data  | WeatherDailyResponse |
+| weather7d| 7-days forecast weather data  | WeatherDailyResponse |
+| weather10d| 10-days forecast weather data  | WeatherDailyResponse |
+| weather15d| 15-days forecast weather data  | WeatherDailyResponse |
+| weather30d| 30-days forecast weather data  | WeatherDailyResponse |
 
 ### Parameter
 
@@ -31,31 +25,31 @@ WeatherParameter parameter = new WeatherParameter("101120501");
 /**
  * Get 3-days forecast data
  */
-public void weather3d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
+public void weather3d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 
 /**
  * Get 7-days forecast data
  */
-public void weather7d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
+public void weather7d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 
 /**
  * Get 10-days forecast data
  */
-public void weather10d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
+public void weather10d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 
 /**
  * Get 15-days forecast data
  */
-public void weather15d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
+public void weather15d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 /**
  * Get 30-days forecast data
  */
-public void weather30d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
+public void weather30d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 ```
 
 ### Properties
 
-Properties of WeatherDailyBaseResponse
+Properties of WeatherDailyResponse
 
 | Property | Description | Example |
 | -------- | -------------------------- | --------------------- |

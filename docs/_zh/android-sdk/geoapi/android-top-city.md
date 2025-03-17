@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 17:03:55
- * @FilePath: /dev-site/docs/_zh/android-sdk/geoapi/android-top-city.md
--->
 ---
 title: 热门城市查询
 tag: [guide, android, geo, top-city]
@@ -14,7 +8,7 @@ ref: 2-sdk-android-geo-top
 
 | 接口代码| 接口说明           | 数据类  |
 | ------------ | ------------- | ------- |
-| geoCityTop | 热门城市查询  | GeoCityTopBaseResponse |
+| geoCityTop | 热门城市查询  | GeoCityTopResponse |
 
 ### 接口参数说明
 
@@ -23,10 +17,10 @@ ref: 2-sdk-android-geo-top
 ### 示例代码
 
 ```java
-public void geoCityTop(GeoCityTopParameter parameter, Callback<GeoCityTopBaseResponse> callback);
+public void geoCityTop(GeoCityTopParameter parameter, Callback<GeoCityTopResponse> callback);
 ```
 
-### GeoCityTopBaseResponse 属性
+### GeoCityTopResponse 属性
 
 | 属性            | 说明     | 示例值                   |
 | --------------- | -------- | ------------------------ |

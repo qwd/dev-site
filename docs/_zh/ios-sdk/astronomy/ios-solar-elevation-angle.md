@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 14:51:43
- * @FilePath: /dev-site/docs/_zh/ios-sdk/astronomy/ios-solar-elevation-angle.md
--->
 ---
 title: 太阳高度角
 tag: [guide, ios, astronomy, solar-elevation-angle]

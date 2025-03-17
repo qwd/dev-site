@@ -138,7 +138,7 @@ Objective-C:
   [QWeatherObjc initConfigWithHost:@"YOUR_HOST"];
   [QWeatherObjc setupToken:@"{YOUR_TOKEN}"];
 
-  WeatherParameter * parameter = [WeatherParameter makeWithLocation:@"101120501" lang:LangTypeZH_HANS unit:UnitTypeMETRIC];
+  WeatherParameter * parameter = [WeatherParameter makeWithLocation:@"101120501" lang:LangZH_HANS unit:UnitMETRIC];
     [QWeatherObjc weatherNow:parameter completionHandler:^(WeatherNowResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

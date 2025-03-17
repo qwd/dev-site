@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 15:47:18
- * @FilePath: /dev-site/docs/_en/ios-sdk/weather/ios-weather-hourly-forecast.md
--->
 ---
 title: Weather Hourly Forecast
 tag: [guide, ios, weather, hourly]
@@ -64,7 +58,7 @@ Swift
 Objective-C
 
 ```objc
-     WeatherParameter * parameter = [WeatherParameter instanceWithLocation:@"101120501" lang:@(LangTypeZH_HANS) unit:@(UnitTypeMETRIC)];
+     WeatherParameter * parameter = [WeatherParameter instanceWithLocation:@"101120501" lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
     
     void (^handler)(WeatherHourlyResponse *, NSError *) = ^(WeatherHourlyResponse *response,
         NSError *error) {

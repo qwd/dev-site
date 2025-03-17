@@ -8,9 +8,9 @@ Get hourly weather forecasts for cities around the world for the next 24-168 hou
 
 | Interface Code| Interface  | Class |
 | ------------------- | -------------- | ----------------- |
-| weather24h| 24-hour forecast weather data  | WeatherHourlyBaseResponse |
-| weather72h| 72-hour forecast weather data  | WeatherHourlyBaseResponse |
-| weather168h| 168-hour forecast weather data  | WeatherHourlyBaseResponse |
+| weather24h| 24-hour forecast weather data  | WeatherHourlyResponse |
+| weather72h| 72-hour forecast weather data  | WeatherHourlyResponse |
+| weather168h| 168-hour forecast weather data  | WeatherHourlyResponse |
 
 ### Parameter
 
@@ -24,23 +24,23 @@ WeatherParameter parameter = new WeatherParameter("101120501");
 /**
  * 24 hours forecast data
  */
-public void weather24h(WeatherParameter parameter, Callback<WeatherHourlyBaseResponse> callback);
+public void weather24h(WeatherParameter parameter, Callback<WeatherHourlyResponse> callback);
 
 /**
  * 72 hours forecast data
  */
-public void weather72h(WeatherParameter parameter, Callback<WeatherHourlyBaseResponse> callback);
+public void weather72h(WeatherParameter parameter, Callback<WeatherHourlyResponse> callback);
 
 /**
  * 168 hours forecast data
  */
-public void weather168h(WeatherParameter parameter, Callback<WeatherHourlyBaseResponse> callback);
+public void weather168h(WeatherParameter parameter, Callback<WeatherHourlyResponse> callback);
 
 ```
 
 ### Properties
 
-Properties of WeatherHourlyBaseResponse
+Properties of WeatherHourlyResponse
 
 | Property | Description | Example |
 | --------- | -------------------------- | ---------------------- |

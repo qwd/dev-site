@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 14:29:17
- * @FilePath: /dev-site/docs/_en/android-sdk/warning/android-weather-warning.md
--->
 ---
 title: Weather Warning
 tag: [guide, android, warning, now]
@@ -16,7 +10,7 @@ Get officially issued real-time severe weather warning data around the world.
 
 | Interface Code| Interface  | Class |
 | ------------ | ---------- | ----------- |
-| warningNow| Weather Warning  | WarningBaseResponse |
+| warningNow| Weather Warning  | WarningResponse |
 
 ### Parameter
 
@@ -26,12 +20,12 @@ Get officially issued real-time severe weather warning data around the world.
 
 
 ```java
-public void warningNow(WarningNowParameter parameter, Callback<WarningBaseResponse> callback);
+public void warningNow(WarningNowParameter parameter, Callback<WarningResponse> callback);
 ```
 
 ### Properties
 
-Properties of WarningBean
+Properties of WarningResponse
 
 | Property | Description | Example |
 | --------------- | -------------------------- | --------------------------- |

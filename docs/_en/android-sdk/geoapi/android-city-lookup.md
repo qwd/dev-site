@@ -8,7 +8,7 @@ With the City Lookup, you can get the basic information of the city, including t
 
 | Interface Code| Interface  | Class |
 | -------- | ---------------- | ------- |
-| geoCityLookUp | City lookup  | GeoCityLookupBaseResponse |
+| geoCityLookUp | City lookup  | GeoCityLookupResponse |
 
 ### Parameter
 
@@ -17,12 +17,12 @@ With the City Lookup, you can get the basic information of the city, including t
 ### Sample Code
 
 ```java
-public void geoCityLookUp(GeoCityLookupParameter parameter, Callback<GeoCityLookupBaseResponse> callback);
+public void geoCityLookUp(GeoCityLookupParameter parameter, Callback<GeoCityLookupResponse> callback);
 ```
 
 ### Properties
 
-Properties of GeoBean
+Properties of GeoCityLookupResponse
 
 | Property | Description | Example |
 | --------------- | -------- | ------------------------ |

@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 18:31:17
- * @FilePath: /dev-site/docs/_en/android-sdk/air/android-air-daily-forecast.md
--->
 ---
 title: Air Quality Daily Forecast
 tag: [guide, android, air, daily]
@@ -14,7 +8,7 @@ Air Quality Daily Forecast API for Chinese cities, including AQI, air quality le
 
 | Interface | Interface Code | Class |
 | ------------------- | -------- | ------------ |
-| air5d| Air quality 5-day forecast  | AirDailyBaseResponse |
+| air5d| Air quality 5-day forecast  | AirDailyResponse |
 
 ### Parameter
 
@@ -23,12 +17,12 @@ Air Quality Daily Forecast API for Chinese cities, including AQI, air quality le
 ### Sample Code
 
 ```java
-public void air5d(AirParameter parameter, Callback<AirDailyBaseResponse> callback);
+public void air5d(AirParameter parameter, Callback<AirDailyResponse> callback);
 ```
 
 ### Properties
 
-Properties of AirDailyBean
+Properties of AirDailyResponse
 
 | Property | Description | Example |
 | ----------- | -------------------------- | --------------- |

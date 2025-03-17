@@ -1,15 +1,3 @@
-<!--
- * @Date: 2025-03-14 17:20:11
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 18:57:08
- * @FilePath: /dev-site/docs/_zh/ios-sdk/air-quality/ios-air-hourly-forecast.md
--->
-<!--
- * @Date: 2025-03-14 17:20:11
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 18:51:27
- * @FilePath: /dev-site/docs/_zh/ios-sdk/air-quality/ios-air-hourly-forecast.md
--->
 ---
 title: 空气质量小时预报(new)
 tag: [guide, ios, air-v1, hourly-v1]
@@ -32,7 +20,7 @@ ref: 1-sdk-ios-air-hourly-v1
 | -------- | -------- | ---- | ------ |
 | longitude | Float | 是 | 116.41 |
 | latitude | Float | 是 | 39.92 |
-| lang | LangType | 否 | ZH_HANS |
+| lang | Lang | 否 | ZH_HANS |
 
 ### 示例代码
 
@@ -56,7 +44,7 @@ Swift
 Objective-C
 
 ```objc
-    AirV1Parameter *parameter = [AirV1Parameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangTypeZH_HANS)];
+    AirV1Parameter *parameter = [AirV1Parameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS)];
     [QWeatherObjc airHourly:parameter completionHandler:^(AirV1HourlyResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

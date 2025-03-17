@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 14:26:59
- * @FilePath: /dev-site/docs/_zh/android-sdk/tropical-cyclone/android-storm-list.md
--->
 ---
 title: 台风列表
 tag: [guide, android, storm, list]
@@ -16,7 +10,7 @@ ref: 1-sdk-android-storm-list
 
 | 接口代码| 接口说明          | 数据类  |
 | -------- | ---------------- | ------- |
-| tropicalStormList| 获取台风列表和ID  | StormListBaseResponse |
+| tropicalStormList| 获取台风列表和ID  | StormListResponse |
 
 ### 接口参数说明
 
@@ -25,10 +19,10 @@ ref: 1-sdk-android-storm-list
 ### 示例代码
 
 ```java
-public void tropicalStormList(StormListParameter parameter, Callback<StormListBaseResponse> callback);
+public void tropicalStormList(StormListParameter parameter, Callback<StormListResponse> callback);
 ```
 
-### StormListBaseResponse属性
+### StormListResponse属性
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |

@@ -47,7 +47,7 @@ ref: res-lang
 
 你可以使用查询参数`lang`设置数据的语言，以下是在API或SDK中的多语言代码。
 
-| 语言名称  | API 代码        | iOS LangType  | Android Lang | 
+| 语言名称  | API 代码        | iOS Lang  | Android Lang | 
 | ---------- | -------------|-------------- | -------- |
 | 简体中文    | zh-hans、zh   | ZH_HANS      | ZH_HANS  |
 | 繁体中文    | zh-hant       | ZH_HANT      | ZH_HANT  |
@@ -86,15 +86,15 @@ ref: res-lang
 
 Swift:
 ```swift
-let _ = LangType.ZH_HANS
+let _ = Lang.ZH_HANS
 ```
 
 Objective-C:
 ```swift
-LangType lang = LangTypeZH_HANS; 
+Lang lang = LangZH_HANS; 
 ```
 
 Java:
 ```java
-LangType lang = LangType.ZH_HANS; 
+Lang lang = Lang.ZH_HANS; 
 ```

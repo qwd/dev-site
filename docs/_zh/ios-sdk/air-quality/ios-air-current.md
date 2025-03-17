@@ -26,7 +26,7 @@ ref: 1-sdk-ios-air-now-v1
 | -------- | -------- | ---- | ------ |
 | longitude | Float | 是 | 116.41 |
 | latitude | Float | 是 | 39.92 |
-| lang | LangType | 否 | ZH_HANS |
+| lang | Lang | 否 | ZH_HANS |
 
 
 ### 示例代码
@@ -51,7 +51,7 @@ Swift
 Objective-C
 
 ```objc
-    AirV1Parameter *parameter = [AirV1Parameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangTypeZH_HANS)];
+    AirV1Parameter *parameter = [AirV1Parameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS)];
     [QWeatherObjc airCurrent:parameter completionHandler:^(AirV1NowResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

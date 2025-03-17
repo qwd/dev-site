@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 16:33:41
- * @FilePath: /dev-site/docs/_en/android-sdk/geoapi/android-poi-lookup.md
--->
 ---
 title: POI Lookup
 tag: [guide, android, geo, poi-lookup]
@@ -14,7 +8,7 @@ POI Lookup API provides basic information of POI(scenic spot, tide stations, cur
 
 | Interface Code| Interface  | Class |
 | ----------- | --------------- | ---------- |
-| geoPoiLookup| POI lookup  | GeoPoiBaseResponse |
+| geoPoiLookup| POI lookup  | GeoPoiResponse |
 
 ### Parameter
 
@@ -23,12 +17,12 @@ POI Lookup API provides basic information of POI(scenic spot, tide stations, cur
 ### Sample Code
 
 ```java
-public void geoPoiLookup(GeoPoiLookupParameter parameter, Callback<GeoPoiBaseResponse> callback);
+public void geoPoiLookup(GeoPoiLookupParameter parameter, Callback<GeoPoiResponse> callback);
 ```
 
 ###  Properties
 
-Properties of GeoPoiBaseResponse
+Properties of GeoPoiResponse
 
 | Property | Description | Example |
 | ---------- | -------- | --------------- |

@@ -8,7 +8,7 @@ POI Range Android SDK provides the ability to query all POI information within a
 
 | Interface Code| Interface  | Class |
 | ----------- | -------------- | ---------- |
-| geoPoiRange| POI Range  | GeoPoiBaseResponse |
+| geoPoiRange| POI Range  | GeoPoiResponse |
 
 ### Parameter
 
@@ -17,12 +17,12 @@ POI Range Android SDK provides the ability to query all POI information within a
 ### Sample Code
 
 ```java
-public void geoPoiRange(GeoPoiRangeParameter parameter, Callback<GeoPoiBaseResponse> callback);
+public void geoPoiRange(GeoPoiRangeParameter parameter, Callback<GeoPoiResponse> callback);
 ```
 
 ### Properties
 
-Properties of GeoPoiBaseResponse
+Properties of GeoPoiResponse
 
 | Property | Description | Example |
 | ---------- | -------- | --------------- |

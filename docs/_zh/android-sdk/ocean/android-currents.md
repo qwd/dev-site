@@ -8,7 +8,7 @@ ref: 2-sdk-android-currents
 
 | 接口代码| 接口说明          | 数据类  |
 | -------- | ---------------- | ------- |
-| oceanCurrents | 潮流数据  | OceanCurrentsBaseResponse |
+| oceanCurrents | 潮流数据  | OceanCurrentsResponse |
 
 ### 接口参数说明
 
@@ -17,10 +17,10 @@ ref: 2-sdk-android-currents
 ### 示例代码
 
 ```java
- public void oceanCurrents(OceanParameter parameter, Callback<OceanCurrentsBaseResponse> callback);
+ public void oceanCurrents(OceanParameter parameter, Callback<OceanCurrentsResponse> callback);
 ```
 
-### OceanCurrentsBaseResponse 属性
+### OceanCurrentsResponse 属性
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |

@@ -14,7 +14,7 @@ Storm Track provides tropical cyclones real-time information, including real-tim
 
 | Interface Code| Interface          | Class  |
 | -------- | ---------------- | ------- |
-| tropicalStormTrack| Real-time storm data and storm track data  | StormTrackBaseResponse |
+| tropicalStormTrack| Real-time storm data and storm track data  | StormTrackResponse |
 
 ### Parameter
 
@@ -23,12 +23,12 @@ Storm Track provides tropical cyclones real-time information, including real-tim
 ### Sample Code
 
 ```java
-public void tropicalStormTrack(StormParameter parameter, Callback<StormTrackBaseResponse> callback);
+public void tropicalStormTrack(StormParameter parameter, Callback<StormTrackResponse> callback);
 ```
 
 ### Properties
 
-Properties of StormTrackBaseResponse
+Properties of StormTrackResponse
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |

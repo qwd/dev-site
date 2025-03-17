@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 15:23:31
- * @FilePath: /dev-site/docs/_zh/ios-sdk/tropical-cyclone/ios-storm-track.md
--->
 ---
 title: 台风实况和路径
 tag: [guide, ios, storm, track]

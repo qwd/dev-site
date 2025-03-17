@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 16:23:29
- * @FilePath: /dev-site/docs/_en/android-sdk/geoapi/android-top-city.md
--->
 ---
 title: Top City
 tag: [guide, android, geo, top-city]
@@ -17,7 +11,7 @@ Get a list of popular cities around the world.
 
 | Interface Code| Interface  | Class |
 | ------------ | ------------- | ------- |
-| geoCityTop| Top city  | GeoCityTopBaseResponse |
+| geoCityTop| Top city  | GeoCityTopResponse |
 
 ### Parameter
 
@@ -26,12 +20,12 @@ Get a list of popular cities around the world.
 ### Sample Code
 
 ```java
-public void geoCityTop(GeoCityTopParameter parameter, Callback<GeoCityTopBaseResponse> callback);
+public void geoCityTop(GeoCityTopParameter parameter, Callback<GeoCityTopResponse> callback);
 ```
 
 ### Properties
 
-Properties of GeoCityTopBaseResponse
+Properties of GeoCityTopResponse
 
 | Property | Description | Example |
 | --------------- | -------- | ------------------------ |

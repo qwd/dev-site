@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 15:22:51
- * @FilePath: /dev-site/docs/_zh/ios-sdk/tropical-cyclone/ios-storm-list.md
--->
 ---
 title: 台风列表
 tag: [guide, ios, storm, list]
@@ -47,7 +41,7 @@ Swift
 Objective-C
 
 ```objc
-    StormListParameter *parameter = [StormListParameter instanceWithBasin:BasinTypeNP year:2024];
+    StormListParameter *parameter = [StormListParameter instanceWithBasin:BasinNP year:2024];
     [QWeatherObjc tropicalStormList:parameter completionHandler:^(StormListResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

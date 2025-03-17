@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 16:14:27
- * @FilePath: /dev-site/docs/_en/ios-sdk/astronomy/ios-sunrise-sunset.md
--->
 ---
 title: Sunrise and Sunset
 tag: [guide, ios, astronomy, sun]

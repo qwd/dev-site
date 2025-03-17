@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 15:07:12
- * @FilePath: /dev-site/docs/_zh/ios-sdk/geoapi/ios-poi-range.md
--->
 ---
 title: POI范围搜索
 tag: [guide, ios, geo, poi-range]
@@ -45,10 +39,10 @@ Objective-C
 
 ```objc
     GeoPoiRangeParameter * parameter = [GeoPoiRangeParameter instanceWithLocation:@"116.41,39.92"
-                                                                             type:PoiTypeSCENIC
+                                                                             type:PoiSCENIC
                                                                            radius:@(50)
                                                                            number:@(10)
-                                                                             lang:@(LangTypeZH_HANS)];
+                                                                             lang:@(LangZH_HANS)];
     [QWeatherObjc geoPoiRange:parameter completionHandler:^(GeoPoiResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

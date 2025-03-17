@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 15:52:56
- * @FilePath: /dev-site/docs/_en/ios-sdk/ocean/ios-currents.md
--->
 ---
 title: Currents
 tag: [guide, ios, ocean, currents]

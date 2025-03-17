@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 14:27:38
- * @FilePath: /dev-site/docs/_zh/android-sdk/weather/android-weather-daily-forecast.md
--->
 ---
 title: 每日天气预报
 tag: [guide, android, weather, daily]
@@ -14,11 +8,11 @@ ref: 2-sdk-android-weather-daily-forecast
 
 | 接口代码| 接口说明               | 数据类           |
 | ---------------- | ------------- | ---------------- |
-| weather3d| 3天预报天气数据    | WeatherDailyBaseResponse |
-| weather7d| 7天预报天气数据    | WeatherDailyBaseResponse |
-| weather10d| 10天预报天气数据  | WeatherDailyBaseResponse |
-| weather15d| 15天预报天气数据  | WeatherDailyBaseResponse |
-| weather30d| 30天预报天气数据  | WeatherDailyBaseResponse |
+| weather3d| 3天预报天气数据    | WeatherDailyResponse |
+| weather7d| 7天预报天气数据    | WeatherDailyResponse |
+| weather10d| 10天预报天气数据  | WeatherDailyResponse |
+| weather15d| 15天预报天气数据  | WeatherDailyResponse |
+| weather30d| 30天预报天气数据  | WeatherDailyResponse |
 
 ### 接口参数说明
 
@@ -31,29 +25,29 @@ WeatherParameter parameter = new WeatherParameter("101120501");
 /**
  * 获取3天预报数据
  */
-public void weather3d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
+public void weather3d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 
 /**
  * 获取7天预报数据
  */
-public void weather7d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
+public void weather7d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 
 /**
  * 获取10天预报数据
  */
-public void weather10d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
+public void weather10d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 
 /**
  * 获取15天预报数据
  */
-public void weather15d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
+public void weather15d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 /**
  * 获取30天预报数据
  */
-public void weather30d(WeatherParameter parameter, Callback<WeatherDailyBaseResponse> callback);
+public void weather30d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 ```
 
-### WeatherDailyBaseResponse 属性
+### WeatherDailyResponse 属性
 
 | 属性     | 说明                       | 示例值                |
 | -------- | -------------------------- | --------------------- |

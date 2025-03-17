@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 16:09:35
- * @FilePath: /dev-site/docs/_zh/android-sdk/indices/android-indices-forecast.md
--->
 ---
 title: 天气指数预报
 tag: [guide, android, indices, forecast]
@@ -17,8 +11,8 @@ ref: 1-sdk-android-indices-forecast
 
 | 接口代码| 接口说明         | 数据类      |
 | ----------- | ------------ | ----------- |
-| indices1d| 1天生活指数  | IndicesBaseResponse |
-| indices3d| 3天生活指数  | IndicesBaseResponse |
+| indices1d| 1天生活指数  | IndicesDailyResponse |
+| indices3d| 3天生活指数  | IndicesDailyResponse |
 
 ### 请求参数
 
@@ -32,22 +26,22 @@ ref: 1-sdk-android-indices-forecast
 /**
  * 获取1天生活指数数据
  */
-public void indices1d(IndicesParameter parameter, Callback<IndicesBaseResponse> callback);
+public void indices1d(IndicesParameter parameter, Callback<IndicesDailyResponse> callback);
 
 /**
  * 获取3天生活指数数据
  */
-public void indices3d(IndicesParameter parameter, Callback<IndicesBaseResponse> callback);
+public void indices3d(IndicesParameter parameter, Callback<IndicesDailyResponse> callback);
 ```
 
-### IndicesBaseResponse属性
+### IndicesDailyResponse 属性
 
 | 属性         | 说明                       | 示例值                |
 | ------------ | -------------------------- | --------------------- |
 | getCode      | 参考[状态码](/docs/resource/status-code/)                    | 200 |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
 | getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/indices/beijing-101010100.html |
-| getDaily | 生活指数逐天预报数据       | List&lt;Indices&gt; |
+| getDaily | 生活指数逐天预报数据       | List&lt;IndicesDaily&gt; |
 | getRefer     | Refer 数据来源以及数据授权 | Refer                 |
 
 **Refer**
@@ -57,7 +51,7 @@ public void indices3d(IndicesParameter parameter, Callback<IndicesBaseResponse> 
 | getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
 | getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License |
 
-**Indices 当天生活指数**
+**IndicesDaily 当天生活指数**
 
 | 属性        | 说明         |
 | ----------- | ----------------------- |

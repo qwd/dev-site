@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 14:28:08
- * @FilePath: /dev-site/docs/_zh/android-sdk/weather/android-weather-now.md
--->
 ---
 title: 实时天气
 tag: [guide, android, weather, now]
@@ -14,7 +8,7 @@ ref: 1-sdk-android-weather-now
 
 | 接口代码| 接口说明           | 数据类         |
 | ------------ | ------------- | -------------- |
-| weatherNow| 实况天气数据  | WeatherNowBaseResponse |
+| weatherNow| 实况天气数据  | WeatherNowResponse |
 
 ### 接口参数说明
 
@@ -23,10 +17,10 @@ ref: 1-sdk-android-weather-now
 ### 示例代码
 
 ```java
-public void weatherNow(WeatherParameter parameter, Callback<WeatherNowBaseResponse> callback);
+public void weatherNow(WeatherParameter parameter, Callback<WeatherNowResponse> callback);
 ```
 
-### WeatherNowBaseResponse属性
+### WeatherNowResponse属性
 
 | 属性     | 说明                       | 示例值      |
 | -------- | -------------------------- | ----------- |

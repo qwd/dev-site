@@ -11,8 +11,8 @@ Get weather indices forecast data for cities in China and around the world.
 
 | Interface Code| Interface  | Class |
 | ----------- | ------------ | ----------- |
-| indices1d| 1 day Weather Indices  | IndicesBaseResponse |
-| indices3d| 3 days Weather Indices  | IndicesBaseResponse |
+| indices1d| 1 day Weather Indices  | IndicesDailyResponse |
+| indices3d| 3 days Weather Indices  | IndicesDailyResponse |
 
 ### Parameters
 
@@ -26,25 +26,25 @@ If no optional parameters are set, the default value will be used.
 /**
  * Get 2-day weather indices data
  */
-public void indices1d(IndicesParameter parameter, Callback<IndicesBaseResponse> callback);
+public void indices1d(IndicesParameter parameter, Callback<IndicesDailyResponse> callback);
 
 /**
  * Get 3-day weather indices data
  */
-public void indices3d(IndicesParameter parameter, Callback<IndicesBaseResponse> callback);
+public void indices3d(IndicesParameter parameter, Callback<IndicesDailyResponse> callback);
 ```
 
 
 ### Properties
 
-Properties of IndicesBean
+Properties of IndicesDailyResponse
 
 | Property | Description | Example |
 | ------------ | -------------------------- | --------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
 | getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/indices/beijing-101010100.html |
-| getDaily | Daily weather indices | List&lt;Indices&gt; |
+| getDaily | Daily weather indices | List&lt;IndicesDaily&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 
 **Refer**
@@ -55,7 +55,7 @@ Properties of IndicesBean
 | getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
 
-**Indices Daily Life Index**
+**IndicesDaily Daily Life Index**
 
 | Properties | Description |
 | ----------- | -----------|

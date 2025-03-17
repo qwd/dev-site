@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 17:49:44
- * @FilePath: /dev-site/docs/_zh/android-sdk/astronomy/android-solar-elevation-angle.md
--->
 ---
 title: 太阳高度角
 tag: [guide, android, astronomy, solar-elevation-angle]

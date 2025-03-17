@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 15:51:52
- * @FilePath: /dev-site/docs/_en/ios-sdk/time-machine/ios-time-machine-air.md
--->
 ---
 title: Time Machine for Air Quality
 tag: [guide, ios, time-machine, air]
@@ -56,7 +50,7 @@ Objective-C
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyyMMdd"];
     NSString * date = [formatter stringFromDate:threeDaysAgo];
-    HistoricalAirParameter *parameter = [HistoricalAirParameter instanceWithLocation:@"101120501" date:date lang:@(LangTypeZH_HANS)];
+    HistoricalAirParameter *parameter = [HistoricalAirParameter instanceWithLocation:@"101120501" date:date lang:@(LangZH_HANS)];
     [QWeatherObjc historicalAir:parameter completionHandler:^(HistoricalAirResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

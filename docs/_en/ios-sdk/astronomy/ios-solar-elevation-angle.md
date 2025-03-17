@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 16:14:52
- * @FilePath: /dev-site/docs/_en/ios-sdk/astronomy/ios-solar-elevation-angle.md
--->
 ---
 title: Solar Elevation Angle
 tag: [guide, ios, astronomy, solar-elevation-angle]

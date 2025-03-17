@@ -46,7 +46,7 @@ Most of the data supports multi-language and official languages, the following t
 
 You can specify the language of the data using the query parameter `lang`, here is the multi-language code in the API or SDK.
 
-| Language name | API code | iOS LangType |Android Lang  |
+| Language name | API code | iOS Lang |Android Lang  |
 | --------------| -------------| ------------- | ----------- |
 | Simplified Chinese | zh-hans, zh |ZH |ZH_HANS |
 | Traditional Chinese | zh-hant |ZHHANT |ZH_HANT |
@@ -84,15 +84,15 @@ You can specify the language of the data using the query parameter `lang`, here 
 
 Swift:
 ```swift
-let _ = LangType.ZH_HANS
+let _ = Lang.ZH_HANS
 ```
 
 Objective-C:
 ```swift
-LangType lang = LangTypeZH_HANS; 
+Lang lang = LangZH_HANS; 
 ```
 
 Java:
 ```java
-LangType lang = LangType.ZH_HANS; 
+Lang lang = Lang.ZH_HANS; 
 ```

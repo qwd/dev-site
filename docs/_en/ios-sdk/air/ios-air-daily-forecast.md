@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: bolepichi
- * @LastEditTime: 2025-03-14 16:17:41
- * @FilePath: /dev-site/docs/_en/ios-sdk/air/ios-air-daily-forecast.md
--->
 ---
 title: Air Quality Daily Forecast
 tag: [guide, ios, air, daily]
@@ -45,7 +39,7 @@ Swift
 Objective-C
 
 ```objc
-    AirParameter * parameter = [AirParameter instanceWithLocation:@"101120501" lang:@(LangTypeZH_HANS)];
+    AirParameter * parameter = [AirParameter instanceWithLocation:@"101120501" lang:@(LangZH_HANS)];
     [QWeatherObjc air5d:parameter completionHandler:^(AirDailyResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

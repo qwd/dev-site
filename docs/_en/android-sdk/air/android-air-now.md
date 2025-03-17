@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 18:33:03
- * @FilePath: /dev-site/docs/_en/android-sdk/air/android-air-now.md
--->
 ---
 title: Real-time Air Quality
 tag: [guide, android, air, now]
@@ -14,7 +8,7 @@ Real-time air quality for Chinese cities and 1,700 monitoring stations, includin
 
 | Interface Code| Interface  | Class |
 | ---------------- | --------- | ---------- |
-| airNow| Real-time Air Quality  | AirNowBaseResponse |
+| airNow| Real-time Air Quality  | AirNowResponse |
 
 ### Parameter
 
@@ -23,12 +17,12 @@ Real-time air quality for Chinese cities and 1,700 monitoring stations, includin
 ### Sample Code
 
 ```java
-public void airNow(AirParameter parameter, Callback<AirNowBaseResponse> callback);
+public void airNow(AirParameter parameter, Callback<AirNowResponse> callback);
 ```
 
 ### Properties
 
-Properties of AirNowBaseResponse
+Properties of AirNowResponse
 
 | Property | Description | Example |
 | -------------------- | -------------------------- |------------------- |

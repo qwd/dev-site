@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 17:52:45
- * @FilePath: /dev-site/docs/_en/android-sdk/astronomy/android-sunrise-sunset.md
--->
 ---
 title: Sunrise and Sunset
 tag: [guide, android, astronomy, sun]
@@ -14,7 +8,7 @@ Get the sunrise and sunset times for any location around the world for the next 
 
 | Interface Code| Interface  | Class |
 | -------------- | ---------- | ----------- |
-| astronomySun | Sunrise and sunset data  | AstronomySunBaseResponse |
+| astronomySun | Sunrise and sunset data  | AstronomySunResponse |
 
 ### Parameter
 
@@ -23,12 +17,12 @@ Get the sunrise and sunset times for any location around the world for the next 
 ### Sample Code
 
 ```java
-public void astronomySun(AstronomySunParameter parameter, Callback<AstronomySunBaseResponse> callback);
+public void astronomySun(AstronomySunParameter parameter, Callback<AstronomySunResponse> callback);
 ```
 
 ### Properties
 
-Properties of AstronomySunBaseResponse
+Properties of AstronomySunResponse
 
 | Property | Description | Example |
 | -------------------- | -------------------------- |- ------------------------ |

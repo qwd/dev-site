@@ -1,9 +1,3 @@
-<!--
- * @Date: 2025-03-06 10:02:06
- * @LastEditors: 韩笑白
- * @LastEditTime: 2025-03-13 15:05:43
- * @FilePath: /dev-site/docs/_en/android-sdk/ocean/android-tide.md
--->
 ---
 title: Tide
 tag: [guide, android, ocean, tide]
@@ -15,7 +9,7 @@ Global tidal data for the next 10 days, including tide table and hourly tide for
 
 | Interface Code | Interface        | Class   |
 | -------------- | ---------------- | ------- |
-| oceanTide | Tide data  | OceanTideBaseResponse |
+| oceanTide | Tide data  | OceanTideResponse |
 
 ### Parameter
 
@@ -24,12 +18,12 @@ Global tidal data for the next 10 days, including tide table and hourly tide for
 ### Sample Code
 
 ```java
-public void oceanTide(OceanParameter parameter, Callback<OceanTideBaseResponse> callback)
+public void oceanTide(OceanParameter parameter, Callback<OceanTideResponse> callback)
 ```
 
 ### Properties
 
-Properties of OceanTideBaseResponse
+Properties of OceanTideResponse
 
 | Property        | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
