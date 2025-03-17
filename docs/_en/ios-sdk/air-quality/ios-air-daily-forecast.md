@@ -10,14 +10,14 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 
 | Interface Code | Interface                         | Class       |
 | --------------- | ---------------------------- | ------------ |
-| airDaily: | Air quality daily forecast     | AirV1DailyResponse |
+| airDaily | Air quality daily forecast (new)     | AirV1DailyResponse |
 
 ### Parameters of AirV1Parameter
 
 | Name   | Type | Required | Example |
 | -------- | -------- | ---- | ------ |
-| longitude | Float | true | 116.41 |
-| latitude | Float | true | 39.92 |
+| longitude | Double | true | 116.41 |
+| latitude | Double | true | 39.92 |
 | lang | Lang | false | ZH_HANS |
 
 ### Reqeust Example

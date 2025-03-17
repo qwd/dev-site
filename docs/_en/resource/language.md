@@ -82,13 +82,13 @@ You can specify the language of the data using the query parameter `lang`, here 
 
 ## Sample Code：
 
-Swift:
+Swift
 ```swift
 let _ = Lang.ZH_HANS
 ```
 
-Objective-C:
-```swift
+Objective-C
+```objc
 Lang lang = LangZH_HANS; 
 ```
 

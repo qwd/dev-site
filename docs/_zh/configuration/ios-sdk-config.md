@@ -138,8 +138,8 @@ Swift
 
 ```        
 
-Objective-C:
-```swift
+Objective-C
+```objc
   #import <QWeatherKit/QWeatherKit-Swift.h>
 
   ...

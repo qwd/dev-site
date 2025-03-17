@@ -43,8 +43,8 @@ Swift:
 let _ = Indices.SPT
 ```
 
-Objective-C:
-```swift
+Objective-C
+```objc
 Indices indices = IndicesSPT; 
 ```
 

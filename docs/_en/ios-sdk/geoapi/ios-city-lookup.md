@@ -37,10 +37,10 @@ Objective-C
 
 ```objc
     GeoCityLookupParameter *parameter = [GeoCityLookupParameter instanceWithLocation:@"116.41,39.92"
-                                                                                 adm:nil
-                                                                               range:@(RangeCN)
-                                                                              number:@(10)
-                                                                                lang:@(LangZH_HANS)];
+                                            adm:nil
+                                        range:@(RangeCN)
+                                        number:@(10)
+                                        lang:@(LangZH_HANS)];
     [QWeatherObjc geoCityLookup: parameter completionHandler:^(GeoCityLookupResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

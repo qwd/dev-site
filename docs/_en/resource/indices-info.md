@@ -38,13 +38,13 @@ Weather indices are not available for all countries or regions. Currently, for C
 
 ## Sample Code：
 
-Swift:
+Swift
 ```swift
 let _ = Indices.SPT
 ```
 
-Objective-C:
-```swift
+Objective-C
+```objc
 Indices indices = IndicesSPT; 
 ```
 

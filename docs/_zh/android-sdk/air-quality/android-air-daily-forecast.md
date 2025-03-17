@@ -1,7 +1,7 @@
 ---
-title: 空气质量每日预报(new)
-tag: [guide, ios, air-v1, daily-v1]
-ref: 1-sdk-ios-air-daily-v1
+title: Air Quality Daily Forecast (new)
+tag: [guide, android, air-v1, daily-v1]
+ref: 1-sdk-android-air-daily-v1
 ---
 
 空气质量每日预报API提供未来3天的空气质量（AQI）预报、污染物浓度值和健康建议。
@@ -24,35 +24,8 @@ ref: 1-sdk-ios-air-daily-v1
 
 ### 示例代码
 
-Swift
-
-```swift
-   Task {
-        do {
-            let parameter = AirV1Parameter(longitude: 116.41, latitude: 39.92)
-            let response = try await QWeather.instance
-                .airDaily(parameter)
-            print(response)
-        } catch QWeatherError.errorResponse(let error) {
-            print(error)
-        } catch {
-            print(error)
-        }
-   }
-```
-
-Objective-C
-
-```objc
-    AirV1Parameter *parameter = [AirV1Parameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS)];
-    [QWeatherObjc airDaily:parameter completionHandler:^(AirV1DailyResponse * _Nullable response, NSError * _Nullable error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
+```java
+public void airDaily(AirV1Parameter parameter, Callback<AirV1DailyResponse> callback);
 ```
 
 ### 返回数据

@@ -10,15 +10,15 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 
 | Interface code | Interface                 | Class       |
 | --------------- | ---------------------------- | ------------ |
-| airHourly: | Air quality hourly forecast     | AirV1NowResponse |
+| airHourly | Air quality hourly forecast (new)    | AirV1HourlyResponse |
 
 ### Parameters of AirV1Parameter
 
 | Name   | Type | Required | Exemple |
 | -------- | -------- | ---- | ------ |
-| longitude | Float | 是 | 116.41 |
-| latitude | Float | 是 | 39.92 |
-| lang | Lang | 否 | ZH_HANS |
+| longitude | Double | true | 116.41 |
+| latitude | Double | true | 39.92 |
+| lang | Lang | false | ZH_HANS |
 
 ### Requeset Example
 

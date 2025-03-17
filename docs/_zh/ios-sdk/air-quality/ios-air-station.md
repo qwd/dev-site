@@ -9,6 +9,10 @@ ref: 1-sdk-ios-air-station-v1
 > **警告：**监测站的观测值仅供参考，可能由于故障、移除、维护或当地法律法规等各种原因导致数据延迟或缺失，我们无法确保该数据的可用性。
 {:.bqdanger}
 
+| 接口代码 | 接口         | 数据类型       |
+| --------------- | ---------------- | ------------ |
+| airStation | 监测站数据(new)  | AirV1StationResponse |
+
 
 ## AirV1StationParameter 请求参数
 

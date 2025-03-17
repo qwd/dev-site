@@ -10,7 +10,7 @@ ref: 1-sdk-ios-air-hourly-v1
 
 | 接口代码 | 接口                         | 数据类       |
 | --------------- | ---------------------------- | ------------ |
-| airHourly: | 空气质量小时预报    | AirV1HourlyResponse |
+| airHourly | 空气质量小时预报(new)    | AirV1HourlyResponse |
 
 ### 请求参数 AirV1Parameter
 
@@ -18,8 +18,8 @@ ref: 1-sdk-ios-air-hourly-v1
 
 | 参数名   | 参数类型 | 必选 | 示例值 |
 | -------- | -------- | ---- | ------ |
-| longitude | Float | 是 | 116.41 |
-| latitude | Float | 是 | 39.92 |
+| longitude | Double | 是 | 116.41 |
+| latitude | Double | 是 | 39.92 |
 | lang | Lang | 否 | ZH_HANS |
 
 ### 示例代码

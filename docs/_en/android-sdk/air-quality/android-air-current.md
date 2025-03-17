@@ -1,7 +1,7 @@
 ---
 title: Current Air Quality (new)
-tag: [guide, ios, air-v1, now-v1]
-ref: 1-sdk-ios-air-now-v1
+tag: [guide, android, air-v1, now-v1]
+ref: 1-sdk-android-air-now-v1
 ---
 
 The current air quality (AQI) API provides real-time air quality data for specified locations, data resolution is 1x1 km.
@@ -22,41 +22,14 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 
 | Name   | Type | Required | Exemple |
 | -------- | -------- | ---- | ------ |
-| longitude | Double | true | 116.41 |
-| latitude | Double | true | 39.92 |
+| longitude | double | true | 116.41 |
+| latitude | double | true | 39.92 |
 | lang | Lang | false | ZH_HANS |
 
 ### Request Example
 
-Swift
-
-```swift
-   Task {
-        do {
-            let parameter = AirV1Parameter(longitude: 116.41, latitude: 39.92)
-            let response = try await QWeather.instance
-                .airCurrent(parameter)
-            print(response)
-        } catch QWeatherError.errorResponse(let error) {
-            print(error)
-        } catch {
-            print(error)
-        }
-   }
-```
-
-Objective-C
-
-```objc
-    AirV1Parameter *parameter = [AirV1Parameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS)];
-    [QWeatherObjc airCurrent:parameter completionHandler:^(AirV1CurrentResponse * _Nullable response, NSError * _Nullable error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
+```Java
+public void airCurrent(AirV1Parameter parameter, Callback<AirV1CurrentResponse> callback);
 ```
 
 ### Response

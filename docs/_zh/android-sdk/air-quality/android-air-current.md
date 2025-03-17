@@ -1,7 +1,7 @@
 ---
-title: 实时空气质量(new)
-tag: [guide, ios, air-v1, now-v1]
-ref: 1-sdk-ios-air-now-v1
+title: Current Air Quality (new)
+tag: [guide, android, air-v1, now-v1]
+ref: 1-sdk-android-air-now-v1
 ---
 
 实时空气质量API提供指定地点的实时空气质量数据，精度为1x1公里。
@@ -24,42 +24,15 @@ ref: 1-sdk-ios-air-now-v1
 
 | 参数名   | 参数类型 | 必选 | 示例值 |
 | -------- | -------- | ---- | ------ |
-| longitude | Double | 是 | 116.41 |
-| latitude | Double | 是 | 39.92 |
+| longitude | double | 是 | 116.41 |
+| latitude | double | 是 | 39.92 |
 | lang | Lang | 否 | ZH_HANS |
 
 
-### 示例代码
+### 代码示例
 
-Swift
-
-```swift
-   Task {
-        do {
-            let parameter = AirV1Parameter(longitude: 116.41, latitude: 39.92)
-            let response = try await QWeather.instance
-                .airCurrent(parameter)
-            print(response)
-        } catch QWeatherError.errorResponse(let error) {
-            print(error)
-        } catch {
-            print(error)
-        }
-   }
-```
-
-Objective-C
-
-```objc
-    AirV1Parameter *parameter = [AirV1Parameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS)];
-    [QWeatherObjc airCurrent:parameter completionHandler:^(AirV1CurrentResponse * _Nullable response, NSError * _Nullable error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
+```Java
+public void airCurrent(AirV1Parameter parameter, Callback<AirV1CurrentResponse> callback);
 ```
 
 ### 返回数据
