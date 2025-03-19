@@ -6,12 +6,13 @@ ref: 1-sdk-android-tide
 
 Global tidal data for the next 10 days, including tide table and hourly tide forecast data.
 
-
-| Interface Code | Interface        | Class   |
+| Interface code | Interface        | Class   |
 | -------------- | ---------------- | ------- |
 | oceanTide | Tide data  | OceanTideResponse |
 
-### Parameter
+### Request Parameters
+
+**OceanParameter**
 
 {% include params.html p="location-p2 date10" %}
 
@@ -21,9 +22,9 @@ Global tidal data for the next 10 days, including tide table and hourly tide for
 public void oceanTide(OceanParameter parameter, Callback<OceanTideResponse> callback)
 ```
 
-### Properties
+### Response
 
-Properties of OceanTideResponse
+**OceanTideResponse**
 
 | Property        | Description     | Example                    |
 | --------------- | -------- | ---------------------- |

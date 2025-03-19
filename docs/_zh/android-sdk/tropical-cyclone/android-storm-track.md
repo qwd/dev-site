@@ -6,14 +6,13 @@ ref: 2-sdk-android-storm-track
 
 台风实况和路径提供全球主要海洋流域的台风实时位置、等级、气压、风力、速度以及活跃台风的轨迹路径。
 
-> 目前仅支持中国沿海地区，即`basin=NP`
-
-
-| 接口代码| 接口说明          | 数据类  |
+| 接口代码| 接口          | 数据类  |
 | -------- | ---------------- | ------- |
-| tropicalStormTrack | 台风实况和路径数据  | StormTrackResponse |
+| tropicalStormTrack | 台风实况和路径  | StormTrackResponse |
 
-### 接口参数说明
+### 请求参数
+
+**StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
@@ -23,7 +22,9 @@ ref: 2-sdk-android-storm-track
 public void tropicalStormTrack(StormParameter parameter, Callback<StormTrackResponse> callback);
 ```
 
-### StormTrackResponse属性
+### 返回数据
+
+**StormTrackResponse**
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |

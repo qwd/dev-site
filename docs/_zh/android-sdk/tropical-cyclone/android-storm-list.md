@@ -8,11 +8,13 @@ ref: 1-sdk-android-storm-list
 
 > 目前仅支持中国沿海地区，即`basin=NP`
 
-| 接口代码| 接口说明          | 数据类  |
+| 接口代码| 接口          | 数据类  |
 | -------- | ---------------- | ------- |
-| tropicalStormList| 获取台风列表和ID  | StormListResponse |
+| tropicalStormList| 台风列表  | StormListResponse |
 
-### 接口参数说明
+### 请求参数
+
+**StormListParameter**
 
 {% include params.html p="basin year" %}
 
@@ -22,7 +24,9 @@ ref: 1-sdk-android-storm-list
 public void tropicalStormList(StormListParameter parameter, Callback<StormListResponse> callback);
 ```
 
-### StormListResponse属性
+### 返回数据
+
+**StormListResponse**
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |

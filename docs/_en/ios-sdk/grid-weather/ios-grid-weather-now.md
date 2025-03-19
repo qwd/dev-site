@@ -8,12 +8,14 @@ Get high-precision real-time weather at any latitude and longitude around the wo
 
 > The spatial resolution is 1x1, 3x3 or 5x5 KM, depending on the region.
 
-| Interface Code          | Interface     | Class            |
+| Interface code          | Interface     | Class            |
 | --------------------------- | ---- | ------------------ |
 | gridNow |  Grid Weather Real-time| GridNowResponse |
 
 
-## Parameters of GridWeatherParameter
+### Request Parameters 
+
+**GridWeatherParameter**
 
 | Name  | Type | Required | Exemple |
 | -------- | -------- | ---- | ------ |
@@ -22,9 +24,9 @@ Get high-precision real-time weather at any latitude and longitude around the wo
 | lang | Lang | false | ZH_HANS |
 | unit | Unit | false | METRIC |
 
-## Request Example
+### Sample Code
 
-Swift
+**Swift**
 
 ```swift
 Task{
@@ -41,21 +43,22 @@ Task{
 }
 ```
 
-Objective-C
+**Objective-C**
+
 ```objc
-    GridWeatherParameter *parameter = [GridWeatherParameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
-    [QWeatherObjc gridNow:parameter completionHandler:^(GridNowResponse * _Nullable response, NSError * _Nullable error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
+GridWeatherParameter *parameter = [GridWeatherParameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
+[QWeatherObjc gridNow:parameter completionHandler:^(GridNowResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```
 
-## Response
+### Response
 
-{% include api-snippet.html %}
+**GridNowResponse**
 
 {% include api-response.html group="weather" type="gnow" prefix="now"  %}

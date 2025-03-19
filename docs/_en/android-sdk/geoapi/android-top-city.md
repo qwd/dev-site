@@ -9,11 +9,13 @@ Get a list of popular cities around the world.
 
 ## Top City
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ------------ | ------------- | ------- |
 | geoCityTop| Top city  | GeoCityTopResponse |
 
-### Parameter
+### Request Parameters
+
+**GeoCityTopParameter**
 
 {% include params.html p="range number lang-def" %}
 
@@ -23,14 +25,14 @@ Get a list of popular cities around the world.
 public void geoCityTop(GeoCityTopParameter parameter, Callback<GeoCityTopResponse> callback);
 ```
 
-### Properties
+### Response Parameters
 
-Properties of GeoCityTopResponse
+**GeoCityTopResponse**
 
 | Property | Description | Example |
 | --------------- | -------- | ------------------------ |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getLocation | City data | List&lt;Location&gt; |
+| getTopCityList | City data | List&lt;Location&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 
 

@@ -14,14 +14,16 @@ ref: 2-sdk-android-weather-daily-forecast
 | weather15d| 15天预报天气数据  | WeatherDailyResponse |
 | weather30d| 30天预报天气数据  | WeatherDailyResponse |
 
-### 接口参数说明
+### 请求参数
+
+**WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
 ### 示例代码
 
 ```java
-WeatherParameter parameter = new WeatherParameter("101120501");
+WeatherParameter parameter = new WeatherParameter("101010100");
 /**
  * 获取3天预报数据
  */
@@ -47,7 +49,9 @@ public void weather15d(WeatherParameter parameter, Callback<WeatherDailyResponse
 public void weather30d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 ```
 
-### WeatherDailyResponse 属性
+### Response
+
+**WeatherDailyResponse**
 
 | 属性     | 说明                       | 示例值                |
 | -------- | -------------------------- | --------------------- |
@@ -64,7 +68,7 @@ public void weather30d(WeatherParameter parameter, Callback<WeatherDailyResponse
 | getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
 | getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-**WeatherDaily 天气预报**
+**WeatherDaily**
 
 | 属性              | 说明                | 示例值     |
 | ----------------- | ------------------- | ---------- |

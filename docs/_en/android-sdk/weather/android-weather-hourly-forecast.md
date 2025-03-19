@@ -6,41 +6,43 @@ ref: 3-sdk-android-weather-hourly-forecast
 
 Get hourly weather forecasts for cities around the world for the next 24-168 hours.
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ------------------- | -------------- | ----------------- |
-| weather24h| 24-hour forecast weather data  | WeatherHourlyResponse |
-| weather72h| 72-hour forecast weather data  | WeatherHourlyResponse |
-| weather168h| 168-hour forecast weather data  | WeatherHourlyResponse |
+| weather24h| 24-hours forecast  | WeatherHourlyResponse |
+| weather72h| 72-hours forecast  | WeatherHourlyResponse |
+| weather168h| 168-hours forecast  | WeatherHourlyResponse |
 
-### Parameter
+### Request Parameters
+
+**WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
 ### Sample Code
 
 ```java
-WeatherParameter parameter = new WeatherParameter("101120501");
+WeatherParameter parameter = new WeatherParameter("101010100");
 
 /**
- * 24 hours forecast data
+ * 24 hours forecast
  */
 public void weather24h(WeatherParameter parameter, Callback<WeatherHourlyResponse> callback);
 
 /**
- * 72 hours forecast data
+ * 72 hours forecast
  */
 public void weather72h(WeatherParameter parameter, Callback<WeatherHourlyResponse> callback);
 
 /**
- * 168 hours forecast data
+ * 168 hours forecast
  */
 public void weather168h(WeatherParameter parameter, Callback<WeatherHourlyResponse> callback);
 
 ```
 
-### Properties
+### Response
 
-Properties of WeatherHourlyResponse
+**WeatherHourlyResponse**
 
 | Property | Description | Example |
 | --------- | -------------------------- | ---------------------- |
@@ -57,7 +59,7 @@ Properties of WeatherHourlyResponse
 | getSources | Data source and other statements | List&lt;String&gt; | QWeather |
 | getLicense | Data license |  List&lt;String&gt;  | QWeather Developers License |
 
-**WeatherHourly Hourly Weather**
+**WeatherHourly**
 
 | Property | Description | Example |
 | ------------ | ---------------------------------------- | ---------------- |

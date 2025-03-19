@@ -10,48 +10,50 @@ Get a list of tropical cyclones for the last 2 years in major ocean basins aroun
 
 | Interface code     | Interface          | Class             |
 | ------------------ | ------------------ | ----------------- |
-| tropicalStormList: | Storm list and IDs | StormListResponse |
+| tropicalStormList | Storm list | StormListResponse |
 
 ### Request Parameters
 
-If no optional parameters are set, the default value will be used.
+**StormListParameter**
 
 {% include params.html p="basin year" %}
 
 ### Sample Code
 
-Swift
+**Swift**
 
 ```swift
-    Task{
-        do {
-            let parameter = StormListParameter(basin: .NP, year: 2024)
-            let response = try await QWeather.instance
-                .tropicalStormList(parameter)
-            print(response)
-        } catch QWeatherError.errorResponse(let error) {
-            print(error)
-        } catch {
-            print(error)
-        }
+Task{
+    do {
+        let parameter = StormListParameter(basin: .NP, year: 2024)
+        let response = try await QWeather.instance
+            .tropicalStormList(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
     }
+}
 ```
 
-Objective-C
+**Objective-C**
 
 ```objc
-    StormListParameter *parameter = [StormListParameter instanceWithBasin:BasinNP year:2024];
-    [QWeatherObjc tropicalStormList:parameter completionHandler:^(StormListResponse * _Nullable response, NSError * _Nullable error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
+StormListParameter *parameter = [StormListParameter instanceWithBasin:BasinNP year:2024];
+[QWeatherObjc tropicalStormList:parameter completionHandler:^(StormListResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```
      
 ### Response
+
+**StormListResponse**
 
 {% include api-response.html group="storm" type="ios-list" prefix="storm"  %}
 

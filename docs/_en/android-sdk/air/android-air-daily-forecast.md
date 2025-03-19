@@ -6,11 +6,17 @@ ref: 2-sdk-android-air-daily-forecast
 
 Air Quality Daily Forecast API for Chinese cities, including AQI, air quality levels, primary pollutants.
 
-| Interface | Interface Code | Class |
+> **Note:** [Air Quality API v1 (new)](/en/docs/api/air-quality/) is now available, please try to use and upgrade.
+
+| Interface code | Interface  | Class |
 | ------------------- | -------- | ------------ |
 | air5d| Air quality 5-day forecast  | AirDailyResponse |
 
-### Parameter
+### Reqeust Parameters
+
+**AirParameter**
+
+If no optional parameters are set, the default value will be used.
 
 {% include params.html p="location-def lang-def" %}
 
@@ -20,9 +26,9 @@ Air Quality Daily Forecast API for Chinese cities, including AQI, air quality le
 public void air5d(AirParameter parameter, Callback<AirDailyResponse> callback);
 ```
 
-### Properties
+### Response
 
-Properties of AirDailyResponse
+**AirDailyResponse**
 
 | Property | Description | Example |
 | ----------- | -------------------------- | --------------- |

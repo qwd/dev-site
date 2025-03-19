@@ -1,6 +1,6 @@
 ---
-title: Air Quality Hourly Forecast (new)
-tag: [guide, android, air-v1, hourly-v1]
+title: 空气质量小时预报(new)
+tag: [guide, android, aq-v1, hourly-v1]
 ref: 1-sdk-android-air-hourly-v1
 ---
 
@@ -12,15 +12,15 @@ ref: 1-sdk-android-air-hourly-v1
 | --------------- | ---------------------------- | ------------ |
 | airHourly | 空气质量小时预报(new)    | AirV1HourlyResponse |
 
-### 请求参数 AirV1Parameter
+### 请求参数 
+
+**AirV1Parameter**
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-| 参数名   | 参数类型 | 必选 | 示例值 |
-| -------- | -------- | ---- | ------ |
-| longitude | double | 是 | 116.41 |
-| latitude | double | 是 | 39.92 |
-| lang | Lang | 否 | ZH_HANS |
+{% include params.html p="p-lat p-lon" %}
+
+{% include params.html p="lang-def" %}
 
 ### 示例代码
 
@@ -29,6 +29,8 @@ public void airHourly(AirV1Parameter parameter, Callback<AirV1HourlyResponse> ca
 ```
 
 ### 返回数据
+
+**AirV1HourlyResponse**
 
 {% include api-response.html group="air" type="hourly-v1" prefix="hours" fxlink="0" refer="0" update="0" statusCode="0" metadata="tag"   %}
 

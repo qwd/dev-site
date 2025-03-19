@@ -37,7 +37,7 @@ ref: config-ios
      ```
    - macOS
      ```
-     target 'YOUR macOS TARGET' do
+     target '{YOUR macOS TARGET}' do
         pod 'QWeatherKit','~> {{ site.data.v.ios.version }}'
      end
      ```
@@ -78,7 +78,7 @@ iOS SDK支持使用Swift Package Manager集成，具体步骤请参考[Adding pa
 
 将代码中的`YOUR_HOST`和`YOUR_TOKEN`替换为您的 host 地址和 token：
 
-Swift
+**Swift**
 >
 >```swift
 >
@@ -91,7 +91,7 @@ Swift
 >
 >```
 
-Objective-C
+**Objective-C**
 
 >
 >```objc
@@ -110,7 +110,7 @@ Objective-C
 
 在需要使用的地方加入以下代码输入所需参数即可，返回为对应类型的数据模型
   
-Swift
+**Swift**
 
 ```swift
    import QWeatherKit
@@ -126,7 +126,7 @@ Swift
                .setupToken("{YOUR_TOKEN}")
 
             // 实时天气
-            let parameter = WeatherParameter(location: "101120501")
+            let parameter = WeatherParameter(location: "101010100")
             let response = try await QWeather.instance.weatherNow(parameter)
             print(response)
         } catch QWeatherError.errorResponse(let error) {
@@ -138,7 +138,7 @@ Swift
 
 ```        
 
-Objective-C
+**Objective-C**
 ```objc
   #import <QWeatherKit/QWeatherKit-Swift.h>
 
@@ -148,7 +148,7 @@ Objective-C
   [QWeatherObjc initConfigWithHost:@"YOUR_HOST"];
   [QWeatherObjc setupToken:@"{YOUR_TOKEN}"];
 
-  WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101120501" lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
+  WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101010100" lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
     [QWeatherObjc weatherNow:parameter completionHandler:^(WeatherNowResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

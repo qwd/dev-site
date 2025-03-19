@@ -6,50 +6,52 @@ ref: 2-sdk-android-weather-daily-forecast
 
 Get weather daily forecasts for the next 3-30 days for cities around the world.
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ---------------- | ------------- | ---------------- |
-| weather3d| 3-days forecast weather data  | WeatherDailyResponse |
-| weather7d| 7-days forecast weather data  | WeatherDailyResponse |
-| weather10d| 10-days forecast weather data  | WeatherDailyResponse |
-| weather15d| 15-days forecast weather data  | WeatherDailyResponse |
-| weather30d| 30-days forecast weather data  | WeatherDailyResponse |
+| weather3d| 3-days forecast | WeatherDailyResponse |
+| weather7d| 7-days forecast | WeatherDailyResponse |
+| weather10d| 10-days forecast  | WeatherDailyResponse |
+| weather15d| 15-days forecast  | WeatherDailyResponse |
+| weather30d| 30-days forecast  | WeatherDailyResponse |
 
-### Parameter
+### Request Parameters
+
+**WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
 ### Sample Code
 
 ```java
-WeatherParameter parameter = new WeatherParameter("101120501");
+WeatherParameter parameter = new WeatherParameter("101010100");
 /**
- * Get 3-days forecast data
+ * Get 3-days forecast
  */
 public void weather3d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 
 /**
- * Get 7-days forecast data
+ * Get 7-days forecast
  */
 public void weather7d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 
 /**
- * Get 10-days forecast data
+ * Get 10-days forecast
  */
 public void weather10d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 
 /**
- * Get 15-days forecast data
+ * Get 15-days forecast
  */
 public void weather15d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 /**
- * Get 30-days forecast data
+ * Get 30-days forecast
  */
 public void weather30d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 ```
 
-### Properties
+### Response 
 
-Properties of WeatherDailyResponse
+**WeatherDailyResponse**
 
 | Property | Description | Example |
 | -------- | -------------------------- | --------------------- |
@@ -66,7 +68,7 @@ Properties of WeatherDailyResponse
 | getSources | Data source and other statements | List&lt;String&gt; | QWeather |
 | getLicense | Data license |  List&lt;String&gt;  | QWeather Developers License |
 
-**WeatherDaily Weather Forecast**
+**WeatherDaily**
 
 | Property | Description | Example |
 | ----------------- | ------------------- | ---------- |

@@ -6,11 +6,17 @@ ref: 1-sdk-android-air-now
 
 实时空气质量Android SDK，支持中国3000+市县区以及1700+国控站点实时空气质量的查询，包括AQI数值、空气质量等级、首要污染物、PM10、PM2.5、臭氧、二氧化氮、二氧化硫、一氧化碳数值。
 
+> **注意：**[空气质量API v1（新版）](/docs/api/air-quality/)现已发布，请尝试使用并升级到新版本。
+
 | 接口代码| 接口说明           | 数据类     |
 | ---------------- | --------- | ---------- |
 | airNow| 空气质量实况数据  | AirNowResponse |
 
-### 接口参数说明
+### 请求参数
+
+**AirParameter**
+
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
 {% include params.html p="location-def lang-def" %}
 
@@ -20,7 +26,9 @@ ref: 1-sdk-android-air-now
 public void airNow(AirParameter parameter, Callback<AirNowResponse> callback);
 ```
 
-### AirNowResponse 属性
+### 返回数据 
+
+**AirNowResponse**
 
 | 属性                 | 说明                       | 示例值                        |
 | -------------------- | -------------------------- | ----------------------------- |
@@ -38,7 +46,7 @@ public void airNow(AirParameter parameter, Callback<AirNowResponse> callback);
 | getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
 | getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License |
 
-**AirNow AQI城市实况**
+**AirNow**
 
 | 属性        | 说明                              | 示例值           |
 | ----------- | --------------------------------- | ---------------- |
@@ -54,7 +62,7 @@ public void airNow(AirParameter parameter, Callback<AirNowResponse> callback);
 | getCo       | 一氧化碳                          | 0.3               |
 | getO3       | 臭氧                              | 20               |
 
-**AirStation AQI站点实况**
+**AirStation**
 
 | 属性        | 说明                              | 示例值           |
 | ----------- | --------------------------------- | ---------------- |

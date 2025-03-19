@@ -8,13 +8,15 @@ Get daily weather forecasts at any latitude and longitude in the world, includin
 
 > The spatial resolution is 1x1, 3x3 or 5x5 KM, depending on the region.
 
-| Interface Code    | Interface   | Class           |
+| Interface code    | Interface   | Class           |
 | ----------------- | ----------- | --------------- |
 | grid3d | 3 Days Forecast by Grid| GridDailyResponse |
 | grid7d | 7 Days Forecast by Grid| GridDailyResponse |
 
 
-## Parameters of GridWeatherParameter
+### Request Parameters
+
+ **GridWeatherParameter**
 
 | Name  | Type | Required | Exemple |
 | -------- | -------- | ---- | ------ |
@@ -23,9 +25,9 @@ Get daily weather forecasts at any latitude and longitude in the world, includin
 | lang | Lang | false | ZH_HANS |
 | unit | Unit | false | METRIC |
 
-## Request Example
+### Sample Code
 
-Swift
+**Swift**
 
 ```swift
 Task{
@@ -51,33 +53,34 @@ Task{
 }
 ```
 
-Objective-C
-```objc
-    GridWeatherParameter *parameter = [GridWeatherParameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
+**Objective-C**
 
-    void (^handler)(GridDailyResponse *, NSError *) = ^(GridDailyResponse *response,
-        NSError *error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    };
-    
-    /*
-    * 3 Days Forecast by Grid
-    */
-    [QWeatherObjc grid3d:parameter completionHandler:handler];
-    
-    /*
-    * 7 Days Forecast by Grid
-    */
-    [QWeatherObjc grid7d:parameter completionHandler:handler];
+```objc
+GridWeatherParameter *parameter = [GridWeatherParameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
+
+void (^handler)(GridDailyResponse *, NSError *) = ^(GridDailyResponse *response,
+    NSError *error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+};
+
+/*
+* 3 Days Forecast by Grid
+*/
+[QWeatherObjc grid3d:parameter completionHandler:handler];
+
+/*
+* 7 Days Forecast by Grid
+*/
+[QWeatherObjc grid7d:parameter completionHandler:handler];
 ```
 
-## Response
+### Response
 
-{% include api-snippet.html flag="grid-weather-daily-forecast" %}
+**GridDailyResponse**
 
 {% include api-response.html group="weather" type="gdaily" prefix="daily"  %}

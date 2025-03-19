@@ -9,16 +9,17 @@ Get weather indices forecast data for cities in China and around the world.
 - Weather Indices in China: Comfort Indices, Car Wash Indices, Dressing Indices, Cold Indices, Sports Indices, Travel Indices, UV Indices, Air Pollution Indices, Air Conditioning Indices, Allergy Indices, Sunglasses Indices, Makeup Indices, Sunshine Indices, Traffic Indices, Fishing Indices, Sun Protection Indices
 - Weather Indices worldwide: Sports Indices, Car Wash Indices, UV Indices, Fishing Indices
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ----------- | ------------ | ----------- |
-| indices1d| 1 day Weather Indices  | IndicesDailyResponse |
-| indices3d| 3 days Weather Indices  | IndicesDailyResponse |
+| indices1d | Today Weather Indices           | IndicesDailyResponse |
+| indices3d | Weather Indices 3-days forecast | IndicesDailyResponse |
 
-### Parameters
+### Request Parameters
 
-If no optional parameters are set, the default value will be used.
+**IndicesParameter**
 
-{% include params.html p="location-def idx-type-android" %}
+{% include params.html p="location-def idx-type lang-def" %}
+
 
 ### Sample Code
 
@@ -35,9 +36,9 @@ public void indices3d(IndicesParameter parameter, Callback<IndicesDailyResponse>
 ```
 
 
-### Properties
+### Response 
 
-Properties of IndicesDailyResponse
+**IndicesDailyResponse**
 
 | Property | Description | Example |
 | ------------ | -------------------------- | --------------------- |
@@ -55,7 +56,7 @@ Properties of IndicesDailyResponse
 | getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
 
-**IndicesDaily Daily Life Index**
+**IndicesDaily**
 
 | Properties | Description |
 | ----------- | -----------|

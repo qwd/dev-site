@@ -4,15 +4,17 @@ tag: [guide, android, storm, forecast]
 ref: 3-sdk-android-storm-forecast
 ---
 
-台风预报提供全球主要海洋流域的热带低气压（台风）的预报信息，包括台风预测位置、等级、气压、风力、速度
+台风预报提供全球主要海洋流域的热带低气压（台风）的预报信息，包括台风预测位置、等级、气压、风力、速度。
 
-> 如果查询的台风已经结束，则返回的数据为空，建议先通过[台风列表](#storm-list)获取台风的状态
+> 如果查询的台风已经结束，则返回的数据为空，建议先通过[台风列表](/docs/android-sdk/tropical-cyclone/android-storm-list/)获取台风的状态
 
-| 接口代码| 接口说明          | 数据类  |
+| 接口代码| 接口          | 数据类  |
 | -------- | ---------------- | ------- |
-| tropicalStormForecast| 台风预报数据  | StormForecastResponse |
+| tropicalStormForecast| 台风预报  | StormForecastResponse |
 
-### 接口参数说明
+### 请求参数
+
+**StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
@@ -22,7 +24,9 @@ ref: 3-sdk-android-storm-forecast
 public void tropicalStormForecast(StormParameter parameter, Callback<StormForecastResponse> callback)
 ```
 
-### StormForecastResponse属性
+### 返回数据
+
+**StormForecastResponse**
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |

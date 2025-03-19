@@ -12,7 +12,9 @@ ref: 1-sdk-android-weather-warning
 | ------------ | ---------- | ----------- |
 | warningNow| 天气灾害预警  | WarningResponse |
 
-### 接口参数说明
+### 请求参数
+
+**WarningNowParameter**
 
 {% include params.html p="location-def lang-def" %}
 
@@ -22,7 +24,9 @@ ref: 1-sdk-android-weather-warning
 public void warningNow(WarningNowParameter parameter, Callback<WarningResponse> callback);
 ```
 
-### WarningResponse 属性
+### 返回数据 
+
+**WarningResponse**
 
 | 属性            | 说明                       | 示例值                      |
 | --------------- | -------------------------- | --------------------------- |
@@ -39,7 +43,7 @@ public void warningNow(WarningNowParameter parameter, Callback<WarningResponse> 
 | getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
 | getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-**Warning 预警信息**
+**Warning**
 
 | 属性         | 说明                               | 示例值                                                           |
 | ------------ | ---------------------------------- | ---------------------------------------------------------------- |

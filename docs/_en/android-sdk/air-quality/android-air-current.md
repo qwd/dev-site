@@ -1,6 +1,6 @@
 ---
 title: Current Air Quality (new)
-tag: [guide, android, air-v1, now-v1]
+tag: [guide, android, aq-v1, now-v1]
 ref: 1-sdk-android-air-now-v1
 ---
 
@@ -18,20 +18,22 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 | --------------- | ---------------- | ------------ |
 | airCurrent | Current Air Quality (new)  | AirV1CurrentResponse |
 
-### Parameters of AirV1Parameter
+### Request Parameters 
 
-| Name   | Type | Required | Exemple |
-| -------- | -------- | ---- | ------ |
-| longitude | double | true | 116.41 |
-| latitude | double | true | 39.92 |
-| lang | Lang | false | ZH_HANS |
+**AirV1Parameter**
 
-### Request Example
+{% include params.html p="p-lat p-lon" %}
+
+{% include params.html p="lang-def" %}
+
+### Sample Code
 
 ```Java
 public void airCurrent(AirV1Parameter parameter, Callback<AirV1CurrentResponse> callback);
 ```
 
 ### Response
+
+**AirV1CurrentResponse**
 
 {% include api-response.html group="air" type="now-v1" prefix="nil" fxlink="0" refer="0" update="0" statusCode="0" metadata="tag"  %}

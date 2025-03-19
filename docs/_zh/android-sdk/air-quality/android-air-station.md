@@ -1,5 +1,5 @@
 ---
-title: Monitoring Station Data (new)
+title: 监测站数据(new)
 tag: [guide, android, aq-v1, station-v1]
 ref: 1-sdk-android-air-station-v1
 ---
@@ -14,7 +14,11 @@ ref: 1-sdk-android-air-station-v1
 | airStation | 监测站数据(new)  | AirV1StationResponse |
 
 
-## 请求参数 AirV1StationParameter
+## 请求参数 
+
+**AirV1StationParameter**
+
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
 {% include params.html p="p-location-id-aqsta" %}
 
@@ -27,6 +31,8 @@ public void airStation(AirV1StationParameter parameter, Callback<AirV1StationRes
 ```
 
 ## 返回数据
+
+**AirV1StationResponse**
 
 {% include api-snippet.html snippet="aq-v1-station-v1" %}
 

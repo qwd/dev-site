@@ -8,101 +8,103 @@ ref: 2-sdk-ios-weather-daily-forecast
 
 | 接口代码     | 接口         | 数据类               |
 | ----------- | ------------ | -------------------- |
-| weather3d:  | 3天预报       | WeatherDailyResponse |
-| weather7d:  | 7天预报       | WeatherDailyResponse |
-| weather10d: | 10天预报      | WeatherDailyResponse |
-| weather15d: | 15天预报      | WeatherDailyResponse |
-| weather30d: | 30天预报      | WeatherDailyResponse |
+| weather3d  | 3天预报       | WeatherDailyResponse |
+| weather7d  | 7天预报       | WeatherDailyResponse |
+| weather10d | 10天预报      | WeatherDailyResponse |
+| weather15d | 15天预报      | WeatherDailyResponse |
+| weather30d | 30天预报      | WeatherDailyResponse |
 
 ### 请求参数
 
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
+**WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
 ### 示例代码
 
-Swift
+**Swift**
 
 ```swift
-    Task{
-         do {
-            let parameter = WeatherParameter(location: "101120501")
-            
-            /*
-            * 获取3天预报数据
-            */
-            let _ = try await QWeather.instance.weather3d(parameter)
+Task{
+    do {
+        let parameter = WeatherParameter(location: "101010100")
+        
+        /*
+        * 获取3天预报数据
+        */
+        let _ = try await QWeather.instance.weather3d(parameter)
 
-            /*
-            * 获取7天预报数据
-            */
-            let _ = try await QWeather.instance.weather7d(parameter)
+        /*
+        * 获取7天预报数据
+        */
+        let _ = try await QWeather.instance.weather7d(parameter)
 
-            /*
-            * 获取10天预报数据
-            */
-            let _ = try await QWeather.instance.weather10d(parameter)
-            
-            /*
-            * 获取15天预报数据
-            */
-            let _ = try await QWeather.instance.weather15d(parameter)
-            
-            /*
-            * 获取30天预报数据
-            */
-            let _ = try await QWeather.instance.weather30d(parameter)
+        /*
+        * 获取10天预报数据
+        */
+        let _ = try await QWeather.instance.weather10d(parameter)
+        
+        /*
+        * 获取15天预报数据
+        */
+        let _ = try await QWeather.instance.weather15d(parameter)
+        
+        /*
+        * 获取30天预报数据
+        */
+        let _ = try await QWeather.instance.weather30d(parameter)
 
-        } catch QWeatherError.errorResponse(let error) {
-            print(error)
-        } catch {
-            print(error)
-        }
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
     }
+}
 ```
 
-Objective-C
+**Objective-C**
 
 ```objc
-    WeatherParameter * parameter = [WeatherParameter instanceWithLocation:@"101120501" lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
+WeatherParameter * parameter = [WeatherParameter instanceWithLocation:@"101010100" lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
 
-    void (^handler)(WeatherDailyResponse *, NSError *) = ^(WeatherDailyResponse *response,
-        NSError *error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    };
+void (^handler)(WeatherDailyResponse *, NSError *) = ^(WeatherDailyResponse *response,
+    NSError *error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+};
 
-    /*
-    * 获取3天预报数据
-    */
-    [QWeatherObjc weather3d:parameter completionHandler:handler];
+/*
+* 获取3天预报数据
+*/
+[QWeatherObjc weather3d:parameter completionHandler:handler];
 
-    /*
-    * 获取7天预报数据
-    */
-    [QWeatherObjc weather7d:parameter completionHandler:handler];
+/*
+* 获取7天预报数据
+*/
+[QWeatherObjc weather7d:parameter completionHandler:handler];
 
-    /*
-    * 获取10天预报数据
-    */
-    [QWeatherObjc weather10d:parameter completionHandler:handler];
+/*
+* 获取10天预报数据
+*/
+[QWeatherObjc weather10d:parameter completionHandler:handler];
 
-    /*
-    * 获取15天预报数据
-    */
-    [QWeatherObjc weather15d:parameter completionHandler:handler];
+/*
+* 获取15天预报数据
+*/
+[QWeatherObjc weather15d:parameter completionHandler:handler];
 
-    /*
-    * 获取30天预报数据
-    */
-    [QWeatherObjc weather30d:parameter completionHandler:handler];
+/*
+* 获取30天预报数据
+*/
+[QWeatherObjc weather30d:parameter completionHandler:handler];
 ```
 
 ### 返回数据
+
+**WeatherDailyResponse**
 
 {% include api-response.html group="weather" type="daily" prefix="daily" %}

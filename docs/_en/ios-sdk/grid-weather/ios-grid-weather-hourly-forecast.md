@@ -8,13 +8,15 @@ Get hourly weather forecasts at any latitude and longitude in the world, includi
 
 > The spatial resolution is 1x1, 3x3 or 5x5 KM, depending on the region.
 
-| Interface Code       | Interface     | Class             |
+| Interface code       | Interface     | Class             |
 | --------------------------- | ---- | ------------------ |
 | grid24h | Hourly Forecast by Grid (24hrs)| GridHourlyResponse |
 | grid72h | Hourly Forecast by Grid (72hrs)）| GridHourlyResponse |
 
 
-## Parameters of GridWeatherParameter
+### Request Parameters 
+
+**GridWeatherParameter**
 
 | Name  | Type | Required | Exemple |
 | -------- | -------- | ---- | ------ |
@@ -23,9 +25,9 @@ Get hourly weather forecasts at any latitude and longitude in the world, includi
 | lang | Lang | false | ZH_HANS |
 | unit | Unit | false | METRIC |
 
-## Request Example
+### Sample Code
 
-Swift
+**Swift**
 
 ```swift
 Task{
@@ -51,34 +53,35 @@ Task{
 }
 ```
 
-Objective-C
-```objc
-    GridWeatherParameter *parameter = [GridWeatherParameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
+**Objective-C**
 
-    void (^handler)(GridHourlyResponse *, NSError *) = ^(GridHourlyResponse *response,
-        NSError *error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    };
-    
-    /*
-    * Hourly Forecast by Grid (24hrs)
-    */
-    [QWeatherObjc grid24h:parameter completionHandler:handler];
-    
-    /*
-    * Hourly Forecast by Grid (72hrs)
-    */
-    [QWeatherObjc grid72h:parameter completionHandler:handler];
+```objc
+GridWeatherParameter *parameter = [GridWeatherParameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
+
+void (^handler)(GridHourlyResponse *, NSError *) = ^(GridHourlyResponse *response,
+    NSError *error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+};
+
+/*
+* Hourly Forecast by Grid (24hrs)
+*/
+[QWeatherObjc grid24h:parameter completionHandler:handler];
+
+/*
+* Hourly Forecast by Grid (72hrs)
+*/
+[QWeatherObjc grid72h:parameter completionHandler:handler];
 ```
 
-## Response
+### Response
 
-{% include api-snippet.html %}
+**GridHourlyResponse**
 
 {% include api-response.html group="weather" type="ghourly" prefix="hourly"  %}
 

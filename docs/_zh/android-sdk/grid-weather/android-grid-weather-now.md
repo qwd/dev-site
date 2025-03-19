@@ -11,7 +11,9 @@ ref: 1-sdk-android-grid-weather-now
 | gridNow | 格点实时天气| GridNowResponse |
 
 
-## 请求参数 GridWeatherParameter
+## 请求参数 
+
+**GridWeatherParameter**
 
 | 参数名   | 参数类型 | 必选 | 示例值 |
 | -------- | -------- | ---- | ------ |
@@ -28,6 +30,6 @@ public void gridNow(GridWeatherParameter parameter, Callback<GridNowResponse> ca
 
 ## 返回数据
 
-{% include api-snippet.html %}
+**GridNowResponse**
 
 {% include api-response.html group="weather" type="gnow" prefix="now"  %}

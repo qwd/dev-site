@@ -12,14 +12,16 @@ ref: 3-sdk-android-weather-hourly-forecast
 | weather72h | 72小时预报天气数据    | WeatherHourlyResponse |
 | weather168h | 168小时预报天气数据  | WeatherHourlyResponse |
 
-### 接口参数说明
+### 请求参数
+
+**WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
 ### 示例代码
 
 ```java
-WeatherParameter parameter = new WeatherParameter("101120501");
+WeatherParameter parameter = new WeatherParameter("101010100");
 
 /**
  * 获取24小时预报数据
@@ -38,7 +40,9 @@ public void weather168h(WeatherParameter parameter, Callback<WeatherHourlyRespon
 
 ```
 
-### WeatherHourlyResponse 属性
+### Response
+
+**WeatherHourlyResponse**
 
 | 属性      | 说明                       | 示例值                 |
 | --------- | -------------------------- | ---------------------- |
@@ -55,7 +59,7 @@ public void weather168h(WeatherParameter parameter, Callback<WeatherHourlyRespon
 | getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
 | getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-**WeatherHourly 逐小时天气**
+**WeatherHourly**
 
 | 属性         | 说明                                     | 示例值           |
 | ------------ | ---------------------------------------- | ---------------- |

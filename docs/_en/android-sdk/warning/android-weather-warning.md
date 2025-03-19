@@ -8,24 +8,25 @@ Get officially issued real-time severe weather warning data around the world.
 
 > **Tips:** For more warning description, see [Resource - Warning Info](/en/docs/resource/warning-info/).
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ------------ | ---------- | ----------- |
 | warningNow| Weather Warning  | WarningResponse |
 
-### Parameter
+### Request Parameters
+
+**WarningNowParameter**
 
 {% include params.html p="location-def lang-def" %}
 
 ### Sample Code
 
-
 ```java
 public void warningNow(WarningNowParameter parameter, Callback<WarningResponse> callback);
 ```
 
-### Properties
+### Response
 
-Properties of WarningResponse
+**WarningResponse**
 
 | Property | Description | Example |
 | --------------- | -------------------------- | --------------------------- |
@@ -42,7 +43,7 @@ Properties of WarningResponse
 | getSources | Data source and other statements | List&lt;String&gt; | QWeather |
 | getLicense | Data license |  List&lt;String&gt;  | QWeather Developers License |
 
-**Warning Information**
+**Warning**
 
 | Property | Description | Example |
 | ------------ | ---------------------------------- |----------- |

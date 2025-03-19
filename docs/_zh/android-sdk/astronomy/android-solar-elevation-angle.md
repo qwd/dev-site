@@ -10,7 +10,9 @@ ref: 3-sdk-android-solar-elevation-angle
 | ------ | ---------- | ----------- |
 | astronomySolarElevationAngle| 太阳高度角数据  | AstronomySolarElevationAngleResponse |
 
-### 接口参数说明
+### 请求参数
+
+**SolarElevationAngleParameter**
 
 {% include params.html p="location-coord date time tz alt" %}
 
@@ -20,7 +22,9 @@ ref: 3-sdk-android-solar-elevation-angle
 public void astronomySolarElevationAngle(SolarElevationAngleParameter parameter, Callback<AstronomySolarElevationAngleResponse> callback);                              
 ```
 
-### AstronomySolarElevationAngleResponse 属性
+### 返回数据
+
+**AstronomySolarElevationAngleResponse**
 
 | 属性                 | 说明                       | 示例值                    |
 | -------------------- | -------------------------- | ------------------------- |

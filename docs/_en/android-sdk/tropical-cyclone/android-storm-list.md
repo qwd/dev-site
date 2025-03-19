@@ -8,11 +8,13 @@ Get a list of tropical cyclones for the last 2 years in major ocean basins aroun
 > Only the coastal areas of China are supported now, i.e. `basin=NP`
 
 
-| Interface Code| Interface          | Class  |
+| Interface code| Interface          | Class  |
 | -------- | ---------------- | ------- |
-| tropicalStormList | Storm list and IDs  | StormListResponse |
+| tropicalStormList | Storm list | StormListResponse |
 
-### Parameter
+### Request Parameters
+
+**StormListParameter**
 
 {% include params.html p="basin year" %}
 
@@ -22,9 +24,9 @@ Get a list of tropical cyclones for the last 2 years in major ocean basins aroun
 public void tropicalStormList(StormListParameter parameter, Callback<StormListResponse> callback);
 ```
 
-### Properties
+### Response
 
-Properties of StormListResponse
+**StormListResponse**
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |

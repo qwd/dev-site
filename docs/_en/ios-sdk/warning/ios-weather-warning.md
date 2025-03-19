@@ -10,23 +10,23 @@ Get officially issued real-time severe weather warning data around the world.
 
 | Interface code | Interface       | Class            |
 | --------------------- | --------------- | ---------------- |
-| warningNow:  | Weather warning | WarningResponse |
+| warningNow  | Weather warning | WarningResponse |
 
 ### Request Parameters
 
-If no optional parameters are set, the default value will be used.
+**WarningNowParameter**
 
 {% include params.html p="location-def lang-def" %}
 
 
 ### Sample Code
 
-Swift
+**Swift**
 
 ```swift
     Task {
         do {
-            let parameter = WarningNowParameter(location: "101120501")
+            let parameter = WarningNowParameter(location: "101010100")
             let response = try await QWeather.instance
                 .warningNow(parameter)
             print(response)
@@ -38,10 +38,10 @@ Swift
     }
 ```
 
-Objective-C
+**Objective-C**
 
 ```objc
-     WarningNowParameter *parameter = [WarningNowParameter instanceWithLocation:@"101120501" lang:@(LangZH_HANS)];
+     WarningNowParameter *parameter = [WarningNowParameter instanceWithLocation:@"101010100" lang:@(LangZH_HANS)];
     [QWeatherObjc warningNow:parameter completionHandler:^(WarningResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);
@@ -53,6 +53,8 @@ Objective-C
 ```
 
 ### Response
+
+**WarningResponse**
 
 {% include api-response.html group="warning" type="warning" prefix="warning" %}
 

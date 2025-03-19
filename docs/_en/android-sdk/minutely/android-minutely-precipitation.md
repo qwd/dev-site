@@ -8,13 +8,17 @@ Get minute-level precipitation forecast data every 5 minutes for the next 2 hour
 
 > This data is only supported for Chinese cities.
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ---------- | ----------- | ------------ |
 | minutely | Minutely Precipitation  | MinutelyResponse |
 
-### Parameter
+### Reequest Parameters
 
-{% include params.html p="location-coord lang-def" %}
+| Name  | Type | Required | Exemple |
+| -------- | -------- | ---- | ------ |
+| longitude | double | true | 116.41 |
+| latitude | double | true | 39.92 |
+| lang | Lang | false | ZH_HANS |
 
 ### Sample Code
 
@@ -22,9 +26,9 @@ Get minute-level precipitation forecast data every 5 minutes for the next 2 hour
 public void minutely(MinutelyParameter parameter, Callback<MinutelyResponse> callback);
 ```
 
-### Properties
+### Response
 
-Properties of MinutelyResponse
+**MinutelyResponse**
 
 | Property | Description | Example |
 | --------------- | -------------- | -------------- |
@@ -42,7 +46,7 @@ Properties of MinutelyResponse
 | getSources | Data source and other statements  | List&lt;String&gt; | QWeather    |
 | getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
-**Minutely precipitation in the next two hours and 5 minutes**
+**Minutely**
 
 | Property | Description | Example |
 | --------- | ---------------- | ---------------- |

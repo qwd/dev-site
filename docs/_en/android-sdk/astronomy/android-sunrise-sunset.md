@@ -6,11 +6,13 @@ ref: 1-sdk-android-sun
 
 Get the sunrise and sunset times for any location around the world for the next 60 days.
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | -------------- | ---------- | ----------- |
 | astronomySun | Sunrise and sunset data  | AstronomySunResponse |
 
-### Parameter
+### Request Parameters
+
+**AstronomySunParameter**
 
 {% include params.html p="location-def date60" %}
 
@@ -20,9 +22,9 @@ Get the sunrise and sunset times for any location around the world for the next 
 public void astronomySun(AstronomySunParameter parameter, Callback<AstronomySunResponse> callback);
 ```
 
-### Properties
+### Response
 
-Properties of AstronomySunResponse
+**AstronomySunResponse**
 
 | Property | Description | Example |
 | -------------------- | -------------------------- |- ------------------------ |

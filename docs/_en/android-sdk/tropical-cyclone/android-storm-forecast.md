@@ -9,11 +9,13 @@ Storm Forecast provides tropical cyclones information for a specific tropical cy
 > **Note:** For inactive storms, the returned data is **NULL**, please get the storms status by [Storm List](/en/docs/android-sdk/tropical-cyclone/android-storm-list/) first.
 
 
-| Interface Code| Interface          | Class  |
+| Interface code| Interface          | Class  |
 | -------- | ---------------- | ------- |
 | tropicalStormForecast | Storm forecast data  | StormForecastResponse |
 
-### Parameter
+### Request Parameters
+
+**StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
@@ -23,9 +25,9 @@ Storm Forecast provides tropical cyclones information for a specific tropical cy
 public void tropicalStormForecast(StormParameter parameter, Callback<StormForecastResponse> callback)
 ```
 
-### Properties
+### Response
 
-Properties of StormForecastResponse
+**StormForecastResponse**
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |

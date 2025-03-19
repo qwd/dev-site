@@ -6,11 +6,17 @@ ref: 2-sdk-android-air-daily-forecast
 
 空气质量每日预报Android SDK，支持全国3000+市县区空气质量预报数据的查询，包括AQI预报、首要污染物预报、空气质量等级预报。
 
+> **注意：**[空气质量API v1（新版）](/docs/api/air-quality/)现已发布，请尝试使用并升级到新版本。
+
 | 接口代码| 接口说明             | 数据类       |
 | ------------------- | -------- | ------------ |
 | air5d| 空气质量5天预报数据  | AirDailyResponse |
 
-### 接口参数说明
+### 请求参数
+
+**AirParameter**
+
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
 {% include params.html p="location-def lang-def" %}
 
@@ -26,7 +32,9 @@ public void air5d(AirParameter parameter, Callback<AirDailyResponse> callback);
 
 ```
 
-### AirDailyResponse 属性
+### 返回数据
+
+**AirDailyResponse**
 
 | 属性        | 说明                       | 示例值                |
 | ----------- | -------------------------- | --------------------- |
@@ -43,7 +51,7 @@ public void air5d(AirParameter parameter, Callback<AirDailyResponse> callback);
 | getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
 | getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License |
 
-**AirDaily AQI城市逐天预报**
+**AirDaily**
 
 | 属性        | 说明                          | 示例值     |
 | ----------- | ----------------------------- | ---------- |

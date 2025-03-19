@@ -6,11 +6,13 @@ ref: 3-sdk-android-geo-poi-lookup
 
 使用关键字和坐标查询POI信息（景点、火车站、飞机场、港口等）
 
-| 接口代码| 接口说明            | 数据类     |
+| 接口代码| 接口            | 数据类     |
 | ----------- | --------------- | ---------- |
 | geoPoiLookup| POI搜索  | GeoPoiResponse |
 
-### 接口参数说明
+### 请求参数
+
+**GeoPoiLookupParameter**
 
 {% include params.html p="location-geo geo-type city number lang-def" %}
 
@@ -20,12 +22,14 @@ ref: 3-sdk-android-geo-poi-lookup
 public void geoPoiLookup(GeoPoiLookupParameter parameter, Callback<GeoPoiResponse> callback);
 ```
 
-### GeoPoiResponse 属性
+### 返回数据
+
+**GeoPoiResponse**
 
 | 属性       | 说明     | 示例值          |
 | ---------- | -------- | --------------- |
 | getCode    | 参考[状态码](/docs/resource/status-code/)  | 200 |
-| getPoi | 城市数据 | List&lt;Poi&gt; |
+| getPoi | 城市数据 | List&lt;Location&gt; |
 | getRefer         | Refer 数据来源以及数据授权 | Refer  |
 
 
@@ -37,7 +41,7 @@ public void geoPoiLookup(GeoPoiLookupParameter parameter, Callback<GeoPoiRespons
 | getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
 
-**POI 基础信息**
+**Location**
 
 | 属性         | 说明                                                              | 示例值    |
 | ------------ | ----------------------------------------------------------------- | --------- |

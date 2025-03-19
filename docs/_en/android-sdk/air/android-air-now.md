@@ -6,11 +6,17 @@ ref: 1-sdk-android-air-now
 
 Real-time air quality for Chinese cities and 1,700 monitoring stations, including AQI, air quality levels, primary pollutants, PM10, PM2.5, ozone, nitrogen dioxide sulfur dioxide and carbon monoxide values.
 
-| Interface Code| Interface  | Class |
+> **Note:** [Air Quality API v1 (new)](/en/docs/api/air-quality/) is now available, please try to use and upgrade.
+
+| Interface code| Interface  | Class |
 | ---------------- | --------- | ---------- |
 | airNow| Real-time Air Quality  | AirNowResponse |
 
-### Parameter
+### Request Parameters
+
+**AirParameter**
+
+If no optional parameters are set, the default value will be used.
 
 {% include params.html p="location-def lang-def" %}
 
@@ -20,9 +26,9 @@ Real-time air quality for Chinese cities and 1,700 monitoring stations, includin
 public void airNow(AirParameter parameter, Callback<AirNowResponse> callback);
 ```
 
-### Properties
+### Response
 
-Properties of AirNowResponse
+**AirNowResponse**
 
 | Property | Description | Example |
 | -------------------- | -------------------------- |------------------- |

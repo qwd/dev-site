@@ -10,7 +10,9 @@ ref: 2-sdk-android-geo-top
 | ------------ | ------------- | ------- |
 | geoCityTop | 热门城市查询  | GeoCityTopResponse |
 
-### 接口参数说明
+### 请求参数
+
+**GeoCityTopParameter**
 
 {% include params.html p="range number lang-def" %}
 
@@ -20,12 +22,14 @@ ref: 2-sdk-android-geo-top
 public void geoCityTop(GeoCityTopParameter parameter, Callback<GeoCityTopResponse> callback);
 ```
 
-### GeoCityTopResponse 属性
+### 返回数据
+
+**GeoCityTopResponse**
 
 | 属性            | 说明     | 示例值                   |
 | --------------- | -------- | ------------------------ |
 | getCode         | 参考[状态码](/docs/resource/status-code/)  | 200  |
-| getLocation | 城市数据 | List&lt;Location&gt; |
+| getTopCityList | 城市数据 | List&lt;Location&gt; |
 | getRefer         | Refer 数据来源以及数据授权 | Refer  |
 
 
@@ -37,7 +41,7 @@ public void geoCityTop(GeoCityTopParameter parameter, Callback<GeoCityTopRespons
 | getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License |
 
 
-**Location 基础信息**
+**Location**
 
 | 属性         | 说明                                                                    | 示例值               |
 | ------------ | ------------------------------------------------------------- | -------------------- |

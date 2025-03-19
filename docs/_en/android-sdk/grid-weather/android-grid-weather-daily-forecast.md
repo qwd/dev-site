@@ -8,13 +8,15 @@ Get daily weather forecasts at any latitude and longitude in the world, includin
 
 > The spatial resolution is 1x1, 3x3 or 5x5 KM, depending on the region.
 
-| Interface Code          | Interface     | Class         |
+| Interface code          | Interface     | Class         |
 | --------------------------- | ---- | ------------------ |
 | grid3d | 3 Days Forecast by Grid| GridDailyResponse |
 | grid7d | 7 Days Forecast by Grid| GridDailyResponse |
 
 
-## Parameters of GridWeatherParameter
+### Request Parameters
+
+**GridWeatherParameter**
 
 | Name   | Type | Required | Example |
 | -------- | -------- | ---- | ------ |
@@ -23,7 +25,7 @@ Get daily weather forecasts at any latitude and longitude in the world, includin
 | lang | Lang | false | ZH_HANS |
 | unit | Unit | false | METRIC |
 
-## Request
+### Sample Code
 
 ```java
 /*
@@ -37,8 +39,8 @@ public void grid3d(GridWeatherParameter parameter, Callback<GridDailyResponse> c
 public void grid7d(GridWeatherParameter parameter, Callback<GridDailyResponse> callback);
 ```
 
-## Response
+### Response
 
-{% include api-snippet.html flag="grid-weather-daily-forecast" %}
+**GridDailyResponse**
 
 {% include api-response.html group="weather" type="gdaily" prefix="daily"  %}

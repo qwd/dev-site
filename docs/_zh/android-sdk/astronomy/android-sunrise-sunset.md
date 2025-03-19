@@ -12,7 +12,9 @@ ref: 1-sdk-android-sun
 | -------------- | ---------- | ----------- |
 | astronomySun| 日出日落  | AstronomySunResponse |
 
-### 接口参数说明
+### 请求参数
+
+**AstronomySunParameter**
 
 {% include params.html p="location-def date60" %}
 
@@ -22,7 +24,9 @@ ref: 1-sdk-android-sun
 public void astronomySun(AstronomySunParameter parameter, Callback<AstronomySunResponse> callback);                             
 ```
 
-### AstronomySunResponse 属性
+### 返回数据
+
+**AstronomySunResponse**
 
 | 属性                 | 说明                       | 示例值                    |
 | -------------------- | -------------------------- | ------------------------- |

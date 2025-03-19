@@ -10,7 +10,9 @@ ref: 1-sdk-android-tide
 | -------- | ---------------- | ------- |
 | oceanTide | 潮汐数据  | OceanTideResponse |
 
-### 接口参数说明
+### 请求参数
+
+**OceanParameter**
 
 {% include params.html p="location-p2 date10" %}
 
@@ -20,7 +22,9 @@ ref: 1-sdk-android-tide
 public void oceanTide(OceanParameter parameter, Callback<OceanTideResponse> callback);
 ```
 
-### OceanTideResponse 属性
+### 返回数据
+
+**OceanTideResponse**
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |

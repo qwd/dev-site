@@ -8,9 +8,11 @@ ref: 1-sdk-android-weather-now
 
 | 接口代码| 接口说明           | 数据类         |
 | ------------ | ------------- | -------------- |
-| weatherNow| 实况天气数据  | WeatherNowResponse |
+| weatherNow| 实况天气  | WeatherNowResponse |
 
-### 接口参数说明
+### 请求参数
+
+**WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
@@ -20,7 +22,9 @@ ref: 1-sdk-android-weather-now
 public void weatherNow(WeatherParameter parameter, Callback<WeatherNowResponse> callback);
 ```
 
-### WeatherNowResponse属性
+### Response
+ 
+**WeatherNowResponse**
 
 | 属性     | 说明                       | 示例值      |
 | -------- | -------------------------- | ----------- |
@@ -37,7 +41,7 @@ public void weatherNow(WeatherParameter parameter, Callback<WeatherNowResponse> 
 | getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
 | getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-**WeatherNow 实况天气**
+**WeatherNow**
 
 | 属性         | 说明                       | 示例值           |
 | ------------ | -------------------------- | ---------------- |

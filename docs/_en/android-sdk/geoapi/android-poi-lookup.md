@@ -6,11 +6,13 @@ ref: 3-sdk-android-geo-poi-lookup
 
 POI Lookup API provides basic information of POI(scenic spot, tide stations, currents stations, etc.)
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ----------- | --------------- | ---------- |
 | geoPoiLookup| POI lookup  | GeoPoiResponse |
 
-### Parameter
+### Request Parameters
+
+**GeoPoiLookupParameter**
 
 {% include params.html p="location-geo geo-type city number lang-def" %}
 
@@ -20,14 +22,14 @@ POI Lookup API provides basic information of POI(scenic spot, tide stations, cur
 public void geoPoiLookup(GeoPoiLookupParameter parameter, Callback<GeoPoiResponse> callback);
 ```
 
-###  Properties
+### Response
 
-Properties of GeoPoiResponse
+**GeoPoiResponse**
 
 | Property | Description | Example |
 | ---------- | -------- | --------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getPoi | City data | List&lt;Poi&gt; |
+| getPoi | City data | List&lt;Location&gt; |
 
 
 **Refer**
@@ -38,7 +40,7 @@ Properties of GeoPoiResponse
 | getLicense | Data license     | List&lt;String&gt; | QWeather Developers License |
 
 
-**Poi**
+**Location**
 
 | Property | Description | Example |
 | ------------ | ----------------------- | --------- |

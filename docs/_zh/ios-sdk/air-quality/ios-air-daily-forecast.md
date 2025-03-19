@@ -1,6 +1,6 @@
 ---
 title: 空气质量每日预报(new)
-tag: [guide, ios, air-v1, daily-v1]
+tag: [guide, ios, aq-v1, daily-v1]
 ref: 1-sdk-ios-air-daily-v1
 ---
 
@@ -12,49 +12,51 @@ ref: 1-sdk-ios-air-daily-v1
 | --------------- | ---------------------------- | ------------ |
 | airDaily | 空气质量每日预报(new)    | AirV1DailyResponse |
 
-### 请求参数 AirV1Parameter
+### 请求参数 
+
+**AirV1Parameter**
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-| 参数名   | 参数类型 | 必选 | 示例值 |
-| -------- | -------- | ---- | ------ |
-| longitude | Double | 是 | 116.41 |
-| latitude | Double | 是 | 39.92 |
-| lang | Lang | 否 | ZH_HANS |
+{% include params.html p="p-lat p-lon" %}
+
+{% include params.html p="lang-def" %}
 
 ### 示例代码
 
-Swift
+**Swift**
 
 ```swift
-   Task {
-        do {
-            let parameter = AirV1Parameter(longitude: 116.41, latitude: 39.92)
-            let response = try await QWeather.instance
-                .airDaily(parameter)
-            print(response)
-        } catch QWeatherError.errorResponse(let error) {
-            print(error)
-        } catch {
-            print(error)
-        }
-   }
+Task {
+    do {
+        let parameter = AirV1Parameter(longitude: 116.41, latitude: 39.92)
+        let response = try await QWeather.instance
+            .airDaily(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
 ```
 
-Objective-C
+**Objective-C**
 
 ```objc
-    AirV1Parameter *parameter = [AirV1Parameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS)];
-    [QWeatherObjc airDaily:parameter completionHandler:^(AirV1DailyResponse * _Nullable response, NSError * _Nullable error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
+AirV1Parameter *parameter = [AirV1Parameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS)];
+[QWeatherObjc airDaily:parameter completionHandler:^(AirV1DailyResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```
 
 ### 返回数据
+
+**AirV1DailyResponse**
 
 {% include api-response.html group="air" type="daily-v1" prefix="days" fxlink="0" refer="0" update="0" statusCode="0" metadata="tag"  %}

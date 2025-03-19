@@ -1,6 +1,6 @@
 ---
 title: Air Quality Hourly Forecast (new)
-tag: [guide, android, air-v1, hourly-v1]
+tag: [guide, android, aq-v1, hourly-v1]
 ref: 1-sdk-android-air-hourly-v1
 ---
 
@@ -12,21 +12,23 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 | --------------- | ---------------------------- | ------------ |
 | airHourly | Air quality hourly forecast (new)    | AirV1HourlyResponse |
 
-### Parameters of AirV1Parameter
+### Request Parameters 
 
-| Name   | Type | Required | Exemple |
-| -------- | -------- | ---- | ------ |
-| longitude | double | true | 116.41 |
-| latitude | double | true | 39.92 |
-| lang | Lang | false | ZH_HANS |
+**AirV1Parameter**
 
-### Requeset Example
+{% include params.html p="p-lat p-lon" %}
+
+{% include params.html p="lang-def" %}
+
+### Sample Code
 
 ```java
 public void airHourly(AirV1Parameter parameter, Callback<AirV1HourlyResponse> callback);
 ```
 
 ### Response
+
+**AirV1HourlyResponse**
 
 {% include api-response.html group="air" type="hourly-v1" prefix="hours" fxlink="0" refer="0" update="0" statusCode="0" metadata="tag"   %}
 

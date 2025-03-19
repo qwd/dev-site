@@ -8,11 +8,13 @@ ref: 2-sdk-android-moon
 
 > 月相已考虑南北半球的差异，不需要再进行转换
 
-| 接口代码| 接口说明          | 数据类      |
+| 接口代码| 接口          | 数据类      |
 | ------ | ---------- | ----------- |
-| astronomyMoon| 太阳和月亮数据  | AstronomyMoonResponse |
+| astronomyMoon| 月升月落和月相  | AstronomyMoonResponse |
 
-### 接口参数说明
+### 请求参数
+
+**AstronomyMoonParameter**
 
 {% include params.html p="location-def date60" %}
 
@@ -22,7 +24,9 @@ ref: 2-sdk-android-moon
 public void astronomyMoon(AstronomyMoonParameter parameter, Callback<AstronomyMoonResponse> callback);                            
 ```
 
-### AstronomyMoonResponse 属性
+### 返回数据
+
+**AstronomyMoonResponse**
 
 | 属性                 | 说明                       | 示例值                    |
 | -------------------- | -------------------------- | ------------------------- |

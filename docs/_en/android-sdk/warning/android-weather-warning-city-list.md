@@ -13,11 +13,13 @@ See also [Weather warning Android SDK](/en/docs/android-sdk/warning/android-weat
 
 > **Tips:** For more warning description, see [Resource - Warning Info](/en/docs/resource/warning-info/).
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ---------------- | -------------- | --------------- |
 | warningList| Weather warning city list  | WarningListResponse |
 
-### Parameter
+### Request Parameters
+
+**WarningListParameter**
 
 {% include params.html p="range-warning" %}
 
@@ -27,9 +29,9 @@ See also [Weather warning Android SDK](/en/docs/android-sdk/warning/android-weat
 public void warningList(WarningListParameter parameter, Callback<WarningListResponse> callback);
 ```
 
-### Properties
+### Response
 
-Properties of WarningLocation
+**WarningListResponse**
 
 | Property | Description | Example |
 | -------------- | ------------ | --------------------------- |
@@ -45,7 +47,7 @@ Properties of WarningLocation
 | getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
 | getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
-**WarningLocation Warning Information**
+**WarningLocation**
 
 | Property | Description | Example |
 | ------------- | ------------ | --------- |

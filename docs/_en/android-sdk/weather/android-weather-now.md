@@ -6,12 +6,13 @@ ref: 1-sdk-android-weather-now
 
 Get real-time weather data for 200,000+ cities around the world, including temperature, wind, humidity, pressure, precipitation, visibility, etc.
 
-
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ------------ | ------------- | -------------- |
 | weatherNow | Real-time weather  | WeatherNowResponse |
 
-### Parameter
+### Request Parameters
+
+**WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
@@ -21,9 +22,9 @@ Get real-time weather data for 200,000+ cities around the world, including tempe
 public void weatherNow(WeatherParameter parameter, Callback<WeatherNowResponse> callback);
 ```
 
-### Properties
+### Response
 
-Properties of WeatherNowResponse
+**WeatherNowResponse**
 
 | Property | Description | Example |
 | -------- | -------------------------- | ----------- |
@@ -40,7 +41,7 @@ Properties of WeatherNowResponse
 | getSources | Data source and other statements | List&lt;String&gt; | QWeather |
 | getLicense | Data license |  List&lt;String&gt;  | QWeather Developers License |
 
-**WeatherNow Live Weather**
+**WeatherNow**
 
 | Property | Description | Example |
 | ------------ | -------------------------- | ---------------- |

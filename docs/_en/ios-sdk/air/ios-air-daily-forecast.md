@@ -7,11 +7,15 @@ ref: 2-sdk-ios-air-daily-forecast
 
 Air Quality Daily Forecast API for Chinese cities, including AQI, air quality levels, primary pollutants.
 
+> **Note:** [Air Quality API v1 (new)](/en/docs/api/air-quality/) is now available, please try to use and upgrade.
+
 | Interface code | Interface                           | Class        |
 | -------------------------- | ------------------------------ | ------------ |
-| air5d: | Air quality 5-day forecast    | AirDailyResponse |
+| air5d | Air quality 5-day forecast    | AirDailyResponse |
 
 ### Request Parameters
+
+**AirParameter**
 
 If no optional parameters are set, the default value will be used.
 
@@ -19,39 +23,40 @@ If no optional parameters are set, the default value will be used.
 
 ### Sample Code
 
-Swift
+**Swift**
 
 ```swift
-   Task {
-        do {
-            let parameter = AirParameter.make(location: "101120501" lang:.ZH_HANS)
-            let response = try await QWeather.instance
-                .air5d(parameter)
-            print(response)
-        } catch QWeatherError.errorResponse(let error) {
-            print(error)
-        } catch {
-            print(error)
-        }
-   }
+Task {
+    do {
+        let parameter = AirParameter.make(location: "101010100" lang:.ZH_HANS)
+        let response = try await QWeather.instance
+            .air5d(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
 ```
 
-Objective-C
+**Objective-C**
 
 ```objc
-    AirParameter * parameter = [AirParameter instanceWithLocation:@"101120501" lang:@(LangZH_HANS)];
-    [QWeatherObjc air5d:parameter completionHandler:^(AirDailyResponse * _Nullable response, NSError * _Nullable error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
+AirParameter * parameter = [AirParameter instanceWithLocation:@"101010100" lang:@(LangZH_HANS)];
+[QWeatherObjc air5d:parameter completionHandler:^(AirDailyResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```
 
 ### Response
 
+**AirDailyResponse**
 
 {% include api-response.html group="air" type="daily" prefix="daily"  %}
 

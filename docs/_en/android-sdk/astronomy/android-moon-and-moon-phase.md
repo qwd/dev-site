@@ -6,11 +6,13 @@ ref: 2-sdk-android-moon
 
 Get moonrise and moonset and hourly moon phase data for the next 60 days at any location worldwide.
 
-| Interface Code| Interface    | Class      |
+| Interface code| Interface    | Class      |
 | ------ | ---------- | ----------- |
 | astronomyMoon | Moonrise, moonset and moon phase data  | AstronomyMoonResponse |
 
-### Parameter
+### Request Parameters
+
+**AstronomyMoonParameter**
 
 {% include params.html p="location-def date60" %}
 
@@ -20,9 +22,9 @@ Get moonrise and moonset and hourly moon phase data for the next 60 days at any 
 public void astronomyMoon(AstronomyMoonParameter parameter, Callback<AstronomyMoonResponse> callback);                                
 ```
 
-### Properties
+### Response
 
-Properties of AstronomyMoonResponse
+**AstronomyMoonResponse**
 
 | Property | Description | Example |
 | -------------------- | -------------------------- | ------------------------- |

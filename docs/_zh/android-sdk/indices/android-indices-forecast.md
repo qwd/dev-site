@@ -9,16 +9,16 @@ ref: 1-sdk-android-indices-forecast
 - 中国天气生活指数：舒适度指数、洗车指数、穿衣指数、感冒指数、运动指数、旅游指数、紫外线指数、空气污染扩散条件指数、空调开启指数、过敏指数、太阳镜指数、化妆指数、晾晒指数、交通指数、钓鱼指数、防晒指数
 - 海外天气生活指数：运动指数、洗车指数、紫外线指数、钓鱼指数
 
-| 接口代码| 接口说明         | 数据类      |
+| 接口代码| 接口         | 数据类      |
 | ----------- | ------------ | ----------- |
-| indices1d| 1天生活指数  | IndicesDailyResponse |
+| indices1d| 当天生活指数  | IndicesDailyResponse |
 | indices3d| 3天生活指数  | IndicesDailyResponse |
 
 ### 请求参数
 
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
+**IndicesParameter**
 
-{% include params.html p="location-def idx-type-android" %}
+{% include params.html p="location-def idx-type lang-def" %}
 
 ### 示例代码
 
@@ -34,7 +34,9 @@ public void indices1d(IndicesParameter parameter, Callback<IndicesDailyResponse>
 public void indices3d(IndicesParameter parameter, Callback<IndicesDailyResponse> callback);
 ```
 
-### IndicesDailyResponse 属性
+### Response 
+
+**IndicesDailyResponse**
 
 | 属性         | 说明                       | 示例值                |
 | ------------ | -------------------------- | --------------------- |
@@ -51,7 +53,7 @@ public void indices3d(IndicesParameter parameter, Callback<IndicesDailyResponse>
 | getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
 | getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License |
 
-**IndicesDaily 当天生活指数**
+**IndicesDaily**
 
 | 属性        | 说明         |
 | ----------- | ----------------------- |

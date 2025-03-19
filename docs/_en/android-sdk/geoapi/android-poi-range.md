@@ -6,11 +6,13 @@ ref: 4-sdk-android-geo-poi-range
 
 POI Range Android SDK provides the ability to query all POI information within a specified area.
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ----------- | -------------- | ---------- |
 | geoPoiRange| POI Range  | GeoPoiResponse |
 
-### Parameter
+### Request Parameters
+
+**GeoPoiRangeParameter**
 
 {% include params.html p="location-coord geo-type radius number lang-def" %}
 
@@ -20,14 +22,14 @@ POI Range Android SDK provides the ability to query all POI information within a
 public void geoPoiRange(GeoPoiRangeParameter parameter, Callback<GeoPoiResponse> callback);
 ```
 
-### Properties
+### Response
 
-Properties of GeoPoiResponse
+**GeoPoiResponse**
 
 | Property | Description | Example |
 | ---------- | -------- | --------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getPoi | City data | List&lt;Poi&gt; |
+| getPoi | City data | List&lt;Location&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 
 
@@ -39,7 +41,7 @@ Properties of GeoPoiResponse
 | getLicense | Data license     | List&lt;String&gt; | QWeather Developers License |
 
 
-**Poi**
+**Location**
 
 | Property | Description | Example |
 | ------------ | ----------------------- | --------- |

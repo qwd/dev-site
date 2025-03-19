@@ -4,7 +4,7 @@ tag: [guide, api, storm, forecast]
 ref: 3-api-storm-forecast
 ---
 
-Storm Forecast API provides tropical cyclones location, level, pressure, wind speed for major ocean basins around the world.
+Storm Forecast API provides tropical cyclones information for a specific tropical cyclone, the data including forecast tropical cyclones location, level, pressure, wind and etc.
 
 > **Note:** For inactive storms, the returned data is **NULL**, please get the storms status by [Storm List API](/en/docs/api/tropical-cyclone/storm-list/) first. 
 

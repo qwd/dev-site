@@ -6,11 +6,13 @@ ref: 4-sdk-android-geo-poi-range
 
 提供指定区域范围内查询所有POI信息。
 
-| 接口代码| 接口说明           | 数据类     |
+| 接口代码| 接口           | 数据类     |
 | ----------- | -------------- | ---------- |
 | geoPoiRange| POI范围搜索  | GeoPoiResponse |
 
-### 接口参数说明
+### 请求参数
+
+**GeoPoiRangeParameter**
 
 {% include params.html p="location-coord geo-type radius number lang-def" %}
 
@@ -20,12 +22,14 @@ ref: 4-sdk-android-geo-poi-range
 public void geoPoiRange(GeoPoiRangeParameter parameter, Callback<GeoPoiResponse> callback);
 ```
 
-### GeoPoiResponse 属性
+### 返回数据
+
+**GeoPoiResponse**
 
 | 属性       | 说明     | 示例值          |
 | ---------- | -------- | ------------- |
 | getCode    | 参考[状态码](/docs/resource/status-code/)  | 200|
-| getPoi | 城市数据 | List&lt;Poi&gt; |
+| getPoi | 城市数据 | List&lt;Location&gt; |
 | getRefer         | Refer 数据来源以及数据授权 | Refer  |
 
 **Refer**
@@ -35,8 +39,7 @@ public void geoPoiRange(GeoPoiRangeParameter parameter, Callback<GeoPoiResponse>
 | getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
 | getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-
-**POI 基础信息**
+**Location**
 
 | 属性         | 说明                                                              | 示例值    |
 | ------------ | ----------------------------------------------------------------- | --------- |

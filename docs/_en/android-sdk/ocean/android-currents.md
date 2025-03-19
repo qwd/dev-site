@@ -4,13 +4,15 @@ tag: [guide, android, ocean, currents]
 ref: 2-sdk-android-currents
 ---
 
-Currents data for the next 10 days, including currents speed, direction and hourly forecast.
+Global currents data for the next 10 days, including currents speed and direction.
 
-| Interface Code| Interface          | Class  |
+| Interface code| Interface          | Class  |
 | -------- | ---------------- | ------- |
 | oceanCurrents| Currents data  | OceanCurrentsResponse |
 
-### Parameter
+### Request Parameters
+
+**OceanParameter**
 
 {% include params.html p="location-p6 date10" %}
 
@@ -20,9 +22,9 @@ Currents data for the next 10 days, including currents speed, direction and hour
 public void oceanCurrents(OceanParameter parameter, Callback<OceanCurrentsResponse> callback)
 ```
 
-### Properties
+### Response
 
-Properties of OceanCurrentsResponse
+**OceanCurrentsResponse**
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |

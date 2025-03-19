@@ -1,6 +1,6 @@
 ---
-title: Current Air Quality (new)
-tag: [guide, android, air-v1, now-v1]
+title: 实时空气质量(new)
+tag: [guide, android, aq-v1, now-v1]
 ref: 1-sdk-android-air-now-v1
 ---
 
@@ -18,15 +18,15 @@ ref: 1-sdk-android-air-now-v1
 | --------------- | ---------------------------- | ------------ |
 | airCurrent | 实时空气质量(new)    | AirV1CurrentResponse |
 
-### 请求参数 AirV1Parameter
+### 请求参数 
+
+**AirV1Parameter**
 
 请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
-| 参数名   | 参数类型 | 必选 | 示例值 |
-| -------- | -------- | ---- | ------ |
-| longitude | double | 是 | 116.41 |
-| latitude | double | 是 | 39.92 |
-| lang | Lang | 否 | ZH_HANS |
+{% include params.html p="p-lat p-lon" %}
+
+{% include params.html p="lang-def" %}
 
 
 ### 代码示例
@@ -36,5 +36,7 @@ public void airCurrent(AirV1Parameter parameter, Callback<AirV1CurrentResponse> 
 ```
 
 ### 返回数据
+
+**AirV1CurrentResponse**
 
 {% include api-response.html group="air" type="now-v1" prefix="nil" fxlink="0" refer="0" update="0" statusCode="0" metadata="tag"  %}

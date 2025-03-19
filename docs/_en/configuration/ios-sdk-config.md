@@ -117,7 +117,7 @@ Swift
                .getInstance("{YOUR_HOST}")
                .setupToken("{YOUR_TOKEN}")
 
-            let parameter = WeatherParameter(location: "101120501")
+            let parameter = WeatherParameter(location: "101010100")
             let response = try await QWeather.instance.weatherNow(parameter)
             print(response)
         } catch QWeatherError.errorResponse(let error) {
@@ -139,7 +139,7 @@ Objective-C
   [QWeatherObjc initConfigWithHost:@"YOUR_HOST"];
   [QWeatherObjc setupToken:@"{YOUR_TOKEN}"];
 
-  WeatherParameter * parameter = [WeatherParameter makeWithLocation:@"101120501" lang:LangZH_HANS unit:UnitMETRIC];
+  WeatherParameter * parameter = [WeatherParameter makeWithLocation:@"101010100" lang:LangZH_HANS unit:UnitMETRIC];
     [QWeatherObjc weatherNow:parameter completionHandler:^(WeatherNowResponse * _Nullable response, NSError * _Nullable error) {
         if (response) {
             NSLog(@"%@", response.description);

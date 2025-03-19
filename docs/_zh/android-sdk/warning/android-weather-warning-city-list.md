@@ -13,9 +13,11 @@ ref: 2-sdk-android-weather-warning-city-list
 
 | 接口代码| 接口说明                | 数据类          |
 | ---------------- | -------------- | --------------- |
-| getWarningList| 天气灾害预警集合  | WarningListResponse |
+| getWarningList| 天气预警城市列表  | WarningListResponse |
 
-### 接口参数说明
+### 请求参数
+
+**WarningListParameter**
 
 {% include params.html p="range-warning" %}
 
@@ -25,7 +27,9 @@ ref: 2-sdk-android-weather-warning-city-list
 public void warningList(WarningListParameter parameter, Callback<WarningListResponse> callback);
 ```
 
-### WarningListResponse属性
+### 返回数据
+
+**WarningListResponse**
 
 | 属性           | 说明         | 示例值                      |
 | -------------- | ------------ | --------------------------- |
@@ -41,7 +45,7 @@ public void warningList(WarningListParameter parameter, Callback<WarningListResp
 | getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
 | getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-**WarningLocation 预警信息**
+**WarningLocation**
 
 | 属性          | 说明         | 示例值    |
 | ------------- | ------------ | --------- |

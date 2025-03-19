@@ -9,11 +9,13 @@ Get the last 10 days of air quality history data.
 > Let's say, today is December 30, you can get data from Dec. 20 to Dec. 29.
 
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ---------------- | ---------------- | ---------------- |
 | historicalAir| Historical air quality data  | HistoricalAirResponse |
 
-### Parameter
+### Request Parameters
+
+**HistoricalAirParameter**
 
 {% include params.html p="location-id date10back lang-def" %}
 
@@ -23,9 +25,9 @@ Get the last 10 days of air quality history data.
 public void historicalAir(HistoricalAirParameter parameter, Callback<HistoricalAirResponse> callback);
 ```
 
-### Properties
+### Response
 
-Properties of HistoricalAirResponse
+**HistoricalAirResponse**
 
 | Property | Description | Example |
 | ----------------- | -------------------------- | ------------------------- |
@@ -43,7 +45,7 @@ Properties of HistoricalAirResponse
 | getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
 
-**HistoricalAirHourly historical day by hour air quality data**
+**HistoricalAirHourly**
 
 | Property | Description | Example |
 | ----------- | --------------------------------- | --------------- |

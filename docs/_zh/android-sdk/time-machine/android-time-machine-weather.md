@@ -15,11 +15,13 @@ ref: 1-sdk-android-historical-weather
 > * 所需要的时间范围
 
 
-| 接口代码      | 接口说明           | 数据类             |
+| 接口代码      | 接口           | 数据类             |
 | ------------ | --------------- | ------------------ |
 | historicalWeather | 历史天气数据  | HistoricalWeatherResponse |
 
-### 接口参数说明
+### 请求参数
+
+**HistoricalWeatherParameter**
 
 {% include params.html p="location-id date10back lang-def unit-def" %}
 
@@ -29,7 +31,9 @@ ref: 1-sdk-android-historical-weather
 public void historicalWeather(HistoricalWeatherParameter parameter, Callback<HistoricalWeatherResponse> callback);
 ```
 
-### HistoricalWeatherResponse属性
+### 返回数据
+
+ **HistoricalWeatherResponse**
 
 | 属性           | 说明                       | 示例值                 |
 | -------------- | -------------------------- | ---------------------- |
@@ -47,7 +51,7 @@ public void historicalWeather(HistoricalWeatherParameter parameter, Callback<His
 | getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
 | getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-**HistoricalWeatherDaily 基础信息**
+**HistoricalWeatherDaily**
 
 | 属性         | 说明     | 示例值     |
 | ------------ | -------- | ---------- |
@@ -63,7 +67,7 @@ public void historicalWeather(HistoricalWeatherParameter parameter, Callback<His
 | getPrecip    | 降水量   | 0          |
 | getPressure  | 大气压强 | 1018       |
 
-**HistoricalWeatherHourly 基础信息**
+**HistoricalWeatherHourly**
 
 | 属性         | 说明                                   | 示例值           |
 | ------------ | -------------------------------------- | ---------------- |

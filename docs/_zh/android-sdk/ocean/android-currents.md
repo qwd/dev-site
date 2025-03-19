@@ -10,7 +10,9 @@ ref: 2-sdk-android-currents
 | -------- | ---------------- | ------- |
 | oceanCurrents | 潮流数据  | OceanCurrentsResponse |
 
-### 接口参数说明
+### 请求参数
+
+**OceanParameter**
 
 {% include params.html p="location-p6 date10" %}
 
@@ -20,7 +22,9 @@ ref: 2-sdk-android-currents
  public void oceanCurrents(OceanParameter parameter, Callback<OceanCurrentsResponse> callback);
 ```
 
-### OceanCurrentsResponse 属性
+### 返回数据
+
+**OceanCurrentsResponse**
 
 | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |

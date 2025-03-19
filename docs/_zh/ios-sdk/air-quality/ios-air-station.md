@@ -14,7 +14,11 @@ ref: 1-sdk-ios-air-station-v1
 | airStation | 监测站数据(new)  | AirV1StationResponse |
 
 
-## AirV1StationParameter 请求参数
+## 请求参数
+
+**AirV1StationParameter**
+
+请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
 {% include params.html p="p-location-id-aqsta" %}
 
@@ -22,7 +26,7 @@ ref: 1-sdk-ios-air-station-v1
 
 ## 代码示例
 
-Swift
+**Swift**
 
 ```swift
 Task{
@@ -39,7 +43,7 @@ Task{
 }
 ```
 
-Objective-C
+**Objective-C**
 
 ```objc
 AirV1StationParameter * parameter = [AirV1StationParameter instanceWithLocationID:@"P58911" lang:@(LangZH_HANS)];
@@ -54,6 +58,8 @@ AirV1StationParameter * parameter = [AirV1StationParameter instanceWithLocationI
 ```
 
 ## 返回数据
+
+**AirV1StationResponse**
 
 {% include api-snippet.html snippet="aq-v1-station-v1" %}
 

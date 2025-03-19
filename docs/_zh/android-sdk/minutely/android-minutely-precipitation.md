@@ -4,15 +4,22 @@ tag: [guide, android, minutely, precip]
 ref: 1-sdk-android-minutely-precip
 ---
 
-分钟级降水Android SDK（临近预报）支持中国1公里精度的未来2小时每5分钟降雨预报数据。
+分钟级降水提供中国地区未来2小时内每5分钟降水数据、降水类型以及未来2小时的降水概况信息。
+> 仅限中国地区。
 
 | 接口代码| 接口说明       | 数据类       |
 | ---------- | ----------- | ------------ |
 | minutely | 分钟级降雨 | MinutelyResponse |
 
-### 接口参数说明
+### 请求参数
 
-{% include params.html p="location-coord lang-def" %}
+**MinutelyParameter**
+
+| 参数名   | 参数类型 | 必选 | 示例值 |
+| -------- | -------- | ---- | ------ |
+| longitude | double | 是 | 116.41 |
+| latitude | double | 是 | 39.92 |
+| lang | Lang | 否 | ZH_HANS |
 
 ### 示例代码
 
@@ -20,7 +27,9 @@ ref: 1-sdk-android-minutely-precip
 public void minutely(MinutelyParameter parameter, Callback<MinutelyResponse> callback);
 ```
 
-### MinutelyResponse 属性
+### 返回数据
+
+**MinutelyResponse**
 
 | 属性            | 说明                       | 示例值               |
 | --------------- | -------------------------- | -------------------- |
@@ -38,12 +47,7 @@ public void minutely(MinutelyParameter parameter, Callback<MinutelyResponse> cal
 | getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
 | getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| 属性          | 说明                     | 示例值               |
-| ------------- | ------------------------ | -------------------- |
-
-**Minutely 未来两小时5分钟降水量**
+**Minutely**
 
 | 属性      | 说明                       | 示例值           |
 | --------- | -------------------------- | ---------------- |

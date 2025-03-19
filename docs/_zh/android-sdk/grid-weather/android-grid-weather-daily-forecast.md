@@ -12,7 +12,9 @@ ref: 2-sdk-android-grid-weather-daily-forecast
 | grid7d | 格点7天预报| GridDailyResponse |
 
 
-## 请求参数 GridWeatherParameter
+## 请求参数 
+
+**GridWeatherParameter**
 
 | 参数名   | 参数类型 | 必选 | 示例值 |
 | -------- | -------- | ---- | ------ |
@@ -37,6 +39,6 @@ public void grid7d(GridWeatherParameter parameter, Callback<GridDailyResponse> c
 
 ## 返回数据
 
-{% include api-snippet.html flag="grid-weather-daily-forecast" %}
+**GridDailyResponse**
 
 {% include api-response.html group="weather" type="gdaily" prefix="daily"  %}

@@ -8,47 +8,49 @@ ref: 1-sdk-ios-weather-now
 
 | 接口代码      | 接口          | 数据类           |
 | ------------ | ------------- | ---------------- |
-| weatherNow:  | 实况天气      | WeatherNowResponse |
+| weatherNow  | 实况天气      | WeatherNowResponse |
 
 ### 请求参数
 
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
+**WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
 ### 示例代码
 
-Swift
+**Swift**
 
 ```swift
-    Task{
-        do {
-            let parameter = WeatherParameter(location: "101120501")
-            let response = try await QWeather.instance
-                .weatherNow(parameter)
-            print(response)
-        } catch QWeatherError.errorResponse(let error) {
-            print(error)
-        } catch {
-            print(error)
-        }
+Task{
+    do {
+        let parameter = WeatherParameter(location: "101010100")
+        let response = try await QWeather.instance
+            .weatherNow(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
     }
+}
 ```
 
-Objective-C
+**Objective-C**
 
 ```objc
-    WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101120501" lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
-    [QWeatherObjc weatherNow:parameter completionHandler:^(WeatherNowResponse * _Nullable response, NSError * _Nullable error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
+WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101010100" lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
+[QWeatherObjc weatherNow:parameter completionHandler:^(WeatherNowResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```
 
 ### 返回数据
+
+**WeatherNowResponse**
 
 {% include api-response.html group="weather" type="now" prefix="now" %}

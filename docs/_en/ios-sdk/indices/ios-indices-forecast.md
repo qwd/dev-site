@@ -11,69 +11,71 @@ Get weather indices forecast data for cities in China and around the world.
 
 | Interface code   | Interface             | Class            |
 | ---------------- | ------------------ | ---------------- |
-| indices1d: | Today Weather Indices           | IndicesDailyResponse |
-| indices3d: | Weather Indices 3-days forecast | IndicesDailyResponse |
+| indices1d | Today Weather Indices           | IndicesDailyResponse |
+| indices3d | Weather Indices 3-days forecast | IndicesDailyResponse |
 
 ### Request Parameters
 
-If no optional parameters are set, the default value will be used.
+**IndicesParameter**
 
-{% include params.html p="location-def idx-type-ios" %}
+{% include params.html p="location-def idx-type lang-def" %}
 
 ### Sample Code
 
-Swift
+**Swift**
 
 ```swift
-   Task{
-        do {
-            let parameter = IndicesParameter(location: "101120501", type: [.CW,.DRSG])
+Task{
+    do {
+        let parameter = IndicesParameter(location: "101010100", type: [.CW,.DRSG])
 
-            /**
-            * Get 1-day weather indices data
-            */
-            let _ = try await QWeather.instance.indices1d(parameter)
-            
-            /**
-            * Get 3-day weather indices data
-            */
-            let _ = try await QWeather.instance.indices3d(parameter)
+        /**
+        * Get 1-day weather indices data
+        */
+        let _ = try await QWeather.instance.indices1d(parameter)
+        
+        /**
+        * Get 3-day weather indices data
+        */
+        let _ = try await QWeather.instance.indices3d(parameter)
 
-        } catch QWeatherError.errorResponse(let error) {
-            print(error)
-        } catch {
-            print(error)
-        }
-   }
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
 ```
 
-Objective-C
+**Objective-C**
 
 ```objc
-    IndicesParameter *parameter = [IndicesParameter instanceWithLocation:@"101120501" type:@[@(IndicesCW),@(IndicesDRSG)] lang:@(LangZH_HANS)];
+IndicesParameter *parameter = [IndicesParameter instanceWithLocation:@"101010100" type:@[@(IndicesCW),@(IndicesDRSG)] lang:@(LangZH_HANS)];
 
-    void (^handler)(IndicesDailyResponse *, NSError *) = ^(IndicesDailyResponse *response,
-        NSError *error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    };
-    
-    /**
-    * Get 1-day weather indices data
-    */
-    [QWeatherObjc indices1d:parameter lang:LangZH_HANS completionHandler:handler];
+void (^handler)(IndicesDailyResponse *, NSError *) = ^(IndicesDailyResponse *response,
+    NSError *error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+};
 
-    /**
-    * Get 3-day weather indices data
-    */
-    [QWeatherObjc indices3d:parameter lang:LangZH_HANS completionHandler:handler];
+/**
+* Get 1-day weather indices data
+*/
+[QWeatherObjc indices1d:parameter lang:LangZH_HANS completionHandler:handler];
+
+/**
+* Get 3-day weather indices data
+*/
+[QWeatherObjc indices3d:parameter lang:LangZH_HANS completionHandler:handler];
 ```
 
 ### Response
+
+**IndicesDailyResponse**
 
 {% include api-response.html group="indices" prefix="daily" %}
 

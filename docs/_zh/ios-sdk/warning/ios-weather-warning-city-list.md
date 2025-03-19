@@ -13,47 +13,49 @@ ref: 2-sdk-ios-weather-warning-city-list
 
 | 接口代码         | 接口             | 数据类           |
 | ------------------------ | ---------------- | ---------------- |
-| warningList: | 灾害预警城市列表 | WarningListResponse |
+| warningList | 灾害预警城市列表 | WarningListResponse |
 
 ### 请求参数
 
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
+**WarningListParameter**
 
 {% include params.html p="range-warning" %}
 
 ### 示例代码
 
-Swift
+**Swift**
 
 ```swift
-    Task{
-        do {
-            let parameter = WarningListParameter(range: .CN)
-            let response = try await QWeather.instance
-                .warningList(parameter)
-            print(response)
-        } catch QWeatherError.errorResponse(let error) {
-            print(error)
-        } catch {
-            print(error)
-        }
+Task{
+    do {
+        let parameter = WarningListParameter(range: .CN)
+        let response = try await QWeather.instance
+            .warningList(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
     }
+}
 ```
 
-Objective-C
+**Objective-C**
 
 ```objc
-    WarningListParameter *parameter = [WarningListParameter instanceWithRange:RangeCN];
-    [QWeatherObjc warningList:parameter completionHandler:^(WarningListResponse * _Nullable response, NSError * _Nullable error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
+WarningListParameter *parameter = [WarningListParameter instanceWithRange:RangeCN];
+[QWeatherObjc warningList:parameter completionHandler:^(WarningListResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```
 
 ### 返回数据
+
+**WarningListResponse**
 
 {% include api-response.html group="warning" type="list" prefix="warningLocList" fxlink=0 %}

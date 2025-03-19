@@ -6,17 +6,13 @@ ref: 2-sdk-android-storm-track
 
 Get the tropical cyclones location, level, pressure, windspeed, and track path of active storm in major ocean basins around the world.
 
->  Only the coastal areas of China are supported now, i.e. `basin=NP`
-
-## Storm Track
-
-Storm Track provides tropical cyclones real-time information, including real-time tropical cyclones location, level, pressure, wind and etc., as well as historical position.
-
-| Interface Code| Interface          | Class  |
+| Interface code| Interface          | Class  |
 | -------- | ---------------- | ------- |
 | tropicalStormTrack| Real-time storm data and storm track data  | StormTrackResponse |
 
-### Parameter
+### Request Parameters
+
+**StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
@@ -26,9 +22,9 @@ Storm Track provides tropical cyclones real-time information, including real-tim
 public void tropicalStormTrack(StormParameter parameter, Callback<StormTrackResponse> callback);
 ```
 
-### Properties
+### Response
 
-Properties of StormTrackResponse
+**StormTrackResponse**
 
 | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |

@@ -8,7 +8,7 @@ Get the last 10 days of weather history data.
 
 > Let's say, today is December 30, you can get historical data from Dec. 20 to Dec. 29.
 
-> QWeather also provides historical reanalysis weather data from 2000 to present. If you need long time historical weather data data, please provide the following information to <sales@qweather.com>.
+> QWeather also provides historical reanalysis weather data from 2000 to present. If you need more historical weather data, please provide the following information to <sales@qweather.com>.
 > 
 > * Company name
 > * Contact information
@@ -16,11 +16,13 @@ Get the last 10 days of weather history data.
 > * Date range
 
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ------------ | -------------------- | ------------------ |
 | historicalWeather| Historical weather data  | HistoricalWeatherResponse |
 
-### Parameter
+### Request Parameters
+
+**HistoricalWeatherParameter**
 
 {% include params.html p="location-id date10back lang-def unit-def" %}
 
@@ -30,9 +32,9 @@ Get the last 10 days of weather history data.
 public void historicalWeather(HistoricalWeatherParameter parameter, Callback<HistoricalWeatherResponse> callback);
 ```
 
-### Properties
+### Response
 
-Properties of HistoricalWeatherResponse
+**HistoricalWeatherResponse**
 
 | Property | Description | Example |
 | -------------- | -------------------------- | ---------------------- |

@@ -8,13 +8,15 @@ Get hourly weather forecasts at any latitude and longitude in the world, includi
 
 > The spatial resolution is 1x1, 3x3 or 5x5 KM, depending on the region.
 
-| Interface Code          | Interface     | Class         |
+| Interface code          | Interface     | Class         |
 | --------------------------- | ---- | ------------------ |
 | grid24h | Hourly Forecast by Grid (24hrs)）| GridHourlyResponse |
 | grid72h | Hourly Forecast by Grid (72hrs)| GridHourlyResponse |
 
 
-## Parameters of GridWeatherParameter
+### Request Parameters  
+
+**GridWeatherParameter**
 
 | Name   | Type | Required | Example |
 | -------- | -------- | ---- | ------ |
@@ -23,7 +25,7 @@ Get hourly weather forecasts at any latitude and longitude in the world, includi
 | lang | Lang | false | ZH_HANS |
 | unit | Unit | false | METRIC |
 
-## Request
+### Sample Code
 
 ```java
 /*
@@ -34,12 +36,12 @@ public void grid24h(GridWeatherParameter parameter, Callback<GridHourlyResponse>
 /*
 * Hourly Forecast by Grid (72hrs)
 */
-public void grid24h(GridWeatherParameter parameter, Callback<GridHourlyResponse> callback);
+public void grid72h(GridWeatherParameter parameter, Callback<GridHourlyResponse> callback);
 ```
 
-## Response
+### Response
 
-{% include api-snippet.html %}
+**GridHourlyResponse**
 
 {% include api-response.html group="weather" type="ghourly" prefix="hourly"  %}
 

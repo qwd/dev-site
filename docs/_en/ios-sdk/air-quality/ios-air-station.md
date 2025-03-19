@@ -13,15 +13,17 @@ Monitoring Station Data API provides pollutant concentration values from air qua
 | --------------- | ---------------- | ------------ |
 | airStation | Monitoring Station Data (new)  | AirV1StationResponse |
 
-## Parameters of AirV1StationParameter
+## Request Parameters 
+
+**AirV1StationParameter**
 
 {% include params.html p="p-location-id-aqsta" %}
 
 {% include params.html p="lang-def" %}
 
-## Request Example
+## Sample Code
 
-Swift
+**Swift**
 
 ```swift
 Task{
@@ -38,22 +40,22 @@ Task{
 }
 ```
 
-Objective-C
+**Objective-C**
 
 ```objc
 AirV1StationParameter * parameter = [AirV1StationParameter instanceWithLocationID:@"P58911" lang:@(LangZH_HANS)];
-    [QWeatherObjc airStation:parameter completionHandler:^(AirV1StationResponse * _Nullable response, NSError * _Nullable error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
+[QWeatherObjc airStation:parameter completionHandler:^(AirV1StationResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```
 
 ## Response
 
-{% include api-snippet.html snippet="aq-v1-station-v1" %}
+**AirV1StationResponse**
 
 {% include api-response.html group="air" type="station-v1" prefix="nil" fxlink="0" refer="0" update="0" statusCode="0" metadata="tag sources"  %}

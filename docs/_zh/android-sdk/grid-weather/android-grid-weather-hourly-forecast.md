@@ -11,8 +11,9 @@ ref: 3-sdk-android-grid-weather-hourly-forecast
 | grid24h | 逐小时预报（未来24小时）| GridHourlyResponse |
 | grid72h | 逐小时预报（未来72小时）| GridHourlyResponse |
 
+## 请求参数 
 
-## 请求参数 GridWeatherParameter
+**GridWeatherParameter**
 
 | 参数名   | 参数类型 | 必选 | 示例值 |
 | -------- | -------- | ---- | ------ |
@@ -32,12 +33,12 @@ public void grid24h(GridWeatherParameter parameter, Callback<GridHourlyResponse>
 /*
 * 逐小时预报（未来72小时）
 */
-public void grid24h(GridWeatherParameter parameter, Callback<GridHourlyResponse> callback);
+public void grid72h(GridWeatherParameter parameter, Callback<GridHourlyResponse> callback);
 ```
 
 ## 返回数据
 
-{% include api-snippet.html %}
+**GridHourlyResponse**
 
 {% include api-response.html group="weather" type="ghourly" prefix="hourly"  %}
 

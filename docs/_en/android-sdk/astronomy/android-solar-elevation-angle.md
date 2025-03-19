@@ -6,11 +6,13 @@ ref: 3-sdk-android-solar-elevation-angle
 
 Get global solar elevation angle and azimuth.
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ------ | ---------- | ----------- |
 | astronomySolarElevationAngle| Solar elevation angle data  | AstronomySolarElevationAngleResponse |
 
-### Parameter
+### Request Parameters
+
+**SolarElevationAngleParameter**
 
 {% include params.html p="location-coord date time tz alt" %}
 
@@ -20,9 +22,9 @@ Get global solar elevation angle and azimuth.
 public void astronomySolarElevationAngle(SolarElevationAngleParameter parameter, Callback<AstronomySolarElevationAngleResponse> callback);                             
 ```
 
-### Properties
+### Response
 
-Properties of AstronomySolarElevationAngleResponse
+**AstronomySolarElevationAngleResponse**
 
 | Property | Description | Example |
 | -------------------- | -------------------------- | ------------------------- |

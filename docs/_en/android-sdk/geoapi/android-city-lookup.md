@@ -6,11 +6,13 @@ ref: 1-sdk-android-geo-city-lookup
 
 With the City Lookup, you can get the basic information of the city, including the Location ID of the city (you need this ID to get the weather), multilingual name, latitude and longitude, time zone, altitude, rank, administrative, etc.
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | -------- | ---------------- | ------- |
 | geoCityLookUp | City lookup  | GeoCityLookupResponse |
 
-### Parameter
+### Request Parameters
+
+**GeoCityLookupParameter**
 
 {% include params.html p="location-geo adm range number lang-def" %}
 
@@ -20,9 +22,9 @@ With the City Lookup, you can get the basic information of the city, including t
 public void geoCityLookUp(GeoCityLookupParameter parameter, Callback<GeoCityLookupResponse> callback);
 ```
 
-### Properties
+### Response
 
-Properties of GeoCityLookupResponse
+**GeoCityLookupResponse**
 
 | Property | Description | Example |
 | --------------- | -------- | ------------------------ |
@@ -38,7 +40,7 @@ Properties of GeoCityLookupResponse
 | getLicense | Data license     | List&lt;String&gt; | QWeather Developers License |
 
 
-**Location Basic Information**
+**Location**
 
 | Property | Description | Example |
 | ------------ | ------------- | ------------- |

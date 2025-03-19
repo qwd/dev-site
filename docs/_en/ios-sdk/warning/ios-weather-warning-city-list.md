@@ -16,46 +16,49 @@ See also [Weather warning iOS SDK](/en/docs/ios-sdk/warning/ios-weather-warning/
 
 | Interface code    | Interface              | Class            |
 | ------------------------ | ---------------------- | ---------------- |
-| warningList: | List of warning cities | WarningListResponse |
+| warningList | List of warning cities | WarningListResponse |
 
 ### Request Parameters
 
-If no optional parameters are set, the default value will be used.
+**WarningListParameter**
 
 {% include params.html p="range-warning" %}
 
 ### Sample Code
-Swift
+
+**Swift**
 
 ```swift
-    Task{
-        do {
-            let parameter = WarningListParameter(range: .CN)
-            let response = try await QWeather.instance
-                .warningList(parameter)
-            print(response)
-        } catch QWeatherError.errorResponse(let error) {
-            print(error)
-        } catch {
-            print(error)
-        }
+Task{
+    do {
+        let parameter = WarningListParameter(range: .CN)
+        let response = try await QWeather.instance
+            .warningList(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
     }
+}
 ```
 
-Objective-C
+**Objective-C**
 
 ```objc
-    WarningListParameter *parameter = [WarningListParameter instanceWithRange:RangeCN];
-    [QWeatherObjc warningList:parameter completionHandler:^(WarningListResponse * _Nullable response, NSError * _Nullable error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
+WarningListParameter *parameter = [WarningListParameter instanceWithRange:RangeCN];
+[QWeatherObjc warningList:parameter completionHandler:^(WarningListResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```
 
 ### Response
+
+**WarningListResponse**
 
 {% include api-response.html group="warning" type="list" prefix="warningLocList" fxlink=0 %}
