@@ -4,7 +4,7 @@ tag: [guide, ios, geo, city-lookup]
 ref: 1-sdk-ios-geo-city-lookup
 ---
 
-城市搜索API提供全球地理位位置、全球城市搜索服务，支持经纬度坐标反查、多语言、模糊搜索等功能。
+城市搜索提供全球地理位位置、全球城市搜索服务，支持经纬度坐标反查、多语言、模糊搜索等功能。
 
 天气数据是基于地理位置的数据，因此获取天气之前需要先知道具体的位置信息。使用城市搜索，可获取到该城市的基本信息，包括城市的Location ID（你需要这个ID去查询天气），多语言名称、经纬度、时区、海拔、Rank值、归属上级行政区域、所在行政区域等。 
 
@@ -14,13 +14,13 @@ ref: 1-sdk-ios-geo-city-lookup
 | -------- | ---------------------------- | ------------ |
 | geoCityLookup | 城市查询  | GeoCityLookupResponse |
 
-### 请求参数
+## 请求参数
 
 **GeoCityLookupParameter**
 
 {% include params.html p="location-geo adm range number lang-def" %}
 
-### 示例代码
+## 示例代码
 
 **Swift**
 
@@ -53,7 +53,7 @@ GeoCityLookupParameter *parameter = [GeoCityLookupParameter instanceWithLocation
 }];
 ```
 
-### 返回数据
+## 返回数据
 
 **GeoCityLookupResponse**
 

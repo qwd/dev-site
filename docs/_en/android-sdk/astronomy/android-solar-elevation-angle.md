@@ -10,23 +10,25 @@ Get global solar elevation angle and azimuth.
 | ------ | ---------- | ----------- |
 | astronomySolarElevationAngle| Solar elevation angle data  | AstronomySolarElevationAngleResponse |
 
-### Request Parameters
+## Request Parameters
 
 **SolarElevationAngleParameter**
 
 {% include params.html p="location-coord date time tz alt" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void astronomySolarElevationAngle(SolarElevationAngleParameter parameter, Callback<AstronomySolarElevationAngleResponse> callback);                             
 ```
 
-### Response
+## Response
 
 **AstronomySolarElevationAngleResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="astro" type="sea" prefix="nil" update=0 fxlink=0  %}
+
+<!-- | Property | Description | Example |
 | -------------------- | -------------------------- | ------------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
@@ -43,4 +45,4 @@ public void astronomySolarElevationAngle(SolarElevationAngleParameter parameter,
 | Property | Description  |  Type |  Example  |
 | ---------- | ----------- | ------------------ | ------------ |
 | getSources | Data source and other statements  | List&lt;String&gt; | QWeather   |
-| getLicense | Data license     | List&lt;String&gt; | QWeather Developers License |
+| getLicense | Data license     | List&lt;String&gt; | QWeather Developers License | -->

@@ -2,7 +2,7 @@
 title: Grid Weather
 tag: [guide, ios, grid-weather, overview]
 layout: guide-overview
-permalink: /docs/ios-sdk/grid-weather/
+permalink: en/docs/ios-sdk/grid-weather/
 description: Browse all grid level Weather APIs around the world, including real-time weather, forecast weather and minute-level precipitation at any latitude and longitude.
 ref: 0-sdk-ios-grid-weather
 ---

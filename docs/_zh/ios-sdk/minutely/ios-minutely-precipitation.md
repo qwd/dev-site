@@ -9,9 +9,9 @@ ref: 1-sdk-ios-minutely-precip
 
 | 接口代码   | 接口      | 数据类                   |
 | --------- | -------------- | ----------------- |
-|  minutely | 分钟降水 | MinutelyResponse |
+|  minutely | 分钟级降水 | MinutelyResponse |
 
-### 请求参数
+## 请求参数
 
 **MinutelyParameter**
 
@@ -21,7 +21,7 @@ ref: 1-sdk-ios-minutely-precip
 | latitude | Double | 是 | 39.92 |
 | lang | Lang | 否 | ZH_HANS |
 
-### 示例代码
+## 示例代码
 
 **Swift**
 
@@ -54,7 +54,7 @@ MinutelyParameter * paramater = [MinutelyParameter instanceWithLongitude:116.41 
 }];
 ```
 
-### 返回数据
+## 返回数据
 
 **MinutelyResponse**
 

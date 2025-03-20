@@ -12,7 +12,7 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 | --------------- | ---------------------------- | ------------ |
 | airDaily | Air quality daily forecast (new)    | AirV1DailyResponse |
 
-### Request Parameters 
+## Request Parameters 
 
 **AirV1Parameter**
 
@@ -20,13 +20,13 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 
 {% include params.html p="lang-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void airDaily(AirV1Parameter parameter, Callback<AirV1DailyResponse> callback);
 ```
 
-### Response
+## Response
 
 **AirV1DailyResponse**
 

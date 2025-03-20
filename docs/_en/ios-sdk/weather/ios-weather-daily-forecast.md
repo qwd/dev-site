@@ -14,13 +14,13 @@ Get weather daily forecasts for the next 3-30 days for cities around the world.
 | weather15d  | 15-days forecast   | WeatherDailyResponse |
 | weather30d  | 30-days forecast   | WeatherDailyResponse |
 
-### Request Parameters
+## Request Parameters
 
 **WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-### Sample Code
+## Sample Code
 
 **Swift**
 
@@ -103,7 +103,7 @@ void (^handler)(WeatherDailyResponse *, NSError *) = ^(WeatherDailyResponse *res
 [QWeatherObjc weather30d:parameter completionHandler:handler];
 ```
 
-### Response
+## Response
 
 **WeatherDailyResponse**
 

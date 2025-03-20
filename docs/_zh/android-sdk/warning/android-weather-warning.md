@@ -6,29 +6,31 @@ ref: 1-sdk-android-weather-warning
 
 天气灾害预警Android SDK可以获取中国及全球多个国家或地区官方发布的实时天气灾害预警数据。
 
-> **提示：**关于更多天气预警数据的说明，请参考[实用资料-预警信息](/docs/resource/warning-info/)。
+> **提示：**天气预警有较多规则和需要注意的事项，在开始使用天气预警之前，你应该先阅读[实用资料-预警信息](/docs/resource/warning-info/)。
 
-| 接口代码| 接口说明        | 数据类      |
+| 接口代码| 接口        | 数据类      |
 | ------------ | ---------- | ----------- |
 | warningNow| 天气灾害预警  | WarningResponse |
 
-### 请求参数
+## 请求参数
 
 **WarningNowParameter**
 
 {% include params.html p="location-def lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void warningNow(WarningNowParameter parameter, Callback<WarningResponse> callback);
 ```
 
-### 返回数据 
+## 返回数据 
 
 **WarningResponse**
 
-| 属性            | 说明                       | 示例值                      |
+ {% include api-response.html group="warning" type="warning" prefix="warning" %}
+
+<!-- | 属性            | 说明                       | 示例值                      |
 | --------------- | -------------------------- | --------------------------- |
 | getCode         | 参考[状态码](/docs/resource/status-code/)                    | 200  |
 | getWarning      | 灾害预警                   | List&lt;Warning&gt; |
@@ -62,7 +64,7 @@ public void warningNow(WarningNowParameter parameter, Callback<WarningResponse> 
 | getCertainty      | [预警信息的确定性](/docs/resource/warning-info/#certainty)，**可能为空**     | Likely                                                             |
 | getText      | 预警详细信息                       | 深圳市气象局于10月04日12时59分发布雷电黄色预警信号，请注意防御。 |
 | getRelated      | 与本条预警相关联的预警ID，当预警状态为cancel或update时返回。可能为空 | 10102010020210513101500714846231 |
-
+ -->
 
 ### 预警类型和等级
 

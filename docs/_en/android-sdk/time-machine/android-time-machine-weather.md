@@ -20,23 +20,25 @@ Get the last 10 days of weather history data.
 | ------------ | -------------------- | ------------------ |
 | historicalWeather| Historical weather data  | HistoricalWeatherResponse |
 
-### Request Parameters
+## Request Parameters
 
 **HistoricalWeatherParameter**
 
 {% include params.html p="location-id date10back lang-def unit-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void historicalWeather(HistoricalWeatherParameter parameter, Callback<HistoricalWeatherResponse> callback);
 ```
 
-### Response
+## Response
 
 **HistoricalWeatherResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="hisweather" type="daily hourly" prefix="weatherDaily weatherHourly" update=0 %}
+
+<!-- | Property | Description | Example |
 | -------------- | -------------------------- | ---------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
@@ -83,4 +85,4 @@ public void historicalWeather(HistoricalWeatherParameter parameter, Callback<His
 | getWindSpeed ​​| [Wind speed](/en/docs/resource/wind-info/#wind-speed) ​​| 15 |
 | getHumidity | Relative humidity in percent | 30 |
 | getPressure | Atmospheric pressure | 1030 |
-| getPrecip | Precipitation| 1.2 |
+| getPrecip | Precipitation| 1.2 | -->

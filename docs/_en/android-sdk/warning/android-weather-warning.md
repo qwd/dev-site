@@ -12,23 +12,25 @@ Get officially issued real-time severe weather warning data around the world.
 | ------------ | ---------- | ----------- |
 | warningNow| Weather Warning  | WarningResponse |
 
-### Request Parameters
+## Request Parameters
 
 **WarningNowParameter**
 
 {% include params.html p="location-def lang-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void warningNow(WarningNowParameter parameter, Callback<WarningResponse> callback);
 ```
 
-### Response
+## Response
 
 **WarningResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="warning" type="warning" prefix="warning" %}
+
+<!-- | Property | Description | Example |
 | --------------- | -------------------------- | --------------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
@@ -61,7 +63,7 @@ public void warningNow(WarningNowParameter parameter, Callback<WarningResponse> 
 | getUrgency      | [The urgency of the warning message](/en/docs/resource/warning-info/#urgency), **may be null**     | Immediate                                                             |
 | getCertainty      | [The certainty of the warning message](/en/docs/resource/warning-info/#certainty), **may be null**     | Likely                                                             |
 | getText | Detailed description of the warning | Shenzhen Meteorological Bureau distributed a yellow warning signal for mine-laying electricity at 12:59 on October 04. Please pay attention to defense. |
-| getRelated | Related warning id | related warning id of current warning, **may be null** |
+| getRelated | Related warning id | related warning id of current warning, **may be null** | -->
 
 ### Warning Level and Type
 

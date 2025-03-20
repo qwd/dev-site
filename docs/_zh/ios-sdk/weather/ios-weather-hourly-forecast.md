@@ -4,7 +4,7 @@ tag: [guide, ios, weather, hourly]
 ref: 3-sdk-ios-weather-hourly-forecast
 ---
 
-逐小时天气预报API，提供全球城市未来24-168小时逐小时天气预报，包括：温度、天气状况、风力、风速、风向、相对湿度、大气压强、降水概率、露点温度、云量。
+逐小时天气预报iOS SDK，提供全球城市未来24-168小时逐小时天气预报，包括：温度、天气状况、风力、风速、风向、相对湿度、大气压强、降水概率、露点温度、云量。
 
 | 接口代码      | 接口          | 数据类           |
 | ------------ | ------------ | ---------------- |
@@ -12,13 +12,13 @@ ref: 3-sdk-ios-weather-hourly-forecast
 | weather72h  | 72小时预报况  | WeatherHourlyResponse |
 | weather168h | 168小时预报况 | WeatherHourlyResponse |
 
-### 请求参数
+## 请求参数
 
 **WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-### 示例代码
+## 示例代码
 
 **Swift**
 
@@ -83,7 +83,7 @@ void (^handler)(WeatherHourlyResponse *, NSError *) = ^(WeatherHourlyResponse *r
 [QWeatherObjc weather168h:parameter completionHandler:handler];
 ```
 
-### 返回数据
+## 返回数据
 
 **WeatherHourlyResponse**
 

@@ -10,23 +10,25 @@ Global tidal data for the next 10 days, including tide table and hourly tide for
 | -------------- | ---------------- | ------- |
 | oceanTide | Tide data  | OceanTideResponse |
 
-### Request Parameters
+## Request Parameters
 
 **OceanParameter**
 
 {% include params.html p="location-p2 date10" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void oceanTide(OceanParameter parameter, Callback<OceanTideResponse> callback)
 ```
 
-### Response
+## Response
 
 **OceanTideResponse**
 
-| Property        | Description     | Example                    |
+{% include api-response.html group="ocean" type="ttable thourly" prefix="tideTable tideHourly" %}
+
+<!-- | Property        | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)        |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time)  | 2017-10-25T04:34+08:00      |
@@ -55,5 +57,5 @@ public void oceanTide(OceanParameter parameter, Callback<OceanTideResponse> call
 | Property         | Description                                                                    | Example               |
 | ------------ | ----------------------------------------------------- | -------------------- |
 | getFxTime      | Hourly forecast time                                 | 2017-10-25T04:34+08:00|
-| getHeight        | The height of the wave, in meters                                     | 1.23            |
+| getHeight        | The height of the wave, in meters                                     | 1.23            | -->
 

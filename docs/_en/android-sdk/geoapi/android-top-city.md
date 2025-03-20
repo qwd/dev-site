@@ -6,30 +6,29 @@ ref: 2-sdk-android-geo-top
 
 Get a list of popular cities around the world.
 
-
-## Top City
-
 | Interface code| Interface  | Class |
 | ------------ | ------------- | ------- |
 | geoCityTop| Top city  | GeoCityTopResponse |
 
-### Request Parameters
+## Request Parameters
 
 **GeoCityTopParameter**
 
 {% include params.html p="range number lang-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void geoCityTop(GeoCityTopParameter parameter, Callback<GeoCityTopResponse> callback);
 ```
 
-### Response Parameters
+## Response
 
 **GeoCityTopResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="geo" type="topcity"  prefix="topCityList" update=0 fxlink=0 %}
+
+<!-- | Property | Description | Example |
 | --------------- | -------- | ------------------------ |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getTopCityList | City data | List&lt;Location&gt; |
@@ -60,4 +59,4 @@ public void geoCityTop(GeoCityTopParameter parameter, Callback<GeoCityTopRespons
 | getIsDst | Is the location currently observing Daylight Saving time<br />`1` in daylight saving time <br /> `0` not in daylight saving time | 0 |
 | getType | Type of the location | city |
 | getRank | [Location Rank](/en/docs/resource/glossary/#rank) | 10 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/weather/zhuozi-101080402.html |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/weather/zhuozi-101080402.html | -->

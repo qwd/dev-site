@@ -10,13 +10,13 @@ Get the tropical cyclones location, level, pressure, windspeed, and track path o
 | ---------------- | -------------- | ---------------------- |
 | tropicalStormTrack | Real-time storm data and storm track data   | StormTrackResponse |
 
-### Request Parameters
+## Request Parameters
 
 **StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
-### Sample Code
+## Sample Code
 
 **Swift**
 
@@ -49,7 +49,7 @@ StormParameter *parameter = [StormParameter instanceWithStormid:@"NP_2421"];
 }];
 ```
      
-### Response
+## Response
 
 **StormTrackResponse**
 

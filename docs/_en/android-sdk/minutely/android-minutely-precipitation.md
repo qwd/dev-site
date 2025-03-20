@@ -20,17 +20,19 @@ Get minute-level precipitation forecast data every 5 minutes for the next 2 hour
 | latitude | double | true | 39.92 |
 | lang | Lang | false | ZH_HANS |
 
-### Sample Code
+## Sample Code
 
 ```java
 public void minutely(MinutelyParameter parameter, Callback<MinutelyResponse> callback);
 ```
 
-### Response
+## Response
 
 **MinutelyResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="minutely" prefix="nil"  %}
+
+<!-- | Property | Description | Example |
 | --------------- | -------------- | -------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
@@ -52,4 +54,4 @@ public void minutely(MinutelyParameter parameter, Callback<MinutelyResponse> cal
 | --------- | ---------------- | ---------------- |
 | getFxTime | Forecast time | 2013-12-30T20:35+08:00 |
 | getPrecip | Accumulated precipitation in 5 minutes, unit is millimeter | 10 |
-| getType | Type of precipitation <br />`rain`<br />`snow` | rain |
+| getType | Type of precipitation <br />`rain`<br />`snow` | rain | -->

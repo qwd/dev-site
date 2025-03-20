@@ -19,13 +19,13 @@ ref: 7-sdk-ios-historical-weather
 | ---------------   | ----------- | -------------------------- |
 | historicalWeather | 历史天气      | HistoricalWeatherResponse |
 
-### 请求参数
+## 请求参数
 
 **HistoricalWeatherParameter**
 
 {% include params.html p="location-id date10back lang-def unit-def" %}
 
-### 示例代码
+## 示例代码
 
 **Swift**
 
@@ -65,7 +65,7 @@ HistoricalWeatherParameter *parameter = [HistoricalWeatherParameter instanceWith
     }
 }];
 ```
-### 返回数据
+## 返回数据
 
 **HistoricalWeatherResponse**
 

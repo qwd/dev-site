@@ -8,29 +8,29 @@ ref: 1-sdk-android-air-now
 
 > **注意：**[空气质量API v1（新版）](/docs/api/air-quality/)现已发布，请尝试使用并升级到新版本。
 
-| 接口代码| 接口说明           | 数据类     |
+| 接口代码| 接口           | 数据类     |
 | ---------------- | --------- | ---------- |
 | airNow| 空气质量实况数据  | AirNowResponse |
 
-### 请求参数
+## 请求参数
 
 **AirParameter**
 
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
-
 {% include params.html p="location-def lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void airNow(AirParameter parameter, Callback<AirNowResponse> callback);
 ```
 
-### 返回数据 
+## 返回数据 
 
 **AirNowResponse**
 
-| 属性                 | 说明                       | 示例值                        |
+{% include api-response.html group="air" type="now station" prefix="now station"  %}
+
+<!-- | 属性                 | 说明                       | 示例值                        |
 | -------------------- | -------------------------- | ----------------------------- |
 | getCode              | 参考[状态码](/docs/resource/status-code/)                    | 200    |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
@@ -79,7 +79,7 @@ public void airNow(AirParameter parameter, Callback<AirNowResponse> callback);
 | getSo2      | 二氧化硫                          | 30               |
 | getCo       | 一氧化碳                          | 0.3               |
 | getO3       | 臭氧                              | 20               |
-
+ -->
 
 
 ### 空气质量指数等级

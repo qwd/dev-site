@@ -6,19 +6,20 @@ ref: 3-sdk-android-weather-hourly-forecast
 
 逐小时天气预报Android SDK，提供全球城市未来24-168小时逐小时天气预报，包括：温度、天气状况、风力、风速、风向、相对湿度、大气压强、降水概率、露点温度、云量。
 
-| 接口代码| 接口说明                   | 数据类            |
+
+| 接口代码| 接口                   | 数据类            |
 | ------------------- | -------------- | ----------------- |
 | weather24h | 24小时预报天气数据    | WeatherHourlyResponse |
 | weather72h | 72小时预报天气数据    | WeatherHourlyResponse |
 | weather168h | 168小时预报天气数据  | WeatherHourlyResponse |
 
-### 请求参数
+## 请求参数
 
 **WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 WeatherParameter parameter = new WeatherParameter("101010100");
@@ -40,11 +41,13 @@ public void weather168h(WeatherParameter parameter, Callback<WeatherHourlyRespon
 
 ```
 
-### Response
+## Response
 
 **WeatherHourlyResponse**
 
-| 属性      | 说明                       | 示例值                 |
+{% include api-response.html group="weather" type="hourly" prefix="hourly" %}
+
+<!-- | 属性      | 说明                       | 示例值                 |
 | --------- | -------------------------- | ---------------------- |
 | getCode   | 参考[状态码](/docs/resource/status-code/)                    | 200 |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
@@ -76,4 +79,4 @@ public void weather168h(WeatherParameter parameter, Callback<WeatherHourlyRespon
 | getPrecip    | 逐小时预报降水量，默认单位：毫米         | 1.2              |
 | getPressure  | 大气压强                                 | 1030             |
 | getCloud     | 云量，百分比                             | 15               |
-| getDew       | 露点温度                                 | 5                |
+| getDew       | 露点温度                                 | 5                | -->

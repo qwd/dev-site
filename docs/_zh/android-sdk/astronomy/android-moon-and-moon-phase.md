@@ -12,23 +12,25 @@ ref: 2-sdk-android-moon
 | ------ | ---------- | ----------- |
 | astronomyMoon| 月升月落和月相  | AstronomyMoonResponse |
 
-### 请求参数
+## 请求参数
 
 **AstronomyMoonParameter**
 
 {% include params.html p="location-def date60" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void astronomyMoon(AstronomyMoonParameter parameter, Callback<AstronomyMoonResponse> callback);                            
 ```
 
-### 返回数据
+## 返回数据
 
 **AstronomyMoonResponse**
 
-| 属性                 | 说明                       | 示例值                    |
+{% include api-response.html group="astro" type="moon" prefix="nil" %}
+
+<!-- | 属性                 | 说明                       | 示例值                    |
 | -------------------- | -------------------------- | ------------------------- |
 | getCode              | 参考[状态码](/docs/resource/status-code/)                    | 200       |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34     |
@@ -54,4 +56,4 @@ public void astronomyMoon(AstronomyMoonParameter parameter, Callback<AstronomyMo
 | getValue        | 月相数值               | 0.25                   |
 | getName         | [月相名称](/docs/resource/sun-moon-info/#moon-phase)               | 上弦月                 |
 | getIllumination | 月亮照明度，百分比数值 | 30                     |
-| getIcon | 月相[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/) | 802                     |
+| getIcon | 月相[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/) | 802                     | -->

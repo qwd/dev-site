@@ -11,13 +11,13 @@ Get global solar elevation angle and azimuth.
 | -------------------------------- | ---------- | ----------------- |
 | astronomySolarElevationAngle | Solar elevation angle data | AstronomySolarElevationAngleResponse |
 
-### Request Parameters
+## Request Parameters
 
 **SolarElevationAngleParameter**
 
 {% include params.html p="location-coord date time tz alt" %}
 
-### Sample Code
+## Sample Code
 
 **Swift**
 
@@ -71,7 +71,7 @@ SolarElevationAngleParameter *parameter = [SolarElevationAngleParameter instance
 }];
 ```
 
-### Response
+## Response
 
 **AstronomySolarElevationAngleResponse**
 

@@ -12,23 +12,21 @@ ref: 1-sdk-android-air-daily-v1
 | --------------- | ---------------------------- | ------------ |
 | airDaily | 空气质量每日预报(new)    | AirV1DailyResponse |
 
-### 请求参数 
+## 请求参数 
 
 **AirV1Parameter**
-
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
 {% include params.html p="p-lat p-lon" %}
 
 {% include params.html p="lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void airDaily(AirV1Parameter parameter, Callback<AirV1DailyResponse> callback);
 ```
 
-### 返回数据
+## 返回数据
 
 **AirV1DailyResponse**
 

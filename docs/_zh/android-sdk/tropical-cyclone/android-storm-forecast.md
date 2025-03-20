@@ -12,23 +12,25 @@ ref: 3-sdk-android-storm-forecast
 | -------- | ---------------- | ------- |
 | tropicalStormForecast| 台风预报  | StormForecastResponse |
 
-### 请求参数
+## 请求参数
 
 **StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void tropicalStormForecast(StormParameter parameter, Callback<StormForecastResponse> callback)
 ```
 
-### 返回数据
+## 返回数据
 
 **StormForecastResponse**
 
-| 属性            | 说明     | 示例值                    |
+{% include api-response.html group="storm" type="forecast" prefix="forecast"  %}
+
+<!-- | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | 参考[状态码](/docs/resource/status-code/)  | 200       |
 | getUpdateTime | 接口更新时间 | 2017-10-25T04:34+08:00      |
@@ -57,7 +59,7 @@ public void tropicalStormForecast(StormParameter parameter, Callback<StormForeca
 | getWindSpeed       | 台风附近最大风速                       |  18    |
 | getMoveSpeed       | 台风移动速度                   |   27   |
 | getMoveDir       | 台风移动方位                      |    西北    |
-| getMove360       | 台风移动方位360度方向  ，可能为空          |    332    |
+| getMove360       | 台风移动方位360度方向  ，可能为空          |    332    | -->
 
 ### 台风等级
 

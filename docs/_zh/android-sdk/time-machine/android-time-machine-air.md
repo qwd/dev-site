@@ -13,23 +13,25 @@ ref: 2-sdk-android-historical-air
 | ---------------- | ---------------- | ----------------- |
 | historicalAir| 历史空气质量数据  | HistoricalAirResponse |
 
-### 请求参数
+## 请求参数
 
 **HistoricalAirParameter**
 
 {% include params.html p="location-id date10back lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void historicalAir(HistoricalAirParameter parameter, Callback<HistoricalAirResponse> callback);
 ```
 
-### 返回数据
+## 返回数据
 
 **HistoricalAirResponse**
 
-| 属性              | 说明                       | 示例值                    |
+{% include api-response.html group="air" type="now" prefix="airHourly" update=0%}
+
+<!-- | 属性              | 说明                       | 示例值                    |
 | ----------------- | -------------------------- | ------------------------- |
 | getCode           | 参考[状态码](/docs/resource/status-code/)                    | 200   |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
@@ -60,4 +62,4 @@ public void historicalAir(HistoricalAirParameter parameter, Callback<HistoricalA
 | getNo2      | 二氧化氮                          | 40               |
 | getSo2      | 二氧化硫                          | 30               |
 | getCo       | 一氧化碳                          | 0.3               |
-| getO3       | 臭氧                              | 20               |
+| getO3       | 臭氧                              | 20               | -->

@@ -10,23 +10,25 @@ Get moonrise and moonset and hourly moon phase data for the next 60 days at any 
 | ------ | ---------- | ----------- |
 | astronomyMoon | Moonrise, moonset and moon phase data  | AstronomyMoonResponse |
 
-### Request Parameters
+## Request Parameters
 
 **AstronomyMoonParameter**
 
 {% include params.html p="location-def date60" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void astronomyMoon(AstronomyMoonParameter parameter, Callback<AstronomyMoonResponse> callback);                                
 ```
 
-### Response
+## Response
 
 **AstronomyMoonResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="astro" type="moon" prefix="nil" %}
+
+<!-- | Property | Description | Example |
 | -------------------- | -------------------------- | ------------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
@@ -52,4 +54,4 @@ public void astronomyMoon(AstronomyMoonParameter parameter, Callback<AstronomyMo
 | getValue        | Moon phase value               | 0.25                   |
 | getName         | Moon Phase Name               | 上弦月                 |
 | getIllumination | Moon illuminance in percent | 30                     |
-| getIcon | [Icon code](/en/docs/resource/icons/) for moon phase. See also [QWeather Icons](https://icons.qweather.com/en/) | 802                     |
+| getIcon | [Icon code](/en/docs/resource/icons/) for moon phase. See also [QWeather Icons](https://icons.qweather.com/en/) | 802                     | -->

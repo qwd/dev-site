@@ -12,23 +12,25 @@ Get a list of tropical cyclones for the last 2 years in major ocean basins aroun
 | -------- | ---------------- | ------- |
 | tropicalStormList | Storm list | StormListResponse |
 
-### Request Parameters
+## Request Parameters
 
 **StormListParameter**
 
 {% include params.html p="basin year" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void tropicalStormList(StormListParameter parameter, Callback<StormListResponse> callback);
 ```
 
-### Response
+## Response
 
 **StormListResponse**
 
-| Property            | Description     | Example                    |
+{% include api-response.html group="storm" type="list" prefix="storm"  %}
+
+<!-- | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)        |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time)  | 2017-10-25T04:34+08:00      |
@@ -53,4 +55,4 @@ public void tropicalStormList(StormListParameter parameter, Callback<StormListRe
 | getName        | Storm name                                      | 杜鹃           |
 | getBasin       | The basin of the storm                              |    NP    |
 | getYear       | Year of the storm                              |    2021    |
-| getActive       | Is it an active storm?<br />`1` Active <br /> `0` Stopped                             |    0    |
+| getActive       | Is it an active storm?<br />`1` Active <br /> `0` Stopped                             |    0    | -->

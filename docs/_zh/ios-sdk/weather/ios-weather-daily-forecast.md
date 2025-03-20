@@ -4,7 +4,7 @@ tag: [guide, ios, weather, daily]
 ref: 2-sdk-ios-weather-daily-forecast
 ---
 
-每日天气预报iOS SDK，提供全球城市未来3-15天天气预报，包括：日出日落、月升月落、最高最低温度、天气白天和夜间状况、风力、风速、风向、相对湿度、大气压强、降水量、降水概率、露点温度、紫外线强度、能见度等。
+每日天气预报iOS SDK，提供全球城市未来3-30天天气预报，包括：日出日落、月升月落、最高最低温度、天气白天和夜间状况、风力、风速、风向、相对湿度、大气压强、降水量、露点温度、紫外线强度、能见度等。
 
 | 接口代码     | 接口         | 数据类               |
 | ----------- | ------------ | -------------------- |
@@ -14,13 +14,13 @@ ref: 2-sdk-ios-weather-daily-forecast
 | weather15d | 15天预报      | WeatherDailyResponse |
 | weather30d | 30天预报      | WeatherDailyResponse |
 
-### 请求参数
+## 请求参数
 
 **WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-### 示例代码
+## 示例代码
 
 **Swift**
 
@@ -103,7 +103,7 @@ void (^handler)(WeatherDailyResponse *, NSError *) = ^(WeatherDailyResponse *res
 [QWeatherObjc weather30d:parameter completionHandler:handler];
 ```
 
-### 返回数据
+## 返回数据
 
 **WeatherDailyResponse**
 

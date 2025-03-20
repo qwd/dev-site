@@ -6,27 +6,29 @@ ref: 2-sdk-android-currents
 
 未来10天全球潮流数据，包括潮流流速和流向。
 
-| 接口代码| 接口说明          | 数据类  |
+| 接口代码| 接口          | 数据类  |
 | -------- | ---------------- | ------- |
-| oceanCurrents | 潮流数据  | OceanCurrentsResponse |
+| oceanCurrents | 潮流  | OceanCurrentsResponse |
 
-### 请求参数
+## 请求参数
 
 **OceanParameter**
 
 {% include params.html p="location-p6 date10" %}
 
-### 示例代码
+## 示例代码
 
 ```java
  public void oceanCurrents(OceanParameter parameter, Callback<OceanCurrentsResponse> callback);
 ```
 
-### 返回数据
+## 返回数据
 
 **OceanCurrentsResponse**
 
-| 属性            | 说明     | 示例值                    |
+{% include api-response.html group="ocean" type="ctable chourly" prefix="currentsTable currentsHourly" %}
+
+<!-- | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | 参考[状态码](/docs/resource/status-code/)  | 200        |
 | getUpdateTime | 接口更新时间 | 2017-10-25T04:34+08:00      |
@@ -57,6 +59,6 @@ ref: 2-sdk-android-currents
 | ------------ | ----------------------------------------------------- | -------------------- |
 | getFxTime      | 逐小时预报时间                                 | 2017-10-25T04:34+08:00|
 | getSpeed        | 潮流流速，单位：厘米/秒              | 1.23            |
-| getDir360       | 潮流360度方向                              |    212    |
+| getDir360       | 潮流360度方向                              |    212    | -->
 
 

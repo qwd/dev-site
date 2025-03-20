@@ -12,13 +12,13 @@ Get hourly weather forecasts for cities around the world for the next 24-168 hou
 | weather72h| 72-hours forecast  | WeatherHourlyResponse |
 | weather168h| 168-hours forecast  | WeatherHourlyResponse |
 
-### Request Parameters
+## Request Parameters
 
 **WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 WeatherParameter parameter = new WeatherParameter("101010100");
@@ -40,11 +40,13 @@ public void weather168h(WeatherParameter parameter, Callback<WeatherHourlyRespon
 
 ```
 
-### Response
+## Response
 
 **WeatherHourlyResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="weather" type="hourly" prefix="hourly" %}
+
+<!-- | Property | Description | Example |
 | --------- | -------------------------- | ---------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
@@ -76,5 +78,5 @@ public void weather168h(WeatherParameter parameter, Callback<WeatherHourlyRespon
 | getPrecip | Precipitation | 1.2 |
 | getPressure | Atmospheric pressure | 1030 |
 | getCloud | Cloud cover in percent | 15 |
-| getDew | Dew point temperature | 5 |
+| getDew | Dew point temperature | 5 | -->
 

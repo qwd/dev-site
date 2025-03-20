@@ -10,23 +10,26 @@ ref: 3-sdk-android-geo-poi-lookup
 | ----------- | --------------- | ---------- |
 | geoPoiLookup| POI搜索  | GeoPoiResponse |
 
-### 请求参数
+## 请求参数
 
 **GeoPoiLookupParameter**
 
 {% include params.html p="location-geo geo-type city number lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void geoPoiLookup(GeoPoiLookupParameter parameter, Callback<GeoPoiResponse> callback);
 ```
 
-### 返回数据
+## 返回数据
 
 **GeoPoiResponse**
 
-| 属性       | 说明     | 示例值          |
+
+{% include api-response.html group="geo_poi" type="poi" prefix="poi" update=0 fxlink=0 %}
+
+<!-- | 属性       | 说明     | 示例值          |
 | ---------- | -------- | --------------- |
 | getCode    | 参考[状态码](/docs/resource/status-code/)  | 200 |
 | getPoi | 城市数据 | List&lt;Location&gt; |
@@ -58,4 +61,4 @@ public void geoPoiLookup(GeoPoiLookupParameter parameter, Callback<GeoPoiRespons
 | getType      | 该Poi的属性                                                       | scenic      |
 | getRank      | 地区评分                                                          | 10        |
 | getFxLink    | 该Poi的天气预报网页链接                                             | https://www.qweather.com |
-
+ -->

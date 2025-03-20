@@ -10,23 +10,25 @@ Get the sunrise and sunset times for any location around the world for the next 
 | -------------- | ---------- | ----------- |
 | astronomySun | Sunrise and sunset data  | AstronomySunResponse |
 
-### Request Parameters
+## Request Parameters
 
 **AstronomySunParameter**
 
 {% include params.html p="location-def date60" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void astronomySun(AstronomySunParameter parameter, Callback<AstronomySunResponse> callback);
 ```
 
-### Response
+## Response
 
 **AstronomySunResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="astro" type="sun" prefix="nil" %}
+
+<!-- | Property | Description | Example |
 | -------------------- | -------------------------- |- ------------------------ |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
@@ -40,4 +42,4 @@ public void astronomySun(AstronomySunParameter parameter, Callback<AstronomySunR
 | Property | Description  |  Type |  Example  |
 | ---------- | ----------- | ------------------ | ------------ |
 | getSources | Data source and other statements  | List&lt;String&gt; | QWeather   |
-| getLicense | Data license     | List&lt;String&gt; | QWeather Developers License |
+| getLicense | Data license     | List&lt;String&gt; | QWeather Developers License | -->

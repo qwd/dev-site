@@ -61,6 +61,4 @@ AirV1StationParameter * parameter = [AirV1StationParameter instanceWithLocationI
 
 **AirV1StationResponse**
 
-{% include api-snippet.html snippet="aq-v1-station-v1" %}
-
 {% include api-response.html group="air" type="station-v1" prefix="nil" fxlink="0" refer="0" update="0" statusCode="0" metadata="tag sources"  %}

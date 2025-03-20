@@ -12,23 +12,21 @@ ref: 1-sdk-android-air-hourly-v1
 | --------------- | ---------------------------- | ------------ |
 | airHourly | 空气质量小时预报(new)    | AirV1HourlyResponse |
 
-### 请求参数 
+## 请求参数 
 
 **AirV1Parameter**
-
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
 {% include params.html p="p-lat p-lon" %}
 
 {% include params.html p="lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void airHourly(AirV1Parameter parameter, Callback<AirV1HourlyResponse> callback);
 ```
 
-### 返回数据
+## 返回数据
 
 **AirV1HourlyResponse**
 

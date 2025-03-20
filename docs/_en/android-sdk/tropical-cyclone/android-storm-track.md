@@ -10,23 +10,25 @@ Get the tropical cyclones location, level, pressure, windspeed, and track path o
 | -------- | ---------------- | ------- |
 | tropicalStormTrack| Real-time storm data and storm track data  | StormTrackResponse |
 
-### Request Parameters
+## Request Parameters
 
 **StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void tropicalStormTrack(StormParameter parameter, Callback<StormTrackResponse> callback);
 ```
 
-### Response
+## Response
 
 **StormTrackResponse**
 
-| Property            | Description     | Example                    |
+{% include api-response.html group="storm" type="active now track"  prefix="nil now track"%}
+
+<!-- | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)        |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time)  | 2017-10-25T04:34+08:00      |
@@ -87,7 +89,7 @@ public void tropicalStormTrack(StormParameter parameter, Callback<StormTrackResp
 | getMove360       | Storm movement direction in azimuth degree          |    332    |
 | getWindRadius30       | Strom with level 7 wind circle, **may be null**         |    StormWindRadius    |
 | getWindRadius50       | Strom with level 10 wind circle, **may be null**        |    StormWindRadius    |
-| getWindRadius64       | Strom with level 12 wind circle, **may be null**     |    StormWindRadius    |
+| getWindRadius64       | Strom with level 12 wind circle, **may be null**     |    StormWindRadius    | -->
 
 
 ### Typhoon level

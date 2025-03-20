@@ -13,23 +13,25 @@ Get the last 10 days of air quality history data.
 | ---------------- | ---------------- | ---------------- |
 | historicalAir| Historical air quality data  | HistoricalAirResponse |
 
-### Request Parameters
+## Request Parameters
 
 **HistoricalAirParameter**
 
 {% include params.html p="location-id date10back lang-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void historicalAir(HistoricalAirParameter parameter, Callback<HistoricalAirResponse> callback);
 ```
 
-### Response
+## Response
 
 **HistoricalAirResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="air" type="now" prefix="airHourly" update=0 %}
+
+<!-- | Property | Description | Example |
 | ----------------- | -------------------------- | ------------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
@@ -59,4 +61,4 @@ public void historicalAir(HistoricalAirParameter parameter, Callback<HistoricalA
 | getNo2 | Nitrogen dioxide | 40 |
 | getSo2 | Sulfur dioxide | 30 |
 | getCo | Carbon monoxide | 0.3 |
-| getO3 | Ozone | 20 |
+| getO3 | Ozone | 20 | -->

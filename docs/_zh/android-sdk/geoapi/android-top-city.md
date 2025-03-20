@@ -6,27 +6,30 @@ ref: 2-sdk-android-geo-top
 
 获取全球各国热门城市列表。
 
-| 接口代码| 接口说明           | 数据类  |
+| 接口代码| 接口           | 数据类  |
 | ------------ | ------------- | ------- |
 | geoCityTop | 热门城市查询  | GeoCityTopResponse |
 
-### 请求参数
+## 请求参数
 
 **GeoCityTopParameter**
 
 {% include params.html p="range number lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void geoCityTop(GeoCityTopParameter parameter, Callback<GeoCityTopResponse> callback);
 ```
 
-### 返回数据
+## 返回数据
 
 **GeoCityTopResponse**
 
-| 属性            | 说明     | 示例值                   |
+
+{% include api-response.html group="geo" type="topcity"  prefix="topCityList" update=0 fxlink=0 %}
+
+<!-- | 属性            | 说明     | 示例值                   |
 | --------------- | -------- | ------------------------ |
 | getCode         | 参考[状态码](/docs/resource/status-code/)  | 200  |
 | getTopCityList | 城市数据 | List&lt;Location&gt; |
@@ -58,4 +61,4 @@ public void geoCityTop(GeoCityTopParameter parameter, Callback<GeoCityTopRespons
 | getType      | 该地区／城市的属性                                                      | city                 |
 | getRank      | 该地区／城市评分                                                        | 10                   |
 | getFxLink    | 城市的天气预报网页链接                                                  | https://www.qweather.com/weather/zhuozi-101080402.html |
-
+ -->

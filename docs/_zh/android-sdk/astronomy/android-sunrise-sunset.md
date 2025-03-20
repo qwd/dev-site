@@ -8,27 +8,29 @@ ref: 1-sdk-android-sun
 
 > 在[逐天预报API](/docs/api/weather)中，也会返回对应天数的日出日落、月升月落和月相数据
 
-| 接口代码| 接口说明          | 数据类      |
+| 接口代码| 接口          | 数据类      |
 | -------------- | ---------- | ----------- |
 | astronomySun| 日出日落  | AstronomySunResponse |
 
-### 请求参数
+## 请求参数
 
 **AstronomySunParameter**
 
 {% include params.html p="location-def date60" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void astronomySun(AstronomySunParameter parameter, Callback<AstronomySunResponse> callback);                             
 ```
 
-### 返回数据
+## 返回数据
 
 **AstronomySunResponse**
 
-| 属性                 | 说明                       | 示例值                    |
+{% include api-response.html group="astro" type="sun" prefix="nil" %}
+
+<!-- | 属性                 | 说明                       | 示例值                    |
 | -------------------- | -------------------------- | ------------------------- |
 | getCode              | 参考[状态码](/docs/resource/status-code/)                    | 200       |
 | getUpdateTime | [数据最近更新时间](/docs/resource/glossary/#update-time)             | 2017-10-25T04:34+08:00   |
@@ -42,5 +44,5 @@ public void astronomySun(AstronomySunParameter parameter, Callback<AstronomySunR
 | 属性        | 说明        | 类型                | 示例值        |
 | ---------- | ----------- | ------------------ | ------------ |
 | getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
-| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License | -->
 

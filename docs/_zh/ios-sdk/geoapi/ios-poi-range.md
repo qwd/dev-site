@@ -10,13 +10,13 @@ ref: 4-sdk-ios-geo-poi-range
 | ----------- | -------------------------- | ------------ |
 | geoPoiRange | POI范围搜索  | GeoPoiResponse |
 
-### 请求参数
+## 请求参数
 
 **GeoPoiRangeParameter**
 
 {% include params.html p="location-coord geo-type radius number lang-def" %}
 
-### 示例代码
+## 示例代码
 
 **Swift**
 
@@ -52,7 +52,7 @@ GeoPoiRangeParameter * parameter = [GeoPoiRangeParameter instanceWithLocation:@"
 }];
 ```
 
-### 返回数据
+## 返回数据
 
 **GeoPoiResponse**
 

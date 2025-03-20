@@ -12,15 +12,13 @@ ref: 1-sdk-ios-air-now
 | --------------- | ------------------- | ------------ |
 | airNow | 空气质量实况     | AirNowResponse |
 
-### 请求参数
+## 请求参数
 
 **AirParameter**
 
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
-
 {% include params.html p="location-def lang-def" %}
 
-### 示例代码
+## 示例代码
 
 **Swift**
 
@@ -53,7 +51,7 @@ AirParameter * parameter = [AirParameter instanceWithLocation:@"101010100" lang:
 }];
 ```
 
-### 返回数据
+## 返回数据
 
 **AirNowResponse**
 

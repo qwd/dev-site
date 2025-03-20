@@ -16,7 +16,7 @@ This document will introduce how to configure the Android SDK in the QWeather De
 
 ## OS requirement
 
-Android 4.4+
+Android 5.0+, minSDK 21
 
 ## Create Project and Credential
 
@@ -36,8 +36,8 @@ Make sure you have created a Project and Credential, see [Project and KEY](/en/d
 **Reference Library**
 
 ```
-compile'com.squareup.okhttp3:okhttp:3.12.12' (3.12.12+)
-compile'com.google.code.gson:gson:2.6.2' (2.6.2+)
+    implementation libs.gson
+    implementation libs.okhttp
 ```
 
 **Confusion**
@@ -69,18 +69,8 @@ SDK no longer provides log function, error information can be provided by Throwa
 When using the SDK, you need to initialize the account in advance (you can execute it once globally)
 
 ```java
-HeConfig.init("PublicId", "PrivateKey");
-```
-
-**Setup subscription**
-
-Standard subscription is default, you can switch subscription by the following methods (execute it once globally)
- 
-```java
-//Switch to Free subscription
-HeConfig.switchToDevService();
-//Switch to Standard subscription
-HeConfig.switchToBizService();
+QWeather.getInstance(MainActivity.this, "{YOUR_HOST}")
+        .setToken("{YOUR_JWT_TOKEN}")
 ```
 
 **Data access example**
@@ -88,31 +78,24 @@ HeConfig.switchToBizService();
 Call different methods according to your needs. The parameters in the interface callback method are the Classes returned by the interface
 
 ```java
-/**
- * Real-time weather data
- * @param location location to be queried
- * @param lang (optional) set multi-language, the default is simplified Chinese
- * @param unit (optional) set unit, metric (m) or imperial (i), the default is metric unit
- * @param listener network access result callback
- */
+WeatherParameter parameter = new WeatherParameter("101120501")
+                .lang(Lang.ZH_HANS)
+                .unit(Unit.METRIC);
 
-QWeather.getWeatherNow(MainActivity.this, "101010300", Lang.ZH_HANS, Unit.METRIC, new QWeather.OnResultWeatherNowListener() {
+QWeather.instance.weatherNow(parameter, new Callback<WeatherNowResponse>() {
     @Override
-    public void onError(Throwable e) {
-        Log.i(TAG, "getWeather onError: "+ e);
+    public void onSuccess(WeatherNowResponse response) {
+        Log.i(TAG, response.toString());
     }
 
     @Override
-    public void onSuccess(WeatherNowBean weatherBean) {
-        Log.i(TAG, "getWeather onSuccess: "+ new Gson().toJson(weatherBean));
-        if (Code.OK.getCode().equalsIgnoreCase(weatherBean.getCode())) {
-            WeatherNowBean.NowBaseBean now = weatherBean.getNow();
-        } else {
-            //Check the reason for the failure to return data here
-            String status = weatherBean.getCode();
-            Code code = Code.toEnum(status);
-            Log.i(TAG, "failed code: "+ code);
-        }
+    public void onFailure(ErrorResponse errorResponse) {
+        Log.i(TAG,errorResponse.toString());
+    }
+
+    @Override
+    public void onException(Throwable e) {
+        e.printStackTrace();
     }
 });
 ```

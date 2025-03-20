@@ -10,22 +10,24 @@ POI Lookup API provides basic information of POI(scenic spot, tide stations, cur
 | ----------- | --------------- | ---------- |
 | geoPoiLookup| POI lookup  | GeoPoiResponse |
 
-### Request Parameters
+## Request Parameters
 
 **GeoPoiLookupParameter**
 
 {% include params.html p="location-geo geo-type city number lang-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void geoPoiLookup(GeoPoiLookupParameter parameter, Callback<GeoPoiResponse> callback);
 ```
 
-### Response
+## Response
 
 **GeoPoiResponse**
 
+{% include api-response.html group="geo_poi" type="poi" prefix="poi" update=0 fxlink=0 %}
+<!-- 
 | Property | Description | Example |
 | ---------- | -------- | --------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
@@ -56,4 +58,4 @@ public void geoPoiLookup(GeoPoiLookupParameter parameter, Callback<GeoPoiRespons
 | getIsDst | Is the location currently observing Daylight Saving time<br />`1` in daylight saving time <br /> `0` not in daylight saving time | 0 |
 | getType | POI type | scenic |
 | getRank | [Location Rank](/en/docs/resource/glossary/#rank) | 10 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com | -->

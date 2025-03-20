@@ -10,23 +10,25 @@ ref: 2-sdk-android-storm-track
 | -------- | ---------------- | ------- |
 | tropicalStormTrack | 台风实况和路径  | StormTrackResponse |
 
-### 请求参数
+## 请求参数
 
 **StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void tropicalStormTrack(StormParameter parameter, Callback<StormTrackResponse> callback);
 ```
 
-### 返回数据
+## 返回数据
 
 **StormTrackResponse**
 
-| 属性            | 说明     | 示例值                    |
+{% include api-response.html group="storm" type="active now track"  prefix="nil now track"%}
+
+<!-- | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | 参考[状态码](/docs/resource/status-code/)  | 200       |
 | getUpdateTime | 接口更新时间 | 2017-10-25T04:34+08:00      |
@@ -87,7 +89,7 @@ public void tropicalStormTrack(StormParameter parameter, Callback<StormTrackResp
 | getMove360       | 台风移动方位360度方向  ，可能为空          |    332    |
 | getWindRadius30       | 台风7级风圈    ，可能为空         |    StormWindRadius    |
 | getWindRadius50       | 台风10级风圈   ，可能为空       |    StormWindRadius    |
-| getWindRadius64       | 台风12级风圈，可能为空     |    StormWindRadius    |
+| getWindRadius64       | 台风12级风圈，可能为空     |    StormWindRadius    | -->
 
 ### 台风等级
 

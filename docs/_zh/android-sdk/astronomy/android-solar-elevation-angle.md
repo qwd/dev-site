@@ -6,26 +6,29 @@ ref: 3-sdk-android-solar-elevation-angle
 
 任意时间点的全球太阳高度及方位角。
 
-| 接口代码| 接口说明          | 数据类      |
+| 接口代码| 接口          | 数据类      |
 | ------ | ---------- | ----------- |
 | astronomySolarElevationAngle| 太阳高度角数据  | AstronomySolarElevationAngleResponse |
 
-### 请求参数
+## 请求参数
 
 **SolarElevationAngleParameter**
 
 {% include params.html p="location-coord date time tz alt" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void astronomySolarElevationAngle(SolarElevationAngleParameter parameter, Callback<AstronomySolarElevationAngleResponse> callback);                              
 ```
 
-### 返回数据
+## 返回数据
 
 **AstronomySolarElevationAngleResponse**
 
+{% include api-response.html group="astro" type="sea" prefix="nil" update=0 fxlink=0  %}
+
+<!-- 
 | 属性                 | 说明                       | 示例值                    |
 | -------------------- | -------------------------- | ------------------------- |
 | getCode              | 参考[状态码](/docs/resource/status-code/)                    | 200       |
@@ -43,6 +46,6 @@ public void astronomySolarElevationAngle(SolarElevationAngleParameter parameter,
 | 属性        | 说明        | 类型                | 示例值        |
 | ---------- | ----------- | ------------------ | ------------ |
 | getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
-| getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License |
+| getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License | -->
 
 

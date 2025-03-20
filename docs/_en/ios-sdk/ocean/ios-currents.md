@@ -10,13 +10,13 @@ Global currents data for the next 10 days, including currents speed and directio
 | --------------------------- | ---- | ------------------ |
 | oceanCurrents | Currents data | OceanCurrentsResponse |
 
-### Request Parameters
+## Request Parameters
 
 **OceanParameter**
 
 {% include params.html p="location-p6 date10" %}
 
-### Sample Code
+## Sample Code
 
 **Swift**
 
@@ -57,7 +57,7 @@ OceanParameter *parameter = [OceanParameter instanceWithLocation:@"P66981" date:
 }];
 ```
 
-### Response
+## Response
 
 **OceanCurrentsResponse**
 

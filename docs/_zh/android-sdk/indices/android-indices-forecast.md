@@ -14,13 +14,13 @@ ref: 1-sdk-android-indices-forecast
 | indices1d| 当天生活指数  | IndicesDailyResponse |
 | indices3d| 3天生活指数  | IndicesDailyResponse |
 
-### 请求参数
+## 请求参数
 
 **IndicesParameter**
 
 {% include params.html p="location-def idx-type lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 /**
@@ -34,11 +34,13 @@ public void indices1d(IndicesParameter parameter, Callback<IndicesDailyResponse>
 public void indices3d(IndicesParameter parameter, Callback<IndicesDailyResponse> callback);
 ```
 
-### Response 
+## Response 
 
 **IndicesDailyResponse**
 
-| 属性         | 说明                       | 示例值                |
+{% include api-response.html group="indices" prefix="daily" %}
+
+<!-- | 属性         | 说明                       | 示例值                |
 | ------------ | -------------------------- | --------------------- |
 | getCode      | 参考[状态码](/docs/resource/status-code/)                    | 200 |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
@@ -62,7 +64,7 @@ public void indices3d(IndicesParameter parameter, Callback<IndicesDailyResponse>
 | getCategory | 生活指数预报级别名称     |
 | getName     | 生活指数名称             |
 | getType     | 生活指数类型 |
-| getText     | 生活指数详细描述         |
+| getText     | 生活指数详细描述         | -->
 
 ### 生活指数类型和等级
 

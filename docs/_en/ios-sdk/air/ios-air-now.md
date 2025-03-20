@@ -10,17 +10,15 @@ Real-time air quality for Chinese cities and 1,700 monitoring stations, includin
 
 | Interface code | Interface                           | Class        |
 | -------------------------- | ------------------------------ | ------------ |
-| airNow | Air Quality Live              | AirNowResponse |
+| airNow | Real-time Air Quality              | AirNowResponse |
 
-### Request Parameters
+## Request Parameters
 
 **AirParameter**
 
-If no optional parameters are set, the default value will be used.
-
 {% include params.html p="location-def lang-def" %}
 
-### Sample Code
+## Sample Code
 
 **Swift**
 
@@ -53,7 +51,7 @@ AirParameter * parameter = [AirParameter instanceWithLocation:@"101010100" lang:
 }];
 ```
 
-### Response
+## Response
 
 **AirNowResponse**
 
@@ -61,6 +59,6 @@ AirParameter * parameter = [AirParameter instanceWithLocation:@"101010100" lang:
 
 {% include api-response.html group="air" type="now station" prefix="now station"  %}
 
-### Air Quality Index Level
+## Air Quality Index Level
 
 See [Air Quality Info](/en/docs/resource/air-info/).

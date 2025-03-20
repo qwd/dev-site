@@ -12,13 +12,13 @@ ref: 2-sdk-ios-historical-air
 | -------------- | -------------- | --------------------- |
 | historicalAir | 历史空气质量     | HistoricalAirResponse |
 
-### 请求参数
+## 请求参数
 
 **HistoricalAirParameter**
 
 {% include params.html p="location-id date10back lang-def" %}
 
-### 示例代码
+## 示例代码
 
 **Swift**
 
@@ -59,7 +59,7 @@ HistoricalAirParameter *parameter = [HistoricalAirParameter instanceWithLocation
 }];
 ```
 
-### 返回数据
+## 返回数据
 
 **HistoricalAirResponse**
 

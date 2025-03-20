@@ -15,25 +15,27 @@ See also [Weather warning Android SDK](/en/docs/android-sdk/warning/android-weat
 
 | Interface code| Interface  | Class |
 | ---------------- | -------------- | --------------- |
-| warningList| Weather warning city list  | WarningListResponse |
+| warningList| List of warning cities  | WarningListResponse |
 
-### Request Parameters
+## Request Parameters
 
 **WarningListParameter**
 
 {% include params.html p="range-warning" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void warningList(WarningListParameter parameter, Callback<WarningListResponse> callback);
 ```
 
-### Response
+## Response
 
 **WarningListResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="warning" type="list" prefix="warningLocList" fxlink=0 %}
+
+<!-- | Property | Description | Example |
 | -------------- | ------------ | --------------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T12:34+08:00 |
@@ -51,4 +53,4 @@ public void warningList(WarningListParameter parameter, Callback<WarningListResp
 
 | Property | Description | Example |
 | ------------- | ------------ | --------- |
-| getLocationId | Location ID | 101280601 |
+| getLocationId | Location ID | 101280601 | -->

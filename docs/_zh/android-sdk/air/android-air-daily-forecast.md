@@ -1,5 +1,5 @@
 ---
-title: 空气质量预报
+title: 空气质量每日预报
 tag: [guide, android, air, daily]
 ref: 2-sdk-android-air-daily-forecast
 ---
@@ -8,35 +8,35 @@ ref: 2-sdk-android-air-daily-forecast
 
 > **注意：**[空气质量API v1（新版）](/docs/api/air-quality/)现已发布，请尝试使用并升级到新版本。
 
-| 接口代码| 接口说明             | 数据类       |
+| 接口代码| 接口             | 数据类       |
 | ------------------- | -------- | ------------ |
-| air5d| 空气质量5天预报数据  | AirDailyResponse |
+| air5d| 空气质量5天预报  | AirDailyResponse |
 
-### 请求参数
+## 请求参数
 
 **AirParameter**
 
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
-
 {% include params.html p="location-def lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 
 /**
- * 空气质量5天预报数据
+ * 空气质量5天预报
  */
 
 public void air5d(AirParameter parameter, Callback<AirDailyResponse> callback);
 
 ```
 
-### 返回数据
+## 返回数据
 
 **AirDailyResponse**
 
-| 属性        | 说明                       | 示例值                |
+{% include api-response.html group="air" type="daily"  prefix="daily" %}
+
+<!-- | 属性        | 说明                       | 示例值                |
 | ----------- | -------------------------- | --------------------- |
 | getCode     | 参考[状态码](/docs/resource/status-code/)                    | 200  |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
@@ -59,8 +59,8 @@ public void air5d(AirParameter parameter, Callback<AirDailyResponse> callback);
 | getAqi      | 空气质量指数，AQI和PM25的关系 | 74         |
 | getPrimary  | 主要污染物                    | PM2.5       |
 | getLevel    | 实时空气质量指数等级          | 2          |
-| getCategory | 实时空气质量指数级别          | 良         |
+| getCategory | 实时空气质量指数级别          | 良         | -->
 
-### 空气质量指数等级
+## 空气质量指数等级
 
 请查看[空气质量信息](/docs/resource/air-info/)。

@@ -12,23 +12,25 @@ ref: 1-sdk-android-storm-list
 | -------- | ---------------- | ------- |
 | tropicalStormList| 台风列表  | StormListResponse |
 
-### 请求参数
+## 请求参数
 
 **StormListParameter**
 
 {% include params.html p="basin year" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void tropicalStormList(StormListParameter parameter, Callback<StormListResponse> callback);
 ```
 
-### 返回数据
+## 返回数据
 
 **StormListResponse**
 
-| 属性            | 说明     | 示例值                    |
+{% include api-response.html group="storm" type="list" prefix="storm"  %}
+
+<!-- | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | 参考[状态码](/docs/resource/status-code/)  | 200       |
 | getUpdateTime | 接口更新时间 | 2017-10-25T04:34+08:00      |
@@ -54,5 +56,5 @@ public void tropicalStormList(StormListParameter parameter, Callback<StormListRe
 | getBasin       | 台风所处流域                              |    NP    |
 | getYear       | 台风所处年份                              |    2021    |
 | getActive       | 是否为活跃台风<br />`1` 活跃台风 <br /> `0` 停编                              |    0    |
-
+ -->
 

@@ -7,11 +7,11 @@ ref: 1-sdk-android-minutely-precip
 分钟级降水提供中国地区未来2小时内每5分钟降水数据、降水类型以及未来2小时的降水概况信息。
 > 仅限中国地区。
 
-| 接口代码| 接口说明       | 数据类       |
+| 接口代码| 接口       | 数据类       |
 | ---------- | ----------- | ------------ |
-| minutely | 分钟级降雨 | MinutelyResponse |
+| minutely | 分钟级降水 | MinutelyResponse |
 
-### 请求参数
+## 请求参数
 
 **MinutelyParameter**
 
@@ -21,17 +21,19 @@ ref: 1-sdk-android-minutely-precip
 | latitude | double | 是 | 39.92 |
 | lang | Lang | 否 | ZH_HANS |
 
-### 示例代码
+## 示例代码
 
 ```java
 public void minutely(MinutelyParameter parameter, Callback<MinutelyResponse> callback);
 ```
 
-### 返回数据
+## 返回数据
 
 **MinutelyResponse**
 
-| 属性            | 说明                       | 示例值               |
+{% include api-response.html group="minutely" prefix="nil"  %}
+
+<!-- | 属性            | 说明                       | 示例值               |
 | --------------- | -------------------------- | -------------------- |
 | getCode         | 参考[状态码](/docs/resource/status-code/)                    | 200  |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
@@ -53,4 +55,4 @@ public void minutely(MinutelyParameter parameter, Callback<MinutelyResponse> cal
 | --------- | -------------------------- | ---------------- |
 | getFxTime | 时间 | 2013-12-30T20:35+08:00 |
 | getPrecip | 5分钟累计降水量，单位毫米                     | 10               |
-| getType   | 降水类型                   | rain             |
+| getType   | 降水类型                   | rain             | -->

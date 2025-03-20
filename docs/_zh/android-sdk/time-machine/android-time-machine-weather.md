@@ -19,23 +19,25 @@ ref: 1-sdk-android-historical-weather
 | ------------ | --------------- | ------------------ |
 | historicalWeather | 历史天气数据  | HistoricalWeatherResponse |
 
-### 请求参数
+## 请求参数
 
 **HistoricalWeatherParameter**
 
 {% include params.html p="location-id date10back lang-def unit-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void historicalWeather(HistoricalWeatherParameter parameter, Callback<HistoricalWeatherResponse> callback);
 ```
 
-### 返回数据
+## 返回数据
 
  **HistoricalWeatherResponse**
 
-| 属性           | 说明                       | 示例值                 |
+{% include api-response.html group="hisweather" type="daily hourly" prefix="weatherDaily weatherHourly" update=0 %}
+
+<!-- | 属性           | 说明                       | 示例值                 |
 | -------------- | -------------------------- | ---------------------- |
 | getCode        | 参考[状态码](/docs/resource/status-code/)                    | 200|
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
@@ -81,4 +83,4 @@ public void historicalWeather(HistoricalWeatherParameter parameter, Callback<His
 | getWindSpeed | [风速](/docs/resource/wind-info/#wind-speed)                                   | 15               |
 | getHumidity  | 湿度                                   | 30               |
 | getPressure  | 大气压强                               | 1030             |
-| getPrecip    | 逐小时预报降水量，默认单位：毫米       | 1.2              |
+| getPrecip    | 逐小时预报降水量，默认单位：毫米       | 1.2              | -->

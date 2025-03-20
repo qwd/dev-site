@@ -10,13 +10,13 @@ ref: 3-sdk-ios-geo-poi-lookup
 | ----------- | ------------------ | ------------ |
 | geoPoiLookup | POI搜索  | GeoPoiResponse |
 
-### 请求参数
+## 请求参数
 
 **GeoPoiLookupParameter**
 
 {% include params.html p="location-geo geo-type city number lang-def" %}
 
-### 示例代码
+## 示例代码
 
 **Swift**
 
@@ -52,7 +52,7 @@ GeoPoiLookupParameter *parameter = [GeoPoiLookupParameter instanceWithLocation:@
 }];
 ```
 
-### 返回数据
+## 返回数据
 
 **GeoPoiResponse**
 

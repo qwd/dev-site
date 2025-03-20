@@ -4,9 +4,9 @@ tag: [guide, android, weather, daily]
 ref: 2-sdk-android-weather-daily-forecast
 ---
 
-提供全球城市未来3-30天天气预报，包括：日出日落、月升月落、最高最低温度、天气白天和夜间状况、风力、风速、风向、相对湿度、大气压强、降水量、降水概率、露点温度、紫外线强度、能见度等。
+每日天气预报Android SDK，提供全球城市未来3-30天天气预报，包括：日出日落、月升月落、最高最低温度、天气白天和夜间状况、风力、风速、风向、相对湿度、大气压强、降水量、露点温度、紫外线强度、能见度等。
 
-| 接口代码| 接口说明               | 数据类           |
+| 接口代码| 接口               | 数据类           |
 | ---------------- | ------------- | ---------------- |
 | weather3d| 3天预报天气数据    | WeatherDailyResponse |
 | weather7d| 7天预报天气数据    | WeatherDailyResponse |
@@ -14,13 +14,13 @@ ref: 2-sdk-android-weather-daily-forecast
 | weather15d| 15天预报天气数据  | WeatherDailyResponse |
 | weather30d| 30天预报天气数据  | WeatherDailyResponse |
 
-### 请求参数
+## 请求参数
 
 **WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 WeatherParameter parameter = new WeatherParameter("101010100");
@@ -49,11 +49,13 @@ public void weather15d(WeatherParameter parameter, Callback<WeatherDailyResponse
 public void weather30d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 ```
 
-### Response
+## Response
 
 **WeatherDailyResponse**
 
-| 属性     | 说明                       | 示例值                |
+{% include api-response.html group="weather" type="daily" prefix="daily" %}
+
+<!-- | 属性     | 说明                       | 示例值                |
 | -------- | -------------------------- | --------------------- |
 | getCode  | 参考[状态码](/docs/resource/status-code/)                    | 200  |
 | getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
@@ -98,4 +100,4 @@ public void weather30d(WeatherParameter parameter, Callback<WeatherDailyResponse
 | getPressure       | 大气压强            | 1018       |
 | getCloud          | 当天云量            | 23         |
 | getUvIndex        | 紫外线强度指数      | 3          |
-| getVis            | 能见度，单位：公里  | 10         |
+| getVis            | 能见度，单位：公里  | 10         | -->

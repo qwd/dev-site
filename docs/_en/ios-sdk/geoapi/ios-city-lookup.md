@@ -6,17 +6,21 @@ ref: 1-sdk-ios-geo-city-lookup
 
 City Lookup provides reverse geocoding, geolocation lookup services, supports multi-language, fuzzy search and other functions.
 
+With the City Lookup, you can get the basic information of the city, including the Location ID of the city (you need this ID to get the weather), multilingual name, latitude and longitude, time zone, altitude, rank, administrative, etc.
+
+In addition, GeoAPI - City Lookup can also help you to implement fuzzy search in your APP, users only need to type 1 or 2 words to get results.
+
 | Interface code | Interface     | Class                 |
 | -------------- | ------------- | --------------------- |
 | geoCityLookup | City lookup   | GeoCityLookupResponse |
 
-### Request Parameters
+## Request Parameters
 
 **GeoCityLookupParameter**
 
 {% include params.html p="location-geo adm range number lang-def" %}
 
-### Sample Code
+## Sample Code
 
 **Swift**
 ```swift
@@ -51,7 +55,7 @@ GeoCityLookupParameter *parameter = [GeoCityLookupParameter instanceWithLocation
 }];
 ```
 
-### Response
+## Response
 
 **GeoCityLookupResponse**
 

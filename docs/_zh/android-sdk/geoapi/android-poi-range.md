@@ -10,23 +10,25 @@ ref: 4-sdk-android-geo-poi-range
 | ----------- | -------------- | ---------- |
 | geoPoiRange| POI范围搜索  | GeoPoiResponse |
 
-### 请求参数
+## 请求参数
 
 **GeoPoiRangeParameter**
 
 {% include params.html p="location-coord geo-type radius number lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 public void geoPoiRange(GeoPoiRangeParameter parameter, Callback<GeoPoiResponse> callback);
 ```
 
-### 返回数据
+## 返回数据
 
 **GeoPoiResponse**
 
-| 属性       | 说明     | 示例值          |
+{% include api-response.html group="geo_poi" type="poi" prefix="poi" update=0 fxlink=0 %}
+
+<!-- | 属性       | 说明     | 示例值          |
 | ---------- | -------- | ------------- |
 | getCode    | 参考[状态码](/docs/resource/status-code/)  | 200|
 | getPoi | 城市数据 | List&lt;Location&gt; |
@@ -55,4 +57,4 @@ public void geoPoiRange(GeoPoiRangeParameter parameter, Callback<GeoPoiResponse>
 | getIsDst     | 该Poi是否当前处于夏令时,1 表示当前处于夏令时,0 表示当前不是夏令时 | 0         |
 | getType      | 该Poi的属性                                                       | scenic      |
 | getRank      | 地区评分                                                          | 10        |
-| getFxLink    | 该Poi的天气预报网页链接                                             | https://www.qweather.com |
+| getFxLink    | 该Poi的天气预报网页链接                                             | https://www.qweather.com | -->

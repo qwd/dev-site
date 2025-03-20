@@ -18,8 +18,6 @@ ref: 1-sdk-android-air-station-v1
 
 **AirV1StationParameter**
 
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
-
 {% include params.html p="p-location-id-aqsta" %}
 
 {% include params.html p="lang-def" %}
@@ -33,7 +31,5 @@ public void airStation(AirV1StationParameter parameter, Callback<AirV1StationRes
 ## 返回数据
 
 **AirV1StationResponse**
-
-{% include api-snippet.html snippet="aq-v1-station-v1" %}
 
 {% include api-response.html group="air" type="station-v1" prefix="nil" fxlink="0" refer="0" update="0" statusCode="0" metadata="tag sources"  %}

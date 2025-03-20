@@ -10,23 +10,25 @@ Get real-time weather data for 200,000+ cities around the world, including tempe
 | ------------ | ------------- | -------------- |
 | weatherNow | Real-time weather  | WeatherNowResponse |
 
-### Request Parameters
+## Request Parameters
 
 **WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void weatherNow(WeatherParameter parameter, Callback<WeatherNowResponse> callback);
 ```
 
-### Response
+## Response
 
 **WeatherNowResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="weather" type="now" prefix="now" %}
+
+<!-- | Property | Description | Example |
 | -------- | -------------------------- | ----------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
@@ -59,4 +61,4 @@ public void weatherNow(WeatherParameter parameter, Callback<WeatherNowResponse> 
 | getPressure | Atmospheric pressure | 1020 |
 | getVis | Visibility | 10 |
 | getCloud | Cloud cover in percent | 23 |
-| getDew | Dew point temperature | -1 |
+| getDew | Dew point temperature | -1 | -->

@@ -2,7 +2,7 @@
 title: Grid Weather
 tag: [guide, android, grid-weather, overview]
 layout: guide-overview
-permalink: /docs/android-sdk/grid-weather/
+permalink: en/docs/android-sdk/grid-weather/
 description: Browse all grid level Weather APIs around the world, including real-time weather, forecast weather and minute-level precipitation at any latitude and longitude.
 ref: 0-sdk-android-grid-weather
 ---

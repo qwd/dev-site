@@ -12,14 +12,14 @@ Get officially issued real-time severe weather warning data around the world.
 | --------------------- | --------------- | ---------------- |
 | warningNow  | Weather warning | WarningResponse |
 
-### Request Parameters
+## Request Parameters
 
 **WarningNowParameter**
 
 {% include params.html p="location-def lang-def" %}
 
 
-### Sample Code
+## Sample Code
 
 **Swift**
 
@@ -52,7 +52,7 @@ Get officially issued real-time severe weather warning data around the world.
     }];
 ```
 
-### Response
+## Response
 
 **WarningResponse**
 

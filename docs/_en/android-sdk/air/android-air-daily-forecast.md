@@ -12,25 +12,25 @@ Air Quality Daily Forecast API for Chinese cities, including AQI, air quality le
 | ------------------- | -------- | ------------ |
 | air5d| Air quality 5-day forecast  | AirDailyResponse |
 
-### Reqeust Parameters
+## Reqeust Parameters
 
 **AirParameter**
 
-If no optional parameters are set, the default value will be used.
-
 {% include params.html p="location-def lang-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void air5d(AirParameter parameter, Callback<AirDailyResponse> callback);
 ```
 
-### Response
+## Response
 
 **AirDailyResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="air" type="daily"  prefix="daily" %}
+
+<!-- | Property | Description | Example |
 | ----------- | -------------------------- | --------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
@@ -53,7 +53,7 @@ public void air5d(AirParameter parameter, Callback<AirDailyResponse> callback);
 | getAqi | Air quality index | 74 |
 | getPrimary | The main pollutant. When the air quality category is `excellent`, return `NA` | PM2.5 |
 | getLevel | Real-time air quality index level  | 2 |
-| getCategory | Real-time air quality index category  | Good |
+| getCategory | Real-time air quality index category  | Good | -->
 
 ## Air Quality Index Level
 

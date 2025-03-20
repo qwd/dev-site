@@ -12,25 +12,25 @@ Real-time air quality for Chinese cities and 1,700 monitoring stations, includin
 | ---------------- | --------- | ---------- |
 | airNow| Real-time Air Quality  | AirNowResponse |
 
-### Request Parameters
+## Request Parameters
 
 **AirParameter**
 
-If no optional parameters are set, the default value will be used.
-
 {% include params.html p="location-def lang-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void airNow(AirParameter parameter, Callback<AirNowResponse> callback);
 ```
 
-### Response
+## Response
 
 **AirNowResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="air" type="now station" prefix="now station" %}
+
+<!-- | Property | Description | Example |
 | -------------------- | -------------------------- |------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
@@ -78,8 +78,8 @@ public void airNow(AirParameter parameter, Callback<AirNowResponse> callback);
 | getNo2 | Nitrogen dioxide | 40 |
 | getSo2 | Sulfur dioxide | 30 |
 | getCo | Carbon monoxide | 0.3 |
-| getO3 | Ozone | 20 |
+| getO3 | Ozone | 20 | -->
 
-### Air Quality Index Level
+## Air Quality Index Level
 
 See [Air Quality Info](/en/docs/resource/air-info/).

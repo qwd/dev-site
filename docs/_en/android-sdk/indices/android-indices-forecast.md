@@ -14,14 +14,14 @@ Get weather indices forecast data for cities in China and around the world.
 | indices1d | Today Weather Indices           | IndicesDailyResponse |
 | indices3d | Weather Indices 3-days forecast | IndicesDailyResponse |
 
-### Request Parameters
+## Request Parameters
 
 **IndicesParameter**
 
 {% include params.html p="location-def idx-type lang-def" %}
 
 
-### Sample Code
+## Sample Code
 
 ```java
 /**
@@ -36,11 +36,13 @@ public void indices3d(IndicesParameter parameter, Callback<IndicesDailyResponse>
 ```
 
 
-### Response 
+## Response 
 
 **IndicesDailyResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="indices" prefix="daily" %}
+
+<!-- | Property | Description | Example |
 | ------------ | -------------------------- | --------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
@@ -65,7 +67,7 @@ public void indices3d(IndicesParameter parameter, Callback<IndicesDailyResponse>
 | getCategory | Weather indices category name |
 | getName | Weather indices type name |
 | getType | Weather indices type |
-| getText | Detailed description of weather indices |
+| getText | Detailed description of weather indices | -->
 
 ### Index type and level
 

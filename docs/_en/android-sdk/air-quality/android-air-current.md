@@ -18,7 +18,7 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 | --------------- | ---------------- | ------------ |
 | airCurrent | Current Air Quality (new)  | AirV1CurrentResponse |
 
-### Request Parameters 
+## Request Parameters 
 
 **AirV1Parameter**
 
@@ -26,13 +26,13 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 
 {% include params.html p="lang-def" %}
 
-### Sample Code
+## Sample Code
 
 ```Java
 public void airCurrent(AirV1Parameter parameter, Callback<AirV1CurrentResponse> callback);
 ```
 
-### Response
+## Response
 
 **AirV1CurrentResponse**
 

@@ -1,5 +1,5 @@
 ---
-title: Solar Radiation
+title: Solar Radiation Hourly Forecast
 tag: [guide, api, solar-radiation, hourly]
 ref: 1-api-solar-radiation-hourly-forecast
 ---

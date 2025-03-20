@@ -10,13 +10,13 @@ ref: 2-sdk-ios-geo-top
 | ------------ | ----------- | ------------------ |
 | geoCityTop  | 热门城市查询  | GeoCityTopResponse |
 
-### 请求参数
+## 请求参数
 
 **GeoCityTopParameter**
 
 {% include params.html p="range number lang-def" %}
 
-### 示例代码
+## 示例代码
 
 **Swift**
 
@@ -51,7 +51,7 @@ GeoCityTopParameter *parameter = [GeoCityTopParameter instanceWithRange:@(RangeC
 }];
 ```
 
-### 返回数据
+## 返回数据
 
 **GeoCityTopResponse**
 

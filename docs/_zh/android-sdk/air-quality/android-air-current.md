@@ -18,24 +18,22 @@ ref: 1-sdk-android-air-now-v1
 | --------------- | ---------------------------- | ------------ |
 | airCurrent | 实时空气质量(new)    | AirV1CurrentResponse |
 
-### 请求参数 
+## 请求参数 
 
 **AirV1Parameter**
-
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
 
 {% include params.html p="p-lat p-lon" %}
 
 {% include params.html p="lang-def" %}
 
 
-### 代码示例
+## 代码示例
 
 ```Java
 public void airCurrent(AirV1Parameter parameter, Callback<AirV1CurrentResponse> callback);
 ```
 
-### 返回数据
+## 返回数据
 
 **AirV1CurrentResponse**
 

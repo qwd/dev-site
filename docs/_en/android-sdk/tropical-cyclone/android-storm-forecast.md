@@ -13,23 +13,25 @@ Storm Forecast provides tropical cyclones information for a specific tropical cy
 | -------- | ---------------- | ------- |
 | tropicalStormForecast | Storm forecast data  | StormForecastResponse |
 
-### Request Parameters
+## Request Parameters
 
 **StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void tropicalStormForecast(StormParameter parameter, Callback<StormForecastResponse> callback)
 ```
 
-### Response
+## Response
 
 **StormForecastResponse**
 
-| Property            | Description     | Example                    |
+{% include api-response.html group="storm" type="forecast" prefix="forecast"  %}
+
+<!-- | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)        |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time)  | 2017-10-25T04:34+08:00      |
@@ -56,7 +58,7 @@ public void tropicalStormForecast(StormParameter parameter, Callback<StormForeca
 | getWindSpeed       | Maximum wind speed near the strom                       |  18    |
 | getMoveSpeed       | Storm moving speed                   |   27   |
 | getMoveDir       | Storm moving direction                      |    SW    |
-| getMove360       | Storm movement direction in azimuth degree          |    332    |
+| getMove360       | Storm movement direction in azimuth degree          |    332    | -->
 
 ### Typhoon level
 

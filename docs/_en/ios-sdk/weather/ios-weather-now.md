@@ -10,13 +10,13 @@ Get real-time weather data for 200,000+ cities around the world, including tempe
 | ------------------------- | ----------------- | ---------------- |
 | weatherNow  | Real-time weather | WeatherNowResponse |
 
-### Request Parameters
+## Request Parameters
 
 **WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-### Sample Code
+## Sample Code
 
 **Swift**
 
@@ -49,7 +49,7 @@ WeatherParameter * parameter = [WeatherParameter instanceWithLocation:@"10101010
 }];
 ```
 
-### Response
+## Response
 
 **WeatherNowResponse**
 

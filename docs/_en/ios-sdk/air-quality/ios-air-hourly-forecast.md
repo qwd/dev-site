@@ -12,7 +12,7 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 | --------------- | ---------------------------- | ------------ |
 | airHourly | Air quality hourly forecast (new)    | AirV1HourlyResponse |
 
-### Request Parameters
+## Request Parameters
 
 **AirV1Parameter**
 
@@ -20,7 +20,7 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 
 {% include params.html p="lang-def" %}
 
-### Sample Code
+## Sample Code
 
 **Swift**
 
@@ -53,7 +53,7 @@ AirV1Parameter *parameter = [AirV1Parameter instanceWithLongitude:116.41 latitud
 }];
 ```
 
-### Response
+## Response
 
 **AirV1HourlyResponse**
 

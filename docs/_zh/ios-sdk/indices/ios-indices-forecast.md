@@ -14,13 +14,13 @@ ref: 1-sdk-ios-indices-forecast
 | indices1d | 当天生活指数   | IndicesDailyResponse |
 | indices3d | 3天生活指数    | IndicesDailyResponse |
 
-### 请求参数
+## 请求参数
 
 **IndicesParameter**
 
 {% include params.html p="location-def idx-type lang-def" %}
 
-### 示例代码
+## 示例代码
 
 **Swift**
 
@@ -73,7 +73,7 @@ void (^handler)(IndicesDailyResponse *, NSError *) = ^(IndicesDailyResponse *res
 [QWeatherObjc indices3d:parameter lang:LangZH_HANS completionHandler:handler];
 ```
 
-### 返回数据
+## 返回数据
 
 **IndicesDailyResponse**
 

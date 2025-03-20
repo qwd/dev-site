@@ -10,23 +10,25 @@ Global currents data for the next 10 days, including currents speed and directio
 | -------- | ---------------- | ------- |
 | oceanCurrents| Currents data  | OceanCurrentsResponse |
 
-### Request Parameters
+## Request Parameters
 
 **OceanParameter**
 
 {% include params.html p="location-p6 date10" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 public void oceanCurrents(OceanParameter parameter, Callback<OceanCurrentsResponse> callback)
 ```
 
-### Response
+## Response
 
 **OceanCurrentsResponse**
 
-| Property            | Description     | Example                    |
+{% include api-response.html group="ocean" type="ctable chourly" prefix="currentsTable currentsHourly" %}
+
+<!-- | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)         |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time)  | 2017-10-25T04:34+08:00      |
@@ -56,6 +58,6 @@ public void oceanCurrents(OceanParameter parameter, Callback<OceanCurrentsRespon
 | ------------ | ----------------------------------------------------- | -------------------- |
 | getFxTime      | Hourly forecast time                                 | 2017-10-25T04:34+08:00|
 | getSpeed        | Currents speed, cm/sec              | 1.23            |
-| getDir360       | Currents direction in azimuth degree                              |    212    |
+| getDir360       | Currents direction in azimuth degree                              |    212    | -->
 
 

@@ -19,13 +19,13 @@ Get the last 10 days of weather history data.
 | ------------------- | ---------------------- | -------------------------- |
 | historicalWeather      | Historical weather     | HistoricalWeatherResponse      |
 
-### Request Parameters
+## Request Parameters
 
 **HistoricalWeatherParameter**
 
 {% include params.html p="location-id date10back lang-def unit-def" %}
 
-### Sample Code
+## Sample Code
 
 **Swift**
 
@@ -66,7 +66,7 @@ HistoricalWeatherParameter *parameter = [HistoricalWeatherParameter instanceWith
 }];
 ```
 
-### Response
+## Response
 
 **HistoricalWeatherResponse**
 

@@ -14,13 +14,13 @@ Get weather daily forecasts for the next 3-30 days for cities around the world.
 | weather15d| 15-days forecast  | WeatherDailyResponse |
 | weather30d| 30-days forecast  | WeatherDailyResponse |
 
-### Request Parameters
+## Request Parameters
 
 **WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
 WeatherParameter parameter = new WeatherParameter("101010100");
@@ -49,11 +49,13 @@ public void weather15d(WeatherParameter parameter, Callback<WeatherDailyResponse
 public void weather30d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 ```
 
-### Response 
+## Response 
 
 **WeatherDailyResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="weather" type="daily" prefix="daily" %}
+
+<!-- | Property | Description | Example |
 | -------- | -------------------------- | --------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
@@ -98,4 +100,4 @@ public void weather30d(WeatherParameter parameter, Callback<WeatherDailyResponse
 | getPressure | Atmospheric pressure | 1018 |
 | getCloud | Cloud cover in percent | 23 |
 | getUvIndex | UV index | 3 |
-| getVis | Visibility | 10 |
+| getVis | Visibility | 10 | -->

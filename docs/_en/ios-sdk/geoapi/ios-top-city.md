@@ -11,13 +11,13 @@ Get a list of popular cities around the world.
 | -------------- | ------------- | ------------------ |
 | geoCityTop    | Top city      | GeoCityTopResponse |
 
-### Request Parameters
+## Request Parameters
 
 **GeoCityTopParameter**
 
 {% include params.html p="range number lang-def" %}
 
-### Sample Code
+## Sample Code
 
 **Swift**
 
@@ -49,7 +49,7 @@ GeoCityTopParameter *parameter = [GeoCityTopParameter instanceWithRange:@(RangeC
 }];
 ```
 
-### Response
+## Response
 
 **GeoCityTopResponse**
 

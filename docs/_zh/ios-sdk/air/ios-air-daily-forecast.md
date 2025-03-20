@@ -12,15 +12,13 @@ ref: 2-sdk-ios-air-daily-forecast
 | --------------- | ------------------- | ------------ |
 | air5d | 空气质量5天预报   | AirDailyResponse |
 
-### 请求参数
+## 请求参数
 
 **AirParameter**
 
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
-
 {% include params.html p="location-def lang-def" %}
 
-### 示例代码
+## 示例代码
 
 **Swift**
 
@@ -53,12 +51,12 @@ AirParameter * parameter = [AirParameter instanceWithLocation:@"101010100" lang:
 }];
 ```
 
-### 返回数据
+## 返回数据
 
 **AirDailyResponse**
 
 {% include api-response.html group="air" type="daily" prefix="daily"  %}
 
-### 空气质量指数等级
+## 空气质量指数等级
 
 请查看[空气质量信息](/docs/resource/air-info/)。

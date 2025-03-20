@@ -10,13 +10,13 @@ POI Range iOS SDK provides the ability to query all POI information within a spe
 | --------- | -------------------------- | ------------ |
 | geoPoiRange | POI range  | GeoPoiResponse |
 
-### Request Parameters
+## Request Parameters
 
 **GeoPoiRangeParameter**
 
 {% include params.html p="location-coord geo-type radius number lang-def" %}
 
-### Sample Code
+## Sample Code
 
 **Swift**
 
@@ -52,7 +52,7 @@ POI Range iOS SDK provides the ability to query all POI information within a spe
     }];
 ```
 
-### Response
+## Response
 
 **GeoPoiResponse**
 
