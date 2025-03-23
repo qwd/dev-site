@@ -15,20 +15,26 @@ Since 2014, our API has supported HTTPS encrypted access, and at the end of 2016
 
 Use [JWT](/en/docs/authentication/jwt/) for authentication, so that even if someone else crawls your request data, it will be hard to get more valuable content.
 
-## Security Restrictions
+## API restrictions
 
-It is recommended that you always set Security Restriction for credentials to increase the security level. The security restriction is a whitelist and only applications that add to the restricted list can use the credentials. 
+Enable API restrictions for your credentials so that only APIs added to the list are allowed to be accessed. Credentials can access any API by default.
 
-Supported security restrictions include:
+To set one or more API restrictions, go to [Console - Project](https://console.qweather.com/project), select the needed project and click on the credentials you want to set.
+
+## App restrictions
+
+It is recommended that you always set app restrictions for credentials to increase the security level. The app restriction is a whitelist and only applications that add to the restricted list can use the credentials. 
+
+Supported app restrictions include:
 
 - Websites
 - IP addresses
 - iOS apps
 - Andorid apps
 
-To set Security Restrictions, go to [Console - Project Management](https://console.qweather.com/#/apps), select the needed project and click on the credentials you want to set.
+To set an app restriction, go to [Console - Project](https://console.qweather.com/project), select the needed project and click on the credentials you want to set.
 
-> **Hint:** Only one security restriction can be set per credential.
+> **Hint:** Only one app restriction can be set per credential.
 
 ### Websites
 

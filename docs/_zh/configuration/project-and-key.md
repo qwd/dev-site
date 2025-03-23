@@ -12,9 +12,9 @@ ref: config-project
 
 ### 创建项目 {#create-project}
 
-你可以在[控制台](https://console.qweather.com/#/apps)简单的创建一个项目。
+你可以在[控制台](https://console.qweather.com/project)简单的创建一个项目。
 
-1. 访问[控制台-项目管理](https://console.qweather.com/#/apps)，点击“创建项目”按钮。
+1. 访问[控制台-项目管理](https://console.qweather.com/project)，点击“创建项目”按钮。
 2. 填写项目名称，项目名称最多20个字符。你可以稍后对名称进行修改。
 3. 选择[订阅方案](/docs/finance/subscription/)，如选择标准订阅，请确保你的可用额度≥10。订阅方案不可更改。
 4. 点击“创建”按钮。
@@ -36,18 +36,16 @@ ref: config-project
 
 你需要在项目内创建凭据用于API的身份认证：
 
-1. 访问[控制台-项目管理](https://console.qweather.com/#/apps)并选择你的项目
+1. 访问[控制台-项目管理](https://console.qweather.com/project)并选择你的项目
 2. 在凭据设置区域点击绿色的“创建凭据”按钮
 3. 选择身份认证方式，我们推荐使用JWT。了解更多关于[JWT](/docs/authentication/jwt/)和[API KEY](/docs/authentication/apikey/)。
 4. 填写凭据名称
 5. 上传Ed25519的公钥（如果选择JWT），
 6. 点击“创建”按钮
 
-
-
 ### 设置限制 {#setup-restrictions}
 
-你可以限制凭据的使用范围，提高对凭据的安全等级，请参考[设置安全限制](/docs/best-practices/security-guidelines/#security-restriction)。
+你可以限制凭据的使用范围，提高对凭据的安全等级，请参考[应用限制](/docs/best-practices/app-guidelines/#app-restrictions)和[API限制](/docs/best-practices/app-guidelines/#api-restrictions)。
 
 ### 删除凭据 {#delete-credential}
 

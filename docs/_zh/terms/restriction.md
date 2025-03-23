@@ -1,6 +1,7 @@
 ---
 title: 使用限制
 tag: [terms, restriction]
+toc: false
 ref: terms-restriction
 ---
 

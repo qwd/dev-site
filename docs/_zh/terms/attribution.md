@@ -1,6 +1,7 @@
 ---
 title: 注明来源
 tag: [terms, attribution]
+toc: false
 ref: terms-attribution
 ---
 

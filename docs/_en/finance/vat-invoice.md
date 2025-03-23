@@ -11,7 +11,7 @@ For users in China, our price include VAT and you can apply for a VAT invoice wh
 
 ## Apply introduction
 
-1. Go to [Console - Finance - Vat invoice](https://console.qweather.com/#/invoice) and click "Edit" button on the Invoice Information card to add invoice information.
+1. Go to [Console - Finance - Vat invoice](https://console.qweather.com/finance/vat-invoice) and click "Edit" button on the Invoice Information card to add invoice information.
 2. Click the "Apply" button on the Invoiceable Amount card
 3. Select the bills you need to invoice, you can choose one bill or multiple bills to combine to invoice, click "Next" button
 4. Select invoice type, check the invoice information, fill in the contact information, and finally click the "Submit" button
@@ -45,7 +45,7 @@ FDEI sample:
 
 ## Delivery and Download
 
-Invoice will be issued and sent to your email within 10 business days after your application. You can also download it at [Console - Finance - Vat invoice](https://console.qweather.com/#/invoice).
+Invoice will be issued and sent to your email within 10 business days after your application. You can also download it at [Console - Finance - Vat invoice](https://console.qweather.com/finance/vat-invoice).
 
 ## Modify invoice
 

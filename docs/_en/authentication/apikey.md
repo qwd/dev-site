@@ -19,7 +19,7 @@ You can log in to the Console to easily generate an API KEY:
 5. Enter the name of the API KEY, e.g. “Travel App Test”.
 6. Click the Create button
 
-You can always check the API KEY in [Console - Project Management](https://console.qweather.com/#/apps).
+You can always check the API KEY in [Console - Project Management](https://console.qweather.com/project).
 
 ## Authorize request
 

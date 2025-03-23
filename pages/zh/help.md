@@ -114,7 +114,7 @@ ref: faq
 
 ### 如何预估成本？ {#how-to-estimate-the-cost}
 
-请登录控制台，使用[价格计算器](https://console.qweather.com/#/calculator)估算你的成本。
+请登录控制台，使用[价格计算器](https://console.qweather.com/price-calculator)估算你的成本。
 
 ### 如果我有大量的请求，是否有更多的折扣？ {#are-there-more-discounts-if-i-have-a-high-volume-of-requests}
 
@@ -126,7 +126,7 @@ ref: faq
 
 ### 如何查询统计？ {#how-to-check-statistics}
 
-请访问[控制台-数据统计](https://console.qweather.com/#/statistics)。我们提供依据项目或数据的最近24小时（逐小时）、最近30天（逐天）和最近6个月（逐月）的请求量统计。如需要更详细的统计信息，建议你在产品中进行自行统计。
+请访问[控制台-数据统计](https://console.qweather.com/statistic)。我们提供依据项目或数据的最近24小时（逐小时）、最近30天（逐天）和最近6个月（逐月）的请求量统计。如需要更详细的统计信息，建议你在产品中进行自行统计。
 
 ### 支持哪些付款方式？ {#what-payment-methods-are-supported}
 

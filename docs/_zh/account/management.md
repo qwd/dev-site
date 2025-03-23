@@ -8,7 +8,7 @@ ref: account-manage
 
 ## 注册 {#register}
 
-注册和风天气帐号非常简单，请访问[和风天气用户中心](https://id.qweather.com/#/register)。
+注册和风天气帐号非常简单，请访问[和风天气用户中心](https://id.qweather.com/register)。
 
 你需要提供有效的电子邮箱和手机号码来完成注册，当你设置密码的时候，为了帐号安全，请不要选择一个简单的密码或与你的其他帐号相同的密码，我们推荐使用至少18位且包含字母、数字和特殊符号的密码。
 
@@ -33,9 +33,11 @@ ref: account-manage
 
 ## 修改联系方式 {#edit-contact-information}
 
-你可以通过[控制台-设置-帐号管理](https://console-test.qweather.com/#/user/space)修改你的电子邮箱和手机号码。修改成功后立即生效。
+你可以通过[控制台-设置-帐号管理](https://console.qweather.com/setting)修改你的电子邮箱和手机号码。修改成功后立即生效。
 
 ## 删除帐号 {#delete-account}
+
+如需要删除帐号，请前往用户中心
 
 当你停止访问我们的天气服务时，你无须支付任何费用，因此如非必要，你不需要删除你的帐号，以便当需要再次使用的时候可以快速开始。
 

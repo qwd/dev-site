@@ -28,11 +28,11 @@ The saving rate is a discount rate for API pricing.
 
 ## Purchase
 
-Please go to [Console - Finance & Cost - Savings Plans](https://console.qweather.com/#/savings), set the commitment amount and purchase.
+Please go to [Console - Finance & Cost - Savings Plans](https://console.qweather.com/saving-plans), set the commitment amount and purchase.
 
 ## Price Calculator
 
-Using the [Price Calculator](https://console.qweather.com/#/calculator) will quickly help you calculate the Saving Plans you need to purchase.
+Using the [Price Calculator](https://console.qweather.com/price-calculator) will quickly help you calculate the Saving Plans you need to purchase.
 
 ## Expiration
 

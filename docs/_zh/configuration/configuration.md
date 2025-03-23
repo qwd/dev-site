@@ -9,6 +9,7 @@ ref: config-overview
 {{ page.description | markdownify }}
 
 - [项目和凭据](/docs/configuration/project-and-key/)
+- [身份认证](/docs/configuration/authentication/)
 - [API配置](/docs/configuration/api-config/)
 - [iOS SDK配置](/docs/configuration/ios-sdk-config/)
 - [Android SDK配置](/docs/configuration/android-sdk-config/)

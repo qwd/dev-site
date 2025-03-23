@@ -114,7 +114,7 @@ The Savings Plan is designed to cover the cost of standard subscription and is a
 
 ### How to estimate the cost?
 
-Please log in to Console and use the [Price Calculator](https://console.qweather.com/#/calculator?lang=en) to estimate your costs.
+Please log in to Console and use the [Price Calculator](https://console.qweather.com/price-calculator?lang=en) to estimate your costs.
 
 ### Are there more discounts if I have a high volume of requests?
 
@@ -126,7 +126,7 @@ When you access our service through an API or SDK and get data, it is called a d
 
 ### How to check statistics?
 
-Please visit [Console - Statistics](https://console.qweather.com/#/statistics?lang=en). We provide request statistics based on the last 24 hours (hour by hour), the last 30 days (day by day) and the last 6 months (month by month) of the project or data.
+Please visit [Console - Statistics](https://console.qweather.com//statistics). We provide request statistics based on the last 24 hours (hour by hour), the last 30 days (day by day) and the last 6 months (month by month) of the project or data.
 
 ### What payment methods are supported?
 
