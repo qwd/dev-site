@@ -92,7 +92,7 @@ Objective-C
 Lang lang = LangZH_HANS; 
 ```
 
-Java:
+Java
 ```java
 Lang lang = Lang.ZH_HANS; 
 ```
