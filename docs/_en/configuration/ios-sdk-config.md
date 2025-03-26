@@ -23,6 +23,13 @@ Make sure you have created a Project and Credential, see [Project and KEY](/en/d
 
 The latest version of iOS SDK is {{ site.data.v.ios.version }}([Release note](https://blog.qweather.com/release/sdk/)), and it supports the following installation methods:
 
+### Swift Package Manager
+
+You can also use Swift Package Manager to integrate iOS SDK, please refer to [Adding package dependencies to your app](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app).
+
+* SDK URL: [https://github.com/qwd/QWeatherKit.git](https://github.com/qwd/QWeatherKit.git)
+* Dependency Rule: Required {{ site.data.v.ios.version }}
+
 ### CocoaPods
 
 QWeather iOS SDK can be installed via [CocoaPods](https://cocoapods.org/). CocoaPods is an open source dependency manager, if you haven't installed CocoaPods yet, please refer to [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html). The following steps assume that you have already completed the installation and setup of CocoaPods.
@@ -31,13 +38,13 @@ QWeather iOS SDK can be installed via [CocoaPods](https://cocoapods.org/). Cocoa
 2. Add the following to the `Podfile` and save it
    - iOS
      ```
-     target '{YOUR iOS TARGET}' do
+     target '{YOUR_iOS_TARGET}' do
         pod 'QWeatherKit','~> {{ site.data.v.ios.version }}'
      end
      ```
    - macOS
      ```
-     target 'YOUR macOS TARGET' do
+     target '{YOUR_macOS_TARGET}' do
         pod 'QWeatherKit','~> {{ site.data.v.ios.version }}'
      end
      ```
@@ -54,17 +61,8 @@ Open a terminal and go to the directory containing the `Podfile` and run:
 pod update
 ```
 
-### Swift Package Manager
-
-You can also use Swift Package Manager to integrate iOS SDK, please refer to [Adding package dependencies to your app](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app).
-
-* SDK URL: [https://github.com/qwd/QWeatherKit.git](https://github.com/qwd/QWeatherKit.git)
-* Dependency Rule: Required {{ site.data.v.ios.version }}
-
-
 ### Manual install
-
-1. Download SDK: [QWeather_iOS_SDK_Pub_V{{ site.data.v.ios.version }}]({{ site.data.v.ios.dllink }}) <br>*MD5: {{ site.data.v.ios.md5 }}*
+1. Download SDK: [QWeatherKit {{ site.data.v.ios.version }}](https://github.com/qwd/QWeatherKit/releases/tag/{{ site.data.v.ios.version }})
 2. Add `QWeatherKit.xcframework` to iOS/macOS Target.
 
 ## 3: Initialization and Configuration‌
