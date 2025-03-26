@@ -9,22 +9,11 @@ For users in China, our price include VAT and you can apply for a VAT invoice wh
 > **Note:** Please read this document carefully to understand how we issue VAT invoices to you and send this document to your finance professional for review if necessary.
 {:.bqwarning}
 
-## Apply introduction
+## Invoice amount
 
-1. Go to [Console - Finance - Vat invoice](https://console.qweather.com/finance/vat-invoice) and click "Edit" button on the Invoice Information card to add invoice information.
-2. Click the "Apply" button on the Invoiceable Amount card
-3. Select the bills you need to invoice, you can choose one bill or multiple bills to combine to invoice, click "Next" button
-4. Select invoice type, check the invoice information, fill in the contact information, and finally click the "Submit" button
+The VAT invoice amount is based on the paid bill amount, for example, if your monthly bill amount is ¥123.45, then when you pay this bill, you can apply for a VAT invoice for ¥123.45.
 
-> **Hint:** Please make sure to confirm your company information with your finance officer, copy and paste is recommended to avoid typing errors.
-
-> **Hint:** VAT special invoice are only available for organization developers.
-
-## Invoice for balance
-
-For balance amount, you must spend it before you can invoice it.
-
-> **For example:** if you add ¥1,000 to your balance on March 20, and the bill amount is ¥400 after the bill is generated on April 1, you can apply for a ¥400 invoice at that time.
+Positive balance amounts do not support VAT invoice, you must apply for a VAT invoice based on the paid bill amount. For example, if your balance = ¥1,000, and then use to pay a saving plan bill of ¥600 and monthly bill of ¥200, the aVAT invoice amount now is ¥800 = ¥600 (savings plan bill) + ¥200 (monthly bill)
 
 ## Tax rate
 
@@ -43,15 +32,38 @@ FDEI sample:
 * [VAT general invoice](/assets/images/content/vat-sample.jpg)
 * [VAT special invoice](/assets/images/content/vat-s-sample.jpg)
 
-## Delivery and Download
+## Apply for VAT invocie
+
+Before request an invoice, you need to add the invoice information. You can skip this step if you are a organization developer and only need a general VAT invoice.
+
+> **Hint:** Please make sure to confirm your company information with your finance officer, copy and paste is recommended to avoid typing errors.
+
+1. [Go to Console - Invoice Information](https://console.qweather.com/finance/vat-invoice/info)
+2. Fill in the basic information, and if you need a VAT spceial invoice, you need to fill in the extended information.
+3. Click the “Save” button.
+
+Once you have added the invoice information, you can continue to request invoices.
+
+1. [Go to Console - VAT Invoice](https://console.qweather.com/finance/vat-invoice)
+2. Click on the “Apply” button on the invoicable amounts section.
+3. Select the bill(s) you need to invoice, you can choose to invoice one bill or multiple bills together, click “Next” button.
+4. Select the type of invoice (VAT spceial invoice only for organization developers), review the invoice information and fill in the contact. If you have additional requirements, please fill in the comment field.
+5. Click “Submit” button.
+
+
+#### Delivery and Download
 
 Invoice will be issued and sent to your email within 10 business days after your application. You can also download it at [Console - Finance - Vat invoice](https://console.qweather.com/finance/vat-invoice).
 
-## Modify invoice
+#### Modify invoice
 
-Before the invoice is issued, you can cancel the invoice application at any time in order to modify the information. 
+You can cancel the request for an invoice at any time before the invoice is issued:
 
-If there is an error or need to modify the invoice after it is issued, please submit a ticket for modification and the modification is limited to 3 times per year.
+1. [Go to Console - VAT Invoice](https://console.qweather.com/finance/vat-invoice)
+2. Click on the invoice that needs to be modified or canceled
+3. Click on the **Cancel Invoice Application** button
+
+If there is an error or need to modify the invoice after it is issued, please [submit a ticket](https://console.qweather.com/support/ticket) for modification and the modification is limited to 3 times per year.
 
 > **Hint:** Please submit your modification within 12 months after the invoice is issued.
 
@@ -61,5 +73,5 @@ If there is an error or need to modify the invoice after it is issued, please su
   * Outstanding bills, please complete the payment first
   * Account suspension
   * Billing date is more than 12 months old
-- VAT special invoices can only be applied by [Organization Developers](/en/docs/account/developers/).
+- VAT special invoices can only be applied by [organization developers](/en/docs/account/developer-type/).
 

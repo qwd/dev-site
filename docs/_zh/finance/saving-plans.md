@@ -34,9 +34,15 @@ ref: finance-splans
 
 ## 购买 {#purchase}
 
-请访问[控制台-节省计划](https://console.qweather.com/saving-plans/)，输入承诺的金额，根据提示完成创建。创建完成后，请尽快进行支付，超过支付日期的，节省计划将被取消。
+1. [前往控制台-节省计划](https://console.qweather.com/saving-plans/)
+2. 输入承诺的金额
+3. 选择[生效时间](/docs/finance/saving-plans/#effective)
+4. 点击“下一步”
+5. 确认购买信息，点击“创建”按钮
 
-在支付前，你可以随时取消已经创建成功的节省计划。
+创建完成后，请尽快进行支付，超过支付日期的，节省计划将被取消。
+
+在支付前，你可以随时取消已创建但未支付的节省计划。
 
 ## 价格测算 {#price-calculator}
 

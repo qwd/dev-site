@@ -28,7 +28,15 @@ The saving rate is a discount rate for API pricing.
 
 ## Purchase
 
-Please go to [Console - Finance & Cost - Savings Plans](https://console.qweather.com/saving-plans), set the commitment amount and purchase.
+1. [Go to Console - Saving Plans](https://console.qweather.com/saving-plans/)
+2. Enter the committed amount
+3. Select [Effective Time](/docs/finance/saving-plans/#effective)
+4. Click “Next”
+5. Review purchase information and click the “Create” button
+
+Please make the payment as soon as possible when the saving plan is successfully created. Overdue payment will be canceled.
+
+You can cancel any unpaid savings plan at any time before payment.
 
 ## Price Calculator
 
@@ -46,30 +54,18 @@ Assumptions: A Saving Plans(1-year) is purchased on March 20, 2022
 
 ## Effective
 
-The Saving Plans will be available immediately on the current hour of purchase.
+When purchasing a saving plan, you can choose when it will take effect:
 
-> **For example:** You successfully purchased a Saving Plans at 14:30 on March 20, 2022, all data requests starting at 14:00 on March 20, 2022, will be calculated according to the Saving Rate.
+**Upon payment**
 
-## Discount Rules
+When you create a saving plan successfully, you have up to 24 hours to make a payment, and the saving plan takes effect immediately after payment.
 
-Saving Plans are charged according to the corresponding Saving Rate, and discounts are no longer available when the Saving Plans expires or the commitment amount is used up.
+**Specified time**
 
-> **For example:** If you purchase a Saving Plans with ¥1000 commitment amount and the Saving Rate = 0.7, so the price of real-time weather is: ¥0.0007 per request x 0.7 = ¥0.00049 per request. Within one year, if more than ¥1,000 has been used, the price of real-time weather is: ¥0.001 per request.
+When you create a saving plan successfully and complete payment, the saving plan will take effect at the time you specify.
 
-## Payment Priority
-
-When purchasing a Saving Plans, the pay-as-you-go subscription bill will be paid using the commitment amount first, and if the commitment amount has been used up, it will be paid from the balance.
-
-If user has purchased more than one Saving Plans, refer to the instructions for multiple Saving Plans.
+Again, savings plans that are not paid by the payment date will be automatically canceled.
 
 ## Multiple Saving Plans
 
-You can purchase multiple Saving Plans, which can be stacked for more flexible use. Multiple Saving Plans will be used in the order of purchase time. 
-
-## Upgrades, downgrades and renewals
-
-Saving Plans does not support upgrades or downgrades, but you can purchase multiple Saving Plans. If you need to renew your Saving Plans when it expires, simply purchase a new one.
-
-## Cancellation
-
-Once a Saving Plans is purchased, cancellation and refunds are not supported. Please submit a ticket if there are any special circumstances.
+You can purchase multiple Saving Plans, and multiple Saving Plans will be used in the order of purchase time. 
