@@ -13,7 +13,7 @@ ref: bp-protact
 
 ## 使用JWT身份验证 {#authentication-with-jwt}
 
-使用[JWT](/docs/authentication/jwt/)进行身份认证，这将有效的保护你的密钥，即使他人抓取到了你的请求信息，也几乎无法获得更多有价值的内容。
+使用[JWT](/docs/configuration/authentication/#json-web-token/)进行身份认证，这将有效的保护你的密钥，即使他人抓取到了你的请求信息，也几乎无法获得更多有价值的内容。
 
 ## 设置API限制 {#api-restrictions}
 
@@ -115,7 +115,7 @@ curl -X GET --compressed \
 
 ## 使用身份认证服务器 {#using-authentication-server}
 
-当前端或客户端应用使用[JWT](/docs/authentication/jwt/)进行身份认证时，我们推荐你将Private KEY存储在一台安全的认证服务器中，由认证服务器向你的应用颁发Token，然后再通过应用请求和风天气的数据。
+当前端或客户端应用使用[JWT](/docs/configuration/authentication/#json-web-token/)进行身份认证时，我们推荐你将Private KEY存储在一台安全的认证服务器中，由认证服务器向你的应用颁发Token，然后再通过应用请求和风天气的数据。
 
 **请始终确保应用与身份认证服务器的连接是安全的。**
 

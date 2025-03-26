@@ -13,7 +13,7 @@ Since 2014, our API has supported HTTPS encrypted access, and at the end of 2016
 
 ## Authentication with JWT
 
-Use [JWT](/en/docs/authentication/jwt/) for authentication, so that even if someone else crawls your request data, it will be hard to get more valuable content.
+Use [JWT](/en/docs/configuration/authentication/#json-web-token/) for authentication, so that even if someone else crawls your request data, it will be hard to get more valuable content.
 
 ## API restrictions
 
@@ -100,7 +100,7 @@ If you have KEYs that are no longer in use, please delete them promptly to avoid
 
 ## Using authentication server
 
-When using [JWT](/en/docs/authentication/jwt/) for authentication in front-end or client-side applications, we recommend that you store the Private KEY in a secure authentication server, which will issue a Token to your application and then request data from QWeather by your application.
+When using [JWT](/en/docs/configuration/authentication/#json-web-token/) for authentication in front-end or client-side applications, we recommend that you store the Private KEY in a secure authentication server, which will issue a Token to your application and then request data from QWeather by your application.
 
 **Always keep the connection between the application and the authentication server is secure.**
 

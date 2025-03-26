@@ -1,6 +1,6 @@
 ---
 title: Account
-description: Learn how to register, log in, reset your password and delete your QWeather account.
+description: You need a QWeather account for developers services, learn how to manage your account and the basic policies in this article.
 tag: [account, overview]
 permalink: /en/docs/account/
 ref: account-overview
@@ -9,7 +9,6 @@ ref: account-overview
 {{ page.description | markdownify}}
 
 - [Management](/en/docs/account/management/)
-- [Organization Developers](/en/docs/account/developers/)
-- [Recipients](/en/docs/account/recipients/)
-- [Suspension](/en/docs/account/suspension/)
+- [Developer Type](/en/docs/account/developers/)
+- [Suspension Account](/en/docs/account/suspension/)
 - [Inactive Account](/en/docs/account/inactive/)

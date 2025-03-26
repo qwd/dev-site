@@ -1,6 +1,10 @@
 ---
 title: 身份认证
 tag: [config, jwt]
+redirect_from: 
+  - /docs/authentication/
+  - /docs/authentication/jwt/
+  - /docs/authentication/apikey/
 ref: config-auth
 ---
 
@@ -38,11 +42,11 @@ openssl genpkey -algorithm ED25519 -out ed25519-private.pem \
 
 当你完成密钥对的生成后，你需要将其中的公钥添加到和风天气控制台，用于JWT身份验证。
 
-1. 点击左侧导航中的**项目管理**
-2. 点击需要添加公钥的项目名称
-3. 在凭据设置区域点击**创建凭据**按钮
-4. 身份认证方式选择**JSON Web Token**
-5. 输入凭据名称，比如“旅游APP测试”
+1. [前往控制台-项目管理](https://console.qweather.com/project)
+2. 在项目列表中点击你需要添加凭据的项目
+3. 点击凭据区域右侧的“添加凭据”按钮
+4. 输入凭据名称
+5. 选择身份认证方式JSON Web Token
 6. 使用任意文本编辑器打开公钥文件（比如刚才创建的ed25519-public.pem），复制其中的全部内容，这些内容看起来像是：
    ```
    -----BEGIN PUBLIC KEY-----
@@ -50,9 +54,9 @@ openssl genpkey -algorithm ED25519 -out ed25519-private.pem \
    -----END PUBLIC KEY-----
    ```
 7. 在公钥文本框中粘贴公钥内容
-8. 点击创建按钮
+8. 点击“保存”按钮
 
-你将在最后看到创建凭据成功的页面，并且显示了这个凭据的创建日期、ID和SHA256值。出于安全考虑，你无法在控制台查看这个公钥。但你可以使用公钥的SHA256值与本地SHA256进行对比，以便确认使用的是正确的公钥。
+你将在最后看到创建凭据成功的页面，并且显示了这个凭据的创建日期、ID和SHA256值。出于安全考虑，控制台不会再次显示这个公钥。但你可以使用公钥的SHA256值与本地SHA256进行对比，以便确认使用的是正确的公钥。
 
 ### 生成JWT {#generate-jwt}
 

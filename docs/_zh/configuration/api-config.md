@@ -4,37 +4,63 @@ tag: [config, api]
 ref: config-api
 ---
 
-在开始使用和风天气API服务之前，你需要进行一些简单的配置和准备工作。
+了解如何发送一个API请求。
 
-## 创建项目和凭据 {#create-project-and-credential}
+## 前提 {#prerequisites}
 
-请确保已经创建了项目和凭据，请参考[项目和凭据](/docs/configuration/project-and-key/)和[身份认证](/docs/authentication/)。
+请确保已经创建了项目和凭据，请参考[项目和凭据](/docs/configuration/project-and-key/)。
 
-## 了解API地址和参数 {#understanding-api-url}
+## API地址和参数 {#api-url-and-parameters}
 
-通常来讲，一个完整的API请求URL由scheme，host，port，path，path parameters和query parameters组成。
+通常来讲，一个完整的API请求URL由scheme，host，path，path parameters和query parameters组成。
 
 ```
-https://api.qweather.com/v7/weather/now?location=xxx&key=xxx
-\___/   \______________/\______________/\__________________/
-scheme        host   (port)   path        query parameters 
+https://abc123.qweatherapi.com/airquality/v1/station/{LocationID}?lang=en
+\___/   \____________________/\____________________/\___________/\______/
+scheme          host                   path            path       query
+                                                      params      params 
 ```
 
 - scheme: https
-- host: api.qweather.com
-- port: 443 （在和风天气开发服务中，所有端口均为443）
-- path: /v7/weather/7d?
-- query parameters: location=xxx&key=xxx （在和风天气开发服务中，多个参数使用`&`分割）
+- host: 开发者的API Host，请在[控制台设置](https://console.qweather.com/setting)中查看。
+- path: /airquality/v1/station
+- path params: location ID
+- query params: lang=en 如有多个参数使用`&`分割。
 
-对于不同的订阅和数据，API host会有所不同，请以开发文档中的说明为准。
+> **提示：**参数中如果包含了特殊字符，则必须进行URL encoding。
 
-> **注意：**如果你使用的是免费订阅，必须使用免费订阅的API host: `devapi.qweather.com`。但地理信息服务除外，无论免费订阅还是付费订阅，都使用`geoapi.qweather.com`。
-{:.bqwarning}
+## 添加身份认证 {#add-api-authentication}
 
-对于大部分开发者来说，构建一个API URL并非难事，但我们仍然强烈建议你阅读[最佳实践-优化请求](/docs/best-practices/optimize-requests/)文档，了解发送API请求的一些常见问题和经验。
+我们在上一步创建了一个API请求URL，现在需要为它添加身份认证以便服务器可以识别我们的身份。了解[身份认证](/docs/configuration/authentication/)。
+
+#### JWT
+
+在请求标头中添加如下内容：
+
+```
+Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA
+```
+
+#### API KEY
+
+在请求标头中添加如下内容：
+
+```
+X-QW-Api-Key: ABCD1234EFGH
+```
 
 ## Gzip
 
 请注意，和风天气开发服务的API均使用Gzip进行了压缩，这将极大的减少网络流量，加快请求。因此，当你在开发过程中，需要对返回的数据进行解压。请参考[最佳实践-Gzip](/docs/best-practices/gzip/)。
 
-好了，到此为止，API的配置和调试基本完成了，下一步请参考[开发文档](/docs/api/)，[实用资料](/docs/resource/)和[最佳实践](/docs/best-practices/)开始你的开发之旅吧！
+## 构建完整的API请求
+
+你可以用熟悉的开发语言构建最终的API请求，这里以curl为例：
+
+```bash
+curl --compressed \
+-H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
+'https://api.qweather.com/v7/weather/now?location=101010100'
+```
+
+对于大部分开发者来说，构建一个API URL并非难事，但我们仍然强烈建议你阅读[最佳实践-优化请求](/docs/best-practices/optimize-requests/)文档，了解发送API请求的一些常见问题和经验。

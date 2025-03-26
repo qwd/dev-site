@@ -260,18 +260,18 @@
         font-family: "iconfont-for-qw" !important;
         font-size: 85%;
         content: "\e900";
-        margin-left: 2px;
-        margin-right: 2px;
+        margin-left: 4px;
+        margin-right: 4px;
       }
 
       // reset internal site link style
-      a[href*="qweather.com"]::after,
-      a[href*="hecdn.net"]::after {
-        content: none;
-        font-family: $font-family;
-        margin-right: 0;
-        margin-left: 0;
-      }
+      // a[href*="qweather.com"]::after,
+      // a[href*="hecdn.net"]::after {
+      //   content: none;
+      //   font-family: $font-family;
+      //   margin-right: 0;
+      //   margin-left: 0;
+      // }
     }
   }
   

@@ -6,33 +6,61 @@ ref: config-api
 
 Before starting to use API service, you need to do some simple configuration and preparation.
 
-## Create Project and Credential
+## Prerequisites
 
-Make sure you have created a Project and Credential, see [Project and KEY](/en/docs/configuration/project-and-key/) and [Authentication](/en/docs/authentication/).
+Make sure you have created a Project and Credential, see [Project and KEY](/en/docs/configuration/project-and-key/).
 
-## Understanding API URL
+## API URL and parameters
 
 Generally, a complete API request URL consists of scheme, host, port, path and query parameters. (Of course, it may be called differently in different programs, we only refer to [RFC 3986](https://www.rfc-editor.org/rfc/rfc3986))
 
 ```
-https://api.qweather.com/v7/weather/now?location=xxx&key=xxx
-\___/   \______________/\______________/\__________________/
-scheme        host   (port)   path        query parameters 
+https://abc123.qweatherapi.com/airquality/v1/station/{LocationID}?lang=en
+\___/   \____________________/\____________________/\___________/\______/
+scheme          host                   path            path       query
+                                                      params      params 
 ```
 
 - scheme: https
-- host: api.qweather.com
-- port: 443 
-- path: /v7/weather/7d?
-- query parameters: location=xxx&key=xxx 
+- host: your API Host, view in the [Console - Setting](https://console.qweather.com/setting) 
+- path: /airquality/v1/station
+- path params: location ID
+- query params: lang=en Splitting multiple parameters with `&`.
 
-API host may vary depends on subscription and data, please refer to the instructions in the development guide.
+> **Hint:** URL encoding is required if the parameter contains special characters.
 
-> **Note:** You must use the API host: `devapi.qweather.com` for Free subscriptions. The exception is GeoAPI, which use `geoapi.qweather.com` regardless of Free or Standard subscriptions.
-{:.bqwarning}
+## Add API authentication
 
-Building an API URL is not difficult for most developers, but we still strongly recommend that you read the [Best Practices- Optimize requests](/en/docs/best-practices/optimize-requests/) for troubleshooting and experience.
+We created an API request URL in the previous step, now we need to add authentication to it so that the server can recognize our identity. Learn about [authentication](/en/docs/configuration/authentication/).
+
+#### JWT
+
+Add the following to the request header:
+
+```
+Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA
+```
+
+#### API KEY
+
+Add the following to the request header:
+
+```
+X-QW-Api-Key: ABCD1234EFGH
+```
 
 ## Gzip
 
 QWeather's Web API uses Gzip for compression by default, which will greatly reduce network traffic and speed up requests. See [Best Practices - Gzip](/en/docs/best-practices/gzip/).
+
+## Build the full API request
+
+You can build the final API request with any programming language, using curl as an example here:
+
+```bash
+curl --compressed \
+-H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
+'https://api.qweather.com/v7/weather/now?location=101010100'
+```
+
+Building an API URL is not difficult for most developers, but we still strongly recommend that you read the [Best Practices- Optimize requests](/en/docs/best-practices/optimize-requests/) for troubleshooting and experience.

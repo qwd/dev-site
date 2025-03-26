@@ -37,13 +37,11 @@ This will create two files in the current directory:
 
 Once your Ed25519 keys is generated, you need to add the public key to the QWeather console for JWT authentication.
 
-Login [Console](https://console.qweather.com):
-
-1. Click **Project Management** in the left navigation.
+1. [Go to Console-Project](https://console.qweather.com/project)
 2. Choose the project where you want to add the public key.
-3. Click the **Create Credential** button in the Credential Settings section.
-4. Choose the authentication method **JSON Web Token**.
-5. Enter the credential name, such as “Travel App for test”.
+3. Click the **Add Credential** button in the credential section.
+4. Enter the credential name.
+5. Select the authentication method: **JSON Web Token**.
 6. Use any text editor to open the public key (like ed25519-public.pem which was generated in the previous step), and copy the entire contents of it. The content looks like:
    ```
    -----BEGIN PUBLIC KEY-----
@@ -51,9 +49,9 @@ Login [Console](https://console.qweather.com):
    -----END PUBLIC KEY-----
    ```
 7. Paste the public key in the textarea.
-8. Click **Create** button
+8. Click **Save** button
 
-You will see the **Create Credential Success** page and it shows the creation date, credential ID and SHA-256. For security reasons, you cannot view this public key in the Console. However, you can use the SHA-256 value of the public key to compare it with the local SHA-256 in order to confirm that the correct public key was used.
+You will see the **Create Credential Success** page and it shows the creation date, credential ID and SHA-256. For security reasons, you cannot view this public key in the Console again. However, you can use the SHA-256 value of the public key to compare it with the local SHA-256 in order to confirm that the correct public key was used.
 
 ### Generate JWT
 

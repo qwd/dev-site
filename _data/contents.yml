@@ -16,7 +16,6 @@ reference_docs:
       - name: account-overview
         sub:
           - subname: account-manage
-          - subname: account-contact
           - subname: account-developers
           - subname: account-suspension
           - subname: account-inactive
@@ -120,9 +119,9 @@ footer:
     - name: bp-overview
     - name: res-overview
   feats:
-    - name: feat-service
-    - name: feat-global
-    - name: feat-performance
+    - name: about-service
+    - name: about-global
+    - name: about-performance
   products:
     - name: 
         zh: 天气预报

@@ -18,7 +18,7 @@ Before requesting data, you need to create a project/credential, and do some sim
 
 ## Authentication
 
-QWeather provides two [Authentication methods](/en/docs/authentication/): [JWT (JSON Web Token)](/en/docs/authentication/jwt/) and [API KEY](/en/docs/authentication/apikey/). we recommend JWT for higher level security.
+QWeather provides two [Authentication methods](/en/docs/authentication/): [JWT (JSON Web Token)](/en/docs/configuration/authentication/#json-web-token/) and [API KEY](/en/docs/configuration/authentication/#api-key/). we recommend JWT for higher level security.
 
 ## Coding
 
