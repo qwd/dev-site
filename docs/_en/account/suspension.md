@@ -1,10 +1,10 @@
 ---
-title: Suspension
+title: Suspension Account
 tag: [account, suspension]
 ref: account-suspension
 ---
 
-When you violate the QWeather [Developer Terms of Service](http://localhost:4000/docs/terms/), your account may be suspended and you will not be able to use most of the features in your account, and QWeather reserves the right to seek compensation for your violation, in serious cases you will face legal risks.
+When you violate the QWeather [developer terms](/docs/terms/), your account may be suspended and you will not be able to use most of the features in your account, and QWeather reserves the right to seek compensation for your violation, in serious cases you will face legal risks.
 
 ## Consequences
 

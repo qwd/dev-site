@@ -9,7 +9,7 @@ Weather data is generally time-sensitive, however you can still consider setting
 > **Note:** Cache is not a mandatory requirement, please read this document carefully and then evaluate it fully based on your product, otherwise it may cause serious errors to your product. **Do not use cache if you are not sure, or if you cannot handle all scenarios.**
 {:.bqwarning}
 
-> **Warning:** You cannot cache or store all data provided in GeoAPI, this would violate our [terms of service](https://www.qweather.com/en/terms/developers-tos) and infringe copyright, and the copyright owner of such data may take legal action against you.
+> **Warning:** You cannot cache or store all data provided in GeoAPI, this would violate [developers license](https://www.qweather.com/en/terms/developers-eula) and infringe copyright, and the copyright owner of such data may take legal action against you.
 {:.bqdanger}
 
 ## Reasonable
@@ -56,6 +56,6 @@ For different data caching times, we recommend the following. Less cache time al
 
 ## Restrictions
 
-You **CAN NOT** cache, store all the data provided in GeoAPI, which would be against our [Usage Restriction](/en/docs/terms/restriction/) and [Terms of Service](https://www.qweather.com/en/terms/developers-tos).
+You **CAN NOT** cache, store all the data provided in GeoAPI, which would be against our [Usage Restriction](/en/docs/terms/restriction/) and [Developers License](https://www.qweather.com/en/terms/developers-eula).
 
 GeoAPI data comes from multiple Geo service providers with various copyright licenses. Most providers (almost all) license you to use it in real time, but prohibit you from bulk or permanent storage of this data, otherwise you may face serious legal risks.

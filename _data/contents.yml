@@ -101,7 +101,6 @@ reference_docs:
       - name: bp-protact
   - overview: finance-overview
     list: 
-      - name: finance-subscription
       - name:	finance-billing
       - name:	finance-pricing
       - name: finance-splans

@@ -9,7 +9,7 @@ ref: bp-cache
 > **注意：**缓存不是强制的要求，请认真阅读本文档，然后根据你的产品进行充分的评估，否则可能会对你的产品造成严重错误。**如果你不确定，或者无法处理所有应用场景，请不要使用缓存。**
 {:.bqwarning}
 
-> **警告：**你不能缓存、提取、批量存储GeoAPI中提供的所有数据，这将违反我们的[服务条款](https://www.qweather.com/terms/developers-tos)或侵犯版权，这些数据的版权所有者可能会对你采取法律行动。
+> **警告：**你不能缓存、提取、批量存储GeoAPI中提供的所有数据，这将违反我们的[开发者许可协议](https://www.qweather.com/terms/developers-eula)或侵犯版权，这些数据的版权所有者可能会对你采取法律行动。
 {:.bqdanger}
 
 ## 合理性 {#reasonable}
@@ -57,6 +57,6 @@ ref: bp-cache
 
 ## 限制 {#restrictions}
 
-你不能缓存、提取、批量存储GeoAPI中提供的所有数据，这将违反我们的[使用限制](/docs/terms/restriction/)和[服务条款](https://www.qweather.com/terms/developers-tos)。
+你不能缓存、提取、批量存储GeoAPI中提供的所有数据，这将违反我们的[使用限制](/docs/terms/restriction/)和[开发者许可协议](https://www.qweather.com/terms/developers-eula)。
 
 GeoAPI中提供的数据内容来源于多个地理信息服务商，他们拥有不同的版权许可，大多数服务商（几乎是所有）许可你实时的使用，但禁止你将这些数据进行任何形式的存储，否则你可能会面临严重的法律风险。
