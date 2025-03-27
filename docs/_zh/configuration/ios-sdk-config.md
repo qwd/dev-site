@@ -27,7 +27,7 @@ ref: config-ios
 
 iOS SDK支持使用Swift Package Manager集成，具体步骤请参考[Adding package dependencies to your app](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app)
 
-* SDK URL: [https://github.com/qwd/QWeatherKit.git](https://github.com/qwd/QWeatherKit.git)
+* SDK URL: [https://github.com/qwd/qweather-ios-sdk.git](https://github.com/qwd/qweather-ios-sdk.git)
 * Dependency Rule: Required {{ site.data.v.ios.version }}
 
 ### CocoaPods {#cocoapods}
@@ -39,13 +39,13 @@ iOS SDK支持使用Swift Package Manager集成，具体步骤请参考[Adding pa
    - iOS
      ```
      target '{YOUR_iOS_TARGET}' do
-        pod 'QWeatherKit','~> {{ site.data.v.ios.version }}'
+        pod 'QWeather-SDK','~> {{ site.data.v.ios.version }}'
      end
      ```
    - macOS
      ```
      target '{YOUR_macOS_TARGET}' do
-        pod 'QWeatherKit','~> {{ site.data.v.ios.version }}'
+        pod 'QWeather-SDK','~> {{ site.data.v.ios.version }}'
      end
      ```
 3. 打开终端，进入包含`Podfile`的目录
@@ -66,8 +66,8 @@ pod update
 
 你可以选择手动安装和风天气iOS SDK。
 
-1. 下载SDK：[QWeatherKit {{ site.data.v.ios.version }}](https://github.com/qwd/QWeatherKit/releases/tag/{{ site.data.v.ios.version }})
-2. 将 `QWeatherKit.xcframework` 包导入到iOS或macOS Target中
+1. 下载SDK：[QWeatherSDK {{ site.data.v.ios.version }}](https://github.com/qwd/qweather-ios-sdk/releases/tag/{{ site.data.v.ios.version }})
+2. 将 `QWeatherSDK.xcframework` 包导入到iOS或macOS Target中
 
 
 ## 第3步: 初始化配置 {#step-3-setup-key-and-subscription}
@@ -81,7 +81,7 @@ pod update
 >
 >```swift
 >
->  import QWeatherKit
+>  import QWeatherSDK
 >
 >  ...
 >
@@ -95,7 +95,7 @@ pod update
 >
 >```objc
 >
->  #import <QWeatherKit/QWeatherKit-Swift.h>
+>  #import <QWeatherSDK/QWeatherSDK-Swift.h>
 >
 >  ...
 >
@@ -112,7 +112,7 @@ pod update
 **Swift**
 
 ```swift
-   import QWeatherKit
+   import QWeatherSDK
 
    ...
 
@@ -139,7 +139,7 @@ pod update
 
 **Objective-C**
 ```objc
-  #import <QWeatherKit/QWeatherKit-Swift.h>
+  #import <QWeatherSDK/QWeatherSDK-Swift.h>
 
   ...
 

@@ -27,7 +27,7 @@ The latest version of iOS SDK is {{ site.data.v.ios.version }}([Release note](ht
 
 You can also use Swift Package Manager to integrate iOS SDK, please refer to [Adding package dependencies to your app](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app).
 
-* SDK URL: [https://github.com/qwd/QWeatherKit.git](https://github.com/qwd/QWeatherKit.git)
+* SDK URL: [https://github.com/qwd/qweather-ios-sdk.git](https://github.com/qwd/qweather-ios-sdk.git)
 * Dependency Rule: Required {{ site.data.v.ios.version }}
 
 ### CocoaPods
@@ -39,13 +39,13 @@ QWeather iOS SDK can be installed via [CocoaPods](https://cocoapods.org/). Cocoa
    - iOS
      ```
      target '{YOUR_iOS_TARGET}' do
-        pod 'QWeatherKit','~> {{ site.data.v.ios.version }}'
+        pod 'QWeather-SDK','~> {{ site.data.v.ios.version }}'
      end
      ```
    - macOS
      ```
      target '{YOUR_macOS_TARGET}' do
-        pod 'QWeatherKit','~> {{ site.data.v.ios.version }}'
+        pod 'QWeather-SDK','~> {{ site.data.v.ios.version }}'
      end
      ```
 3. Open a terminal and go to the directory containing the `Podfile` and run:
@@ -62,8 +62,8 @@ pod update
 ```
 
 ### Manual install
-1. Download SDK: [QWeatherKit {{ site.data.v.ios.version }}](https://github.com/qwd/QWeatherKit/releases/tag/{{ site.data.v.ios.version }})
-2. Add `QWeatherKit.xcframework` to iOS/macOS Target.
+1. Download SDK: [QWeatherSDK {{ site.data.v.ios.version }}](https://github.com/qwd/qweather-ios-sdk/releases/tag/{{ site.data.v.ios.version }})
+2. Add `QWeatherSDK.xcframework` to iOS/macOS Target.
 
 ## 3: Initialization and Configuration‌
 
@@ -75,7 +75,7 @@ Swift
 >
 >```swift
 >
->  import QWeatherKit
+>  import QWeatherSDK
 >
 >  ...
 >
@@ -89,7 +89,7 @@ Objective-C
 >
 >```objc
 >
->  #import <QWeatherKit/QWeatherKit-Swift.h>
+>  #import <QWeatherSDK/QWeatherSDK-Swift.h>
 >
 >  ...
 >
@@ -105,7 +105,7 @@ Add the following code where you need to use, enter the required parameters, and
 Swift
 
 ```swift
-   import QWeatherKit
+   import QWeatherSDK
 
    ...
 
@@ -130,7 +130,7 @@ Swift
 Objective-C
 
 ```objc
-  #import <QWeatherKit/QWeatherKit-Swift.h>
+  #import <QWeatherSDK/QWeatherSDK-Swift.h>
 
   ...
 
