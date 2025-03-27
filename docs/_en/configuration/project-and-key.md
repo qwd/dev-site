@@ -33,7 +33,7 @@ You can create up to 10 projects.
 
 ## Credential
 
-**Credentials** are used for API authentication and is your core sensitive data. See [security guidelines](/en/docs/best-practices/security-guidelines/) for a secure request API. See [authentication](/en/docs/authentication/) for how authentication works.
+**Credentials** are used for API authentication and is your core sensitive data. See [security guidelines](/en/docs/best-practices/security-guidelines/) for a secure request API. See [authentication](/en/docs/configuration/authentication/) for how authentication works.
 
 Depending on the authentication method, there are JWT credentials and API KEY credentials. Up to 20 credentials are created per project.
 

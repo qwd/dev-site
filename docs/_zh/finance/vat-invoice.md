@@ -86,5 +86,5 @@ ref: finance-vat-invoice
 * 如有逾期欠款状态的账单，无法申请发票，请先完成欠款账单的支付。
 * 如果帐号被冻结，无法申请发票。
 * 超过12个月的账单，无法申请发票。
-* 增值税专用发票仅限[企业开发者](/docs/account/developer-type/)申请。
+* 增值税专用发票仅限[企业开发者](/docs/account/developers/)申请。
 

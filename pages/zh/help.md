@@ -26,7 +26,7 @@ ref: faq
 
 ### 我可以免费试用吗？ {#can-i-try-it-for-free}
 
-所有用户都可以使用[免费订阅](/docs/finance/subscription)免费获取我们的部分天气服务。对于免费订阅不支持的服务，你可以少量充值进行测试。
+我们提供了每个月的免费请求额度，请参考[定价](/docs/finance/pricing/)。
 
 ### 在世界各地都可以使用天气服务吗？ {#is-the-qweather-service-available-anywhere-in-the-world}
 
@@ -41,14 +41,6 @@ ref: faq
 ### 获取到的数据是乱码 {#the-data-is-garbled}
 
 我们的API采用了Gzip压缩，这将极大减少你的网络流量，因此你需要对获取的数据进行Gzip解压。参考[处理Gzip](/docs/best-practices/gzip/)。
-
-### 免费订阅的API地址是什么？ {#what-is-the-api-url-for-free-subscription}
-
-免费订阅的API地址是`devapi.qweather.com`，更多免费订阅的配置请参考[API配置](/docs/configuration/api-config/)，[iOS配置](/docs/configuration/ios-sdk-config/)和[Android配置](/docs/configuration/android-sdk-config/)。
-
-### 免费订阅请求量用完了会发生什么？ {#what-happens-when-i-run-out-of-free-subscription-requests}
-
-你会收到`402`错误代码。此时你将无法再使用免费订阅请求我们的服务，在每天0点（北京时间），免费订阅的请求量将会重置。请注意，当你收到任何非2xx代码的时候，不要无限制的进行重试，这可能会触发使用限制和违反我们的服务条款而导致帐号冻结。参考[使用限制](/docs/terms/restriction/)。
 
 ### 我能否缓存数据？ {#can-i-cache-data}
 
@@ -88,7 +80,7 @@ ref: faq
 
 ### 我可以将和风天气服务用于商业用途吗？ {#can-i-use-the-qweather-service-for-commercial-purposes}
 
-可以。使用免费订阅、标准订阅和高级订阅，只需满足许可证条件，即可用于任何用途，包括商业用途。了解[许可证](/docs/terms/license/)。
+可以，只要遵守[开发者许可协议](https://www.qweather.com/terms/developers-eula)。
 
 ### 是否需要注明来源？ {#is-attribution-required}
 
@@ -102,11 +94,7 @@ ref: faq
 
 ### 什么是订阅？ {#what-is-subscription}
 
-订阅是一种服务模式，类似于你订阅了一份报纸或杂志，在订阅期你都可以持续的使用服务。现在，和风天气服务采用订阅的方式，提供免费订阅、标准订阅和高级订阅。参考[订阅](/docs/finance/subscription/)。
-
-### 账单是什么？ {#what-is-billing}
-
-账单是和风天气计费系统的核心，所有计费项目都将整合进帐单，用户根据帐单金额进行支付。账单同样是你和我们之间的具有法律效力的凭证，我们将根据账单内容向你提供服务并根据账单金额向你收取费用。请参考[账单与支付](/docs/finance/billing-and-payment/)。
+订阅是一种服务模式，类似于你订阅了一份报纸或杂志，在订阅期你都可以持续的使用服务。现在，和风天气服务采用按量计费订阅的方式。
 
 ### 什么是节省计划？ {#what-is-savings-plan}
 
@@ -115,6 +103,10 @@ ref: faq
 ### 如何预估成本？ {#how-to-estimate-the-cost}
 
 请登录控制台，使用[价格计算器](https://console.qweather.com/price-calculator)估算你的成本。
+
+### 免费请求额度用完了会发生什么？ {#what-happens-when-i-run-out-of-free-requests}
+
+你可以继续使用开发服务，只需要在下个月支付实际用量即可。参考[计费系统](/docs/finance/billing-and-payment/)。
 
 ### 如果我有大量的请求，是否有更多的折扣？ {#are-there-more-discounts-if-i-have-a-high-volume-of-requests}
 
@@ -132,11 +124,9 @@ ref: faq
 
 对于所有用户，我们都支持在线支付（支付宝）。对于[企业开发者](/docs/account/developers/)，我们还支持对公转账。关于更多支付的信息，请参考[账单与支付](/docs/finance/billing-and-payment/)。
 
-### 退款或提取可用额度 {#refunds-or-withdraw-balance}
+### 退款或提取可用额度 {#refund}
 
-对于购买的预付费产品，例如节省计划或资源包，在购买不足7天且未开始使用的情况下，我们支持无条件退款，退款需要收取5%手续费。
-
-对于充值到可用额度的费用，你可以随时申请提取，提取可用额度将退回到你的原支付渠道。提取可用额度将收取5%的手续费。参考[提取可用额度](/docs/finance/billing-and-payment/#withdraw-balance)。
+参考[退款](/docs/finance/billing-and-payment/#refund)。
 
 ### 价格是否包含增值税？ {#do-the-pricing-include-vat}
 
@@ -146,19 +136,11 @@ ref: faq
 
 可以。对于中国地区的注册用户和个人开发者，我们支持开具增值税电子普通发票；对于中国地区的企业开发者，我们支持开具增值税电子普通发票和增值税专用发票。对于充值的金额，需要在完成消费后才可开具增值税发票。参考[增值税发票](/docs/finance/vat-invoice/)。
 
-### 我需要一份订单或协议 {#i-need-a-contract}
-
-我们提供电子账单用于你的消费凭证。你可以设置账单的联系方式和语言，账单是你和我们之间的合法凭证，由系统自动生成，因此不需要盖章或签字。参考[账单与支付](/docs/finance/billing-and-payment/)。
-
 ## 帐号管理 {#account-management}
 
 ### 如何更改帐号信息？ {#how-to-change-the-account-information}
 
-你可以修改帐号联系方式和密码，请参考[帐号管理](/docs/account/)。
-
-### 如何删除我的帐号？ {#how-do-i-delete-my-account}
-
-请访问[和风天气用户中心](https://id.qweather.com/)进行安全的删除。请注意，删除帐号不可恢复，包括你在使用和风天气的其他服务（例如和风天气APP、插件、可视化地图）都将被停止。参考[删除帐号](/docs/account/management/#delete-account)。
+你可以修改帐号联系方式和密码，请参考[帐号管理](/docs/account/management/)。
 
 ### 我的帐号被冻结了 {#my-account-has-been-suspended}
 
@@ -168,13 +150,9 @@ ref: faq
 
 可以。请访问控制台-设置-通知联系人，你可以为你的帐号最多添加5个通知联系人，他将收到所有相关通知的电子邮件（安全信息除外，例如验证码等）。参考[通知接收人](/docs/account/recipients/)。
 
-### 我忘记了注册邮箱和手机号码 {#lost-registration-information-and-password}
+### 如何删除我的帐号？ {#how-do-i-delete-my-account}
 
-请参考[忘记了注册信息和密码](/docs/account/management/#lost-registration-information-and-password)。
-
-### 如何变更开发者身份？ {#how-to-modify-developer-identification}
-
-个人开发者可以变更为企业开发者，企业开发者可以变更企业信息，参考[企业开发](/docs/account/developers/)文档。
+你需要先[关闭开发服务](/docs/account/management/#close-service)后，在[和风天气用户中心](https://id.qweather.com/)进行安全的删除。请注意，删除帐号不可恢复，包括你在使用和风天气的其他服务（例如和风天气APP、插件、可视化地图）都将被停止。参考[删除帐号](/docs/account/management/#delete-account)。
 
 ## 法律条款 {#legal-terms}
 

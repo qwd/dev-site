@@ -73,5 +73,5 @@ If there is an error or need to modify the invoice after it is issued, please [s
   * Outstanding bills, please complete the payment first
   * Account suspension
   * Billing date is more than 12 months old
-- VAT special invoices can only be applied by [organization developers](/en/docs/account/developer-type/).
+- VAT special invoices can only be applied by [organization developers](/en/docs/account/developers/).
 

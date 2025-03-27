@@ -1,11 +1,10 @@
 ---
 title: Developer Type
 tag: [account, developers]
-redirect_from: /docs/account/developers/
 ref: account-developers
 ---
 
-When you first start the developer service, you will be asked to choose a developer type. There is no data or performance difference between developer types.
+When you first start the developer services, you will be asked to choose a developer type. There is no data or performance difference between developer types.
 
 > **Hint:** Switching developer type is not supported at this time.
 

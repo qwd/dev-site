@@ -17,7 +17,7 @@ Therefore, when a user does not use QWeather products for 12 months, we mark the
 
 ## What happens when your account is Inactive
 
-When a user meets the above inactivity conditions, the account will be marked as **Inactive Account** and an email notification will be sent. You can cancel the “Inactive Account” status at any time by logging in to the console, otherwise after 30 days of being marked as a “Inactive Account”, we will close developer service and [delete the account](/en/docs/account/management/#delete-account).
+When a user meets the above inactivity conditions, the account will be marked as **Inactive Account** and an email notification will be sent. You can cancel the “Inactive Account” status at any time by logging in to the console, otherwise after 30 days of being marked as a “Inactive Account”, we will close developer services and [delete the account](/en/docs/account/management/#delete-account).
 
 User may re-register for QWeather Develop Service, but any content that was previously deleted will not be recovered.
 
@@ -27,7 +27,7 @@ A user's account will not be considered Inactive if it meets one or more of the 
 
 - Account balance > 0
 - Account that have signed a long-term agreement and are within the agreement period
-- Overdue and unpaid bills
+- Overdue bills
 - Account is suspended
 
 

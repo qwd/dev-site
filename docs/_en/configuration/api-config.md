@@ -31,7 +31,7 @@ scheme          host                   path            path       query
 
 ## Add API authentication
 
-We created an API request URL in the previous step, now we need to add authentication to it so that the server can recognize our identity. Learn about [authentication](/en/docs/configuration/authentication/).
+We created an API request URL in the previous step, now we need to add authentication to it so that the server can recognize our identity. Learn about [Authentication](/en/docs/configuration/authentication/).
 
 #### JWT
 
@@ -53,7 +53,7 @@ X-QW-Api-Key: ABCD1234EFGH
 
 QWeather's Web API uses Gzip for compression by default, which will greatly reduce network traffic and speed up requests. See [Best Practices - Gzip](/en/docs/best-practices/gzip/).
 
-## Build the full API request
+## Build a complete API request 
 
 You can build the final API request with any programming language, using curl as an example here:
 

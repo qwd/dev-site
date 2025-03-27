@@ -32,7 +32,7 @@ ref: config-project
 
 ## 凭据 {#credential}
 
-**凭据**用于API的身份认证，是你的核心敏感数据。关于安全的请求API，请参考[安全指南](/docs/best-practices/security-guidelines/)。关于身份认证的方式，请参考[身份认证](/docs/authentication/)。
+**凭据**用于API的身份认证，是你的核心敏感数据。关于安全的请求API，请参考[安全指南](/docs/best-practices/security-guidelines/)。关于身份认证的方式，请参考[身份认证](/docs/configuration/authentication/)。
 
 根据身份认证方式的不同，凭据分为JWT凭据和API KEY凭据。每个项目最多创建20个凭据。
 

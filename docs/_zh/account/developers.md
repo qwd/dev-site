@@ -1,7 +1,6 @@
 ---
 title: 开发者类型
 tag: [account, developers]
-redirect_from: /docs/account/developers/
 ref: account-developers
 ---
 

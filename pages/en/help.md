@@ -25,7 +25,7 @@ The coverage is varied by data. For Weather/Ocean/Solar Radiation/Astronomy, the
 
 ### Can I try it for free?
 
-All users can access limited weather services for free with [Free Subscription](/docs/finance/subscription). For services that are not supported by the free subscription, you can test them with a small payment.
+We offer a free request amount per month, please refer to [Pricing](/docs/finance/pricing/).
 
 ### Is the QWeather service available anywhere in the world？
 
@@ -40,14 +40,6 @@ When the above status code is retrieved, it means there may be some issues with 
 ### The data is garbled
 
 Our API uses Gzip compression, which will greatly reduce your network traffic, so you need to decompress the data with Gzip. Refer to [Gzip](/en/docs/best-practices/gzip/).
-
-### What is the API url for Free Subscription?
-
-The API url for Free Subscription is `devapi.qweather.com`, for more configuration of free subscription, please refer to [API configuration](/en/docs/configuration/api-config/), [iOS configuration](/en/docs/configuration/ios-sdk-config/) and [Android-config](/en/docs/configuration/android-sdk-config/).
-
-### What happens when I run out of free subscription requests?
-
-You will receive a `402` error code. In this case, you will no longer be able to request our service with free subscriptions, and at 0:00 (UTC+8) every day, the free subscription request volume will be reset. Please note that when you receive any non `2xx` code, do not retry indefinitely, this may violate the usage restrictions and terms of service and get your account suspended. Refer to [Usage Restrictions](/en/docs/terms/restriction/).
 
 ### Can I cache data?
 
@@ -85,7 +77,7 @@ The answers to most development questions can be found in the documentation, suc
 
 ### Can I use the QWeather service for commercial purposes?
 
-Yes. With Free/Standard and Pro subscriptions, you can use it for any purpose, including commercial use, as long as you follow the license conditions. Learn about [license](/en/docs/terms/license/).
+Yes, just follow the [Developer License Agreement](https://www.qweather.com/terms/developers-eula).
 
 ### Is attribution required?
 
@@ -101,12 +93,7 @@ In addition, pay as you go pricing is a tiered price, meaning that the more you 
 
 ### What is subscription?
 
-The subscription is a service model, similar to when you subscribe to a newspaper or magazine, and you have continuous access to the service for the duration of the subscription. QWeather Develop Service now uses a subscription model, offering Standard subscription, Pro subscription and Free subscription. Refer to [Subscription](/en/docs/finance/subscription/).
-
-### What is billing?
-
-Billing is the core of the QWeather finance system. All billable items will be integrated into the billing and users will pay according to the billing amount. The billing is also a legally valid agreement between you and us, we will provide you with services based on the contents of the billing and charge you based on the billing amount. Please refer to [billing and payment](/en/docs/finance/billing-and-payment/).
-
+The subscription is a service model, similar to when you subscribe to a newspaper or magazine, and you have continuous access to the service for the duration of the subscription. QWeather Developer Service now uses a pay-as-you-go subscription model.
 
 ### What is Savings Plan?
 
@@ -115,6 +102,11 @@ The Savings Plan is designed to cover the cost of standard subscription and is a
 ### How to estimate the cost?
 
 Please log in to Console and use the [Price Calculator](https://console.qweather.com/price-calculator?lang=en) to estimate your costs.
+
+### What happens when I run out of free requests?
+
+You can continue to use the developer services and just pay for the actual usage in the next month. Refer to [Billing and Payment](/docs/finance/billing-and-payment/).
+
 
 ### Are there more discounts if I have a high volume of requests?
 
@@ -132,11 +124,9 @@ Please visit [Console - Statistics](https://console.qweather.com//statistics). W
 
 For all users, we support online payment (Alipay). For [Organization Developers](/en/docs/account/developers/), we also support bank transfer. For more information about payments, see [Billing and Payment](/en/docs/finance/billing-and-payment/).
 
-### Refunds or withdraw balance
+### Refund
 
-For prepaid products purchased, such as Savings Plans or Resource Plans, we support refunds within 7 days and have not started using them, refunds are charged a 5% processing fee.
-
-For balance, you can apply for withdrawal at any time and the withdrawn amount will be returned to your original payment method. A 5% processing fee will be charged for withdrawing the balance. Refer to [Withdraw balance](/en/docs/finance/billing-and-payment/#withdraw-balance).
+Refer to [Refund](/en/docs/finance/billing-and-payment/#refund).
 
 ### Do the pricing include VAT?
 
@@ -146,10 +136,6 @@ Yes. For customers in China, our prices are all inclusive of VAT. Refer to [VAT 
 
 Yes. For users in China, we support issuing VAT e-invoices; for Organization Developers in China, we support issuing VAT e-invoices and VAT special invoices. Refer to [VAT invoice](/en/docs/finance/vat-invoice/).
 
-### I need a contract
-
-We provide billings for your consumption vouchers. You can set the contact information and language of the billing. The billing is a legal agreement between you and us and is automatically generated by the system, so no stamp or signature is required. Refer to [billing and payment](/en/docs/finance/billing-and-payment/).
-
 ## Account Management
 
 ### How to change the account information?
@@ -158,7 +144,9 @@ You can change your account contact information and password, refer to [Account 
 
 ### How do I delete my account?
 
-Please go to [QWeather User Center](https://id.qweather.com/) for secure deletion. Please note that deleting an account is irrevocable, including other services you are using QWeather for (e.g. QWeather App, Widget, Weather Maps Service) will be stopped. See [Delete Account](/en/docs/account/management/#delete-account)
+You have to close the developer services first and then go to [QWeather User Center](https://id.qweather.com/) for secure deletion.
+
+Please note that deleting an account is irrevocable, including other services you are using QWeather for (e.g. QWeather App, Widget, Weather Maps Service) will be stopped. See [Delete Account](/en/docs/account/management/#delete-account)
 
 ### My account has been suspended
 
@@ -166,15 +154,7 @@ See [Account Suspension](/en/docs/account/suspension/).
 
 ### Can I add more contacts to receive service notifications?
 
-Yes. Please visit Console-Settings-Notifications, you can add up to 5 notification contacts for your account, who will receive all relevant notifications by email (except security messages, e.g. authentication codes, etc.). Refer to [Notification Contacts](/en/docs/account/recipients/).
-
-### Lost registration information and password
-
-See [Lost registration information and password](/en/docs/account/management/#lost-registration-information-and-password).
-
-### How to modify developer identification?
-
-Individual developers can change to organization developers, and organization developers can update their organization information, refer to [Organization Developers](/en/docs/account/developers/).
+Yes. Please visit Console-Settings-Notifications, you can add up to 5 notification contacts for your account, who will receive all relevant notifications by email (except security messages, e.g. authentication codes, etc.). Refer to [Recipients](/en/docs/account/recipients/).
 
 ## Legal Terms
 

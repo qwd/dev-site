@@ -10,5 +10,6 @@ ref: account-overview
 
 - [用户管理](/docs/account/management/)
 - [开发者类型](/docs/account/developers/)
+- [通知接收人](/docs/account/recipients/)
 - [帐号冻结](/docs/account/suspension/)
 - [闲置帐号](/docs/account/inactive/)

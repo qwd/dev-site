@@ -11,7 +11,7 @@ QWeather Develop Service's billing system based on the pay-as-you-go subscriptio
 
 ## Billing
 
-QWeather developer service uses a pay-as-you-go model, so you don't need to pay a lot of money up front or for services you don't use, you only need to pay for the part you actually use. In addition, pay as you go is tiered pricing, with the higher requests, the lower cost per request.
+QWeather developer services use a pay-as-you-go model, so you don't need to pay a lot of money up front or for services you don't use, you only need to pay for the part you actually use. In addition, pay as you go is tiered pricing, with the higher requests, the lower cost per request.
 
 All your requests volume and cost will be listed on the bill and you should send us a payment based on the bill amount. Here are important rules for billing:
 
@@ -126,9 +126,9 @@ For organization developers in China, we support using bank transfer for payment
 - When the transfer is completed, you don't need to do anything, we will check the payment information and the amount, then 
 - Bank transfer is subject to bank confirmation (may be delayed in case of holidays), real-time payment is not possible. When the transfer is completed, we will add the transfer amount to your account balance and you will get the receipt via email. Bank transfer may be delayed in case of holidays, real-time payment is not possible. 
 
-### Outstanding
+### Overdue
 
-If a bill is not paid by the due date, it will be marked with a "Overdue" or "Outstanding" status and your developer services will be disrupted, so please complete payment of your bill as soon as possible.
+If a bill is not paid by the due date, it will be marked with a "Overdue" status and your developer services will be disrupted, so please complete payment of your bill as soon as possible.
 
 > **WARNING:** Your account will be suspended if the "outstanding" over 30 days.
 {:.bqdanger}

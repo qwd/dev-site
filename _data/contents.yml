@@ -17,6 +17,7 @@ reference_docs:
         sub:
           - subname: account-manage
           - subname: account-developers
+          - subname: account-contact
           - subname: account-suspension
           - subname: account-inactive
   - overview: 0-api-overview

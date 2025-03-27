@@ -53,7 +53,7 @@ X-QW-Api-Key: ABCD1234EFGH
 
 请注意，和风天气开发服务的API均使用Gzip进行了压缩，这将极大的减少网络流量，加快请求。因此，当你在开发过程中，需要对返回的数据进行解压。请参考[最佳实践-Gzip](/docs/best-practices/gzip/)。
 
-## 构建完整的API请求
+## 构建完整的API请求 {#build-a-complete-api-request}
 
 你可以用熟悉的开发语言构建最终的API请求，这里以curl为例：
 

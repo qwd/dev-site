@@ -76,24 +76,13 @@ layout: html
         </div>
     </section>
     <section class="ent-and-free row mb-5">
-        <div class="col-md-6 col-12 mb-5 mb-md-0">
+        <div class="col-12 mb-5 mb-md-0">
             <div class="price-card ent p-4">
                 <h2 class="mb-5">{{ site.data.t[page.lang].pi-org }}</h2>
                 <div class="card-brief-with-height mb-5">
                     {{ site.data.t[page.lang].pi-org-desc | markdownify }}
                 </div>
                 <a class="d-block" href="https://www.qweather.com{%- if page.lang == "en" -%}/en{%- endif -%}/contact" target="_blank">{{ site.data.t[page.lang].contact-us }}</a>
-            </div>
-        </div>
-        <div class="col-md-6 col-12">
-            <div class="price-card free p-4">
-                <h2 class="mb-5">{{ site.data.t[page.lang].pi-free-subs }}</h2>
-                <div class="card-brief-with-height mb-5">
-                    <p>
-                        {{ site.data.t[page.lang].pi-free-subs-desc  }}
-                    </p> 
-                </div>
-                <a class="d-block" href="{%- if page.lang == "en" -%}/en{%- endif -%}/docs/finance/subscription/">{{ site.data.t[page.lang].pi-free-subs-more  }}</a>
             </div>
         </div>
     </section>
