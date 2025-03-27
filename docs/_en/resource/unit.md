@@ -13,8 +13,8 @@ Metric units are used by default for QWeather, such as kilometers, degrees Celsi
 
 | Unit           | API parameters | iOS Unit |  Android Unit  |
 | -------------- | -------------- | ------------ | --------  |
-| Metric units   | m              | Unit     | METRIC    |
-| Imperial units | i              | Unit     | IMPERIAL  |
+| Metric units   | m              | METRIC     | METRIC    |
+| Imperial units | i              | IMPERIAL     | IMPERIAL  |
 
 ## Unit Information
 

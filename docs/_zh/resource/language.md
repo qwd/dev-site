@@ -84,7 +84,7 @@ ref: res-lang
 
 ## 示例代码：
 
-Swift:
+Swift
 ```swift
 let _ = Lang.ZH_HANS
 ```
@@ -94,7 +94,7 @@ Objective-C
 Lang lang = LangZH_HANS; 
 ```
 
-Java:
+Java
 ```java
 Lang lang = Lang.ZH_HANS; 
 ```
