@@ -11,21 +11,21 @@ ref: 2-api-weather-warning-city-list
 
 > **提示：**关于更多天气预警数据的说明，请参考[实用资料-预警信息](/docs/resource/warning-info/)。
 
-## 请求URL
+## 请求路径 {#endpoint}
 
 {% include api-url.html dev=true %}
 
-## 请求参数
+## 参数 {#parameters}
 
-请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
+#### 查询参数 {#query-parameters}
 
 {% include params.html p="range-warning" %}
 
-## 请求示例
+## 请求示例 {#request-example}
 
 {% include api-url-example.html %}
 
-## 返回数据
+## 返回数据 {#response}
 
 {% include api-snippet.html flag="weather-warning-list" %}
 

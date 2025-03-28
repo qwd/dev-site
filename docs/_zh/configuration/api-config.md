@@ -6,19 +6,27 @@ ref: config-api
 
 了解如何发送一个API请求。
 
-## 前提 {#prerequisites}
+现在，我们假设你已经创建了[项目和凭据](/docs/configuration/project-and-key/)，准备开始创建一个完整的API请求吧。
 
-请确保已经创建了项目和凭据，请参考[项目和凭据](/docs/configuration/project-and-key/)。
+## API Host
 
-## API地址和参数 {#api-url-and-parameters}
-
-通常来讲，一个完整的API请求URL由scheme，host，path，path parameters和query parameters组成。
+为了提高了API的安全等级，我们为每个开发者提供了独立的、数据隔离的API Host，即API地址或API的域名。API Host可以在[控制台-设置](https://console.qweather.com/setting)中查看，看起来像是：
 
 ```
-https://abc123.qweatherapi.com/airquality/v1/station/{LocationID}?lang=en
-\___/   \____________________/\____________________/\___________/\______/
-scheme          host                   path            path       query
-                                                      params      params 
+abc.xyz.qweatherapi.com
+```
+
+你需要API Host与API路径、参数拼接在一起，或者在使用SDK时将API Host填写到配置项中。
+
+## API URL和参数 {#api-url-and-parameters}
+
+通常来讲，一个完整的API请求URL由scheme，host，path，path parameters和query parameters组成：
+
+```
+https://abc.xyz.qweatherapi.com/airquality/v1/station/{LocationID}?lang=en
+\___/   \_____________________/\____________________/\___________/\______/
+scheme           host                  path              path      query
+                                                        params     params 
 ```
 
 - scheme: https
@@ -29,7 +37,8 @@ scheme          host                   path            path       query
 
 > **提示：**参数中如果包含了特殊字符，则必须进行URL encoding。
 
-## 添加身份认证 {#add-api-authentication}
+
+## 添加身份认证 {#add-authentication}
 
 我们在上一步创建了一个API请求URL，现在需要为它添加身份认证以便服务器可以识别我们的身份。了解[身份认证](/docs/configuration/authentication/)。
 

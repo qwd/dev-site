@@ -15,17 +15,17 @@ Get the last 10 days of weather history data.
 > * City or coordinates
 > * Date range
 
-## Request URL
+## Endpoint
 
 {% include api-url.html flag="his-weather" %}
 
-## Request parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-id date10back lang-def unit-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

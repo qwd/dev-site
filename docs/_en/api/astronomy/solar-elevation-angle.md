@@ -6,17 +6,17 @@ ref: 3-api-solar-elevation-angle
 
 Get global solar elevation angle and azimuth.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html flag="solar-ea" %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-coord date time tz alt" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

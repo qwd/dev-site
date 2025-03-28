@@ -14,23 +14,25 @@ ref: 1-api-air-now-v1
 
 我们推荐阅读[空气质量信息文档](/docs/resource/air-info/)，以便了解指数类型、污染物、支持的国家等信息。
 
-## 请求URL
+## 请求路径 {#endpoint}
 
 {% include api-url.html apidata="air-now-v1-coor" dev=true %}
 
-## 路径参数
+## 参数 {#parameters}
+
+#### 路径参数 {#path-parameters}
 
 {% include params.html p="p-lat p-lon" %}
 
-## 查询参数
+#### 查询参数 {#query-parameters}
 
 {% include params.html p="lang-def" %}
 
-## 请求示例
+## 请求示例 {#request-example}
 
 {% include api-url-example.html apidata="air-now-v1-coor" %}
 
-## 返回数据
+## 返回数据 {#response}
 
 {% include api-snippet.html %}
 

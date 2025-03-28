@@ -8,17 +8,17 @@ Get minute-level precipitation forecast data every 5 minutes for the next 2 hour
 
 > This data is only supported for Chinese cities.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html flag="weather-minutely" dev=true %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-coord lang-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

@@ -6,21 +6,21 @@ ref: 2-api-storm-track
 
 台风实况和路径API提供全球主要海洋流域的台风实时位置、等级、气压、风速以及活跃台风的轨迹路径。
 
-## 请求URL
+## 请求路径 {#endpoint}
 
 {% include api-url.html %}
 
-## 请求参数
+## 参数 {#parameters}
 
-请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
+#### 查询参数 {#query-parameters}
 
 {% include params.html p="stormid" %}
 
-## 请求示例
+## 请求示例 {#request-example}
 
 {% include api-url-example.html %}
 
-## 返回数据
+## 返回数据 {#response}
 
 > 如果台风已经停止，即`isActive=0`，接口中的`now`字段将不再返回数据
 

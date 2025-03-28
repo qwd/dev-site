@@ -6,17 +6,17 @@ ref: 2-api-moon
 
 Get moonrise and moonset and hourly moon phase data for the next 60 days at any location worldwide.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html flag="moon" dev=true %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-def date60 lang-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

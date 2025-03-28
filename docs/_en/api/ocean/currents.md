@@ -6,17 +6,17 @@ ref: 2-api-currents
 
 Global currents data for the next 10 days, including currents speed and direction.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-p6 date10" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

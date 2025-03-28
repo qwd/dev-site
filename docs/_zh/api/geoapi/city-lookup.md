@@ -10,13 +10,13 @@ ref: 1-api-city-lookup
 
 另外，城市搜索也可以帮助你在你的APP中实现模糊搜索，用户只需要输入1-2个字即可获得结果。
 
-## 请求URL
+## 请求路径 {#endpoint}
 
 {% include api-url.html apidata="geo-city-lookup" %}
 
-## 请求参数
+## 参数 {#parameters}
 
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值，参数之间使用 `&`进行分隔。
+#### 查询参数 {#query-parameters}
 
 {% include params.html p="location-geo" %}
 
@@ -32,11 +32,11 @@ ref: 1-api-city-lookup
 
 {% include params.html p="range number lang-def" %}
 
-## 请求示例
+## 请求示例 {#request-example}
 
 {% include api-url-example.html apidata="geo-city-lookup" %}
 
-## 返回数据
+## 返回数据 {#response}
 
 {% include api-snippet.html flag="city-lookup" %}
 

@@ -6,17 +6,17 @@ ref: 4-api-poi-range
 
 POI Range API provides the ability to query all POI information within a specified area.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html flag="geo-poi-range" %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-coord geo-type radius number lang-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

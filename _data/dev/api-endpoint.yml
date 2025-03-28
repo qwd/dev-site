@@ -1,50 +1,50 @@
 geo-city-lookup:
   endpoint:
-    path: /v2/city/lookup
+    path: /geo/v2/city/lookup
     name:
       zh: 城市信息搜索
       en: City Lookup
   demo: 
-    link: https://geoapi.qweather.com/v2/city/lookup?location=beij
+    link: https://your_api_host/geo/v2/city/lookup?location=beij
     name:
       zh: 搜索关键字beij 
       en: Lookup the keyword "beij"
 geo-top-city:
   demo:
-    link: https://geoapi.qweather.com/v2/city/top?number=5&range=cn
+    link: https://your_api_host/geo/v2/city/top?number=5&range=cn
     name: 
       zh: 中国热门城市前5位 
       en: Top 5 cities in China
   endpoint:
-    path: /v2/city/top
+    path: /geo/v2/city/top
     name:
       zh: 热门城市查询
       en: Top City
 geo-poi-lookup:
   demo:
-    link: https://geoapi.qweather.com/v2/poi/lookup?type=scenic&location=jings
+    link: https://your_api_host/geo/v2/poi/lookup?type=scenic&location=jings
     name: 
       zh: 搜索关键字jings
       en: Lookup keyword "jings"
   endpoint:
-    path: /v2/poi/lookup
+    path: /geo/v2/poi/lookup
     name:
       zh: POI搜索
       en: POI Lookup
 geo-poi-range:
   demo:
-    link: https://geoapi.qweather.com/v2/poi/range?location=116.40528,39.90498&type=scenic&radius=10
+    link: https://your_api_host/geo/v2/poi/range?location=116.40528,39.90498&type=scenic&radius=10
     name: 
       zh: 北京市中心附近10公里景点 
       en: Scenic zone within a 10 km radius
   endpoint:
-    path: /v2/poi/range
+    path: /geo/v2/poi/range
     name:
       zh: POI范围搜索
       en: POI Range
 weather-now:
   demo:
-    link: https://api.qweather.com/v7/weather/now?location=101010100
+    link: https://your_api_host/v7/weather/now?location=101010100
     name: 
       zh: 北京实况天气
       en: Real-time weather for Beijing
@@ -55,7 +55,7 @@ weather-now:
       en: Real-time
 weather-daily-3d:
   demo:
-    link: https://api.qweather.com/v7/weather/3d?location=101010100
+    link: https://your_api_host/v7/weather/3d?location=101010100
     name:
       zh: 北京3天预报
       en: 3-day forecast for Beijing
@@ -95,7 +95,7 @@ weather-hourly-24h:
       zh: 逐小时预报（未来24小时）
       en: Hourly Forecast (24hrs)
   demo: 
-    link: https://api.qweather.com/v7/weather/24h?location=101010100
+    link: https://your_api_host/v7/weather/24h?location=101010100
     name:
       zh: 北京未来24小时逐小时天气
       en: 24 Hours forecast for Beijing
@@ -113,7 +113,7 @@ weather-hourly-168h:
       en: Hourly Forecast (168hrs)
 minutely-precip:
   demo:
-    link: https://api.qweather.com/v7/minutely/5m?location=116.38,39.91
+    link: https://your_api_host/v7/minutely/5m?location=116.38,39.91
     name: 
       zh: 基于116.38N, 39.91E的分钟降水预报
       en: Minutely precipitation for 116.38N, 39.91E
@@ -124,7 +124,7 @@ minutely-precip:
       en: Minutely Forecast
 grid-weather-now:
   demo:
-    link: https://api.qweather.com/v7/grid-weather/now?location=116.41,39.92
+    link: https://your_api_host/v7/grid-weather/now?location=116.41,39.92
     name: 
       zh: 基于116.41N, 39.92E的格点实况天气
       en: Real-time grid weather for 116.41N, 39.92E
@@ -135,7 +135,7 @@ grid-weather-now:
       en: Real-time by Grid
 grid-weather-daily-3d:
   demo:
-    link: https://api.qweather.com/v7/grid-weather/3d?location=116.41,39.92
+    link: https://your_api_host/v7/grid-weather/3d?location=116.41,39.92
     name: 
       zh: 基于116.41N, 39.92E的格点3天预报 
       en: Grid weather 3-day forecast for 116.41N, 39.92E
@@ -152,7 +152,7 @@ grid-weather-daily-7d:
       en: 7 Days Forecast by Grid
 grid-weather-hourly-24h:
   demo:
-    link: https://api.qweather.com/v7/grid-weather/24h?location=116.41,39.92
+    link: https://your_api_host/v7/grid-weather/24h?location=116.41,39.92
     name: 
       zh: 基于116.41N, 39.92E的格点未来预报（24小时）  
       en: Grid weather hourly forecast(24H) for 116.41N, 39.92E
@@ -174,7 +174,7 @@ indices-forecast-1d:
       zh: 当天生活指数
       en: Today Indices
   demo:
-    link: https://api.qweather.com/v7/indices/1d?type=1,2&location=101010100
+    link: https://your_api_host/v7/indices/1d?type=1,2&location=101010100
     name: 
       zh: 北京市运动指数与洗车指数
       en: Sport and car wash indices for Beijing
@@ -186,7 +186,7 @@ indices-forecast-3d:
       en: 3 Days of Indices
 warning-now:
   demo:
-    link: https://api.qweather.com/v7/warning/now?location=101230201&lang=en
+    link: https://your_api_host/v7/warning/now?location=101230201&lang=en
     name: 
       zh: 厦门市预警 
       en: Weather warning message for Xiamen
@@ -197,7 +197,7 @@ warning-now:
       en: Severe Weather
 warning-list:
   demo:
-    link: https://api.qweather.com/v7/warning/list?range=cn
+    link: https://your_api_host/v7/warning/list?range=cn
     name: 
       zh: 中国灾害预警城市列表 
       en: Warning city list for China
@@ -213,13 +213,13 @@ air-now-v1-coor:
       zh: 使用坐标查询
       en: Using coordinates
   demo:
-    link: https://api.qweather.com/airquality/v1/current/39.90/116.40
+    link: https://your_api_host/airquality/v1/current/39.90/116.40
     name: 
       zh: 北京实时空气质量
       en: Real-time air quality for Beijing
 air-station-v1:
   demo:
-    link: https://api.qweather.com/airquality/v1/station/P53763
+    link: https://your_api_host/airquality/v1/station/P53763
     name: 
       zh: 监测站P53763(Los Angeles)的污染物监测数据
       en: Pollutant monitoring data from station P53763 (Los Angeles)
@@ -235,7 +235,7 @@ air-hourly-v1-coor:
       zh: 使用坐标查询
       en: Using coordinates
   demo:
-    link: https://api.qweather.com/airquality/v1/hourly/39.90/116.40
+    link: https://your_api_host/airquality/v1/hourly/39.90/116.40
     name: 
       zh: 北京逐小时空气质量预报
       en: Air quality hourly forecast for Beijing
@@ -246,13 +246,13 @@ air-daily-v1-coor:
       zh: 使用坐标查询
       en: Using coordinates
   demo:
-    link: https://api.qweather.com/airquality/v1/daily/39.90/116.40
+    link: https://your_api_host/airquality/v1/daily/39.90/116.40
     name: 
       zh: 北京每日空气质量预报
       en: Air quality daily forecast for Beijing
 air-now:
   demo:
-    link: https://api.qweather.com/v7/air/now?location=101010100
+    link: https://your_api_host/v7/air/now?location=101010100
     name: 
       zh: 北京市实时空气质量
       en: Real-time air quality for Beijing
@@ -263,7 +263,7 @@ air-now:
       en: Real-time
 air-daily:
   demo:
-    link: https://api.qweather.com/v7/air/5d?location=101010100
+    link: https://your_api_host/v7/air/5d?location=101010100
     name: 
       zh: 北京空气质量5天预报 
       en: Air quality daily forecast for Beijing
@@ -274,7 +274,7 @@ air-daily:
       en: 5 Days Forecast
 time-machine-weather:
   demo:
-    link: https://api.qweather.com/v7/historical/weather?location=101010100&date=20200725
+    link: https://your_api_host/v7/historical/weather?location=101010100&date=20200725
     name: 
       zh: 北京天气历史数据，替换`date=20200725`为最近10天的日期。
       en: Historical weather data for Beijing, replace "date=20200725" with the last 10 days.
@@ -285,7 +285,7 @@ time-machine-weather:
       en: Historical Weather
 time-machine-air:
   demo:
-    link: https://api.qweather.com/v7/historical/air?location=101010100&date=20200725
+    link: https://your_api_host/v7/historical/air?location=101010100&date=20200725
     name: 
       zh: 北京空气质量历史数据，替换`date=20200725`为最近10天的日期
       en: Historical air quality data for Beijing, replace "date=20200725" with the last 10 days.
@@ -296,7 +296,7 @@ time-machine-air:
       en: Historical Air Quality
 storm-list:
   demo:
-    link: https://api.qweather.com/v7/tropical/storm-list?basin=NP&year=2020
+    link: https://your_api_host/v7/tropical/storm-list?basin=NP&year=2020
     name: 
       zh: 西北太平洋2020年台风列表
       en: Storm list for NorthWest Pacific in 2020
@@ -307,7 +307,7 @@ storm-list:
       en: Storm List
 storm-track:
   demo:
-    link: https://api.qweather.com/v7/tropical/storm-track?stormid=NP_2021
+    link: https://your_api_host/v7/tropical/storm-track?stormid=NP_2021
     name: 
       zh: 2021年烟花台风路径 
       en: Typhoon In-Fa in 2021
@@ -318,7 +318,7 @@ storm-track:
       en: Tropical Cyclones Track
 storm-forecast:
   demo:
-    link: https://api.qweather.com/v7/tropical/storm-forecast?stormid=NP_2106
+    link: https://your_api_host/v7/tropical/storm-forecast?stormid=NP_2106
     name: 
       zh: 2021年烟花台风预报 
       en: Typhoon In-Fa forecast in 2021
@@ -329,7 +329,7 @@ storm-forecast:
       en: Tropical Cyclones Forecast
 astronomy-sun:
   demo:
-    link: https://api.qweather.com/v7/astronomy/sun?location=101010100&date=20210220
+    link: https://your_api_host/v7/astronomy/sun?location=101010100&date=20210220
     name: 
       zh: 北京2021年2月20日日出日落时间，替换`date=20210220`为未来60天的日期。
       en: Sunrise and sunset on 2021-02-20 for Beijing, replace `date=20210220` with next 60 days.
@@ -340,7 +340,7 @@ astronomy-sun:
       en: Sunrise and sunset
 astronomy-moon:
   demo:
-    link: https://api.qweather.com/v7/astronomy/moon?location=101010100&date=20211120
+    link: https://your_api_host/v7/astronomy/moon?location=101010100&date=20211120
     name: 
       zh: 北京2021年11月20日月出月落时间和月相，替换`date=20211120`为未来60天的日期。
       en: Moon rise, moon set and moon phase on 2021-11-20 for Beijing, replace `date=20211120` with next 60 days.
@@ -351,7 +351,7 @@ astronomy-moon:
       en: Moon and Moon Phase
 astronomy-solar-elevation-angle:
   demo:
-    link: https://api.qweather.com/v7/astronomy/solar-elevation-angle?location=120.34,36.08&alt=43&date=20210220&time=1230&tz=0800
+    link: https://your_api_host/v7/astronomy/solar-elevation-angle?location=120.34,36.08&alt=43&date=20210220&time=1230&tz=0800
     name: 
       zh: 120.34,36.08位置在2021-02-20T12:30+0800时的太阳高度角
       en: Solar elevation angle at 120.34,36.08 at 2021-02-20T12:30+0800
@@ -362,7 +362,7 @@ astronomy-solar-elevation-angle:
       en: Solar Elevation Angle
 solar-radiation-hourly-24h:
   demo:
-    link: https://api.qweather.com/v7/solar-radiation/24h?location=116.41,39.92
+    link: https://your_api_host/v7/solar-radiation/24h?location=116.41,39.92
     name: 
       zh: 116.41,39.92位置的未来24小时辐照预报
       en: Forecast for the next 24 hours at 116.41,39.92
@@ -379,7 +379,7 @@ solar-radiation-hourly-72h:
       en: Hourly Forecast (72hrs)
 ocean-tide:
   demo:
-    link: https://api.qweather.com/v7/ocean/tide?location=P2951&date=20210206
+    link: https://your_api_host/v7/ocean/tide?location=P2951&date=20210206
     name: 
       zh: 大连2021年02月06日潮汐数据 
       en: Dalian tide table on 2021-02-06
@@ -390,7 +390,7 @@ ocean-tide:
       en: Tide
 ocean-currents:
   demo:
-    link: https://api.qweather.com/v7/ocean/currents?location=P66981&date=20210310
+    link: https://your_api_host/v7/ocean/currents?location=P66981&date=20210310
     name: 
       zh: 珠江口2021年02月16日潮流数据 
       en: ZHUJIANG ESTURAY‘s currents on 2021-02-16 

@@ -6,21 +6,21 @@ ref: 2-api-top-city
 
 获取全球各国热门城市列表。
 
-## 请求URL
+## 请求路径 {#endpoint}
 
 {% include api-url.html flag="geo-top-city" %}
 
-## 请求参数
+## 参数 {#parameters}
 
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值，参数之间使用 `&`进行分隔。
+#### 查询参数 {#query-parameters}
 
 {% include params.html p="range number lang-def" %}
 
-## 请求示例
+## 请求示例 {#request-example}
 
 {% include api-url-example.html %}
 
-## 返回数据
+## 返回数据 {#response}
 
 {% include api-snippet.html flag="top-city" %}
 

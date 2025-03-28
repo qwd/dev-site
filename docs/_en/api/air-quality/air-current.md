@@ -14,19 +14,21 @@ The current air quality (AQI) API provides real-time air quality data for specif
 
 We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn about the AQIs, pollutants, supported regions and more.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html apidata="air-now-v1-coor" dev=true %}
 
-## Path Parameters
+## Parameters
+
+#### Path Parameters
 
 {% include params.html p="p-lat p-lon" %}
 
-## Query Parameters
+#### Query Parameters
 
 {% include params.html p="lang-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html apidata="air-now-v1-coor" %}
 

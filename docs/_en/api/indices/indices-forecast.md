@@ -9,17 +9,17 @@ Get weather indices forecast data for cities in China and around the world.
 - Weather Indices in China: Comfort Indices, Car Wash Indices, Dressing Indices, Cold Indices, Sports Indices, Travel Indices, UV Indices, Air Pollution Indices, Air Conditioning Indices, Allergy Indices, Sunglasses Indices, Makeup Indices, Sunshine Indices, Traffic Indices, Fishing Indices, Sun Protection Indices
 - Weather Indices worldwide: Sports Indices, Car Wash Indices, UV Indices, Fishing Indices
 
-## Request URL
+## Endpoint
 
 {% include api-url.html apidata="indices-forecast-1d indices-forecast-3d" title=true dev=true %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-def idx-type lang-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html apidata="indices-forecast-1d" %}
 

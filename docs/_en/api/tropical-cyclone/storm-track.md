@@ -6,17 +6,17 @@ ref: 2-api-storm-track
 
 Get the tropical cyclones location, level, pressure, windspeed, and track path of active storm in major ocean basins around the world.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="stormid" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

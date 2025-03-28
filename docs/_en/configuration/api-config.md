@@ -6,9 +6,17 @@ ref: config-api
 
 Before starting to use API service, you need to do some simple configuration and preparation.
 
-## Prerequisites
+Now, let's assume you've created [project and credential](/en/docs/configuration/project-and-key/), we're ready to start building a complete API request.
 
-Make sure you have created a Project and Credential, see [Project and KEY](/en/docs/configuration/project-and-key/).
+## API Host
+
+For a higher level of API security, we provide every developer with a independent, data-isolated API Host, also known as the API address or API domain name. The API Host can be viewed in [Console - Settings](https://console.qweather.com/setting) and looks like:
+
+```
+abc.xyz.qweatherapi.com
+```
+
+You need to concatenate the API Host with the API path and parameters, or fill the API Host into the configuration file when using the SDK.
 
 ## API URL and parameters
 
@@ -29,7 +37,7 @@ scheme          host                   path            path       query
 
 > **Hint:** URL encoding is required if the parameter contains special characters.
 
-## Add API authentication
+## Add authentication
 
 We created an API request URL in the previous step, now we need to add authentication to it so that the server can recognize our identity. Learn about [Authentication](/en/docs/configuration/authentication/).
 

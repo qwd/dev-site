@@ -8,21 +8,21 @@ ref: 1-api-weather-warning
 
 > **提示：**天气预警有较多规则和需要注意的事项，在开始使用天气预警之前，你应该先阅读[实用资料-预警信息](/docs/resource/warning-info/)。
 
-## 请求URL
+## 请求路径 {#endpoint}
 
 {% include api-url.html flag="weather-warning" dev=true  %}
 
-## 请求参数
+## 参数 {#parameters}
 
-请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
+#### 查询参数 {#query-parameters}
 
 {% include params.html p="location-def lang-def" %}
 
-## 请求示例
+## 请求示例 {#request-example}
 
 {% include api-url-example.html %}
 
-## 返回数据
+## 返回数据 {#response}
 
 {% include api-snippet.html %}
 

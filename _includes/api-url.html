@@ -2,20 +2,10 @@
     {%- comment -%} setup default apidata from tags {%- endcomment -%}
     {%- assign apidata_default = page.tag[2] | append: '-' | append: page.tag[3] -%}
     {%- assign apidata = include.apidata | default: apidata_default | split: " " -%}
-    {%- comment -%} setup default apihost from tags {%- endcomment -%}
-    {%- if page.tag[2] == "geo" -%}
-    {%- assign apihost_default = site.links.geoapi -%}    
-    {%- else -%}
-    {%- assign apihost_default = site.links.api -%}      
-    {%- endif -%}
-    {%- assign apihost = include.apihost | default: apihost_default -%}
     {% for item in apidata %}
         {% if include.title == true -%}
         <span class="my-3 d-block text-bold">{{- site.data.dev.api-endpoint[item].endpoint.name[page.lang] -}}</span>    
         {% endif -%}
-        <pre><code>{{ apihost }}{{ site.data.dev.api-endpoint[item].endpoint.path }}</code></pre>
+        <pre><code>{{ site.data.dev.api-endpoint[item].endpoint.path }}</code></pre>
     {%- endfor -%}
-    {% if include.dev == true -%}
-    {{ site.data.t[page.lang].api-url-note | markdownify }}    
-    {%- endif %}
 </div>

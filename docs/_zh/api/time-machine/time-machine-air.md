@@ -9,21 +9,21 @@ ref: 2-api-historical-air
 
 > 例如今天是12月30日，最多可获取12月20日至12月29日的空气质量历史数据。
 
-## 请求URL
+## 请求路径 {#endpoint}
 
 {% include api-url.html flag="his-air" %}
 
-## 请求参数
+## 参数 {#parameters}
 
-请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
+#### 查询参数 {#query-parameters}
 
 {% include params.html p="location-id date10back lang-def" %}
 
-## 请求示例
+## 请求示例 {#request-example}
 
 {% include api-url-example.html %}
 
-## 返回数据
+## 返回数据 {#response}
 
 {% include api-snippet.html flag="his-air"%}
 

@@ -13,17 +13,17 @@ See also [Weather warning API](/en/docs/api/warning/weather-warning/) to get war
 
 > **Tips:** For more warning description, see [Resource - Warning Info](/en/docs/resource/warning-info/).
 
-## Request URL
+## Endpoint
 
 {% include api-url.html flag="weather-warning-list" dev=true %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="range-warning" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

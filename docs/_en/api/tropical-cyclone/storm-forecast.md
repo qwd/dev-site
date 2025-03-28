@@ -8,17 +8,17 @@ Storm Forecast API provides tropical cyclones information for a specific tropica
 
 > **Note:** For inactive storms, the returned data is **NULL**, please get the storms status by [Storm List API](/en/docs/api/tropical-cyclone/storm-list/) first. 
 
-## Request URL
+## Endpoint
 
 {% include api-url.html flag="tc-forecast" %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="stormid" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

@@ -9,7 +9,7 @@ Monitoring Station Data API provides pollutant concentration values from air qua
 > **Warning:** Monitoring station data is for reference only, it may be delayed, incorrect or unavailable due to various reasons such as failure, removal, maintenance or local laws and regulations.
 {:.bqdanger}
 
-## Request URL
+## Endpoint
 
 {% include api-url.html apidata="air-station-v1" dev=true %}
 
@@ -21,7 +21,7 @@ Monitoring Station Data API provides pollutant concentration values from air qua
 
 {% include params.html p="lang-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html apidata="air-station-v1" dev=true %}
 
