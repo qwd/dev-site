@@ -8,48 +8,46 @@ Get a list of tropical cyclones for the last 2 years in major ocean basins aroun
 > Only the coastal areas of China are supported now, i.e. `basin=NP`
 
 
-| Interface Code| Interface          | Class  |
+| Interface code| Interface          | Class  |
 | -------- | ---------------- | ------- |
-| getStormList| Storm list and IDs  | StormListBean |
+| tropicalStormList | Storm list | StormListResponse |
 
-### Parameter
+## Request Parameters
+
+**StormListParameter**
 
 {% include params.html p="basin year" %}
 
-### Sample Code
+## Sample Code
 
 ```java
-QWeather.getStormList(Context context, String year, Basin basin, OnResultTropicalStormListListener listener);
+public void tropicalStormList(StormListParameter parameter, Callback<StormListResponse> callback);
 ```
 
-### Properties
+## Response
 
-Properties of StormListBean
+**StormListResponse**
 
-| Property            | Description     | Example                    |
+{% include api-response.html group="storm" type="list" prefix="storm"  %}
+
+<!-- | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)        |
-| getBasic         | Basic Informatio | Basic       |
-| getRefer         | Reference data, includes data source, statements and license | Refer  |
-| getStormList | Storm list and IDs | List<StormBean> |
-
-
-**Basic**
-
-| Property           | Description         | Example             |
-| -------------- | ------------ | ------------------ |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time)  | 2017-10-25T04:34+08:00      |
 | getFxLink |Responsive web page of this data, for embedded in website or APP  | https://www.qweather.com |
+| getStorm | Storm list and IDs | List&lt;Storm&gt; |
+| getRefer  | Reference data, includes data source, statements and license | Refer  |
+
 
 **Refer**
 
-| Property           | Description         | Example             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather      |
-| getLicenseList | Data license     | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
 
-**StormBean**
+**Storm**
 
 | Property         | Description                                                                    | Example               |
 | ------------ | ----------------------------------------------------- | -------------------- |
@@ -57,4 +55,4 @@ Properties of StormListBean
 | getName        | Storm name                                      | 杜鹃           |
 | getBasin       | The basin of the storm                              |    NP    |
 | getYear       | Year of the storm                              |    2021    |
-| getActive       | Is it an active storm?<br />`1` Active <br /> `0` Stopped                             |    0    |
+| getActive       | Is it an active storm?<br />`1` Active <br /> `0` Stopped                             |    0    | -->

@@ -13,44 +13,44 @@ See also [Weather warning Android SDK](/en/docs/android-sdk/warning/android-weat
 
 > **Tips:** For more warning description, see [Resource - Warning Info](/en/docs/resource/warning-info/).
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ---------------- | -------------- | --------------- |
-| getWarningList| Weather warning city list  | WarningListBean |
+| warningList| List of warning cities  | WarningListResponse |
 
-### Parameter
+## Request Parameters
+
+**WarningListParameter**
 
 {% include params.html p="range-warning" %}
 
-### Sample Code
+## Sample Code
 
 ```java
-/**
- * @param context context
- * @param listener network access callback interface
- */
-QWeather.getWarningList(Context context, Range range, final QWeather.OnResultWarningListListener listener);
+public void warningList(WarningListParameter parameter, Callback<WarningListResponse> callback);
 ```
 
-### Properties
+## Response
 
-Properties of WarningListBean
+**WarningListResponse**
 
-| Property | Description | Example |
-| -------------- | ------------ | --------------------- ------ |
+{% include api-response.html group="warning" type="list" prefix="warningLocList" fxlink=0 %}
+
+<!-- | Property | Description | Example |
+| -------------- | ------------ | --------------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T12:34+08:00 |
-| getWarningBean | Weather warning | List&lt;WarningListBean&gt; |
+| getWarningLocList | Weather warning | List&lt;WarningLocation&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
-**WarningListBeanBase Warning Information**
+**WarningLocation**
 
 | Property | Description | Example |
 | ------------- | ------------ | --------- |
-| getLocationId | Location ID | 101280601 |
+| getLocationId | Location ID | 101280601 | -->

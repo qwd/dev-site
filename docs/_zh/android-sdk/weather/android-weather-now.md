@@ -4,48 +4,48 @@ tag: [guide, android, weather, now]
 ref: 1-sdk-android-weather-now
 ---
 
-实时天气数据，支持中国3000+市县区和海外20万个城市实时天气数据，包括实时温度、体感温度、风力风向、相对湿度、大气压强、降水量、能见度、露点温度、云量等。
+获取中国3000+市县区和海外20万个城市实时天气数据，包括实时温度、体感温度、风力风向、相对湿度、大气压强、降水量、能见度、露点温度、云量等。
 
-| 接口代码| 接口说明           | 数据类         |
+> **注意：**实况数据均为近实时数据，相比真实的物理世界有5-20分钟的延迟，请根据实况数据中的`obsTime`确定数据对应的准确时间。
+
+| 接口代码| 接口           | 数据类         |
 | ------------ | ------------- | -------------- |
-| getWeatherNow| 实况天气数据  | WeatherNowBean |
+| weatherNow| 实况天气  | WeatherNowResponse |
 
-### 接口参数说明
+## 请求参数
+
+**WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
-QWeather.getWeatherNow(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherNowListener listener) ;
-
-QWeather.getWeatherNow(Context context, String location, QWeather.OnResultWeatherNowListener listener);
+public void weatherNow(WeatherParameter parameter, Callback<WeatherNowResponse> callback);
 ```
 
-### WeatherNowBean属性
+## Response
+ 
+**WeatherNowResponse**
 
-| 属性     | 说明                       | 示例值      |
+{% include api-response.html group="weather" type="now" prefix="now" %}
+
+<!-- | 属性     | 说明                       | 示例值      |
 | -------- | -------------------------- | ----------- |
 | getCode  | 参考[状态码](/docs/resource/status-code/)      | 200  |
-| getNow   | NowBean 实况天气           | NowBaseBean |
+| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/weather/beijing-101010100.html |
+| getNow   | WeatherNow 实况天气      | WeatherNow |
 | getRefer | Refer 数据来源以及数据授权 | Refer       |
-| getBasic | Basic 基础信息             | Basic       |
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| 属性          | 说明                     | 示例值               |
-| ------------- | ------------------------ | -------------------- |
-| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/weather/beijing-101010100.html |
-
-**NowBaseBean 实况天气**
+**WeatherNow**
 
 | 属性         | 说明                       | 示例值           |
 | ------------ | -------------------------- | ---------------- |
@@ -63,5 +63,5 @@ QWeather.getWeatherNow(Context context, String location, QWeather.OnResultWeathe
 | getPressure  | 大气压强                   | 1020             |
 | getVis       | 能见度，默认单位：公里     | 10               |
 | getCloud     | 云量                       | 23               |
-| getDew       | 露点温度                   | -1               |
+| getDew       | 露点温度                   | -1               | -->
 

@@ -4,83 +4,73 @@ tag: [guide, android, weather, daily]
 ref: 2-sdk-android-weather-daily-forecast
 ---
 
-提供全球城市未来3-30天天气预报，包括：日出日落、月升月落、最高最低温度、天气白天和夜间状况、风力、风速、风向、相对湿度、大气压强、降水量、降水概率、露点温度、紫外线强度、能见度等。
+每日天气预报Android SDK，提供全球城市未来3-30天天气预报，包括：日出日落、月升月落、最高最低温度、天气白天和夜间状况、风力、风速、风向、相对湿度、大气压强、降水量、露点温度、紫外线强度、能见度等。
 
-| 接口代码| 接口说明               | 数据类           |
+| 接口代码| 接口               | 数据类           |
 | ---------------- | ------------- | ---------------- |
-| getWeather3D| 3天预报天气数据    | WeatherDailyBean |
-| getWeather7D| 7天预报天气数据    | WeatherDailyBean |
-| getWeather10D| 10天预报天气数据  | WeatherDailyBean |
-| getWeather15D| 15天预报天气数据  | WeatherDailyBean |
-| getWeather30D| 30天预报天气数据  | WeatherDailyBean |
+| weather3d| 3天预报天气数据    | WeatherDailyResponse |
+| weather7d| 7天预报天气数据    | WeatherDailyResponse |
+| weather10d| 10天预报天气数据  | WeatherDailyResponse |
+| weather15d| 15天预报天气数据  | WeatherDailyResponse |
+| weather30d| 30天预报天气数据  | WeatherDailyResponse |
 
-### 接口参数说明
+## 请求参数
+
+**WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
+WeatherParameter parameter = new WeatherParameter("101010100");
 /**
  * 获取3天预报数据
  */
-QWeather.getWeather3D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener) ;
-
-QWeather.getWeather3D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
+public void weather3d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 
 /**
  * 获取7天预报数据
  */
-QWeather.getWeather7D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener) ;
-
-QWeather.getWeather7D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
+public void weather7d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 
 /**
  * 获取10天预报数据
  */
-QWeather.getWeather10D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener) ;
-
-QWeather.getWeather10D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
+public void weather10d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 
 /**
  * 获取15天预报数据
  */
-QWeather.getWeather15D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener) ;
-
-QWeather.getWeather15D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
-
+public void weather15d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 /**
  * 获取30天预报数据
  */
-QWeather.getWeather30D(Context context, String location, Lang lang, Unit unit, QWeather.OnResultWeatherDailyListener listener) ;
-
-QWeather.getWeather30D(Context context, String location, QWeather.OnResultWeatherDailyListener listener);
+public void weather30d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 ```
 
-### WeatherDailyBean属性
+## Response
 
-| 属性     | 说明                       | 示例值                |
+**WeatherDailyResponse**
+
+{% include api-response.html group="weather" type="daily" prefix="daily" %}
+
+<!-- | 属性     | 说明                       | 示例值                |
 | -------- | -------------------------- | --------------------- |
 | getCode  | 参考[状态码](/docs/resource/status-code/)                    | 200  |
-| getDaily | DailyBean 逐天天气         | List&lt;DailyBean&gt; |
+| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/weather/beijing-101010100.html |
+| getDaily | WeatherDaily 逐天天气         | List&lt;WeatherDaily&gt; |
 | getRefer | Refer 数据来源以及数据授权 | Refer                 |
-| getBasic | Basic 基础信息             | Basic                 |
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| 属性          | 说明                     | 示例值               |
-| ------------- | ------------------------ | -------------------- |
-| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/weather/beijing-101010100.html |
-
-**DailyBean 天气预报**
+**WeatherDaily**
 
 | 属性              | 说明                | 示例值     |
 | ----------------- | ------------------- | ---------- |
@@ -110,4 +100,4 @@ QWeather.getWeather30D(Context context, String location, QWeather.OnResultWeathe
 | getPressure       | 大气压强            | 1018       |
 | getCloud          | 当天云量            | 23         |
 | getUvIndex        | 紫外线强度指数      | 3          |
-| getVis            | 能见度，单位：公里  | 10         |
+| getVis            | 能见度，单位：公里  | 10         | -->

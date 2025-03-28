@@ -4,47 +4,49 @@ tag: [guide, android, geo, city-lookup]
 ref: 1-sdk-android-geo-city-lookup
 ---
 
+City Lookup provides reverse geocoding, geolocation lookup services, supports multi-language, fuzzy search and other functions.
+
 With the City Lookup, you can get the basic information of the city, including the Location ID of the city (you need this ID to get the weather), multilingual name, latitude and longitude, time zone, altitude, rank, administrative, etc.
 
-| Interface Code| Interface  | Class |
-| -------- | ---------------- | ------- |
-| getGeoGityLookup| City lookup  | GeoBean |
+In addition, GeoAPI - City Lookup can also help you to implement fuzzy search in your APP, users only need to type 1 or 2 words to get results.
 
-### Parameter
+| Interface code| Interface  | Class |
+| -------- | ---------------- | ------- |
+| geoCityLookUp | City lookup  | GeoCityLookupResponse |
+
+## Request Parameters
+
+**GeoCityLookupParameter**
 
 {% include params.html p="location-geo adm range number lang-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
-QWeather.getGeoCityLookup(Context context, String location, String adm, Range range, int number, Lang lang, final QWeather.OnResultGeoListener listener);
-
-QWeather.getGeoCityLookup(Context context, String location, Range range, int number, Lang lang, final QWeather.OnResultGeoListener listener);
-
-QWeather.getGeoCityLookup(Context context, String location, int number, Lang lang, final QWeather.OnResultGeoBeansListener listener);
-
-QWeather.getGeoCityLookup(Context context, String location, final QWeather.OnResultGeoBeansListener listener);
+public void geoCityLookUp(GeoCityLookupParameter parameter, Callback<GeoCityLookupResponse> callback);
 ```
 
-### Properties
+## Response
 
-Properties of GeoBean
+**GeoCityLookupResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="geo" type="location" prefix="location" update=0 fxlink=0 %}
+
+<!-- | Property | Description | Example |
 | --------------- | -------- | ------------------------ |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getLocationBean | City data | List&lt;LocationBean&gt; |
+| getLocation | City data | List&lt;Location&gt; |
 
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather   |
+| getLicense | Data license     | List&lt;String&gt; | QWeather Developers License |
 
 
-**LocationBean Basic Information**
+**Location**
 
 | Property | Description | Example |
 | ------------ | ------------- | ------------- |
@@ -60,4 +62,4 @@ Properties of GeoBean
 | getIsDst |Is the location currently observing Daylight Saving time<br />`1` in daylight saving time <br /> `0` not in daylight saving time | 0 |
 | getType | Type of the location | city |
 | getRank | [Location Rank](/en/docs/resource/glossary/#rank) | 10 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/weather/zhuozi-101080402.html |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/weather/zhuozi-101080402.html | -->

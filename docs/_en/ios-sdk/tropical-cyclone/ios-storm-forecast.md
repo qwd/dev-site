@@ -4,39 +4,57 @@ tag: [guide, ios, storm, forecast]
 ref: 3-sdk-ios-storm-forecast
 ---
 
-Storm Forecast iOS SDK provides tropical cyclones location, level, pressure, wind speed for major ocean basins around the world.
+Storm Forecast provides tropical cyclones information for a specific tropical cyclone, the data including forecast tropical cyclones location, level, pressure, wind and etc.
 
-> **Note:** For inactive storms, the response data is **NULL**, please get the storms status by [Storm List](/en/docs/ios-sdk/tropical-cyclone/ios-storm-list/) first.
+> **Note:** For inactive storms, the returned data is **NULL**, please get the storms status by [Storm List](/en/docs/ios-sdk/tropical-cyclone/ios-storm-list/) first.
 
 
-| Interface code (Enum)             | Interface     | Class                 |
-| --------------------------- | -------- | ---------------------- |
-| INQUIRE_TYPE_STORM_FORECAST | Storm forecast data | StormForecastBaseClass |
+| Interface code              | Interface     | Class                 |
+| --------------------------- | ------------- | ---------------------- |
+| tropicalStormForecast      | Storm forecast data | StormForecastResponse |
 
-### Request Parameters
+## Request Parameters
 
-If no optional parameters are set, the default value will be used.
+**StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
-### Sample Code
+## Sample Code
+
+**Swift**
+
+```swift
+Task{
+    do {
+        let parameter = StormParameter(stormid: "NP_2421")
+        let response = try await QWeather.instance
+            .tropicalStormForecast(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
+```
+
+**Objective-C**
 
 ```objc
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-    QWeatherConfigInstance.stormID = @"NP_2102";
-    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_STORM_FORECAST WithSuccess:^(StormForecastBaseClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
-    }];
+StormParameter *parameter = [StormParameter instanceWithStormid:@"NP_2421"];
+[QWeatherObjc tropicalStormForecast:parameter completionHandler:^(StormForecastResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```
      
-### Response
+## Response
+
+**StormForecastResponse**
 
 {% include api-response.html group="storm" type="forecast" prefix="forecast"  %}
 

@@ -6,39 +6,45 @@ ref: 3-sdk-android-geo-poi-lookup
 
 使用关键字和坐标查询POI信息（景点、火车站、飞机场、港口等）
 
-| 接口代码| 接口说明            | 数据类     |
+| 接口代码| 接口            | 数据类     |
 | ----------- | --------------- | ---------- |
-| getGeoPoiLookup| POI搜索  | GeoPoiBean |
+| geoPoiLookup| POI搜索  | GeoPoiResponse |
 
-### 接口参数说明
+## 请求参数
+
+**GeoPoiLookupParameter**
 
 {% include params.html p="location-geo geo-type city number lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
-QWeather.getGeoPoiLookup(Context context, String location, String city, int number, Type type, Lang lang, final OnResultGeoPoiListener listener);
-
-QWeather.getGeoPoiLookup(Context context, String location, Type type, final QWeather.OnResultGeoPoiListener listener);
+public void geoPoiLookup(GeoPoiLookupParameter parameter, Callback<GeoPoiResponse> callback);
 ```
 
-### GeoPoiBean属性
+## 返回数据
 
-| 属性       | 说明     | 示例值          |
+**GeoPoiResponse**
+
+
+{% include api-response.html group="geo_poi" type="poi" prefix="poi" update=0 fxlink=0 %}
+
+<!-- | 属性       | 说明     | 示例值          |
 | ---------- | -------- | --------------- |
 | getCode    | 参考[状态码](/docs/resource/status-code/)  | 200 |
-| getPoiList | 城市数据 | List&lt;Poi&gt; |
+| getPoi | 城市数据 | List&lt;Location&gt; |
+| getRefer         | Refer 数据来源以及数据授权 | Refer  |
 
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
 
-**POI 基础信息**
+**Location**
 
 | 属性         | 说明                                                              | 示例值    |
 | ------------ | ----------------------------------------------------------------- | --------- |
@@ -55,4 +61,4 @@ QWeather.getGeoPoiLookup(Context context, String location, Type type, final QWea
 | getType      | 该Poi的属性                                                       | scenic      |
 | getRank      | 地区评分                                                          | 10        |
 | getFxLink    | 该Poi的天气预报网页链接                                             | https://www.qweather.com |
-
+ -->

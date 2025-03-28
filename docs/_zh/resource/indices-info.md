@@ -16,26 +16,42 @@ ref: res-indices
 > **注意：**当选择全部天气指数时，不能再选择其他指数。
 {:.bqwarning}
 
-| 天气指数类型             | API类型值 | iOS SDK类型常量   | Android SDK类型常量 |
-| -------------------- | --------- | ----------------- | ------------------- |
-| 全部天气指数         | 0         | INDICES_TYPE_all  | ALL                 |
-| 运动指数             | 1         | INDICES_TYPE_spt  | SPT                 |
-| 洗车指数             | 2         | INDICES_TYPE_cw   | CW                  |
-| 穿衣指数             | 3         | INDICES_TYPE_drsg | DRSG                |
-| 钓鱼指数             | 4         | INDICES_TYPE_fis  | FIS                 |
-| 紫外线指数           | 5         | INDICES_TYPE_uv   | UV                  |
-| 旅游指数             | 6         | INDICES_TYPE_tra  | TRA                 |
-| 花粉过敏指数         | 7         | INDICES_TYPE_ag   | AG                  |
-| 舒适度指数           | 8         | INDICES_TYPE_comf | COMF                |
-| 感冒指数             | 9         | INDICES_TYPE_flu  | FLU                 |
-| 空气污染扩散条件指数 | 10        | INDICES_TYPE_ap   | AP                  |
-| 空调开启指数         | 11        | INDICES_TYPE_ac   | AC                  |
-| 太阳镜指数           | 12        | INDICES_TYPE_gl   | GL                  |
-| 化妆指数             | 13        | INDICES_TYPE_mu   | MU                  |
-| 晾晒指数             | 14        | INDICES_TYPE_dc   | DC                  |
-| 交通指数             | 15        | INDICES_TYPE_ptfc | PTFC                |
-| 防晒指数             | 16        | INDICES_TYPE_spi  | SPI                 |
+| 天气指数类型           | API类型值 | iOS Indices  | Android Indices |
+| -------------------- | --------- | --------------- | ------------------- |
+| 全部天气指数           | 0         | ALL                | ALL              |
+| 运动指数              | 1         | SPT                | SPT              |
+| 洗车指数             | 2         | CW                 | CW                |
+| 穿衣指数             | 3         | DRSG               | DRSG              |
+| 钓鱼指数             | 4         | FIS                | FIS               |
+| 紫外线指数           | 5         | UV                 | UV                |
+| 旅游指数             | 6         | TRA                | TRA               |
+| 花粉过敏指数         | 7         | AG                 | AG                 |
+| 舒适度指数           | 8         | COMF               | COMF               |
+| 感冒指数             | 9         | FLU                | FLU                |
+| 空气污染扩散条件指数   | 10        | AP                 | AP                 |
+| 空调开启指数         | 11        | AC                  | AC                |
+| 太阳镜指数           | 12        | GL                 | GL                 |
+| 化妆指数             | 13        | MU                 | MU                 |
+| 晾晒指数             | 14        | DC                  | DC                |
+| 交通指数             | 15        | PTFC                | PTFC              |
+| 防晒指数             | 16        | SPI                | SPI                |
 
+## 示例代码：
+
+Swift:
+```swift
+let _ = Indices.SPT
+```
+
+Objective-C
+```objc
+Indices indices = IndicesSPT; 
+```
+
+Java:
+```java
+Indices indices = Indices.SPT; 
+```
 
 ## 天气指数等级 {#index-level}
 

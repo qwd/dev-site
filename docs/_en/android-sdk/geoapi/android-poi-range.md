@@ -6,44 +6,47 @@ ref: 4-sdk-android-geo-poi-range
 
 POI Range Android SDK provides the ability to query all POI information within a specified area.
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ----------- | -------------- | ---------- |
-| getGeoPoiRange| POI Range  | GeoPoiBean |
+| geoPoiRange| POI Range  | GeoPoiResponse |
 
-### Parameter
+## Request Parameters
+
+**GeoPoiRangeParameter**
 
 {% include params.html p="location-coord geo-type radius number lang-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
-QWeather.getGeoPoiRange(Context context, String location, int radius, int number, Type type, Lang lang, final OnResultGeoPoiListener listener);
-
-QWeather.getGeoPoiRange(Context context, String location, int number, Type type, Lang lang, final OnResultGeoPoiListener listener);
+public void geoPoiRange(GeoPoiRangeParameter parameter, Callback<GeoPoiResponse> callback);
 ```
 
-### Properties
+## Response
 
-Properties of GeoPoiBean
+**GeoPoiResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="geo_poi" type="poi" prefix="poi" update=0 fxlink=0 %}
+
+<!-- | Property | Description | Example |
 | ---------- | -------- | --------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getPoiList | City data | List&lt;Poi&gt; |
+| getPoi | City data | List&lt;Location&gt; |
+| getRefer | Reference data, includes data source, statements and license | Refer |
 
 
 **Refer**
 
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license     | List&lt;String&gt; | QWeather Developers License |
+
+
+**Location**
+
 | Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
-
-
-**Poi**
-
-| Property | Description | Example |
-| ------------ | ------------------------------------ ----------------------------- | --------- |
+| ------------ | ----------------------- | --------- |
 | getName | POI name | Beijing Zoo |
 | getId | Location ID | 10101020006A |
 | getLon | Longitude of the POI | 116.33000 |
@@ -56,4 +59,4 @@ Properties of GeoPoiBean
 | getIsDst | Is the location currently observing Daylight Saving time<br />`1` in daylight saving time <br /> `0` not in daylight saving time | 0 |
 | getType | POI type | scenic |
 | getRank | [Location Rank](/en/docs/resource/glossary/#rank) | 10 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com | -->

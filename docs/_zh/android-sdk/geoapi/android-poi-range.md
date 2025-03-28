@@ -6,38 +6,42 @@ ref: 4-sdk-android-geo-poi-range
 
 提供指定区域范围内查询所有POI信息。
 
-| 接口代码| 接口说明           | 数据类     |
+| 接口代码| 接口           | 数据类     |
 | ----------- | -------------- | ---------- |
-| getGeoPoiRange| POI范围搜索  | GeoPoiBean |
+| geoPoiRange| POI范围搜索  | GeoPoiResponse |
 
-### 接口参数说明
+## 请求参数
+
+**GeoPoiRangeParameter**
 
 {% include params.html p="location-coord geo-type radius number lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
-QWeather.getGeoPoiRange(Context context, String location, int radius, int number, Type type, Lang lang, final OnResultGeoPoiListener listener);
-
-QWeather.getGeoPoiRange(Context context, String location, int number, Type type, Lang lang, final OnResultGeoPoiListener listener);
+public void geoPoiRange(GeoPoiRangeParameter parameter, Callback<GeoPoiResponse> callback);
 ```
 
-### GeoPoiBean属性
+## 返回数据
 
-| 属性       | 说明     | 示例值          |
+**GeoPoiResponse**
+
+{% include api-response.html group="geo_poi" type="poi" prefix="poi" update=0 fxlink=0 %}
+
+<!-- | 属性       | 说明     | 示例值          |
 | ---------- | -------- | ------------- |
 | getCode    | 参考[状态码](/docs/resource/status-code/)  | 200|
-| getPoiList | 城市数据 | List&lt;Poi&gt; |
+| getPoi | 城市数据 | List&lt;Location&gt; |
+| getRefer         | Refer 数据来源以及数据授权 | Refer  |
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-
-**POI 基础信息**
+**Location**
 
 | 属性         | 说明                                                              | 示例值    |
 | ------------ | ----------------------------------------------------------------- | --------- |
@@ -53,4 +57,4 @@ QWeather.getGeoPoiRange(Context context, String location, int number, Type type,
 | getIsDst     | 该Poi是否当前处于夏令时,1 表示当前处于夏令时,0 表示当前不是夏令时 | 0         |
 | getType      | 该Poi的属性                                                       | scenic      |
 | getRank      | 地区评分                                                          | 10        |
-| getFxLink    | 该Poi的天气预报网页链接                                             | https://www.qweather.com |
+| getFxLink    | 该Poi的天气预报网页链接                                             | https://www.qweather.com | -->

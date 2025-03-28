@@ -6,42 +6,48 @@ ref: 2-sdk-android-geo-top
 
 获取全球各国热门城市列表。
 
-| 接口代码| 接口说明           | 数据类  |
+| 接口代码| 接口           | 数据类  |
 | ------------ | ------------- | ------- |
-| getGeoTopCity| 热门城市查询  | GeoBean |
+| geoCityTop | 热门城市查询  | GeoCityTopResponse |
 
-### 接口参数说明
+## 请求参数
+
+**GeoCityTopParameter**
 
 {% include params.html p="range number lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
-QWeather.getGeoTopCity(Context context, int number, Range range, Lang lang, final QWeather.OnResultGeoBeansListener listener);
-
-QWeather.getGeoTopCity(Context context, final QWeather.OnResultGeoBeansListener listener);
+public void geoCityTop(GeoCityTopParameter parameter, Callback<GeoCityTopResponse> callback);
 ```
 
-### GeoBean属性
+## 返回数据
 
-| 属性            | 说明     | 示例值                   |
+**GeoCityTopResponse**
+
+
+{% include api-response.html group="geo" type="topcity"  prefix="topCityList" update=0 fxlink=0 %}
+
+<!-- | 属性            | 说明     | 示例值                   |
 | --------------- | -------- | ------------------------ |
 | getCode         | 参考[状态码](/docs/resource/status-code/)  | 200  |
-| getLocationBean | 城市数据 | List&lt;LocationBean&gt; |
+| getTopCityList | 城市数据 | List&lt;Location&gt; |
+| getRefer         | Refer 数据来源以及数据授权 | Refer  |
 
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License |
 
 
-**LocationBean 基础信息**
+**Location**
 
 | 属性         | 说明                                                                    | 示例值               |
-| ------------ | ----------------------------------------------------------------------- | -------------------- |
+| ------------ | ------------------------------------------------------------- | -------------------- |
 | getName      | 地区／城市名称                                                          | 卓资                 |
 | getId        | 地区／城市ID                                                            | 101080402            |
 | getLon       | 地区／城市经度                                                          | 112.577702           |
@@ -55,4 +61,4 @@ QWeather.getGeoTopCity(Context context, final QWeather.OnResultGeoBeansListener 
 | getType      | 该地区／城市的属性                                                      | city                 |
 | getRank      | 该地区／城市评分                                                        | 10                   |
 | getFxLink    | 城市的天气预报网页链接                                                  | https://www.qweather.com/weather/zhuozi-101080402.html |
-
+ -->

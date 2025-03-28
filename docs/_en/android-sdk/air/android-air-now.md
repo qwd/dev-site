@@ -6,48 +6,47 @@ ref: 1-sdk-android-air-now
 
 Real-time air quality for Chinese cities and 1,700 monitoring stations, including AQI, air quality levels, primary pollutants, PM10, PM2.5, ozone, nitrogen dioxide sulfur dioxide and carbon monoxide values.
 
-| Interface Code| Interface  | Class |
-| ---------------- | --------- | ---------- |
-| getAirNow| Real-time Air Quality  | AirNowBean |
+> **Note:** [Air Quality API v1 (new)](/en/docs/api/air-quality/) is now available, please try to use and upgrade.
 
-### Parameter
+| Interface code| Interface  | Class |
+| ---------------- | --------- | ---------- |
+| airNow| Real-time Air Quality  | AirNowResponse |
+
+## Request Parameters
+
+**AirParameter**
 
 {% include params.html p="location-def lang-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
-QWeather.getAirNow(Context context, String location, Lang lang,
-QWeather.OnResultAirNowListener listener)
+public void airNow(AirParameter parameter, Callback<AirNowResponse> callback);
 ```
 
-### Properties
+## Response
 
-Properties of AirNowBean
+**AirNowResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="air" type="now station" prefix="now station" %}
+
+<!-- | Property | Description | Example |
 | -------------------- | -------------------------- |------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getAirNowStationBean | Real-time AQI for monitoring station | List&lt;AirNowStationBean&gt; |
-| getNow | Real-time AQI for cities | NowBean |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/air/beijing-101010100.html |
+| getStation | Real-time AQI for monitoring station | List&lt;AirStation&gt; |
+| getNow | Real-time AQI for cities | AirNow |
 | getRefer | Reference data, includes data source, statements and license | Refer |
-| getBasic | Basic Information | Basic |
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| Property | Description | Example |
-| ------------- | ------------------------ | ------------- |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/air/beijing-101010100.html |
-
-**NowBean**
+**AirNow**
 
 | Property | Description | Example |
 | ----------- | --------------------------------- | ------------- |
@@ -63,7 +62,7 @@ Properties of AirNowBean
 | getCo | Carbon monoxide | 0.3 |
 | getO3 | Ozone | 20 |
 
-**AirNowStationBean**
+**AirStation**
 
 | Property | Description | Example |
 | ----------- | --------------------------------- | ------------ |
@@ -79,8 +78,8 @@ Properties of AirNowBean
 | getNo2 | Nitrogen dioxide | 40 |
 | getSo2 | Sulfur dioxide | 30 |
 | getCo | Carbon monoxide | 0.3 |
-| getO3 | Ozone | 20 |
+| getO3 | Ozone | 20 | -->
 
-### Air Quality Index Level
+## Air Quality Index Level
 
 See [Air Quality Info](/en/docs/resource/air-info/).

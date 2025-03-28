@@ -8,46 +8,46 @@ ref: 1-sdk-android-storm-list
 
 > 目前仅支持中国沿海地区，即`basin=NP`
 
-| 接口代码| 接口说明          | 数据类  |
+| 接口代码| 接口          | 数据类  |
 | -------- | ---------------- | ------- |
-| getStormList| 获取台风列表和ID  | StormListBean |
+| tropicalStormList| 台风列表  | StormListResponse |
 
-### 接口参数说明
+## 请求参数
+
+**StormListParameter**
 
 {% include params.html p="basin year" %}
 
-### 示例代码
+## 示例代码
 
 ```java
-QWeather.getStormList(Context context, String year, Basin basin, OnResultTropicalStormListListener listener);
+public void tropicalStormList(StormListParameter parameter, Callback<StormListResponse> callback);
 ```
 
-### StormListBean属性
+## 返回数据
 
-| 属性            | 说明     | 示例值                    |
+**StormListResponse**
+
+{% include api-response.html group="storm" type="list" prefix="storm"  %}
+
+<!-- | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | 参考[状态码](/docs/resource/status-code/)  | 200       |
-| getBasic         | 更新信息 | Basic       |
-| getRefer         | Refer 数据来源以及数据授权 | Refer  |
-| getStormList | 台风数据 | List<StormBean> |
-
-
-**Basic**
-
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
 | getUpdateTime | 接口更新时间 | 2017-10-25T04:34+08:00      |
 | getFxLink | 所查询城市的天气预报网页  | https://www.qweather.com |
+| getStorm | 台风数据 | List&lt;Storm&gt; |
+| getRefer         | Refer 数据来源以及数据授权 | Refer  |
+
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
 
-**StormBean**
+**Storm**
 
 | 属性         | 说明                                                                    | 示例值               |
 | ------------ | ----------------------------------------------------- | -------------------- |
@@ -56,5 +56,5 @@ QWeather.getStormList(Context context, String year, Basin basin, OnResultTropica
 | getBasin       | 台风所处流域                              |    NP    |
 | getYear       | 台风所处年份                              |    2021    |
 | getActive       | 是否为活跃台风<br />`1` 活跃台风 <br /> `0` 停编                              |    0    |
-
+ -->
 

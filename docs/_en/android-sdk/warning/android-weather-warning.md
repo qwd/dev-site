@@ -8,49 +8,44 @@ Get officially issued real-time severe weather warning data around the world.
 
 > **Tips:** For more warning description, see [Resource - Warning Info](/en/docs/resource/warning-info/).
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ------------ | ---------- | ----------- |
-| getWarning| Weather Warning  | WarningBean |
+| warningNow| Weather Warning  | WarningResponse |
 
-### Parameter
+## Request Parameters
+
+**WarningNowParameter**
 
 {% include params.html p="location-def lang-def" %}
 
-### Sample Code
+## Sample Code
 
 ```java
-QWeather.getWarning(Context context, String location, final QWeather.OnResultWarningListener listener);
-
-QWeather.getWarning(Context context, String location, Lang lang, final QWeather.OnResultWarningListener listener);
-
+public void warningNow(WarningNowParameter parameter, Callback<WarningResponse> callback);
 ```
 
-### Properties
+## Response
 
-Properties of WarningBean
+**WarningResponse**
 
-| Property | Description | Example |
-| --------------- | -------------------------- | ------ --------------------- |
+{% include api-response.html group="warning" type="warning" prefix="warning" %}
+
+<!-- | Property | Description | Example |
+| --------------- | -------------------------- | --------------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getBeanBaseList | Disaster Warning | List&lt;WarningBeanBase&gt; |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/severe-weather/beijing-101010100.html |
+| getWarning | Disaster Warning | List&lt;Warning&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
-| getBasic | Basic Information | Basic |
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description | Type | Example |
+| -------- | ----------- | ---- | ------- |
+| getSources | Data source and other statements | List&lt;String&gt; | QWeather |
+| getLicense | Data license |  List&lt;String&gt;  | QWeather Developers License |
 
-**Basic**
-
-| Property | Description | Example |
-| ------------- | ------------------- | ------------------- |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/severe-weather/beijing-101010100.html |
-
-**WarningBeanBase Warning Information**
+**Warning**
 
 | Property | Description | Example |
 | ------------ | ---------------------------------- |----------- |
@@ -68,7 +63,7 @@ Properties of WarningBean
 | getUrgency      | [The urgency of the warning message](/en/docs/resource/warning-info/#urgency), **may be null**     | Immediate                                                             |
 | getCertainty      | [The certainty of the warning message](/en/docs/resource/warning-info/#certainty), **may be null**     | Likely                                                             |
 | getText | Detailed description of the warning | Shenzhen Meteorological Bureau distributed a yellow warning signal for mine-laying electricity at 12:59 on October 04. Please pay attention to defense. |
-| getRelated | Related warning id | related warning id of current warning, **may be null** |
+| getRelated | Related warning id | related warning id of current warning, **may be null** | -->
 
 ### Warning Level and Type
 

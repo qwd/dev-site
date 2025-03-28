@@ -8,34 +8,53 @@ Get minute-level precipitation forecast data every 5 minutes for the next 2 hour
 
 > This data is only supported for Chinese cities.
 
-| Interface code (Enum)         | Interface            | Class                    |
-| ----------------------------- | -------------------- | ------------------------ |
-| INQUIRE_TYPE_WEATHER_MINUTELY | Minute precipitation | WeatherMinutelyBaseClass |
+| Interface code| Interface  | Class |
+| ---------- | ----------- | ------------ |
+| minutely | Minutely Precipitation  | MinutelyResponse |
 
-### Request Parameters
+### Reequest Parameters
 
-{% include params.html p="location-coord lang-def" %}
+| Name  | Type | Required | Exemple |
+| -------- | -------- | ---- | ------ |
+| longitude | Double | true | 116.41 |
+| latitude | Double | true | 39.92 |
+| lang | Lang | false | ZH_HANS |
 
-### Sample Code
+## Sample Code
 
-```objc
- 
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-    QWeatherConfigInstance.location = @"116.41,39.92";
-    QWeatherConfigInstance.lang = @"";
-    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_WEATHER_MINUTELY WithSuccess:^(WeatherMinutelyBaseClass *responseObject) {
-        
-        NSLog(@"Description->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
-    }];
- 
+**Swift**
+
+```swift
+Task{
+    do {
+        let parameter = MinutelyParameter(longitude: 116.41, latitude: 39.92)
+        let response = try await QWeather.instance
+            .minutely(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
 ```
 
-### Response
+**Objective-C**
+
+```objc
+MinutelyParameter * paramater = [MinutelyParameter instanceWithLongitude:116.41 latitude:39.92 lang:@(LangZH_HANS)];
+[QWeatherObjc minutely:paramater completionHandler:^(MinutelyResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
+```
+
+## Response
+
+**MinutelyResponse**
 
 {% include api-response.html group="minutely" prefix="nil"  %}

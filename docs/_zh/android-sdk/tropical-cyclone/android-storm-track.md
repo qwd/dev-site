@@ -6,50 +6,47 @@ ref: 2-sdk-android-storm-track
 
 台风实况和路径提供全球主要海洋流域的台风实时位置、等级、气压、风力、速度以及活跃台风的轨迹路径。
 
-> 目前仅支持中国沿海地区，即`basin=NP`
-
-
-| 接口代码| 接口说明          | 数据类  |
+| 接口代码| 接口          | 数据类  |
 | -------- | ---------------- | ------- |
-| getStormTrack| 台风实况和路径数据  | StormTrackBean |
+| tropicalStormTrack | 台风实况和路径  | StormTrackResponse |
 
-### 接口参数说明
+## 请求参数
+
+**StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
-### 示例代码
+## 示例代码
 
 ```java
-QWeather.getStormTrack(Context context, String stormId, OnResultTropicalStormTrackListener listener);
+public void tropicalStormTrack(StormParameter parameter, Callback<StormTrackResponse> callback);
 ```
 
-### StormTrackBean属性
+## 返回数据
 
-| 属性            | 说明     | 示例值                    |
+**StormTrackResponse**
+
+{% include api-response.html group="storm" type="active now track"  prefix="nil now track"%}
+
+<!-- | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | 参考[状态码](/docs/resource/status-code/)  | 200       |
-| getBasic         | 更新信息 | Basic       |
-| getRefer         | Refer 数据来源以及数据授权 | Refer  |
-| getIsActive         | 是否为活跃台风<br />`1` 活跃台风 <br /> `0` 停编 | 0  |
-| getNow | 台风当前信息数据 | StormTrackNowBean |
-| getTrackList | 台风路径数据 | List<StormTrackBaseBean> |
-
-**Basic**
-
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
 | getUpdateTime | 接口更新时间 | 2017-10-25T04:34+08:00      |
 | getFxLink | 所查询城市的天气预报网页  | https://www.qweather.com |
+| getIsActive         | 是否为活跃台风<br />`1` 活跃台风 <br /> `0` 停编 | 0  |
+| getNow | 台风当前信息数据 | StormNow |
+| getTrack | 台风路径数据 | List&lt;StormTrack&gt; |
+| getRefer         | Refer 数据来源以及数据授权 | Refer  |
+
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
-
-**StormTrackNowBean**
+**StormNow**
 
 | 属性         | 说明                                                                    | 示例值               |
 | ------------ | ----------------------------------------------------- | -------------------- |
@@ -62,12 +59,12 @@ QWeather.getStormTrack(Context context, String stormId, OnResultTropicalStormTra
 | getMoveSpeed       | 台风移动速度                   |   27   |
 | getMoveDir       | 台风移动方位                      |    西北    |
 | getMove360       | 台风移动方位360度方向  ，可能为空          |    332    |
-| getWindRadius30       | 台风7级风圈，**可能为空**          |    StormTrackWindBean    |
-| getWindRadius50       | 台风10级风圈，**可能为空**       |    StormTrackWindBean    |
-| getWindRadius64       | 台风12级风圈，**可能为空**  |    StormTrackWindBean    |
+| getWindRadius30       | 台风7级风圈，**可能为空**          |    StormWindRadius    |
+| getWindRadius50       | 台风10级风圈，**可能为空**       |    StormWindRadius    |
+| getWindRadius64       | 台风12级风圈，**可能为空**  |    StormWindRadius    |
 
 
-**StormTrackWindBean**
+**StormWindRadius**
 
 | 属性         | 说明                                                                    | 示例值               |
 | ------------ | ----------------------------------------------------- | -------------------- |
@@ -77,7 +74,7 @@ QWeather.getStormTrack(Context context, String stormId, OnResultTropicalStormTra
 | getNwRadius       | 西北半径                    | 212                   |
 
 
-**StormTrackBaseBean**
+**StormTrack**
 
 | 属性         | 说明                                                                    | 示例值               |
 | ------------ | ----------------------------------------------------- | -------------------- |
@@ -90,9 +87,9 @@ QWeather.getStormTrack(Context context, String stormId, OnResultTropicalStormTra
 | getMoveSpeed       | 台风移动速度                   |   27   |
 | getMoveDir       | 台风移动方位                      |    西北    |
 | getMove360       | 台风移动方位360度方向  ，可能为空          |    332    |
-| getWindRadius30       | 台风7级风圈    ，可能为空         |    StormTrackWindBean    |
-| getWindRadius50       | 台风10级风圈   ，可能为空       |    StormTrackWindBean    |
-| getWindRadius64       | 台风12级风圈，可能为空     |    StormTrackWindBean    |
+| getWindRadius30       | 台风7级风圈    ，可能为空         |    StormWindRadius    |
+| getWindRadius50       | 台风10级风圈   ，可能为空       |    StormWindRadius    |
+| getWindRadius64       | 台风12级风圈，可能为空     |    StormWindRadius    | -->
 
 ### 台风等级
 

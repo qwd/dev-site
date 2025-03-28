@@ -20,7 +20,7 @@ ref: config-android
 
 ## 适配版本 {#os-requirement}
 
-Android 4.4+
+Android 5.0+, minSDK 21
 
 ## 工程配置 {#project-configuration}
 
@@ -37,8 +37,8 @@ Android 4.4+
 **引用库**
 
 ```
-    compile 'com.squareup.okhttp3:okhttp:3.12.12' （3.12.12+）
-    compile 'com.google.code.gson:gson:2.6.2'   (2.6.2+)
+    implementation libs.gson
+    implementation libs.okhttp
 ```
 
 **混淆**
@@ -69,18 +69,8 @@ SDK 不再提供日志功能， 错误信息可由回调函数 OnError 中的 Th
 使用 SDK 时，需提前进行账户初始化（全局执行一次即可）
 
 ```java
-HeConfig.init("PublicId", "PrivateKey");
-```
-
-**设置订阅版本**
-
-默认为标准订阅，如使用免费订阅，可通过以下方法进行调整（全局执行一次即可）
- 
-```java
-//切换至免费订阅
-HeConfig.switchToDevService();
-//切换至标准订阅
-HeConfig.switchToBizService();
+QWeather.getInstance(MainActivity.this, "{YOUR_HOST}")
+        .setToken("{YOUR_JWT_TOKEN}")
 ```
 
 **数据访问示例**
@@ -88,32 +78,24 @@ HeConfig.switchToBizService();
 根据您的需求调用不同的方法，接口回调方法中的参数就是接口返回的数据类
 
 ```java
-/**
- * 实况天气数据
- * @param location 所查询的地区，可通过该地区ID、经纬度进行查询经纬度格式：经度,纬度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     (选填)多语言，可以不使用该参数，默认为简体中文
- * @param unit     (选填)单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问结果回调
- */
+WeatherParameter parameter = new WeatherParameter("101120501")
+                .lang(Lang.ZH_HANS)
+                .unit(Unit.METRIC);
 
-QWeather.getWeatherNow(MainActivity.this, "101010300", Lang.ZH_HANS, Unit.METRIC, new QWeather.OnResultWeatherNowListener() {
+QWeather.instance.weatherNow(parameter, new Callback<WeatherNowResponse>() {
     @Override
-    public void onError(Throwable e) {
-        Log.i(TAG, "getWeather onError: " + e);
+    public void onSuccess(WeatherNowResponse response) {
+        Log.i(TAG, response.toString());
     }
 
     @Override
-    public void onSuccess(WeatherNowBean weatherBean) {
-        Log.i(TAG, "getWeather onSuccess: " + new Gson().toJson(weatherBean));
-        //先判断返回的status是否正确，当status正确时获取数据，若status不正确，可查看status对应的Code值找到原因
-        if (Code.OK == weatherBean.getCode()) {
-            WeatherNowBean.NowBaseBean now = weatherBean.getNow();
-        } else {
-            //在此查看返回数据失败的原因
-            Code code = weatherBean.getCode();
-            Log.i(TAG, "failed code: " + code);
-        }
+    public void onFailure(ErrorResponse errorResponse) {
+        Log.i(TAG,errorResponse.toString());
+    }
+
+    @Override
+    public void onException(Throwable e) {
+        e.printStackTrace();
     }
 });
 ```

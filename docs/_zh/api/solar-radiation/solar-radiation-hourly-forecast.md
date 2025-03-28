@@ -25,8 +25,6 @@ ref: 1-api-solar-radiation-hourly-forecast
 
 ## 返回数据
 
-{% include api-snippet.html flag="sun" %}
-
 > 除非特别说明，本数据返回的太阳辐射均指地表垂直向下的短波辐射，单位w/m<sup>2</sup>
 
 {% include api-response.html group="radiation" type="radiation" prefix="radiation" fxlink=0 %}
