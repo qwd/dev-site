@@ -10,13 +10,13 @@ Global currents data for the next 10 days, including currents speed and directio
 | -------- | ---------------- | ------- |
 | oceanCurrents| Currents data  | OceanCurrentsResponse |
 
-## Request Parameters
+## Parameters
 
 **OceanParameter**
 
 {% include params.html p="location-p6 date10" %}
 
-## Sample Code
+## Sample code
 
 ```java
 public void oceanCurrents(OceanParameter parameter, Callback<OceanCurrentsResponse> callback)

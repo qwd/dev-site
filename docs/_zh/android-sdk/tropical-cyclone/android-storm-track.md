@@ -10,7 +10,7 @@ ref: 2-sdk-android-storm-track
 | -------- | ---------------- | ------- |
 | tropicalStormTrack | 台风实况和路径  | StormTrackResponse |
 
-## 请求参数
+## 参数
 
 **StormParameter**
 

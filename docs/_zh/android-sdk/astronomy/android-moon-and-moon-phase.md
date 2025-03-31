@@ -12,7 +12,7 @@ ref: 2-sdk-android-moon
 | ------ | ---------- | ----------- |
 | astronomyMoon| 月升月落和月相  | AstronomyMoonResponse |
 
-## 请求参数
+## 参数
 
 **AstronomyMoonParameter**
 

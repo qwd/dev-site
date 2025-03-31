@@ -14,13 +14,13 @@ Get weather indices forecast data for cities in China and around the world.
 | indices1d | Today Weather Indices           | IndicesDailyResponse |
 | indices3d | Weather Indices 3-days forecast | IndicesDailyResponse |
 
-## Request Parameters
+## Parameters
 
 **IndicesParameter**
 
 {% include params.html p="location-def idx-type lang-def" %}
 
-## Sample Code
+## Sample code
 
 **Swift**
 

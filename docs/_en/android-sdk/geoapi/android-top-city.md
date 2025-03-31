@@ -10,13 +10,13 @@ Get a list of popular cities around the world.
 | ------------ | ------------- | ------- |
 | geoCityTop| Top city  | GeoCityTopResponse |
 
-## Request Parameters
+## Parameters
 
 **GeoCityTopParameter**
 
 {% include params.html p="range number lang-def" %}
 
-## Sample Code
+## Sample code
 
 ```java
 public void geoCityTop(GeoCityTopParameter parameter, Callback<GeoCityTopResponse> callback);

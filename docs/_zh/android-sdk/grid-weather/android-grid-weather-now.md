@@ -11,7 +11,7 @@ ref: 1-sdk-android-grid-weather-now
 | gridNow | 格点实时天气| GridNowResponse |
 
 
-## 请求参数 
+## 参数 
 
 **GridWeatherParameter**
 

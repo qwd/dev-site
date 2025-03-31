@@ -12,7 +12,7 @@ ref: 1-sdk-ios-air-daily-v1
 | --------------- | ---------------------------- | ------------ |
 | airDaily | 空气质量每日预报(new)    | AirV1DailyResponse |
 
-## 请求参数 
+## 参数 
 
 **AirV1Parameter**
 

@@ -1,84 +1,88 @@
 ---
-title: Android SDK Config
+title: Set up Android SDK
 tag: [config, android]
 ref: config-android
 ---
 
-This document will introduce how to configure the Android SDK in the QWeather Develop Service.
+This document will introduce how to configure the Android SDK for QWeather API.
 
-> **Privacy Disclaimer:** QWeather Android SDK **DOES NOT require any special permissions such as phone, location, device unique identifiers, etc.** We does not and cannot collect private data from this SDK. 
-
-## Download 
-
-|Version|Update|MD5| 
-|---|---|---|----------------------------------------------|
-|{{ site.data.v.android.version }} [Download]({{ site.data.v.android.dllink }})|{{ site.data.v.android.date }} [Release note](https://blog.qweather.com/release/sdk/)|`{{ site.data.v.android.md5 }}`|
-
-## OS requirement
+**OS requirement:**
 
 Android 5.0+, minSDK 21
 
-## Create Project and Credential
+## Step 1: Create project and credential
 
-Make sure you have created a Project and Credential, see [Project and KEY](/en/docs/configuration/project-and-key/) and [Authentication](/en/docs/authentication/).
+Make sure you have created a Project and Credential, see [Project and KEY](/en/docs/configuration/project-and-key/) and [JWT authentication](/en/docs/configuration/authentication/#json-web-token).
 
-## Project configuration
+## Step 2: Install SDK
 
-1. Unzip the file, put the jar in the folder into your project, and quote
-2. Configure **Android Manifest** to add permissions
+Download the latest SDK: [QWeather Android SDK {{ site.data.v.android.version }}]({{ site.data.v.android.dllink }}) *(MD5:`{{ site.data.v.android.md5 }}`)*
 
-**Permission list**
+Copy the JAR file to the `app/libs/`
 
-| Permission   | Code                                    |
-| ------------------------ | --------------------------------------- |
-| Allow network connection | android.permission.INTERNET             |
-
-**Reference Library**
-
-```
-    implementation libs.gson
-    implementation libs.okhttp
+```bash
+YOUR-PROJECT/
+├── app/
+│   ├── libs/
+│   │   └── QWeather_Public_Android_V{{ site.data.v.android.version }}.jar
+│   ├── src/
+│   └── build.gradle
 ```
 
-**Confusion**
+Update the Gradle configuration `app/build.gradle`
 
-Please add the following code to your obfuscated file **proguard-rules.pro**
+```bash
+dependencies {
+    // add QWeather jar
+    implementation files('libs/QWeather_Public_Android_V{{ site.data.v.android.version }}.jar')
+    
+    // or add all jar
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+```
 
-Please note the version you quote
+Reference library
+
+```
+implementation libs.gson
+implementation libs.okhttp
+```
+
+Add the following code to the obfuscation file `proguard-rules.pro`
 
 ```java
-// exclude okhttp
+//  exclude okhttp
  -dontwarn com.squareup.**
  -dontwarn okio.**
- -keep public class org.codehaus.* {*;}
- -keep public class java.nio.* {*;}
+ -keep public class org.codehaus.* { *; }
+ -keep public class java.nio.* { *; }
 
-// Exclude QWeather
+//  exclude QWeather
  -dontwarn com.qweather.sdk.**
- -keep class com.qweather.sdk.** {*;}
-```
- 
-## Data Access configuration
-
-**Log function**
-
-SDK no longer provides log function, error information can be provided by Throwable object in callback function OnError
-
-**Initialization**
-
-When using the SDK, you need to initialize the account in advance (you can execute it once globally)
-
-```java
-QWeather.getInstance(MainActivity.this, "{YOUR_HOST}")
-        .setToken("{YOUR_JWT_TOKEN}")
+ -keep class com.qweather.sdk.** { *;}
 ```
 
-**Data access example**
+## Step 3: Add API Host and token
 
-Call different methods according to your needs. The parameters in the interface callback method are the Classes returned by the interface
+> **Hint:** iOS SDK only support [JWT](/docs/configuration/authentication/#json-web-token) for authentication.
 
 ```java
-WeatherParameter parameter = new WeatherParameter("101120501")
+QWeather.getInstance(MainActivity.this, "{YOUR_HOST}") // Initialize api host
+        .setTokenGenerator(new TokenGenerator() {
+                        @Override
+                        public String generator() {
+                             // Update jwt token should be implemented here in production environments
+                            return "{YOUR_TOKEN}"; 
+                        }
+                    });
+```
+
+## Sample code
+
+Get real-time weather for Beijing.
+
+```java
+WeatherParameter parameter = new WeatherParameter("101010100")
                 .lang(Lang.ZH_HANS)
                 .unit(Unit.METRIC);
 

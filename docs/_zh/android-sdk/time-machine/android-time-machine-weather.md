@@ -19,7 +19,7 @@ ref: 1-sdk-android-historical-weather
 | ------------ | --------------- | ------------------ |
 | historicalWeather | 历史天气数据  | HistoricalWeatherResponse |
 
-## 请求参数
+## 参数
 
 **HistoricalWeatherParameter**
 

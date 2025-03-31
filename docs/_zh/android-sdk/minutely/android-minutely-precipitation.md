@@ -11,7 +11,7 @@ ref: 1-sdk-android-minutely-precip
 | ---------- | ----------- | ------------ |
 | minutely | 分钟级降水 | MinutelyResponse |
 
-## 请求参数
+## 参数
 
 **MinutelyParameter**
 

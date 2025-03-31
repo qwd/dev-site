@@ -14,7 +14,7 @@ Monitoring Station Data API provides pollutant concentration values from air qua
 | airStation | Monitoring Station Data (new)  | AirV1StationResponse |
 
 
-## Request Parameters 
+## Parameters 
 
 **AirV1StationParameter**
 
@@ -22,7 +22,7 @@ Monitoring Station Data API provides pollutant concentration values from air qua
 
 {% include params.html p="lang-def" %}
 
-## Sample Code
+## Sample code
 
 ```java
 public void airStation(AirV1StationParameter parameter, Callback<AirV1StationResponse> callback);

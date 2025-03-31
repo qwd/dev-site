@@ -10,13 +10,13 @@ Global tidal data for the next 10 days, including tide table and hourly tide for
 | ----------------------- | ---- | ------------------ |
 | oceanTide | Tide data | OceanTideResponse |
 
-## Request Parameters
+## Parameters
 
 **OceanParameter**
 
 {% include params.html p="location-p2 date10" %}
 
-## Sample Code
+## Sample code
 
 Swift
 

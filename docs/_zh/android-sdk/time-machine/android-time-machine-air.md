@@ -13,7 +13,7 @@ ref: 2-sdk-android-historical-air
 | ---------------- | ---------------- | ----------------- |
 | historicalAir| 历史空气质量数据  | HistoricalAirResponse |
 
-## 请求参数
+## 参数
 
 **HistoricalAirParameter**
 

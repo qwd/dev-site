@@ -10,13 +10,13 @@ POI Lookup API provides basic information of POI(scenic spot, tide stations, cur
 | ----------- | --------------- | ---------- |
 | geoPoiLookup| POI lookup  | GeoPoiResponse |
 
-## Request Parameters
+## Parameters
 
 **GeoPoiLookupParameter**
 
 {% include params.html p="location-geo geo-type city number lang-def" %}
 
-## Sample Code
+## Sample code
 
 ```java
 public void geoPoiLookup(GeoPoiLookupParameter parameter, Callback<GeoPoiResponse> callback);

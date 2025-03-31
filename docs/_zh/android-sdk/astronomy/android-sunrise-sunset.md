@@ -12,7 +12,7 @@ ref: 1-sdk-android-sun
 | -------------- | ---------- | ----------- |
 | astronomySun| 日出日落  | AstronomySunResponse |
 
-## 请求参数
+## 参数
 
 **AstronomySunParameter**
 

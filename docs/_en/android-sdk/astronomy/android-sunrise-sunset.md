@@ -10,13 +10,13 @@ Get the sunrise and sunset times for any location around the world for the next 
 | -------------- | ---------- | ----------- |
 | astronomySun | Sunrise and sunset data  | AstronomySunResponse |
 
-## Request Parameters
+## Parameters
 
 **AstronomySunParameter**
 
 {% include params.html p="location-def date60" %}
 
-## Sample Code
+## Sample code
 
 ```java
 public void astronomySun(AstronomySunParameter parameter, Callback<AstronomySunResponse> callback);

@@ -18,13 +18,13 @@ See also [Weather warning iOS SDK](/en/docs/ios-sdk/warning/ios-weather-warning/
 | ------------------------ | ---------------------- | ---------------- |
 | warningList | List of warning cities | WarningListResponse |
 
-## Request Parameters
+## Parameters
 
 **WarningListParameter**
 
 {% include params.html p="range-warning" %}
 
-## Sample Code
+## Sample code
 
 **Swift**
 

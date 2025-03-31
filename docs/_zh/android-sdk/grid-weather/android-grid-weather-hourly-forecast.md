@@ -11,7 +11,7 @@ ref: 3-sdk-android-grid-weather-hourly-forecast
 | grid24h | 逐小时预报（未来24小时）| GridHourlyResponse |
 | grid72h | 逐小时预报（未来72小时）| GridHourlyResponse |
 
-## 请求参数 
+## 参数 
 
 **GridWeatherParameter**
 

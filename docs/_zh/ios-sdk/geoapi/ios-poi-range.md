@@ -10,7 +10,7 @@ ref: 4-sdk-ios-geo-poi-range
 | ----------- | -------------------------- | ------------ |
 | geoPoiRange | POI范围搜索  | GeoPoiResponse |
 
-## 请求参数
+## 参数
 
 **GeoPoiRangeParameter**
 

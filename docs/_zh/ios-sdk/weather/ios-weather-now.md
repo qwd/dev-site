@@ -12,7 +12,7 @@ ref: 1-sdk-ios-weather-now
 | ------------ | ------------- | ---------------- |
 | weatherNow  | 实况天气      | WeatherNowResponse |
 
-## 请求参数
+## 参数
 
 **WeatherParameter**
 

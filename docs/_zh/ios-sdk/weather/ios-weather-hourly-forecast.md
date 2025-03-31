@@ -12,7 +12,7 @@ ref: 3-sdk-ios-weather-hourly-forecast
 | weather72h  | 72小时预报况  | WeatherHourlyResponse |
 | weather168h | 168小时预报况 | WeatherHourlyResponse |
 
-## 请求参数
+## 参数
 
 **WeatherParameter**
 

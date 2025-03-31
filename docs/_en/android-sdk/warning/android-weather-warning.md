@@ -12,13 +12,13 @@ Get officially issued real-time severe weather warning data around the world.
 | ------------ | ---------- | ----------- |
 | warningNow| Weather Warning  | WarningResponse |
 
-## Request Parameters
+## Parameters
 
 **WarningNowParameter**
 
 {% include params.html p="location-def lang-def" %}
 
-## Sample Code
+## Sample code
 
 ```java
 public void warningNow(WarningNowParameter parameter, Callback<WarningResponse> callback);

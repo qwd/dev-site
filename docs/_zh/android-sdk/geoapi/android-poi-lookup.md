@@ -10,7 +10,7 @@ ref: 3-sdk-android-geo-poi-lookup
 | ----------- | --------------- | ---------- |
 | geoPoiLookup| POI搜索  | GeoPoiResponse |
 
-## 请求参数
+## 参数
 
 **GeoPoiLookupParameter**
 

@@ -14,13 +14,13 @@ Get weather daily forecasts for the next 3-30 days for cities around the world.
 | weather15d| 15-days forecast  | WeatherDailyResponse |
 | weather30d| 30-days forecast  | WeatherDailyResponse |
 
-## Request Parameters
+## Parameters
 
 **WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-## Sample Code
+## Sample code
 
 ```java
 WeatherParameter parameter = new WeatherParameter("101010100");

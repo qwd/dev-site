@@ -14,7 +14,7 @@ ref: 1-sdk-android-air-station-v1
 | airStation | 监测站数据(new)  | AirV1StationResponse |
 
 
-## 请求参数 
+## 参数 
 
 **AirV1StationParameter**
 

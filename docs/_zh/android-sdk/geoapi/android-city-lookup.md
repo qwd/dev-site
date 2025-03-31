@@ -14,7 +14,7 @@ ref: 1-sdk-android-geo-city-lookup
 | -------- | ---------------- | ------- |
 | geoCityLookup| 城市查询  | GeoCityLookupResponse |
 
-## 请求参数
+## 参数
 
 **GeoCityLookupParameter**
 

@@ -12,13 +12,13 @@ Get a list of tropical cyclones for the last 2 years in major ocean basins aroun
 | ------------------ | ------------------ | ----------------- |
 | tropicalStormList | Storm list | StormListResponse |
 
-## Request Parameters
+## Parameters
 
 **StormListParameter**
 
 {% include params.html p="basin year" %}
 
-## Sample Code
+## Sample code
 
 **Swift**
 

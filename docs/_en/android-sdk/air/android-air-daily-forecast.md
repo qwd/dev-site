@@ -12,13 +12,13 @@ Air Quality Daily Forecast API for Chinese cities, including AQI, air quality le
 | ------------------- | -------- | ------------ |
 | air5d| Air quality 5-day forecast  | AirDailyResponse |
 
-## Reqeust Parameters
+## Parameters
 
 **AirParameter**
 
 {% include params.html p="location-def lang-def" %}
 
-## Sample Code
+## Sample code
 
 ```java
 public void air5d(AirParameter parameter, Callback<AirDailyResponse> callback);

@@ -13,13 +13,13 @@ Storm Forecast provides tropical cyclones information for a specific tropical cy
 | --------------------------- | ------------- | ---------------------- |
 | tropicalStormForecast      | Storm forecast data | StormForecastResponse |
 
-## Request Parameters
+## Parameters
 
 **StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
-## Sample Code
+## Sample code
 
 **Swift**
 

@@ -1,23 +1,22 @@
 ---
-title: iOS SDK Config
+title: Set up iOS SDK
 tag: [config, ios]
 ref: config-ios
 ---
 
 This document will introduce how to configure the iOS SDK for QWeather API.
 
-> **Privacy Disclaimer:** QWeather iOS SDK **DOES NOT require any special permissions such as phone, location, device unique identifiers, etc.** We does not and cannot collect private data from this SDK. 
+**OS Requirement:**
 
-OS Requirement:
 - iOS 15.0+
 - macOS 11.0+
 - tvOS 15.0+
 - watchOS 8.0+
 - visionOS 1.0+
 
-## Step 1: Create Project and Credential
+## Step 1: Create project and credential
 
-Make sure you have created a Project and Credential, see [Project and KEY](/en/docs/configuration/project-and-key/) and [Authentication](/en/docs/authentication/).
+Make sure you have created a Project and Credential, see [Project and KEY](/en/docs/configuration/project-and-key/) and [JWT authentication](/en/docs/configuration/authentication/#json-web-token).
 
 ## Step 2: Install SDK
 
@@ -62,88 +61,91 @@ pod update
 ```
 
 ### Manual install
+
 1. Download SDK: [QWeatherSDK {{ site.data.v.ios.version }}](https://github.com/qwd/qweather-ios-sdk/releases/tag/{{ site.data.v.ios.version }})
 2. Add `QWeatherSDK.xcframework` to iOS/macOS Target.
 
-## 3: Initialization and Configuration‌
+## Step 3: Add API Host and token
 
-### Setup Host & Token
 
-Replace `YOUR_HOST` and `YOUR_TOKEN` with your host and token:
+> **Hint:** iOS SDK only support [JWT](/docs/configuration/authentication/#json-web-token) for authentication.
+
+Replace `YOUR_HOST` and `YOUR_TOKEN` with your [API Host](/en/docs/configuration/api-config/#api-host) and [JWT](/docs/configuration/authentication/#json-web-token):
 
 Swift
->
->```swift
->
->  import QWeatherSDK
->
->  ...
->
->  try await QWeather.getInstance("{YOUR_HOST}")
->                    .setupToken("{YOUR_TOKEN}")
->
->```
+
+```swift
+import QWeatherSDK
+
+...
+
+let _ = try await QWeather
+            .getInstance("{YOUR_HOST}")  // Initialize api host
+            .setupTokenGenerator({  
+                // Update jwt token should be implemented here in production environments
+                return "{YOUR_TOKEN}" 
+            })
+            .setupLogEnable(true)  // Enable debug logging (set false for production environments)
+```
 
 Objective-C
 
->
->```objc
->
->  #import <QWeatherSDK/QWeatherSDK-Swift.h>
->
->  ...
->
->  [QWeatherObjc initConfigWithHost:@"YOUR_HOST"];
->  [QWeatherObjc setupToken:@"{YOUR_TOKEN}"];
->
->```
 
-## Sample Code
+```objc
+#import <QWeatherSDK/QWeatherSDK-Swift.h>
 
-Add the following code where you need to use, enter the required parameters, and return to the data model of the corresponding type
+...
+
+// Initialize api host
+[QWeatherObjc initConfigWithHost:@"{YOUR_HOST}"];
+
+[QWeatherObjc setupTokenGeneratorWithGenerater:^NSString * _Nonnull{
+    // Update jwt token should be implemented here in production environments
+    return @"{YOUR_TOKEN}";
+}];
+
+// Enable debug logging (set false for production environments)
+[QWeatherObjc setupLogEnable:YES];
+```
+
+## Sample code
+
+Get real-time weather for Beijing.
   
 Swift
 
 ```swift
-   import QWeatherSDK
+import QWeatherSDK
 
-   ...
+...
 
-   Task {
-      do {
-            try await QWeather
-               .getInstance("{YOUR_HOST}")
-               .setupToken("{YOUR_TOKEN}")
-
-            let parameter = WeatherParameter(location: "101010100")
-            let response = try await QWeather.instance.weatherNow(parameter)
-            print(response)
-        } catch QWeatherError.errorResponse(let error) {
-            print(error)
-        } catch {
-            print(error)
-        }
-   }
-
+Task {
+    do {
+        let parameter = WeatherParameter(location: "101010100")
+        let response = try await QWeather.instance.weatherNow(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
 ```        
 
 Objective-C
 
 ```objc
-  #import <QWeatherSDK/QWeatherSDK-Swift.h>
+#import <QWeatherSDK/QWeatherSDK-Swift.h>
 
-  ...
+...
 
-  [QWeatherObjc initConfigWithHost:@"YOUR_HOST"];
-  [QWeatherObjc setupToken:@"{YOUR_TOKEN}"];
-
-  WeatherParameter * parameter = [WeatherParameter makeWithLocation:@"101010100" lang:LangZH_HANS unit:UnitMETRIC];
-    [QWeatherObjc weatherNow:parameter completionHandler:^(WeatherNowResponse * _Nullable response, NSError * _Nullable error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-   }];
+WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101010100" lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
+[QWeatherObjc weatherNow:parameter completionHandler:^(WeatherNowResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```

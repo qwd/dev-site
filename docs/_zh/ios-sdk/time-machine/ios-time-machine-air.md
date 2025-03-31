@@ -12,7 +12,7 @@ ref: 2-sdk-ios-historical-air
 | -------------- | -------------- | --------------------- |
 | historicalAir | 历史空气质量     | HistoricalAirResponse |
 
-## 请求参数
+## 参数
 
 **HistoricalAirParameter**
 

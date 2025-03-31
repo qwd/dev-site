@@ -12,7 +12,7 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 | --------------- | ---------------------------- | ------------ |
 | airDaily | Air quality daily forecast (new)     | AirV1DailyResponse |
 
-## Request Parameters 
+## Parameters 
 
 **AirV1Parameter**
 
@@ -20,7 +20,7 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 
 {% include params.html p="lang-def" %}
 
-## Sample Code
+## Sample code
 
 **Swift** 
 

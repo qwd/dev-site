@@ -14,7 +14,7 @@ ref: 1-sdk-android-indices-forecast
 | indices1d| 当天生活指数  | IndicesDailyResponse |
 | indices3d| 3天生活指数  | IndicesDailyResponse |
 
-## 请求参数
+## 参数
 
 **IndicesParameter**
 

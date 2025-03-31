@@ -10,13 +10,13 @@ Get the tropical cyclones location, level, pressure, windspeed, and track path o
 | -------- | ---------------- | ------- |
 | tropicalStormTrack| Real-time storm data and storm track data  | StormTrackResponse |
 
-## Request Parameters
+## Parameters
 
 **StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
-## Sample Code
+## Sample code
 
 ```java
 public void tropicalStormTrack(StormParameter parameter, Callback<StormTrackResponse> callback);

@@ -12,7 +12,7 @@ ref: 3-sdk-ios-grid-weather-hourly-forecast
 | grid72h | 逐小时预报（未来72小时）| GridHourlyResponse |
 
 
-## 请求参数
+## 参数
 
 **GridWeatherParameter**
 

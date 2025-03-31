@@ -19,7 +19,7 @@ ref: 7-sdk-ios-historical-weather
 | ---------------   | ----------- | -------------------------- |
 | historicalWeather | 历史天气      | HistoricalWeatherResponse |
 
-## 请求参数
+## 参数
 
 **HistoricalWeatherParameter**
 

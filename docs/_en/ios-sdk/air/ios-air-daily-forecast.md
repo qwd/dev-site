@@ -13,13 +13,13 @@ Air Quality Daily Forecast API for Chinese cities, including AQI, air quality le
 | -------------------------- | ------------------------------ | ------------ |
 | air5d | Air quality 5-day forecast    | AirDailyResponse |
 
-## Request Parameters
+## Parameters
 
 **AirParameter**
 
 {% include params.html p="location-def lang-def" %}
 
-## Sample Code
+## Sample code
 
 **Swift**
 

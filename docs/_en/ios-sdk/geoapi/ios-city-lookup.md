@@ -14,13 +14,13 @@ In addition, GeoAPI - City Lookup can also help you to implement fuzzy search in
 | -------------- | ------------- | --------------------- |
 | geoCityLookup | City lookup   | GeoCityLookupResponse |
 
-## Request Parameters
+## Parameters
 
 **GeoCityLookupParameter**
 
 {% include params.html p="location-geo adm range number lang-def" %}
 
-## Sample Code
+## Sample code
 
 **Swift**
 ```swift

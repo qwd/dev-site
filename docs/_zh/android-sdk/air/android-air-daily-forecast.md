@@ -12,7 +12,7 @@ ref: 2-sdk-android-air-daily-forecast
 | ------------------- | -------- | ------------ |
 | air5d| 空气质量5天预报  | AirDailyResponse |
 
-## 请求参数
+## 参数
 
 **AirParameter**
 

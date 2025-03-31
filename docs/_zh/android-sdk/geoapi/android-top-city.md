@@ -10,7 +10,7 @@ ref: 2-sdk-android-geo-top
 | ------------ | ------------- | ------- |
 | geoCityTop | 热门城市查询  | GeoCityTopResponse |
 
-## 请求参数
+## 参数
 
 **GeoCityTopParameter**
 

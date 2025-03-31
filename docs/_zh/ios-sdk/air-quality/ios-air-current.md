@@ -18,7 +18,7 @@ ref: 1-sdk-ios-air-now-v1
 | --------------- | ---------------------------- | ------------ |
 | airCurrent | 实时空气质量(new)    | AirV1CurrentResponse |
 
-## 请求参数 
+## 参数 
 
 **AirV1Parameter**
 

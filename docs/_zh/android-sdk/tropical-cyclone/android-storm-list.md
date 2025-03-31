@@ -12,7 +12,7 @@ ref: 1-sdk-android-storm-list
 | -------- | ---------------- | ------- |
 | tropicalStormList| 台风列表  | StormListResponse |
 
-## 请求参数
+## 参数
 
 **StormListParameter**
 

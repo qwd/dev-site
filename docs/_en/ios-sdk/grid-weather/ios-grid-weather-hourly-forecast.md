@@ -14,7 +14,7 @@ Get hourly weather forecasts at any latitude and longitude in the world, includi
 | grid72h | Hourly Forecast by Grid (72hrs)）| GridHourlyResponse |
 
 
-## Request Parameters 
+## Parameters 
 
 **GridWeatherParameter**
 
@@ -25,7 +25,7 @@ Get hourly weather forecasts at any latitude and longitude in the world, includi
 | lang | Lang | false | ZH_HANS |
 | unit | Unit | false | METRIC |
 
-## Sample Code
+## Sample code
 
 **Swift**
 

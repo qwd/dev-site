@@ -20,13 +20,13 @@ Get the last 10 days of weather history data.
 | ------------ | -------------------- | ------------------ |
 | historicalWeather| Historical weather data  | HistoricalWeatherResponse |
 
-## Request Parameters
+## Parameters
 
 **HistoricalWeatherParameter**
 
 {% include params.html p="location-id date10back lang-def unit-def" %}
 
-## Sample Code
+## Sample code
 
 ```java
 public void historicalWeather(HistoricalWeatherParameter parameter, Callback<HistoricalWeatherResponse> callback);

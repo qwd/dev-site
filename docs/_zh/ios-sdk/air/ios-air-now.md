@@ -12,7 +12,7 @@ ref: 1-sdk-ios-air-now
 | --------------- | ------------------- | ------------ |
 | airNow | 空气质量实况     | AirNowResponse |
 
-## 请求参数
+## 参数
 
 **AirParameter**
 

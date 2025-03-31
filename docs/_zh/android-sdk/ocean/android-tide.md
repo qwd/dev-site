@@ -10,7 +10,7 @@ ref: 1-sdk-android-tide
 | -------- | ---------------- | ------- |
 | oceanTide | 潮汐  | OceanTideResponse |
 
-## 请求参数
+## 参数
 
 **OceanParameter**
 

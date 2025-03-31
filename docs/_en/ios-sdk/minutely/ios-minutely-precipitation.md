@@ -20,7 +20,7 @@ Get minute-level precipitation forecast data every 5 minutes for the next 2 hour
 | latitude | Double | true | 39.92 |
 | lang | Lang | false | ZH_HANS |
 
-## Sample Code
+## Sample code
 
 **Swift**
 

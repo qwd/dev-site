@@ -7,44 +7,50 @@ ref: config-android
 这篇文档将介绍如何配置和风天气开发服务中的Android SDK。
 
 > **隐私声明：**和风天气Android SDK**不需要电话、位置、设备唯一标识符等任何特殊权限**，我们不会也无法通过本SDK收集用户隐私信息。
-     
-## 下载 {#download}
 
-|版本|日期|MD5|
-|---|---|---|
-|{{ site.data.v.android.version }} [下载]({{ site.data.v.android.dllink }})|{{ site.data.v.android.date }} [更新记录](https://blog.qweather.com/release/sdk/) |`{{ site.data.v.android.md5 }}`|
-
-## 创建项目和凭据 {#create-project-and-credential}
-
-请确保已经创建了项目和凭据，请参考[项目](/docs/configuration/project-and-key/)和[身份认证](/docs/authentication/)。
-
-## 适配版本 {#os-requirement}
+**适配版本**
 
 Android 5.0+, minSDK 21
 
-## 工程配置 {#project-configuration}
+## 第1步: 创建项目和凭据 {#step-1-create-project-and-credential}
 
-1. 解压文件，将文件夹内jar放入您的工程，并且引用
-2. 配置Android Manifest 添加权限
+请确保已经创建了[项目和凭据](/docs/configuration/project-and-key/)，并已了解如何使用[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
 
-**权限列表**
+## 第2步: 安装SDK {#step-2-install-sdk}
 
-权限说明 | 代码
---------- | -------------
-允许连接网络 | android.permission.INTERNET
+下载最新版本：[QWeather Android SDK {{ site.data.v.android.version }}]({{ site.data.v.android.dllink }}) *(MD5:`{{ site.data.v.android.md5 }}`)*
 
+将JAR文件复制到`app/libs/`目录:
 
-**引用库**
+```bash
+YOUR-PROJECT/
+├── app/
+│   ├── libs/
+│   │   └── QWeather_Public_Android_V{{ site.data.v.android.version }}.jar
+│   ├── src/
+│   └── build.gradle
+```
+
+修改Gradle配置`app/build.gradle`文件：
+
+```bash
+dependencies {
+    // 添加以下配置
+    implementation files('libs/QWeather_Public_Android_V{{ site.data.v.android.version }}.jar')
+    
+    // 或者批量添加所有JAR
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+```
+
+引用库
 
 ```
-    implementation libs.gson
-    implementation libs.okhttp
+implementation libs.gson
+implementation libs.okhttp
 ```
 
-**混淆**
-
-请在您的混淆文件proguard-rules.pro中加入如下代码
-请注意您引用的版本
+请在混淆文件`proguard-rules.pro`中加入如下代码
 
 ```java
 //  排除okhttp
@@ -57,28 +63,32 @@ Android 5.0+, minSDK 21
  -dontwarn com.qweather.sdk.**
  -keep class com.qweather.sdk.** { *;}
 ```
- 
-## 数据访问配置 {#data-access-configuration}
 
-**日志功能**
+## 第3步: 添加API Host和Token {#step-3-add-api-host-and-token}
 
-SDK 不再提供日志功能， 错误信息可由回调函数 OnError 中的 Throwable 对象提供
-
-**账户初始化**
+> **提示：**Android SDK仅支持[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
 
 使用 SDK 时，需提前进行账户初始化（全局执行一次即可）
 
+将代码中的`YOUR_HOST`和`YOUR_TOKEN`替换为您的[API Host](/docs/configuration/api-config/#api-host)和[JWT身份认证](/docs/configuration/authentication/)：
+
 ```java
-QWeather.getInstance(MainActivity.this, "{YOUR_HOST}")
-        .setToken("{YOUR_JWT_TOKEN}")
+QWeather.getInstance(MainActivity.this, "{YOUR_HOST}") // 初始化服务地址
+        .setTokenGenerator(new TokenGenerator() { // 设置令牌生成器
+                        @Override
+                        public String generator() {
+                             // 生产环境中应在此处实现令牌刷新逻辑，而非硬编码
+                            return "{YOUR_TOKEN}"; // 返回用于 API 认证的 JWT 令牌
+                        }
+                    });
 ```
 
-**数据访问示例**
+## 示例代码 {#sample-code}
 
-根据您的需求调用不同的方法，接口回调方法中的参数就是接口返回的数据类
+请求北京实时天气。
 
 ```java
-WeatherParameter parameter = new WeatherParameter("101120501")
+WeatherParameter parameter = new WeatherParameter("101010100")
                 .lang(Lang.ZH_HANS)
                 .unit(Unit.METRIC);
 

@@ -10,7 +10,7 @@ ref: 3-sdk-ios-solar-elevation-angle
 | -------------------------------- | ---------- | ----------------- |
 | astronomySolarElevationAngle | 太阳高度角 | AstronomySolarElevationAngleResponse |
 
-## 请求参数
+## 参数
 
 **SolarElevationAngleParameter**
 

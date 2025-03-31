@@ -13,7 +13,7 @@ Get high-precision real-time weather at any latitude and longitude around the wo
 | gridNow | Grid Weather Real-time | GridNowResponse |
 
 
-## Request Parameters 
+## Parameters 
 
 **GridWeatherParameter**
 
@@ -24,7 +24,7 @@ Get high-precision real-time weather at any latitude and longitude around the wo
 | lang | Lang | false | ZH_HANS |
 | unit | Unit | false | METRIC |
 
-## Sample Code 
+## Sample code 
 
 ```java
 public void gridNow(GridWeatherParameter parameter, Callback<GridNowResponse> callback);

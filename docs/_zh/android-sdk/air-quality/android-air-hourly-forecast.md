@@ -12,7 +12,7 @@ ref: 1-sdk-android-air-hourly-v1
 | --------------- | ---------------------------- | ------------ |
 | airHourly | 空气质量小时预报(new)    | AirV1HourlyResponse |
 
-## 请求参数 
+## 参数 
 
 **AirV1Parameter**
 

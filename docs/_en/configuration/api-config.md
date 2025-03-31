@@ -1,12 +1,12 @@
 ---
-title: API Config
+title: Create API Request
 tag: [config, api]
 ref: config-api
 ---
 
 Before starting to use API service, you need to do some simple configuration and preparation.
 
-Now, let's assume you've created [project and credential](/en/docs/configuration/project-and-key/), we're ready to start building a complete API request.
+Now, let's assume you've created [project and credential](/en/docs/configuration/project-and-key/), we're ready to start creating a complete API request.
 
 ## API Host
 

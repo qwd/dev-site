@@ -13,13 +13,13 @@ Get hourly weather forecasts for cities around the world for the next 24-168 hou
 | weather72h  | 72-hours forecast  | WeatherHourlyResponse |
 | weather168h | 168-hours forecast | WeatherHourlyResponse |
 
-## Request Parameters
+## Parameters
 
 **WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-## Sample Code
+## Sample code
 
 **Swift**
 

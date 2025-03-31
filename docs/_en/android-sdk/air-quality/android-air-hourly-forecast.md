@@ -12,7 +12,7 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 | --------------- | ---------------------------- | ------------ |
 | airHourly | Air quality hourly forecast (new)    | AirV1HourlyResponse |
 
-## Request Parameters 
+## Parameters 
 
 **AirV1Parameter**
 
@@ -20,7 +20,7 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 
 {% include params.html p="lang-def" %}
 
-## Sample Code
+## Sample code
 
 ```java
 public void airHourly(AirV1Parameter parameter, Callback<AirV1HourlyResponse> callback);

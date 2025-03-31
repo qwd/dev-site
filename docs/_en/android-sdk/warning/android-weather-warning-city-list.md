@@ -17,13 +17,13 @@ See also [Weather warning Android SDK](/en/docs/android-sdk/warning/android-weat
 | ---------------- | -------------- | --------------- |
 | warningList| List of warning cities  | WarningListResponse |
 
-## Request Parameters
+## Parameters
 
 **WarningListParameter**
 
 {% include params.html p="range-warning" %}
 
-## Sample Code
+## Sample code
 
 ```java
 public void warningList(WarningListParameter parameter, Callback<WarningListResponse> callback);

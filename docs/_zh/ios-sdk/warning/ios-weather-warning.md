@@ -13,7 +13,7 @@ ref: 1-sdk-ios-weather-warning
 | -------------------- | -------- | ---------------- |
 | warningNow | 天气灾害预警 | WarningResponse |
 
-## 请求参数
+## 参数
 
 **WarningNowParameter**
 

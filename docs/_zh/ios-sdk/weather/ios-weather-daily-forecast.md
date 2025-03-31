@@ -14,7 +14,7 @@ ref: 2-sdk-ios-weather-daily-forecast
 | weather15d | 15天预报      | WeatherDailyResponse |
 | weather30d | 30天预报      | WeatherDailyResponse |
 
-## 请求参数
+## 参数
 
 **WeatherParameter**
 

@@ -12,7 +12,7 @@ ref: 3-sdk-ios-storm-forecast
 | ---------------------- | -------- | --------------------- |
 | tropicalStormForecast | 台风预报   | StormForecastResponse |
 
-## 请求参数
+## 参数
 
 **StormParameter**
 

@@ -17,7 +17,7 @@ ref: config-ios
 
 ## 第1步: 创建项目和凭据 {#step-1-create-project-and-credential}
 
-请确保已经创建了项目和凭据，请参考[项目](/docs/configuration/project-and-key/)和[身份认证](/docs/authentication/)。
+请确保已经创建了[项目和凭据](/docs/configuration/project-and-key/)，并已了解如何使用[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
 
 ## 第2步: 安装SDK {#step-2-install-sdk}
 
@@ -69,91 +69,87 @@ pod update
 1. 下载SDK：[QWeatherSDK {{ site.data.v.ios.version }}](https://github.com/qwd/qweather-ios-sdk/releases/tag/{{ site.data.v.ios.version }})
 2. 将 `QWeatherSDK.xcframework` 包导入到iOS或macOS Target中
 
+## 第3步: 添加API Host和Token {#step-3-add-api-host-and-token}
 
-## 第3步: 初始化配置 {#step-3-setup-key-and-subscription}
+> **提示：**iOS SDK仅支持[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
 
-
-### 配置 HOST 和 TOKEN {#setup-public-id-and-key}
-
-将代码中的`YOUR_HOST`和`YOUR_TOKEN`替换为您的 host 地址和 token：
+将代码中的`YOUR_HOST`和`YOUR_TOKEN`替换为您的[API Host](/docs/configuration/api-config/#api-host)和[JWT身份认证](/docs/configuration/authentication/)：
 
 **Swift**
->
->```swift
->
->  import QWeatherSDK
->
->  ...
->
->  try await QWeather.getInstance("{YOUR_HOST}")
->                    .setupToken("{YOUR_TOKEN}")
->
->```
+
+```swift
+import QWeatherSDK
+
+...
+
+let _ = try await QWeather
+            .getInstance("{YOUR_HOST}")  // 初始化服务地址
+            .setupTokenGenerator({  // 设置令牌生成器
+                // 生产环境中应在此处实现令牌刷新逻辑，而非硬编码
+                return "{YOUR_TOKEN}"  // 返回用于 API 认证的 JWT 令牌
+            })
+            .setupLogEnable(true)  // 启用调试日志（生产环境建议设置为 false）
+```
 
 **Objective-C**
 
->
->```objc
->
->  #import <QWeatherSDK/QWeatherSDK-Swift.h>
->
->  ...
->
->  // 初始化设置
->  [QWeatherObjc initConfigWithHost:@"YOUR_HOST"];
->  [QWeatherObjc setupToken:@"{YOUR_TOKEN}"];
->
->```
+
+```objc
+#import <QWeatherSDK/QWeatherSDK-Swift.h>
+
+...
+
+// 初始化服务地址
+[QWeatherObjc initConfigWithHost:@"{YOUR_HOST}"];
+
+// 设置令牌生成器
+[QWeatherObjc setupTokenGeneratorWithGenerater:^NSString * _Nonnull{
+    // 生产环境中应在此处实现令牌刷新逻辑，而非硬编码
+    return @"{YOUR_TOKEN}"; // 返回用于 API 认证的 JWT 令牌
+}];
+
+// 启用调试日志（生产环境建议设置为 false）
+[QWeatherObjc setupLogEnable:YES];
+```
 
 ## 示例代码 {#sample-code}
 
-在需要使用的地方加入以下代码输入所需参数即可，返回为对应类型的数据模型
+请求北京实时天气。
   
 **Swift**
 
 ```swift
-   import QWeatherSDK
+import QWeatherSDK
 
-   ...
+...
 
-   Task {
-      do {
-
-            // 初始化设置
-            try await QWeather
-               .getInstance("{YOUR_HOST}")
-               .setupToken("{YOUR_TOKEN}")
-
-            // 实时天气
-            let parameter = WeatherParameter(location: "101010100")
-            let response = try await QWeather.instance.weatherNow(parameter)
-            print(response)
-        } catch QWeatherError.errorResponse(let error) {
-            print(error)
-        } catch {
-            print(error)
-        }
-   }
-
+Task {
+    do {
+        let parameter = WeatherParameter(location: "101010100")
+        let response = try await QWeather.instance.weatherNow(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
 ```        
 
 **Objective-C**
+
 ```objc
-  #import <QWeatherSDK/QWeatherSDK-Swift.h>
+#import <QWeatherSDK/QWeatherSDK-Swift.h>
 
-  ...
+...
 
-  // 初始化设置
-  [QWeatherObjc initConfigWithHost:@"YOUR_HOST"];
-  [QWeatherObjc setupToken:@"{YOUR_TOKEN}"];
-
-  WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101010100" lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
-    [QWeatherObjc weatherNow:parameter completionHandler:^(WeatherNowResponse * _Nullable response, NSError * _Nullable error) {
-        if (response) {
-            NSLog(@"%@", response.description);
-        }
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
+WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101010100" lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
+[QWeatherObjc weatherNow:parameter completionHandler:^(WeatherNowResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```

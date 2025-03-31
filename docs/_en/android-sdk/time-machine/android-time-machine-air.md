@@ -13,13 +13,13 @@ Get the last 10 days of air quality history data.
 | ---------------- | ---------------- | ---------------- |
 | historicalAir| Historical air quality data  | HistoricalAirResponse |
 
-## Request Parameters
+## Parameters
 
 **HistoricalAirParameter**
 
 {% include params.html p="location-id date10back lang-def" %}
 
-## Sample Code
+## Sample code
 
 ```java
 public void historicalAir(HistoricalAirParameter parameter, Callback<HistoricalAirResponse> callback);

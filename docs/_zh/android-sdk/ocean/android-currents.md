@@ -10,7 +10,7 @@ ref: 2-sdk-android-currents
 | -------- | ---------------- | ------- |
 | oceanCurrents | 潮流  | OceanCurrentsResponse |
 
-## 请求参数
+## 参数
 
 **OceanParameter**
 

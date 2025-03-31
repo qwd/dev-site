@@ -14,7 +14,7 @@ Get daily weather forecasts at any latitude and longitude in the world, includin
 | grid7d | 7 Days Forecast by Grid| GridDailyResponse |
 
 
-## Request Parameters
+## Parameters
 
  **GridWeatherParameter**
 
@@ -25,7 +25,7 @@ Get daily weather forecasts at any latitude and longitude in the world, includin
 | lang | Lang | false | ZH_HANS |
 | unit | Unit | false | METRIC |
 
-## Sample Code
+## Sample code
 
 **Swift**
 

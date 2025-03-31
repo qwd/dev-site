@@ -10,13 +10,13 @@ POI Lookup API provides basic information of POI(scenic spot, tide stations, cur
 | ---------- | --------------------------- | ------------ |
 | geoPoiLookup | POI Lookup  | GeoPoiResponse |
 
-## Request Parameters
+## Parameters
 
 **GeoPoiLookupParameter**
 
 {% include params.html p="location-geo geo-type city number lang-def" %}
 
-## Sample Code
+## Sample code
 
 **Swift**
 

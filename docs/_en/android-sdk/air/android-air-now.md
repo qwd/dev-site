@@ -12,13 +12,13 @@ Real-time air quality for Chinese cities and 1,700 monitoring stations, includin
 | ---------------- | --------- | ---------- |
 | airNow| Real-time Air Quality  | AirNowResponse |
 
-## Request Parameters
+## Parameters
 
 **AirParameter**
 
 {% include params.html p="location-def lang-def" %}
 
-## Sample Code
+## Sample code
 
 ```java
 public void airNow(AirParameter parameter, Callback<AirNowResponse> callback);

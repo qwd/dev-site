@@ -10,13 +10,13 @@ Get moonrise and moonset and hourly moon phase data for the next 60 days at any 
 | --------------------------- | -------------- | ------------- |
 | astronomyMoon | Moonrise, moonset and moon phase data | AstronomyMoonResponse |
 
-## Request Parameters
+## Parameters
 
 **AstronomyMoonParameter**
 
 {% include params.html p="location-def date60 lang-def" %}
 
-## Sample Code
+## Sample code
 
 Swift
 

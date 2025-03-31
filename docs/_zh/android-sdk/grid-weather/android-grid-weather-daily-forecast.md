@@ -12,7 +12,7 @@ ref: 2-sdk-android-grid-weather-daily-forecast
 | grid7d | 格点7天预报| GridDailyResponse |
 
 
-## 请求参数 
+## 参数 
 
 **GridWeatherParameter**
 
