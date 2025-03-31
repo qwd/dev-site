@@ -4,25 +4,20 @@ tag: [account, contact]
 ref: account-contact
 ---
 
-You can add multiple notification recipients to your account, and these recipients can receive all notifications for your account. For example, if you are the account owner and you want others in your business to receive billing or service expiration reminders, you can add them to your notification recipients.
+You can add up to 5 notification recipients to your account who can receive all notifications for your account. For example, if you want other people in your organization to receive billing or service notifications, you can add them to your notification recipients.
 
-## Add Recipients
+> **Hint:** All security and privacy related notifications will not be sent to the recipient, e.g. authentication, password reset etc.
 
-Go to [Console - Settings - Notifications](https://console.qweather.com/#/user/notice?lang=en) and you can see all your current notification recipients at the bottom. To add a new notification recipient, you just need to enter their email address and click the "Send Invitation" button.
+### Aadd recipients
 
-The recipients will receive an invitation email and will need to agree to the invitation by clicking on the activation link in the email. Once the recipients agrees to the invitation, they will receive all the notifications set up in your account.
+1. [Go to Console - Setting](https://console.qweather.com/setting)
+2. Scroll down to the the Recipients sention.
+3. Enter the email address and click "SendSend Invitation".
 
-If the recipients did not click on the activation link or did not receive the invitation email, you can wait for 60 minutes and resend it. Please note that the invitation emails will expire after 24 hours. If multiple invitation emails are received, the latest one will prevail.
+The invitee will receive an email, click the activation link to accept the invitation, then he/she will be able to receive all the notifications set up in your account.
 
-## Remove Recipients
+If the invitee does not click the activation link or does not receive the invitation email, please wait 60 minutes and resend it. Notice that the activation link is valid for 24 hours, and if multiple invitation emails are received, the latest one will prevail.
 
-You can remove a notification recipient from [Console - Settings - Notifications](https://console.qweather.com/#/user/notice?lang=en) and click the "Remove" button next to the email address you want to remove.
+### Remove recipients
 
-Notification recipients cannot remove themselves at the moment, they can only contact you for removal.
-
-## Rrestriction
-
-- You can add up to 5 notification recipients.
-- All notifications related to account security will not be sent to the notification recipients, such as password reset, etc.
-
-
+You can click the "Remove" button next to the email you want to remove. The recipients cannot remove themselves at this time.

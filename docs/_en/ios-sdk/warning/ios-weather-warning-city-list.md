@@ -14,34 +14,51 @@ See also [Weather warning iOS SDK](/en/docs/ios-sdk/warning/ios-weather-warning/
 > **Tips:** For more warning description, see [Resource - Warning Info](/en/docs/resource/warning-info/).
 
 
-| Interface code (Enum)    | Interface              | Class            |
+| Interface code    | Interface              | Class            |
 | ------------------------ | ---------------------- | ---------------- |
-| INQUIRE_TYPE_WARNINGLIST | List of warning cities | WarningListClass |
+| warningList | List of warning cities | WarningListResponse |
 
-### Request Parameters
+## Parameters
 
-If no optional parameters are set, the default value will be used.
+**WarningListParameter**
 
 {% include params.html p="range-warning" %}
 
-### Sample Code
+## Sample code
 
-```objc
- 
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-    QWeatherConfigInstance.range = @"cn";
-    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_WARNINGLIST WithSuccess:^(WarningListClass *responseObject) {
-        
-        NSLog(@"Description->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
-    }];
+**Swift**
+
+```swift
+Task{
+    do {
+        let parameter = WarningListParameter(range: .CN)
+        let response = try await QWeather.instance
+            .warningList(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
 ```
 
-### Response
+**Objective-C**
+
+```objc
+WarningListParameter *parameter = [WarningListParameter instanceWithRange:RangeCN];
+[QWeatherObjc warningList:parameter completionHandler:^(WarningListResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
+```
+
+## Response
+
+**WarningListResponse**
 
 {% include api-response.html group="warning" type="list" prefix="warningLocList" fxlink=0 %}

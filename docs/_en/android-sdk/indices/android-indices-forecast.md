@@ -9,67 +9,65 @@ Get weather indices forecast data for cities in China and around the world.
 - Weather Indices in China: Comfort Indices, Car Wash Indices, Dressing Indices, Cold Indices, Sports Indices, Travel Indices, UV Indices, Air Pollution Indices, Air Conditioning Indices, Allergy Indices, Sunglasses Indices, Makeup Indices, Sunshine Indices, Traffic Indices, Fishing Indices, Sun Protection Indices
 - Weather Indices worldwide: Sports Indices, Car Wash Indices, UV Indices, Fishing Indices
 
-| Interface Code| Interface  | Class |
+| Interface code| Interface  | Class |
 | ----------- | ------------ | ----------- |
-| getIndices1D| 1 day Weather Indices  | IndicesBean |
-| getIndices3D| 3 days Weather Indices  | IndicesBean |
+| indices1d | Today Weather Indices           | IndicesDailyResponse |
+| indices3d | Weather Indices 3-days forecast | IndicesDailyResponse |
 
-### Parameters
+## Parameters
 
-If no optional parameters are set, the default value will be used.
+**IndicesParameter**
 
-{% include params.html p="location-def idx-type-android" %}
+{% include params.html p="location-def idx-type lang-def" %}
 
-### Sample Code
+
+## Sample code
 
 ```java
 /**
- * Get 1-day weather indices data
+ * Get 2-day weather indices data
  */
-QWeather.get1DIndices(Context context, String location, Lang lang, List<IndicesType> types, QWeather.OnResultIndicesListener listener);
+public void indices1d(IndicesParameter parameter, Callback<IndicesDailyResponse> callback);
 
 /**
  * Get 3-day weather indices data
  */
-QWeather.get3DIndices(Context context, String location, Lang lang, List<IndicesType> types, QWeather.OnResultIndicesListener listener);
+public void indices3d(IndicesParameter parameter, Callback<IndicesDailyResponse> callback);
 ```
 
-### Properties
 
-Properties of IndicesBean
+## Response 
 
-| Property | Description | Example |
-| ------------ | -------------------------- | --------- ------------ |
+**IndicesDailyResponse**
+
+{% include api-response.html group="indices" prefix="daily" %}
+
+<!-- | Property | Description | Example |
+| ------------ | -------------------------- | --------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getDailyList | Daily weather indices | List&lt;DailyBean&gt; |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/indices/beijing-101010100.html |
+| getDaily | Daily weather indices | List&lt;IndicesDaily&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
-| getBasic | Basic Information | Basic |
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
-
-**Basic**
-
-| Property | Description | Example |
-| ------------- | ------------------------ | ---------- ---------- |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/indices/beijing-101010100.html |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
 
-**DailyBean Daily Life Index**
+**IndicesDaily**
 
 | Properties | Description |
-| ----------- | ------------------------------------------------|
+| ----------- | -----------|
 | getDate | Forecast date |
 | getLevel | Weather indices Level |
 | getCategory | Weather indices category name |
 | getName | Weather indices type name |
 | getType | Weather indices type |
-| getText | Detailed description of weather indices |
+| getText | Detailed description of weather indices | -->
 
 ### Index type and level
 

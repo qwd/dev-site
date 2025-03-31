@@ -6,51 +6,49 @@ ref: 3-sdk-ios-geo-poi-lookup
 
 POI Lookup API provides basic information of POI(scenic spot, tide stations, currents stations, etc.)
 
-| Interface code (Enum)| Interface         | Class        |
+| Interface code | Interface         | Class        |
 | ---------- | --------------------------- | ------------ |
-| INQUIRE_TYPE_GEO_POI_LOOKUP| POI Lookup  | GeoBaseClass |
+| geoPoiLookup | POI Lookup  | GeoPoiResponse |
 
-### Request Parameters
+## Parameters
 
-If no optional parameters are set, the default value will be used.
+**GeoPoiLookupParameter**
 
 {% include params.html p="location-geo geo-type city number lang-def" %}
 
-### Sample Code
+## Sample code
 
-```objc
+**Swift**
 
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-    QWeatherConfigInstance.location = @"beijing";
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_POI_LOOKUP WithSuccess:^(GeoBaseClass *responseObject) {
-        
-        NSLog(@"Description->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
-    }];
+```swift
+Task{
+    do {
+        let response = try await QWeather.instance
+            .geoPoiLookup(.init(location: "116.41,39.92", type: .SCENIC))
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
 ```
 
-### Response
+**Objective-C**
 
-| Parameters | Description | Example |
-| ---------- | ----------- |------------ | -------------------- |
-| code | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | 200 |
-| location.name | Location Name | Nanshan District |
-| location.cid | Location ID | 101280604 |
-| location.lat | Latitude of the location | 22.53122 |
-| location.lon | Longitude of the location | 113.92942 |
-| location.adm2 | Name of the superior administrative division of the location | Shenzhen |
-| location.adm1 | The first-level administrative region of the location | Guangdong Province |
-| location.country | Country name of the location | China |
-| location.tz | Location [Timezone](/en/docs/resource/glossary/#timezone) | +0800 |
-| location.utcOffset | The number of hours offset between local time and UTC time, refer to [UTC-Offset](/en/docs/resource/glossary/#utc-offset) | +08:00 |
-| location.isDst | Is the location currently observing Daylight Saving time<br />`1` in daylight saving time <br /> `0` not in daylight saving time | 0 |
-| location.type | POI type | scenic |
-| location.rank | [Location Rank](/en/docs/resource/glossary/#rank) | 10 |
-| location.fxLink | Responsive web page of this location, easy to embed in your website or APP | http://hfx.link/34T5 |
-| refer.sources | Data source and other statements, **may be null** | |
-| refer.license | License, **may be null** | |
+```objc
+GeoPoiLookupParameter *parameter = [GeoPoiLookupParameter  instanceWithLocation:@"116.41,39.92" type:PoiSCENIC city:nil number:@(10) lang:@(LangZH_HANS)];
+[QWeatherObjc geoPoiLookup: parameter completionHandler:^(GeoPoiResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
+```
+
+## Response
+
+**GeoPoiResponse**
+
+{% include api-response.html group="geo_poi" type="poi" prefix="poi" update=0 fxlink=0 %}

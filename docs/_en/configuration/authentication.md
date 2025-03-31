@@ -1,12 +1,16 @@
 ---
-title: JSON Web Token
-tag: [auth, jwt]
-ref: auth-jwt
+title: Authentication
+tag: [config, jwt]
+ref: config-auth
 ---
 
-QWeather supports and recommends using JWT (JSON Web Token) for authentication. Whether on the front-end or back-end, JWT can significantly protect your keys and effectively prevent others from forging your identity for API requests.
+QWeather Developers Service uses JWT (JSON Web Token) and API KEY for authentication. We recommend using JWT as the preferred authentication method, which will greatly improve security.
 
-## Prerequisites
+## JSON Web Token
+
+JSON web token (JWT) is an open standard ([RFC 7519](https://www.rfc-editor.org/rfc/rfc7519)) that defines a compact and self-contained way for securely transmitting information between parties. Whether on the front-end or the back-end, JWT authentication can significantly enhance API security and prevent others to fake your identity for API requests.
+
+### Prerequisites
 
 QWeather uses the Ed25519 algorithm for signing, Ed25519 is an implementation of EdDSA (Edwards-curve Digital Signature Algorithm) using Curve25519 elliptic curves and SHA-512. You need to generate the private and public keys for Ed25519 in advance, where the private key is used for signing and kept by you, and the public key is used for us to verify the signature. This means that no one (including us) can forge your signature except you.
 
@@ -33,13 +37,11 @@ This will create two files in the current directory:
 
 Once your Ed25519 keys is generated, you need to add the public key to the QWeather console for JWT authentication.
 
-Login [Console](https://console.qweather.com):
-
-1. Click **Project Management** in the left navigation.
+1. [Go to Console-Project](https://console.qweather.com/project)
 2. Choose the project where you want to add the public key.
-3. Click the **Create Credential** button in the Credential Settings section.
-4. Choose the authentication method **JSON Web Token**.
-5. Enter the credential name, such as “Travel App for test”.
+3. Click the **Add Credential** button in the credential section.
+4. Enter the credential name.
+5. Select the authentication method: **JSON Web Token**.
 6. Use any text editor to open the public key (like ed25519-public.pem which was generated in the previous step), and copy the entire contents of it. The content looks like:
    ```
    -----BEGIN PUBLIC KEY-----
@@ -47,11 +49,11 @@ Login [Console](https://console.qweather.com):
    -----END PUBLIC KEY-----
    ```
 7. Paste the public key in the textarea.
-8. Click **Create** button
+8. Click **Save** button
 
-You will see the **Create Credential Success** page and it shows the creation date, credential ID and SHA-256. For security reasons, you cannot view this public key in the Console. However, you can use the SHA-256 value of the public key to compare it with the local SHA-256 in order to confirm that the correct public key was used.
+You will see the **Create Credential Success** page and it shows the creation date, credential ID and SHA-256. For security reasons, you cannot view this public key in the Console again. However, you can use the SHA-256 value of the public key to compare it with the local SHA-256 in order to confirm that the correct public key was used.
 
-## Generate JWT
+### Generate JWT
 
 QWeather supports the [JWT protocol and specification](https://datatracker.ietf.org/doc/html/rfc7519), in most cases you don't need to write your own code for generating JWT, almost all programming languages have third-party open source libraries for JWT generation, you can find these libraries in [JWT.io]( https://jwt.io/libraries).
 
@@ -62,7 +64,7 @@ A complete JWT consists of three parts: Header, Payload and Signature. we will i
 Header includes the following parameters and saved in JSON object format:
 
 - `alg` The signature algorithm, set the value to **EdDSA**.
-- `kid` Your Credential ID, you can copy it in [Console - Project Management](https://console.qweather.com/#/apps).
+- `kid` Your Credential ID, you can copy it in [Console - Project Management](https://console.qweather.com/project).
 
 For example:
 
@@ -106,7 +108,7 @@ At last, put the Base64URL-encoded Header, Payload, and Signature together and s
 eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA
 ```
 
-## Authorize Request
+### JWT authorize request
 
 Add the Token as a parameter to the `Authorization: Bearer` request header, for example:
 
@@ -115,7 +117,7 @@ curl -i -H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ
 --compressed 'https://api.qweather.com/v7/weather/now?location=101010100'
 ```
 
-## JWT Demo
+### JWT demo
 
 Please replace `YOUR_KEY_ID`, `YOUR_PROJECT_ID`, `YOUR_PRIVATE_KEY` or `PATH_OF_YOUR_PRIVATE_KEY` in the code with your values.
 
@@ -301,3 +303,65 @@ jwt="${header_payload}.${signature}"
 # Print Token
 echo "$jwt"
 ```
+
+## API KEY
+
+API KEY is a common and simple authentication method. Compared to JWT, API KEY is less secure in some scenarios.
+
+> **Note:** To improve security, we will limit the volume of daily requests for authentication using API KEY from 2027-01-01.
+
+### Generate API KEY
+
+You can log in to the Console to easily generate an API KEY:
+
+1. Click **Project** in the left menu.
+2. Click on the project where you want to add the API KEY.
+3. Click the **Create Credential** button in the Credential section.
+4. Choose API KEY as the authentication method.
+5. Enter the name of the API KEY, e.g. “Travel App Test”.
+6. Click the Create button
+
+You can always check the API KEY in [Console - Project Management](https://console.qweather.com/project).
+
+### API KEY authorize request
+
+> **Warning:** Please DO NOT use multiple authentication methods at the same time, it may cause authentication failure.
+{:.bqdanger}
+
+We support two authentication methods for API KEYs.
+
+#### Request hearder
+
+Add `X-QW-Api-Key: your-key` to your request Header. For example:
+
+```bash
+curl -H "X-QW-Api-Key: ABCD1234EFGH" --compressed \
+'https://api.qweather.com/v7/weather/now?location=101010100'
+```
+
+#### Query parameter
+
+Add `key=your-key` to your query parameter. For example:
+
+```bash
+curl --compressed \
+'https://api.qweather.com/v7/weather/now?location=101010100&key=ABCD1234EFGH'
+```
+
+## API KEY signature
+
+API KEY signature authentication is no longer supported.
+
+## Compatibility
+
+Refer to the table below for compatibility of authentication methods for various services. 
+
+||JWT|API KEY|API KEY signature
+|---|---|---|---|
+|API v7|✅|✅|✅ Only credentials created before 2024-11-01|
+|GeoAPI v2|✅|✅|✅ Only credentials created before 2024-11-01|
+|GeoAPI v3|✅|✅|❌|
+|Air quality API v1|✅|✅|❌|
+|Console API v1|✅|✅|❌|
+|SDK 4+|❌|❌|✅|
+|SDK 5+|✅|❌|❌|

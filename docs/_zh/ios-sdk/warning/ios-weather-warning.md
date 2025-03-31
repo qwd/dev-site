@@ -6,40 +6,55 @@ ref: 1-sdk-ios-weather-warning
 
 天气灾害预警iOS SDK可以获取中国及全球多个国家或地区官方发布的实时天气灾害预警数据。
 
-> **提示：**关于更多天气预警数据的说明，请参考[实用资料-预警信息](/docs/resource/warning-info/)。
+> **提示：**天气预警有较多规则和需要注意的事项，在开始使用天气预警之前，你应该先阅读[实用资料-预警信息](/docs/resource/warning-info/)。
 
 
-| 接口代码（枚举）     | 接口     | 数据类           |
+| 接口代码     | 接口     | 数据类           |
 | -------------------- | -------- | ---------------- |
-| INQUIRE_TYPE_WARNING | 灾害预警 | WarningBaseClass |
+| warningNow | 天气灾害预警 | WarningResponse |
 
-### 请求参数
+## 参数
 
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
+**WarningNowParameter**
 
 {% include params.html p="location-def lang-def" %}
 
-### 示例代码
+## 示例代码
 
-```objc
- 
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-    QWeatherConfigInstance.location = @"101010100";
-    QWeatherConfigInstance.lang = @"";
-    QWeatherConfigInstance.unit = @"";
-    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_WARNING WithSuccess:^(WarningBaseClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
-    }];
+**Swift**
+
+```swift
+Task {
+    do {
+        let parameter = WarningNowParameter(location: "101010100")
+        let response = try await QWeather.instance
+            .warningNow(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
 ```
 
-### 返回数据
+**Objective-C**
+
+```objc
+WarningNowParameter *parameter = [WarningNowParameter instanceWithLocation:@"101010100" lang:@(LangZH_HANS)];
+[QWeatherObjc warningNow:parameter completionHandler:^(WarningResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
+```
+
+## 返回数据
+
+**WarningResponse**
 
 {% include api-response.html group="warning" type="warning" prefix="warning" %}
 

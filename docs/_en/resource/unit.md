@@ -11,17 +11,17 @@ Metric units are used by default for QWeather, such as kilometers, degrees Celsi
 
 ## Unit Parameters
 
-| Unit           | API parameters | iOS SDK parameters | Android SDK parameters |
-| -------------- | -------------- | ------------------ | ---------------------- |
-| Metric units   | m              | UNIT_TYPE_M        | METRIC                 |
-| Imperial units | i              | UNIT_TYPE_I        | IMPERIAL               |
+| Unit           | API parameters | iOS Unit |  Android Unit  |
+| -------------- | -------------- | ------------ | --------  |
+| Metric units   | m              | METRIC     | METRIC    |
+| Imperial units | i              | IMPERIAL     | IMPERIAL  |
 
 ## Unit Information
 
 > There are some data items that do not exist in imperial units and only metric units are used.
  
 | Data item | Metric unit | Imperial unit |
-| --------- | ----------- | ------------- |----------------- |
+| --------- | ----------- | ------------- |
 | Temperature | celsius | fahrenheit |
 | Wind speed | km/h km/h | mile/h mile/h |
 | Visibility | Kilometer |  mile |

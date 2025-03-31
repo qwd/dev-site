@@ -8,17 +8,17 @@ Get daily weather forecasts at any latitude and longitude in the world, includin
 
 > The spatial resolution is 1x1, 3x3 or 5x5 KM, depending on the region.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html apidata="grid-weather-daily-3d grid-weather-daily-7d" title=true dev=true %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-coord lang-def unit-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html apidata="grid-weather-daily-3d" %}
 

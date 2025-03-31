@@ -1,22 +1,21 @@
 ---
 title: 使用限制
 tag: [terms, restriction]
+toc: false
 ref: terms-restriction
 ---
 
-为了让开发者更加公平、合规的使用和风天气服务，你需要同意我们的各项服务条款和限制。在本篇文档，我们将罗列一些常见的使用限制和解释说明，便与你更好的理解这些条款和限制。
+为了让开发者更加公平、合规的使用和风天气服务，你需要同意我们的[各项服务条款和限制](/docs/terms/tos/)。在本篇文档，我们将罗列一些常见的使用限制和解释说明，便与你更好的理解这些条款和限制。
 
 ## 不合规的产品 {#non-compliant-products}
 
 你的产品（例如APP或网站等）使用了和风天气的所有服务，该产品必须符合中国法律法规的规定并符合公序良俗，否则你的帐号将被冻结。
 
-参考[开发者服务条款4.1条款](https://www.qweather.com/terms/developers-tos)。
-
 ## 非正常请求 {#invalid-requests}
 
 当你收到返回数据不是`code=2xx`时，你应该检查你的程序，因为这代表了错误的请求。对于所有错误的请求，如超过合理范围，将被视为对我们服务的攻击，此时你可能无法再继续使用和风天气开发服务或你的帐号将被冻结。
 
-参考[优化请求](/docs/best-practices/optimize-requests/)和[开发者服务条款4.7条款](https://www.qweather.com/terms/developers-tos)。
+参考[优化请求](/docs/best-practices/optimize-requests/)和[开发者许可协议2.4.2条款](https://www.qweather.com/terms/developers-eula)。
 
 ## 欠款 {#outstanding}
 

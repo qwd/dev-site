@@ -4,19 +4,19 @@ tag: [feat, global]
 ref: feat-global
 ---
 
-QWeather Develop Service provides the global deployment capability, so you no longer have to struggle with different cultural and localization issues in each country or complex network environments around the world.
+QWeather Developer Services provides the global deployment capability, so you no longer have to struggle with different cultural and localization issues in each country or complex network environments around the world.
 
 Using the global deployment capability does not require additional configuration on your part, it's all almost automatic.
 
 ## Multi-language
 
-QWeather Develop Service supports 30+ languages and native languages, you just need to simply add multilingual parameters to your request.
+QWeather Developer Services supports 30+ languages and native languages, you just need to simply add multilingual parameters to your request.
 
 See [Supported languages](/en/docs/resource/language/).
 
 ## Unit Conversion
 
-QWeather Develop Service provides options for metric and imperial units, for users in different countries and regions, you can set the appropriate units for them.
+QWeather Developer Services provides options for metric and imperial units, for users in different countries and regions, you can set the appropriate units for them.
 
 See [Unit](/en/docs/resource/unit/).
 
@@ -29,8 +29,6 @@ Check out [GeoAPI](/en/docs/api/geoapi/).
 ## Global Acceleration
 
 ![global-server](/assets/images/content/global-server-flow.png)
-
-## Global Acceleration
 
 Behind your access to `api.qweather.com`, there are 10 data centers and hundreds CDN nodes around the world for QWeather, which allows your Apps to get weather services fast and stable.
 

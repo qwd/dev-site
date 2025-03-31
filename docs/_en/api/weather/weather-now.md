@@ -8,17 +8,17 @@ Get real-time weather data for 200,000+ cities around the world, including tempe
 
 > **Note:** The real-time data are all near real-time data. Compared with the real physical world, it will be delayed by 5-20 minutes. Please determine the accurate time corresponding to the data according to the `obsTime` in the data.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html dev=true %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html flag="weather" p="location-def lang-def unit-def"%}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

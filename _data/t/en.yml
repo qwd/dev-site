@@ -60,7 +60,7 @@ level: Level
 range: Range
 color: Color
 pollutant: Pollutant
-example-token-hint: Replace `your_token` with your JWT or learn more about [Authentication](/en/docs/authentication/)
+example-token-hint: Replace `your_token` and `your_api_host` with your [JWT Authentication](/en/docs/configuration/authentication/) and [API Host](/en/docs/configuration/api-config/#api-host)
 hp-slogan: Build a beautiful weather program
 hp-slogan-2: to drive your business
 hp-data: Weather Data 

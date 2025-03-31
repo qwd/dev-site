@@ -1,12 +1,20 @@
 ---
-title: JSON Web Token
-tag: [auth, jwt]
-ref: auth-jwt
+title: 身份认证
+tag: [config, jwt]
+redirect_from: 
+  - /docs/authentication/
+  - /docs/authentication/jwt/
+  - /docs/authentication/apikey/
+ref: config-auth
 ---
 
-和风天气开发服务支持并推荐使用JWT（JSON Web Token）进行身份认证。无论在前端还是后端，JWT都能够显著的提高API安全等级，有效防止其他人伪造你的身份进行API请求。
+和风天气开发服务使用JWT(JSON Web Token)以及API KEY的方式进行身份认证。我们推荐使用JWT作为首选的身份认证方式，这将极大的提高安全性。
 
-## 前提 {#prerequisites}
+## JSON Web Token
+
+JSON Web Token（JWT）是一种开放标准（[RFC 7519](https://www.rfc-editor.org/rfc/rfc7519)），用于在各方安全的传递信息。无论在前端还是后端，JWT身份认证都能够显著的提高API安全等级，有效防止其他人伪造你的身份进行API请求。
+
+### 准备 {#prerequisites}
 
 和风天气使用Ed25519算法进行签名，Ed25519是使用Curve25519椭圆曲线和SHA-512的EdDSA（Edwards-curve Digital Signature Algorithm）的一种实现。你需要提前生成Ed25519的私钥和公钥，其中私钥用于签名且由你自己保管，公钥用于我们对签名进行验证。这意味着除了你之外，任何人（包括我们）都无法伪造你的签名。
 
@@ -34,11 +42,11 @@ openssl genpkey -algorithm ED25519 -out ed25519-private.pem \
 
 当你完成密钥对的生成后，你需要将其中的公钥添加到和风天气控制台，用于JWT身份验证。
 
-1. 点击左侧导航中的**项目管理**
-2. 点击需要添加公钥的项目名称
-3. 在凭据设置区域点击**创建凭据**按钮
-4. 身份认证方式选择**JSON Web Token**
-5. 输入凭据名称，比如“旅游APP测试”
+1. [前往控制台-项目管理](https://console.qweather.com/project)
+2. 在项目列表中点击你需要添加凭据的项目
+3. 点击凭据区域右侧的“添加凭据”按钮
+4. 输入凭据名称
+5. 选择身份认证方式JSON Web Token
 6. 使用任意文本编辑器打开公钥文件（比如刚才创建的ed25519-public.pem），复制其中的全部内容，这些内容看起来像是：
    ```
    -----BEGIN PUBLIC KEY-----
@@ -46,11 +54,11 @@ openssl genpkey -algorithm ED25519 -out ed25519-private.pem \
    -----END PUBLIC KEY-----
    ```
 7. 在公钥文本框中粘贴公钥内容
-8. 点击创建按钮
+8. 点击“保存”按钮
 
-你将在最后看到创建凭据成功的页面，并且显示了这个凭据的创建日期、ID和SHA256值。出于安全考虑，你无法在控制台查看这个公钥。但你可以使用公钥的SHA256值与本地SHA256进行对比，以便确认使用的是正确的公钥。
+你将在最后看到创建凭据成功的页面，并且显示了这个凭据的创建日期、ID和SHA256值。出于安全考虑，控制台不会再次显示这个公钥。但你可以使用公钥的SHA256值与本地SHA256进行对比，以便确认使用的是正确的公钥。
 
-## 生成JWT {#generate-jwt}
+### 生成JWT {#generate-jwt}
 
 和风天气支持标准的[JWT协议和规范](https://datatracker.ietf.org/doc/html/rfc7519)，大部分情况下你不需要自己编写生成JWT的代码，几乎所有开发语言都有开源库用于JWT的生成，你可以在[JWT.io](https://jwt.io/libraries)查看这些库。
 
@@ -61,7 +69,7 @@ openssl genpkey -algorithm ED25519 -out ed25519-private.pem \
 Header包括下列参数并保存为JSON对象格式：
 
 - `alg` 签名算法，请设置为**EdDSA**
-- `kid` 凭据ID，你可以在[控制台-项目管理](https://console.qweather.com/#/apps)中查看
+- `kid` 凭据ID，你可以在[控制台-项目管理](https://console.qweather.com/project)中查看
 
 例如：
 
@@ -76,7 +84,7 @@ Header包括下列参数并保存为JSON对象格式：
 
 Payload包括下列参数并保存为JSON对象格式：
 
-- `sub` 签发主体，这个值是凭据的项目ID，项目ID在[控制台-项目管理](https://console.qweather.com/#/apps)中查看
+- `sub` 签发主体，这个值是凭据的项目ID，项目ID在[控制台-项目管理](https://console.qweather.com/project)中查看
 - `iat` 签发时间，这个值表示JWT签发生效的时间，UNIX时间戳格式。为了防止时间误差，建议你将`iat`设置为当前时间之前的30秒，并确保你的服务器或设备的时间和日期是正确的。
 - `exp` 过期时间，这个值表示JWT在何时过期，UNIX时间戳格式。较长的过期时间可以减轻负载，但是较短的时间可以提高安全性。你应该根据使用场景设置过期时间，例如在服务端，可能适合较长的时间，在前端则适合较短的时间。目前允许的有效期最长为24小时（86400秒）。
 
@@ -107,7 +115,7 @@ Payload包括下列参数并保存为JSON对象格式：
 eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA
 ```
 
-## 发送JWT进行身份验证 {#authorize-request}
+### 发送JWT请求 {#jwt-authorize-request}
 
 将上述创建的完整Token作为参数添加到`Authorization: Bearer`请求标头，例如：
 
@@ -117,7 +125,7 @@ curl --compressed \
 'https://api.qweather.com/v7/weather/now?location=101010100'
 ```
 
-## 生成JWT示例 {#jwt-demo}
+### 生成JWT示例 {#jwt-demo}
 
 请将代码中的`YOUR_KEY_ID`，`YOUR_PROJECT_ID`，`YOUR_PRIVATE_KEY`或`PATH_OF_YOUR_PRIVATE_KEY`替换为你的值。
 
@@ -305,3 +313,67 @@ jwt="${header_payload}.${signature}"
 # Print Token
 echo "$jwt"
 ```
+
+## API KEY
+
+API KEY是一种常见、操作简单的身份认证方式。相比较JWT而言，API KEY在一些场景下安全性较低。
+
+> **注意：**为了提高安全性，SDK 5+将不再支持API KEY。从2027年1月1日起，我们将限制使用API KEY进行身份认证的每日请求数量。
+{:.bqwarning}
+
+### 生成API KEY {#generate-api-key}
+
+你可以登录控制台快速的生成API KEY：
+
+1. 点击左侧菜单中的“项目管理”
+2. 点击需要添加API KEY的项目名称
+3. 在凭据设置区域点击绿色的创建凭据按钮
+4. 身份认证方式选择API KEY
+5. 输入凭据名称，比如“旅游APP测试”
+7. 点击创建按钮
+
+你可以随时在[控制台-项目管理](https://console.qweather.com/project)中查看生成的API KEY。
+
+### 发送API KEY请求 {#api-key-authorize-request}
+
+> **注意：**请不要同时使用多种身份认证方式，可能会导致身份认证失败。
+{:.bqdanger}
+
+我们支持两种形式使用API KEY进行身份验证:
+
+#### 请求标头 {#request-hearder}
+
+在你的请求Header中加入`X-QW-Api-Key: your-key`，例如：
+
+```bash
+curl -H "X-QW-Api-Key: ABCD1234EFGH" --compressed \
+'https://api.qweather.com/v7/weather/now?location=101010100'
+```
+
+#### 请求参数 {#query-parameter}
+
+在请求参数中加入`key=your-key`，例如：
+
+```bash
+curl --compressed \
+'https://api.qweather.com/v7/weather/now?location=101010100&key=ABCD1234EFGH'
+```
+
+## API KEY数字签名 {#api-key-signature}
+
+API KEY的数字签名方式已经不再被支持。
+
+
+## 兼容性 {#compatibility}
+
+参考下方表格了解不同服务对身份认证方式的兼容性。
+
+||JWT|API KEY|API KEY数字签名
+|---|---|---|---|
+|API v7|✅|✅|✅ 仅2024-11-01前的凭据可用|
+|GeoAPI v2|✅|✅|✅ 仅2024-11-01前的凭据可用|
+|GeoAPI v3|✅|✅|❌|
+|Air quality API v1|✅|✅|❌|
+|Console API v1|✅|✅|❌|
+|SDK 4+|❌|❌|✅|
+|SDK 5+|✅|❌|❌|

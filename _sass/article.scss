@@ -61,6 +61,10 @@
       margin-bottom: 5px;
     }
 
+    li ul {
+      margin-top: 5px;
+    }
+
     .anchor-link {
       margin-left: 5px;
       color: #dadada;
@@ -204,12 +208,12 @@
         border-bottom: 1px solid $color-light;
       }
       h3 {
-        margin-top: 20px;
+        margin-top: 30px;
         font-size: 18px;
       }
-      p {
-        padding-left: 40px;
-      }
+      // p {
+      //   padding-left: 40px;
+      // }
       .faq-toc-item-2 {
         padding-bottom: 10px;
         border-bottom: 1px solid $color-light;
@@ -260,18 +264,18 @@
         font-family: "iconfont-for-qw" !important;
         font-size: 85%;
         content: "\e900";
-        margin-left: 2px;
-        margin-right: 2px;
+        margin-left: 4px;
+        margin-right: 4px;
       }
 
       // reset internal site link style
-      a[href*="qweather.com"]::after,
-      a[href*="hecdn.net"]::after {
-        content: none;
-        font-family: $font-family;
-        margin-right: 0;
-        margin-left: 0;
-      }
+      // a[href*="qweather.com"]::after,
+      // a[href*="hecdn.net"]::after {
+      //   content: none;
+      //   font-family: $font-family;
+      //   margin-right: 0;
+      //   margin-left: 0;
+      // }
     }
   }
   

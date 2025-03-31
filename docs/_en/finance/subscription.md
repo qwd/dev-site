@@ -4,7 +4,7 @@ tag: [finance, subscription]
 ref: finance-subscription
 ---
 
-QWeather Develop Service now uses a subscription model, including:
+QWeather Developer Services now uses a subscription model, including:
 
 - Standard subscription
 - Pro subscription
@@ -28,7 +28,7 @@ Please see [Subscription Comparison](#comparison) below for the weather services
 
 With Standard subscription, you can get all the services of QWeather without any request volume limit, support global acceleration and automatic routing, so your applications can be deployed around the world without worrying about response speed.
 
-Standard subscription use pay-as-you-go tiered pricing, which means the more you request, the lower the unit price. Refer to [Pay-As-You-Go and Pricing](/en/docs/finance/pricing/) or use the [Price Calculator](https://console.qweather.com/#/calculator) to estimate your costs. Standard subscription also support Saving Plans that can reduce your costs. Learn about [Saving Plans](/en/docs/finance/saving-plans/).
+Standard subscription use pay-as-you-go tiered pricing, which means the more you request, the lower the unit price. Refer to [Pay-As-You-Go and Pricing](/en/docs/finance/pricing/) or use the [Price Calculator](https://console.qweather.com/price-calculator) to estimate your costs. Standard subscription also support Saving Plans that can reduce your costs. Learn about [Saving Plans](/en/docs/finance/saving-plans/).
 
 For organization developers, Standard subscription also support recurring payments, learn about [recurring payments](/en/docs/finance/billing-and-payment/#payment).
 

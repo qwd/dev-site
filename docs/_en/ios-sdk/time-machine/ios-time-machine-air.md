@@ -8,35 +8,59 @@ Get the last 10 days of air quality history data.
 
 > Let's say, today is December 30, you can get data from Dec. 20 to Dec. 29.
 
-## Historical
+| Interface code     | Interface              | Class                      |
+| ------------------ | ---------------------- | -------------------------- |
+| historicalAir     | Historical air quality | HistoricalAirResponse      |
 
-| Interface code (Enum)           | Interface              | Class                      |
-| ------------------------------- | ---------------------- | -------------------------- |
-| INQUIRE_TYPE_HISTORICAL_AIR     | Historical air quality | WeatherHistoricalBaseClass |
+## Parameters
 
-### Request Parameters
-
-If no optional parameters are set, the default value will be used.
+**HistoricalAirParameter**
 
 {% include params.html p="location-id date10back lang-def" %}
 
-### Sample Code
+## Sample code
+
+**Swift**
+
+```swift
+Task{
+    do {
+        let threeDaysAgo = Calendar.current.date(byAdding: .day, value: -3, to: Date())!
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyMMdd"
+        let date = formatter.string(from: threeDaysAgo)
+        let parameter = HistoricalAirParameter(location: "101010100", date: date)
+        let response = try await QWeather.instance
+            .historicalAir(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
+```
+
+**Objective-C**
 
 ```objc
-    //Historical air quality
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ; QWeatherConfigInstance.location = @"101010100";
-    QWeatherConfigInstance.date = @"20200425";
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_HISTORICAL_AIR WithSuccess:^(WeatherHistoricalBaseClass *responseObject) {
-        
-        NSLog(@"Description->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
-    }];
+NSDate * threeDaysAgo = [[NSCalendar currentCalendar] dateByAddingUnit:NSCalendarUnitDay value:-3 toDate:[NSDate date] options:0];
+NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+[formatter setDateFormat:@"yyyyMMdd"];
+NSString * date = [formatter stringFromDate:threeDaysAgo];
+HistoricalAirParameter *parameter = [HistoricalAirParameter instanceWithLocation:@"101010100" date:date lang:@(LangZH_HANS)];
+[QWeatherObjc historicalAir:parameter completionHandler:^(HistoricalAirResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```
-### Response
+
+## Response
+
+**HistoricalAirResponse**
 
 {% include api-response.html group="air" type="now" prefix="airHourly" update=0 %}

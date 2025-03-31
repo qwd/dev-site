@@ -6,34 +6,52 @@ ref: 2-sdk-ios-storm-track
 
 Get the tropical cyclones location, level, pressure, windspeed, and track path of active storm in major ocean basins around the world.
 
-| Interface code (Enum)  | Interface | Class |
-| ---------------- || -------------- ---------------------- |
-| INQUIRE_TYPE_STORM_TRACK| Real-time storm data and storm track data   | StormNowTrackBaseClass |
+| Interface code  | Interface | Class |
+| ---------------- | -------------- | ---------------------- |
+| tropicalStormTrack | Real-time storm data and storm track data   | StormTrackResponse |
 
-### Request Parameters
+## Parameters
 
-If no optional parameters are set, the default value will be used.
+**StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
-### Sample Code
+## Sample code
+
+**Swift**
+
+```swift
+Task{
+    do {
+        let parameter = StormParameter(stormid: "NP_2421")
+        let response = try await QWeather.instance
+            .tropicalStormTrack(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
+```
+
+**Objective-C**
 
 ```objc
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-    QWeatherConfigInstance.stormID = @"NP_2102";
-    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_STORM_TRACK WithSuccess:^(StormNowTrackBaseClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
-    }];
+StormParameter *parameter = [StormParameter instanceWithStormid:@"NP_2421"];
+[QWeatherObjc tropicalStormTrack:parameter completionHandler:^(StormTrackResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```
      
-### Response
+## Response
+
+**StormTrackResponse**
 
 {% include api-response.html group="storm" type="active now track"  prefix="nil now track"%}
 

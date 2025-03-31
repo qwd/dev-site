@@ -6,17 +6,17 @@ ref: 1-api-sun
 
 Get the sunrise and sunset times for the next 60 days at any location worldwide.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html flag="sun" dev=true %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-def date60" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

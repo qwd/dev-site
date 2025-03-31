@@ -6,17 +6,17 @@ ref: 3-api-weather-hourly-forecast
 
 Get hourly weather forecasts for cities around the world for the next 24-168 hours.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html apidata="weather-hourly-24h weather-hourly-72h weather-hourly-168h" title=true dev=true %}
   
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html apidata="weather-hourly-24h" %}
 

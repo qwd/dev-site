@@ -6,17 +6,17 @@ ref: 2-api-top-city
 
 Get a list of popular cities around the world.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html flag="top-city" %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="range number lang-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

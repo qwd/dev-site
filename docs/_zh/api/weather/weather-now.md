@@ -8,21 +8,21 @@ ref: 1-api-weather-now
 
 > **注意：**实况数据均为近实时数据，相比真实的物理世界有5-20分钟的延迟，请根据实况数据中的`obsTime`确定数据对应的准确时间。
 
-## 请求URL
+## 请求路径 {#endpoint}
 
 {% include api-url.html flag="weather-now" dev=true %}
 
-## 请求参数
+## 参数
 
-请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
+#### 查询参数
 
 {% include params.html flag="weather" p="location-def lang-def unit-def"%}
 
-## 请求示例
+## 请求示例 {#request-example}
 
 {% include api-url-example.html %}
 
-## 返回数据
+## 返回数据 {#response}
 
 {% include api-snippet.html flag="weather-now" %}
 

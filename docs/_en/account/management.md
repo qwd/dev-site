@@ -4,56 +4,83 @@ tag: [account, manage]
 ref: account-manage
 ---
 
-To use QWeather's development services, you need a QWeather account. This document will introduce how to register, log in, retrieve your password and manage your account.
+Learn how to register and manage your account information.
 
 ## Register
 
-To register a QWeather account is very easy, please visit [QWeather ID Center](https://id.qweather.com/#/register).
+You need to use email and cell phone to [register an account](https://id.qweather.com/register), for account security and getting technical updates, your user information should be real and valid, QWeather developer services do not support the use of temporary/disposable email and cell phone numbers. If your contact information is outdated, please update it in time.
 
-You will need to provide a valid email address and cell phone number to complete the registration. When you set your password, for account security, please do not choose a simple password or a password that is the same as your other accounts, we recommend using a password that is at least 18 lengths and contains letters, numbers and special symbols.
+Regarding passwords, we recommend using a password that is at least 18 characters and contains letters, numbers and symbols. If you forget password, just simply [reset password](https://id.qweather.com/#/forget/process/start) with your registered email or cell phone.
 
-## Login
+## User information
 
-If you are connected to a social media account (we support WeChat/Apple ID/Google), you can log in with these social media accounts. Or use the registered email/phone number + password to login.
+#### Developer ID and API Host
 
-## Password reset
+View your developer ID and API Host in [Console Setting](https://console.qweather.com/setting).
 
-If you forget your password, please reset your password at [QWeather ID Center](https://id.qweather.com/#/forget/process/start)
+#### Name
 
-## Lost registration information and password
+1. [Go to Console Setting](https://console.qweather.com/setting)
+2. Edit your name in the Developer information section at the top of the page.
+3. Click "Save" next to it.
 
-If your registered email or cell phone is no longer available, or if you have forgotten your registered email or cell phone, please submit your application as follows.
+#### Contact and password
 
-1. Download [Application for Reset Account](https://cdn.qweather.com/misc/reset-account-information-application.pdf)
-2. Print it and fill it out as required
-3. Send copy of Application to support@qweather.com
-4. We will complete the review within 5-10 days, if your application is approved, a new password will be sent to your registered email or cell phone
+Please go to [User Center](https://id.qweather.com) to view and edit your email, phone number, social media account and password.
 
-> **Tip:** Due to to security reasons, we cannot guarantee that your application will be approved, no matter whether you have submitted enough information or not, and we will not inform you if your application fails to be approved.
+#### Bill information
 
-## Edit contact information
+1. [Go to Console - Bill information](https://console.qweather.com/finance/contact)
+2. Edit information
+3. Click "Save" button.
 
-You can edit your email and phone number at [Console-Settings-Account](https://console-test.qweather.com/#/user/space). 
+#### VAT invoice information
+
+1. [Go to Console - VAT information](https://console.qweather.com/finance/contact)
+2. Edit information
+3. Click "Save" button.
+
+#### Organization information
+
+See [Change organization information](/docs/account/developers/#change-organization-information).
+
+## Close service
+
+You can close developer services if you no longer using it.
+
+> **Warning:**
+> - Close action cannot be undone.
+> - All user data, develop data and statistic history will be deleted.
+> - Transaction and VAT invoice will be retained for compliance purposes, but the user data contained therein will be removed and unrecoverable.
+{:.bqdanger}
+
+In order to protect your rights and account security, the following conditions need to be met to close the service:
+
+1. [Go to Console Setting](https://console.qweather.com/setting)
+3. Click “Check” button on the Close Services page.
+4. For account security, there are some conditions that need to be met to close the service:
+    - Remove all projects: please stop API requests and remove all projects and credentials, complete remove projects need to be synchronized across multiple data nodes, this process may take 1-3 hours.
+    - No unpaid bills: if so, please make payment first.
+    - No accrued charges: the accrued charges should be 0. Otherwise, please click "Settle" button and pay the bill.
+    - No positive balance: the balance should be 0, otherwise please withdraw all positive balance.
+    - No VAT invoices in application: please wait for the invoice to be issued or cancel the application.
+5. Once all checks have been passed, click “Next”.
+6. Enter the verification code to identify yourself.
+7. On the final confirmation page, enter your developer ID and click “I confirm close service”.
+
+You will be notified by email when the services are closed.
 
 ## Delete account {#delete-account}
 
-You will not be charged any fees when you stop accessing our weather service, so you can keep your account and get started quickly when you need to use it again.
+You have to close developer services first, and then visit [User Center](https://id.qweather.com) to delete the account afterwards.
 
-If you want to delete your account permanently, please read the following carefully:
+Please be aware:
 
 - Delete action cannot be undone
-- Delete action will permanently delete all the information in the account, including the projects you created, KEY, orders, statistics, QWeather APP sync information, etc.
-- You can no longer use this account for other QWeather services, such as QWeather APP,
+- Delete action will permanently delete all the information in the account, including user information, development information, statistics, QWeather APP sync information, etc.
+- You can no longer use this account for other QWeather products and services.
 - Even if you re-register your account with the same information, the deleted information will not be available again.
 
-We may not immediately respond to your account deletion request if:
-
-- There are outstanding billing in the account
-- There is an unused balance in your account
-- You are a organization developer
-- There are still requests for the account within 30 days
-- Account has been suspended
-
-To delete your account, please go to [QWeather ID Center-Account Settings](https://id.qweather.com/) and click the "Delete Account" button at the bottom.
+During the deletion process, we will verify your identity to ensure that it is you.
 
 

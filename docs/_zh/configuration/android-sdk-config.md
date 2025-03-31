@@ -7,44 +7,50 @@ ref: config-android
 这篇文档将介绍如何配置和风天气开发服务中的Android SDK。
 
 > **隐私声明：**和风天气Android SDK**不需要电话、位置、设备唯一标识符等任何特殊权限**，我们不会也无法通过本SDK收集用户隐私信息。
-     
-## 下载 {#download}
 
-|版本|日期|MD5|
-|---|---|---|
-|{{ site.data.v.android.version }} [下载]({{ site.data.v.android.dllink }})|{{ site.data.v.android.date }} [更新记录](https://blog.qweather.com/release/sdk/) |`{{ site.data.v.android.md5 }}`|
+**适配版本**
 
-## 创建项目和凭据 {#create-project-and-credential}
+Android 8.0+, minSDK 21
 
-请确保已经创建了项目和凭据，请参考[项目](/docs/configuration/project-and-key/)和[身份认证](/docs/authentication/)。
+## 第1步: 创建项目和凭据 {#step-1-create-project-and-credential}
 
-## 适配版本 {#os-requirement}
+请确保已经创建了[项目和凭据](/docs/configuration/project-and-key/)，并已了解如何使用[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
 
-Android 4.4+
+## 第2步: 安装SDK {#step-2-install-sdk}
 
-## 工程配置 {#project-configuration}
+下载最新版本：[QWeather Android SDK {{ site.data.v.android.version }}]({{ site.data.v.android.dllink }}) *(MD5:`{{ site.data.v.android.md5 }}`)*
 
-1. 解压文件，将文件夹内jar放入您的工程，并且引用
-2. 配置Android Manifest 添加权限
+将JAR文件复制到`app/libs/`目录:
 
-**权限列表**
-
-权限说明 | 代码
---------- | -------------
-允许连接网络 | android.permission.INTERNET
-
-
-**引用库**
-
-```
-    compile 'com.squareup.okhttp3:okhttp:3.12.12' （3.12.12+）
-    compile 'com.google.code.gson:gson:2.6.2'   (2.6.2+)
+```bash
+YOUR-PROJECT/
+├── app/
+│   ├── libs/
+│   │   └── QWeather_Public_Android_V{{ site.data.v.android.version }}.jar
+│   ├── src/
+│   └── build.gradle
 ```
 
-**混淆**
+修改Gradle配置`app/build.gradle`文件：
 
-请在您的混淆文件proguard-rules.pro中加入如下代码
-请注意您引用的版本
+```bash
+dependencies {
+    // 添加以下配置
+    implementation files('libs/QWeather_Public_Android_V{{ site.data.v.android.version }}.jar')
+    
+    // 或者批量添加所有JAR
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+```
+
+引用库
+
+```
+implementation libs.gson
+implementation libs.okhttp
+```
+
+请在混淆文件`proguard-rules.pro`中加入如下代码
 
 ```java
 //  排除okhttp
@@ -57,63 +63,49 @@ Android 4.4+
  -dontwarn com.qweather.sdk.**
  -keep class com.qweather.sdk.** { *;}
 ```
- 
-## 数据访问配置 {#data-access-configuration}
 
-**日志功能**
+## 第3步: 添加API Host和Token {#step-3-add-api-host-and-token}
 
-SDK 不再提供日志功能， 错误信息可由回调函数 OnError 中的 Throwable 对象提供
-
-**账户初始化**
+> **提示：**Android SDK仅支持[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
 
 使用 SDK 时，需提前进行账户初始化（全局执行一次即可）
 
+将代码中的`YOUR_HOST`和`YOUR_TOKEN`替换为您的[API Host](/docs/configuration/api-config/#api-host)和[JWT身份认证](/docs/configuration/authentication/)：
+
 ```java
-HeConfig.init("PublicId", "PrivateKey");
+QWeather.getInstance(MainActivity.this, "{YOUR_HOST}") // 初始化服务地址
+        .setTokenGenerator(new TokenGenerator() { // 设置令牌生成器
+                        @Override
+                        public String generator() {
+                             // 生产环境中应在此处实现令牌刷新逻辑，而非硬编码
+                            return "{YOUR_TOKEN}"; // 返回用于 API 认证的 JWT 令牌
+                        }
+                    });
 ```
 
-**设置订阅版本**
+## 示例代码 {#sample-code}
 
-默认为标准订阅，如使用免费订阅，可通过以下方法进行调整（全局执行一次即可）
- 
-```java
-//切换至免费订阅
-HeConfig.switchToDevService();
-//切换至标准订阅
-HeConfig.switchToBizService();
-```
-
-**数据访问示例**
-
-根据您的需求调用不同的方法，接口回调方法中的参数就是接口返回的数据类
+请求北京实时天气。
 
 ```java
-/**
- * 实况天气数据
- * @param location 所查询的地区，可通过该地区ID、经纬度进行查询经纬度格式：经度,纬度
- *                 （英文,分隔，十进制格式，北纬东经为正，南纬西经为负)
- * @param lang     (选填)多语言，可以不使用该参数，默认为简体中文
- * @param unit     (选填)单位选择，公制（m）或英制（i），默认为公制单位
- * @param listener 网络访问结果回调
- */
+WeatherParameter parameter = new WeatherParameter("101010100")
+                .lang(Lang.ZH_HANS)
+                .unit(Unit.METRIC);
 
-QWeather.getWeatherNow(MainActivity.this, "101010300", Lang.ZH_HANS, Unit.METRIC, new QWeather.OnResultWeatherNowListener() {
+QWeather.instance.weatherNow(parameter, new Callback<WeatherNowResponse>() {
     @Override
-    public void onError(Throwable e) {
-        Log.i(TAG, "getWeather onError: " + e);
+    public void onSuccess(WeatherNowResponse response) {
+        Log.i(TAG, response.toString());
     }
 
     @Override
-    public void onSuccess(WeatherNowBean weatherBean) {
-        Log.i(TAG, "getWeather onSuccess: " + new Gson().toJson(weatherBean));
-        //先判断返回的status是否正确，当status正确时获取数据，若status不正确，可查看status对应的Code值找到原因
-        if (Code.OK == weatherBean.getCode()) {
-            WeatherNowBean.NowBaseBean now = weatherBean.getNow();
-        } else {
-            //在此查看返回数据失败的原因
-            Code code = weatherBean.getCode();
-            Log.i(TAG, "failed code: " + code);
-        }
+    public void onFailure(ErrorResponse errorResponse) {
+        Log.i(TAG,errorResponse.toString());
+    }
+
+    @Override
+    public void onException(Throwable e) {
+        e.printStackTrace();
     }
 });
 ```

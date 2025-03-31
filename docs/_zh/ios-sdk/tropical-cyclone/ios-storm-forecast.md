@@ -4,38 +4,56 @@ tag: [guide, ios, storm, forecast]
 ref: 3-sdk-ios-storm-forecast
 ---
 
-台风预报iOS SDK提供全球主要海洋流域的台风预测位置、等级、气压、风力、速度。
+台风预报提供全球主要海洋流域的热带低气压（台风）的预报信息，包括台风预测位置、等级、气压、风力、速度。
 
-> **提示：**如果查询的台风已经结束，则返回的数据为空，建议先通过台风列表接口获取台风的状态。
+> 如果查询的台风已经结束，则返回的数据为空，建议先通过[台风列表](/docs/ios-sdk/tropical-cyclone/ios-storm-list/)获取台风的状态
 
-| 接口代码（枚举）            | 接口     | 数据类                 |
-| --------------------------- | -------- | ---------------------- |
-| INQUIRE_TYPE_STORM_FORECAST | 台风预报 | StormForecastBaseClass |
+| 接口代码                | 接口      | 数据类                 |
+| ---------------------- | -------- | --------------------- |
+| tropicalStormForecast | 台风预报   | StormForecastResponse |
 
-### 请求参数
+## 参数
 
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
+**StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
-### 示例代码
+## 示例代码
+
+**Swift**
+
+```swift
+Task{
+    do {
+        let parameter = StormParameter(stormid: "NP_2421")
+        let response = try await QWeather.instance
+            .tropicalStormForecast(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
+```
+
+**Objective-C**
 
 ```objc
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-    QWeatherConfigInstance.stormID = @"NP_2102";
-    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_STORM_FORECAST WithSuccess:^(StormForecastBaseClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
-    }];
+StormParameter *parameter = [StormParameter instanceWithStormid:@"NP_2421"];
+[QWeatherObjc tropicalStormForecast:parameter completionHandler:^(StormForecastResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```
      
-### 返回数据
+## 返回数据
+
+**StormForecastResponse**
 
 {% include api-response.html group="storm" type="forecast" prefix="forecast"  %}
 

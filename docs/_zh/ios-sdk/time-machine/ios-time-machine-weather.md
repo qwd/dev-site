@@ -15,31 +15,58 @@ ref: 7-sdk-ios-historical-weather
 > * 所需要的城市或坐标
 > * 所需要的时间范围
 
-| 接口代码（枚举）| 接口                         | 数据类                     |
-| ------------ | ------------------------------- | -------------------------- |
-| INQUIRE_TYPE_HISTORICAL_WEATHER| 历史天气      | WeatherHistoricalBaseClass |
+| 接口代码           | 接口          | 数据类                     |
+| ---------------   | ----------- | -------------------------- |
+| historicalWeather | 历史天气      | HistoricalWeatherResponse |
 
-### 请求参数
+## 参数
 
-请求参数包括必选和可选参数，如不填写可选参数将使用其默认值。
+**HistoricalWeatherParameter**
 
 {% include params.html p="location-id date10back lang-def unit-def" %}
 
-### 示例代码
+## 示例代码
+
+**Swift**
+
+```swift
+Task{
+    do {
+        let threeDaysAgo = Calendar.current.date(byAdding: .day, value: -3, to: Date())!
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        let date = formatter.string(from: threeDaysAgo)
+        let parameter = HistoricalWeatherParameter(location: "101010100", date: date)
+        let response = try await QWeather.instance
+            .historicalWeather(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
+```
+
+**Objective-C**
 
 ```objc
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-    QWeatherConfigInstance.location = @"101010100";
-    QWeatherConfigInstance.date = @"20200425";
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_HISTORICAL_WEATHER WithSuccess:^(WeatherHistoricalBaseClass  *responseObject) {
-        
-        NSLog(@"描述->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
+NSDate * threeDaysAgo = [[NSCalendar currentCalendar] dateByAddingUnit:NSCalendarUnitDay value:-3 toDate:[NSDate date] options:0];
+NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+[formatter setDateFormat:@"yyyyMMdd"];
+NSString * date = [formatter stringFromDate:threeDaysAgo];
+HistoricalWeatherParameter *parameter = [HistoricalWeatherParameter instanceWithLocation:@"101010100" date:date lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
+[QWeatherObjc historicalWeather:parameter completionHandler:^(HistoricalWeatherResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```
-### 返回数据
+## 返回数据
+
+**HistoricalWeatherResponse**
 
 {% include api-response.html group="hisweather" type="daily hourly" prefix="weatherDaily weatherHourly" update=0 %}

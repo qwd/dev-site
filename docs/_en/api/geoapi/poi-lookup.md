@@ -6,17 +6,17 @@ ref: 3-api-poi-lookup
 
 POI Lookup API provides basic information of POI(scenic spot, tide stations, currents stations, etc.)
 
-## Request URL
+## Endpoint
 
 {% include api-url.html flag="geo-poi-lookup" %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-geo geo-type city number lang-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

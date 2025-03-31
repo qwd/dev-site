@@ -6,17 +6,17 @@ ref: 1-api-tide
 
 Global tidal data for the next 10 days, including tide table and hourly tide forecast data.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html flag="tide" %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-p2 date10" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

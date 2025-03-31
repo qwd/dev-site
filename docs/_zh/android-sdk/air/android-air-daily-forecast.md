@@ -1,55 +1,57 @@
 ---
-title: 空气质量预报
+title: 空气质量每日预报
 tag: [guide, android, air, daily]
 ref: 2-sdk-android-air-daily-forecast
 ---
 
 空气质量每日预报Android SDK，支持全国3000+市县区空气质量预报数据的查询，包括AQI预报、首要污染物预报、空气质量等级预报。
 
-| 接口代码| 接口说明             | 数据类       |
-| ------------------- | -------- | ------------ |
-| getAir5D| 空气质量5天预报数据  | AirDailyBean |
+> **注意：**[空气质量API v1（新版）](/docs/api/air-quality/)现已发布，请尝试使用并升级到新版本。
 
-### 接口参数说明
+| 接口代码| 接口             | 数据类       |
+| ------------------- | -------- | ------------ |
+| air5d| 空气质量5天预报  | AirDailyResponse |
+
+## 参数
+
+**AirParameter**
 
 {% include params.html p="location-def lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
 
 /**
- * 空气质量5天预报数据
+ * 空气质量5天预报
  */
 
-QWeather.getAir5D(Context context, String location, Lang lang, QWeather.OnResultAirDailyListener listener)
+public void air5d(AirParameter parameter, Callback<AirDailyResponse> callback);
 
 ```
 
-### AirDailyBean 属性
+## 返回数据
 
-| 属性        | 说明                       | 示例值                |
+**AirDailyResponse**
+
+{% include api-response.html group="air" type="daily"  prefix="daily" %}
+
+<!-- | 属性        | 说明                       | 示例值                |
 | ----------- | -------------------------- | --------------------- |
 | getCode     | 参考[状态码](/docs/resource/status-code/)                    | 200  |
-| getAirDaily | 空气质量 AQI 5天预报       | List&lt;DailyBean&gt; |
+| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/air/beijing-101010100.html |
+| getDaily | 空气质量 AQI 5天预报       | List&lt;AirDaily&gt; |
 | getRefer    | Refer 数据来源以及数据授权 | Refer                 |
-| getBasic    | Basic 基础信息             | Basic                 |
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| 属性          | 说明                     | 示例值               |
-| ------------- | ------------------------ | -------------------- |
-| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/air/beijing-101010100.html |
-
-**DailyBean AQI城市逐天预报**
+**AirDaily**
 
 | 属性        | 说明                          | 示例值     |
 | ----------- | ----------------------------- | ---------- |
@@ -57,8 +59,8 @@ QWeather.getAir5D(Context context, String location, Lang lang, QWeather.OnResult
 | getAqi      | 空气质量指数，AQI和PM25的关系 | 74         |
 | getPrimary  | 主要污染物                    | PM2.5       |
 | getLevel    | 实时空气质量指数等级          | 2          |
-| getCategory | 实时空气质量指数级别          | 良         |
+| getCategory | 实时空气质量指数级别          | 良         | -->
 
-### 空气质量指数等级
+## 空气质量指数等级
 
 请查看[空气质量信息](/docs/resource/air-info/)。

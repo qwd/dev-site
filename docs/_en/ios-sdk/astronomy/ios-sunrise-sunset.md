@@ -7,34 +7,57 @@ ref: 1-sdk-ios-sun
 Get the sunrise and sunset times for any location around the world for the next 60 days.
 
 
-| Interface code (Enum)            | Interface     | Class       |
+| Interface code            | Interface     | Class       |
 | -------------------------- | -------- | ------------ |
-| INQUIRE_TYPE_ASTRONOMY_SUN | Sunrise and sunset data | SunBaseModel |
+| astronomySun | Sunrise and sunset data | AstronomySunResponse |
 
-### Request Parameters
+## Parameters
 
-If no optional parameters are set, the default value will be used.
+**AstronomySunParameter**
 
 {% include params.html p="location-def date60" %}
 
-### Sample Code
+## Sample code
+
+**Swift**
+
+```swift
+Task {
+    do {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyMMdd"
+        let date = formatter.string(from: Date())
+        let parameter = AstronomySunParameter(location: "101010100", date: date)
+        let response = try await QWeather.instance
+            .astronomySun(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
+```
+
+**Objective-C**
 
 ```objc
-QWeatherConfigInstance.publicID = @"publicID";
-QWeatherConfigInstance.appKey = @"key";
-QWeatherConfigInstance.appType = APP_TYPE_BIZ;    
-QWeatherConfigInstance.location = @"101010100";
-QWeatherConfigInstance.date = @"20200425";
-[QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_ASTRONOMY_SUN WithSuccess:^(SunBaseModel  *responseObject) {
-        
-    NSLog(@"描述->%@",[responseObject description]);
-        
-} faileureForError:^(NSError *error) {
-    NSLog(@"error->%@",error);
-        
+NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+[formatter setDateFormat:@"yyyyMMdd"];
+NSString * date = [formatter stringFromDate:[NSDate date]];
+AstronomySunParameter *parameter = [AstronomySunParameter instanceWithLocation:@"101010100" date:date];
+[QWeatherObjc astronomySun:parameter completionHandler:^(AstronomySunResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
 }];
 ```
      
-### Response
+## Response
+
+**AstronomySunResponse**
 
 {% include api-response.html group="astro" type="sun" prefix="nil" %}

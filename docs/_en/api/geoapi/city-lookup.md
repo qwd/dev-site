@@ -10,13 +10,13 @@ With the City Lookup, you can get the basic information of the city, including t
 
 In addition, GeoAPI - City Lookup can also help you to implement fuzzy search in your APP, users only need to type 1 or 2 words to get results.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html apidata="geo-city-lookup" %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-geo" %}
 
@@ -32,7 +32,7 @@ All parameters are separated by `&`. If no optional parameters are set, the defa
 
 {% include params.html p="range number lang-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html apidata="geo-city-lookup" %}
 

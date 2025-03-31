@@ -4,19 +4,17 @@ tag: [terms, restriction]
 ref: terms-restriction
 ---
 
-In order for developers to use QWeather services more fairly and compliantly, you need to agree to our various terms of service and restrictions. In this document, we will list some common usage restrictions and explanations for better understanding.
+In order for developers to use QWeather services more fairly and compliantly, you need to agree to our various [terms and restrictions](/en/docs/terms/tos/). In this document, we will list some common usage restrictions and explanations for better understanding.
 
 ## Non-compliant products
 
 Your product (e.g. APP or website, etc.) uses all QWeather services, it must comply with Chinese laws and regulations, otherwise your account will be suspended.
 
-Refer to [Developers Terms of Service - Section 4.1](https://www.qweather.com/en/terms/developers-tos).
-
 ## Invalid requests
 
 When your data response is not `code=2xx`, you should check your program as this is an invalid request. For all invalid requests, if it exceeds a reasonable range, it will be regarded as an attack on our services. At this time, you may no longer be able to use our service or your account will be suspended.
 
-Refer to [Optimize Requests](/en/docs/best-practices/optimize-requests/) and [Developers Terms of Service - Section 4.7](https://www.qweather.com/en/terms/developers-tos).
+Refer to [Optimize Requests](/en/docs/best-practices/optimize-requests/) and [Developers License - Section 2.4.2](https://www.qweather.com/en/terms/developers-eula).
 
 ## Outstanding
 
@@ -26,7 +24,7 @@ See [Billing and Payment](/en/docs/finance/billing-and-payment/).
 
 ## No attribution
 
-According to our licensing and data source requirements, you must give attribution in products that use QWeather Develop Service, otherwise you may not be able to continue using any services.
+According to our licensing and data source requirements, you must give attribution in products that use QWeather Developer Services, otherwise you may not be able to continue using any services.
 
 Refer to [Attribution](/en/docs/terms/attribution/).
 
@@ -38,6 +36,6 @@ Refer to [Developers License](https://www.qweather.com/en/terms/developers-eula)
 
 ## Account suspension
 
-When your account is suspended, you cannot use any QWeather Develop Service, and your payment method and account information cannot be used in the new account. Depending on the severity of your violation, we reserve the right to submit your information to judicial authorities.
+When your account is suspended, you cannot use any QWeather Developer Services, and your payment method and account information cannot be used in the new account. Depending on the severity of your violation, we reserve the right to submit your information to judicial authorities.
 
 See [Account Suspension](/en/docs/account/suspension/).

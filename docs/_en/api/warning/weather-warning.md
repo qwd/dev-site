@@ -8,17 +8,17 @@ Get officially issued real-time severe weather warning data around the world.
 
 > **Hint:** For the implementation of weather warnings, see [Resource - Warning Info](/en/docs/resource/warning-info/) in advance.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html flag="weather-warning" dev=true %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-def lang-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

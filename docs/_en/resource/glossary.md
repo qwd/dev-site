@@ -99,8 +99,10 @@ The Maximum Connections that an API or SDK service can carry. When the connectio
 
 QPM (Query Per Minute), the number of requests per minute. Requests exceeding the QPM will return an error code and resume after the next minute.
 
-- Refer to [Subscription Comparison](/en/docs/finance/subscription/#comparison) for the value of QPM.. 
-- QPM is calculated as separate projects, all data KEYs under one project share QPM, and different projects calculate QPM separately.
+- Pay-as-you-go subscription: 3000
+- Premium subsription: 50000+
+
+QPM is calculated as separate projects, all data KEYs under one project share QPM, and different projects calculate QPM separately.
 
 ## Wind Scale
 

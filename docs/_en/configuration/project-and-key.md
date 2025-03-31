@@ -1,46 +1,82 @@
 ---
 title: Project and Credential
 tag: [config, project]
-description: Project and Credential are important configuration for QWeather API, this document will introduce how to set up them.
+redirect_from: /en/docs/configuration/project-and-key/
 ref: config-project
 ---
-**Project** and **Credential** are important configuration for QWeather API, this document will introduce how to set up them.
+
+Before you start requesting the API, you need to create the project and credentials.
 
 ## Project
 
 **Project** is the container for QWeather API, which can also be understood as a product you need to develop, such as a "travel app" or a "graduation design".
 
-### Create Project
+### Create project
 
-1. Go to [Console - Project](https://console.qweather.com/#/apps), and click the "Create Project" button.
-2. Set Project name, Project name can be up to 20 characters. You can modify the name later.
-3. Select [Subscription](/en/docs/finance/subscription/). If you choose Standard subscription, please ensure that your balance is ≥ ¥10.
-4. Click "Create" button.
+You can create up to 10 projects.
+
+1. [Go to Console - Project](https://console.qweather.com/project)
+2. Click the "Create Project" button in the upper right corner..
+3. Set Project name, Project name can be up to 20 characters. You can modify the name later.
+4. Click "Save" button.
 
 ### Delete Project
 
 > **Warning:** The deletion action is irrevocable, the Project and all credentials in this Project will be permanently deleted, and you can no longer use this Project and credentials for API authentication.
 {:.bqdanger}
 
-1. Click "Edit" button on the Project section.
-2. Click "Delete" button. 
-3. Enter the name of the Project and click “Delete” button to complete the deletion, or click the “Cancel” button to terminate the deletion.
+1. Click the project name you wish to delete.
+2. Click the “Delete” button at the bottom of the page.
+3. Enter the project name and click “Confirm Delete”.
+4. You will receive a verification email, enter the verification code.
+5. Complete the deletion
 
 ## Credential
 
-**Credentials** are used for API authentication, which include the Ed25519 key (for JWT authentication) and the API KEY. We recommend creating separate credentials for various usage scenarios, such as “For Website” or “Test Only”. Learn more about [API Security Guidelines](/en/docs/best-practices/security-guidelines/) and [API Authentication](/en/docs/authentication/).
+**Credentials** are used for API authentication and is your core sensitive data. See [security guidelines](/en/docs/best-practices/security-guidelines/) for a secure request API. See [authentication](/en/docs/configuration/authentication/) for how authentication works.
 
-### Add Credential
+Depending on the authentication method, there are JWT credentials and API KEY credentials. Up to 20 credentials are created per project.
 
-1. Go to [Console - Project](https://console.qweather.com/#/apps) and select any Project you want to add credentials to
-2. Click the "Add Credential" button on the Credentials section.
-3. Select authentication method, we recommend JWT for higher level security. See [JWT](/en/docs/authentication/jwt/) and [API KEY](/en/docs/authentication/apikey/).
-4. Set credential name.
-5. Click "Create" button.
+### Add credential for JWT
 
-### Setup restrictions
+To add JWT credentials, you need to create Ed25519 public and private keys first, see [Authentication - Generate Ed25512](/docs/configuration/authentication/#prerequisites).
 
-You can restrict the use of credentials to higher levels of security. See [Security Restrictions](/en/docs/best-practices/security-guidelines/#security-restriction).
+1. [Go to Console - Project](https://console.qweather.com/project)
+2. Choose the project where you want to add the public key.
+3. Click the "Add Credential" button in the credential section.
+4. Enter the credential name.
+5. Select the authentication method: **JSON Web Token**.
+6. Use any text editor to open the public key (like ed25519-public.pem which was generated in the previous step), and copy the entire contents of it. The content looks like:
+   ```
+   -----BEGIN PUBLIC KEY-----
+   MCowBQYDK2VwAyEAARbeZ5AhklFG4gg1Gx5g5bWxMMdsUd6b2MC4wV0/M9Q=
+   -----END PUBLIC KEY-----
+   ```
+7. Paste the public key in the textarea.
+8. Click "Save" button
+
+You will see the **Create Credential Success** page and it shows the creation date, credential ID and SHA-256. For security reasons, you cannot view this public key in the Console again. However, you can use the SHA-256 value of the public key to compare it with the local SHA-256 in order to confirm that the correct public key was used.
+
+### Add credential for API KEY
+
+It is recommended to use [JWT authentication](/docs/configuration/authentication/#json-web-token) for improved security. We will limit the volume of daily requests for authentication using API KEY from 2027-01-01.
+
+1. [Go to Console - Project](https://console.qweather.com/project)
+2. Choose the project where you want to add the public key.
+3. Click the "Add Credential" button in the credential section.
+4. Enter the credential name.
+5. Select the authentication method: **API KEY**.
+6. Click "Save" button.
+
+### Security restrictions
+
+For a Higher level of security for credentials, we recommend adding security restrictions to the credentials.
+
+1. [Go to Console - Project](https://console.qweather.com/project)
+2. Select the credentials you wish to add security restrictions
+3. Scroll down to the App Restrictions section and refer to [App Restrictions](/docs/best-practices/security-guidelines/#app-restrictions) for details and rules.
+4. Continue to scroll down to the API Restrictions section and refer to [API Restrictions](/docs/best-practices/security-guidelines/#api-restrictions) for details and rules.
+
 
 ### Delete credential
 
@@ -49,10 +85,7 @@ You can restrict the use of credentials to higher levels of security. See [Secur
 
 1. Select the KEY you want to delete.
 2. Click "Delete" button. 
-3. Enter the name of the KEY and click “Delete” button to complete the deletion, or click the “Cancel” button to terminate the deletion.
-
-## Other rules
-
-- Up to 10 Projects can be created.
-- Up to 20 Credentials can be added to each Project.
+3. Enter the key name and click “Confirm Delete”.
+4. You will receive a verification email, enter the verification code.
+5. Complete the deletion
 

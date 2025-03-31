@@ -8,38 +8,53 @@ Get officially issued real-time severe weather warning data around the world.
 
 > **Tips:** For more warning description, see [Resource - Warning Info](/en/docs/resource/warning-info/).
 
-| Interface code (Enum) | Interface       | Class            |
+| Interface code | Interface       | Class            |
 | --------------------- | --------------- | ---------------- |
-| INQUIRE_TYPE_WARNING  | Weather warning | WarningBaseClass |
+| warningNow  | Weather warning | WarningResponse |
 
-### Request Parameters
+## Parameters
 
-If no optional parameters are set, the default value will be used.
+**WarningNowParameter**
 
 {% include params.html p="location-def lang-def" %}
 
 
-### Sample Code
+## Sample code
+
+**Swift**
+
+```swift
+    Task {
+        do {
+            let parameter = WarningNowParameter(location: "101010100")
+            let response = try await QWeather.instance
+                .warningNow(parameter)
+            print(response)
+        } catch QWeatherError.errorResponse(let error) {
+            print(error)
+        } catch {
+            print(error)
+        }
+    }
+```
+
+**Objective-C**
 
 ```objc
- 
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-    QWeatherConfigInstance.location = @"101010100";
-    QWeatherConfigInstance.lang = @"";
-    QWeatherConfigInstance.unit = @"";
-    [QWeatherConfigInstance weatherWithInquireType: INQUIRE_TYPE_WARNING WithSuccess:^(WarningBaseClass *responseObject) {
-        
-        NSLog(@"Description->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
+     WarningNowParameter *parameter = [WarningNowParameter instanceWithLocation:@"101010100" lang:@(LangZH_HANS)];
+    [QWeatherObjc warningNow:parameter completionHandler:^(WarningResponse * _Nullable response, NSError * _Nullable error) {
+        if (response) {
+            NSLog(@"%@", response.description);
+        }
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
 ```
 
-### Response
+## Response
+
+**WarningResponse**
 
 {% include api-response.html group="warning" type="warning" prefix="warning" %}
 

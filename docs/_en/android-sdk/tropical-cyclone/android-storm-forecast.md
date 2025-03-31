@@ -9,47 +9,44 @@ Storm Forecast provides tropical cyclones information for a specific tropical cy
 > **Note:** For inactive storms, the returned data is **NULL**, please get the storms status by [Storm List](/en/docs/android-sdk/tropical-cyclone/android-storm-list/) first.
 
 
-| Interface Code| Interface          | Class  |
+| Interface code| Interface          | Class  |
 | -------- | ---------------- | ------- |
-| getStormForecast| Storm forecast data  | StormForecastBean |
+| tropicalStormForecast | Storm forecast data  | StormForecastResponse |
 
-### Parameter
+## Parameters
+
+**StormParameter**
 
 {% include params.html p="stormid-sdk" %}
 
-### Sample Code
+## Sample code
 
 ```java
-QWeather.getStormForecast(Context context, String stormId, OnResultTropicalStormForecastListener listener);
+public void tropicalStormForecast(StormParameter parameter, Callback<StormForecastResponse> callback)
 ```
 
-### Properties
+## Response
 
-Properties of TideBean
+**StormForecastResponse**
 
-| Property            | Description     | Example                    |
+{% include api-response.html group="storm" type="forecast" prefix="forecast"  %}
+
+<!-- | Property            | Description     | Example                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | Status code, please refer to [Status Code](/en/docs/resource/status-code/) | [Status Code](/docs/resource/status-code/)        |
-| getBasic         | Basic Informatio | Basic       |
-| getRefer         | Reference data, includes data source, statements and license | Refer  |
-| getForecastList | Storm forecast data | List<StormForecastBaseBean> |
-
-**Basic**
-
-| Property           | Description         | Example             |
-| -------------- | ------------ | ------------------ |
 | getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time)  | 2017-10-25T04:34+08:00      |
 | getFxLink |Responsive web page of this data, for embedded in website or APP  | https://www.qweather.com |
+| getForecast | Storm forecast data | List&lt;StormForecast&gt; |
+| getRefer         | Reference data, includes data source, statements and license | Refer  |
 
 **Refer**
 
-| Property           | Description         | Example             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather      |
-| getLicenseList | Data license     | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
-
-**StormForecastBaseBean**
+**StormForecast**
 
 | Property         | Description                                                                    | Example               |
 | ------------ | ----------------------------------------------------- | -------------------- |
@@ -61,7 +58,7 @@ Properties of TideBean
 | getWindSpeed       | Maximum wind speed near the strom                       |  18    |
 | getMoveSpeed       | Storm moving speed                   |   27   |
 | getMoveDir       | Storm moving direction                      |    SW    |
-| getMove360       | Storm movement direction in azimuth degree          |    332    |
+| getMove360       | Storm movement direction in azimuth degree          |    332    | -->
 
 ### Typhoon level
 

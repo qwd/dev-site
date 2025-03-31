@@ -6,45 +6,47 @@ ref: 1-sdk-android-air-now
 
 实时空气质量Android SDK，支持中国3000+市县区以及1700+国控站点实时空气质量的查询，包括AQI数值、空气质量等级、首要污染物、PM10、PM2.5、臭氧、二氧化氮、二氧化硫、一氧化碳数值。
 
-| 接口代码| 接口说明           | 数据类     |
-| ---------------- | --------- | ---------- |
-| getAirNow| 空气质量实况数据  | AirNowBean |
+> **注意：**[空气质量API v1（新版）](/docs/api/air-quality/)现已发布，请尝试使用并升级到新版本。
 
-### 接口参数说明
+| 接口代码| 接口           | 数据类     |
+| ---------------- | --------- | ---------- |
+| airNow| 空气质量实况数据  | AirNowResponse |
+
+## 参数
+
+**AirParameter**
 
 {% include params.html p="location-def lang-def" %}
 
-### 示例代码
+## 示例代码
 
 ```java
-QWeather.getAirNow(Context context, String location, Lang lang, QWeather.OnResultAirNowListener listener)
+public void airNow(AirParameter parameter, Callback<AirNowResponse> callback);
 ```
 
-### AirNowBean 属性
+## 返回数据 
 
-| 属性                 | 说明                       | 示例值                        |
+**AirNowResponse**
+
+{% include api-response.html group="air" type="now station" prefix="now station"  %}
+
+<!-- | 属性                 | 说明                       | 示例值                        |
 | -------------------- | -------------------------- | ----------------------------- |
 | getCode              | 参考[状态码](/docs/resource/status-code/)                    | 200    |
-| getAirNowStationBean | AQI站点实况                | List&lt;AirNowStationBean&gt; |
-| getNow               | AQI城市实况                | NowBean                       |
+| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
+| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/air/beijing-101010100.html |
+| getStation | AQI站点实况                | List&lt;AirStation&gt; |
+| getNow               | AQI城市实况                | AirNow                       |
 | getRefer             | Refer 数据来源以及数据授权 | Refer                         |
-| getBasic             | Basic 基础信息             | Basic                         |
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可     | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| 属性          | 说明                     | 示例值               |
-| ------------- | ------------------------ | -------------------- |
-| getUpdateTime | 接口更新时间             | 2017-10-25T04:34+08:00     |
-| getFxLink     | 所查询城市的天气预报网页 | https://www.qweather.com/air/beijing-101010100.html |
-
-**NowBean AQI城市实况**
+**AirNow**
 
 | 属性        | 说明                              | 示例值           |
 | ----------- | --------------------------------- | ---------------- |
@@ -60,7 +62,7 @@ QWeather.getAirNow(Context context, String location, Lang lang, QWeather.OnResul
 | getCo       | 一氧化碳                          | 0.3               |
 | getO3       | 臭氧                              | 20               |
 
-**AirNowStationBean AQI站点实况**
+**AirStation**
 
 | 属性        | 说明                              | 示例值           |
 | ----------- | --------------------------------- | ---------------- |
@@ -77,7 +79,7 @@ QWeather.getAirNow(Context context, String location, Lang lang, QWeather.OnResul
 | getSo2      | 二氧化硫                          | 30               |
 | getCo       | 一氧化碳                          | 0.3               |
 | getO3       | 臭氧                              | 20               |
-
+ -->
 
 
 ### 空气质量指数等级

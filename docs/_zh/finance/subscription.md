@@ -26,7 +26,7 @@ ref: finance-subscription
 
 标准订阅，是使用最广泛的订阅计划。使用标准订阅，你可以获取和风天气的所有开发服务，没有任何请求量的限制，支持全球加速和自动路由功能，因此你的应用可以部署在世界各地，而不用担心响应速度的问题。
 
-标准订阅采用按量计费模式，你只需要为你实际使用的部分付费，无需预付大量资金。标准订阅的价格是阶梯价格，意味着你的请求量越多，单价越低，参考[按量计费和定价](/docs/finance/pricing/)或使用[价格计算器](https://console.qweather.com/#/calculator)预估你的成本。标准订阅还支持节省计划，可以进一步的降低你的成本。了解[节省计划](/docs/finance/saving-plans/)。
+标准订阅采用按量计费模式，你只需要为你实际使用的部分付费，无需预付大量资金。标准订阅的价格是阶梯价格，意味着你的请求量越多，单价越低，参考[按量计费和定价](/docs/finance/pricing/)或使用[价格计算器](https://console.qweather.com/price-calculator)预估你的成本。标准订阅还支持节省计划，可以进一步的降低你的成本。了解[节省计划](/docs/finance/saving-plans/)。
 
 对于签约的企业开发者，标准订阅还支持定期付款功能，了解[定期付款](/docs/finance/billing-and-payment/#payment)。
 

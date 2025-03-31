@@ -8,21 +8,21 @@ ref: 1-api-sun
 
 > 在[逐天预报API](/docs/api/weather)中，也会返回对应天数的日出日落、月升月落和月相数据
 
-## 请求URL
+## 请求路径 {#endpoint}
 
 {% include api-url.html flag="sun" dev=true %}
 
-## 请求参数
+## 参数 {#parameters}
 
-请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
+#### 查询参数 {#query-parameters}
 
 {% include params.html p="location-def date60" %}
 
-## 请求示例
+## 请求示例 {#request-example}
 
 {% include api-url-example.html %}
 
-## 返回数据
+## 返回数据 {#response}
 
 {% include api-snippet.html flag="sun" %}
 

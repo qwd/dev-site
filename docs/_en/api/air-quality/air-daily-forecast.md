@@ -8,7 +8,7 @@ Air quality (AQI) dailay forecasts, pollutants, and health advice for the next 3
 
 We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn about the AQIs, pollutants, supported regions and more.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html apidata="air-daily-v1-coor" dev=true %}
 
@@ -20,7 +20,7 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 
 {% include params.html p="lang-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html apidata="air-daily-v1-coor" %}
 

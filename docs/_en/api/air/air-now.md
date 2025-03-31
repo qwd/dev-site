@@ -8,17 +8,17 @@ Real-time air quality for Chinese cities and 1,700 monitoring stations, includin
 
 > **Note:** [Air Quality API v1 (new)](/en/docs/api/air-quality/) is now available, please try to use and upgrade.
 
-## Request URL
+## Endpoint
 
 {% include api-url.html flag="air-now" dev=true %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="location-def lang-def" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

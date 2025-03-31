@@ -16,25 +16,42 @@ Weather indices are not available for all countries or regions. Currently, for C
 > If "All indices" is selected, no other indices can be selected.
 {:.bqwarning}
 
-| Index types     | Web API | iOS SDK           | Android SDK |
+| Index types     | Web API | iOS Indices  | Android Indices |
 | --------------- | ------- | ----------------- | ----------- |
-| All indices     | 0       | INDICES_TYPE_all  | ALL         |
-| Sports          | 1       | INDICES_TYPE_spt  | SPT         |
-| Car Wash        | 2       | INDICES_TYPE_cw   | CW          |
-| Dressing        | 3       | INDICES_TYPE_drsg | DRSG        |
-| Fishing         | 4       | INDICES_TYPE_fis  | FIS         |
-| UV Index        | 5       | INDICES_TYPE_uv   | UV          |
-| Travel          | 6       | INDICES_TYPE_tra  | TRA         |
-| Allergy         | 7       | INDICES_TYPE_ag   | AG          |
-| Comfort         | 8       | INDICES_TYPE_comf | COMF        |
-| Flu             | 9       | INDICES_TYPE_flu  | FLU         |
-| Air Pollution   | 10      | INDICES_TYPE_ap   | AP          |
-| Air-Conditioner | 11      | INDICES_TYPE_ac   | AC          |
-| Sun Glasses     | 12      | INDICES_TYPE_gl   | GL          |
-| Make Up         | 13      | INDICES_TYPE_mu   | MU          |
-| Air-Cure        | 14      | INDICES_TYPE_dc   | DC          |
-| Traffic         | 15      | INDICES_TYPE_ptfc | PTFC        |
-| SPF             | 16      | INDICES_TYPE_spi  | SPI         |
+| All indices     | 0       | ALL               | ALL         |
+| Sports          | 1       | SPT               | SPT         |
+| Car Wash        | 2       | CW                | CW          |
+| Dressing        | 3       | DRSG              | DRSG        |
+| Fishing         | 4       | FIS               | FIS         |
+| UV Index        | 5       | UV                | UV          |
+| Travel          | 6       | TRA               | TRA         |
+| Allergy         | 7       | AG                | AG          |
+| Comfort         | 8       | COMF              | COMF        |
+| Flu             | 9       | FLU               | FLU         |
+| Air Pollution   | 10      | AP                | AP          |
+| Air-Conditioner | 11      | AC                | AC          |
+| Sun Glasses     | 12      | GL                | GL          |
+| Make Up         | 13      | MU                | MU          |
+| Air-Cure        | 14      | DC                | DC          |
+| Traffic         | 15      | PTFC              | PTFC        |
+| SPF             | 16      | SPI               | SPI         |
+
+## Sample Code：
+
+Swift
+```swift
+let _ = Indices.SPT
+```
+
+Objective-C
+```objc
+Indices indices = IndicesSPT; 
+```
+
+Java:
+```java
+Indices indices = Indices.SPT; 
+```
 
 ## Index Level
 

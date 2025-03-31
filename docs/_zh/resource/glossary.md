@@ -100,8 +100,10 @@ API或SDK服务能够承载的最大连接数量。当连接超过当前应用�
 
 QPM (Query Per Minute)，每分钟请求数，超过每分钟请求数量的请求将返回错误代码，在下一分钟后恢复。
 
-- 不同订阅的QPM不相同。参考[订阅对比](/docs/finance/subscription/#comparison)。
-- QPM以单独项目计算，一个项目下所有数据KEY共享QPM，不同项目分别计算QPM。
+- 按量计费订阅: 3000
+- 高级订阅: 50000+
+
+QPM以单独项目计算，一个项目下所有数据KEY共享QPM，不同项目分别计算QPM。
 
 ## 风力等级 {#wind-scale}
 

@@ -1,27 +1,33 @@
 ---
-title: iOS SDK Config
+title: Set up iOS SDK
 tag: [config, ios]
 ref: config-ios
 ---
 
 This document will introduce how to configure the iOS SDK for QWeather API.
 
-> **Privacy Disclaimer:** QWeather iOS SDK **DOES NOT require any special permissions such as phone, location, device unique identifiers, etc.** We does not and cannot collect private data from this SDK. 
+**OS Requirement:**
 
-OS Requirement:
+- iOS 15.0+
+- macOS 11.0+
+- tvOS 15.0+
+- watchOS 8.0+
+- visionOS 1.0+
 
-- iOS 9.0+
-- macOS 10.10+
+## Step 1: Create project and credential
 
-> **Hint:** QWeather iOS SDK also includes macOS SDK.
-
-## Step 1: Create Project and Credential
-
-Make sure you have created a Project and Credential, see [Project and KEY](/en/docs/configuration/project-and-key/) and [Authentication](/en/docs/authentication/).
+Make sure you have created a Project and Credential, see [Project and KEY](/en/docs/configuration/project-and-key/) and [JWT authentication](/en/docs/configuration/authentication/#json-web-token).
 
 ## Step 2: Install SDK
 
 The latest version of iOS SDK is {{ site.data.v.ios.version }}([Release note](https://blog.qweather.com/release/sdk/)), and it supports the following installation methods:
+
+### Swift Package Manager
+
+You can also use Swift Package Manager to integrate iOS SDK, please refer to [Adding package dependencies to your app](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app).
+
+* SDK URL: [https://github.com/qwd/qweather-ios-sdk.git](https://github.com/qwd/qweather-ios-sdk.git)
+* Dependency Rule: Required {{ site.data.v.ios.version }}
 
 ### CocoaPods
 
@@ -31,14 +37,14 @@ QWeather iOS SDK can be installed via [CocoaPods](https://cocoapods.org/). Cocoa
 2. Add the following to the `Podfile` and save it
    - iOS
      ```
-     target 'YourTargetName-iOS' do
-        pod 'QWeather-SDK'
+     target '{YOUR_iOS_TARGET}' do
+        pod 'QWeather-SDK','~> {{ site.data.v.ios.version }}'
      end
      ```
    - macOS
      ```
-     target 'YourTargetName-macOS' do
-        pod 'QWeather-SDK'
+     target '{YOUR_macOS_TARGET}' do
+        pod 'QWeather-SDK','~> {{ site.data.v.ios.version }}'
      end
      ```
 3. Open a terminal and go to the directory containing the `Podfile` and run:
@@ -54,89 +60,92 @@ Open a terminal and go to the directory containing the `Podfile` and run:
 pod update
 ```
 
-### Swift Package Manager
-
-You can also use Swift Package Manager to integrate iOS SDK, please refer to [Adding package dependencies to your app](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app).
-
-* SDK URL: [https://github.com/qwd/iOS-SDK.git](https://github.com/qwd/iOS-SDK.git)
-* Dependency Rule: Up to Next Major Version 4.14.0 < 5.0.0
-
-
 ### Manual install
 
-1. Download SDK: [QWeather_iOS_SDK_Pub_V{{ site.data.v.ios.version }}]({{ site.data.v.ios.dllink }}) <br>*MD5: {{ site.data.v.ios.md5 }}*
-2. Add `QWeather.xcframework` to iOS/macOS Target.
+1. Download SDK: [QWeatherSDK {{ site.data.v.ios.version }}](https://github.com/qwd/qweather-ios-sdk/releases/tag/{{ site.data.v.ios.version }})
+2. Add `QWeatherSDK.xcframework` to iOS/macOS Target.
 
-> **If the project is written by swift:**
->
-> 1. Create a new OC class in the main directory of the Swift project. If the OC class is created for the first time in the project, a prompt window as shown in the figure will pop up. This prompt window is a pop-up prompt for whether to create a Swift-OC bridge file.
-> 2. Click **Create Bridging Header**, Xcode will automatically create a header file. This header file is the bridge file of Swift-OC
-> 3. Declare this framework class in the Swift-OC bridge file and it can be used.
+## Step 3: Add API Host and token
 
 
-> **Warning:**
->
-> - If there is a crash say `unrecognized selector sent to ...`, please add `-ObjC` to **Other Linker Flags** in **Build Settings**
-> - The framework does not provide log function, error information can be obtained from the following callback `getError` 
->  
->   ```objc
->   -(void)weatherWithInquireType:(INQUIRE_TYPE)inquireType
->                      WithSuccess:(void(^)(id responseObject))getSuccess
->                 faileureForError:(void(^)(NSError *error))getError;
-> ```
-{:.bqwarning}
+> **Hint:** iOS SDK only support [JWT](/docs/configuration/authentication/#json-web-token) for authentication.
 
-## Step 3: Setup KEY and Subscription
+Replace `YOUR_HOST` and `YOUR_TOKEN` with your [API Host](/en/docs/configuration/api-config/#api-host) and [JWT](/docs/configuration/authentication/#json-web-token):
 
-Setup the API KEY and Subscription in the `AppDelegate`:
+Swift
 
-### Setup Public ID and KEY
+```swift
+import QWeatherSDK
 
-Replace `Your_KEY` and `Your_Public_ID` with your KEY and credential ID:
+...
 
-```objc
-QWeatherConfigInstance.publicID = @"Your_Public_ID";
-QWeatherConfigInstance.appKey = @"Your_KEY";
+let _ = try await QWeather
+            .getInstance("{YOUR_HOST}")  // Initialize api host
+            .setupTokenGenerator({  
+                // Update jwt token should be implemented here in production environments
+                return "{YOUR_TOKEN}" 
+            })
+            .setupLogEnable(true)  // Enable debug logging (set false for production environments)
 ```
 
-### Setup Subscription
+Objective-C
 
-- Standard subscription:
 
-    ```objc
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-    ```
-- Free subscription:
-
-    ```objc
-    QWeatherConfigInstance.appType = APP_TYPE_DEV;
-    ```
-
-## Sample Code
-
-Add the following code where you need to use, enter the required parameters, and return to the data model of the corresponding type
-  
 ```objc
-/**
- * Real-time weather
- *
- * @param userType: user type, divided into commercial version and free development version
- * @param location: location to be queried
- * @param lang: set multi-language, the default is simplified Chinese
- * @param unit: set unit, metric (m) or imperial (i), the default is metric unit
- */
+#import <QWeatherSDK/QWeatherSDK-Swift.h>
 
-#import <QWeather/QWeather.h>
+...
 
-AllWeatherInquieirs *qWeather = [AllWeatherInquieirs sharedInstance];//or AllWeatherInquieirs *qWeather = [[AllWeatherInquieirs alloc] init];
-qWeather.appType = APP_TYPE_BIZ;
-qWeather.location = @"101010300";
-qWeather.lang = @"";//or qWeather.languageType = @"";
-qWeather.unit = @"";//or qWeather.unitType = @"";
+// Initialize api host
+[QWeatherObjc initConfigWithHost:@"{YOUR_HOST}"];
 
-[qWeather weatherWithInquireType: INQUIRE_TYPE_WEATHER_NOW WithSuccess:^(WeatherBaseClass * responseObject) {
+[QWeatherObjc setupTokenGeneratorWithGenerater:^NSString * _Nonnull{
+    // Update jwt token should be implemented here in production environments
+    return @"{YOUR_TOKEN}";
+}];
 
-      } faileureForError:^(NSError *error) {
+// Enable debug logging (set false for production environments)
+[QWeatherObjc setupLogEnable:YES];
+```
 
-      }];
+## Sample code
+
+Get real-time weather for Beijing.
+  
+Swift
+
+```swift
+import QWeatherSDK
+
+...
+
+Task {
+    do {
+        let parameter = WeatherParameter(location: "101010100")
+        let response = try await QWeather.instance.weatherNow(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
+```        
+
+Objective-C
+
+```objc
+#import <QWeatherSDK/QWeatherSDK-Swift.h>
+
+...
+
+WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101010100" lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
+[QWeatherObjc weatherNow:parameter completionHandler:^(WeatherNowResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
 ```

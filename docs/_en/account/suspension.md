@@ -1,10 +1,10 @@
 ---
-title: Suspension
+title: Suspension Account
 tag: [account, suspension]
 ref: account-suspension
 ---
 
-When you violate the QWeather [Developer Terms of Service](http://localhost:4000/docs/terms/), your account may be suspended and you will not be able to use most of the features in your account, and QWeather reserves the right to seek compensation for your violation, in serious cases you will face legal risks.
+When you violate the QWeather [developer terms](/docs/terms/), your account may be suspended and you will not be able to use most of the features in your account, and QWeather reserves the right to seek compensation for your violation, in serious cases you will face legal risks.
 
 ## Consequences
 
@@ -31,7 +31,7 @@ When your account is suspended, you will receive an email notification from us w
    
 3. **Violation of license and attribution requirements**
    
-   You should follow the requirements of [license](/en/docs/terms/license/) and [attribution](/en/docs/terms/attribution/). When you violate these terms, your account will be suspended.
+   You should follow the requirements of [developers license](/en/docs/terms/tos/) and [attribution](/en/docs/terms/attribution/). When you violate these terms, your account will be suspended.
 
 4. **Providing fake information**
    
@@ -44,9 +44,11 @@ For outstanding bills, you can resume service by complet payment in the Console.
 
 For other reasons, after you correct your action, you can go to the Console to submit an application.
 
-If you believe the account suspension was a mistake, go to Console to submit a appeal.
+If you believe the account suspension was a mistake, go to Console to submit a appeal. Your appeal will be carefully reviewed, and the review will take 10 working days, but there is no promise that it will be approved or will not be approved, and we will not make further information if the review is not approved.
 
-Your application and appeal will be carefully reviewed, and the review will take 10 working days, but there is no promise that it will be approved or will not be approved, and we will not make further information if the review is not approved.
+## Permanent suspension
+
+Accounts that have been suspended for a long period of time, or that have committed serious or repeated violations of our terms and conditions will be permanently suspended, and the user will permanently lose access to the account and cannot appeal. We reserve the right to take legal action against permanently suspended accounts.
 
 
 

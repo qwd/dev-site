@@ -7,17 +7,17 @@ Get a list of tropical cyclones for the last 2 years in major ocean basins aroun
 
 > Only the coastal areas of China are supported now, i.e. `basin=NP`
 
-## Request URL
+## Endpoint
 
 {% include api-url.html %}
 
-## Request Parameters
+## Parameters
 
-All parameters are separated by `&`. If no optional parameters are set, the default value will be used.
+#### Query parameters
 
 {% include params.html p="basin year" %}
 
-## Request Example
+## Request example
 
 {% include api-url-example.html %}
 

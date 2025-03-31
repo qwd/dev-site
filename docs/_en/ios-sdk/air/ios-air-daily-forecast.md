@@ -7,40 +7,57 @@ ref: 2-sdk-ios-air-daily-forecast
 
 Air Quality Daily Forecast API for Chinese cities, including AQI, air quality levels, primary pollutants.
 
-| Interface code (Enum) | Interface                           | Class        |
+> **Note:** [Air Quality API v1 (new)](/en/docs/api/air-quality/) is now available, please try to use and upgrade.
+
+| Interface code | Interface                           | Class        |
 | -------------------------- | ------------------------------ | ------------ |
-| INQUIRE_TYPE_WEATHER_AIR_5D| Air quality 5-day forecast  ​​ | AirBaseClass |
+| air5d | Air quality 5-day forecast    | AirDailyResponse |
 
-### Request Parameters
+## Parameters
 
-If no optional parameters are set, the default value will be used.
+**AirParameter**
 
 {% include params.html p="location-def lang-def" %}
 
-### Sample Code
+## Sample code
 
-```objc
-    QWeatherConfigInstance.publicID = @"publicID";
-    QWeatherConfigInstance.appKey = @"key";
-    QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-    QWeatherConfigInstance.location = @"101010100";
-    QWeatherConfigInstance.lang = @"";
-    QWeatherConfigInstance.unit = @"";
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_AIR_5D WithSuccess:^(AirBaseClass *responseObject) {
-        
-        NSLog(@"Description->%@",[responseObject description]);
-        
-    } faileureForError:^(NSError *error) {
-        NSLog(@"error->%@",error);
-        
-    }];
+**Swift**
+
+```swift
+Task {
+    do {
+        let parameter = AirParameter.make(location: "101010100" lang:.ZH_HANS)
+        let response = try await QWeather.instance
+            .air5d(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
 ```
 
-### Response
+**Objective-C**
 
+```objc
+AirParameter * parameter = [AirParameter instanceWithLocation:@"101010100" lang:@(LangZH_HANS)];
+[QWeatherObjc air5d:parameter completionHandler:^(AirDailyResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}];
+```
+
+## Response
+
+**AirDailyResponse**
 
 {% include api-response.html group="air" type="daily" prefix="daily"  %}
 
-### Air Quality Index Level
+## Air Quality Index Level
 
 See [Air Quality Info](/en/docs/resource/air-info/).

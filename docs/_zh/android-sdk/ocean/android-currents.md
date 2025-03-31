@@ -6,46 +6,46 @@ ref: 2-sdk-android-currents
 
 未来10天全球潮流数据，包括潮流流速和流向。
 
-| 接口代码| 接口说明          | 数据类  |
+| 接口代码| 接口          | 数据类  |
 | -------- | ---------------- | ------- |
-| getOceanCurrents| 潮流数据  | CurrentsBean |
+| oceanCurrents | 潮流  | OceanCurrentsResponse |
 
-### 接口参数说明
+## 参数
+
+**OceanParameter**
 
 {% include params.html p="location-p6 date10" %}
 
-### 示例代码
+## 示例代码
 
 ```java
-QWeather.getOceanCurrents(Context context, String location, String date, OnResultOceanTideListener listener);
+ public void oceanCurrents(OceanParameter parameter, Callback<OceanCurrentsResponse> callback);
 ```
 
-### CurrentsBean属性
+## 返回数据
 
-| 属性            | 说明     | 示例值                    |
+**OceanCurrentsResponse**
+
+{% include api-response.html group="ocean" type="ctable chourly" prefix="currentsTable currentsHourly" %}
+
+<!-- | 属性            | 说明     | 示例值                    |
 | --------------- | -------- | ---------------------- |
 | getCode         | 参考[状态码](/docs/resource/status-code/)  | 200        |
-| getBasic         | 更新信息 | Basic       |
-| getRefer         | Refer 数据来源以及数据授权 | Refer  |
-| getHourlyList | 潮流小时数据 | List\<CurrentsHourlyBase> |
-| getTableList | 潮流数据 | List\<CurrentsTableBase> |
-
-**Basic**
-
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
 | getUpdateTime | 接口更新时间 | 2017-10-25T04:34+08:00      |
 | getFxLink | 当前数据的响应式页面，便于嵌入网站或应用  | https://www.qweather.com |
+| getCurrentsHourly | 潮流小时数据 | List\<CurrentsHourly> |
+| getCurrentsTable| 潮流数据 | List\<CurrentsTable> |
+| getRefer         | Refer 数据来源以及数据授权 | Refer  |
 
 **Refer**
 
-| 属性           | 说明         | 示例值             |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | 原始数据来源 | QWeather      |
-| getLicenseList | 使用许可     | QWeather Developers License |
+| 属性        | 说明        | 类型                | 示例值        |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | 原始数据来源  | List&lt;String&gt; | QWeather     |
+| getLicense | 使用许可      | List&lt;String&gt; | QWeather Developers License |
 
 
-**CurrentsTableBase**
+**CurrentsTable**
 
 | 属性         | 说明                                                                    | 示例值               |
 | ------------ | ----------------------------------------------------- | -------------------- |
@@ -53,12 +53,12 @@ QWeather.getOceanCurrents(Context context, String location, String date, OnResul
 | getSpeedMax        | 潮流最大流速，单位：厘米/秒              | 1.23            |
 | getDir360       | 潮流360度方向                              |    212    |
 
-**CurrentsHourlyBase**
+**CurrentsHourly**
 
 | 属性         | 说明                                                                    | 示例值               |
 | ------------ | ----------------------------------------------------- | -------------------- |
 | getFxTime      | 逐小时预报时间                                 | 2017-10-25T04:34+08:00|
 | getSpeed        | 潮流流速，单位：厘米/秒              | 1.23            |
-| getDir360       | 潮流360度方向                              |    212    |
+| getDir360       | 潮流360度方向                              |    212    | -->
 
 

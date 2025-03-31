@@ -8,21 +8,21 @@ ref: 2-api-moon
 
 > 月相已考虑南北半球的差异，不需要再进行转换
 
-## 请求URL
+## 请求路径 {#endpoint}
 
 {% include api-url.html flag="moon" dev=true %}
 
-## 请求参数
+## 参数 {#parameters}
 
-请求参数包括必选和可选参数，参数之间使用`&`进行分隔。
+#### 查询参数 {#query-parameters}
 
 {% include params.html p="location-def date60 lang-def" %}
 
-## 请求示例
+## 请求示例 {#request-example}
 
 {% include api-url-example.html %}
 
-## 返回数据
+## 返回数据 {#response}
 
 {% include api-snippet.html flag="moon" %}
 

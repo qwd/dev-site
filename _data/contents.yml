@@ -9,18 +9,15 @@ reference_docs:
       - name:	config-overview
         sub:
           - subname: config-project
+          - subname: config-auth
           - subname: config-api
           - subname: config-ios
           - subname: config-android
-      - name:	auth-overview
-        sub:
-          - subname: auth-jwt
-          - subname: auth-apikey
       - name: account-overview
         sub:
           - subname: account-manage
-          - subname: account-contact
           - subname: account-developers
+          - subname: account-contact
           - subname: account-suspension
           - subname: account-inactive
   - overview: 0-api-overview
@@ -104,7 +101,6 @@ reference_docs:
       - name: bp-protact
   - overview: finance-overview
     list: 
-      - name: finance-subscription
       - name:	finance-billing
       - name:	finance-pricing
       - name: finance-splans
@@ -113,7 +109,6 @@ reference_docs:
     list: 
       - name: terms-restriction
       - name: terms-attribution
-      - name: terms-license
       - name: terms-tos
 footer:
   docs:
@@ -124,9 +119,9 @@ footer:
     - name: bp-overview
     - name: res-overview
   feats:
-    - name: feat-service
-    - name: feat-global
-    - name: feat-performance
+    - name: about-service
+    - name: about-global
+    - name: about-performance
   products:
     - name: 
         zh: 天气预报
@@ -142,9 +137,9 @@ footer:
       link: https://www.qweather.com/app/
   terms:
     - name: 
-        zh: 服务条款
-        en: Terms
-      link: /terms/developers-tos/
+        zh: 许可协议
+        en: EULA
+      link: /terms/developers-eula/
     - name: 
         zh: 隐私政策
         en: Privacy

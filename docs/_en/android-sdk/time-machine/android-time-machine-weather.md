@@ -8,7 +8,7 @@ Get the last 10 days of weather history data.
 
 > Let's say, today is December 30, you can get historical data from Dec. 20 to Dec. 29.
 
-> QWeather also provides historical reanalysis weather data from 2000 to present. If you need long time historical weather data data, please provide the following information to <sales@qweather.com>.
+> QWeather also provides historical reanalysis weather data from 2000 to present. If you need more historical weather data, please provide the following information to <sales@qweather.com>.
 > 
 > * Company name
 > * Contact information
@@ -16,49 +16,46 @@ Get the last 10 days of weather history data.
 > * Date range
 
 
-| Interface Code| Interface  | Class |
-| ------------ | -------------------- | --------------- --- |
-| getWeatherHistorical| Historical weather data  | HistoryWeatherBean |
+| Interface code| Interface  | Class |
+| ------------ | -------------------- | ------------------ |
+| historicalWeather| Historical weather data  | HistoricalWeatherResponse |
 
-### Parameter
+## Parameters
+
+**HistoricalWeatherParameter**
 
 {% include params.html p="location-id date10back lang-def unit-def" %}
 
-### Sample Code
+## Sample code
 
 ```java
-QWeather.getHistoricalWeather(Context context, String location, String date, QWeather.OnResultWeatherHistoricalBeanListener listener);
-
-QWeather.getHistoricalWeather(Context context, String location, String date, Lang lang, Unit unit,QWeather.OnResultWeatherHistoricalBeanListener listener)
+public void historicalWeather(HistoricalWeatherParameter parameter, Callback<HistoricalWeatherResponse> callback);
 ```
 
-### Properties
+## Response
 
-Properties of HistoryWeatherBean
+**HistoricalWeatherResponse**
 
-| Property | Description | Example |
+{% include api-response.html group="hisweather" type="daily hourly" prefix="weatherDaily weatherHourly" update=0 %}
+
+<!-- | Property | Description | Example |
 | -------------- | -------------------------- | ---------------------- |
 | getCode | See [Status Code](/en/docs/resource/status-code/) | 200 |
-| getDailyBean | Overview of the daily forecast | DailyBean |
-| getHourlyBeans | Hourly data of the day | List&lt;HourlyBean&gt; |
+| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
+| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/historical/beijing-101010100.html |
+| getWeatherDaily | Overview of the daily forecast | HistoricalWeatherDaily |
+| getWeatherHourly | Hourly data of the day | List&lt;HistoricalWeatherHourly&gt; |
 | getRefer | Reference data, includes data source, statements and license | Refer |
-| getBasic | Basic Information | Basic |
+
 
 **Refer**
 
-| Property | Description | Example |
-| -------------- | ------------ | ------------------ |
-| getSourcesList | Data source and other statements | QWeather |
-| getLicenseList | Data license | QWeather Developers License |
+| Property | Description  |  Type |  Example  |
+| ---------- | ----------- | ------------------ | ------------ |
+| getSources | Data source and other statements  | List&lt;String&gt; | QWeather     |
+| getLicense | Data license      | List&lt;String&gt; | QWeather Developers License |
 
-**Basic**
-
-| Property | Description | Example |
-| ------------- | ------------------------ | -------------------- |
-| getUpdateTime | [Last updated time](/en/docs/resource/glossary/#update-time) | 2017-10-25T04:34+08:00 |
-| getFxLink | Responsive web page of this location, easy to embed in your website or APP | https://www.qweather.com/historical/beijing-101010100.html |
-
-**DailyBean**
+**HistoricalWeatherDaily**
 
 | Property | Description | Example |
 | ------------ | -------- | ---------- |
@@ -74,7 +71,7 @@ Properties of HistoryWeatherBean
 | getPrecip | Precipitation | 0 |
 | getPressure | Atmospheric pressure | 1018 |
 
-**HourlyBean**
+**HistoricalWeatherHourly**
 
 | Property | Description | Example |
 | ------------ | ------------------------------------- | ---------------- |
@@ -88,4 +85,4 @@ Properties of HistoryWeatherBean
 | getWindSpeed ​​| [Wind speed](/en/docs/resource/wind-info/#wind-speed) ​​| 15 |
 | getHumidity | Relative humidity in percent | 30 |
 | getPressure | Atmospheric pressure | 1030 |
-| getPrecip | Precipitation| 1.2 |
+| getPrecip | Precipitation| 1.2 | -->

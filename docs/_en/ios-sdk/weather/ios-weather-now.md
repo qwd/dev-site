@@ -6,35 +6,51 @@ ref: 1-sdk-ios-weather-now
 
 Get real-time weather data for 200,000+ cities around the world, including temperature, wind, humidity, pressure, precipitation, visibility, etc.
 
-| Interface code (Enum)     | Interface         | Class            |
+| Interface code     | Interface         | Class            |
 | ------------------------- | ----------------- | ---------------- |
-| INQUIRE_TYPE_WEATHER_NOW  | Real-time weather | WeatherBaseClass |
+| weatherNow  | Real-time weather | WeatherNowResponse |
 
-### Request Parameters
+## Parameters
 
-If no optional parameters are set, the default value will be used.
+**WeatherParameter**
 
 {% include params.html p="location-def lang-def unit-def" %}
 
-### Sample Code
+## Sample code
+
+**Swift**
+
+```swift
+Task{
+    do {
+        let parameter = WeatherParameter(location: "101010100")
+        let response = try await QWeather.instance
+            .weatherNow(parameter)
+        print(response)
+    } catch QWeatherError.errorResponse(let error) {
+        print(error)
+    } catch {
+        print(error)
+    }
+}
+```
+
+**Objective-C**
 
 ```objc
-QWeatherConfigInstance.publicID = @"publicID";
-QWeatherConfigInstance.appKey = @"key";
-QWeatherConfigInstance.appType = APP_TYPE_BIZ;
-QWeatherConfigInstance.location = @"101010100";
-QWeatherConfigInstance.lang = @"";
-QWeatherConfigInstance.unit = @"";
-[QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_NOW WithSuccess:^(WeatherBaseClass *responseObject) {
-        
-    NSLog(@"Description->%@",[responseObject description]);
-        
-} faileureForError:^(NSError *error) {
-    NSLog(@"error->%@",error);
-        
+WeatherParameter * parameter = [WeatherParameter instanceWithLocation:@"101010100" lang:@(LangZH_HANS) unit:@(UnitMETRIC)];
+[QWeatherObjc weatherNow:parameter completionHandler:^(WeatherNowResponse * _Nullable response, NSError * _Nullable error) {
+    if (response) {
+        NSLog(@"%@", response.description);
+    }
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
 }];
 ```
 
-### Response
+## Response
+
+**WeatherNowResponse**
 
 {% include api-response.html group="weather" type="now" prefix="now" %}
