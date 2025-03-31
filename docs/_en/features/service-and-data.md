@@ -4,11 +4,11 @@ tag: [feat, service]
 ref: feat-service
 ---
 
-QWeather Develop Service is based on advanced meteorological and artificial intelligence algorithms, provides a wide range and accurate weather data services for developers to help you display the weather in your applications or to help your business decisions. All of this can be easily integrated with our development tools.
+QWeather Developer Services is based on advanced meteorological and artificial intelligence algorithms, provides a wide range and accurate weather data services for developers to help you display the weather in your applications or to help your business decisions. All of this can be easily integrated with our development tools.
 
 ## Service
 
-QWeather Develop Service provides the following development services:
+QWeather Developer Services provides the following development services:
 
 - API
 - iOS SDK

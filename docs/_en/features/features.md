@@ -1,6 +1,6 @@
 ---
 title: Features
-description: QWeather Develop Service provides powerful weather services, learn about the features and capabilities of our services.
+description: QWeather Developer Services provides powerful weather services, learn about the features and capabilities of our services.
 tag: [feat, overview]
 permalink: /en/docs/features/
 ref: feat-overview

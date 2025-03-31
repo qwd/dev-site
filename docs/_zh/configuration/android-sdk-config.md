@@ -10,7 +10,7 @@ ref: config-android
 
 **适配版本**
 
-Android 5.0+, minSDK 21
+Android 8.0+, minSDK 21
 
 ## 第1步: 创建项目和凭据 {#step-1-create-project-and-credential}
 

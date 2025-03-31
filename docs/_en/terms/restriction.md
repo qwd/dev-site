@@ -24,7 +24,7 @@ See [Billing and Payment](/en/docs/finance/billing-and-payment/).
 
 ## No attribution
 
-According to our licensing and data source requirements, you must give attribution in products that use QWeather Develop Service, otherwise you may not be able to continue using any services.
+According to our licensing and data source requirements, you must give attribution in products that use QWeather Developer Services, otherwise you may not be able to continue using any services.
 
 Refer to [Attribution](/en/docs/terms/attribution/).
 
@@ -36,6 +36,6 @@ Refer to [Developers License](https://www.qweather.com/en/terms/developers-eula)
 
 ## Account suspension
 
-When your account is suspended, you cannot use any QWeather Develop Service, and your payment method and account information cannot be used in the new account. Depending on the severity of your violation, we reserve the right to submit your information to judicial authorities.
+When your account is suspended, you cannot use any QWeather Developer Services, and your payment method and account information cannot be used in the new account. Depending on the severity of your violation, we reserve the right to submit your information to judicial authorities.
 
 See [Account Suspension](/en/docs/account/suspension/).

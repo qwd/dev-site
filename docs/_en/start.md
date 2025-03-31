@@ -6,7 +6,7 @@ permalink: /en/docs/start/
 ref: start-overview
 ---
 
-Welcome to QWeather Develop Service, this document will introduce some basic concepts for getting started and understanding how we work.
+Welcome to QWeather Developer Services, this document will introduce some basic concepts for getting started and understanding how we work.
 
 ## Account
 

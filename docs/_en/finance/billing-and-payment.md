@@ -5,7 +5,7 @@ description: Learn how the billing and payment system works for QWeather Develop
 ref: finance-billing
 ---
 
-QWeather Develop Service's billing system based on the pay-as-you-go subscription model, it is a more transparent, simple and competitive pricing scheme. This document describes how the billing and payment system works.
+QWeather Developer Services's billing system based on the pay-as-you-go subscription model, it is a more transparent, simple and competitive pricing scheme. This document describes how the billing and payment system works.
 
 > **Hint**: Price calculations in this document are estimates and final costs may vary slightly.
 

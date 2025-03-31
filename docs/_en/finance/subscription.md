@@ -4,7 +4,7 @@ tag: [finance, subscription]
 ref: finance-subscription
 ---
 
-QWeather Develop Service now uses a subscription model, including:
+QWeather Developer Services now uses a subscription model, including:
 
 - Standard subscription
 - Pro subscription

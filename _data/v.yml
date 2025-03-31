@@ -4,7 +4,7 @@ android:
   version: "5.0.0"
   date: 2025-03-26
   dllink: https://a.hecdn.net/download/api_sdk/QWeather_Public_Android_V5.0.0.jar
-  md5: 2e636b49b266cb9200222f86ad12abe5
+  md5: d652f6fd3c61ce02595dac34b16a18a5
 ios:
   version: "5.0.0"
   date: 2025-03-26

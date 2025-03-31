@@ -8,7 +8,7 @@ This document will introduce how to configure the Android SDK for QWeather API.
 
 **OS requirement:**
 
-Android 5.0+, minSDK 21
+Android 8.0+, minSDK 21
 
 ## Step 1: Create project and credential
 
