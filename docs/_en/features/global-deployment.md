@@ -30,7 +30,7 @@ Check out [GeoAPI](/en/docs/api/geoapi/).
 
 ![global-server](/assets/images/content/global-server-flow.png)
 
-Behind your access to `api.qweather.com`, there are 10 data centers and hundreds CND nodes around the world for QWeather, which allows your Apps to get weather services fast and stable.
+Behind your access to `api.qweather.com`, there are 10 data centers and hundreds CDN nodes around the world for QWeather, which allows your Apps to get weather services fast and stable.
 
 - **Automatic Routing:** No matter where your Apps is deployed, your data requests are automatically routed to the nearest data center.
 - **Load Balancing:** When one data center fails or the load is high, your requests will be automatically assigned to the data center that is running normally, ensuring your Apps is always online.
