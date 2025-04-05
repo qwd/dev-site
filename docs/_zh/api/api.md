@@ -24,4 +24,4 @@ ref: 0-api-overview
 {%- endfor -%}  
 </div>
 
-> 如需要查看更早期的版本的开发文档请访问 [S6版本](/docs/legacy/api/s6/)，S6版本的技术支持截止于2020年6月1日。
+*如需过时API/SDK的开发文档请访问[已弃用](/docs/deprecated/)。*
