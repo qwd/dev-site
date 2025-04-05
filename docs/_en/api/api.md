@@ -23,3 +23,5 @@ ref: 0-api-overview
 {%- endfor -%} 
 {%- endfor -%}  
 </div>
+
+*See [Deprecated](/en/docs/deprecated/) for deprecated API/SDK.*
