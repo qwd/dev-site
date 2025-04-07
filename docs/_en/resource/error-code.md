@@ -53,11 +53,11 @@ Authentication failed, you need to check your KEY or Token, we will not response
 
 Request denied due to not enough available balance, saving plans or other credits in your account. You will need to add your available balance or purchase additional credit before continuing to request data.
 
-### UNPAID
+### OVERDUE
 
 `HTTP response status code: 403`
 
-Request denied due to an outstanding bill in your account. You have to pay the outstanding bill before request data.
+Request denied due to an overdue bill in your account. You have to pay the overdue bill before request data.
 
 ### SECURITY RESTRICTION
 
@@ -69,17 +69,17 @@ Request denied due to this request violated your security restrictions, we will 
 - Check that your security restrictions are reasonable
 - If the request was not sent by you, consider that your credentials may have been compromised
 
-### ERROR HOST
+### INVALID HOST
 
 `HTTP response status code: 403`
 
-Request denied due to incorrect Host and credentials being used. For example, send free subscription credential to a standard subscription service and vice versa.
+Request denied due to invalid API Host, please view your API Host in [Console Setting](https://console.qweather.com/setting/) and replace to it. Learn more about [Create API Request](/en/docs/configuration/api-config/).
 
 ### ACCOUNT SUSPENSION
 
 `HTTP response status code: 403`
 
-Request denied due to user account suspension. Learn more about [Account Suspension](https://dev.qweather.com/docs/account/suspension/).
+Request denied due to user account suspension. Learn more about [Account Suspension](/en/docs/account/suspension/).
 
 ### FORBIDDEN
 
@@ -115,7 +115,7 @@ The request volume exceeds the limit for a monthly subscription, please wait unt
 
 `HTTP response status code: 500`
 
-An unknown error has occurred in our service, please submit a ticket to us.
+An unknown error has occurred in our service, please [submit a ticket](https://console.qweather.com/support/ticket/new) to us.
 
 ### Response
 
@@ -156,7 +156,7 @@ By `code` in the API/SDK, you can get the status of the current request and dete
 | 403 | No access permission, it may be because the PackageName or BundleID are inconsistent, or data that requires additional payment. |
 |404| The queried data or region does not exist. |
 | 429 | Exceeding the limited QPM, please refer to [QPM](/en/docs/resource/glossary/#qpm) |
-| 500 | No response or timeout, service down, please [contact us](https://www.qweather.com/en/contact) |
+| 500 | No response or timeout, service down, please [submit a ticket](https://console.qweather.com/support/ticket/new) to us. |
 
 ### Response
 
