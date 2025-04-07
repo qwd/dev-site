@@ -57,11 +57,11 @@ v2版本将错误进行了细分和更加详细的描述，以便用户可以更
 
 你的帐号内没有足够的可用额度、节省计划或其他额度，请求被拒绝。你需要先增加可用额度或购买其他额度之后再继续请求数据。
 
-### UNPAID
+### OVERDUE
 
 `HTTP response status code: 403`
 
-由于你帐号内有未支付的欠款账单，请求被拒绝。你需要先完成欠款账单的支付再继续请求数据。
+由于你帐号内有逾期未支付的账单，请求被拒绝。你需要先完成逾期账单的支付再继续请求数据。
 
 ### SECURITY RESTRICTION
 
@@ -73,17 +73,17 @@ v2版本将错误进行了细分和更加详细的描述，以便用户可以更
 - 你的请求限制是否合理
 - 如果请求不是你发送的，请考虑你的凭据可能已经泄露
 
-### ERROR HOST
+### INVALID HOST
 
 `HTTP response status code: 403`
 
-由于使用了错误的Host和凭据，请求被拒绝。例如使用免费订阅的凭据请求标准订阅服务，或使用标准订阅的凭据请求免费订阅服务。
+使用了错误的API Host，请求被拒绝。请在[控制台设置](https://console.qweather.com/setting/)中查看自己的API Host。了解[如何创建API请求](/docs/configuration/api-config/)。
 
 ### ACCOUNT SUSPENSION
 
 `HTTP response status code: 403`
 
-由于用户帐号被冻结，请求被拒绝。了解[帐号冻结](https://dev.qweather.com/docs/account/suspension/)。
+由于用户帐号被冻结，请求被拒绝。了解[帐号冻结](/docs/account/suspension/)。
 
 ### FORBIDDEN
 
@@ -119,7 +119,7 @@ v2版本将错误进行了细分和更加详细的描述，以便用户可以更
 
 `HTTP response status code: 500`
 
-我们的服务发生了未知故障，请提交工单与我们联系。
+我们的服务发生了未知故障，请[提交工单](https://console.qweather.com/support/ticket/new)与我们联系。
 
 ### 响应 {#response}
 
@@ -160,7 +160,7 @@ Content-Type: application/problem+json
 | 403  | 无访问权限，可能是绑定的PackageName、BundleID、域名IP地址不一致，或者是需要额外付费的数据。        |
 |404| 查询的数据或地区不存在。  |
 | 429   | 超过限定的QPM（每分钟访问次数），请参考[QPM说明](/docs/resource/glossary/#qpm)   |
-| 500  | 无响应或超时，接口服务异常请[联系我们](https://www.qweather.com/contact)                                                                             |
+| 500  | 无响应或超时，接口服务异常请[提交工单](https://console.qweather.com/support/ticket/new)与我们联系。                                                                             |
 
 ### 响应 {#response}
 
