@@ -10,7 +10,7 @@ ref: config-android
 
 **适配版本**
 
-Android 8.0+, minSDK 21
+Android 8.0+, minSDK 26
 
 ## 第1步: 创建项目和凭据 {#step-1-create-project-and-credential}
 
@@ -46,41 +46,66 @@ dependencies {
 引用库
 
 ```
+implementation libs.eddsa
 implementation libs.gson
 implementation libs.okhttp
 ```
 
 请在混淆文件`proguard-rules.pro`中加入如下代码
 
-```java
-//  排除okhttp
- -dontwarn com.squareup.**
- -dontwarn okio.**
- -keep public class org.codehaus.* { *; }
- -keep public class java.nio.* { *; }
+```
+-dontwarn com.qweather.sdk.**
+-keep class com.qweather.sdk.QWeather { public *; }
 
-//  排除QWeather
- -dontwarn com.qweather.sdk.**
- -keep class com.qweather.sdk.** { *;}
+#---------------------------------Entry--------------------------------
+-keep class com.qweather.sdk.parameter.** { public *; }
+-keep class com.qweather.sdk.response.** { public *; }
+-keep class com.qweather.sdk.basic.* { public *; }
+
+#---------------------------------Other--------------------------------
+-keep class com.qweather.sdk.JWTGenerator { public *; }
+-keep interface com.qweather.sdk.TokenGenerator { public *; }
+-keep interface com.qweather.sdk.Callback { *; }
+
+#---------------------------------Third Part-------------------------------
+# EdDSA
+-keep class net.i2p.crypto.eddsa.** { *; }
+
+# okhttp
+-keep class okhttp3.** { *; }
+-keep interface okhttp3.** { *; }
+-dontwarn okhttp3.**
+
+# Gson
+-keep class com.google.gson.** { *; }
 ```
 
 ## 第3步: 添加API Host和Token {#step-3-add-api-host-and-token}
 
-> **提示：**Android SDK仅支持[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
 
-使用 SDK 时，需提前进行账户初始化（全局执行一次即可）
+### 初始化QWeather实例
 
-将代码中的`YOUR_HOST`和`YOUR_TOKEN`替换为您的[API Host](/docs/configuration/api-config/#api-host)和[JWT身份认证](/docs/configuration/authentication/)：
+将代码中的`YOUR_HOST`替换为您的[API Host](/docs/configuration/api-config/#api-host)
 
 ```java
 QWeather.getInstance(MainActivity.this, "{YOUR_HOST}") // 初始化服务地址
-        .setTokenGenerator(new TokenGenerator() { // 设置令牌生成器
-                        @Override
-                        public String generator() {
-                             // 生产环境中应在此处实现令牌刷新逻辑，而非硬编码
-                            return "{YOUR_TOKEN}"; // 返回用于 API 认证的 JWT 令牌
-                        }
-                    });
+        .setLogEnable(true);  // 启用调试日志（生产环境建议设置为 false）
+```
+ 
+### 设置Token生成器
+
+> **提示：**Android SDK仅支持[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
+
+为安全考虑，请妥善管理您的私钥、项目ID、凭据ID避免明文使用。
+
+```java
+// 通过SDK提供的JWTGenerator设置令牌生成器，其实现自TokenGenerator接口
+JWTGenerator jwt = new JWTGenerator("{YOUR_PRIVATE_KEY}", // 私钥
+                           "{YOUR_PROJECT_ID}", // 项目ID
+                           "{YOUR_KID}"); // 凭据ID
+instance.setTokenGenerator(jwt);
+
+//NOTE: 开发者也可以通过实现TokenGenerator接口创建自己的令牌生成器
 ```
 
 ## 示例代码 {#sample-code}

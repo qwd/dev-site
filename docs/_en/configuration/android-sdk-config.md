@@ -8,7 +8,7 @@ This document will introduce how to configure the Android SDK for QWeather API.
 
 **OS requirement:**
 
-Android 8.0+, minSDK 21
+Android 8.0+, minSDK 26
 
 ## Step 1: Create project and credential
 
@@ -44,6 +44,7 @@ dependencies {
 Reference library
 
 ```
+implementation libs.eddsa
 implementation libs.gson
 implementation libs.okhttp
 ```
@@ -51,30 +52,57 @@ implementation libs.okhttp
 Add the following code to the obfuscation file `proguard-rules.pro`
 
 ```java
-//  exclude okhttp
- -dontwarn com.squareup.**
- -dontwarn okio.**
- -keep public class org.codehaus.* { *; }
- -keep public class java.nio.* { *; }
+-dontwarn com.qweather.sdk.**
+-keep class com.qweather.sdk.QWeather { public *; }
 
-//  exclude QWeather
- -dontwarn com.qweather.sdk.**
- -keep class com.qweather.sdk.** { *;}
+#---------------------------------Entry--------------------------------
+-keep class com.qweather.sdk.parameter.** { public *; }
+-keep class com.qweather.sdk.response.** { public *; }
+-keep class com.qweather.sdk.basic.* { public *; }
+
+#---------------------------------Other--------------------------------
+-keep class com.qweather.sdk.JWTGenerator { public *; }
+-keep interface com.qweather.sdk.TokenGenerator { public *; }
+-keep interface com.qweather.sdk.Callback { *; }
+
+#---------------------------------Third Part-------------------------------
+# EdDSA
+-keep class net.i2p.crypto.eddsa.** { *; }
+
+# okhttp
+-keep class okhttp3.** { *; }
+-keep interface okhttp3.** { *; }
+-dontwarn okhttp3.**
+
+# Gson
+-keep class com.google.gson.** { *; }
 ```
 
 ## Step 3: Add API Host and token
 
-> **Hint:** iOS SDK only support [JWT](/docs/configuration/authentication/#json-web-token) for authentication.
+### Initialize the QWeather instance.
+
+Replace `YOUR_HOST` with your [API Host](/docs/configuration/api-config/#api-host).
 
 ```java
 QWeather.getInstance(MainActivity.this, "{YOUR_HOST}") // Initialize api host
-        .setTokenGenerator(new TokenGenerator() {
-                        @Override
-                        public String generator() {
-                             // Update jwt token should be implemented here in production environments
-                            return "{YOUR_TOKEN}"; 
-                        }
-                    });
+        .setLogEnable(true);   // Enable debug logging (set false for production environments)
+```
+ 
+### Set up the token generator
+
+> **Hint:** Android SDK only support [JWT](/docs/configuration/authentication/#json-web-token) for authentication.
+
+For security purposes, please ensure proper management of sensitive information such as private key, project ID, and credential ID, avoiding storage or transmission in plaintext.
+
+```java
+// Set up the token generator using the JWTGenerator provided by the SDK, which implements the TokenGenerator interface.
+JWTGenerator jwt = new JWTGenerator("{YOUR_PRIVATE_KEY}", // Private key
+                           "{YOUR_PROJECT_ID}", // Project ID
+                           "{YOUR_KID}"); // Credential ID
+instance.setTokenGenerator(jwt);
+
+//NOTE: Developers can customize their token generators by implementing the TokenGenerator interface. 
 ```
 
 ## Sample code
