@@ -8,7 +8,7 @@ This document will introduce how to configure the Android SDK for QWeather API.
 
 **OS requirement:**
 
-Android 8.0+, minSDK 21
+Android 8.0+, minSDK 26
 
 ## Step 1: Create project and credential
 
@@ -51,15 +51,21 @@ implementation libs.okhttp
 Add the following code to the obfuscation file `proguard-rules.pro`
 
 ```java
-//  exclude okhttp
- -dontwarn com.squareup.**
- -dontwarn okio.**
- -keep public class org.codehaus.* { *; }
- -keep public class java.nio.* { *; }
+-keep public class com.qweather.sdk.QWeather {
+    public *;
+}
 
-//  exclude QWeather
- -dontwarn com.qweather.sdk.**
- -keep class com.qweather.sdk.** { *;}
+-keep public class com.qweather.sdk.basic.**{ *; }
+-keepclassmembers class com.qweather.sdk.basic** { *; }
+
+-keep public class com.qweather.sdk.parameter.**{ *; }
+-keepclassmembers class com.qweather.sdk.parameter** { *; }
+
+-keep public class com.qweather.sdk.response.**{ *; }
+-keepclassmembers class com.qweather.sdk.response** { *; }
+
+-keep interface com.qweather.sdk.Callback{  *; }
+-keep interface com.qweather.sdk.TokenGenerator{  *; }
 ```
 
 ## Step 3: Add API Host and token
