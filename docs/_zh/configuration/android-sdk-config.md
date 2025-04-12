@@ -10,7 +10,7 @@ ref: config-android
 
 **适配版本**
 
-Android 8.0+, minSDK 21
+Android 8.0+, minSDK 26
 
 ## 第1步: 创建项目和凭据 {#step-1-create-project-and-credential}
 
@@ -53,15 +53,21 @@ implementation libs.okhttp
 请在混淆文件`proguard-rules.pro`中加入如下代码
 
 ```java
-//  排除okhttp
- -dontwarn com.squareup.**
- -dontwarn okio.**
- -keep public class org.codehaus.* { *; }
- -keep public class java.nio.* { *; }
+-keep public class com.qweather.sdk.QWeather {
+    public *;
+}
 
-//  排除QWeather
- -dontwarn com.qweather.sdk.**
- -keep class com.qweather.sdk.** { *;}
+-keep public class com.qweather.sdk.basic.**{ *; }
+-keepclassmembers class com.qweather.sdk.basic** { *; }
+
+-keep public class com.qweather.sdk.parameter.**{ *; }
+-keepclassmembers class com.qweather.sdk.parameter** { *; }
+
+-keep public class com.qweather.sdk.response.**{ *; }
+-keepclassmembers class com.qweather.sdk.response** { *; }
+
+-keep interface com.qweather.sdk.Callback{  *; }
+-keep interface com.qweather.sdk.TokenGenerator{  *; }
 ```
 
 ## 第3步: 添加API Host和Token {#step-3-add-api-host-and-token}
