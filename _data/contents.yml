@@ -119,9 +119,9 @@ footer:
     - name: bp-overview
     - name: res-overview
   feats:
-    - name: about-service
-    - name: about-global
-    - name: about-performance
+    - name: feat-service
+    - name: feat-global
+    - name: feat-performance
   products:
     - name: 
         zh: 天气预报

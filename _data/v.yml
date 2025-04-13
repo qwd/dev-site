@@ -2,9 +2,9 @@ style: 20230410
 favicon: 20230410
 android:
   version: "5.1.0"
-  date: 2025-04-09
+  date: 2025-04-12
   dllink: https://github.com/qwd/qweather-android-sdk/archive/refs/tags/5.1.0.zip
-  md5: b830e1740a5170d05b4ffdba389a8c3f
+  md5: 3b7e78e1a355baa8de3dba6699f934f2
 ios:
   version: "5.1.0"
   date: 2025-04-09

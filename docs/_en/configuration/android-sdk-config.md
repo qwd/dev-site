@@ -16,7 +16,7 @@ Make sure you have created a Project and Credential, see [Project and KEY](/en/d
 
 ## Step 2: Install SDK
 
-Download the latest SDK: [QWeather Android SDK {{ site.data.v.android.version }}]({{ site.data.v.android.dllink }}) *(MD5:`{{ site.data.v.android.md5 }}`)*
+Download the latest SDK: [QWeather Android SDK {{ site.data.v.android.version }}]({{ site.data.v.android.dllink }}) *(JAR MD5:`{{ site.data.v.android.md5 }}`)*
 
 Copy the JAR file to the `app/libs/`
 
@@ -52,30 +52,24 @@ implementation libs.okhttp
 Add the following code to the obfuscation file `proguard-rules.pro`
 
 ```java
--dontwarn com.qweather.sdk.**
--keep class com.qweather.sdk.QWeather { public *; }
+-keep public class com.qweather.sdk.QWeather {
+    public *;
+}
 
-#---------------------------------Entry--------------------------------
--keep class com.qweather.sdk.parameter.** { public *; }
--keep class com.qweather.sdk.response.** { public *; }
--keep class com.qweather.sdk.basic.* { public *; }
+-keep public class com.qweather.sdk.basic.**{ *; }
+-keepclassmembers class com.qweather.sdk.basic** { *; }
 
-#---------------------------------Other--------------------------------
--keep class com.qweather.sdk.JWTGenerator { public *; }
--keep interface com.qweather.sdk.TokenGenerator { public *; }
--keep interface com.qweather.sdk.Callback { *; }
+-keep public class com.qweather.sdk.parameter.**{ *; }
+-keepclassmembers class com.qweather.sdk.parameter** { *; }
 
-#---------------------------------Third Part-------------------------------
-# EdDSA
--keep class net.i2p.crypto.eddsa.** { *; }
+-keep public class com.qweather.sdk.response.**{ *; }
+-keepclassmembers class com.qweather.sdk.response** { *; }
 
-# okhttp
--keep class okhttp3.** { *; }
--keep interface okhttp3.** { *; }
--dontwarn okhttp3.**
-
-# Gson
--keep class com.google.gson.** { *; }
+-keep interface com.qweather.sdk.Callback{  *; }
+-keep interface com.qweather.sdk.TokenGenerator{  *; }
+-keep public class com.qweather.sdk.JWTGenerator {
+    public *;
+}
 ```
 
 ## Step 3: Add API Host and token
