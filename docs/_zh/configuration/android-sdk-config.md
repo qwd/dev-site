@@ -18,7 +18,7 @@ Android 8.0+, minSDK 26
 
 ## 第2步: 安装SDK {#step-2-install-sdk}
 
-下载最新版本：[QWeather Android SDK {{ site.data.v.android.version }}]({{ site.data.v.android.dllink }}) *(MD5:`{{ site.data.v.android.md5 }}`)*
+下载最新版本：[QWeather Android SDK {{ site.data.v.android.version }}]({{ site.data.v.android.dllink }}) *(JAR MD5:`{{ site.data.v.android.md5 }}`)*
 
 将JAR文件复制到`app/libs/`目录:
 
@@ -53,31 +53,25 @@ implementation libs.okhttp
 
 请在混淆文件`proguard-rules.pro`中加入如下代码
 
-```
--dontwarn com.qweather.sdk.**
--keep class com.qweather.sdk.QWeather { public *; }
+```java
+-keep public class com.qweather.sdk.QWeather {
+    public *;
+}
 
-#---------------------------------Entry--------------------------------
--keep class com.qweather.sdk.parameter.** { public *; }
--keep class com.qweather.sdk.response.** { public *; }
--keep class com.qweather.sdk.basic.* { public *; }
+-keep public class com.qweather.sdk.basic.**{ *; }
+-keepclassmembers class com.qweather.sdk.basic** { *; }
 
-#---------------------------------Other--------------------------------
--keep class com.qweather.sdk.JWTGenerator { public *; }
--keep interface com.qweather.sdk.TokenGenerator { public *; }
--keep interface com.qweather.sdk.Callback { *; }
+-keep public class com.qweather.sdk.parameter.**{ *; }
+-keepclassmembers class com.qweather.sdk.parameter** { *; }
 
-#---------------------------------Third Part-------------------------------
-# EdDSA
--keep class net.i2p.crypto.eddsa.** { *; }
+-keep public class com.qweather.sdk.response.**{ *; }
+-keepclassmembers class com.qweather.sdk.response** { *; }
 
-# okhttp
--keep class okhttp3.** { *; }
--keep interface okhttp3.** { *; }
--dontwarn okhttp3.**
-
-# Gson
--keep class com.google.gson.** { *; }
+-keep interface com.qweather.sdk.Callback{  *; }
+-keep interface com.qweather.sdk.TokenGenerator{  *; }
+-keep public class com.qweather.sdk.JWTGenerator {
+    public *;
+}
 ```
 
 ## 第3步: 添加API Host和Token {#step-3-add-api-host-and-token}

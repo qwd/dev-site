@@ -8,13 +8,11 @@ QWeather Developer Services is based on advanced meteorological and artificial i
 
 ## Service
 
-QWeather Developer Services provides the following development services:
+QWeather Developer Services provides the following services:
 
 - API
 - iOS SDK
 - Android SDK
-- Bulk download (currently in beta, official to be released in Q1 2023)
-- Weather map development kit (currently in beta, to be released in Q1 2023)
 
 You can use the above services to get all kinds of weather data services easily and quickly around the world.
 
@@ -62,14 +60,15 @@ We support weather data services in China (including Hong Kong, Macau and Taiwan
 | Data                       | Update interval | Time step | Time range | Geographic |
 | -------------------------- | --------------- | --------- | ---------- | ---------- |
 | Real-time Air Quality      | 1 hr            | Real Time | Real Time  | China      |
-| Air Quality daily forecast | 1 hr            | Daily     | 1-5 days   | China      |
+| Air Quality daily forecast | 1 hr            | Daily     | 1-7 days   | China      |
+| Air Quality hourly forecast | 1 hr            | Hourly     | 1-72 hrs   | China      |
 
 ### Warning
 
 | Data              | Update interval | Time step | Time range | Geographic |
 | ----------------- | --------------- | --------- | ---------- | ---------- |
 | Warning           | 5 min           | Real-time | Real-time  | China and EU countries      |
-| Warning city list | 5 min           | Real-time | Real-time  | China and EU countries      |
+| Warning city list | 5 min           | Real-time | Real-time  | China      |
 
 ### Astronomy
 
