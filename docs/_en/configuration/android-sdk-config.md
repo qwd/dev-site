@@ -16,7 +16,7 @@ Make sure you have created a Project and Credential, see [Project and KEY](/en/d
 
 ## Step 2: Install SDK
 
-Download the latest SDK: [QWeather Android SDK {{ site.data.v.android.version }}]({{ site.data.v.android.dllink }}) *(MD5:`{{ site.data.v.android.md5 }}`)*
+Download the latest SDK: [QWeather Android SDK {{ site.data.v.android.version }}]({{ site.data.v.android.dllink }}) *(JAR MD5:`{{ site.data.v.android.md5 }}`)*
 
 Copy the JAR file to the `app/libs/`
 
@@ -44,6 +44,7 @@ dependencies {
 Reference library
 
 ```
+implementation libs.eddsa
 implementation libs.gson
 implementation libs.okhttp
 ```
@@ -66,21 +67,36 @@ Add the following code to the obfuscation file `proguard-rules.pro`
 
 -keep interface com.qweather.sdk.Callback{  *; }
 -keep interface com.qweather.sdk.TokenGenerator{  *; }
+-keep public class com.qweather.sdk.JWTGenerator {
+    public *;
+}
 ```
 
 ## Step 3: Add API Host and token
 
-> **Hint:** iOS SDK only support [JWT](/docs/configuration/authentication/#json-web-token) for authentication.
+### Initialize the QWeather instance.
+
+Replace `YOUR_HOST` with your [API Host](/docs/configuration/api-config/#api-host).
 
 ```java
 QWeather.getInstance(MainActivity.this, "{YOUR_HOST}") // Initialize api host
-        .setTokenGenerator(new TokenGenerator() {
-                        @Override
-                        public String generator() {
-                             // Update jwt token should be implemented here in production environments
-                            return "{YOUR_TOKEN}"; 
-                        }
-                    });
+        .setLogEnable(true);   // Enable debug logging (set false for production environments)
+```
+ 
+### Set up the token generator
+
+> **Hint:** Android SDK only support [JWT](/docs/configuration/authentication/#json-web-token) for authentication.
+
+For security purposes, please ensure proper management of sensitive information such as private key, project ID, and credential ID, avoiding storage or transmission in plaintext.
+
+```java
+// Set up the token generator using the JWTGenerator provided by the SDK, which implements the TokenGenerator interface.
+JWTGenerator jwt = new JWTGenerator("{YOUR_PRIVATE_KEY}", // Private key
+                           "{YOUR_PROJECT_ID}", // Project ID
+                           "{YOUR_KID}"); // Credential ID
+instance.setTokenGenerator(jwt);
+
+//NOTE: Developers can customize their token generators by implementing the TokenGenerator interface. 
 ```
 
 ## Sample code

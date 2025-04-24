@@ -71,9 +71,9 @@ pod update
 
 ## 第3步: 添加API Host和Token {#step-3-add-api-host-and-token}
 
-> **提示：**iOS SDK仅支持[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
+### 初始化QWeather实例
 
-将代码中的`YOUR_HOST`和`YOUR_TOKEN`替换为您的[API Host](/docs/configuration/api-config/#api-host)和[JWT身份认证](/docs/configuration/authentication/)：
+将代码中的`YOUR_HOST`替换为您的[API Host](/docs/configuration/api-config/#api-host)
 
 **Swift**
 
@@ -82,17 +82,13 @@ import QWeatherSDK
 
 ...
 
-let _ = try await QWeather
+try await QWeather
             .getInstance("{YOUR_HOST}")  // 初始化服务地址
-            .setupTokenGenerator({  // 设置令牌生成器
-                // 生产环境中应在此处实现令牌刷新逻辑，而非硬编码
-                return "{YOUR_TOKEN}"  // 返回用于 API 认证的 JWT 令牌
-            })
             .setupLogEnable(true)  // 启用调试日志（生产环境建议设置为 false）
+
 ```
 
 **Objective-C**
-
 
 ```objc
 #import <QWeatherSDK/QWeatherSDK-Swift.h>
@@ -102,14 +98,48 @@ let _ = try await QWeather
 // 初始化服务地址
 [QWeatherObjc initConfigWithHost:@"{YOUR_HOST}"];
 
-// 设置令牌生成器
+// 启用调试日志（生产环境建议设置为 false）
+[QWeatherObjc setupLogEnable:YES];
+```
+ 
+### 设置Token生成器
+
+> **提示：**iOS SDK仅支持[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
+
+SDK支持通过TokenGenerator和闭包两种机制生成访问令牌，开发者可根据需求任选其一。需注意当同时配置两种方式时，闭包实现将自动失效。出于安全考虑，请确保妥善保管私钥、项目ID及凭据ID等敏感信息，避免以明文形式存储或传输。
+
+**Swift**
+
+```swift
+// 通过SDK提供的JWTGenerator设置令牌生成器，其遵从TokenGenerator协议
+let jwt = JWTGenerator(privateKey: "{YOUR_PRIVATE_KEY}", // 私钥
+                              pid: "{YOUR_PROJECT_ID}", // 项目ID
+                              kid: "{YOUR_KID}") // 凭据ID
+instance.setupTokenGenerator(jwt)
+
+//NOTE: 开发者也可以通过遵从TokenGenerator协议创建自己的令牌生成器
+
+// 通过闭包设置令牌生成器
+instance.setupTokenGenerator({  
+    // 生产环境中应在此处实现令牌刷新逻辑，而非硬编码
+    return "{YOUR_TOKEN}"  // 返回用于 API 认证的 JWT 令牌
+})
+```
+
+**Objective-C**
+
+```objc
+// 通过SDK提供的方法设置令牌生成器
+[QWeatherObjc setupTokenGeneratorWithPrivateKey:@"{YOUR_PRIVATE_KEY}" // 私钥
+                                          pid:@"{YOUR_PROJECT_ID}" // 项目ID
+                                          kid:@"{YOUR_KID}"]; // 凭据ID
+
+
+// 通过闭包设置令牌生成器
 [QWeatherObjc setupTokenGeneratorWithGenerater:^NSString * _Nonnull{
     // 生产环境中应在此处实现令牌刷新逻辑，而非硬编码
     return @"{YOUR_TOKEN}"; // 返回用于 API 认证的 JWT 令牌
 }];
-
-// 启用调试日志（生产环境建议设置为 false）
-[QWeatherObjc setupLogEnable:YES];
 ```
 
 ## 示例代码 {#sample-code}
