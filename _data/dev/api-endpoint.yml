@@ -399,3 +399,14 @@ ocean-currents:
     name:
       zh: 潮流
       en: Currents
+console-finance:
+  demo:
+    link: https://your_api_host/console/v1/finance
+    name: 
+      zh: 财务和计费信息汇总
+      en: Finance summary
+  endpoint:
+    path: /console/v1/finance
+    name:
+      zh: 财务汇总
+      en: Finance Summary
