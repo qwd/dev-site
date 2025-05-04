@@ -11,7 +11,7 @@ To use the QWeather develop service more efficiently, you need to optimize your 
 When you use the API, a request is sent to us via a URL, like:
 
 ```
-https://api.qweather.com/v7/weather/3d?parameters
+https://abcxyz.qweatherapi.com/v7/weather/3d?parameters
 ```
 
 Generally, this request URL is error-free, but there are some special cases to be aware of:

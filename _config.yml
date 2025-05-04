@@ -18,11 +18,6 @@ links:
   console: https://console.qweather.com
   blog: https://blog.qweather.com
   icons: https://icons.qweather.com
-  widget: https://widget.qweather.com
-  api: https://api.qweather.com
-  devapi: https://devapi.qweather.com
-  geoapi: https://geoapi.qweather.com
-  datasetapi: https://datasetapi.qweather.com
   github: https://github.com/qwd
   mit: https://github.com/qwd/docs/blob/master/LICENSE
   ccby4: https://creativecommons.org/licenses/by/4.0/
