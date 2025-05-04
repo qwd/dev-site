@@ -13,7 +13,7 @@ Now, let's assume you've created [project and credential](/en/docs/configuration
 For a higher level of API security, we provide every developer with a independent, data-isolated API Host, also known as the API address or API domain name. The API Host can be viewed in [Console - Settings](https://console.qweather.com/setting) and looks like:
 
 ```
-abc.xyz.qweatherapi.com
+abcxyz.qweatherapi.com
 ```
 
 You need to concatenate the API Host with the API path and parameters, or fill the API Host into the configuration file when using the SDK.
@@ -23,7 +23,7 @@ You need to concatenate the API Host with the API path and parameters, or fill t
 Generally, a complete API request URL consists of scheme, host, port, path and query parameters. (Of course, it may be called differently in different programs, we only refer to [RFC 3986](https://www.rfc-editor.org/rfc/rfc3986))
 
 ```
-https://abc123.qweatherapi.com/airquality/v1/station/{LocationID}?lang=en
+https://abcxyz.qweatherapi.com/airquality/v1/station/{LocationID}?lang=en
 \___/   \____________________/\____________________/\___________/\______/
 scheme          host                   path            path       query
                                                       params      params 
@@ -68,7 +68,7 @@ You can build the final API request with any programming language, using curl as
 ```bash
 curl --compressed \
 -H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
-'https://api.qweather.com/v7/weather/now?location=101010100'
+'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
 ```
 
 Building an API URL is not difficult for most developers, but we still strongly recommend that you read the [Best Practices- Optimize requests](/en/docs/best-practices/optimize-requests/) for troubleshooting and experience.

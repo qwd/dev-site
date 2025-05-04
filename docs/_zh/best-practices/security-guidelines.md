@@ -75,7 +75,7 @@ ref: bp-protact
 curl -X GET --compressed \
 -H 'Authorization: Bearer your_token' \
 -H 'X-iOS-Bundle-Id: com.company.appname' \
-'https://api.qweather.com/path/to/data'
+'https://abcxyz.qweatherapi.com/path/to/data'
 ```
 
 ### Android应用限制 {#android-apps}
@@ -94,7 +94,7 @@ curl -X GET --compressed \
 -H 'Authorization: Bearer your_token' \
 -H 'X-Android-Package-Name: com.company.appname' \
 -H 'X-Android-Cert: 8E:57:D3:9E:E8:DE:D4:1A:E7:E8:47:41:0F:38:D5:4C:54:CA:4C:4A' \
-'https://api.qweather.com/path/to/data'
+'https://abcxyz.qweatherapi.com/path/to/data'
 ```
 
 ## 使用密钥管理服务存储凭据 {#using-kms-to-store-credentials}

@@ -13,7 +13,7 @@ ref: config-api
 为了提高了API的安全等级，我们为每个开发者提供了独立的、数据隔离的API Host，即API地址或API的域名。API Host可以在[控制台-设置](https://console.qweather.com/setting)中查看，看起来像是：
 
 ```
-abc.xyz.qweatherapi.com
+abcxyz.qweatherapi.com
 ```
 
 你需要API Host与API路径、参数拼接在一起，或者在使用SDK时将API Host填写到配置项中。
@@ -23,8 +23,8 @@ abc.xyz.qweatherapi.com
 通常来讲，一个完整的API请求URL由scheme，host，path，path parameters和query parameters组成：
 
 ```
-https://abc.xyz.qweatherapi.com/airquality/v1/station/{LocationID}?lang=en
-\___/   \_____________________/\____________________/\___________/\______/
+https://abcxyz.qweatherapi.com/airquality/v1/station/{LocationID}?lang=en
+\___/   \____________________/\____________________/\___________/\______/
 scheme           host                  path              path      query
                                                         params     params 
 ```
@@ -69,7 +69,7 @@ X-QW-Api-Key: ABCD1234EFGH
 ```bash
 curl --compressed \
 -H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
-'https://api.qweather.com/v7/weather/now?location=101010100'
+'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
 ```
 
 对于大部分开发者来说，构建一个API URL并非难事，但我们仍然强烈建议你阅读[最佳实践-优化请求](/docs/best-practices/optimize-requests/)文档，了解发送API请求的一些常见问题和经验。

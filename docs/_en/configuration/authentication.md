@@ -114,7 +114,7 @@ Add the Token as a parameter to the `Authorization: Bearer` request header, for 
 
 ```bash
 curl -i -H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
---compressed 'https://api.qweather.com/v7/weather/now?location=101010100'
+--compressed 'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
 ```
 
 ### JWT demo
@@ -336,7 +336,7 @@ Add `X-QW-Api-Key: your-key` to your request Header. For example:
 
 ```bash
 curl -H "X-QW-Api-Key: ABCD1234EFGH" --compressed \
-'https://api.qweather.com/v7/weather/now?location=101010100'
+'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
 ```
 
 #### Query parameter
@@ -345,7 +345,7 @@ Add `key=your-key` to your query parameter. For example:
 
 ```bash
 curl --compressed \
-'https://api.qweather.com/v7/weather/now?location=101010100&key=ABCD1234EFGH'
+'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100&key=ABCD1234EFGH'
 ```
 
 ## API KEY signature
