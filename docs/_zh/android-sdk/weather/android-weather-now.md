@@ -24,7 +24,7 @@ ref: 1-sdk-android-weather-now
 public void weatherNow(WeatherParameter parameter, Callback<WeatherNowResponse> callback);
 ```
 
-## Response
+## 返回数据
  
 **WeatherNowResponse**
 

@@ -1,5 +1,5 @@
 ---
-title: grid-weather-daily
+title: weather-grid-daily
 ---
 ```json
 {

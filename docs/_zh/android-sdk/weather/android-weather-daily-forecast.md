@@ -49,7 +49,7 @@ public void weather15d(WeatherParameter parameter, Callback<WeatherDailyResponse
 public void weather30d(WeatherParameter parameter, Callback<WeatherDailyResponse> callback);
 ```
 
-## Response
+## 返回数据
 
 **WeatherDailyResponse**
 

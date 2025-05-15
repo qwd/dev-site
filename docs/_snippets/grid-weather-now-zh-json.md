@@ -1,6 +1,7 @@
 ---
-title: grid-weather-now
+title: weather-grid-now
 ---
+
 ```json
 {
   "code": "200",

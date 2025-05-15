@@ -33,14 +33,12 @@ reference_docs:
           - type: now
           - type: daily
           - type: hourly
+          - type: grid-now
+          - type: grid-daily
+          - type: grid-hourly
       - name: 0-api-minutely
         data: 
           - type: precip
-      - name: 0-api-grid-weather
-        data: 
-          - type: now
-          - type: daily
-          - type: hourly
       - name: 0-api-warning
         data: 
           - type: now

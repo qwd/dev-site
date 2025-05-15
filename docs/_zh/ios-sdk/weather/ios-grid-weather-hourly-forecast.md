@@ -1,31 +1,31 @@
 ---
-title: Grid Weather Hourly Forecast
-tag: [guide, ios, grid-weather, hourly]
+title: 格点逐小时天气预报
+tag: [guide, ios, weather, grid-hourly]
 ref: 3-sdk-ios-grid-weather-hourly-forecast
 ---
 
-Get hourly weather forecasts at any latitude and longitude in the world, including: temperature, humidity, atmospheric pressure, weather conditions, wind direction, etc.
+基于数值模式的天气预报数据，提供全球指定坐标的逐小时天气预报，分辨率3-5公里。
 
-> The spatial resolution is 1x1, 3x3 or 5x5 KM, depending on the region.
+> **提示：** 格点天气预报是基于数值预报模型生成，不适宜与观测站数据对比。如需基于观测站的城市天气，请使用[城市逐小时天气API](/docs/ios-sdk/weather/ios-weather-hourly-forecast/)。格点天气采用UTC 0时区表示时间。
 
-| Interface code       | Interface     | Class             |
+| 接口代码           | 接口     | 数据类             |
 | --------------------------- | ---- | ------------------ |
-| grid24h | Hourly Forecast by Grid (24hrs)| GridHourlyResponse |
-| grid72h | Hourly Forecast by Grid (72hrs)）| GridHourlyResponse |
+| grid24h | 逐小时预报（未来24小时）| GridHourlyResponse |
+| grid72h | 逐小时预报（未来72小时）| GridHourlyResponse |
 
 
-## Parameters 
+## 参数
 
 **GridWeatherParameter**
 
-| Name  | Type | Required | Exemple |
+| 参数名   | 参数类型 | 必选 | 示例值 |
 | -------- | -------- | ---- | ------ |
-| longitude | Double | true | 116.41 |
-| latitude | Double | true | 39.92 |
-| lang | Lang | false | ZH_HANS |
-| unit | Unit | false | METRIC |
+| longitude | Double | 是 | 116.41 |
+| latitude | Double | 是 | 39.92 |
+| lang | Lang | 否 | ZH_HANS |
+| unit | Unit | 否 | METRIC |
 
-## Sample code
+## 代码示例
 
 **Swift**
 
@@ -34,13 +34,13 @@ Task{
     do {
         let parameter = GridWeatherParameter(longitude: 116.41, latitude: 39.92)
         /*
-        * Hourly Forecast by Grid (24hrs)
+        * 逐小时预报（未来24小时）
         */
         let _ = try await QWeather.instance
             .grid24h(parameter)
         
         /*
-        * Hourly Forecast by Grid (72hrs)
+        * 逐小时预报（未来72小时）
         */
         let _ = try await QWeather.instance
             .grid72h(parameter)
@@ -69,17 +69,17 @@ void (^handler)(GridHourlyResponse *, NSError *) = ^(GridHourlyResponse *respons
 };
 
 /*
-* Hourly Forecast by Grid (24hrs)
+* 逐小时预报（未来24小时）
 */
 [QWeatherObjc grid24h:parameter completionHandler:handler];
 
 /*
-* Hourly Forecast by Grid (72hrs)
+* 逐小时预报（未来72小时）
 */
 [QWeatherObjc grid72h:parameter completionHandler:handler];
 ```
 
-## Response
+## 返回数据
 
 **GridHourlyResponse**
 

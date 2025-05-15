@@ -1,12 +1,12 @@
 ---
 title: Grid Weather Hourly Forecast
-tag: [guide, android, grid-weather, hourly]
+tag: [guide, android, weather, grid-hourly]
 ref: 3-sdk-android-grid-weather-hourly-forecast
 ---
 
-Get hourly weather forecasts at any latitude and longitude in the world, including: temperature, humidity, atmospheric pressure, weather conditions, wind direction, etc.
+Weather forecast data based on numerical models, to provide hourly weather forecasts at specified coordinates around the world, with a spatial resolution of 3-5 kilometers.
 
-> The spatial resolution is 1x1, 3x3 or 5x5 KM, depending on the region.
+> **Hint:** The grid weather data is based on Numerical Weather Prediction (NWP) models, and it is not suitable for comparison with observation station data. For station-based city weather data, please refer to the [City Weather API](/en/docs/android-sdk/weather/android-weather-hourly-forecast/). Grid weather uses UTC+0 as the time zone.
 
 | Interface code          | Interface     | Class         |
 | --------------------------- | ---- | ------------------ |

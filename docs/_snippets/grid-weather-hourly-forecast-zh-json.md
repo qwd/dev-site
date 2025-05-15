@@ -1,5 +1,5 @@
 ---
-title: grid-weather-hourly
+title: weather-grid-hourly
 ---
 ```json
 {

@@ -1,10 +1,12 @@
 ---
 title: 格点实时天气
-tag: [guide, android, grid-weather, now]
+tag: [guide, android, weather, grid-now]
 ref: 1-sdk-android-grid-weather-now
 ---
 
-基于全球任意坐标的高精度实时天气，精确到3-5公里范围，包括：温度、湿度、大气压、天气状况、风力、风向等。
+基于数值模式的天气预报数据，提供全球指定坐标的实时天气，分辨率3-5公里。
+
+> **提示：** 格点天气预报是基于数值预报模型生成，不适宜与观测站数据对比。如需基于观测站的城市天气，请使用[城市实时天气API](/docs/android-sdk/weather/android-weather-now/)。格点天气采用UTC 0时区表示时间。
 
 | 接口代码          | 接口     | 数据类             |
 | --------------------------- | ---- | ------------------ |

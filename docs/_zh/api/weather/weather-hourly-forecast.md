@@ -8,9 +8,13 @@ ref: 3-api-weather-hourly-forecast
 
 ## 请求路径 {#endpoint}
 
-{% include api-url.html apidata="weather-hourly-24h weather-hourly-72h weather-hourly-168h" title=true dev=true %}
+{% include api-url.html apidata="weather-hourly" %}
 
 ## 参数 {#parameters}
+
+#### 路径参数 {#path-parameters}
+
+{% include params.html p="p-hour168h" %}
 
 #### 查询参数 {#query-parameters}
 
@@ -18,7 +22,7 @@ ref: 3-api-weather-hourly-forecast
 
 ## 请求示例 {#request-example}
 
-{% include api-url-example.html apidata="weather-hourly-24h" %}
+{% include api-url-example.html %}
 
 ## 返回数据 {#response}
 
