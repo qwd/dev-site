@@ -8,9 +8,13 @@ Get weather daily forecasts for the next 3-30 days for cities around the world.
 
 ## Endpoint
 
-{% include api-url.html apidata="weather-daily-3d weather-daily-7d weather-daily-10d weather-daily-15d weather-daily-30d" title=true dev=true %}
+{% include api-url.html apidata="weather-daily" %}
   
 ## Parameters
+
+#### Path parameters
+
+{% include params.html p="p-day30d" %}
 
 #### Query parameters
 
@@ -18,7 +22,7 @@ Get weather daily forecasts for the next 3-30 days for cities around the world.
 
 ## Request example
 
-{% include api-url-example.html apidata="weather-daily-3d" %}
+{% include api-url-example.html %}
 
 ## Response
 

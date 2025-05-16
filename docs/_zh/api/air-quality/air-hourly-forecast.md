@@ -1,6 +1,6 @@
 ---
-title: 空气质量小时预报(new)
-tag: [guide, api, aq-v1, hourly-v1]
+title: 空气质量小时预报
+tag: [guide, api, aq, hourly-v1]
 ref: 1-api-air-hourly-v1
 ---
 

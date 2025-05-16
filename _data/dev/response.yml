@@ -1129,8 +1129,8 @@ hisweather:
     type: [daily]
   - name: humidity
     desc:
-      zh: 当天每小时相对湿度，百分比数值
-      en: Hourly relative humidity in percent
+      zh: 当天相对湿度，百分比数值
+      en: Daily relative humidity in percent
     example: 35
     type: [daily]
   - name: time

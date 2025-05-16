@@ -1,5 +1,5 @@
 ---
-title: air-daily
+title: aq-daily
 ---
 ```json
 {

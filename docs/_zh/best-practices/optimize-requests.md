@@ -13,7 +13,7 @@ ref: bp-opz
 当你使用API获取数据的时候，会通过URL向我们发起请求，例如：
 
 ```
-https://api.qweather.com/v7/weather/3d?parameters
+https://abcxyz.qweatherapi.com/v7/weather/3d?parameters
 ```
 
 一般来说，这段请求URL不会出现错误，但是在传递一些特殊的参数和值的时候需要特别注意：

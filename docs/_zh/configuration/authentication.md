@@ -122,7 +122,7 @@ eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6M
 ```bash
 curl --compressed \
 -H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
-'https://api.qweather.com/v7/weather/now?location=101010100'
+'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
 ```
 
 ### 生成JWT示例 {#jwt-demo}
@@ -347,7 +347,7 @@ API KEY是一种常见、操作简单的身份认证方式。相比较JWT而言�
 
 ```bash
 curl -H "X-QW-Api-Key: ABCD1234EFGH" --compressed \
-'https://api.qweather.com/v7/weather/now?location=101010100'
+'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
 ```
 
 #### 请求参数 {#query-parameter}
@@ -356,7 +356,7 @@ curl -H "X-QW-Api-Key: ABCD1234EFGH" --compressed \
 
 ```bash
 curl --compressed \
-'https://api.qweather.com/v7/weather/now?location=101010100&key=ABCD1234EFGH'
+'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100&key=ABCD1234EFGH'
 ```
 
 ## API KEY数字签名 {#api-key-signature}

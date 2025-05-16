@@ -1,5 +1,5 @@
 ---
-title: aq-v1-now-v1
+title: aq-now-v1
 ---
 ```json
 {

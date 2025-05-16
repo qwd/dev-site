@@ -1,6 +1,6 @@
 ---
-title: 空气质量每日预报(new)
-tag: [guide, ios, aq-v1, daily-v1]
+title: 空气质量每日预报
+tag: [guide, ios, aq, daily-v1]
 ref: 1-sdk-ios-air-daily-v1
 ---
 
@@ -10,7 +10,7 @@ ref: 1-sdk-ios-air-daily-v1
 
 | 接口代码 | 接口                         | 数据类       |
 | --------------- | ---------------------------- | ------------ |
-| airDaily | 空气质量每日预报(new)    | AirV1DailyResponse |
+| airDaily | 空气质量每日预报    | AirV1DailyResponse |
 
 ## 参数 
 

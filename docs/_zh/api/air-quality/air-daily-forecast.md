@@ -1,6 +1,6 @@
 ---
-title: 空气质量每日预报(new)
-tag: [guide, api, aq-v1, daily-v1]
+title: 空气质量每日预报
+tag: [guide, api, aq, daily-v1]
 ref: 1-api-air-daily-v1
 ---
 

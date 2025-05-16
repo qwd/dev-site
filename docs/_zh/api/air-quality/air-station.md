@@ -1,6 +1,6 @@
 ---
-title: 监测站数据(new)
-tag: [guide, api, aq-v1, station-v1]
+title: 监测站数据
+tag: [guide, api, aq, station-v1]
 ref: 1-api-air-station-v1
 ---
 
