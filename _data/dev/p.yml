@@ -285,3 +285,67 @@ p-lon:
     en: The longitude of the desired location. Decimal format, up to 2 decimal places. For example `116.41`
     zh: 所需位置的经度。十进制，最多支持小数点后两位。例如 `116.41` 
   rqd: true
+p-day7d:
+  name: days
+  text: 
+    en: |
+     Forecast days, supports up to 7 days, available value:
+      
+     - `3d` 3 days forecast.
+     - `7d` 7 days forecast.
+    zh: |
+     预报天数，支持最多7天预报，可选值：
+
+     - `3d` 3天预报。
+     - `7d` 7天预报。
+  rqd: true
+p-hour72h:
+  name: hours
+  text: 
+    en: |
+     Forecast hours, supports up to 72 hours, available value:
+      
+     - `24h` 24 hours forecast.
+     - `72h` 72 hours forecast.
+    zh: |
+     预报小时数，支持最多72小时预报，可选值：
+
+     - `24h` 24小时预报。
+     - `72h` 72小时预报。
+  rqd: true
+p-day30d:
+  name: days
+  text: 
+    en: |
+     Forecast days, supports up to 30 days, available value:
+      
+     - `3d` 3 days forecast.
+     - `7d` 7 days forecast.
+     - `10d` 10 days forecast.
+     - `15d` 15 days forecast.
+     - `15d` 30 days forecast.
+    zh: |
+     预报天数，支持最多30天预报，可选值：
+
+     - `3d` 3天预报。
+     - `7d` 7天预报。
+     - `10d` 10天预报。
+     - `15d` 15天预报。
+     - `30d` 30天预报。
+  rqd: true
+p-hour168h:
+  name: hours
+  text: 
+    en: |
+     Forecast hours, supports up to 168 hours, available value:
+      
+     - `24h` 24 hours forecast.
+     - `72h` 72 hours forecast.
+     - `168h` 168 hours forecast.
+    zh: |
+     预报小时数，支持最多168小时预报，可选值：
+
+     - `24h` 24小时预报。
+     - `72h` 72小时预报。
+     - `168h` 168小时预报。
+  rqd: true

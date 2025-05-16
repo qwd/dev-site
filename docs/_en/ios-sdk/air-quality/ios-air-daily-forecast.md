@@ -1,6 +1,6 @@
 ---
-title: Air Quality Daily Forecast (new)
-tag: [guide, ios, aq-v1, daily-v1]
+title: Air Quality Daily Forecast
+tag: [guide, ios, aq, daily-v1]
 ref: 1-sdk-ios-air-daily-v1
 ---
 
@@ -10,7 +10,7 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 
 | Interface code | Interface                         | Class       |
 | --------------- | ---------------------------- | ------------ |
-| airDaily | Air quality daily forecast (new)     | AirV1DailyResponse |
+| airDaily | Air quality daily forecast     | AirV1DailyResponse |
 
 ## Parameters 
 

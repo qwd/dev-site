@@ -8,9 +8,13 @@ ref: 2-api-weather-daily-forecast
 
 ## 请求路径 {#endpoint}
 
-{% include api-url.html apidata="weather-daily-3d weather-daily-7d weather-daily-10d weather-daily-15d weather-daily-30d" title=true dev=true %}
+{% include api-url.html apidata="weather-daily" %}
   
 ## 参数 {#parameters}
+
+#### 路径参数 {#path-parameters}
+
+{% include params.html p="p-day30d" %}
 
 #### 查询参数 {#query-parameters}
 
@@ -18,7 +22,7 @@ ref: 2-api-weather-daily-forecast
 
 ## 请求示例 {#request-example}
 
-{% include api-url-example.html apidata="weather-daily-3d" %}
+{% include api-url-example.html %}
 
 ## 返回数据 {#response}
 

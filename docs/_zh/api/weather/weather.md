@@ -1,8 +1,8 @@
 ---
-title: 城市天气
+title: 天气预报
 tag: [guide, api, weather, overview]
 layout: guide-overview
-description: 城市天气预报提供包括中国3000+市县区在内的全球20万+城市的天气预报，支持实时天气、最多30天预报及最多7天逐小时天气预报。
+description: 天气API提供全球20多万个城市的实时天气和预报数据，并支持基于数值模式的天气预报，分辨率达3–5公里，覆盖全球坐标点。
 permalink: /docs/api/weather/
 ref: 0-api-weather
 ---

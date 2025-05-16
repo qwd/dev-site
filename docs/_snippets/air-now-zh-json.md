@@ -1,5 +1,5 @@
 ---
-title: air-now
+title: aq-now
 ---
 ```json
 {

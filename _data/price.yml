@@ -1,7 +1,7 @@
 - data: 
     zh: 天气和环境
     en: Weather and Environment
-  incl: [0-api-weather, 0-api-grid-weather, 0-api-minutely, 0-api-warning, 0-api-indices, 0-api-air,0-api-aq-v1, 0-api-time-machine, 0-api-geo, 0-api-astronomy]
+  incl: [0-api-weather, 0-api-minutely, 0-api-warning, 0-api-indices, 0-api-aq, 0-api-time-machine, 0-api-geo, 0-api-astronomy]
   price: 
     - tier: 50000
       value: 0

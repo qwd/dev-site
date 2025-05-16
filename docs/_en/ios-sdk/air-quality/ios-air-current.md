@@ -1,6 +1,6 @@
 ---
-title: Current Air Quality (new)
-tag: [guide, ios, aq-v1, now-v1]
+title: Current Air Quality
+tag: [guide, ios, aq, now-v1]
 ref: 1-sdk-ios-air-now-v1
 ---
 
@@ -16,7 +16,7 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 
 | Interface code | Interface         | Class       |
 | --------------- | ---------------- | ------------ |
-| airCurrent | Current Air Quality (new)  | AirV1CurrentResponse |
+| airCurrent | Current Air Quality  | AirV1CurrentResponse |
 
 ## Parameters 
 

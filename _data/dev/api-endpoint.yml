@@ -53,64 +53,28 @@ weather-now:
     name:
       zh: 实况天气
       en: Real-time
-weather-daily-3d:
+weather-daily:
   demo:
     link: https://your_api_host/v7/weather/3d?location=101010100
     name:
       zh: 北京3天预报
       en: 3-day forecast for Beijing
   endpoint:
-    path: /v7/weather/3d
+    path: /v7/weather/{days}
     name:
-      zh: 3天预报
-      en: 3 Days Forecast
-weather-daily-7d:
+      zh: 每日天气预报
+      en: Daily Weather Forecast
+weather-hourly:
   endpoint:
-    path: /v7/weather/7d
+    path: /v7/weather/{hours}
     name:
-      zh: 7天预报
-      en: 7 Days Forecast
-weather-daily-10d:
-  endpoint:
-    path: /v7/weather/10d
-    name:
-      zh: 10天预报
-      en: 10 Days Forecast
-weather-daily-15d:
-  endpoint:
-    path: /v7/weather/15d
-    name:
-      zh: 15天预报
-      en: 15 Days Forecast
-weather-daily-30d:
-  endpoint:
-    path: /v7/weather/30d
-    name:
-      zh: 30天预报
-      en: 30 Days Forecast
-weather-hourly-24h:
-  endpoint:
-    path: /v7/weather/24h
-    name:
-      zh: 逐小时预报（未来24小时）
-      en: Hourly Forecast (24hrs)
+      zh: 逐小时天气预报
+      en: Hourly Weather Forecast
   demo: 
     link: https://your_api_host/v7/weather/24h?location=101010100
     name:
       zh: 北京未来24小时逐小时天气
       en: 24 Hours forecast for Beijing
-weather-hourly-72h:
-  endpoint:
-    path: /v7/weather/72h
-    name:
-      zh: 逐小时预报（未来72小时）
-      en: Hourly Forecast (72hrs)
-weather-hourly-168h:
-  endpoint:
-    path: /v7/weather/168h
-    name:
-      zh: 逐小时预报（未来168小时）
-      en: Hourly Forecast (168hrs)
 minutely-precip:
   demo:
     link: https://your_api_host/v7/minutely/5m?location=116.38,39.91
@@ -122,7 +86,7 @@ minutely-precip:
     name:
       zh: 分钟级降水
       en: Minutely Forecast
-grid-weather-now:
+weather-grid-now:
   demo:
     link: https://your_api_host/v7/grid-weather/now?location=116.41,39.92
     name: 
@@ -133,34 +97,28 @@ grid-weather-now:
     name:
       zh: 格点实况天气
       en: Real-time by Grid
-grid-weather-daily-3d:
+weather-grid-daily:
   demo:
     link: https://your_api_host/v7/grid-weather/3d?location=116.41,39.92
     name: 
       zh: 基于116.41N, 39.92E的格点3天预报 
       en: Grid weather 3-day forecast for 116.41N, 39.92E
   endpoint:
-    path: /v7/grid-weather/3d
+    path: /v7/grid-weather/{days}
     name:
-      zh: 格点3天预报
-      en: 3 Days Forecast by Grid
-grid-weather-daily-7d:
-  endpoint:
-    path: /v7/grid-weather/7d
-    name:
-      zh: 格点7天预报
-      en: 7 Days Forecast by Grid
-grid-weather-hourly-24h:
+      zh: 格点每天预报
+      en: Daily Forecast by Grid
+weather-grid-hourly:
   demo:
     link: https://your_api_host/v7/grid-weather/24h?location=116.41,39.92
     name: 
       zh: 基于116.41N, 39.92E的格点未来预报（24小时）  
       en: Grid weather hourly forecast(24H) for 116.41N, 39.92E
   endpoint:
-    path: /v7/grid-weather/24h
+    path: /v7/grid-weather/{hours}
     name:
-      zh: 逐小时预报（未来24小时）
-      en: Hourly Forecast by Grid (24hrs)
+      zh: 逐小时预报
+      en: Hourly Forecast by Grid
 grid-weather-hourly-72h:
   endpoint:
     path: /v7/grid-weather/72h

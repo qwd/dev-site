@@ -41,7 +41,7 @@ public void weather168h(WeatherParameter parameter, Callback<WeatherHourlyRespon
 
 ```
 
-## Response
+## 返回数据
 
 **WeatherHourlyResponse**
 

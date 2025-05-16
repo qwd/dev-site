@@ -1,5 +1,5 @@
 ---
-title: aq-v1-hourly-v1
+title: aq-hourly-v1
 ---
 ```json
 {

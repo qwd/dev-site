@@ -1,6 +1,6 @@
 ---
-title: 监测站数据(new)
-tag: [guide, ios, aq-v1, station-v1]
+title: 监测站数据
+tag: [guide, ios, aq, station-v1]
 ref: 1-sdk-ios-air-station-v1
 ---
 
@@ -11,7 +11,7 @@ ref: 1-sdk-ios-air-station-v1
 
 | 接口代码 | 接口         | 数据类型       |
 | --------------- | ---------------- | ------------ |
-| airStation | 监测站数据(new)  | AirV1StationResponse |
+| airStation | 监测站数据  | AirV1StationResponse |
 
 
 ## 参数

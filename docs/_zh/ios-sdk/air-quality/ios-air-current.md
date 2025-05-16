@@ -1,6 +1,6 @@
 ---
-title: 实时空气质量(new)
-tag: [guide, ios, aq-v1, now-v1]
+title: 实时空气质量
+tag: [guide, ios, aq, now-v1]
 ref: 1-sdk-ios-air-now-v1
 ---
 
@@ -16,7 +16,7 @@ ref: 1-sdk-ios-air-now-v1
 
 | 接口代码 | 接口                         | 数据类       |
 | --------------- | ---------------------------- | ------------ |
-| airCurrent | 实时空气质量(new)    | AirV1CurrentResponse |
+| airCurrent | 实时空气质量    | AirV1CurrentResponse |
 
 ## 参数 
 

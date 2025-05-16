@@ -1,6 +1,6 @@
 ---
-title: Monitoring Station Data (new)
-tag: [guide, ios, aq-v1, station-v1]
+title: Monitoring Station Data
+tag: [guide, ios, aq, station-v1]
 ref: 1-sdk-ios-air-station-v1
 ---
 
@@ -11,7 +11,7 @@ Monitoring Station Data API provides pollutant concentration values from air qua
 
 | Interface code | Interface         | Class       |
 | --------------- | ---------------- | ------------ |
-| airStation | Monitoring Station Data (new)  | AirV1StationResponse |
+| airStation | Monitoring Station Data  | AirV1StationResponse |
 
 ## Parameters 
 

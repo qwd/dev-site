@@ -1,6 +1,6 @@
 ---
-title: 空气质量小时预报(new)
-tag: [guide, ios, aq-v1, hourly-v1]
+title: 空气质量小时预报
+tag: [guide, ios, aq, hourly-v1]
 ref: 1-sdk-ios-air-hourly-v1
 ---
 
@@ -10,7 +10,7 @@ ref: 1-sdk-ios-air-hourly-v1
 
 | 接口代码 | 接口                         | 数据类       |
 | --------------- | ---------------------------- | ------------ |
-| airHourly | 空气质量小时预报(new)    | AirV1HourlyResponse |
+| airHourly | 空气质量小时预报    | AirV1HourlyResponse |
 
 ## 参数 
 
