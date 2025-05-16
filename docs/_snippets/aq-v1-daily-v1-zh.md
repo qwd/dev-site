@@ -1,5 +1,5 @@
 ---
-title: aq-v1-daily-v1
+title: aq-daily-v1
 ---
 ```json
 {

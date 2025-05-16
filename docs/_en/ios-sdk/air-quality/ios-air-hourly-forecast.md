@@ -1,6 +1,6 @@
 ---
-title: Air Quality Hourly Forecast (new)
-tag: [guide, ios, aq-v1, hourly-v1]
+title: Air Quality Hourly Forecast
+tag: [guide, ios, aq, hourly-v1]
 ref: 1-sdk-ios-air-hourly-v1
 ---
 
@@ -10,7 +10,7 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 
 | Interface code | Interface                 | Class       |
 | --------------- | ---------------------------- | ------------ |
-| airHourly | Air quality hourly forecast (new)    | AirV1HourlyResponse |
+| airHourly | Air quality hourly forecast    | AirV1HourlyResponse |
 
 ## Parameters
 

@@ -1,6 +1,6 @@
 ---
-title: 实时空气质量(new)
-tag: [guide, api, aq-v1, now-v1]
+title: 实时空气质量
+tag: [guide, api, aq, now-v1]
 ref: 1-api-air-now-v1
 ---
 

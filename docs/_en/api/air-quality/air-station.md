@@ -1,6 +1,6 @@
 ---
-title: Monitoring Station Data (new)
-tag: [guide, api, aq-v1, station-v1]
+title: Monitoring Station Data
+tag: [guide, api, aq, station-v1]
 ref: 1-api-air-station-v1
 ---
 
