@@ -39,7 +39,7 @@ Depending on the authentication method, there are JWT credentials and API KEY cr
 
 ### Add credential for JWT
 
-To add JWT credentials, you need to create Ed25519 public and private keys first, see [Authentication - Generate Ed25512](/docs/configuration/authentication/#prerequisites).
+To add JWT credentials, you need to create Ed25519 public and private keys first, see [Authentication - Generate Ed25519](/docs/configuration/authentication/#prerequisites).
 
 1. [Go to Console - Project](https://console.qweather.com/project)
 2. Choose the project where you want to add the public key.

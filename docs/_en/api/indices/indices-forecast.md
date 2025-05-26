@@ -11,9 +11,13 @@ Get weather indices forecast data for cities in China and around the world.
 
 ## Endpoint
 
-{% include api-url.html apidata="indices-forecast-1d indices-forecast-3d" title=true dev=true %}
+{% include api-url.html apidata="indices-forecast" %}
 
 ## Parameters
+
+#### Path parameters
+
+{% include params.html p="p-day3d" %}
 
 #### Query parameters
 
@@ -21,7 +25,7 @@ Get weather indices forecast data for cities in China and around the world.
 
 ## Request example
 
-{% include api-url-example.html apidata="indices-forecast-1d" %}
+{% include api-url-example.html apidata="indices-forecast" %}
 
 ## Response
 

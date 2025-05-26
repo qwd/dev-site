@@ -257,6 +257,22 @@ radius:
      Set search radius, the value range is 1-50, in kilometers. **5 by default**. 
     zh: |-
      搜索范围，可设置搜索半径，取值范围1-50，单位：公里。**默认5公里**。
+q-stats-proj:
+  name: project
+  text: 
+    en: |-
+     Specify a Project ID to get its API traffic stats. Do not pass both `project` and `credential` in a single request.
+    zh: |-
+     指定项目ID以查看该项目的请求量统计。`project`与`credential`互斥。
+  rqd: false
+q-stats-cred:
+  name: credential
+  text: 
+    en: |-
+     Specify a Credential ID to get its API traffic stats. Do not pass both `project` and `credential` a single request.
+    zh: |-
+     指定凭据ID以查看该凭据的请求量统计。`credential`与`project`互斥。
+  rqd: false
 p-location-id-aqsta:
   name: LocationID
   text: 
@@ -298,6 +314,20 @@ p-day7d:
 
      - `3d` 3天预报。
      - `7d` 7天预报。
+  rqd: true
+p-day3d:
+  name: days
+  text: 
+    en: |
+     Forecast days, supports up to 3 days, available value:
+      
+     - `1d` 1 days forecast.
+     - `3d` 3 days forecast.
+    zh: |
+     预报天数，支持最多3天预报，可选值：
+
+     - `1d` 1天预报。
+     - `3d` 3天预报。
   rqd: true
 p-hour72h:
   name: hours

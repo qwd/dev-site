@@ -13,7 +13,7 @@ ref: 0-api-console
 
 1. [前往控制台-项目管理](https://console.qweather.com/project)
 2. 点击需要启用控制台API的凭据
-3. 向下滑动至控制台权限
+3. 向下滑动至“控制台权限”
 4. 勾选需要启用的控制台API权限
 5. 点击“保存”按钮
 

@@ -1498,6 +1498,30 @@ console:
       zh: 生效时间。
       en: Time when the resource plan becomes effective.
     type: [finance]
+  - name: success.api
+    desc:
+      zh: 成功请求的API名称。
+      en: API name of the successful requests.
+    type: [stats]
+  - name: success.hours
+    desc:
+      zh: |
+       最近24小时每小时的成功请求量，结束时间以`asOf`为准。例如 asOf=2025-03-20T09:59Z，则数组中的最后一条数据代表09:00 ～ 09:59（UTC）的请求量。
+      en: |
+       Hourly successful requests stats for the last 24 hours, ending at `asOf` (e.g., asOf=2025-03-20T09:59Z means the last array item covers 09:00–09:59 UTC).
+    type: [stats]
+  - name: errors.api
+    desc:
+      zh: 错误请求的API名称。
+      en: API name of the error requests.
+    type: [stats]
+  - name: errors.hours
+    desc:
+      zh: |
+       最近24小时每小时的错误请求量，结束时间以`asOf`为准。例如 asOf=2025-03-20T09:59Z，则数组中的最后一条数据代表09:00 ～ 09:59（UTC）的请求量。
+      en: |
+        Hourly error requests stats for the last 24 hours, ending at `asOf` (e.g., asOf=2025-03-20T09:59Z means the last array item covers 09:00–09:59 UTC).
+    type: [stats]
 
 
 

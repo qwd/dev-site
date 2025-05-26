@@ -3,54 +3,47 @@ title: console-finance
 ---
 ```json
 {
-  "asOf": "2024-03-03T12:13Z",
-  "currency": "CNY",
-  "balance": -39.4,
-  "accruedCharges": {
-    "previousDay": 110.45,
-    "thisMonth": 1311.32,
-    "sinceLastBill": 1311.32
+  "metadata": {
+    "tag": "2a9873efd0a6c75665dc4f6116b19bdf"
   },
-  "vatEligibleAmount": 2932.5,
+  "asOf": "2024-04-03T17:13Z",
+  "currency": "CNY",
+  "balance": -17.54,
+  "accruedCharges": {
+    "previousDay": 28.92,
+    "thisMonth": 113.12,
+    "sinceLastBill": 113.12
+  },
   "pendingBills": [
     {
-      "number": "27A4KA3K2D",
-      "date": "2024-03-01T02:00Z",
-      "type": "pay-as-you-go",
+      "number": "20681CYX",
+      "date": "2024-04-01T10:00Z",
+      "type": "PayAsYouGo",
       "status": "unpaid",
-      "amount": 861.2,
-      "amountDue": 39.4,
-      "dueDate": "2024-03-10T15:59Z"
+      "amount": 535.1,
+      "amountDue": 17.54,
+      "dueDate": "2024-04-10T23:59Z"
     },
     {
-      "number": "639C7E7DC2",
-      "date": "2024-03-02T13:34Z",
-      "type": "savings plan",
+      "number": "605D0FYX",
+      "date": "2024-04-02T13:34Z",
+      "type": "SavingsPlans",
       "status": "unpaid",
       "amount": 2000,
       "amountDue": 2000,
-      "dueDate": "2024-03-15T07:59Z"
+      "dueDate": "2024-04-30T12:59Z"
     }
   ],
   "availableSavingsPlans": [
     {
-      "billNumber": "27A4KA3K2D",
+      "billNumber": "605D0FYX",
       "status": "pending",
       "term": "1",
       "commitments": 2000,
       "utilized": 0,
-      "effectiveTime": "2024-03-15T08:00Z"
+      "effectiveTime": "2024-04-30T13:00Z"
     }
   ],
-  "availableResourcePlans": [
-    {
-      "billNumber": "6CC7233CBE",
-      "status": "active",
-      "type": "general",
-      "requests": 1000000,
-      "utilized": 9876,
-      "effectiveTime": "2024-01-04T09:54Z"
-    }
-  ]
+  "availableResourcePlans": []
 }
 ```

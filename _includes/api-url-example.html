@@ -1,9 +1,14 @@
 {%- assign apidata_default = page.tag[2] | append: '-' | append: page.tag[3] -%}
 {%- assign apidata = include.apidata | default: apidata_default -%}
+{% for item in site.data.dev.api-endpoint %}
+{%- if item.name == apidata -%}
 {% highlight bash %}
 curl -X GET --compressed \
 -H 'Authorization: Bearer your_token' \
-'{{- site.data.dev.api-endpoint[apidata].demo.link }}'
+'{{ item.demo.link }}'
 {% endhighlight %}
 {{ site.data.t[page.lang].example-token-hint }}
 {:.small .italic}
+{% break %}
+{%- endif -%}
+{%- endfor -%}
