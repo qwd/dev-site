@@ -38,7 +38,7 @@ ref: config-project
 
 ### 添加JWT凭据 {#add-credential-for-jwt}
 
-添加JWT凭据，你需要先创建Ed25519公钥和私钥，参考[身份认证-生成Ed25512](/docs/configuration/authentication/#prerequisites)
+添加JWT凭据，你需要先创建Ed25519公钥和私钥，参考[身份认证-生成Ed25519](/docs/configuration/authentication/#prerequisites)
 
 1. [前往控制台-项目管理](https://console.qweather.com/project)
 2. 在项目列表中点击你需要添加凭据的项目

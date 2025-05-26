@@ -1,11 +1,11 @@
 <div class="request-url mb-3">
     {%- comment -%} setup default apidata from tags {%- endcomment -%}
     {%- assign apidata_default = page.tag[2] | append: '-' | append: page.tag[3] -%}
-    {%- assign apidata = include.apidata | default: apidata_default | split: " " -%}
-    {% for item in apidata %}
-        {% if include.title == true -%}
-        <span class="my-3 d-block text-bold">{{- site.data.dev.api-endpoint[item].endpoint.name[page.lang] -}}</span>    
-        {% endif -%}
-        <pre><code>{{ site.data.dev.api-endpoint[item].endpoint.path }}</code></pre>
+    {%- assign apidata = include.apidata | default: apidata_default  -%}
+    {% for item in site.data.dev.api-endpoint %}
+    {%- if item.name == apidata -%}
+        <pre><code>{{ item.endpoint.path }}</code></pre>
+    {% break %}
+    {%- endif -%}
     {%- endfor -%}
 </div>

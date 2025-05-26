@@ -11,9 +11,13 @@ ref: 1-api-indices-forecast
 
 ## 请求路径 {#endpoint}
 
-{% include api-url.html apidata="indices-forecast-1d indices-forecast-3d" title=true dev=true %}
+{% include api-url.html %}
 
 ## 参数 {#parameters}
+
+#### 路径参数 {#path-parameters}
+
+{% include params.html p="p-day3d" %}
 
 #### 查询参数 {#query-parameters}
 
@@ -21,11 +25,11 @@ ref: 1-api-indices-forecast
 
 ## 请求示例 {#request-example}
 
-{% include api-url-example.html apidata="indices-forecast-1d" %}
+{% include api-url-example.html apidata="indices-forecast" %}
 
 ## 返回数据 {#response}
 
-{% include api-snippet.html flag="indices-1d" %}
+{% include api-snippet.html %}
 
 {% include api-response.html group="indices" prefix="daily" %}
 

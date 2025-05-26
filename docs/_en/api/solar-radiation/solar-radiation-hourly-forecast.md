@@ -8,12 +8,16 @@ Get the net solar radiation, diffuse solar radiation and direct solar radiation 
 
 ## Endpoint
 
-{% include api-url.html apidata="solar-radiation-hourly-24h solar-radiation-hourly-72h" title=true %}
+{% include api-url.html apidata="solar-radiation-hourly" %}
 
 > **Note:** Hourly Forecast (72hrs) may be missing the last few hours data under some conditions.
 {:.bqwarning}
 
 ## Parameters
+
+#### Path parameters
+
+{% include params.html p="p-hour72h" %}
 
 #### Query parameters
 

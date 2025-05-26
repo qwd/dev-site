@@ -75,6 +75,10 @@ reference_docs:
           - type: sun
           - type: moon
           - type: solar-elevation-angle
+      - name: 0-api-console
+        data: 
+          - type: finance
+          - type: stats
   - overview: res-overview
     list: 
       - name: res-glossary

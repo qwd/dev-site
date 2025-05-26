@@ -78,7 +78,7 @@ layout: html
                     {%- for item in section.data -%}
                     {%- assign product_type = site.documents | where: "lang", page.lang | where_exp: "data", "data.tag[2] == overview.tag[2]"  | where_exp: "type", "type.tag[3] == item.type" | sort: "weight" -%}
                     {%- assign product_type_name = product_type | first-%}
-                    <div class="col-12 col-md-auto mb-2 mb-md-0">
+                    <div class="col-12 col-md-auto mb-3">
                         <h4 class="mb-2">{{ product_type_name.title }}</h4>
                         <ul class="clear-list d-flex">
                             {% for docs in product_type %}

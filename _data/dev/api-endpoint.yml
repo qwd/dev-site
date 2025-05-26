@@ -1,4 +1,5 @@
-geo-city-lookup:
+- name: geo-city-lookup
+  tag: Geo
   endpoint:
     path: /geo/v2/city/lookup
     name:
@@ -9,7 +10,9 @@ geo-city-lookup:
     name:
       zh: 搜索关键字beij 
       en: Lookup the keyword "beij"
-geo-top-city:
+
+- name: geo-top-city
+  tag: Geo
   demo:
     link: https://your_api_host/geo/v2/city/top?number=5&range=cn
     name: 
@@ -20,7 +23,9 @@ geo-top-city:
     name:
       zh: 热门城市查询
       en: Top City
-geo-poi-lookup:
+
+- name: geo-poi-lookup
+  tag: Geo
   demo:
     link: https://your_api_host/geo/v2/poi/lookup?type=scenic&location=jings
     name: 
@@ -31,7 +36,9 @@ geo-poi-lookup:
     name:
       zh: POI搜索
       en: POI Lookup
-geo-poi-range:
+
+- name: geo-poi-range
+  tag: Geo
   demo:
     link: https://your_api_host/geo/v2/poi/range?location=116.40528,39.90498&type=scenic&radius=10
     name: 
@@ -42,7 +49,9 @@ geo-poi-range:
     name:
       zh: POI范围搜索
       en: POI Range
-weather-now:
+
+- name: weather-now
+  tag: Weather
   demo:
     link: https://your_api_host/v7/weather/now?location=101010100
     name: 
@@ -53,7 +62,9 @@ weather-now:
     name:
       zh: 实况天气
       en: Real-time
-weather-daily:
+
+- name: weather-daily
+  tag: Weather
   demo:
     link: https://your_api_host/v7/weather/3d?location=101010100
     name:
@@ -64,7 +75,9 @@ weather-daily:
     name:
       zh: 每日天气预报
       en: Daily Weather Forecast
-weather-hourly:
+
+- name: weather-hourly
+  tag: Weather
   endpoint:
     path: /v7/weather/{hours}
     name:
@@ -75,7 +88,9 @@ weather-hourly:
     name:
       zh: 北京未来24小时逐小时天气
       en: 24 Hours forecast for Beijing
-minutely-precip:
+
+- name: minutely-precip
+  tag: MinutelyForecast
   demo:
     link: https://your_api_host/v7/minutely/5m?location=116.38,39.91
     name: 
@@ -86,7 +101,9 @@ minutely-precip:
     name:
       zh: 分钟级降水
       en: Minutely Forecast
-weather-grid-now:
+
+- name: weather-grid-now
+  tag: Weather
   demo:
     link: https://your_api_host/v7/grid-weather/now?location=116.41,39.92
     name: 
@@ -97,7 +114,9 @@ weather-grid-now:
     name:
       zh: 格点实况天气
       en: Real-time by Grid
-weather-grid-daily:
+
+- name: weather-grid-daily
+  tag: Weather
   demo:
     link: https://your_api_host/v7/grid-weather/3d?location=116.41,39.92
     name: 
@@ -108,7 +127,9 @@ weather-grid-daily:
     name:
       zh: 格点每天预报
       en: Daily Forecast by Grid
-weather-grid-hourly:
+
+- name: weather-grid-hourly
+  tag: Weather
   demo:
     link: https://your_api_host/v7/grid-weather/24h?location=116.41,39.92
     name: 
@@ -119,15 +140,11 @@ weather-grid-hourly:
     name:
       zh: 逐小时预报
       en: Hourly Forecast by Grid
-grid-weather-hourly-72h:
+
+- name: indices-forecast
+  tag: WeatherIndices
   endpoint:
-    path: /v7/grid-weather/72h
-    name:
-      zh: 逐小时预报（未来72小时）
-      en: Hourly Forecast by Grid (72hrs)
-indices-forecast-1d:
-  endpoint:
-    path: /v7/indices/1d
+    path: /v7/indices/{days}
     name:
       zh: 当天生活指数
       en: Today Indices
@@ -136,13 +153,9 @@ indices-forecast-1d:
     name: 
       zh: 北京市运动指数与洗车指数
       en: Sport and car wash indices for Beijing
-indices-forecast-3d:
-  endpoint:
-    path: /v7/indices/3d
-    name:
-      zh: 未来3天生活指数
-      en: 3 Days of Indices
-warning-now:
+
+- name: warning-now
+  tag: WeatherAlert
   demo:
     link: https://your_api_host/v7/warning/now?location=101230201&lang=en
     name: 
@@ -153,7 +166,9 @@ warning-now:
     name:
       zh: 天气灾害预警
       en: Severe Weather
-warning-list:
+
+- name: warning-list
+  tag: WeatherAlert
   demo:
     link: https://your_api_host/v7/warning/list?range=cn
     name: 
@@ -164,7 +179,9 @@ warning-list:
     name:
       zh: 天气灾害预警城市列表
       en: Severe Weather City List
-air-now-v1-coor:
+
+- name: air-now-v1-coor
+  tag: AirQuality
   endpoint:
     path: /airquality/v1/current/{latitude}/{longitude}
     name:
@@ -175,7 +192,9 @@ air-now-v1-coor:
     name: 
       zh: 北京实时空气质量
       en: Real-time air quality for Beijing
-air-station-v1:
+
+- name: air-station-v1
+  tag: AirQuality
   demo:
     link: https://your_api_host/airquality/v1/station/P53763
     name: 
@@ -186,7 +205,9 @@ air-station-v1:
     name:
       zh: 空气质量监测站实时数据
       en: Real-time
-air-hourly-v1-coor:
+
+- name: air-hourly-v1-coor
+  tag: AirQuality
   endpoint:
     path: /airquality/v1/hourly/{latitude}/{longitude}
     name:
@@ -197,7 +218,9 @@ air-hourly-v1-coor:
     name: 
       zh: 北京逐小时空气质量预报
       en: Air quality hourly forecast for Beijing
-air-daily-v1-coor:
+
+- name: air-daily-v1-coor
+  tag: AirQuality
   endpoint:
     path: /airquality/v1/daily/{latitude}/{longitude}
     name:
@@ -208,7 +231,9 @@ air-daily-v1-coor:
     name: 
       zh: 北京每日空气质量预报
       en: Air quality daily forecast for Beijing
-air-now:
+
+- name: air-now
+  tag: AirQuality
   demo:
     link: https://your_api_host/v7/air/now?location=101010100
     name: 
@@ -219,7 +244,9 @@ air-now:
     name:
       zh: 实时空气质量
       en: Real-time
-air-daily:
+
+- name: air-daily
+  tag: AirQuality
   demo:
     link: https://your_api_host/v7/air/5d?location=101010100
     name: 
@@ -230,7 +257,9 @@ air-daily:
     name:
       zh: 空气质量5天预报
       en: 5 Days Forecast
-time-machine-weather:
+
+- name: time-machine-weather
+  tag: TimeMachine
   demo:
     link: https://your_api_host/v7/historical/weather?location=101010100&date=20200725
     name: 
@@ -241,7 +270,9 @@ time-machine-weather:
     name:
       zh: 历史天气数据
       en: Historical Weather
-time-machine-air:
+
+- name: time-machine-air
+  tag: TimeMachine
   demo:
     link: https://your_api_host/v7/historical/air?location=101010100&date=20200725
     name: 
@@ -252,7 +283,9 @@ time-machine-air:
     name:
       zh: 历史空气质量数据
       en: Historical Air Quality
-storm-list:
+
+- name: storm-list
+  tag: Storm
   demo:
     link: https://your_api_host/v7/tropical/storm-list?basin=NP&year=2020
     name: 
@@ -263,7 +296,9 @@ storm-list:
     name:
       zh: 台风查询
       en: Storm List
-storm-track:
+
+- name: storm-track
+  tag: Storm
   demo:
     link: https://your_api_host/v7/tropical/storm-track?stormid=NP_2021
     name: 
@@ -274,7 +309,9 @@ storm-track:
     name:
       zh: 台风路径
       en: Tropical Cyclones Track
-storm-forecast:
+
+- name: storm-forecast
+  tag: Storm
   demo:
     link: https://your_api_host/v7/tropical/storm-forecast?stormid=NP_2106
     name: 
@@ -285,7 +322,9 @@ storm-forecast:
     name:
       zh: 台风预报
       en: Tropical Cyclones Forecast
-astronomy-sun:
+
+- name: astronomy-sun
+  tag: Astronomy
   demo:
     link: https://your_api_host/v7/astronomy/sun?location=101010100&date=20210220
     name: 
@@ -296,7 +335,9 @@ astronomy-sun:
     name:
       zh: 日出日落
       en: Sunrise and sunset
-astronomy-moon:
+
+- name: astronomy-moon
+  tag: Astronomy
   demo:
     link: https://your_api_host/v7/astronomy/moon?location=101010100&date=20211120
     name: 
@@ -307,7 +348,9 @@ astronomy-moon:
     name:
       zh: 月升月落和月相
       en: Moon and Moon Phase
-astronomy-solar-elevation-angle:
+
+- name: astronomy-solar-elevation-angle
+  tag: Astronomy
   demo:
     link: https://your_api_host/v7/astronomy/solar-elevation-angle?location=120.34,36.08&alt=43&date=20210220&time=1230&tz=0800
     name: 
@@ -318,24 +361,22 @@ astronomy-solar-elevation-angle:
     name:
       zh: 太阳高度角
       en: Solar Elevation Angle
-solar-radiation-hourly-24h:
+
+- name: solar-radiation-hourly
+  tag: SolarIrradiation
   demo:
     link: https://your_api_host/v7/solar-radiation/24h?location=116.41,39.92
     name: 
       zh: 116.41,39.92位置的未来24小时辐照预报
       en: Forecast for the next 24 hours at 116.41,39.92
   endpoint:
-    path: /v7/solar-radiation/24h
+    path: /v7/solar-radiation/{hours}
     name: 
       zh: 逐小时预报（未来24小时）
       en: Hourly Forecast (24hrs)
-solar-radiation-hourly-72h:
-  endpoint:
-    path: /v7/solar-radiation/72h
-    name: 
-      zh: 逐小时预报（未来72小时）
-      en: Hourly Forecast (72hrs)
-ocean-tide:
+
+- name: ocean-tide
+  tag: Ocean
   demo:
     link: https://your_api_host/v7/ocean/tide?location=P2951&date=20210206
     name: 
@@ -346,7 +387,9 @@ ocean-tide:
     name:
       zh: 潮汐
       en: Tide
-ocean-currents:
+
+- name: ocean-currents
+  tag: Ocean
   demo:
     link: https://your_api_host/v7/ocean/currents?location=P66981&date=20210310
     name: 
@@ -357,3 +400,29 @@ ocean-currents:
     name:
       zh: 潮流
       en: Currents
+
+- name: console-finance
+  tag: Console
+  demo:
+    link: https://your_api_host/finance/v1/summary
+    name: 
+      zh: 财务和计费信息汇总
+      en: Finance summary
+  endpoint:
+    path: /finance/v1/summary
+    name:
+      zh: 财务汇总
+      en: Finance Summary
+
+- name: console-stats
+  tag: Console
+  endpoint:
+    path: /metrics/v1/stats
+    name:
+      zh: API请求量统计
+      en: Finance Summary
+  demo:
+    link: https://your_api_host/metrics/v1/stats
+    name: 
+      zh: API请求量统计
+      en: API requests statistics

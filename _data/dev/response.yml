@@ -1375,6 +1375,153 @@ storm:
       en: The northwest wind radius quadrants of the strom with level 12 wind circle, **may be null**
     example: 130
     type: [now,track]
+console:
+  - name: asOf
+    desc:
+      zh: 当前数据的截止日期。
+      en: The date and time for this data.
+    type: [finance, stats]
+  - name: currency
+    desc:
+      zh: 货币代码，包括：`CNY`和`USD`。
+      en: Currency code, including `CNY` and `USD`.
+    type: [finance]
+  - name: balance
+    desc:
+      zh: 可用额度。
+      en: Account balance.
+    type: [finance]
+  - name: accruedCharges.previousDay
+    desc:
+      zh: 前一天应计费用总额。
+      en: Charges accrued during the previous calendar day.
+    type: [finance]
+  - name: accruedCharges.thisMonth
+    desc:
+      zh: 本月应计费用总额。
+      en: Total charges accrued in the current calendar month.
+    type: [finance]
+  - name: accruedCharges.sinceLastBill
+    desc:
+      zh: 从上次出账以来的应计费用总额。
+      en: Charges accrued since the last billing.
+    type: [finance]
+  - name: pendingBills.number
+    desc:
+      zh: 待支付账单号。
+      en: Unpaid or overdue bill number.
+    type: [finance]
+  - name: pendingBills.date
+    desc:
+      zh: 待支付账单出账日期。
+      en: The issue date of the bill.
+  - name: pendingBills.type
+    desc:
+      zh: 待支付账单的类型。
+      en: The type of bill.
+    type: [finance]
+  - name: pendingBills.status
+    desc:
+      zh: 待支付账单的状态，包括：`unpaid`和`overdue`
+      en: Payment status of the bill, including `unpaid`, `outstanding` and `overdue`.
+  - name: pendingBills.amount
+    desc:
+      zh: 账单的总金额。
+      en: Total amount of the bill.
+    type: [finance]
+  - name: pendingBills.amountDue
+    desc:
+      zh: 账单剩余应付金额。
+      en: The unpaid portion of the bill that is still due.
+    type: [finance]
+  - name: pendingBills.dueDate
+    desc:
+      zh: 应付日期。
+      en: The due date for the bill payment.
+    type: [finance]
+  - name: availableSavingsPlans.billNumber
+    desc:
+      zh: 生效中或待生效的节省计划账单号。
+      en: Bill number for the savings plans in active or pending.
+    type: [finance]
+  - name: availableSavingsPlans.status
+    desc:
+      zh: 节省计划状态，包括 `pending`和`active`。
+      en: Status of the savings plan, including `pending` and `active`.
+    type: [finance]
+  - name: availableSavingsPlans.term
+    desc:
+      zh: 承诺期限。
+      en: Duration of the savings plan commitment, default is 1 year.
+    type: [finance]
+  - name: availableSavingsPlans.commitments
+    desc:
+      zh: 承诺金额。
+      en: Total committed amount under the savings plan.
+    type: [finance]
+  - name: availableSavingsPlans.utilized
+    desc:
+      zh: 已用承诺金额。
+      en: Committed amount that has been utilized.
+    type: [finance]
+  - name: availableSavingsPlans.effectiveTime
+    desc:
+      zh: 生效时间。
+      en: Time when the savings plan becomes effective.
+    type: [finance]
+  - name: availableResourcePlans.billNumber
+    desc:
+      zh: 生效中或待生效的资源包账单号。
+      en: Bill number for resource plans in active or pending.
+    type: [finance]
+  - name: availableResourcePlans.status
+    desc:
+      zh: 资源包状态，包括 `pending`和`active`。
+      en: Status of the resource plan, including `pending` and `active`.
+    type: [finance]
+  - name: availableResourcePlans.type
+    desc:
+      zh: 资源包类型。
+      en: Type of resource plan.
+  - name: availableResourcePlans.requests
+    desc:
+      zh: 总请求量。
+      en: Total request volume included in the resource plan.
+    type: [finance]
+  - name: availableResourcePlans.utilized
+    desc:
+      zh: 已用请求量。
+      en: Requests that have been used.
+    type: [finance]
+  - name: availableResourcePlans.effectiveTime
+    desc:
+      zh: 生效时间。
+      en: Time when the resource plan becomes effective.
+    type: [finance]
+  - name: success.api
+    desc:
+      zh: 成功请求的API名称。
+      en: API name of the successful requests.
+    type: [stats]
+  - name: success.hours
+    desc:
+      zh: |
+       最近24小时每小时的成功请求量，结束时间以`asOf`为准。例如 asOf=2025-03-20T09:59Z，则数组中的最后一条数据代表09:00 ～ 09:59（UTC）的请求量。
+      en: |
+       Hourly successful requests stats for the last 24 hours, ending at `asOf` (e.g., asOf=2025-03-20T09:59Z means the last array item covers 09:00–09:59 UTC).
+    type: [stats]
+  - name: errors.api
+    desc:
+      zh: 错误请求的API名称。
+      en: API name of the error requests.
+    type: [stats]
+  - name: errors.hours
+    desc:
+      zh: |
+       最近24小时每小时的错误请求量，结束时间以`asOf`为准。例如 asOf=2025-03-20T09:59Z，则数组中的最后一条数据代表09:00 ～ 09:59（UTC）的请求量。
+      en: |
+        Hourly error requests stats for the last 24 hours, ending at `asOf` (e.g., asOf=2025-03-20T09:59Z means the last array item covers 09:00–09:59 UTC).
+    type: [stats]
 
 
 
