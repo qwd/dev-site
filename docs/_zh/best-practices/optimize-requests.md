@@ -40,15 +40,13 @@ https://abcxyz.qweatherapi.com/v7/weather/3d?parameters
 
 ## 处理错误 {#handle-errors}
 
-当你遇到返回的数据中`code`字段的值不是`2xx`的时候，代表你的请求出现了错误，此时你需要暂停请求并妥善的处理这些错误，否则极端情况下，你可能会违反我们的[使用限制](/docs/terms/restriction/)而被冻结帐号。
+当你的请求返回[错误码](/docs/resource/error-code/)时，你需要暂停请求并妥善的处理这些错误，否则这些错误可能看起来像DDoS攻击，我们的安全策略将冻结你的帐号。
 
-> **例如:** 当你传入了错误的参数或KEY，将返回`400`或`403`，此时你应该暂停这一次的请求，排除故障后再继续。否则当产生大量请求错误时，我们可能会冻结你的帐号。
+> **例如:** 当你传入了错误的参数或KEY，将返回`400`或`403`，此时你应该暂停这一次的请求，排除故障后再继续。否则当程序不断重试而产生大量失败的请求时，这违反了我们的许可协议且被视为一种攻击，我们将中止你的服务并冻结你的帐号。
 
-### 了解状态码 {#understanding-status-codes}
+### 了解状态码 {#understanding-error-codes}
 
-在API/SDK返回的数据中，`code`字段代表当前请求的状态，返回的值和含义与[HTTP Status Code](https://developer.mozilla.org/zh-CN/docs/web/http/status)类似，并略有修改。
-
-完整的解释说明请参考[状态码](/docs/resource/status-code/)。
+请参考[错误码](/docs/resource/error-code/)。
 
 ### 使用指数退避算法处理错误 {#using-exponential-backoff-to-handle-errors}
 

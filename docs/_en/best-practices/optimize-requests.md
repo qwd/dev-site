@@ -34,17 +34,17 @@ For characters within the non-ASCII character set, such as `北京市`, you need
 
 ## Secure requests
 
-Please do not write requests URL or share this URL in the web page, which may reveal your sensitive information. Using HTTPS, signature authentication and other methods can effectively protect your sensitive information. Please refer to [Protect Your KEY](/docs/best-practices/protect-data-key/).
+Please do not write requests URL or share this URL in the web page, which may reveal your sensitive information. Using HTTPS, signature authentication and other methods can effectively protect your sensitive information. Please refer to [Protect Your KEY](/en/docs/best-practices/protect-data-key/).
 
 ## Handle errors
 
-When you encounter data response with a value other than `2xx` in the `code` field, it means your request has errors, at this time you need to pause the request and resolve these errors, otherwise in extreme cases you may violate our [usage restrictions](/en/docs/terms/restriction/) and get your account suspended.
+If your request returns an [error code](/en/docs/resource/error-code/), you should pause and handle it appropriately. Otherwise, repeated failures may be interpreted as a DDoS attack, and our security policy will suspend your account.
 
-> **For example:** When you pass in an incorrect parameter or KEY that will get `400` or `403`, you should pause the request this time and troubleshoot before continuing. Otherwise, we may suspend your account when a large number of request errors are generated.
+> **For example:** Sending invalid parameters or an incorrect credentail may return a `400` or `403` error. You should stop the request and fix the issue before retrying. Continuous failed requests may violate our EULA and be treated as an attack, leading to service disruption and account suspension.
 
-### Understanding status codes
+### Understanding error codes
 
-In the data response, `code` represents the status of the current request, and its value is similar to [HTTP Status Code](https://developer.mozilla.org/en-US/docs/web/http/status) with slight modifications. See [Status Code](/docs/resource/status-code/).
+See [Error Code](/en/docs/resource/error-code/).
 
 ### Using exponential backoff to handle errors
 
@@ -81,5 +81,5 @@ Request weather data only when it is needed.
 
 > **For example:** In an app where the weather content is located at the bottom of the page, you can make a request only when the user swipes to the weather content section.
 
-If the weather content is already loaded, you can also set a cache time for this content, or add a refresh button to let the user manually refresh the data. For setting up caching, please refer to [Cache your data](/docs/best-practices/cache/).
+If the weather content is already loaded, you can also set a cache time for this content, or add a refresh button to let the user manually refresh the data. For setting up caching, please refer to [Cache your data](/en/docs/best-practices/cache/).
 
