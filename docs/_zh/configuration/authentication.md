@@ -98,7 +98,7 @@ Payload包括下列参数并保存为JSON对象格式：
 }
 ```
 
-> **注意：**在Header和Payload中的信息是明文传输，所以仅添加上述指定的参数，不要添加任何其他敏感信息和无关参数。
+> **警告：**在Header和Payload中的信息是明文传输，所以仅添加上述指定的参数，不要添加任何其他敏感信息和无关参数。
 {:.bqdanger}
 
 #### Signature
@@ -115,6 +115,15 @@ Payload包括下列参数并保存为JSON对象格式：
 eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA
 ```
 
+#### 保留字段 {#reserved-fields}
+
+以下是 Header 和 Payload 的保留字段，暂时不参与身份认证。部分 JWT 库可能默认添加这些字段，建议​​移除它们，避免未来启用这些保留字段时影响你的JWT身份认证​​。
+
+- `typ` 如果包含此字段，必须设置为**JWT**
+- `iss`
+- `aud`
+- `nbf`
+
 ### 发送JWT请求 {#jwt-authorize-request}
 
 将上述创建的完整Token作为参数添加到`Authorization: Bearer`请求标头，例如：
@@ -124,6 +133,15 @@ curl --compressed \
 -H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
 'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
 ```
+
+### 验证JWT {#jwt-validation}
+
+如果API请求返回[401错误](/docs/resource/error-code/#unauthorized)，请使用JWT验证工具检查你的Token。
+
+1. [前往控制台-JWT验证](https://console.qweather.com/support/jwt-validation)
+2. 将你的完整Token粘贴至文本框
+3. 点击“验证”按钮
+
 
 ### 生成JWT示例 {#jwt-demo}
 
