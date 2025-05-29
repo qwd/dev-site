@@ -10,7 +10,7 @@ ref: res-status-code
 
 When an error occurs, you will receive the corresponding error code. This document will introduce the error codes and error messages for the QWeather API.
 
-> **Hint:** Currently there are two versions of the error code at the same time, we will gradually migrate from v1 to v2, in the meantime you may find that APIs response different error codes.
+> **Hint:** Currently there are two versions of the error code at the same time, we will gradually migrate from v1 to v2. During this transition, different versions of error codes may be returned depending on the API and error type. If you'd like to switch to v2 immediately, please submit a support ticket.
 
 > **NOTE:** You should correct the error properly, and when an error occurs, please temporarily stop the request and troubleshoot it. You should not continuously send out error requests, otherwise these error requests look like a DDoS attack, and in extreme cases, our security policy may suspend your account.
 {:.bqdanger}

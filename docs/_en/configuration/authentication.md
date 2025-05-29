@@ -108,14 +108,35 @@ At last, put the Base64URL-encoded Header, Payload, and Signature together and s
 eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA
 ```
 
+#### Reserved fields
+
+The following are reserved fields in the JWT Header and Payload, but are not currently used for authentication.
+
+Some JWT libraries may include these fields by default. We recommend removing them to avoid potential issues when these fields are enforced for authentication in the future.
+
+- `typ` Must be set to **JWT** if it is added.
+- `iss`
+- `aud`
+- `nbf`
+
 ### JWT authorize request
 
 Add the Token as a parameter to the `Authorization: Bearer` request header, for example:
 
 ```bash
-curl -i -H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
---compressed 'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
+curl --compressed \
+-H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
+'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
 ```
+
+### JWT validation
+
+If the API returns a [401 error](/en/docs/resource/error-code/#unauthorized), please use JWT validation tool to check your token:
+
+1. [Go to Console-JWT Validation](https://console.qweather.com/support/jwt-validation)
+2. Paste your token into the textbox
+3. Click the "Validate" button
+
 
 ### JWT demo
 
