@@ -351,6 +351,16 @@ type,type_name_zh,type_name_en
 2523,大雨,Heavy Rain
 2524,雾,Light Mist
 2525,扬尘,Raised Dust
-2526,大风,High Wind
+2526,大风,High Winds
 2527,浮尘,Dusty plankton
+2528,活跃强风,Active Winds
+2529,热浪,Heat Wave
+2530,寒潮,Cold Wave
+2531,雾,Fog
+2532,薄雾,Light Fog
+2550,大雨,Heavy Rain
+2551,大风,Strong Wind
+2552,大雪,Heavy Snow
+2553,雷暴,Thunderstorms
+2554,道路积雪,Road Snowfall
 9999,其他预警,Other Warning
