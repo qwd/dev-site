@@ -10,19 +10,21 @@ Welcome to QWeather Developer Services, this document will introduce some basic 
 
 ## Account
 
-You will need to https://id.qweather.com/#/register?redirect=https%3A%2F%2Fconsole.qweather.com" target="_blank" rel="noopener noreferrer to manage your projects, credentials, finances, etc. Learn more about [Account](/en/docs/account/). 
+You will need to [register for an account](https://id.qweather.com/#/register?redirect=https%3A%2F%2Fconsole.qweather.com) to manage your projects, credentials, finances, etc. Learn more about [Account](/en/docs/account/). 
 
 ## Configuration
 
-Before requesting data, you need to create a project/credential, and do some simple configuration. See [How to configure the API and SDK](/en/docs/configuration/).
+Before requesting data, some preparations are needed:
 
-## Authentication
-
-QWeather provides two [Authentication methods](/en/docs/configuration/authentication/): [JWT (JSON Web Token)](/en/docs/configuration/authentication/#json-web-token/) and [API KEY](/en/docs/configuration/authentication/#api-key/). we recommend JWT for higher level security.
+- Create [projects and credentials](/en/docs/configuration/project-and-key/) to manage your API.
+- Learn about [authentication](/en/docs/configuration/authentication/). QWeather supports two authentication methods: **JSON Web Token (JWT)** and **API KEY**.
+- Obtain the [API Host](/en/docs/configuration/api-host/), which is your dedicated API domain name.
+- Learn [how to send API requests](/en/docs/configuration/api-config/).
+- Install and setup the [iOS SDK](/en/docs/configuration/ios-sdk-config/) or [Android SDK](/en/docs/configuration/android-sdk-config/).
 
 ## Coding
 
-We provide detailed [Development Documentation](/en/docs/api/) and [Useful Resources](/docs/resource/), which can help developers do their work more efficiently.
+We provide detailed [Development Documentation](/en/docs/api/) and [Useful Resources](/en/docs/resource/), which can help developers do their work more efficiently.
 
 Also, here are some common practices and experiences when using our services so you can get the data quickly and easily. See [Best Practices](/en/docs/best-practices/).
 

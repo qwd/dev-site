@@ -9,6 +9,7 @@ reference_docs:
       - name:	config-overview
         sub:
           - subname: config-project
+          - subname: config-apihost
           - subname: config-auth
           - subname: config-api
           - subname: config-ios

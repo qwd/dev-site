@@ -73,7 +73,7 @@ pod update
 
 ### 初始化QWeather实例
 
-将代码中的`YOUR_HOST`替换为您的[API Host](/docs/configuration/api-config/#api-host)
+将代码中的`YOUR_HOST`替换为您的[API Host](/docs/configuration/api-host)
 
 **Swift**
 

@@ -8,17 +8,7 @@ ref: config-api
 
 现在，我们假设你已经创建了[项目和凭据](/docs/configuration/project-and-key/)，准备开始创建一个完整的API请求吧。
 
-## API Host
-
-为了提高了API的安全等级，我们为每个开发者提供了独立的、数据隔离的API Host，即API地址或API的域名。API Host可以在[控制台-设置](https://console.qweather.com/setting)中查看，看起来像是：
-
-```
-abcxyz.qweatherapi.com
-```
-
-你需要API Host与API路径、参数拼接在一起，或者在使用SDK时将API Host填写到配置项中。
-
-## API URL和参数 {#api-url-and-parameters}
+## 请求URL {#request-url}
 
 通常来讲，一个完整的API请求URL由scheme，host，path，path parameters和query parameters组成：
 
@@ -29,11 +19,11 @@ scheme           host                  path              path      query
                                                         params     params 
 ```
 
-- scheme: https
-- host: 开发者的API Host，请在[控制台设置](https://console.qweather.com/setting)中查看。
-- path: /airquality/v1/station
-- path params: location ID
-- query params: lang=en 如有多个参数使用`&`分割。
+- **scheme:** 仅支持HTTPS协议。
+- **host:** 开发者的[API Host](/docs/configuration/api-host/)，请在[控制台-设置](https://console.qweather.com/setting)中查看。
+- **path:** API的请求路径（或称之为API端点、Endpoint）。
+- **path params:** 路径参数均为必选参数。
+- **query params:** 查询参数，包括必选和可选参数，多个查询参数使用`&`分割。
 
 > **提示：**参数中如果包含了特殊字符，则必须进行URL encoding。
 
@@ -64,11 +54,24 @@ X-QW-Api-Key: ABCD1234EFGH
 
 ## 构建完整的API请求 {#build-a-complete-api-request}
 
-你可以用熟悉的开发语言构建最终的API请求，这里以curl为例：
+你可以用熟悉的开发语言构建最终的API请求，这里使用curl获取北京实时天气为例：
 
 ```bash
+# 将下列占位符替换为你的实际值:
+# abcxyz.qweatherapi.com → 你的 API Host
+# 1234.ABCD.5678 → 你生成的 JWT
+# ABCD1234EFGH → 你的 API KEY
+
+# JWT 身份认证
+
 curl --compressed \
--H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
+-H 'Authorization: Bearer 1234.ABCD.5678' \
+'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
+
+# API KEY 身份认证
+
+curl --compressed \
+-H "X-QW-Api-Key: ABCD1234EFGH" \
 'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
 ```
 
