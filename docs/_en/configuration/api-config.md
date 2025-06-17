@@ -8,17 +8,7 @@ Before starting to use API service, you need to do some simple configuration and
 
 Now, let's assume you've created [project and credential](/en/docs/configuration/project-and-key/), we're ready to start creating a complete API request.
 
-## API Host
-
-For a higher level of API security, we provide every developer with a independent, data-isolated API Host, also known as the API address or API domain name. The API Host can be viewed in [Console - Settings](https://console.qweather.com/setting) and looks like:
-
-```
-abcxyz.qweatherapi.com
-```
-
-You need to concatenate the API Host with the API path and parameters, or fill the API Host into the configuration file when using the SDK.
-
-## API URL and parameters
+## Request URL
 
 Generally, a complete API request URL consists of scheme, host, port, path and query parameters. (Of course, it may be called differently in different programs, we only refer to [RFC 3986](https://www.rfc-editor.org/rfc/rfc3986))
 
@@ -29,11 +19,11 @@ scheme          host                   path            path       query
                                                       params      params 
 ```
 
-- scheme: https
-- host: your API Host, view in the [Console - Setting](https://console.qweather.com/setting) 
-- path: /airquality/v1/station
-- path params: location ID
-- query params: lang=en Splitting multiple parameters with `&`.
+- scheme: only supports HTTPS.
+- host: your [API Host](/en/docs/configuration/api-host/), view in the [Console - Setting](https://console.qweather.com/setting) 
+- path: API endpoint.
+- path params: the path parameters are all mandatory.
+- query params: multiple query parameters are separated by `&`.
 
 > **Hint:** URL encoding is required if the parameter contains special characters.
 
@@ -63,11 +53,24 @@ QWeather's Web API uses Gzip for compression by default, which will greatly redu
 
 ## Build a complete API request 
 
-You can build the final API request with any programming language, using curl as an example here:
+You can build the final API request with any programming language, here we use curl to obtain the real-time weather in Beijing as an example:
 
 ```bash
+# Replace the placeholders with your actual values:
+# abcxyz.qweatherapi.com → your API Host
+# 1234.ABCD.5678 → your JWT
+# ABCD1234EFGH → your API KEY
+
+# Authentication with JWT
+
 curl --compressed \
--H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
+-H 'Authorization: Bearer 1234.ABCD.5678' \
+'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
+
+# Authentication with API KEY
+
+curl --compressed \
+-H "X-QW-Api-Key: ABCD1234EFGH" \
 'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
 ```
 

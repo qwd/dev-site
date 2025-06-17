@@ -59,7 +59,11 @@ You will see the **Create Credential Success** page and it shows the creation da
 
 ### Add credential for API KEY
 
-It is recommended to use [JWT authentication](/docs/configuration/authentication/#json-web-token) for improved security. We will limit the volume of daily requests for authentication using API KEY from 2027-01-01.
+API KEY is a simple but less secure authentication method. We recommend using [JWT Authentication](/en/docs/configuration/authentication/#json-web-token).
+
+> **Note:** We will limit the volume of daily requests for authentication using API KEY from 2027-02-01.
+
+> **Note:** SDK v5+ only supports JWT.
 
 1. [Go to Console - Project](https://console.qweather.com/project)
 2. Choose the project where you want to add the public key.

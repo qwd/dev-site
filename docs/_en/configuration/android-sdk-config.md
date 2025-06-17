@@ -76,7 +76,7 @@ Add the following code to the obfuscation file `proguard-rules.pro`
 
 ### Initialize the QWeather instance.
 
-Replace `YOUR_HOST` with your [API Host](/docs/configuration/api-config/#api-host).
+Replace `YOUR_HOST` with your [API Host](/docs/configuration/api-host/).
 
 ```java
 QWeather.getInstance(MainActivity.this, "{YOUR_HOST}") // Initialize api host

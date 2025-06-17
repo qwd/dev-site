@@ -59,7 +59,11 @@ ref: config-project
 
 ### 添加API KEY凭据 {#add-credential-for-api-key}
 
-我们推荐使用[JWT身份认证](/docs/configuration/authentication/#json-web-token)。从2027年1月1日起，我们将逐步限制使用API KEY进行身份认证的每日请求数量。
+API KEY提供了简单但安全性较弱的认证方式。我们推荐使用[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
+
+> **注意：**从2027年2月1日起，我们将逐步限制使用API KEY进行身份认证的每日请求数量。
+
+> **注意：**SDK v5.x及以上版本仅支持JWT认证。
 
 1. [前往控制台-项目管理](https://console.qweather.com/project)
 2. 在项目列表中点击你需要添加凭据的项目

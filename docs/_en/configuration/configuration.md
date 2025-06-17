@@ -9,6 +9,7 @@ ref: config-overview
 {{ page.description | markdownify }}
 
 - [Project and Credential](/en/docs/configuration/project-and-key/)
+- [API Host](/en/docs/configuration/api-host/)
 - [Authentication](/en/docs/configuration/authentication/)
 - [API Config](/en/docs/configuration/api-config/)
 - [iOS SDK Config](/en/docs/configuration/ios-sdk-config/)

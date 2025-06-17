@@ -60,7 +60,7 @@ level: 级别
 range: 取值范围
 color: 颜色
 pollutant: 污染物
-example-token-hint: 请将`your_token`替换为你的[JWT身份认证](/docs/configuration/authentication/)，将`your_api_host`替换为你的[API Host](/docs/configuration/api-config/#api-host)
+example-token-hint: 请将`your_token`替换为你的[JWT身份认证](/docs/configuration/authentication/)，将`your_api_host`替换为你的[API Host](/docs/configuration/api-host/)
 hp-slogan: 创建一个漂亮的天气项目
 hp-slogan-2: 驱动你的业务
 hp-data: 强大的气象数据 
