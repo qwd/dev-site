@@ -25,7 +25,7 @@ scheme          host                   path            path       query
 - path params: the path parameters are all mandatory.
 - query params: multiple query parameters are separated by `&`.
 
-> **Hint:** URL encoding is required if the parameter contains special characters.
+> **Hint:** You must URL-encode [special characters](/en/docs/best-practices/optimize-requests/#special-characters) in the parameters.
 
 ## Add authentication
 

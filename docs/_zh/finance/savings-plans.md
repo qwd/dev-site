@@ -2,6 +2,7 @@
 title: 节省计划
 tag: [finance, splans]
 ref: finance-splans
+redirect_from: /docs/finance/saving-plans/
 ---
 
 节省计划用于抵扣请求API产生的费用，是针对数据请求量较多和较稳定的用户所推出的一项折扣计划，它不依赖于具体的数据，只需要用户承诺每年的消费金额就可以获取大量折扣。相比较标准按量计费，节省计划可以节省30%的成本。
@@ -34,9 +35,9 @@ ref: finance-splans
 
 ## 购买 {#purchase}
 
-1. [前往控制台-节省计划](https://console.qweather.com/saving-plans/)
+1. [前往控制台-节省计划](https://console.qweather.com/savings-plans/)
 2. 输入承诺的金额
-3. 选择[生效时间](/docs/finance/saving-plans/#effective)
+3. 选择[生效时间](/docs/finance/savings-plans/#effective)
 4. 点击“下一步”
 5. 确认购买信息，点击“创建”按钮
 

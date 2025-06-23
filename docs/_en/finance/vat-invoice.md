@@ -13,7 +13,7 @@ For users in China, our price include VAT and you can apply for a VAT invoice wh
 
 The VAT invoice amount is based on the paid bill amount, for example, if your monthly bill amount is ¥123.45, then when you pay this bill, you can apply for a VAT invoice for ¥123.45.
 
-Positive balance amounts do not support VAT invoice, you must apply for a VAT invoice based on the paid bill amount. For example, if your balance = ¥1,000, and then use to pay a saving plan bill of ¥600 and monthly bill of ¥200, the aVAT invoice amount now is ¥800 = ¥600 (savings plan bill) + ¥200 (monthly bill)
+Positive balance amounts do not support VAT invoice, you must apply for a VAT invoice based on the paid bill amount. For example, if your balance = ¥1,000, and then use to pay a savings plan bill of ¥600 and monthly bill of ¥200, the aVAT invoice amount now is ¥800 = ¥600 (savings plan bill) + ¥200 (monthly bill)
 
 ## Tax rate
 

@@ -65,7 +65,7 @@ Please note that positive balances do not support VAT invoice, you can apply for
 
 ### How can I reduce costs?
 
-Pay-as-you-go model gives you the flexibility to increase or decrease the volume of requests according to your needs and avoid paying large amounts up front. When your request volume is higher or your demand is more stable, you can use Saving Plans to reduce your cost significantly. Refer to [Saving Plans](/docs/finance/saving-plans/).
+Pay-as-you-go model gives you the flexibility to increase or decrease the volume of requests according to your needs and avoid paying large amounts up front. When your request volume is higher or your demand is more stable, you can use Savings plans to reduce your cost significantly. Refer to [Savings plans](/docs/finance/savings-plans/).
 
 For users with a large volume of requests (usually million or more requests per day), please contact our business experts for a better solution.
 
@@ -99,15 +99,15 @@ You can also follow the instructions in the email you receive to make the paymen
 
 Payment will be prioritized to fill negative balance, which means unpaid bills that are already in effect (e.g., monthly bills or mid-month bills) will be paid automatically, and the remainder will be placed to your balance.
 
-For bills that are not yet effective (like created saving plan bills), positive balances will not be paid automatically and you will need to use the [Pay the specified bill](/en/docs/finance/billing-and-payment/#pay-the-specified-bill) method.
+For bills that are not yet effective (like created savings plan bills), positive balances will not be paid automatically and you will need to use the [Pay the specified bill](/en/docs/finance/billing-and-payment/#pay-the-specified-bill) method.
 
 The minimum amount for each payment is CNY 0.01. If you have a negative balance, the minimum amount must be such that the balance is greater than or equal to zero.
 
 Once again, you cannot apply for a VAT invoice for a positive amount added to your balance, you need to apply for an invoice based on the amount of the bill after paying the bill using your balance.
 
-### Saving plans payment
+### Savings plans payment
 
-If you have a [saving plan](/en/docs/finance/saving-plans/), the commitment amount in the saving plan will automatically cover the cost of the pay-as-you-go subscription. If the saving plan expires or the commitment amount is used up, you will need to pay the remaining cost of the month (if any) at the beginning of the next month.
+If you have a [savings plan](/en/docs/finance/savings-plans/), the commitment amount in the savings plan will automatically cover the cost of the pay-as-you-go subscription. If the savings plan expires or the commitment amount is used up, you will need to pay the remaining cost of the month (if any) at the beginning of the next month.
 
 ### Payment methods
 
@@ -135,7 +135,7 @@ If a bill is not paid by the due date, it will be marked with a "Overdue" status
 
 ## Refund
 
-You can request a refund for both the saving plans and the positive balance, where the saving plans must not be active and no VAT invoice has been issued. Refund for balance will be made the following month when the pay-as-you-go subscription is billed.
+You can request a refund for both the savings plans and the positive balance, where the savings plans must not be active and no VAT invoice has been issued. Refund for balance will be made the following month when the pay-as-you-go subscription is billed.
 
 All refunds are subject to a **5% transaction fee** and the refund amount will be issued to the original payment methods. To request a refund, please [submit a ticket](https://console.qweather.com/support/ticket/new/).
 

@@ -51,7 +51,7 @@ Authentication failed, you need to check your KEY or Token, we will not response
 
 `HTTP response status code: 403`
 
-Request denied due to not enough available balance, saving plans or other credits in your account. You will need to add your available balance or purchase additional credit before continuing to request data.
+Request denied due to not enough available balance, savings plans or other credits in your account. You will need to add your available balance or purchase additional credit before continuing to request data.
 
 ### OVERDUE
 
