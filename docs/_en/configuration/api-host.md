@@ -25,5 +25,5 @@ You need to paste API Host into the API URL or the SDK configuration file, refer
 - [Install and setup Android SDK](/en/docs/configuration/android-sdk-config/)
 
 
-> **Warning:** If you are still using the legacy shared API domain, such as `api.qweather.com` or `devapi.qweather.com`, please switch to your own API Host as soon as possible to ensure higher security. The legacy shared API domain will be gradually discontinued starting in 2026.
+> **Warning:** If you are still using the legacy shared API domain, such as `api.qweather.com`, `devapi.qweather.com` or `geoapi.qweather.com`, please switch to your own API Host as soon as possible to ensure higher security. [The legacy shared API domain will be gradually discontinued starting in 2026](https://blog.qweather.com/announce/public-api-domain-change-to-api-host/).
 {:.bqdanger}

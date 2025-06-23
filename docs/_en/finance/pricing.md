@@ -24,7 +24,7 @@ Pay as you go is tiered pricing model, with the higher requests, the lower cost 
 
 Pay-as-you-go is tiered pricing model, with tier requests calculated as the sum of the equests for each data item in the price groups. It is recommended that you use the [Price Calculator](https://console.qweather.com/price-calculator) to see the calculation process and estimate the monthly cost.
 
-[Saving Plans](/en/docs/finance/saving-plans/) can significantly reduce the cost.
+[Savings plans](/en/docs/finance/savings-plans/) can significantly reduce the cost.
 
 > **Note:** When your average daily request volume is over **1,000,000** (or **500** for solar irradiation), please email <sales@qweather.com> and our business experts will provide a more flexible and cost-effective solution for you.
 

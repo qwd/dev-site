@@ -90,12 +90,12 @@ pi-payg-desc: |-
   QWeather Develop services are all based on pay as you go billing model, you only pay for the services you actually use, no large upfront, no hidden fees, start and stop whenever you want, and no fees when you stop.
 pi-payg-more: See Billing and Payment
 pi-payg-unit: per Requests
-pi-saving-plans: Saving Plans
+pi-saving-plans: Savings plans
 pi-saving-plans-desc: |- 
   If you have a high volume of requests, you can save significant cost with the Savings Plan.
 
   Savings Plans is a discount plan that offers lower pay as you go pricing, in exchange, you need to prepay the committed usage amount.
-pi-saving-plans-more: See Saving Plans
+pi-saving-plans-more: See Savings plans
 pi-tier-title: Pricing, more use more save
 pi-tier-desc: Pay as you go is tiered pricing, with the higher requests, the lower cost per request. 
 pi-tier-see: Click to see the price of the services

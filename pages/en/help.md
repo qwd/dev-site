@@ -97,7 +97,7 @@ The subscription is a service model, similar to when you subscribe to a newspape
 
 ### What is Savings Plan?
 
-The Savings Plan is designed to cover the cost of standard subscription and is a discount plan for users with a high volume of data requests. It is not dependent on specific data and only requires the user to commit to an annual amount to get a large discount. Compared to pay as you go billing cost, the Savings Plan can save 40%-70%. Refer to [saving plans](/en/docs/finance/saving-plans/).
+The Savings Plan is designed to cover the cost of standard subscription and is a discount plan for users with a high volume of data requests. It is not dependent on specific data and only requires the user to commit to an annual amount to get a large discount. Compared to pay as you go billing cost, the Savings Plan can save 40%-70%. Refer to [Savings plans](/en/docs/finance/savings-plans/).
 
 ### How to estimate the cost?
 

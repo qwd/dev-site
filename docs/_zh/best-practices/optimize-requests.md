@@ -18,25 +18,34 @@ https://abcxyz.qweatherapi.com/v7/weather/3d?parameters
 
 一般来说，这段请求URL不会出现错误，但是在传递一些特殊的参数和值的时候需要特别注意：
 
-### 不要使用空格 {#no-space}
+### 特殊字符 {#special-characters}
 
-请求链接中不要输入一个空格，这通常发生在复制粘贴的情况下，这种错误可能不会被立即发现，因此需要你在复制粘贴的时候特别注意。
+根据 [RFC 3986 URI 标准](https://datatracker.ietf.org/doc/html/rfc3986)，URL 中除英文字母、数字和部分非预留字符（- _ . ~）外，其他字符在**请求参数值**中都必须进行 URL 编码（URL encoding）或称之为百分号编码（Percent-encoding），以确保请求能被正确解析和传输。
 
-> **例如:** 通常我们会复制粘贴KEY，根据不同的系统或软件，有可能被复制的内容的前后存在空格，当你完成粘贴后，需要将这些空格删除。
+请求参数中**无需编码**的字符：
 
-### 使用标准的URI规范字符 {#use-standard-uri-syntax}
+- 英文字母：`A-Z`, `a-z`
+- 数字：`0-9`
+- 非预留字符：`-` `_` `.` `~`
 
-你可能需要在API的请求地址中拼接多个参数或值，这些内容会采用特殊符号进行分割，例如坐标的值通过`,`分割经度和维度，而不要使用中文`，`
+请求参数**必须编码**的字符：
 
-关于标准URI的规范请参考[Uniform Resource Identifier (URI): Generic Syntax](https://datatracker.ietf.org/doc/html/rfc3986)
+- 空格，请编码为`%20`，不建议使用 `+`，例如 `new york` ➡️ `new%20york`
+- 中文或其他非 ASCII 字符，例如 `北京` ➡️ `%E5%8C%97%E4%BA%AC`
+- 英文逗号`,`作为保留字符通常无需编码，但为了确保兼容所有服务器和客户端的解析行为，强烈建议也将其进行 URL编码，避免歧义：`color=blue,red` ➡️ `color=blue%2Cred`
+- 上述无需编码字符列表以外的字符
 
-### URL encoding
+### 无效的空格 {#invalid-whitespace}
 
-对于非ASCII字符集以内的字符，如`北京市`，你需要对这些字符进行[URL encoding](https://zh.wikipedia.org/wiki/百分号编码)
+请求URL中还需要注意那些无效的空格，这种情况常见于复制粘贴操作。例如，当复制一段 Token 时，可能会在其前后不小心夹带空格。粘贴后应仔细检查并手动删除这些空格，否则可能导致请求 URL 格式错误，或传递的参数不正确，进而影响接口的正常访问。
+
+### 中文符号混用 {#chinese-punctuation}
+
+在使用允许的特殊字符时，请注意不要与对应的中文符号混淆。例如，查询参数的起始符应使用英文问号`?`，而不是中文问号`？`。符号混用可能导致请求解析失败或行为异常。
 
 ## 安全的请求 {#secure-requests}
 
-请不要在网页中直接编写URL请求或共享这段URL，这有可能泄露你的敏感信息，使用HTTPS、签名认证等方式可以有效的保护你的敏感信息。关于如果保护KEY及其他发送请求时携带的敏感信息，请参考[保护你的KEY](/docs/best-practices/protect-data-key/)。
+请不要共享完整的请求URL，这有可能泄露你的敏感信息，使用HTTPS、JWT身份认证等方式发送安全的API请求。关于如果保护API安全，请参考[安全指南](/docs/best-practices/security-guidelines/)。
 
 ## 处理错误 {#handle-errors}
 

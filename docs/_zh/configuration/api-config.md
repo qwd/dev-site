@@ -25,7 +25,7 @@ scheme           host                  path              path      query
 - **path params:** 路径参数均为必选参数。
 - **query params:** 查询参数，包括必选和可选参数，多个查询参数使用`&`分割。
 
-> **提示：**参数中如果包含了特殊字符，则必须进行URL encoding。
+> **提示：**你必须对参数中的[特殊字符](/docs/best-practices/optimize-requests/#special-characters)进行URL编码。
 
 
 ## 添加身份认证 {#add-authentication}

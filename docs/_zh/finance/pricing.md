@@ -24,7 +24,7 @@ ref: finance-pricing
 
 按量计费是阶梯价计费，累进请求量是按照价格分组中的各项数据请求量之总和计算。建议你使用[价格计算器](https://console.qweather.com/price-calculator)，查看计算过程和预估每月成本。
 
-购买[节省计划](/docs/finance/saving-plans/)可以大幅降低成本。
+购买[节省计划](/docs/finance/savings-plans/)可以大幅降低成本。
 
 > **提示：**当你的日均请求量超过100万次（或太阳辐照日均请求超过500次），请发送邮件至 <sales@qweather.com>，我们的商务专家将为你制定更灵活、更划算的方案。
 

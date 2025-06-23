@@ -4,7 +4,7 @@ tag: [config, apihost]
 ref: config-apihost
 ---
 
-API Host是开发者独立的API地址，用于取代传统的共享API地址，这将提供更高的安全性和保护开发者的隐私。
+API Host是开发者独立的API地址，用于取代传统的公共API地址，这将提供更高的安全性和保护开发者的隐私。
 
 对于每个开发者帐号来说，API Host都是独立、唯一的，同时API Host也是身份认证的一部分，这意味着即使开发者的凭据泄露了，盗用者如果不知道API Host也是无法请求数据的。
 
@@ -24,5 +24,5 @@ abc1234xyz.def.qweatherapi.com
 - [安装和配置 iOS SDK](/docs/configuration/ios-sdk-config/)
 - [安装和配置 Android SDK](/docs/configuration/android-sdk-config/)
 
-> **警告：** 如果是使用的是原共享API地址，例如`api.qweather.com`或`devapi.qweather.com`，请尽快更换为你自己的API Host以提供更高的安全性。此类原共享API地址将从2026年起逐步停止服务。
+> **警告：** 如果是使用的是原公共API地址，例如`api.qweather.com`、`devapi.qweather.com`或`geoapi.qweather.com`，请尽快更换为你自己的API Host以提供更高的安全性，[原公共API地址将从2026年起逐步停止服务](https://blog.qweather.com/announce/public-api-domain-change-to-api-host/)。
 {:.bqdanger}

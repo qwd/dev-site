@@ -32,7 +32,7 @@ ref: start-overview
 
 和风天气的计费方式为按量计费，并采用阶梯价，意味着你的请求量越多，单价越低，并且当你停止使用时，你不需要支付任何费用。请参考[定价](/docs/finance/pricing/)和[计费方式和支付](/docs/finance/billing-and-payment/)。
 
-如果你的请求量较多，你也可以使用节省计划来大幅降低你的成本，了解[节省计划](/docs/finance/saving-plans/)。
+如果你的请求量较多，你也可以使用节省计划来大幅降低你的成本，了解[节省计划](/docs/finance/savings-plans/)。
 
 对于中国大陆地区的用户，我们的价格已经包含增值税，如需要开具增值税发票请参考[增值税发票](/docs/finance/vat-invoice/)。
 
