@@ -174,7 +174,7 @@ signer.initSign(privateKey);
 signer.update(data.getBytes(StandardCharsets.UTF_8));
 byte[] signature = signer.sign();
 
-String signatureString = Base64.getUrlEncoder().encodeToString(signature);
+String signatureEncoded = Base64.getUrlEncoder().encodeToString(signature);
 
 String jwt = data + "." + signatureEncoded;
 
