@@ -44,9 +44,9 @@ dependencies {
 Reference library
 
 ```
-implementation libs.eddsa
-implementation libs.gson
-implementation libs.okhttp
+implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+implementation 'com.google.code.gson:gson:2.10.1'
+implementation 'net.i2p.crypto:eddsa:0.3.0'
 ```
 
 Add the following code to the obfuscation file `proguard-rules.pro`
