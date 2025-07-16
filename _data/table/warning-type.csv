@@ -131,9 +131,16 @@ type,type_name_zh,type_name_en
 1608,雷暴,Thunderstorm
 1609,暴雨,Rainstorm
 1610,霜冻,Frost
-1701,低温特报,Cold Surge Advisory
-1702,陆上强风,Wind
-1703,降雨特报,Rain
+1701,低温,Cold Surge
+1702,强风,Strong Wind
+1703,降雨,Rainfall
+1704,台风,Typhoon
+1705,浓雾,Dense Fog
+1706,雷雨,Thunderstorm
+1707,高温,Heat
+1708,淹水,Flood
+1709,河川高水位,High Water
+1710,枯旱,Drought
 1801,强烈季风信号（黑球）,Strong Monsoon Signal
 1802,风暴潮,Storm Surge
 1803,热带气旋,Tropical Cyclone
