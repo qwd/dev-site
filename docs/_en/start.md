@@ -32,7 +32,7 @@ Also, here are some common practices and experiences when using our services so 
 
 QWeather Develop services are all based on pay as you go billing model with tiered pricing, you only pay for the services you actually use, no large upfront, no hidden fees, start and stop whenever you want, and no fees when you stop. See [Pricing](/en/docs/finance/pricing/) and [Billing and Payment](/en/docs/finance/billing-and-payment/).
 
-If you have a high volume of requests, you can also use saving plans to significantly reduce your costs, learn about [Savings plans](/en/docs/finance/savings-plans/).
+If you have a high volume of requests, you can also use savings plans to significantly reduce your costs, learn about [Savings plans](/en/docs/finance/savings-plans/).
 
 For users in mainland China, prices include VAT, if you need to issue a VAT invoice please refer to [VAT invoice](/en/docs/finance/vat-invoice/).
 

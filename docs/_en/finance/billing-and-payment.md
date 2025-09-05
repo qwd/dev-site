@@ -86,7 +86,7 @@ You can make a one-time manual payment, which will increase your balance for unp
 
 1. [Go to Console - Billing](https://console.qweather.com/finance/billing/)
 2. Select the bill to be paid and click the “Pay” button next to the bill.
-3. If your available credit is greater than the bill amount, you will receive a prompt to click the “Pay” button. Otherwise you will be redirected to the payment page.
+3. If your balance is greater than the bill amount, you will receive a prompt and click the “Pay” button. Otherwise you will be redirected to the payment page.
 4. On the payment page, select a payment method, check the “I understand” box, and click "Pay" button.
 
 You can also follow the instructions in the email you receive to make the payment.
