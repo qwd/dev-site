@@ -23,7 +23,7 @@ redirect_from: /docs/finance/saving-plans/
 
 承诺期数是你购买节省计划需要预付的总时长。承诺期数目前最长为1年期。
 
-## 节省系数 {#saving-rate}
+## 节省系数 {#savings-rate}
 
 节省系数是你在使用节省计划期间按量计费价格所享受的折扣。
 

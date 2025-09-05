@@ -17,15 +17,15 @@ The commitment amount is the amount you commit to use within one year, which wil
 
 The commitment term is the total duration to be prepaid, now commitment term supports 1-year.
 
-## Saving Rate
+## Savings Rate
 
-The saving rate is a discount rate for API pricing.
+The savings rate is a discount rate for API pricing.
 
 > **For example:** After purchasing a 1-year savings plan, the cost of a single request for real-time weather is: ¥0.0007 x 0.7 savings rate = ¥0.00049
 
-| Commitment Terms | Saving Rate |
-| ---------------- | ----------- |
-| 1-year           | 0.7         |
+| Commitment Terms | Savings Rate |
+| ---------------- | ------------ |
+| 1-year           | 0.7          |
 
 ## Purchase
 
