@@ -1,6 +1,7 @@
 ---
 title: Real-time Air Quality (deprecated)
 tag: [guide, api, aq, now]
+deprecated: true
 ref: 1-api-air-now
 ---
 

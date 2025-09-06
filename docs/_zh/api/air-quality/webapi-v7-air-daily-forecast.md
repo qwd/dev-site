@@ -1,6 +1,7 @@
 ---
 title: 空气质量每日预报(弃用)
 tag: [guide, api, aq, daily]
+deprecated: true
 ref: 2-api-air-daily-forecast
 ---
 
