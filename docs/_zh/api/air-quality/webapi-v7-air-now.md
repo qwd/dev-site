@@ -1,6 +1,7 @@
 ---
 title: 实时空气质量(弃用)
 tag: [guide, api, aq, now]
+deprecated: true
 ref: 1-api-air-now
 ---
 

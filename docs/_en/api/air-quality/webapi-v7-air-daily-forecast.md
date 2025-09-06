@@ -1,6 +1,7 @@
 ---
 title: Air Quality Daily Forecast (deprecated)
 tag: [guide, api, aq, daily]
+deprecated: true
 ref: 2-api-air-daily-forecast
 ---
 
