@@ -70,6 +70,7 @@ reference_docs:
           - type: currents
       - name: 0-api-solar-radiation
         data: 
+          - type: forecast
           - type: hourly
       - name: 0-api-astronomy
         data: 

@@ -1,10 +1,14 @@
 ---
-title: Solar Radiation Hourly Forecast
+title: Solar Radiation Hourly Forecast (deprecated)
 tag: [guide, api, solar-radiation, hourly]
-ref: 1-api-solar-radiation-hourly-forecast
+deprecated: true
+ref: 2-api-solar-radiation-hourly-forecast
 ---
 
 Get the net solar radiation, diffuse solar radiation and direct solar radiation for any coordinate position in the world.
+
+> **Note:** This API (/v7/solar-radiation/) is deprecated and is expected to be out of service on 2026-09-01. Please use [Solar Radiation Forecast API v1](/en/docs/api/solar-radiation/solar-radiation-forecast/) instead.
+{:.bqdanger}
 
 ## Endpoint
 

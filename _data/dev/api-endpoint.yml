@@ -362,6 +362,19 @@
       zh: 太阳高度角
       en: Solar Elevation Angle
 
+- name: solar-radiation-v1
+  tag: SolarIrradiation
+  demo:
+    link: https://your_api_host/solarradiation/v1/forecast/50.11/8.68
+    name: 
+      zh: 50.11,8.682位置的未来24小时辐照预报
+      en: Forecast for the next 24 hours at 50.11,8.682
+  endpoint:
+    path: /solarradiation/v1/forecast/{latitude}/{longitude}
+    name: 
+      zh: 辐照预报
+      en: Solar radiation forecast
+
 - name: solar-radiation-hourly
   tag: SolarIrradiation
   demo:

@@ -2,7 +2,7 @@
 title: Solar Radiation
 tag: [guide, api, solar-radiation, overview]
 layout: guide-overview
-description: Solar Radiation API supports the access to net solar radiation, solar diffuse radiation and direct solar radiation at any global coordinates.
+description: The Solar Radiation API supports global radiation data, including DNI, DHI, GHI, and related weather data, with a interval of 15 minutes and a resolution of 1x1 km.
 permalink: /en/docs/api/solar-radiation/
 ref: 0-api-solar-radiation
 ---

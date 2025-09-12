@@ -854,6 +854,76 @@ radiation:
       zh: 太阳直接辐射，W/m<sup>2</sup>
       en: Direct solar radiation, W/m<sup>2</sup>
     type: [radiation]
+  - name: forecastTime
+    desc:
+      zh: 预报时间，[ISO8601格式](/docs/resource/glossary/#date-time)
+      en: Forecast time, [ISO8601 format](/en/docs/resource/glossary/#date-time)
+    type: [radiation-v1]
+  - name: solarAngle.azimuth
+    desc:
+      zh: 太阳方位角，正北为0度，顺时针增加
+      en: Solar azimuth angle, 0 degree for North, increasing clockwise
+    type: [radiation-v1]
+  - name: solarAngle.elevation
+    desc:
+      zh: 太阳高度角
+      en: Solar elevation angle
+    type: [radiation-v1]
+  - name: dni.value
+    desc:
+      zh: 法向直接辐照的值
+      en: Direct normal irradiance value
+    type: [radiation-v1]
+  - name: dni.unit
+    desc:
+      zh: 法向直接辐照的单位，瓦特每平方米 `W/m²`
+      en: Direct normal irradiance unit，Watt per square meter `W/m²`
+    type: [radiation-v1]
+  - name: dhi.value
+    desc:
+      zh: 散射水平面辐照的值
+      en: Diffuse horizontal irradiance value
+    type: [radiation-v1]
+  - name: dhi.unit
+    desc:
+      zh: 散射水平面辐照的单位，瓦特每平方米 `W/m²`
+      en: Diffuse horizontal irradiance unit, Watt per square meter `W/m²`
+    type: [radiation-v1]
+  - name: ghi.value
+    desc:
+      zh: 总水平面辐照的值
+      en: Global horizontal irradiance value
+    type: [radiation-v1]
+  - name: ghi.unit
+    desc: 
+      zh: 总水平面辐照的单位，瓦特每平方米 `W/m²`
+      en: Global horizontal irradiance unit, Watt per square meter `W/m²`
+    type: [radiation-v1]
+  - name: weather.temperature.value
+    desc:
+      zh: 温度值
+      en: Temperature value
+    type: [radiation-v1]
+  - name: weather.temperature.unit
+    desc:
+      zh: 温度单位，摄氏度 `°C`
+      en: Temperature unit, Celsius `°C`
+    type: [radiation-v1]
+  - name: weather.windSpeed.value
+    desc:
+      zh: 风速值
+      en: Wind speed value
+    type: [radiation-v1]
+  - name: weather.windSpeed.unit
+    desc:
+      zh: 风速单位，米每秒 `m/s`
+      en: Wind speed unit, meter per second `m/s`
+    type: [radiation-v1]
+  - name: weather.humidity
+    desc:
+      zh: 相对湿度，百分比数值
+      en: Relative humidity in percent
+    type: [radiation-v1]
 ocean:
   - name: fxTime
     desc:

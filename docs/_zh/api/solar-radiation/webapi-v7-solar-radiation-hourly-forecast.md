@@ -1,10 +1,14 @@
 ---
-title: 太阳辐射逐小时预报
+title: 太阳辐射小时预报（弃用）
 tag: [guide, api, solar-radiation, hourly]
-ref: 1-api-solar-radiation-hourly-forecast
+deprecated: true
+ref: 2-api-solar-radiation-hourly-forecast
 ---
 
 太阳辐射API支持获取全球任意坐标的辐射数据，包括净太阳辐射，太阳散射辐射和太阳直接辐射。
+
+> **警告：**当前API（/v7/solar-radiation/）已弃用，预计在2026年9月1日停止服务。请使用[太阳辐照预报 v1新版本](/docs/api/solar-radiation/solar-radiation-forecast/)替代。
+{:.bqdanger}
 
 ## 请求路径 {#endpoint}
 
