@@ -379,3 +379,27 @@ p-hour168h:
      - `72h` 72小时预报。
      - `168h` 168小时预报。
   rqd: true
+q-hour60h:
+  name: hours
+  text: 
+    en: |
+     Forecast hours, supports 1-60 hours, default is `24`. For example: `hours=12`
+    zh: |
+     预报小时数，可选1-60，默认`24`。例如： `hours=12`
+  rqd: false
+q-interval60m:
+  name: interval
+  text: 
+    en: |
+     Interval of forecast data, supports `15`, `30`, `60` minutes, default is `60`. For example: `interval=15`
+    zh: |
+     预报数据时间间隔，可选`15`、`30`、`60`分钟，默认`60`。例如：`interval=15`
+  rqd: false
+q-extra-si:
+  name: extra
+  text: 
+    en: |
+     Additional information provided for the current solar radiation forecast, optional `weather` (basic weather data). For example: `extra=weather`
+    zh: |
+     为当前太阳辐照预报提供的额外信息，可选`weather`(基本天气数据)。 例如：`extra=weather`
+  rqd: false
