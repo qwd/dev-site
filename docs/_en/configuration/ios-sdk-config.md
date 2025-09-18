@@ -180,3 +180,42 @@ WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101010100
     }
 }];
 ```
+
+## Troubleshooting
+
+Follow the steps below to systematically check your Xcode project configuration. We recommend integrating the QWeatherSDK via CocoaPods or Swift Package Manager (SPM), as these tools handle most dependency and configuration issues automatically.
+
+**1. Verify SDK Configuration**
+
+Swift Library Settings
+
+```
+Target → Build Settings → LIBRARY_SEARCH_PATHS = $(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)
+
+Target → Build Settings → Always Embed Swift Standard Libraries = YES
+```
+
+Objective-C Linker Settings
+
+```
+Target → Build Settings → Other Linker Flags = -ObjC -framework "QWeatherSDK"
+
+// To resolve the __swift_FORCE_LOAD_$_swiftCompatibility56 error
+// and help the linker locate the Swift compatibility libraries:
+Target → Build Settings → Other Linker Flags += -L$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME)
+```
+
+**2. Clear Build Cache**
+
+1. Delete the build cache folder: Open Finder, go to `~/Library/Developer/Xcode/DerivedData/` and remove the folder related to your project.
+2. Clean the build folder: In Xcode, select Product → Clean Build Folder (shortcut: Shift + Command + K).
+3. Quit Xcode and restart it.
+4. Rebuild your project.
+
+**3. Check Sample Project**
+
+Refer to our sample project <https://github.com/qwd/qweather-ios-sdk/tree/main/Example>.
+
+**4. Last Resort**
+
+If the issue persists, try creating a brand-new Xcode project and integrate `QWeatherSDK.xcframework` directly. This helps rule out issues caused by complex or corrupted settings in your existing project.

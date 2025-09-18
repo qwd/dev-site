@@ -183,3 +183,42 @@ WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101010100
     }
 }];
 ```
+
+## 故障排查
+
+请按照以下步骤逐项排查你的 Xcode 项目配置。我们推荐使用 CocoaPods 或 Swift Package Manager (SPM) 来集成 QWeatherSDK，这将自动处理大部分配置依赖问题。
+
+**1. 检查SDK配置**
+
+Swift 标准库配置
+```
+Target → Build Settings → LIBRARY_SEARCH_PATHS = $(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)
+
+Target → Build Settings → Always Embed Swift Standard Libraries = YES
+
+```
+
+
+Objective-C 链接设置
+```
+Target → Build Settings → Other Linker Flags = -ObjC -framework "QWeatherSDK"
+
+// 为解决 __swift_FORCE_LOAD_$_swiftCompatibility56 错误，帮助链接器定位 Swift 兼容库
+Target → Build Settings → Other Linker Flags += -L$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME)
+
+```
+
+**2. 清理缓存**
+
+1. 删除编译缓存目录：打开 Finder，前往 `~/Library/Developer/Xcode/DerivedData/` 删除与当前项目对应的文件夹
+2. 删除编译目录：在 Xcode 中点击菜单 Product → Clean Build Folder (快捷键 Shift + Command + K)
+3. 完全退出并重启 Xcode
+4. 重新编译项目
+ 
+**3. 参考示例**
+
+参考我们的示例项目：<https://github.com/qwd/qweather-ios-sdk/tree/main/Example>
+
+**4. 终极尝试**
+
+如果问题依然存在，请尝试创建一个全新的 Xcode 工程添加 QWeatherSDK.xcframework 进行集成测试。这有助于排除原有工程复杂配置或损坏带来的干扰。
