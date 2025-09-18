@@ -184,9 +184,11 @@ WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101010100
 }];
 ```
 
-## 检查清单
+## 故障排查
 
-请按照以下步骤逐项检查您的 Xcode 项目配置，确保 SDK 正确集成：
+请按照以下步骤逐项排查你的 Xcode 项目配置。我们推荐使用 CocoaPods 或 Swift Package Manager (SPM) 来集成 QWeatherSDK，这将自动处理大部分配置依赖问题。
+
+**1. 检查SDK配置**
 
 Swift 标准库配置
 ```
@@ -206,20 +208,17 @@ Target → Build Settings → Other Linker Flags += -L$(DEVELOPER_DIR)/Toolchain
 
 ```
 
+**2. 清理缓存**
 
-常规清理步骤（建议每次配置变更后执行）
- 1. 删除 Xcode 编译缓存目录：
-    打开 Finder，前往 **~/Library/Developer/Xcode/DerivedData/**
-    删除与您当前项目对应的文件夹（或直接删除整个 DerivedData 文件夹更彻底）
- 2. 在 Xcode 中执行 Product → Clean Build Folder (快捷键 **Shift + Command + K**)
- 3. (可选但推荐) 完全退出并重启 Xcode
- 4. 重新编译项目 (**Command + B**)
+1. 删除编译缓存目录：打开 Finder，前往 `~/Library/Developer/Xcode/DerivedData/` 删除与当前项目对应的文件夹
+2. 删除编译目录：在 Xcode 中点击菜单 Product → Clean Build Folder (快捷键 Shift + Command + K)
+3. 完全退出并重启 Xcode
+4. 重新编译项目
  
+**3. 参考示例**
 
-重要建议
+参考我们的示例项目：<https://github.com/qwd/qweather-ios-sdk/tree/main/Example>
 
-首选集成方式： 我们强烈推荐使用 CocoaPods 或 Swift Package Manager (SPM) 来集成 QWeatherSDK，这将自动处理大部分配置依赖问题，管理更简便
+**4. 终极尝试**
 
-参考示例： 您可以参考我们的示例项目：https://github.com/qwd/qweather-ios-sdk/tree/main/Example
-
-终极尝试： 如果严格按照以上清单操作后问题依然存在，请尝试创建一个全新的 Xcode 工程添加QWeatherSDK.xcframework 进行集成测试。这有助于排除原有工程复杂配置或损坏带来的干扰
+如果问题依然存在，请尝试创建一个全新的 Xcode 工程添加 QWeatherSDK.xcframework 进行集成测试。这有助于排除原有工程复杂配置或损坏带来的干扰。

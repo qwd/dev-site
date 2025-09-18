@@ -181,42 +181,41 @@ WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101010100
 }];
 ```
 
-## Checklist
+## Troubleshooting
 
-Please follow the steps below to verify your Xcode project configuration and ensure the SDK is properly integrated:
+Follow the steps below to systematically check your Xcode project configuration. We recommend integrating the QWeatherSDK via CocoaPods or Swift Package Manager (SPM), as these tools handle most dependency and configuration issues automatically.
 
-Swift Standard Library Configuration
+**1. Verify SDK Configuration**
+
+Swift Library Settings
+
 ```
 Target → Build Settings → LIBRARY_SEARCH_PATHS = $(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)
 
 Target → Build Settings → Always Embed Swift Standard Libraries = YES
-
 ```
 
-
 Objective-C Linker Settings
+
 ```
 Target → Build Settings → Other Linker Flags = -ObjC -framework "QWeatherSDK"
 
-// To resolve the __swift_FORCE_LOAD_$_swiftCompatibility56 error and help the linker locate Swift compatibility libraries
+// To resolve the __swift_FORCE_LOAD_$_swiftCompatibility56 error
+// and help the linker locate the Swift compatibility libraries:
 Target → Build Settings → Other Linker Flags += -L$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME)
-
 ```
 
+**2. Clear Build Cache**
 
-General Cleanup Steps (Recommended after each configuration change)
- 1. Delete Xcode build cache directory：
-    Open Finder and go to **~/Library/Developer/Xcode/DerivedData/** 
-    Delete the folder corresponding to your current project (or delete the entire DerivedData folder for a more thorough cleanup)
- 2. In Xcode, perform Product → Clean Build Folder (shortcut: **Shift + Command + K**)
- 3. (Optional but recommended) Fully quit and restart Xcode
- 4. Rebuild the project (**Command + B**)
- 
+1. Delete the build cache folder: Open Finder, go to `~/Library/Developer/Xcode/DerivedData/` and remove the folder related to your project.
+2. Clean the build folder: In Xcode, select Product → Clean Build Folder (shortcut: Shift + Command + K).
+3. Quit Xcode and restart it.
+4. Rebuild your project.
 
-Important Recommendations
+**3. Check Sample Project**
 
-Preferred Integration Method: We strongly recommend using CocoaPods or Swift Package Manager (SPM) to integrate QWeatherSDK. This will automatically handle most configuration dependencies and simplify management.
+Refer to our sample project <https://github.com/qwd/qweather-ios-sdk/tree/main/Example>.
 
-Reference Example: You can refer to our sample project: https://github.com/qwd/qweather-ios-sdk/tree/main/Example
+**4. Last Resort**
 
-Final Attempt: If the issue persists even after strictly following the checklist above, try creating a brand-new Xcode project and add QWeatherSDK.xcframework for integration testing. This helps eliminate interference caused by complex or corrupted configurations in the original project.
+If the issue persists, try creating a brand-new Xcode project and integrate `QWeatherSDK.xcframework` directly. This helps rule out issues caused by complex or corrupted settings in your existing project.
