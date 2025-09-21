@@ -9,123 +9,195 @@ title: solar-radiation-v1
     },
     "forecasts": [
         {
-            "forecastTime": "2023-08-18T09:00Z",
+            "forecastTime": "2023-10-15T11:30Z",
             "solarAngle": {
-                "azimuth": 135,
-                "elevation": 35
-            },
-            "dni": {
-                "value": 257.36,
-                "unit": "W/m²"
-            },
-            "dhi": {
-                "value": 176.57,
-                "unit": "W/m²"
-            },
-            "ghi": {
-                "value": 324.59,
-                "unit": "W/m²"
-            },
-            "weather": {
-                "temperature": {
-                    "value": 15.73,
-                    "unit": "°C"
-                },
-                "windSpeed": {
-                    "value": 3.93,
-                    "unit": "m/s"
-                },
-                "humidity": 77
-            }
-        },
-        {
-            "forecastTime": "2023-08-18T09:15Z",
-            "solarAngle": {
-                "azimuth": 139,
-                "elevation": 37
-            },
-            "dni": {
-                "value": 274.86,
-                "unit": "W/m²"
-            },
-            "dhi": {
-                "value": 185.39,
-                "unit": "W/m²"
-            },
-            "ghi": {
-                "value": 349.83,
-                "unit": "W/m²"
-            },
-            "weather": {
-                "temperature": {
-                    "value": 15.91,
-                    "unit": "°C"
-                },
-                "windSpeed": {
-                    "value": 3.98,
-                    "unit": "m/s"
-                },
-                "humidity": 76
-            }
-        },
-        {
-            "forecastTime": "2023-08-18T09:30Z",
-            "solarAngle": {
-                "azimuth": 143,
-                "elevation": 38
-            },
-            "dni": {
-                "value": 288.97,
-                "unit": "W/m²"
-            },
-            "dhi": {
-                "value": 193.16,
-                "unit": "W/m²"
-            },
-            "ghi": {
-                "value": 372.03,
-                "unit": "W/m²"
-            },
-            "weather": {
-                "temperature": {
-                    "value": 16.07,
-                    "unit": "°C"
-                },
-                "windSpeed": {
-                    "value": 4.04,
-                    "unit": "m/s"
-                },
-                "humidity": 74
-            }
-        },
-        {
-            "forecastTime": "2023-08-18T09:45Z",
-            "solarAngle": {
-                "azimuth": 148,
+                "azimuth": 184,
                 "elevation": 40
             },
             "dni": {
-                "value": 294.61,
+                "value": 25.16,
                 "unit": "W/m²"
             },
             "dhi": {
-                "value": 198.86,
+                "value": 136.29,
                 "unit": "W/m²"
             },
             "ghi": {
-                "value": 386.63,
+                "value": 152.57,
                 "unit": "W/m²"
             },
             "weather": {
                 "temperature": {
-                    "value": 16.22,
+                    "value": 18.6,
                     "unit": "°C"
                 },
                 "windSpeed": {
-                    "value": 4.09,
+                    "value": 2.78,
                     "unit": "m/s"
                 },
-                "humidity": 73
+                "humidity": 76
+            },
+            "poa": {
+                "global": {
+                    "value": 134.39,
+                    "unit": "W/m²"
+                },
+                "direct": {
+                    "value": 9.35,
+                    "unit": "W/m²"
+                },
+                "diffuse": {
+                    "value": 125.04,
+                    "unit": "W/m²"
+                },
+                "reflected": {
+                    "value": 1.52,
+                    "unit": "W/m²"
+                }
+            }
+        },
+        {
+            "forecastTime": "2023-10-15T11:45Z",
+            "solarAngle": {
+                "azimuth": 189,
+                "elevation": 40
+            },
+            "dni": {
+                "value": 20.71,
+                "unit": "W/m²"
+            },
+            "dhi": {
+                "value": 132.14,
+                "unit": "W/m²"
+            },
+            "ghi": {
+                "value": 145.47,
+                "unit": "W/m²"
+            },
+            "weather": {
+                "temperature": {
+                    "value": 18.27,
+                    "unit": "°C"
+                },
+                "windSpeed": {
+                    "value": 2.98,
+                    "unit": "m/s"
+                },
+                "humidity": 76
+            },
+            "poa": {
+                "global": {
+                    "value": 128.26,
+                    "unit": "W/m²"
+                },
+                "direct": {
+                    "value": 7.28,
+                    "unit": "W/m²"
+                },
+                "diffuse": {
+                    "value": 120.98,
+                    "unit": "W/m²"
+                },
+                "reflected": {
+                    "value": 1.45,
+                    "unit": "W/m²"
+                }
+            }
+        },
+        {
+            "forecastTime": "2023-10-15T12:00Z",
+            "solarAngle": {
+                "azimuth": 194,
+                "elevation": 40
+            },
+            "dni": {
+                "value": 15.58,
+                "unit": "W/m²"
+            },
+            "dhi": {
+                "value": 127.72,
+                "unit": "W/m²"
+            },
+            "ghi": {
+                "value": 137.65,
+                "unit": "W/m²"
+            },
+            "weather": {
+                "temperature": {
+                    "value": 17.94,
+                    "unit": "°C"
+                },
+                "windSpeed": {
+                    "value": 3.17,
+                    "unit": "m/s"
+                },
+                "humidity": 76
+            },
+            "poa": {
+                "global": {
+                    "value": 121.85,
+                    "unit": "W/m²"
+                },
+                "direct": {
+                    "value": 5.14,
+                    "unit": "W/m²"
+                },
+                "diffuse": {
+                    "value": 116.72,
+                    "unit": "W/m²"
+                },
+                "reflected": {
+                    "value": 1.37,
+                    "unit": "W/m²"
+                }
+            }
+        },
+        {
+            "forecastTime": "2023-10-15T12:15Z",
+            "solarAngle": {
+                "azimuth": 198,
+                "elevation": 39
+            },
+            "dni": {
+                "value": 10.1,
+                "unit": "W/m²"
+            },
+            "dhi": {
+                "value": 124.08,
+                "unit": "W/m²"
+            },
+            "ghi": {
+                "value": 130.43,
+                "unit": "W/m²"
+            },
+            "weather": {
+                "temperature": {
+                    "value": 17.63,
+                    "unit": "°C"
+                },
+                "windSpeed": {
+                    "value": 3.3,
+                    "unit": "m/s"
+                },
+                "humidity": 76
+            },
+            "poa": {
+                "global": {
+                    "value": 118.87,
+                    "unit": "W/m²"
+                },
+                "direct": {
+                    "value": 3.1,
+                    "unit": "W/m²"
+                },
+                "diffuse": {
+                    "value": 115.77,
+                    "unit": "W/m²"
+                },
+                "reflected": {
+                    "value": 1.3,
+                    "unit": "W/m²"
+                }
             }
         }
     ]
