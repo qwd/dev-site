@@ -18,7 +18,7 @@ Provide solar radiation forecasts and related data at 15-minute intervals for an
 
 #### Query parameters
 
-{% include params.html p="q-hour60h q-interval60m q-extra-si" %}
+{% include params.html p="q-hour60h q-interval60m q-tilt-si q-azimuth-si q-extra-si" %}
 
 ## Request example
 

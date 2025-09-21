@@ -399,7 +399,23 @@ q-extra-si:
   name: extra
   text: 
     en: |
-     Additional information provided for the current solar radiation forecast, optional `weather` (basic weather data). For example: `extra=weather`
+     Additional information provided for the current solar radiation forecast, optional `weather` (basic weather data) and `poa` (plane of array irradiance, must pass both `tilt` and `azimuth`), multiple items are separated by commas. For example: `extra=weather`
     zh: |
-     为当前太阳辐照预报提供的额外信息，可选`weather`(基本天气数据)。 例如：`extra=weather`
+     为当前太阳辐照预报提供的额外信息，可选`weather`（基本天气数据）和`poa`（Plane of array，阵列平面辐照度，必须同时传递`tilt`和`azimuth`），多项使用英文逗号分割。例如：`extra=weather`
+  rqd: false
+q-tilt-si:
+  name: tilt
+  text: 
+    en: |
+     The tilt angle of the PV system (range 0-90, integer). Required when `extra=poa`. For example: `tilt=30`
+    zh: |
+     光伏系统的倾斜角度，可选0-90，整数。当`extra=poa`时该参数必传。例如：`tilt=30`
+  rqd: false
+q-azimuth-si:
+  name: azimuth
+  text: 
+    en: |
+     The azimuth angle of the PV system (range 0-359, integer, 0 = North). Required when `extra=poa`. For example: `azimuth=180`
+    zh: |
+     光伏系统的方位角，可选0-359，整数，0 = 北。当`extra=poa`时该参数必传。例如：`azimuth=180`
   rqd: false

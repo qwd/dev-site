@@ -18,7 +18,7 @@ ref: 1-api-solar-radiation-forecast
 
 #### 查询参数 {#query-parameters}
 
-{% include params.html p="q-hour60h q-interval60m q-extra-si" %}
+{% include params.html p="q-hour60h q-interval60m q-tilt-si q-azimuth-si q-extra-si" %}
 
 ## 请求示例 {#request-example}
 
