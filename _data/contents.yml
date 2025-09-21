@@ -42,6 +42,7 @@ reference_docs:
           - type: precip
       - name: 0-api-warning
         data: 
+          - type: current
           - type: now
           - type: list
       - name: 0-api-indices

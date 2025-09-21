@@ -2,9 +2,10 @@
 title: Warning
 tag: [guide, android, warning, overview]
 layout: guide-overview
-description: Warning service can get global real-time severe weather warning data.
+description: The QWeather Alert API provides official global severe weather alerts, covering China and countries or regions worldwide.
 permalink: /en/docs/android-sdk/warning/
 ref: 0-sdk-android-warning
 ---
 
-Learn more about [supported countries or regions](/en/docs/resource/warning-info/#supported-regions), [warning-level](/en/docs/resource/warning-info/#warning-level) and [warning-type](/en/docs/resource/warning-info/#warning-type).
+The Weather Alert API covers China and countries or regions worldwide, and currently includes hundreds of alert events, such as: typhoon, rain, blizzard, cold wave, strong wind, sandstorm, high temperature, drought, thunderstorm, hail, frost, fog, haze, etc.
+

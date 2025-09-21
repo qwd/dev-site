@@ -43,8 +43,16 @@ metadata:
     zh: 数据预计的过期时间
     en: Possible expiration time of data
   sources:
-    zh: 数据来源或提供商名字以及他们的声明，开发者必须将此内容与当前数据一起展示，**可能为空**
-    en: Data source or provider name and their declaration, developers must display this information with data. **May be null**
+    zh: 数据来源或声明，开发者必须将此内容与当前数据一起展示
+    en: Attributions for data sources or declarations, developers must display this information with data
+  attributions:
+    zh: 数据来源或声明，开发者必须将此内容与当前数据一起展示
+    en: Attributions for data sources or declarations, developers must display this information with data
+  zeroResult:
+    zh: |
+     表示请求成功，但无数据返回，例如查询地点无预警。
+    en: |
+     `true` indicates the request is successful but no data is available, e.g. no alert data for the queried location.
 weather:
   - name: obsTime
     desc:
@@ -1013,6 +1021,156 @@ indices:
       en: Description of the weather indices, **may be null**
     example: The temperature is suitable during the day and the wind is not strong. You will feel more refreshing and comfortable in such weather conditions.
 warning:
+  - name: id
+    desc:
+      zh: 本条预警信息的唯一标识
+      en: The ID of this alert message
+    example: 202010110345679813
+    type: [alert-v1]
+  - name: senderName
+    desc:
+      zh: 预警发布机构的名称，**可能为空**
+      en: The name of the agency or authority issuing this alert, **may be null**
+    example: 深圳市气象局
+    type: [alert-v1]
+  - name: issuedTime
+    desc:
+      zh: 原始预警信息生成的时间，实际发布或接收时间会略有延迟
+      en: The time when the original alert message was generated. The actual release or receipt time may be slightly delayed.
+    example: 2017-10-25T12:03Z
+    type: [alert-v1]
+  - name: msgType
+    desc:
+      zh: |
+       [预警信息的性质](/docs/resource/warning-info/#message-type)
+      en: |
+       [The nature of the alert message](/en/docs/resource/warning-info/#message-type)
+    example: alert
+    type: [alert-v1]
+  - name: relatedAlertIds
+    desc:
+      zh: 本条预警引用的先前预警ID，当预警性质为`cancel`或`update`时返回。
+      en: the IDs of previous alerts referenced by this alert, returned when `msgType` is `cancel` or `update`.
+    example: 202010110345679813
+    type: [alert-v1]
+  - name: event
+    desc:
+      zh: |
+       [预警事件类型的名称](/docs/resource/warning-info/#event-and-code)
+      en: |
+       [Name of the alert event type](/en/docs/resource/warning-info/#event-and-code)
+    example: 雷电黄色预警
+    type: [alert-v1]
+  - name: eventCode.name
+    desc:
+      zh: 预警事件类型所采用的代码体系名称，参考[预警事件和代码](/docs/resource/warning-info/#event-and-code)
+      en: Name of the coding system for the alert event type, refer to [Alert Event and Code](/en/docs/resource/warning-info/#event-and-code)
+    example: QWEATHER
+    type: [alert-v1]
+  - name: eventCode.value
+    desc:
+      zh: |
+       [预警事件类型的代码](/docs/resource/warning-info/#event-and-code)
+      en: |
+       [Code of the alert event type](/en/docs/resource/warning-info/#event-and-code)
+    example: "1001"
+    type: [alert-v1]
+  - name: icon
+    desc:
+      zh: 预警对应的[图标代码](/docs/resource/icons/)
+      en: |
+       [Icon code](/en/docs/resource/icons/) for this alert
+    example: 1001
+    type: [alert-v1]
+  - name: urgency
+    desc:
+      zh: 预警信息的[紧迫程度](/docs/resource/warning-info/#urgency)，**可能为空**
+      en: The [urgency](/en/docs/resource/warning-info/#urgency) of the alert message, **may be null**
+    type: [alert-v1]
+  - name: severity
+    desc:
+      zh: 预警信息的[严重程度](/docs/resource/warning-info/#severity)
+      en: The [severity](/en/docs/resource/warning-info/#severity) of the alert message
+    type: [alert-v1]
+  - name: certainty
+    desc:
+      zh: 预警信息的[确定性](/docs/resource/warning-info/#certainty)，**可能为空**
+      en: The [certainty](/en/docs/resource/warning-info/#certainty) of the alert message, **may be null**
+    type: [alert-v1]
+  - name: color.code  
+    desc:
+      zh: |
+       [预警信息的颜色代码](/docs/resource/warning-info/#color)
+      en: |
+       [Color code for this alert](/en/docs/resource/warning-info/#color)
+    type: [alert-v1]
+  - name: color.red
+    desc:
+      zh: 预警信息颜色的红色分量值（RGBA），范围 0–255
+      en: Red component in RGBA for this alert, range 0–255
+    example: 255
+    type: [alert-v1]
+  - name: color.green
+    desc:
+      zh: 预警颜色的绿色分量值（RGBA），范围 0–255
+      en: Green component in RGBA for this alert, range 0–255
+    example: 255
+    type: [alert-v1]
+  - name: color.blue
+    desc:
+      zh: 预警颜色的蓝色分量值（RGBA），范围 0–255
+      en: Blue component in RGBA for this alert, range 0–255
+    example: 0
+    type: [alert-v1]
+  - name: color.alpha
+    desc:
+      zh: 预警颜色的透明度分量值（RGBA），范围 0-1
+      en: Alpha (opacity) in RGBA for this alert, range 0-1 
+    type: [alert-v1]
+  - name: effectiveTime
+    desc:
+      zh: 预警信息的生效时间，**可能为空**
+      en: The effective time of the alert message, **may be null**
+    example: 2017-10-25T13:12Z
+    type: [alert-v1]
+  - name: onsetTime
+    desc:
+      zh: 预警事件预计开始的时间，**可能为空**
+      en: The expected time of the beginning of this alert event, **may be null**
+    example: 2017-10-25T13:12Z
+    type: [alert-v1]
+  - name: expiredTime
+    desc:
+      zh: 预警信息的失效时间
+      en: The expiry time of the alert message
+    example: 2017-10-26T13:12Z
+    type: [alert-v1]
+  - name: headline
+    desc:
+      zh: 预警信息的简要描述或标题
+      en: Headline or brief of the alert message
+    type: [alert-v1]
+  - name: description
+    desc:
+      zh: 预警信息的详细描述
+      en: Description of the alert message
+    type: [alert-v1]
+  - name: criteria
+    desc:
+      zh: 当前预警信息的触发标准或条件。仅供参考，可能滞后于官方标准。**可能为空**
+      en: The criteria or condition for triggering this alert. This is for reference only and may out of date with official standard. **May be null**
+    type: [alert-v1]
+  - name: instruction
+    desc:
+      zh: 对当前预警的防御指南或行动指导，**可能为空**
+      en: The recommended action for this alert, **may be null**
+    type: [alert-v1]
+  - name: responseTypes
+    desc:
+      zh: 对当前预警的应对方式的类型代码，**可能为空**
+      en: Type code of recommended action for this alert, **may be null**
+    example: Prepare
+    type: [alert-v1]
   - name: locationId
     desc:
       zh: 当前国家预警的LocationID
@@ -1045,64 +1203,51 @@ warning:
     type: [warning]
   - name: startTime
     desc:
-      zh: 预警开始时间，**可能为空**
-      en: Warning start time, **may be null**
+      zh: 预警开始时间
+      en: Warning start time
     example: 2017-10-25T13:12
     type: [warning]
   - name: endTime
     desc:
-      zh: >-
-       [预警结束时间](/docs/resource/warning-info/#expiry-time)，**可能为空**
-      en: >-
-       [End time of warning](/en/docs/resource/warning-info/#expiry-time), **may be null**
+      zh: 预警结束时间
+      en: End time of warning
     example: 2017-10-26T13:12
     type: [warning]
   - name: status
     desc:
-      zh: >-
-       [预警信息的发布状态](/docs/resource/warning-info/#status)
-      en: >-
-       [Warning status](/en/docs/resource/warning-info/#status)
-    example: active
+      zh: 预警信息的发布状态，包括“Active”（发布）和 “Update”（更新）。当预警信息为“Update”时，表示本条预警取代或更新了在`related`中指定的预警信息。
+      en: The release status of the warning message, including "Active" and "Update". When the warning message is "Update", it means that this warning replaces or updates the warning message specified in `related`.
     type: [warning]
   - name: level
     desc:
-      zh: |-
-       [预警等级（已弃用）](/docs/resource/warning-info/#level-deprecated)，**不要再使用这个字段**，该字段已弃用，目前返回为空或未更新的值。请使用`severity`和`severityColor`代替
-      en: |-
-       [Warning level (deprecated)](/en/docs/resource/warning-info/#level-deprecated), **Do not use `warning.level` anymore**, this field is deprecated and the value will be null or out of date. Please uses `severity` and `severityColor` instead
-    example: Yellow
+      zh: 预警等级，该字段已弃用，目前返回为空或未更新的值。请使用`severity`代替
+      en: Warning level, this field is deprecated and the value will be null or out of date. Please uses `severity` instead
     type: [warning]
   - name: severity
     desc:
-      zh: |-
-       [预警严重等级](/docs/resource/warning-info/#severity)
-      en: |-
-       [Warning severity](/en/docs/resource/warning-info/#severity)
+      zh: 预警严重程度，包括 “unknown”、“Minor”、“Moderate”、“Severe” 和 “Extreme”
+      en: Warning severity, including "unknown", "Minor", "Moderate", "Severe" and "Extreme"
     example: Moderate
     type: [warning]
   - name: severityColor
     desc:
-      zh: |-
-       [预警严重等级颜色](/docs/resource/warning-info/#severity-color)，**可能为空**
-      en: |-
-       [Preferred color for severity](/en/docs/resource/warning-info/#severity-color), **may be null**
-    example: Yellow
+      zh: 预警严重程度对应的颜色，包括 “White”、“Blue”、“Green”、“Yellow”、“Orange”、“Red” 和 “Black”。**可能为空**
+      en: Warning severity color, including "White", "Blue", "Green", "Yellow", "Orange", "Red" and "Black". **may be null**
     type: [warning]
   - name: type
     desc:
       zh: |-
-       [预警类型ID](/docs/resource/warning-info/#warning-type)
+       [预警事件类型ID](/docs/resource/warning-info/#event-and-code)
       en: |-
-       [Warning type ID](/en/docs/resource/warning-info/#warning-type)
+       [Warning event type ID](/en/docs/resource/warning-info/#event-and-code)
     example: 11B17
     type: [warning]
   - name: typeName
     desc:
       zh: |-
-       [预警类型名称](/docs/resource/warning-info/#warning-type)
+       [预警事件类型的名称](/docs/resource/warning-info/#event-and-code)
       en: |-
-       [Warning type name](/en/docs/resource/warning-info/#warning-type)
+       [Warning event type name](/en/docs/resource/warning-info/#event-and-code)
     example: Heavy fog
     type: [warning]
   - name: urgency
@@ -1127,9 +1272,8 @@ warning:
     type: [warning]
   - name: related
     desc:
-      zh: 与本条预警相关联的预警ID，当预警状态为cancel或update时返回。**可能为空**
-      en: The warning ID associated with this warning, returned when the warning status is `cancel` or `update`. **May be null**
-    example: 深圳市气象局于10月04日12时59分发布雷电黄色预警信号，请注意防御。
+      zh: 与本条预警相关联的预警ID，当预警状态为Update时返回。**可能为空**
+      en: The warning ID associated with this warning, returned when the warning status is `update`. **May be null**
     type: [warning]
 hisweather:
   - name: date

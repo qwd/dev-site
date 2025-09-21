@@ -180,6 +180,19 @@
       zh: 天气灾害预警城市列表
       en: Severe Weather City List
 
+- name: alert-current
+  tag: WeatherAlert
+  demo:
+    link: https://your_api_host/weatheralert/v1/current/39.90/116.40
+    name: 
+      zh: 坐标 39.90,116.40 的灾害预警
+      en: Weather alert for the coordinates 39.90,116.40
+  endpoint:
+    path: /weatheralert/v1/current/{latitude}/{longitude}
+    name:
+      zh: 使用坐标查询
+      en: Using coordinates
+
 - name: air-now-v1-coor
   tag: AirQuality
   endpoint:
