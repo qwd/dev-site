@@ -884,8 +884,8 @@ radiation:
     type: [radiation-v1]
   - name: dni.unit
     desc:
-      zh: 法向直接辐照的单位，瓦特每平方米 `W/m²`
-      en: Direct normal irradiance unit，Watt per square meter `W/m²`
+      zh: 法向直接辐照的单位，瓦特每平方米
+      en: Direct normal irradiance unit，Watt per square meter
     type: [radiation-v1]
   - name: dhi.value
     desc:
@@ -894,8 +894,8 @@ radiation:
     type: [radiation-v1]
   - name: dhi.unit
     desc:
-      zh: 散射水平面辐照的单位，瓦特每平方米 `W/m²`
-      en: Diffuse horizontal irradiance unit, Watt per square meter `W/m²`
+      zh: 散射水平面辐照的单位，瓦特每平方米
+      en: Diffuse horizontal irradiance unit, Watt per square meter
     type: [radiation-v1]
   - name: ghi.value
     desc:
@@ -904,8 +904,8 @@ radiation:
     type: [radiation-v1]
   - name: ghi.unit
     desc: 
-      zh: 总水平面辐照的单位，瓦特每平方米 `W/m²`
-      en: Global horizontal irradiance unit, Watt per square meter `W/m²`
+      zh: 总水平面辐照的单位，瓦特每平方米
+      en: Global horizontal irradiance unit, Watt per square meter
     type: [radiation-v1]
   - name: weather.temperature.value
     desc:
@@ -914,8 +914,8 @@ radiation:
     type: [radiation-v1]
   - name: weather.temperature.unit
     desc:
-      zh: 温度单位，摄氏度 `°C`
-      en: Temperature unit, Celsius `°C`
+      zh: 温度单位，摄氏度
+      en: Temperature unit, Celsius
     type: [radiation-v1]
   - name: weather.windSpeed.value
     desc:
@@ -924,13 +924,53 @@ radiation:
     type: [radiation-v1]
   - name: weather.windSpeed.unit
     desc:
-      zh: 风速单位，米每秒 `m/s`
-      en: Wind speed unit, meter per second `m/s`
+      zh: 风速单位，米每秒
+      en: Wind speed unit, meter per second
     type: [radiation-v1]
   - name: weather.humidity
     desc:
       zh: 相对湿度，百分比数值
       en: Relative humidity in percent
+    type: [radiation-v1]
+  - name: poa.global.value
+    desc:
+      zh: 组件平面总辐照的值
+      en: Plane of array global irradiance value
+    type: [radiation-v1]
+  - name: poa.global.unit
+    desc:
+      zh: 组件平面总辐照的单位，瓦特每平方米
+      en: Plane of array global irradiance unit, Watt per square meter
+    type: [radiation-v1]
+  - name: poa.direct.value
+    desc:
+      zh: 组件平面直接辐照量
+      en: Plane of array direct irradiance value
+    type: [radiation-v1]
+  - name: poa.direct.unit
+    desc:
+      zh: 组件平面直接辐照的单位，瓦特每平方米
+      en: Plane of array direct irradiance unit, Watt per square meter
+    type: [radiation-v1]
+  - name: poa.diffuse.value
+    desc:
+      zh: 组件平面散射辐照量
+      en: Plane of array diffuse irradiance value
+    type: [radiation-v1]
+  - name: poa.diffuse.unit
+    desc:
+      zh: 组件平面散射辐照的单位，瓦特每平方米
+      en: Plane of array diffuse irradiance unit, Watt per square meter
+    type: [radiation-v1]
+  - name: poa.reflected.value
+    desc:
+      zh: 组件平面地面反射辐照量
+      en: Plane of array ground-reflected irradiance value
+    type: [radiation-v1]
+  - name: poa.reflected.unit
+    desc: 
+      zh: 组件平面地面反射辐照的单位，瓦特每平方米
+      en: Plane of array ground-reflected irradiance unit, Watt per square meter
     type: [radiation-v1]
 ocean:
   - name: fxTime
