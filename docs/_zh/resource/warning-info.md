@@ -40,11 +40,25 @@ ref: res-warning
 
 ## 信息类型 {#message-type}
 
-`msgType` 代表当前预警信息的类型/性质，包括：
+`messageType` 代表当前预警信息的类型/性质，开发者可以了解当前预警是新发布的还是对之前预警的更新。
+
+`messageType.code` 包括：
 
 - **alert**：初始且活跃的预警信息
-- **update**：更新并取代了在`relatedAlertIds`中指定预警信息
-- **cancel**：取消了在`relatedAlertIds`中指定预警信息，同时其过期时间`expiredTime`为发布后1小时。
+- **update**：更新并取代了在 `messageType.supersedes` 中指定预警信息
+- **cancel**：取消了在 `messageType.supersedes` 中指定预警信息。**cancel** 类型的预警信息，`expiredTime` 为发布后1小时。
+
+`messageType.supersedes` 用于指定当前预警信息所取代的先前预警信息的ID，仅在 `messageType.code` 为 **update** 或 **cancel** 时返回。它帮助开发者了解当前预警与之前预警之间的关联，确保数据的正确性和更新的顺畅。
+
+## 紧迫程度 {#urgency}
+
+`urgency` 表示预警信息的紧迫性，包括：
+
+- **immediate**：必须立刻采取行动
+- **expected**：应尽快采取行动（通常在 1 小时内）
+- **future**：应在近期采取行动
+- **past**：事件已不再发生
+- **unknown**：紧迫性未知
 
 ## 严重程度 {#severity}
 
@@ -58,29 +72,6 @@ ref: res-warning
 - **severe**：对生命或财产构成的重大威胁
 - **extreme**：对生命或财产构成的严重威胁
 
-## 颜色 {#color}
-
-颜色通常表示当前预警事件类型或严重程度，优先使用当地规范或习惯的RGBA色值，包括：
-
-- **white**
-- **blue**
-- **green**
-- **yellow**
-- **amber**
-- **orange**
-- **red**
-- **black**
-
-## 紧迫程度 {#urgency}
-
-`urgency` 表示预警信息的紧迫性，包括：
-
-- **immediate**：必须立刻采取行动
-- **expected**：应尽快采取行动（通常在 1 小时内）
-- **future**：应在近期采取行动
-- **past**：事件已不再发生
-- **unknown**：紧迫性未知
-
 ## 确定性 {#certainty}
 
 `certainty` 表示预警信息的确定性或可信度，包括：
@@ -91,22 +82,29 @@ ref: res-warning
 - **unlikely**：预计不会发生（概率接近 0）
 - **unknown**：确定性未知
 
+## 颜色 {#color}
+
+`color` 包括颜色代码和对应的RGBA色值，是预警信息在视觉表达中建议使用的颜色。目前支持的颜色代码：
+
+- **white**
+- **gray**
+- **green**
+- **blue**
+- **yellow**
+- **amber**
+- **orange**
+- **red**
+- **purple**
+- **black**
+
 ## 预警事件和代码 {#event-and-code}
 
-`event` 表示预警事件的名称。和风天气根据各国官方气象部门的定义，提供了数百种预警事件，例如大风、雷暴预警事件。事件名称可能相同或类似，但其代表的地区、标准各不相同。
-
-`eventCodes` 表示该预警事件对应的代码，其中 `name` 是代码的体系名称，`value` 是代码的值。事件代码包括:
-
-- 当地事件代码，例如适用于美国的SAME体系，这有助于你对接或兼容当地系统。并非所有国家或地区提供当地事件代码。
-- 通用事件代码，我们为每一个预警事件提供了唯一的代码，便于跨区域开发。通用代码的名称是 **UNIVERSAL**。
-
-> **警告：** 预警事件会根据各国气象部门的规定而新增、修改或删除，事件名称也有可能由于翻译的影响而有所变化，因此我们不建议存储这些预警类型，以避免在预警类型更新时造成你的程序错误。
-{:.bqdanger}
+我们为各国或地区的预警事件类别设计了统一的代码规则。
 
 <table>
   <thead>
     <tr>
-      <th>QWEATHER Code</th>
+      <th>Code</th>
       <th>Event</th>
     </tr>
   </thead>

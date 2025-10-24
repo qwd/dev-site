@@ -4,9 +4,9 @@ tag: [guide, api, warning, current]
 ref: 1-api-weather-alert
 ---
 
-Get officially issued real-time severe weather warning data around the world.
+Get officially issued real-time severe weather alert data around the world.
 
-> **Hint:** For the implementation of weather warnings, see [Resource - Warning Info](/en/docs/resource/warning-info/) in advance.
+> **Hint:** For the implementation of weather alert, see [Resource - Alert Info](/en/docs/resource/warning-info/) in advance.
 
 ## Endpoint
 
@@ -20,7 +20,7 @@ Get officially issued real-time severe weather warning data around the world.
 
 #### Query parameters
 
-{% include params.html p="lang-def" %}
+{% include params.html p="q-localtime lang-def" %}
 
 ## Request example
 
@@ -28,6 +28,6 @@ Get officially issued real-time severe weather warning data around the world.
 
 ## Response
 
-{% include api-snippet.html snippet="weather-alert-v1-current" %}
+{% include api-snippet.html snippet="weather-alert-v1-current-en" %}
 
 {% include api-response.html group="warning" type="alert-v1" prefix="alerts" fxlink="0" refer="0" update="0" statusCode="0" metadata="tag zeroResult attributions" %}

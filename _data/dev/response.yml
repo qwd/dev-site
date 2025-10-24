@@ -50,7 +50,7 @@ metadata:
     en: Attributions for data sources or declarations, developers must display this information with data
   zeroResult:
     zh: |
-     表示请求成功，但无数据返回，例如查询地点无预警。
+     **true** 表示请求成功，但无数据返回，例如查询地点无预警
     en: |
      `true` indicates the request is successful but no data is available, e.g. no alert data for the queried location.
 weather:
@@ -1079,63 +1079,72 @@ warning:
       en: The time when the original alert message was generated. The actual release or receipt time may be slightly delayed.
     example: 2017-10-25T12:03Z
     type: [alert-v1]
-  - name: msgType
+  - name: messageType.code
     desc:
       zh: |
-       [预警信息的性质](/docs/resource/warning-info/#message-type)
+       [预警信息性质的代码](/docs/resource/warning-info/#message-type)，开发者可以了解当前预警是新发布的还是对之前预警的更新。
       en: |
-       [The nature of the alert message](/en/docs/resource/warning-info/#message-type)
-    example: alert
+       [The code of the alert message nature](/en/docs/resource/warning-info/#message-type)
     type: [alert-v1]
-  - name: relatedAlertIds
+  - name: messageType.supersedes
     desc:
-      zh: 本条预警引用的先前预警ID，当预警性质为`cancel`或`update`时返回。
-      en: the IDs of previous alerts referenced by this alert, returned when `msgType` is `cancel` or `update`.
-    example: 202010110345679813
+      zh: 当前预警取代或取消后续预警ID的列表，仅在 `messageType.code` 为 **update** 或 **cancel** 时返回。
+      en: Alert IDs that are superseded by this message, only relevant when `messageType.code` is **update** or **cancel**.
     type: [alert-v1]
-  - name: event
+  # - name: latestChange.code
+  #   desc:
+  #     zh: |
+  #      [预警信息最新变更的代码](/docs/resource/warning-info/#latest-change)，如果没有变更，**latestChange对象为空**
+  #     en: |
+  #      [The code of the latest change of the alert message](/en/docs/resource/warning-info/#latest-change), if there is no change, the **latestChange object is null**
+  #   type: [alert-v1]
+  # - name: latestChange.changedTime
+  #   desc:
+  #     zh: 预警信息最新变更的时间
+  #     en: The time of the latest change of this alert message
+  #   type: [alert-v1]
+  # - name: latestChange.changedBy
+  #   desc:
+  #     zh: 变更当前预警的后续预警ID列表，当[最新变更代码](/docs/resource/warning-info/#latest-change)是`superseded`或`cancelled`时返回
+  #     en: Alert IDs that caused the latest change, returned when [latest change code](/en/docs/resource/warning-info/#latest-change) is `superseded` or `cancelled`.
+    # type: [alert-v1]
+  - name: eventType.name
     desc:
       zh: |
        [预警事件类型的名称](/docs/resource/warning-info/#event-and-code)
       en: |
        [Name of the alert event type](/en/docs/resource/warning-info/#event-and-code)
-    example: 雷电黄色预警
     type: [alert-v1]
-  - name: eventCode.name
-    desc:
-      zh: 预警事件类型所采用的代码体系名称，参考[预警事件和代码](/docs/resource/warning-info/#event-and-code)
-      en: Name of the coding system for the alert event type, refer to [Alert Event and Code](/en/docs/resource/warning-info/#event-and-code)
-    example: QWEATHER
-    type: [alert-v1]
-  - name: eventCode.value
+  - name: eventType.code
     desc:
       zh: |
        [预警事件类型的代码](/docs/resource/warning-info/#event-and-code)
       en: |
        [Code of the alert event type](/en/docs/resource/warning-info/#event-and-code)
-    example: "1001"
+    type: [alert-v1]
+  - name: urgency
+    desc:
+      zh: |-
+       预警信息的[紧迫程度](/docs/resource/warning-info/#urgency)，**可能为空**
+      en: The [urgency](/en/docs/resource/warning-info/#urgency) of the alert message, **may be null**
+    type: [alert-v1]
+  - name: severity
+    desc:
+      zh: |
+       预警信息的[严重程度](/docs/resource/warning-info/#severity)
+      en: The [severity](/en/docs/resource/warning-info/#severity) of the alert message
+    type: [alert-v1]
+  - name: certainty
+    desc:
+      zh: |
+       预警信息的[确定性或可信度](/docs/resource/warning-info/#certainty)，**可能为空**
+      en: The [certainty](/en/docs/resource/warning-info/#certainty) of the alert message, **may be null**
     type: [alert-v1]
   - name: icon
     desc:
       zh: 预警对应的[图标代码](/docs/resource/icons/)
       en: |
        [Icon code](/en/docs/resource/icons/) for this alert
-    example: 1001
-    type: [alert-v1]
-  - name: urgency
-    desc:
-      zh: 预警信息的[紧迫程度](/docs/resource/warning-info/#urgency)，**可能为空**
-      en: The [urgency](/en/docs/resource/warning-info/#urgency) of the alert message, **may be null**
-    type: [alert-v1]
-  - name: severity
-    desc:
-      zh: 预警信息的[严重程度](/docs/resource/warning-info/#severity)
-      en: The [severity](/en/docs/resource/warning-info/#severity) of the alert message
-    type: [alert-v1]
-  - name: certainty
-    desc:
-      zh: 预警信息的[确定性](/docs/resource/warning-info/#certainty)，**可能为空**
-      en: The [certainty](/en/docs/resource/warning-info/#certainty) of the alert message, **may be null**
     type: [alert-v1]
   - name: color.code  
     desc:

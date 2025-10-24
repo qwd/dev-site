@@ -1,22 +1,22 @@
 ---
-title: Warning Info
+title: Alert Info
 tag: resource
-description: QWeather supports weather warning services for many countries and regions around the world. You can find more descriptions of these warnings here, such as the list of supported countries and regions, warning levels and warning types.
+description: QWeather provides official alert data for China and many countries and regions worldwide. This document helps you understand specifications of alert data, such as the supported regions and alert events.
 ref: res-warning
 ---
 
-QWeather supports weather warning services([API](/en/docs/api/warning/), [iOS SDK](/en/docs/ios-sdk/warning/ios-weather-warning/), [Android SDK](/en/docs/android-sdk/warning/android-weather-warning/)) for many countries or regions around the world. You can find more descriptions of these warnings here, such as the list of supported countries and regions, warning levels and warning types.
+[Weather Alert](/en/docs/api/warning/) provides official alert data for China and many countries and regions worldwide. This document helps you understand specifications of alert data, such as the supported regions and alert events.
 
-> **Warning:** All warning level, type, urgency and other fields are possible to change, including add/modify/delete. We may not be able to give advance notice of these changes, **so you have to make your code more compatible to avoid errors when they happen.**
+> **Warning:** All alert events, urgency and other fields are possible to change, including add/modify/delete. We may not be able to give advance notice of these changes, **so you have to make your code more compatible to avoid errors when they happen.**
 >
 > We recommend not trying to enumerate these values or mappings, but to output them directly to the screen.
 {: .bqdanger}
 
 ## Supported regions
 
-Weather warnings are not available for all cities, we will continue to expand these data, currently QWeather supports the following countries or regions.
+Weather alerts are not available for all cities, we will continue to expand these data, currently QWeather supports the following countries or regions.
 
-> **Note:** Weather warning are based on official data from government departments in each country. When official data is not released properly, we may temporarily take offline the country where the failure occurred.
+> **Note:** Weather alert messages are based on official data from government departments. When official data is not released properly, we may temporarily take offline the country or region where the failure occurred.
 {:.bqwarning}
 
 <table>
@@ -38,112 +38,73 @@ Weather warnings are not available for all cities, we will continue to expand th
   </tbody>
 </table>
 
-## Supported language
+## Message type
 
-Weather warning may not be available for all [languages we support](/en/docs/resource/language/), please refer to the following scenarios:
+The `messageType` indicates the type or nature of the current alert message. Developers can use this field to determine whether the alert is a newly issued one or an update to a previously issued alert.
 
-- Only `warning.title`, `warning.text`, `warning.typeName` support multi-language setting.
-- If no language is set, the local language of the query city will be responded to first, or English if the local language does not exist.
-- If the language is supported, it responds the set language.
-- If the language is not supported, it will response the local language of the query city, or English if the local language is not supported.
+`messageType.code` includes:
 
-> **Hint:** The language of the data may be mixed, e.g. part of the content is in the local language and part in other languages. This case is unusual and cannot be excluded as they are based on the official content published by the respective meteorological services.
+- **alert**: Initial and active alert
+- **update**: Updates and supercedes the alert specified in `messageType.supersedes`
+- **cancel**: Cancels the alert specified in `messageType.supersedes`, with an expiration time set to 1 hour after issuance.
 
-## Status
-
-`warning.status` denotes the status of the current warning published, including:
-
-- Active - Warning is active
-- Update - The current warning is an update or modification to a previously specified warning.
-- Cancel - The previously specified warning is cancelled for various reasons. This is a reserved value and you cannot use it to determine if the warning is active.
-
-## Expiry time
-
-> **Hint:** Typically, a warning message is not valid for more than 48 hours, so if `warning.endTime` is not available, we recommend to set the expiry time of this warning message to 24 hours from `warning.startTime` (which is what we do).
-
-You can use `warning.endTime` to estimate when a warning message will expire, or when you can no longer get a warning message with the same ID as the previous one, which means that the warning has expired.
-
-## Level (deprecated) 
-
-`warning.level` represents the level of the warning information.
-
-> **Warning:** Do not use `warning.level` anymore, this field is currently deprecated and the value will be null or out of date, it will be removed completely in the future. Please replaced with [severity](/en/docs/resource/warning-info/#severity) and [severity color](/en/docs/resource/warning-info/#severity-color).
-{:.bqdanger}
-
-## Severity
-
-`warning.severity` indicates the intensity of the impact caused by the warning event.
-
-Every country and region may have its own definitions or protocols for warning severity. For Kuwait, Minor, Moderate, Severe and Extreme are used. For Brazil, Moderate, Severe and Extreme are applied. For South Africa, Minor, Moderate, Extreme and Unknown are applied. For Australia, Cancel, None, Unknown, Standard, Minor, Moderate, Major, Severe and Extreme are applied. For other countries and regions, Unknown, Minor, Moderate, Severe and Extreme are available.
-
-Currently available severity includes:
-
-- Cancel
-- None
-- Unknown
-- Standard
-- Minor
-- Moderate
-- Major
-- Severe
-- Extreme
-
-## Severity color
-
-Some countries and regions prefer to define the [severity](/en/docs/resource/warning-info/#severity) by color, and we will provide the preferred color for the severity according to the local practice.
-
-> **Note:** May be null if there is no local preferred color.
-
-Currently available colors are:
-
-- White 
-- Blue 
-- Green 
-- Yellow 
-- Orange 
-- Red
-- Black
+`messageType.supersedes` specifies the identifier of the previous alert message that is replaced by the current alert. This array is only relevant when `messageType.code` is **update** or **cancel**. It helps developers understand the relationship between the current alert and a previous one, ensuring data correctness and smooth updates.
 
 ## Urgency
 
-> **Note:** `warning.urgency` is not available in some countries and regions, or does not have the same value as listed below
+`urgency` indicates the urgency of the event.
 
-`warning.urgency` denotes the urgency of the warning message, including:
+- **immediate**: Responsive action should be taken immediately
+- **expected**: Responsive action should be taken soon (within the next hour)
+- **future**: Responsive action should be taken in the near future
+- **past**: The event is no longer current
+- **unknown**: Urgency unknown
 
-- Immediate
-- Expected
-- Future
-- Past
-- Unknown
+## Severity
+
+`severity` indicates the expected impact level of the event.
+
+> **Note:** Severity may be expanded based on local specifications, your code should be compatible with this possibility.
+
+- **extreme**: Extraordinary threat to life or property
+- **severe**: Significant threat to life or property
+- **moderate**: Possible threat to life or property
+- **minor**: Minimal to no known threat to life or property
+- **unknown**: Severity unknown
 
 ## Certainty
 
-> **Note:** `warning.certainty` is not available in some countries and regions, or does not have the same value as listed below
+`certainty` indicates the certainty or confidence level of the event.
 
-`warning.certainty` denotes the certainty or confidence level of the warning messages, including:
+- **observed**: Determined to have occurred or to be ongoing
+- **likely**: Likely (probability > ~50%)
+- **possible**: Possible but not likely (probability ≤ ~50%)
+- **unlikely**: Not expected to occur (probability ≈ 0)
+- **unknown**: Certainty unknown
 
-- Observed
-- Likely
-- Possible
-- Unlikely
-- Unknown
+## Color
 
-## Warning Type
+`color` contains the color code and its corresponding RGBA value, these are the recommended colors for the visual representation of warning messages. Supported color codes include:
 
-QWeather provides over 100 warning types based on definitions from official meteorological departments around the world, however, these types are not available to all countries or regions. 
+- **white**
+- **gray**
+- **green**
+- **blue**
+- **yellow**
+- **orange**
+- **red**
+- **purple**
+- **black**
 
-We also provide warning icons, please go to [QWeather Icons](https://icons.qweather.com/en/).
+## Event and code
 
-> **Hint:** The name of the warning type may be the same, this is not a bug, for example, almost every meteorological department will issue "wind warning", but the rules or standards of this warning may be different, please refer to the definition of the meteorological department.
-
-> **WARNING:** Warning types may be added, modified or deleted according to the meteorological authorities, and the names of warning types may change due to translation effects, so we do not recommend storing these warning types to avoid causing errors in your program when warning types are updated.
-{:.bqdanger}
+We have designed a unified coding system for alert event types in each country or region.
 
 <table>
   <thead>
     <tr>
-      <th>Type</th>
-      <th>TypeName</th>
+      <th>Code</th>
+      <th>Event</th>
     </tr>
   </thead>
   <tbody>
