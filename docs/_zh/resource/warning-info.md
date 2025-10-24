@@ -1,11 +1,11 @@
 ---
 title: 预警信息
 tag: resource
-description: 和风天气预警服务支持中国全球及多个国家和地区的气象预警服务，这里可以了解我们所支持的预警信息的详细说明，例如支持的国家和地区列表，预警等级和预警类型。
+description: 和风天气预警提供中国及全球多个国家和地区的官方预警数据，这篇文档可以帮助了解预警数据的详细说明，例如支持的国家或地区列表，预警等级和预警类型。
 ref: res-warning
 ---
 
-和风天气预警服务支持中国及全球多个国家和地区的气象预警服务([API](/docs/api/warning/)，[iOS SDK](/docs/ios-sdk/warning/ios-weather-warning/)，[Android SDK](/docs/android-sdk/warning/android-weather-warning/))，这里可以了解我们所支持的预警信息的详细说明，例如支持的国家或地区列表，预警等级和预警类型。
+[天气预警](/docs/api/warning/)提供中国及全球多个国家和地区的官方预警数据，这篇文档可以帮助了解预警数据的详细说明，例如支持的国家或地区列表，预警等级和预警类型。
 
 > **警告：**天气预警的等级、类型、紧迫程度等信息有可能发生变化，包括新增、修改或删除，这些变化我们可能无法提前通知到你，**因此你需要让你的程序更具有兼容性，避免在发生变化的时候导致错误出现！**
 >
@@ -38,113 +38,74 @@ ref: res-warning
   </tbody>
 </table>
 
-## 多语言 {#supported-language}
+## 信息类型 {#message-type}
 
-天气预警可能不适用于所有[我们支持的语言](/docs/resource/language/)，请参考下列场景：
+`messageType` 代表当前预警信息的类型/性质，开发者可以了解当前预警是新发布的还是对之前预警的更新。
 
-- 只有`warning.title`，`warning.text`，`warning.typeName`支持多语言设置。
-- 当没有设置语言的情况下，将优先返回查询城市的当地语言，如果当地语言不存在，则返回英文。
-- 当设置的语言被支持时，则返回设置的语言。
-- 当设置的语言不支持时，则返回查询城市的当地语言，如果不支持当地语言，则返回英文。
+`messageType.code` 包括：
 
-> **提示：**数据的语言可能是混合的，例如部分内容是当地语言，另一部分是其他语言。这种情况较少，由于这些内容基于各个气象部门发布的官方内容，因此无法排除。
+- **alert**：初始且活跃的预警信息
+- **update**：更新并取代了在 `messageType.supersedes` 中指定预警信息
+- **cancel**：取消了在 `messageType.supersedes` 中指定预警信息。**cancel** 类型的预警信息，`expiredTime` 为发布后1小时。
 
-## 预警状态 {#status}
-
-`warning.status` 代表当前预警信息的发布状态，包括：
-
-- Active - 当前预警处于激活状态
-- Update - 当前预警是一次对之前指定预警信息的升级或修改
-- Cancel - 由于各种原因取消之前指定预警信息的发布。该状态是一个预保留的值，你目前不能使用这个值去判断预警是否有效。
-
-## 过期时间 {#expiry-time}
-
-> **提示：**一般预警信息的有效期不会超过48小时，因此如果预警信息中未能提供`warning.endTime`，我们建议将这条预警信息的过期时间设置为从`warning.startTime`开始后的24小时（我们也是这样做的）。
-
-你可以根据`warning.endTime`来预估一条预警信息的失效时间，或者当你更新数据的时候无法再获取当之前相同ID的预警信息时，代表这一条预警已经过期或失效。
-
-## 预警等级（已弃用） {#level-deprecated}
-
-`warning.level`代表预警信息的等级。
-
-> **警告：**不要再使用`warning.level`，这个字段已弃用，目前返回为空或未更新的值，未来可能会被完全移除。请使用[严重等级](/docs/resource/warning-info/#severity)和[严重等级颜色](/docs/resource/warning-info/#severity-color)替代。
-{:.bqdanger}
-
-## 严重等级 {#severity}
-
-`warning.severity`表示预警事件所造成的影响强度。
-
-不同国家和地区对预警严重等级有自己的的定义和规范，在科威特适用于Minor、Moderate、Severe和Extreme。对于巴西，适用于Moderate、Severe和Extreme。对于南非，适用于Minor、Moderate、Extreme和Unknown。对于澳大利亚适用于Cancel、None、Unknown、Standard、Minor、Moderate、Major、Severe和Extreme。对于其他国家适用于Unknown、Minor、Moderate、Severe和Extreme。
-
-目前预警严重等级包括：
-
-- Cancel
-- None
-- Unknown
-- Standard
-- Minor
-- Moderate
-- Major
-- Severe
-- Extreme
-
-## 严重等级颜色 {#severity-color}
-
-对于[严重等级](/docs/resource/warning-info/#severity)，一些国家和地区的预警严重等级习惯采用颜色进行定义，我们将根据当地习惯提供严重等级所适用的颜色。
-
-> **注意：**如果当地没有更适合的颜色，则返回为空。
-
-目前预警严重等级颜色包括：
-
-- White 
-- Blue 
-- Green 
-- Yellow 
-- Orange 
-- Red
-- Black
-
+`messageType.supersedes` 用于指定当前预警信息所取代的先前预警信息的ID，仅在 `messageType.code` 为 **update** 或 **cancel** 时返回。它帮助开发者了解当前预警与之前预警之间的关联，确保数据的正确性和更新的顺畅。
 
 ## 紧迫程度 {#urgency}
 
-> **注意：**这个字段在一些国家和地区不可用，或者与所列出的值不尽相同。
+`urgency` 表示预警信息的紧迫性，包括：
 
-`warning.urgency` 表示预警信息的紧迫性，包括：
+- **immediate**：必须立刻采取行动
+- **expected**：应尽快采取行动（通常在 1 小时内）
+- **future**：应在近期采取行动
+- **past**：事件已不再发生
+- **unknown**：紧迫性未知
 
-- Immediate
-- Expected
-- Future
-- Past
-- Unknown
+## 严重程度 {#severity}
+
+`severity`表示预警事件所造成的严重程度，包括：
+
+> **注意：**严重等级可能会根据当地规范而有所新增，你的代码应该兼容此情况。
+
+- **unknown**：严重性未知
+- **minor**：对生命或财产构成的威胁极小或没有已知威胁
+- **moderate**：对生命或财产可能构成威胁
+- **severe**：对生命或财产构成的重大威胁
+- **extreme**：对生命或财产构成的严重威胁
 
 ## 确定性 {#certainty}
 
-> **注意：**这个字段在一些国家和地区不可用，或者与所列出的值不尽相同。
+`certainty` 表示预警信息的确定性或可信度，包括：
 
-`warning.certainty` 表示预警信息的确定性或可信度，包括：
+- **observed**：事件已经发生或正在发生
+- **likely**：发生概率大于约 50%
+- **possible**：有可能发生，但概率较低（≤ 50%）
+- **unlikely**：预计不会发生（概率接近 0）
+- **unknown**：确定性未知
 
-- Observed
-- Likely
-- Possible
-- Unlikely
-- Unknown
+## 颜色 {#color}
 
-## 预警类型 {#warning-type}
+`color` 包括颜色代码和对应的RGBA色值，是预警信息在视觉表达中建议使用的颜色。目前支持的颜色代码：
 
-和风天气根据各国官方气象部门的定义，提供了超过300种预警类型，这些类型并非适用于所有国家或地区。 
+- **white**
+- **gray**
+- **green**
+- **blue**
+- **yellow**
+- **amber**
+- **orange**
+- **red**
+- **purple**
+- **black**
 
-我们也根据预警类型制作了对应的图标，请参考[和风天气图标](https://icons.qweather.com/)。
+## 预警事件和代码 {#event-and-code}
 
-> **提示：** 预警类型的名称可能是相同的，这不是一个bug，例如几乎每个气象部门都会发布“大风预警”，但是这个预警的规则或标准可能是不一样，请以各个气象部门的定义为准。
-
-> **警告：** 预警类型会根据各国气象部门的规定而新增、修改或删除，预警类型的名称也有可能由于翻译的影响而有所变化，因此我们不建议存储这些预警类型，以避免在预警类型更新时造成你的程序错误。
-{:.bqdanger}
+我们为各国或地区的预警事件类别设计了统一的代码规则。
 
 <table>
   <thead>
     <tr>
-      <th>Type</th>
-      <th>TypeName</th>
+      <th>Code</th>
+      <th>Event</th>
     </tr>
   </thead>
   <tbody>

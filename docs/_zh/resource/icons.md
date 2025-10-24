@@ -115,9 +115,6 @@ git clone https://github.com/qwd/Icons.git
 | 806      | 下弦月         | 上弦月         |
 | 807      | 残月           | 蛾眉月         |
 
-### 预警图标 {#weather-warning-icons}
-
-预警图标的代码和`warning.type`相对应，关于目前支持的`warning.type`请参考[预警类型](/docs/resource/warning-info/#warning-type)。
 
 ## 版权和许可 {#copyright-and-license}
 

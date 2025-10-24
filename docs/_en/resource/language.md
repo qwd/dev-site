@@ -36,11 +36,10 @@ Specified language > Official language > English
 
 Most of the data supports multi-language and official languages, the following table lists which data cannot fully support multi-language.
 
-| Data  | Supported Languages | Note  |
-| --- | --- | --- |
-| [Weather Indices](/en/docs/api/indices/) | Chinese, English |     |
-| [Weather Warning](/en/docs/api/warning/) | Partial | See [Warning Info - Supported language](/en/docs/resource/warning-info/#supported-language) |
-| [Minutely Forecast](/en/docs/api/minutely/minutely-precipitation/) | Chinese, English |     |
+| Data                                                               | Supported Languages |
+| ------------------------------------------------------------------ | ------------------- |
+| [Weather Indices](/en/docs/api/indices/)                           | Chinese, English    |
+| [Minutely Forecast](/en/docs/api/minutely/minutely-precipitation/) | Chinese, English    |
 
 ## Language code
 

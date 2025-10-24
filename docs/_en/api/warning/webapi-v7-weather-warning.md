@@ -1,12 +1,14 @@
 ---
-title: Weather Warning
+title: Weather Warning (deprecated)
 tag: [guide, api, warning, now]
+deprecated: true
 ref: 1-api-weather-warning
 ---
 
 Get officially issued real-time severe weather warning data around the world.
 
-> **Hint:** For the implementation of weather warnings, see [Resource - Warning Info](/en/docs/resource/warning-info/) in advance.
+> **Note:** This API (/v7/warning/now) is deprecated and is expected to be out of service on 2026-10-01. Please use [Weather Alert API v1](/en/docs/api/warning/weather-alert/) instead.
+{:.bqdanger}
 
 ## Endpoint
 

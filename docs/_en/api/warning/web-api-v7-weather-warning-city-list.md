@@ -1,17 +1,17 @@
 ---
-title: Weather Warning City List
+title: Weather Warning City List (deprecated)
 tag: [guide, api, warning, list]
+deprecated: true
 ref: 2-api-weather-warning-city-list
 ---
 
 Get a list of cities for the specified country or region where weather warnings are currently in effect.
 
-See also [Weather warning API](/en/docs/api/warning/weather-warning/) to get warning details.
+> **Note:** This API (/v7/warning/list) is deprecated and is expected to be out of service on 2026-10-01.
+{:.bqdanger}
 
-> **Note:** Weather Warning City List only supports China (including Hong Kong, Macao and China Taiwan) now. For other countries and regions, please use [Weather Warning](/en/docs/api/warning/weather-warning/).
+> **Note:** Weather Warning City List only supports China (including Hong Kong, Macao and China Taiwan) now.
 {:.bqwarning}
-
-> **Tips:** For more warning description, see [Resource - Warning Info](/en/docs/resource/warning-info/).
 
 ## Endpoint
 

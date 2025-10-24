@@ -36,11 +36,10 @@ ref: res-lang
 
 大部分数据支持多语言和官方语言，但是一些数据可能不支持所有的语言选项，请参考下列表格查看哪些数据无法完全支持多语言。
 
-| 数据  | 可用语言 | 备注  |
-| --- | --- | --- |
-| [天气指数](/docs/api/indices/) | 中文，英文 |     |
-| [天气预警](/docs/api/warning/) | 部分多语言 | 参考[预警信息-多语言](/docs/resource/warning-info/#supported-language) |
-| [分钟降水](/docs/api/minutely/minutely-precipitation/) | 中文，英文 |     |
+| 数据  | 可用语言 |
+| --- | --- |
+| [天气指数](/docs/api/indices/) | 中文，英文 | 
+| [分钟降水](/docs/api/minutely/minutely-precipitation/) | 中文，英文 |   
 
 
 ## 多语言代码 {#language-code}

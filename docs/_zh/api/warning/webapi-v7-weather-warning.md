@@ -1,12 +1,15 @@
 ---
-title: 天气灾害预警
+title: 天气预警（弃用）
 tag: [guide, api, warning, now]
 ref: 1-api-weather-warning
+deprecated: true
+redirect_from: /docs/api/warning/weather-warning/
 ---
 
 天气灾害预警API可以获取中国及全球多个国家或地区官方发布的实时天气灾害预警数据。
 
-> **提示：**天气预警有较多规则和需要注意的事项，在开始使用天气预警之前，你应该先阅读[实用资料-预警信息](/docs/resource/warning-info/)。
+> **警告：**当前API（/v7/warning/now）已弃用，预计在2026年10月1日停止服务。请使用[极端天气预警 v1版本](/docs/api/warning/weather-alert/)替代。
+{:.bqdanger}
 
 ## 请求路径 {#endpoint}
 

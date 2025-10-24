@@ -379,6 +379,19 @@ p-hour168h:
      - `72h` 72小时预报。
      - `168h` 168小时预报。
   rqd: true
+p-alertid:
+  name: alertId
+  text: 
+    en: The ID of the weather alert information to be queried
+    zh: 需要查询的天气预警信息的ID
+  rqd: true
+q-localtime:
+  name: localTime
+  text: 
+    en: Whether to return the local time of the queried location. `true` for local time, `false` for UTC time (default).
+    zh: |
+     是否返回查询地点的本地时间。`true` 返回本地时间，`false` 返回UTC时间（默认）。
+  rqd: false
 q-hour60h:
   name: hours
   text: 

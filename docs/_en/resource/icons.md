@@ -117,9 +117,6 @@ Learn more about [Moon phase](/en/docs/resource/sun-moon-info/#moon-phase).
 | 806       | Last quarter                    | First quarter                   |
 | 807       | Waning crescent                 | Waxing crescent                 |
 
-### Weather warning icons
-
-Weather warning icons corresponds to `warning.type`, refer to [Warning type](/en/docs/resource/warning-info/#warning-type) for the currently supported `warning.type`.
 
 ## Copyright and License
 
