@@ -50,7 +50,7 @@ For different data caching times, we recommend the following. Less cache time al
 | Minutely precip             | 5-10min                          | 5min                     |
 | Air quality: real-time      | 30-60min                         | 30-60min                 |
 | Air quality: daily forecast | 8-12hrs                          | 1-6hrs                   |
-| Tide and currents           | 8-12hrs                          | 8hrs                     |
+| Tide                        | 8-12hrs                          | 8hrs                     |
 | Tropical cyclone            | Active 20min<br />Inactive 60min | 10-60min                 |
 | Solar radiation             | 6hrs                             | 3-6hrs                   |
 

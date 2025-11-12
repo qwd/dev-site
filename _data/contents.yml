@@ -68,7 +68,6 @@ reference_docs:
       - name: 0-api-ocean
         data: 
           - type: tide
-          - type: currents
       - name: 0-api-solar-radiation
         data: 
           - type: forecast

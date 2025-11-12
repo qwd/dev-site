@@ -4,7 +4,7 @@ tag: [guide, api, geo, poi-lookup]
 ref: 3-api-poi-lookup
 ---
 
-POI Lookup API provides basic information of POI(scenic spot, tide stations, currents stations, etc.)
+POI Lookup API provides basic information of POI(scenic spot, tide stations, etc.)
 
 ## Endpoint
 

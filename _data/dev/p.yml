@@ -37,16 +37,6 @@ location-id:
      
      For example: `location=101010100`
   rqd: true
-location-p6: 
-  name: location
-  text: 
-    zh: |-
-     需要查询的潮流站点，请填写潮流站点的[LocationID](/docs/resource/glossary/#locationid)，LocationID可通过[POI搜索服务](/docs/api/geoapi/poi-lookup/)获取。例如 `location=P66981`
-    en: |-
-     The currents station to be queried, need [LocationID](/en/docs/resource/glossary/#locationid) and LocationID can be obtained by [POI Lookup](/en/docs/api/geoapi/poi-lookup/). 
-     
-     For example: `location=P66981`
-  rqd: true
 location-p2: 
   name: location
   text: 
@@ -232,12 +222,10 @@ geo-type:
      Choose to search for a certain type of POI. 
      
      - `scenic` Scenic Spot
-     - `CSTA` Currents Station
      - `TSTA` Tide Station
     zh: |-
      POI类型，可选择搜索某一类型的POI。
      - `scenic` 景点
-     - `CSTA` 潮流站点
      - `TSTA` 潮汐站点  
 city:
   name: city

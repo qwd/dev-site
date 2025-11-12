@@ -83,7 +83,6 @@ We support weather data services in China (including Hong Kong, Macau and Taiwan
 | Data     | Update interval | Time step | Time range | Geographic |
 | -------- | --------------- | --------- | ---------- | ---------- |
 | Tides    | 24 hrs          | Daily     | 1-3 days   | Global     |
-| Currents | 24 hrs          | Daily     | 1-3 days   | Global     |
 
 ### Tropical Cyclones
 

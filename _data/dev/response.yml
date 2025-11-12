@@ -975,34 +975,9 @@ radiation:
 ocean:
   - name: fxTime
     desc:
-      zh: 潮流最大流速时间
-      en: Maximum speed time
-    example: 2013-05-31T05:23+08:00
-    type: [ctable]
-  - name: speedMax
-    desc:
-      zh: 潮流最大流速，单位：厘米/秒
-      en: Maximum speed, cm/sec
-    example: 34.0
-    type: [ctable]
-  - name: fxTime
-    desc:
       zh: 逐小时预报时间
       en: Hourly forecast time
-    example: *fxtime
-    type: [chourly, thourly]
-  - name: speed
-    desc:
-      zh: 潮流流速，单位：厘米/秒
-      en: Currents speed, cm/sec
-    example: 2.3
-    type: [chourly]
-  - name: dir360
-    desc:
-      zh: 潮流360度方向
-      en: Currents direction in azimuth degree
-    example: 34.0
-    type: [ctable,chourly]
+    type: [thourly]
   - name: fxTime
     desc:
       zh: 满潮或干潮时间

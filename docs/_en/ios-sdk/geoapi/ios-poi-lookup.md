@@ -4,7 +4,7 @@ tag: [guide, ios, geo, poi-lookup]
 ref: 3-sdk-ios-geo-poi-lookup
 ---
 
-POI Lookup API provides basic information of POI(scenic spot, tide stations, currents stations, etc.)
+POI Lookup API provides basic information of POI(scenic spot, tide stations, etc.)
 
 | Interface code | Interface         | Class        |
 | ---------- | --------------------------- | ------------ |

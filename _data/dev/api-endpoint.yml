@@ -414,19 +414,6 @@
       zh: 潮汐
       en: Tide
 
-- name: ocean-currents
-  tag: Ocean
-  demo:
-    link: https://your_api_host/v7/ocean/currents?location=P66981&date=20210310
-    name: 
-      zh: 珠江口2021年02月16日潮流数据 
-      en: ZHUJIANG ESTURAY‘s currents on 2021-02-16 
-  endpoint:
-    path: /v7/ocean/currents
-    name:
-      zh: 潮流
-      en: Currents
-
 - name: console-finance
   tag: Console
   demo:
