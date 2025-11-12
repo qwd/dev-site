@@ -20,7 +20,7 @@ ref: 1-api-air-hourly-v1
 
 #### 查询参数 {#query-parameters}
 
-{% include params.html p="lang-def" %}
+{% include params.html p="q-localtime lang-def" %}
 
 ## 请求示例 {#request-example}
 

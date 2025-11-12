@@ -18,7 +18,7 @@ We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn ab
 
 ## Query Parameters
 
-{% include params.html p="lang-def" %}
+{% include params.html p="q-localtime lang-def" %}
 
 ## Request example
 
