@@ -371,4 +371,24 @@ type,type_name_zh,type_name_en
 2553,雷暴,Thunderstorms
 2554,道路积雪,Road Snowfall
 2581,雷暴,Thunderstorm
+2601,强风提示,Strong Wind Advisory
+2602,强风警报,Strong Wind Warning
+2603,风浪提示,Wind Wave Advisory
+2604,风浪警报,Wind Wave Warning
+2605,大雨提示,Heavy Rain Advisory
+2606,大雨警报,Heavy Rain Warning
+2607,大雪提示,Heavy Snow Advisory
+2608,大雪警报,Heavy Snow Warning
+2609,干燥提示,Dryness Advisory
+2610,干燥警报,Dryness Warning
+2611,风暴潮提示,Storm Surge Advisory
+2612,风暴潮警报,Storm Surge Warning
+2613,寒潮提示,Cold Wave Advisory
+2614,寒潮警报,Cold Wave Warning
+2615,台风提示,Typhoon Advisory
+2616,台风警报,Typhoon Warning
+2617,黄尘提示,Asian Dust Advisory
+2618,黄尘警报,Asian Dust Warning
+2619,热浪提示,Heatwave Advisory
+2620,热浪警报,Heatwave Warning
 9999,其他预警,Other Warning

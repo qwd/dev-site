@@ -118,7 +118,7 @@ Kazakhstan,哈萨克斯坦,KZ,KAZ,398,ISO 3166-2:KZ,TRUE,,,
 Kenya,肯尼亚,KE,KEN,404,ISO 3166-2:KE,TRUE,,,
 Kiribati,基里巴斯,KI,KIR,296,ISO 3166-2:KI,TRUE,,,
 Korea (Democratic People's Republic of),朝鲜,KP,PRK,408,ISO 3166-2:KP,TRUE,,,
-Korea (Republic of),韩国,KR,KOR,410,ISO 3166-2:KR,TRUE,,TRUE,kr-moe
+Korea (Republic of),韩国,KR,KOR,410,ISO 3166-2:KR,TRUE,TRUE,TRUE,kr-moe
 Kuwait,科威特,KW,KWT,414,ISO 3166-2:KW,TRUE,TRUE,,
 Kyrgyzstan,吉尔吉斯斯坦,KG,KGZ,417,ISO 3166-2:KG,TRUE,,,
 Lao People's Democratic Republic,老挝,LA,LAO,418,ISO 3166-2:LA,TRUE,,,
