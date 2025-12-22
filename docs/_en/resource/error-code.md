@@ -29,7 +29,7 @@ Invalid parameters, generally means that the incorrect parameter values were pas
 
 Missing parameters, error will be reported when some mandatory parameters are not passed, refer to `error.invalidParams` in the response for specific missing parameters.
 
-### NOT FOUND
+### NO SUCH LOCATION
 
 `HTTP response status code: 400`
 
@@ -87,23 +87,23 @@ Request denied due to user account suspension. Learn more about [Account Suspens
 
 You do not have permission to request this data at this time. You can submit a ticket to us for more details.
 
-### 404
+### NOT FOUND
 
 `HTTP response status code: 404`
 
-Incorrect path or path parameter, the resource could not be found. Please note that you will not get response body for 404 errors.
+Incorrect path or path parameter, the resource could not be found.
+
+### METHOD NOT ALLOWED
+
+`HTTP response status code: 405`
+
+The request used an HTTP method other than GET.
 
 ### TOO MANY REQUESTS
 
 `HTTP response status code: 429`
 
 Too many requests in a short time, exceeded the QPM limit or accumulated a lot of invalid requests. You must wait or fix the errors before retrying, otherwise ongoing 429 status may be recognized as abuse of server resources or DDoS attacks, which will suspend your account. See [Exponential Backoff](/en/docs/best-practices/optimize-requests/#using-exponential-backoff-to-handle-errors) for how to set the retry time.
-
-### OVER FREE DAILY LIMIT
-
-`HTTP response status code: 429`
-
-Exceed the daily free requests, you should stop sending requests and wait until the next day to try again.
 
 ### OVER MONTHLY LIMIT
 
@@ -141,6 +141,8 @@ Content-Type: application/problem+json
 - `error.title` a short summary of this error 
 - `error.detail` a human-readable explanation for this error.
 - `error.invalidParams` invalid or missing params.
+
+*No response body for `404` and `405`.*
 
 ## Error Code v1 
 
