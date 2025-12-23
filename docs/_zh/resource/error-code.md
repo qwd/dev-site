@@ -10,7 +10,7 @@ ref: res-status-code
 
 当出现错误时，你会收到对应的错误码，本文档将介绍和风天气API的错误码和错误信息。
 
-> **提示：**目前同时存在两种版本的错误码，我们将陆续从v1迁移到v2版本，在此期间根据API和错误类型可能返回不同版本的错误码。如果你希望立即迁移到v2版本，请发送工单。。
+> **提示：**目前同时存在两种版本的错误码，我们将陆续从v1迁移到v2版本，在此期间根据API和错误类型可能返回不同版本的错误码。如果你希望立即迁移到v2版本，请发送工单。
 
 > **注意：**你应该妥善的处理遇到的错误，当错误发生时，请暂停请求并进行排查。你不应该放任错误的继续发生，否则这些错误的请求看起来是一种DDoS攻击，极端情况下，我们的安全策略可能冻结你的帐号。
 {:.bqdanger}
@@ -33,11 +33,11 @@ v2版本将错误进行了细分和更加详细的描述，以便用户可以更
 
 缺失参数，当一些必选参数没有传递时将报错，具体缺失的参数请参考响应中的`error.invalidParams`。
 
-### NOT FOUND
+### NO SUCH LOCATION
 
 `HTTP response status code: 400`
 
-没有找到所查询的数据。例如查询一个不存在的城市或者一个错误的LocationID，此时你应该检查并更改查询的内容。
+没有查询到地点信息或不支持的位置，例如查询一个不存在的城市或者一个错误的Location ID，此时你应该检查并更改查询的内容。
 
 ### DATA NOT AVAILABLE
 
@@ -91,23 +91,23 @@ v2版本将错误进行了细分和更加详细的描述，以便用户可以更
 
 你暂时无权限请求这个数据。你可以提交工单向我们了解详情。
 
-### 404
+### NOT FOUND
 
 `HTTP response status code: 404`
 
-输入了错误的路径或错误的路径参数，无法找到该资源。请注意，404错误不会返回response body。
+输入了错误的路径或错误的路径参数，无法找到该资源。
+
+### METHOD NOT ALLOWED
+
+`HTTP response status code: 405`
+
+使用了GET以外的方法请求API。
 
 ### TOO MANY REQUESTS
 
 `HTTP response status code: 429`
 
 短时间内请求过多，超过了QPM限制或累积了大量错误请求。你必须等待一段时间或修复错误后再进行重试，否则持续的429状态可能会被认为是滥用服务资源或DDoS攻击，这将导致你的账号被冻结。关于如何设置重试时间，请参考[指数退避算法](/docs/best-practices/optimize-requests/#using-exponential-backoff-to-handle-errors)。
-
-### OVER FREE DAILY LIMIT
-
-`HTTP response status code: 429`
-
-超过了每日的免费请求量，此时你应该停止发送请求，等待到第二天再试。
 
 ### OVER MONTHLY LIMIT
 
@@ -145,6 +145,8 @@ Content-Type: application/problem+json
 - `error.title` 对错误的简短描述 
 - `error.detail` 对错误的详细描述
 - `error.invalidParams` 标识错误或缺失的参数
+
+*`404` 和 `405`不会返回response body。*
 
 ## 错误码v1 {#error-code-v1}
 
