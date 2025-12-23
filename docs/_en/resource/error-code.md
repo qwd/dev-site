@@ -33,7 +33,7 @@ Missing parameters, error will be reported when some mandatory parameters are no
 
 `HTTP response status code: 400`
 
-The location queried was not found. For example, a query for a city that does not exist or an incorrect LocationID, in which case you should check and try another location.
+The location queried was not found or unsupported. For example, a query for a city that does not exist or an incorrect Location ID, in which case you should check and try another location.
 
 ### DATA NOT AVAILABLE
 
