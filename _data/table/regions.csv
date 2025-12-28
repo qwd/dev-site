@@ -199,7 +199,7 @@ Senegal,塞内加尔,SN,SEN,686,ISO 3166-2:SN,TRUE,,,
 Serbia,塞尔维亚,RS,SRB,688,ISO 3166-2:RS,TRUE,TRUE,TRUE,eu-eea
 Seychelles,塞舌尔,SC,SYC,690,ISO 3166-2:SC,TRUE,,,
 Sierra Leone,塞拉利昂,SL,SLE,694,ISO 3166-2:SL,TRUE,,,
-Singapore,新加坡,SG,SGP,702,ISO 3166-2:SG,TRUE,,TRUE,"sg-nea,sg-nea-pm1h"
+Singapore,新加坡,SG,SGP,702,ISO 3166-2:SG,TRUE,TRUE,TRUE,"sg-nea,sg-nea-pm1h"
 Sint Maarten (Dutch part),荷属圣马丁,SX,SXM,534,ISO 3166-2:SX,FALSE,,,
 Slovakia,斯洛伐克,SK,SVK,703,ISO 3166-2:SK,TRUE,TRUE,TRUE,eu-eea
 Slovenia,斯洛文尼亚,SI,SVN,705,ISO 3166-2:SI,TRUE,TRUE,TRUE,eu-eea
