@@ -268,7 +268,7 @@ importPKCS8(YourPrivateKey, 'EdDSA').then((privateKey) => {
 
 #### Python3
 
-需要运行 `pip3 install PyJWT` 才能安装 `PyJWT` 包。
+需要安装相应的依赖，运行 `pip3 install cryptography PyJWT`
 
 ```python
 #!/usr/bin/env python3
