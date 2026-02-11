@@ -18,7 +18,7 @@ You can use the above services to get all kinds of weather data services easily 
 
 ## Data
 
-We support weather data services in China (including Hong Kong, Macau and Taiwan) and 200+ countries or regions around the world, with a total number of over 200,000 cities.
+We support weather data services in China (including Hong Kong, Macau and Taiwan) and 200+ countries or regions around the world, with a total number of over 500,000 cities.
 
 ### Weather
 
@@ -27,10 +27,8 @@ We support weather data services in China (including Hong Kong, Macau and Taiwan
 | Real-time weather        | 15 min          | Real-time | Real Time  | Global     |
 | Daily forecast           | 8 hrs           | Daily     | 1-30 days  | Global     |
 | Hourly forecast          | 1 hr            | Hourly    | 1-168 hrs  | Global     |
-| Real-time POI Weather    | 1 hr            | Real-time | Real-time  | Global     |
-| POI Daily forecast       | 8 hrs           | Daily     | 1-7 days   | Global     |
 | Real-time Weather (Grid) | 20 min          | Real-time | Realtime   | Global      |
-| Daily forecast (Grid)    | 12 hrs          | Daily     | 1-7 days   | Global      |
+| Daily forecast (Grid)    | 6 hrs          | Daily     | 1-7 days   | Global      |
 | Hourly forecast (Grid)   | 1 hr            | Hourly    | 1-72 hrs   | Global      |
 | Minute Precip (Grid)     | 5 min           | 5 min     | 1-2 hrs    | China      |
 
@@ -59,16 +57,15 @@ We support weather data services in China (including Hong Kong, Macau and Taiwan
 
 | Data                       | Update interval | Time step | Time range | Geographic |
 | -------------------------- | --------------- | --------- | ---------- | ---------- |
-| Real-time Air Quality      | 1 hr            | Real Time | Real Time  | China      |
-| Air Quality daily forecast | 1 hr            | Daily     | 1-7 days   | China      |
-| Air Quality hourly forecast | 1 hr            | Hourly     | 1-72 hrs   | China      |
+| Real-time Air Quality      | 1 hr            | Real Time | Real Time  | Global      |
+| Air Quality daily forecast | 1 hr            | Daily     | 1-7 days   | Global      |
+| Air Quality hourly forecast | 1 hr            | Hourly     | 1-72 hrs   | Global      |
 
 ### Warning
 
 | Data              | Update interval | Time step | Time range | Geographic |
 | ----------------- | --------------- | --------- | ---------- | ---------- |
-| Warning           | 5 min           | Real-time | Real-time  | China and EU countries      |
-| Warning city list | 5 min           | Real-time | Real-time  | China      |
+| Warning           | 5 min           | Real-time | Real-time  | Global      |
 
 ### Astronomy
 
@@ -82,14 +79,14 @@ We support weather data services in China (including Hong Kong, Macau and Taiwan
 
 | Data     | Update interval | Time step | Time range | Geographic |
 | -------- | --------------- | --------- | ---------- | ---------- |
-| Tides    | 24 hrs          | Daily     | 1-3 days   | Global     |
+| Tides    | 24 hrs          | Daily     | 1-10 days   | Global     |
 
 ### Tropical Cyclones
 
 | Data                       | Update interval | Time step     | Time range         | Geographic |
 | -------------------------- | --------------- | ------------- | ------------------ | ---------- |
-| Storm List               | 1 hr            | Daily weather | 365 days           | Global     |
-| Storm Forecast           | 1 hr            | Hour-by-Hour  | 1-72 hrs           | Global     |
-| Storm Location and Track | 1 hr            | Hour-by-Hour  | Typhoon Life Cycle | Global     |
+| Storm List               | 1 hr            | Daily weather | 365 days           | China     |
+| Storm Forecast           | 1 hr            | Hour-by-Hour  | 1-72 hrs           | China     |
+| Storm Location and Track | 1 hr            | Hour-by-Hour  | Typhoon Life Cycle | China     |
 
 
