@@ -8,7 +8,7 @@ ref: res-glossary
 
 ## Rank
 
-Rank is an indication of the ranking of a city or region, it is calculated based on a variety of factors, such as: population, area, GDP, search popularity, etc. In GeoAPI, the response data will refer to the Rank value of the city in addition to the relevance of the keywords. The range of Rank is 1-10, 1 means that the city or region is more populous, larger or more popular.
+Rank indicates the relative importance of a city or region. It is calculated from a variety of factors such as population, area, GDP, and search popularity. In GeoAPI responses, the `Rank` value may be considered alongside keyword relevance when returning search results. Rank ranges from 1 to 100; lower numbers indicate higher importance.
 
 ## Coordinate
 
