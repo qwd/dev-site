@@ -13,11 +13,11 @@ ref: legacy-overview
 - 最后版本: 4.20
 - 停服日期: 2026-09-01
 - 替代产品: [Android SDK v5](/docs/configuration/android-sdk-config/)
-- [下载文档](https://d.qwstatic.com/sites/dev/qweather-sdk-v4-android-doc-zh.md)
+- [下载文档](https://dl.qweather.com/sites/dev/qweather-sdk-v4-android-doc-zh.md)
 
 ### iOS SDK v4 developer guide
 
 - 最后版本: 4.20
 - 停服日期: 2026-09-01
 - 替代产品: [iOS SDK v5](/docs/configuration/ios-sdk-config/)
-- [下载文档](https://d.qwstatic.com/sites/dev/qweather-sdk-v4-ios-doc-zh.md)
+- [下载文档](https://dl.qweather.com/sites/dev/qweather-sdk-v4-ios-doc-zh.md)

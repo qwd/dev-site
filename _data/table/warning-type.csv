@@ -207,7 +207,6 @@ type,type_name_zh,type_name_en
 2134,强降温,Severely Falling Temperature
 2135,暴雨,Rainstorm
 2150,大风,Wind
-2151,降雪和结冰,Snow Ice
 2152,冰冻,Freeze
 2153,雷暴,Thunderstorms
 2154,大雾,Fog
@@ -223,6 +222,8 @@ type,type_name_zh,type_name_en
 2164,沙尘暴,Duststorm
 2165,冻雨和结冰,Freezing rain and icing
 2166,其他,Other Dangers
+2167,低水位,Low Water
+2168,大雪,Snow
 2190,雷暴,Severe Thunderstorms
 2191,破坏性大风,Damaging Winds
 2192,草原火灾条件,Veld Fire Conditions
@@ -245,6 +246,9 @@ type,type_name_zh,type_name_en
 2216,吹雪,Blowing Snow
 2217,极端寒冷,Extreme Cold
 2218,霜冻,Frost
+2219,寒冷,Cold
+2220,北极冷空气外流,Arctic Outflow
+2221,雪飑,Snow Squall
 2300,危险海域警报,Hazardous Seas Warning
 2301,重度冷冻喷雾警报,Heavy Freezing Spray Warning
 2302,红旗警报,Red Flag Warning
@@ -391,4 +395,5 @@ type,type_name_zh,type_name_en
 2618,黄尘警报,Asian Dust Warning
 2619,热浪提示,Heatwave Advisory
 2620,热浪警报,Heatwave Warning
+2641,大雨,Heavy Rain
 9999,其他预警,Other Warning
