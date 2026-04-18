@@ -10,30 +10,57 @@ QWeather Developers Service uses JWT (JSON Web Token) and API KEY for authentica
 
 JSON web token (JWT) is an open standard ([RFC 7519](https://www.rfc-editor.org/rfc/rfc7519)) that defines a compact and self-contained way for securely transmitting information between parties. Whether on the front-end or the back-end, JWT authentication can significantly enhance API security and prevent others to fake your identity for API requests.
 
-### Prerequisites
-
 QWeather uses the Ed25519 algorithm for signing, Ed25519 is an implementation of EdDSA (Edwards-curve Digital Signature Algorithm) using Curve25519 elliptic curves and SHA-512. You need to generate the private and public keys for Ed25519 in advance, where the private key is used for signing and kept by you, and the public key is used for us to verify the signature. This means that no one (including us) can forge your signature except you.
 
-#### Generate Ed25519 key
+### Generate Ed25519 key
 
-Here is an introduction to creating an Ed25519 key using OpenSSL.
+You can generate Ed25519 keys locally using your preferred programming language or third-party libraries, or follow the instructions below. After generating the keys, you’ll need to add the public key to the QWeather Console for JWT authentication.
 
-> **Hint:** We recommend using OpenSSL 3.0.1+ to generate Ed25519 key and verify signatures. The latest versions of most Linux distributions and macOS have OpenSSl 3.0+ built in. For Windows, we recommend using winget to install OpenSSL.
+#### Terminal
 
-> **Hint:** You can also generate Ed25519 private and public keys through online tools, commonly used programming languages, or third-party libraries.
+OpenSSL v3+ is recommended; most Linux and macOS support this by default. On Windows, OpenSSL must be installed beforehand.
 
-Open a terminal and paste the following text to generate the Ed25519 key.
+Run these commands in a terminal:
 
 ```bash
-openssl genpkey -algorithm ED25519 -out ed25519-private.pem && openssl pkey -pubout -in ed25519-private.pem > ed25519-public.pem
+openssl genpkey -algorithm ED25519 -out ed25519-private.pem
+openssl pkey -pubout -in ed25519-private.pem > ed25519-public.pem
 ```
 
 This will create two files in the current directory:
 
 - ed25519-private.pem, the private key, which is used for signatures for JWT authentication. You should keep the private key safe and secure.
-- ed25519-public.pem, the public key, which is used for signature verification and needs to be uploaded to the QWeather console
+- ed25519-public.pem, the public key, which is used for signature verification and needs to be uploaded to the QWeather Console.
 
-#### Upload public key
+#### Browser
+
+Supported on Chrome 137+, Edge 137+, Firefox 129+ and Safari 17+.
+
+Open the browser console (F12), enter the following code and press Enter:
+
+```js
+async function generateEd25519Pem() {
+  const k = await crypto.subtle.generateKey({name:"Ed25519"},true,["sign","verify"]);
+  const p8 = await crypto.subtle.exportKey("pkcs8",k.privateKey);
+  const spki = await crypto.subtle.exportKey("spki",k.publicKey);
+  const pem = (d,t)=>{
+    let b=btoa(String.fromCharCode(...new Uint8Array(d)));
+    return`-----BEGIN ${t}-----\n${b.match(/.{1,64}/g).join("\n")}\n-----END ${t}-----`;
+  };
+  const priv=pem(p8,"PRIVATE KEY");
+  const pub=pem(spki,"PUBLIC KEY");
+  console.log("PrivateKey:\n",priv,"\n\nPublicKey:\n",pub);
+  return{priv,pub};
+}
+```
+
+You will see `PrivateKey` and `PublicKey` printed in the browserconsole.
+
+#### JWT Tools
+
+Refer to [JWT Debugging](#debugging).
+
+### Upload public key
 
 Once your Ed25519 keys is generated, you need to add the public key to the QWeather console for JWT authentication.
 
@@ -51,7 +78,7 @@ Once your Ed25519 keys is generated, you need to add the public key to the QWeat
 7. Paste the public key in the textarea.
 8. Click **Save** button
 
-You will see the **Create Credential Success** page and it shows the creation date, credential ID and SHA-256. For security reasons, you cannot view this public key in the Console again. However, you can use the SHA-256 value of the public key to compare it with the local SHA-256 in order to confirm that the correct public key was used.
+You will see the **Create Credential Success** page and it shows the creation date, credential ID and SHA-256. For security reasons, you cannot view this public key in the Console again. However, you can use the SHA-256 value of the public key to compare it with the local SHA-256 in order to confirm that the correct public key was used (leading/trailing whitespace and line breaks of the uploaded public key will be removed before SHA256 calculation).
 
 ### Generate JWT
 
@@ -102,7 +129,7 @@ Encode the Header and Payload using Base64URL and separate them by a dot, then s
 
 #### Putting all together
 
-At last, put the Base64URL-encoded Header, Payload, and Signature together and separate them with dots, like `header.payload.signature`, that's the Token we need, for example:
+Finally, put the Base64URL-encoded Header, Payload, and Signature together and separate them with dots, like `header.payload.signature`, that's the Token we need, for example:
 
 ```
 eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA
@@ -119,7 +146,7 @@ Some JWT libraries may include these fields by default. We recommend removing th
 - `aud`
 - `nbf`
 
-### JWT authorize request
+### Authorize request
 
 Add the Token as a parameter to the `Authorization: Bearer` request header, for example:
 
@@ -129,14 +156,29 @@ curl --compressed \
 'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
 ```
 
-### JWT validation
+### Debugging
 
-If the API returns a [401 error](/en/docs/resource/error-code/#unauthorized), please use JWT validation tool to check your token:
+We provide two tools to help with JWT generation and validation:
+
+**JWT Debugger**
+
+An open-source, offline JWT debugging tool to generate Ed25519 key and create JWTs for testing.
+
+> **Note:** This tool is for debugging and testing only. Generate JWT in your project using application code or third-party libraries.
+
+- Go **<https://jwt.qweather.com>**
+- Copy or download the Ed25519 key. Click “Re-generate” or refresh your browser to generate a new key.
+- Click the orange text, replace it with your `kid`, `sub`, `iat`, and `exp`, paste your private key into the private key field, and the JWT will be generated immediately.
+
+**JWT Validator**
+
+If the API returns a [401 error](/en/docs/resource/error-code/#unauthorized), use the Console JWT Validator to check your token:
+
+> **Note:** For security reasons, only JWTs that match your account can be verified.
 
 1. [Go to Console-JWT Validation](https://console.qweather.com/support/jwt-validation)
 2. Paste your token into the textbox
 3. Click the "Validate" button
-
 
 ### JWT demo
 

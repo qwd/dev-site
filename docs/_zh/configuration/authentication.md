@@ -14,31 +14,61 @@ ref: config-auth
 
 JSON Web Token（JWT）是一种开放标准（[RFC 7519](https://www.rfc-editor.org/rfc/rfc7519)），用于在各方安全的传递信息。无论在前端还是后端，JWT身份认证都能够显著的提高API安全等级，有效防止其他人伪造你的身份进行API请求。
 
-### 准备 {#prerequisites}
+和风天气 JWT 使用Ed25519算法进行签名，Ed25519是使用Curve25519椭圆曲线和SHA-512的EdDSA（Edwards-curve Digital Signature Algorithm）的一种实现。你需要提前生成Ed25519的私钥和公钥，其中私钥用于签名且由你自己保管，公钥用于我们对签名进行验证。这意味着除了你之外，任何人（包括我们）都无法伪造你的签名。
 
-和风天气使用Ed25519算法进行签名，Ed25519是使用Curve25519椭圆曲线和SHA-512的EdDSA（Edwards-curve Digital Signature Algorithm）的一种实现。你需要提前生成Ed25519的私钥和公钥，其中私钥用于签名且由你自己保管，公钥用于我们对签名进行验证。这意味着除了你之外，任何人（包括我们）都无法伪造你的签名。
+### 生成Ed25519密钥 {#generate-ed25519-key}
 
-#### 生成Ed25519密钥 {#generate-ed25519-key}
+你可以使用熟悉的开发语言或第三方库在本地生成Ed25519密钥，或参考下列方法。生成密钥后，你需要将公钥添加到和风天气控制台，用于JWT身份验证。
 
-这里介绍一种使用OpenSSL创建Ed25519密钥的方法。
+#### 使用终端 {#terminal}
 
-> **提示：**我们建议使用OpenSSL 3.0.1及以上版本创建Ed25519和验证签名。在大多数Linux和macOS的最新版本中已经集成OpenSSl 3.0+，对于Windows，我们推荐使用winget安装OpenSSL。
+建议OpenSSL v3+，绝大多数Linux和macOS已默认支持；Windows需提前安装OpenSSL。
 
-> **提示：**你也可以通过在线工具、熟悉的开发语言或第三方库生成Ed25519私钥和公钥。
-
-打开终端，粘贴下列文本生成公钥和私钥:
+打开终端分别粘贴下列文本并回车:
 
 ```bash
-openssl genpkey -algorithm ED25519 -out ed25519-private.pem \
-&& openssl pkey -pubout -in ed25519-private.pem > ed25519-public.pem
+openssl genpkey -algorithm ED25519 -out ed25519-private.pem
+openssl pkey -pubout -in ed25519-private.pem > ed25519-public.pem
 ```
 
 这将在当前目录创建两个文件：
 
 - ed25519-private.pem，私钥，用于JWT认证的签名。你应该妥善安全的保管私钥。
-- ed25519-public.pem，公钥，用于签名的验证，需要上传到和风天气控制台
+- ed25519-public.pem，公钥，用于签名的验证，需要上传到和风天气控制台。
 
-#### 上传公钥 {#upload-public-key}
+#### 使用浏览器 {#browser}
+
+支持 Chrome 137+，Edge 137+，Firefox 129+，Safari 17+。
+
+在浏览器中打开控制台（通常按F12）输入下列代码并回车:
+
+```js
+async function generateEd25519Pem() {
+  const k = await crypto.subtle.generateKey({name:"Ed25519"},true,["sign","verify"]);
+  const p8 = await crypto.subtle.exportKey("pkcs8",k.privateKey);
+  const spki = await crypto.subtle.exportKey("spki",k.publicKey);
+  const pem = (d,t)=>{
+    let b=btoa(String.fromCharCode(...new Uint8Array(d)));
+    return`-----BEGIN ${t}-----\n${b.match(/.{1,64}/g).join("\n")}\n-----END ${t}-----`;
+  };
+  const priv=pem(p8,"PRIVATE KEY");
+  const pub=pem(spki,"PUBLIC KEY");
+  console.log("PrivateKey:\n",priv,"\n\nPublicKey:\n",pub);
+  return{priv,pub};
+}
+generateEd25519Pem();
+```
+
+你将看到输出的密钥：
+
+- PrivateKey，私钥。
+- PublicKey，公钥。
+
+#### 使用JWT工具 {#jwt-tools}
+
+参考下方 [JWT调试工具](#jwt-debugging)
+
+### 上传公钥 {#upload-public-key}
 
 当你完成密钥对的生成后，你需要将其中的公钥添加到和风天气控制台，用于JWT身份验证。
 
@@ -56,7 +86,7 @@ openssl genpkey -algorithm ED25519 -out ed25519-private.pem \
 7. 在公钥文本框中粘贴公钥内容
 8. 点击“保存”按钮
 
-你将在最后看到创建凭据成功的页面，并且显示了这个凭据的创建日期、ID和SHA256值。出于安全考虑，控制台不会再次显示这个公钥。但你可以使用公钥的SHA256值与本地SHA256进行对比，以便确认使用的是正确的公钥。
+你将在最后看到创建凭据成功的页面，并且显示了这个凭据的创建日期、ID和SHA256值。出于安全考虑，控制台不会再次显示这个公钥。但你可以使用公钥的SHA256值与本地SHA256进行对比，以便确认使用的是正确的公钥（上传的公钥会自动删除首尾的空白符及换行符之后再计算SHA256）。
 
 ### 生成JWT {#generate-jwt}
 
@@ -124,7 +154,7 @@ eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6M
 - `aud`
 - `nbf`
 
-### 发送JWT请求 {#jwt-authorize-request}
+### 发送JWT请求 {#authorize-request}
 
 将上述创建的完整Token作为参数添加到`Authorization: Bearer`请求标头，例如：
 
@@ -134,14 +164,29 @@ curl --compressed \
 'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
 ```
 
-### 验证JWT {#jwt-validation}
+### JWT调试 {#jwt-debugging}
 
-如果API请求返回[401错误](/docs/resource/error-code/#unauthorized)，请使用JWT验证工具检查你的Token。
+我们提供了两种调试工具：
+
+**JWT Debugger**
+
+这是一个开源、离线的JWT调试工具，用于生成Ed25519密钥对和创建JWT：
+
+> **提示：**本工具不能代替代码实现，请在项目中自行编码或使用三方库生成 JWT。
+
+- 访问 **<https://jwt.qweather.com>**
+- 复制或下载 Ed25519 密钥，点击“重新生成”或刷新浏览器可生成新的密钥
+- 点击橙色文字，替换为你的 `kid`，`sub`，`iat`，`exp`，并在私钥区域粘贴你的私钥内容，随即生成JWT
+
+**JWT Validator**
+
+如希望检查JWT是否有效，或者API请求返回[401错误](/docs/resource/error-code/#unauthorized)，请登录控制台使用JWT验证工具检查你的Token：
+
+> **提示：**出于安全原因，只能验证与自己帐号匹配的JWT。
 
 1. [前往控制台-JWT验证](https://console.qweather.com/support/jwt-validation)
 2. 将你的完整Token粘贴至文本框
 3. 点击“验证”按钮
-
 
 ### 生成JWT示例 {#jwt-demo}
 
