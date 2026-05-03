@@ -43,8 +43,6 @@ reference_docs:
       - name: 0-api-warning
         data: 
           - type: current
-          - type: now
-          - type: list
       - name: 0-api-indices
         data: 
           - type: forecast
@@ -54,8 +52,6 @@ reference_docs:
           - type: hourly-v1
           - type: daily-v1
           - type: station-v1
-          - type: now
-          - type: daily
       - name: 0-api-time-machine
         data: 
           - type: weather
@@ -71,7 +67,6 @@ reference_docs:
       - name: 0-api-solar-radiation
         data: 
           - type: forecast
-          - type: hourly
       - name: 0-api-astronomy
         data: 
           - type: sun
