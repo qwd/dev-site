@@ -339,6 +339,36 @@ encoded_jwt = jwt.encode(payload, private_key, algorithm='EdDSA', headers = head
 print(f"JWT:  {encoded_jwt}")
 ```
 
+#### PHP8.4+
+
+```php
+function generateJWT($privateKeyPath, $kid, $sub) {
+    $privateKey = file_get_contents($privateKeyPath);
+
+    $header = base64_encode(json_encode(['alg' => 'EdDSA', 'kid' => $kid]));
+    $payload = base64_encode(json_encode([
+        'sub' => $sub,
+        'iat' => time() - 30,
+        'exp' => time() + 900
+    ]));
+
+    $header = str_replace(['+', '/', '='], ['-', '_', ''], $header);
+    $payload = str_replace(['+', '/', '='], ['-', '_', ''], $payload);
+
+    // 签名
+    $data = $header . '.' . $payload;
+    $signature = '';
+    $key = openssl_pkey_get_private($privateKey);
+    openssl_sign($data, $signature, $key, 0);
+    $signature = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($signature));
+
+    return $data . '.' . $signature;
+}
+
+$jwt = generateJWT('YOUR_PRIVATE_KEY_PATH', 'YOUR_KEY_ID', 'YOUR_PROJECT_ID');
+echo $jwt;
+```
+
 #### Shell
 
 ```bash
