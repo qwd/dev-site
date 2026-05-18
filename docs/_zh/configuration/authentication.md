@@ -341,7 +341,7 @@ print(f"JWT:  {encoded_jwt}")
 
 #### PHP8.4+
 
-```<?php
+```php
 function generateJWT($privateKeyPath, $kid, $sub) {
     $privateKey = file_get_contents($privateKeyPath);
 
@@ -367,7 +367,6 @@ function generateJWT($privateKeyPath, $kid, $sub) {
 
 $jwt = generateJWT('YOUR_PRIVATE_KEY_PATH', 'YOUR_KEY_ID', 'YOUR_PROJECT_ID');
 echo $jwt;
-?>
 ```
 
 #### Shell
