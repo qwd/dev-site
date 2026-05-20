@@ -1163,7 +1163,7 @@ warning:
       en: The expected time of the beginning of this alert event, **may be null**
     example: 2017-10-25T13:12Z
     type: [alert-v1]
-  - name: expiredTime
+  - name: expireTime
     desc:
       zh: 预警信息的失效时间
       en: The expiry time of the alert message
