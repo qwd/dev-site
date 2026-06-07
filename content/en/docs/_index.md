@@ -1,10 +1,9 @@
 ---
 title: Documentation
-description: Browse QWeather developer documentation.
+description: Read the latest develop documentation for QWeather.
+image: "/assets/images/hp-feat-devtools.png"
+ref: docs-home
+url: "/en/docs/"
 translationKey: docs-home
-cascade:
-  type: docs
-  toc: true
+type: docs
 ---
-
-Phase 2 contains only a small set of documents used to validate the Hugo architecture.

@@ -16,12 +16,6 @@
             </section>
             <section class="doc-content">{{ .Content }}</section>
           </div>
-          {{ if and (ne .Params.toc false) (not (in (slice "docs-overview" "guide-overview") .Type)) }}
-          <aside class="docs-toc small col-lg-2 d-none d-lg-block">
-            <h4 class="mb-2">{{ index hugo.Data.t .Language.Lang "tocnav" }}</h4>
-            {{ .TableOfContents }}
-          </aside>
-          {{ end }}
         </div>
       </div>
     </article>

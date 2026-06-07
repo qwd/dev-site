@@ -55,3 +55,4 @@ Gemfile.lock
 # Misc
 *.tmp
 *.bak
+.local/

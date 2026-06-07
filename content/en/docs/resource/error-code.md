@@ -1,0 +1,184 @@
+---
+title: Error Code
+tag: resource
+description: Introduce error code and error message for QWeather API. When an error
+  occurs, please refer to this document first.
+ref: res-status-code
+aliases:
+- "/docs/start/status-code/"
+- "/docs/resource/status-code/"
+translationKey: res-status-code
+---
+
+When an error occurs, you will receive the corresponding error code. This document will introduce the error codes and error messages for the QWeather API.
+
+> <strong>Hint:</strong> Currently there are two versions of the error code at the same time, we will gradually migrate from v1 to v2. During this transition, different versions of error codes may be returned depending on the API and error type. If you'd like to switch to v2 immediately, please submit a support ticket.
+
+> <strong>NOTE:</strong> You should correct the error properly, and when an error occurs, please temporarily stop the request and troubleshoot it. You should not continuously send out error requests, otherwise these error requests look like a DDoS attack, and in extreme cases, our security policy may suspend your account.
+{.bqdanger}
+## Error Code v2
+
+### INVALID PARAMETER
+
+`HTTP response status code: 400`
+
+Invalid parameters, generally means that the incorrect parameter values were passed in, refer to `error.invalidParams` in the response for the specific invalid parameters.
+
+### MISSING PARAMETER
+
+`HTTP response status code: 400`
+
+Missing parameters, error will be reported when some mandatory parameters are not passed, refer to `error.invalidParams` in the response for specific missing parameters.
+
+### NO SUCH LOCATION
+
+`HTTP response status code: 400`
+
+The location queried was not found or unsupported. For example, a query for a city that does not exist or an incorrect Location ID, in which case you should check and try another location.
+
+### DATA NOT AVAILABLE
+
+`HTTP response status code: 400`
+
+Data is temporarily unavailable. You will receive this error code when you query data that is not supported, for example, to query air quality for a location that is not yet supported, please try another location for your query.
+
+### UNAUTHORIZED
+
+`HTTP response status code: 401`
+
+Authentication failed, you need to check your KEY or Token, we will not response to the specific cause of the error for security reasons.
+
+### NO CREDIT
+
+`HTTP response status code: 403`
+
+Request denied due to not enough available balance, savings plans or other credits in your account. You will need to add your available balance or purchase additional credit before continuing to request data.
+
+### OVERDUE
+
+`HTTP response status code: 403`
+
+Request denied due to an overdue bill in your account. You have to pay the overdue bill before request data.
+
+### SECURITY RESTRICTION
+
+`HTTP response status code: 403`
+
+Request denied due to this request violated your security restrictions, we will not specify which restrictions have been violated for security reasons. It is recommended that you should:
+
+- Check your request
+- Check that your security restrictions are reasonable
+- If the request was not sent by you, consider that your credentials may have been compromised
+
+### INVALID HOST
+
+`HTTP response status code: 403`
+
+Request denied due to invalid API Host, please view your API Host in [Console Setting](https://console.qweather.com/setting/) and replace to it. Learn more about [Create API Request](/en/docs/configuration/api-config/).
+
+### ACCOUNT SUSPENSION
+
+`HTTP response status code: 403`
+
+Request denied due to user account suspension. Learn more about [Account Suspension](/en/docs/account/suspension/).
+
+### FORBIDDEN
+
+`HTTP response status code: 403`
+
+You do not have permission to request this data at this time. You can submit a ticket to us for more details.
+
+### NOT FOUND
+
+`HTTP response status code: 404`
+
+Incorrect path or path parameter, the resource could not be found.
+
+### METHOD NOT ALLOWED
+
+`HTTP response status code: 405`
+
+The request used an HTTP method other than GET.
+
+### TOO MANY REQUESTS
+
+`HTTP response status code: 429`
+
+Too many requests in a short time, exceeded the QPM limit or accumulated a lot of invalid requests. You must wait or fix the errors before retrying, otherwise ongoing 429 status may be recognized as abuse of server resources or DDoS attacks, which will suspend your account. See [Exponential Backoff](/en/docs/best-practices/optimize-requests/#using-exponential-backoff-to-handle-errors) for how to set the retry time.
+
+### OVER MONTHLY LIMIT
+
+`HTTP response status code: 429`
+
+The request volume exceeds the limit for a monthly subscription, please wait until the next month to try again, or contact your Business Manager to upgrade your subscription plan.
+
+### UNKNOWN ERROR
+
+`HTTP response status code: 500`
+
+An unknown error has occurred in our service, please [submit a ticket](https://console.qweather.com/support/ticket/new) to us.
+
+### Response
+
+```
+HTTP/2 400
+Content-Type: application/problem+json
+
+{
+  "error": {
+      "code": 400,
+      "type": "https://dev.qweather.com/docs/resource/error-code/#invalid-parameters",
+      "title": "Invalid Parameters",
+      "detail": "Invalid parameters, please check your request.",
+      "invalidParams": [
+          "lang"
+      ]
+  }
+}
+```
+
+- `error.status` the HTTP status code applicable to this problem
+- `error.type` a URL that identifies the error type.
+- `error.title` a short summary of this error
+- `error.detail` a human-readable explanation for this error.
+- `error.invalidParams` invalid or missing params.
+
+*No response body for `404` and `405`.*
+
+## Error Code v1
+
+By `code` in the API/SDK, you can get the status of the current request and determine whether the request is successful or an error occurred.
+
+| Code | Description |
+| ---- | -------------------------------- |
+|200|Successful|
+|204|The request is successful, but the area you are querying does not currently have the data you need. |
+| 400 | Request error, may contain wrong request parameters or missing required parameters. |
+| 401 | Authentication failed, the wrong KEY may be used, wrong KEY type (such as using SDK KEY to access Web API). |
+| 402 | The requests has been exceeded or the balance is insufficient to support continued access to the service. You can recharge, or wait for the calls to reset. |
+| 403 | No access permission, it may be because the PackageName or BundleID are inconsistent, or data that requires additional payment. |
+|404| The queried data or region does not exist. |
+| 429 | Exceeding the limited QPM, please refer to [QPM](/en/docs/resource/glossary/#qpm) |
+| 500 | No response or timeout, service down, please [submit a ticket](https://console.qweather.com/support/ticket/new) to us. |
+
+### Response
+
+```
+HTTP/2 200
+content-type: application/json
+
+{
+  "code": "401"
+}
+```
+
+## 1 vs 2
+
+You can simply refer to the table below to understand the differences between v1 and v2 and make a quick migration. But please note that you still need to design for compatibility with v1 before we can fully migrate to v2.
+
+||v1|v2|
+|---|---|---|
+|HTTP Status Code|200|HTTP Status Code according to different error responses|
+|error type|❌|✅|
+|error description|❌|✅|
+|Identify error parameters|❌|✅|

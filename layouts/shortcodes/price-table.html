@@ -1,0 +1,7 @@
+{{- $t := index hugo.Data.t .Page.Language.Lang -}}
+{{- range hugo.Data.price }}
+<h3>{{ index .data $.Page.Language.Lang }}</h3>
+<table><thead><tr><th>{{ index $t "pi-req-mo" }}</th><th>{{ index $t "pi-price-req" }}</th></tr></thead><tbody>
+{{- range .price }}<tr><td>{{ .tier }}</td><td>{{ if ne (printf "%v" .value) "" }}CNY {{ .value }}{{ else }}{{ index $t "contact-us" }}{{ end }}</td></tr>{{ end }}
+</tbody></table>
+{{- end }}

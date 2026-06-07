@@ -1,0 +1,5 @@
+{{- $page := false -}}
+{{- range where .site.Pages "Params.ref" .ref -}}
+  {{- $page = . -}}
+{{- end -}}
+{{- return $page -}}
