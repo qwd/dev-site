@@ -1,0 +1,12 @@
+{{- $page := .Page -}}
+{{- $tags := $page.Params.tag -}}
+{{- $defaultName := printf "%s-%s" (index $tags 2) (index $tags 3) -}}
+{{- $name := .Get "apidata" | default $defaultName -}}
+{{- range index hugo.Data.dev "api-endpoint" -}}
+  {{- if eq .name $name -}}
+<pre><code class="language-bash">curl -X GET --compressed \
+-H 'Authorization: Bearer your_token' \
+'{{ .demo.link }}'</code></pre>
+<p class="small italic">{{ index hugo.Data.t $page.Language.Lang "example-token-hint" | markdownify }}</p>
+  {{- end -}}
+{{- end -}}

@@ -1,0 +1,39 @@
+{{- $page := .Page -}}
+{{- $lang := $page.Language.Lang -}}
+{{- $responses := hugo.Data.dev.response -}}
+{{- $showCode := ne (.Get "statusCode") "0" -}}
+{{- $showUpdate := ne (.Get "update") "0" -}}
+{{- $showFxLink := ne (.Get "fxlink") "0" -}}
+{{- $showRefer := ne (.Get "refer") "0" -}}
+{{- $types := split (.Get "type") " " -}}
+{{- $prefixes := split (.Get "prefix") " " -}}
+<ul class="api-response">
+  {{- if $showCode }}
+    <li><code>{{ $responses.code.name }}</code> {{ index $responses.code.desc $lang | markdownify }}</li>
+  {{- end }}
+  {{- if $showUpdate }}
+    <li><code>{{ $responses.update.name }}</code> {{ index $responses.update.desc $lang | markdownify }}</li>
+  {{- end }}
+  {{- if $showFxLink }}
+    <li><code>{{ $responses.fxlink.name }}</code> {{ index $responses.fxlink.desc $lang | markdownify }}</li>
+  {{- end }}
+  {{- $group := index $responses (.Get "group") -}}
+  {{- if .Get "type" }}
+    {{- range $index, $type := $types }}
+      {{- $prefix := index $prefixes $index -}}
+      {{- range where $group "type" "intersect" (slice $type) }}
+        <li><code>{{ if ne $prefix "nil" }}{{ $prefix }}.{{ end }}{{ .name }}</code> {{ index .desc $lang | markdownify }}</li>
+      {{- end }}
+    {{- end }}
+  {{- else }}
+    {{- $prefix := .Get "prefix" -}}
+    {{- range $group }}
+      <li><code>{{ if ne $prefix "nil" }}{{ $prefix }}.{{ end }}{{ .name }}</code> {{ index .desc $lang | markdownify }}</li>
+    {{- end }}
+  {{- end }}
+  {{- if $showRefer }}
+    {{- range $responses.refer }}
+      <li><code>refer.{{ .name }}</code> {{ index .desc $lang | markdownify }}</li>
+    {{- end }}
+  {{- end }}
+</ul>

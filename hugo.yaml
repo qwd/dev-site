@@ -1,0 +1,39 @@
+baseURL: https://dev.qweather.com/
+title: QWeather Developers
+timeZone: Asia/Shanghai
+defaultContentLanguage: zh
+defaultContentLanguageInSubdir: false
+disableKinds:
+  - RSS
+  - taxonomy
+  - term
+
+languages:
+  zh:
+    contentDir: content/zh
+    locale: zh
+    label: 中文
+    title: 和风天气开发服务
+    weight: 1
+  en:
+    contentDir: content/en
+    locale: en
+    label: English
+    title: QWeather Developers
+    weight: 2
+
+params:
+  description:
+    zh: 强大、丰富的天气数据服务
+    en: Powerful and Various Weather Data Services
+
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+    renderer:
+      unsafe: true
+
+minify:
+  minifyOutput: false

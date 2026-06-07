@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="{{ .Language.Locale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ partial "seo.html" . }}
+    {{ partial "assets.html" . }}
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+      <nav>
+        <a href="{{ relLangURL "docs/" }}">{{ index hugo.Data.t .Language.Lang "doc" }}</a>
+        {{ with .AllTranslations }}
+          {{ range . }}
+            {{ if ne $.Language.Lang .Language.Lang }}
+              <a href="{{ .RelPermalink }}">{{ .Language.Label }}</a>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </nav>
+    </header>
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+    {{ partial "scripts.html" . }}
+  </body>
+</html>

@@ -1,0 +1,8 @@
+{{ define "main" }}
+  <section class="container hero">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+    {{ .Content }}
+    <p><a href="{{ relLangURL "docs/" }}">{{ index hugo.Data.t .Language.Lang "quick-start" }}</a></p>
+  </section>
+{{ end }}

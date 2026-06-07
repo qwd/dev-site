@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <div class="container docs-layout">
+    <article class="article">
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
+    </article>
+    {{ if ne .Params.toc false }}
+      <aside class="toc">
+        <strong>{{ index hugo.Data.t .Language.Lang "tocnav" }}</strong>
+        {{ .TableOfContents }}
+      </aside>
+    {{ end }}
+  </div>
+{{ end }}
