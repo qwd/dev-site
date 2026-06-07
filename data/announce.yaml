@@ -1,0 +1,7 @@
+# add the latest announcement in homepage
+# delete url value for hide announcement section
+
+title:
+  zh: 现已支持JSON Web Token身份认证
+  en: JSON Web Token is now supported
+url: https://blog.qweather.com/post/jwt-is-now-supported/

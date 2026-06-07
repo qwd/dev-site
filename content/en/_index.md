@@ -1,7 +1,6 @@
 ---
-title: QWeather Developers
-description: Powerful and Various Weather Data Services
+title: Dev.QWeather
+description: QWeather provides global weather data services for developers and enterprise users, supporting weather API, weather widget, open source weather APP, weather SDKs and other development tools. Our weather data includes weather warning, real-time weather and forecast, air quality AQI, typhoon, tide, sunrise and sunset, etc.
+image: /assets/images/hp-feat-data.png
 translationKey: home
 ---
-
-This is the minimal home page used to validate the Jekyll-to-Hugo migration structure.

@@ -1,7 +1,6 @@
 ---
-title: 和风天气开发服务
-description: 强大、丰富的天气数据服务
+title: 和风天气开发平台
+description: 和风天气为开发者和企业用户提供了全球天气数据服务，并提供了天气API接口，天气插件，开源天气APP，天气SDK等开发工具，数据包括灾害预警、实时天气和预报、PM2.5空气质量AQI、台风、潮汐、日出日落、生活指数等。
+image: /assets/images/hp-feat-data.png
 translationKey: home
 ---
-
-这是用于验证 Jekyll 到 Hugo 迁移结构的最小首页样例。
