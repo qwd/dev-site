@@ -1,6 +1,50 @@
-<footer class="site-footer">
-  <div class="container">
-    <span>&copy; {{ now.Year }} QWeather</span>
-    <a href="{{ relLangURL "docs/" }}">{{ index hugo.Data.t .Language.Lang "doc" }}</a>
+{{- $t := index hugo.Data.t .Language.Lang -}}
+{{- $nav := hugo.Data.navigation -}}
+<footer class="pt-5">
+  <div class="container mb-4">
+    <div class="content row">
+      <div class="col-12 col-md-5 text-md-left text-center">
+        <a class="no-underline light-link mb-4 d-inline-block" href="{{ .Site.Home.RelPermalink }}">
+          <img class="d-inline-block" src="/assets/images/logo-s-light.png" alt="QWeather Logo" width="30">
+          <h3 class="color-white d-inline-block">{{ .Site.Title }}</h3>
+        </a>
+        <div class="mb-4">
+          <a class="light-link mr-1" href="{{ .Site.Params.links.qweather }}{{ if eq .Language.Lang "en" }}/en{{ end }}/contact/" target="_blank" rel="noopener noreferrer">{{ $t.contact }}</a>&bull;
+          <a class="light-link mx-1" href="{{ .Site.Params.links.blog }}" target="_blank" rel="noopener noreferrer">{{ $t.blog }}</a>&bull;
+          <a class="light-link ml-1" href="{{ .Site.Params.links.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+        <div class="mb-4 mb-md-0">
+          <label class="mr-2" for="change-language">Language</label>
+          {{ partial "lang-switch.html" . }}
+        </div>
+      </div>
+      {{ range slice "docs" "features" "products" }}
+      <div class="col-4 col-md text-md-left text-center">
+        <h3 class="color-light mb-4">{{ index $t (cond (eq . "features") "feats" (cond (eq . "products") "more" "doc")) }}</h3>
+        <ul class="clear-list">
+          {{ range index $nav.footer . }}
+          <li class="mb-2"><a class="light-link" href="{{ index .url $.Language.Lang | default .url }}">{{ index .title $.Language.Lang }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  <div class="terms">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-auto mb-2 mb-md-0">
+          <ul class="clear-list">
+            <li class="mr-2 go-left">&copy; {{ now.Year }} <a class="light-link" href="https://www.qweather.com/en/" target="_blank" rel="noopener noreferrer">QWeather</a></li>
+            {{ range $nav.footer.terms }}
+            <li class="mr-2 go-left"><a class="light-link" href="{{ index .url $.Language.Lang }}" target="_blank" rel="noopener noreferrer">{{ index .title $.Language.Lang }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class="col-12 col-md text-md-right">
+          <a class="light-link" href="{{ .Site.Params.links.icp.url }}" target="_blank" rel="noopener noreferrer">{{ .Site.Params.links.icp.number }}</a>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>

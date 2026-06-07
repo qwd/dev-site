@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="upgrade-browser mx-auto my-0 py-5 px-3" style="max-width: 680px;">
+  <h1 class="mb-4">{{ .Title }}</h1>
+  {{ .Content }}
+  <ul class="clear-list my-3">
+    {{ range slice
+      (dict "name" "Safari (macOS only)" "url" "https://www.apple.com/safari/" "image" "icon-safari.png")
+      (dict "name" "Firefox" "url" "https://www.mozilla.org/firefox/" "image" "icon-firefox.png")
+      (dict "name" "Chrome" "url" "https://www.google.com/chrome/index.html" "image" "icon-chrome.png")
+      (dict "name" "Edge" "url" "https://www.microsoft.com/edge" "image" "icon-edge.png")
+    }}
+    <li class="mb-4"><a href="{{ .url }}" target="_blank" rel="noopener noreferrer"><img class="d-inline-block text-v-middle mr-2" src="/assets/images/content/{{ .image }}" alt="" width="64"><span class="d-inline-block text-v-middle">{{ .name }}</span></a></li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

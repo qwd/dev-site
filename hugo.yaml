@@ -23,9 +23,28 @@ languages:
     weight: 2
 
 params:
+  logo: https://cdn.qweather.com/media/qw-logo-s-dark-800.png
   description:
     zh: 强大、丰富的天气数据服务
     en: Powerful and Various Weather Data Services
+  links:
+    qweather: https://www.qweather.com
+    console: https://console.qweather.com
+    blog: https://blog.qweather.com
+    icons: https://icons.qweather.com
+    github: https://github.com/qwd
+    icp:
+      number: 京ICP备15048401号-11
+      url: https://beian.miit.gov.cn
+  webmasterVerifications:
+    google: WFu5M6w9XiYrf3hgUBLxCA1Jrgb_CWTzXTPycVIqngg
+    bing: EDFBFE217D2B905D82BE1D5A1BC9AB28
+    baidu: code-emsTMHxQLF
+  algolia:
+    appId: T25W3F5EZF
+    apiKey: b6d7e64ad9d29597614562aa723ea028
+    indexName: qweather
+  gtmId: GTM-NZFFWJH
 
 markup:
   goldmark:
