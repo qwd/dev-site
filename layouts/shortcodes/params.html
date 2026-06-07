@@ -4,9 +4,9 @@
   <ul>
     {{- range $keys }}
       {{- $param := index hugo.Data.dev.p . }}
-      <li>
-        <code>{{ $param.name }}</code>
-        {{- if $param.rqd }} <em>({{ index hugo.Data.t $page.Language.Lang "rqd" }})</em>{{ end }}
+      <li class="mb-4">
+        <code class="mr-1">{{ $param.name }}</code>
+        {{- if $param.rqd }} <span class="mr-1 italic small text-bold">({{ index hugo.Data.t $page.Language.Lang "rqd" }})</span>{{ end }}
         {{- index $param.text $page.Language.Lang | markdownify }}
       </li>
     {{- end }}

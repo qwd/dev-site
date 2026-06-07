@@ -9,7 +9,23 @@
         </div>
         <h1 class="mr-2 d-inline-block">{{ .Title }}</h1>
       </section>
-      <section class="doc-content">{{ with .Description }}<p>{{ . }}</p>{{ end }}{{ .Content }}</section>
+      <section class="doc-content">
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}{{ .Content }}
+        {{- $current := . -}}
+        {{- $apiGroups := where hugo.Data.contents.reference_docs "overview" "0-api-overview" -}}
+        {{- range $apiGroups }}{{- range where .list "name" $current.Params.ref }}
+        <ul>
+          {{- range .data }}
+            {{- $type := .type -}}
+            {{- range $current.RegularPagesRecursive }}
+              {{- if eq (index .Params.tag (sub (len .Params.tag) 1)) $type }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+              {{- end }}
+            {{- end }}
+          {{- end }}
+        </ul>
+        {{- end }}{{- end }}
+      </section>
     </div></div></div></article>
   </div>
 {{ end }}

@@ -4,6 +4,6 @@
 {{- $name := .Get "apidata" | default $defaultName -}}
 {{- range index hugo.Data.dev "api-endpoint" -}}
   {{- if eq .name $name -}}
-    <div class="request-url"><pre><code>{{ .endpoint.path }}</code></pre></div>
+    <div class="request-url mb-3"><pre><code>{{ .endpoint.path }}</code></pre></div>
   {{- end -}}
 {{- end -}}
