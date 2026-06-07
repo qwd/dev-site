@@ -1,0 +1,21 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #1D1D1E;
+  color: #c0c0c0;
+  font-size: 1.4rem;
+  letter-spacing: $letter-space;
+  min-height: 280px;
+  h3, img {
+    vertical-align: middle;
+  }
+  .terms {
+    min-height: 40px;
+    background-color: #2B2C2E;
+    margin-bottom: 0;
+    padding: 10px 0;
+    line-height: 20px;
+    font-size: $small-font-size;
+  }
+}

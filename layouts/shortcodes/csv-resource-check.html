@@ -1,0 +1,7 @@
+{{- range slice "air-pollutant" "aqis" "regions" "warning-type" -}}
+  {{- $rows := partial "data/csv.html" . -}}
+  {{- if lt (len $rows) 2 -}}
+    {{- errorf "CSV resource contains no data rows: %s" . -}}
+  {{- end -}}
+  <!-- CSV resource {{ . }} parsed with {{ sub (len $rows) 1 }} data rows. -->
+{{- end -}}

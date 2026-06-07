@@ -1,0 +1,282 @@
+// legacy docs
+.doc-legacy {
+  padding-top: 80px;
+}
+
+.new-version-alart {
+  display: block;
+  padding: 20px;
+  min-height: 20px;
+  font-weight: bold;
+  background-color: #a94442;
+  color: #fff;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+// main-content 
+.main-content {
+  padding-bottom: 40px;
+
+  .article {
+    // width: 100%;
+    .content-border {
+      border: 1px solid #dfdfdf;
+    }
+
+    h2,
+    h3,
+    h4 {
+      margin-bottom: 20px;
+    }
+
+    img {
+      margin: 10px 0;
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .figimg {
+      margin:0 auto 10px auto;
+      padding: 8px;
+      border: 1px solid $color-grey-2;
+      background-color: #e9ecef;
+      text-align: center;
+      width: 80%;
+      img {
+        margin: 0 auto 10px auto;
+      }
+      em {
+        font-size: 14px;
+      }
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    li ul {
+      margin-top: 10px;
+    }
+
+    .anchor-link {
+      margin-left: 5px;
+      color: #dadada;
+      &:hover {
+        color: $color-link;
+      }
+    }
+
+    .article-headline {
+      line-height: 1;
+
+      &.border-bottom {
+        border-bottom: 1px solid $color-light;
+      }
+
+      .platform_version {
+        background-color: #edf7fe;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-radius: 10px;
+        color: $color-grey;
+      }
+      .edit-this-docs {
+        padding-top: 18px;
+        font-weight: $font-weight-light;
+        font-size: 1.2rem;
+      }
+    }
+    .platform {
+      margin-top: -20px;
+
+      li.active>a {
+        color: $color-white;
+        background-color: $color-link;
+      }
+    }
+
+    .doc-content {
+
+      /* handle the offset from the top when the anchor links jump, only for docs content */
+      h2,h3,h4 {
+        padding-top: 40px;
+        margin-top: -20px;
+      }
+
+      // request url 
+      .request-url {
+        .url {
+          font-family: $code-font-family;
+          font-size: 1.4rem;
+          background-color: $color-code-bg;
+          color: $color-grey;
+          overflow-x: scroll;
+          white-space: nowrap;
+        }
+        .url::before, pre::before {
+          content: "GET";
+          font-weight: bold;
+          font-size: 1.4rem;
+          color: $color-black;
+          margin-right: 1rem;
+
+        }
+
+        ul {
+          padding-left: 0;
+          margin: 0;
+          list-style: none;
+        }
+      }
+
+      .api-snippets {
+        display: block;
+        margin-bottom: 20px;
+
+        pre {
+          max-height: 300px;
+          overflow-y: scroll;
+          -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
+      }
+
+      .request-param {
+        h5 {
+          display: inline-block;
+          margin: 1rem 0;
+
+          &::after {
+            content: " ";
+            padding: 2px 4px;
+            margin: 0 5px;
+            font-size: $small-font-size;
+            font-weight: $font-weight-light;
+            line-height: 1;
+            color: $color-grey;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 4px;
+          }
+
+          &:lang(zh) {
+            &::after {
+              content: "可选";
+              background-color: #d2e9d4;
+            }
+          }
+
+          &:lang(en) {
+            &::after {
+              content: "optional";
+              background-color: #d2e9d4;
+            }
+          }
+
+          &.rqd {
+            &:lang(zh) {
+              &::after {
+                content: "必选";
+                background-color: #fde8d5;
+              }
+            }
+
+            &:lang(en) {
+              &::after {
+                content: "required";
+                background-color: #fde8d5;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .faq-content {
+      border: 1px solid #5A9CBE;
+
+      h2 {
+        margin-top: 40px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $color-light;
+      }
+      h3 {
+        margin-top: 30px;
+        font-size: 18px;
+      }
+      // p {
+      //   padding-left: 40px;
+      // }
+      .faq-toc-item-2 {
+        padding-bottom: 10px;
+        border-bottom: 1px solid $color-light;
+        margin-bottom: 20px;
+        &:last-child {
+          border-bottom: none;
+        }
+
+        a {
+          color: $color-font;
+          &:hover,
+          &:focus,
+          &:active,
+          &.active {
+            color: $color-font;
+          }
+        }
+      }
+      .faq-toc-item-3 {
+        a {
+          color: $color-link;
+          font-size: $font-size;
+          &:hover,
+          &:focus,
+          &:active,
+          &.active {
+            color: $color-link;
+          }
+        }
+      }
+    }
+
+    .showcase-content {
+      border: 1px solid $color-purple;
+      .works-lang {
+          border-bottom: 1px solid $color-light;
+      }
+      .work-name {
+          font-size: 1.8rem;
+      }
+    }
+
+    .doc-content, .faq-content {
+      // external site link style
+      a[href^="http://"]::after,
+      a[href^="https://"]::after,
+      a[href^="//"]::after {
+        font-family: "iconfont-for-qw" !important;
+        font-size: 85%;
+        content: "\e900";
+        margin-left: 4px;
+        margin-right: 4px;
+      }
+
+      // reset internal site link style
+      // a[href*="qweather.com"]::after,
+      // a[href*="hecdn.net"]::after {
+      //   content: none;
+      //   font-family: $font-family;
+      //   margin-right: 0;
+      //   margin-left: 0;
+      // }
+    }
+  }
+  
+}

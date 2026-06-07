@@ -5,3 +5,5 @@ translationKey: phase-2-sample
 ---
 
 此临时页面用于验证非文档页面能够使用全局布局、SEO 和页脚。
+
+{{< csv-resource-check >}}

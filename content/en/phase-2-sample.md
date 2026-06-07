@@ -5,3 +5,5 @@ translationKey: phase-2-sample
 ---
 
 This temporary page validates the global layout, SEO metadata, and footer for non-document content.
+
+{{< csv-resource-check >}}

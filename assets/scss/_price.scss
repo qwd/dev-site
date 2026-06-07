@@ -1,0 +1,68 @@
+.price-homepage {
+  .price-card {
+    border: 1px solid;
+    border-radius: 10px;
+
+    // text-align: center;
+    .card-brief-with-height {
+      min-height: 200px;
+    }
+
+    .card-calc-brief-with-height {
+      min-height: 80px;
+    }
+
+    .card-img {
+      max-width: 240px;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    &.payg {
+      border-color: $color-link;
+    }
+
+    &.tier {
+      border-color: $color-orange;
+    }
+
+    &.splan {
+      border-color: $color-pink;
+    }
+
+    &.calc {
+      background-color: #374A57;
+      color: $color-white;
+    }
+
+    &.ent {
+      border-color: $color-purple;
+    }
+
+    &.free {
+      border-color: $color-green;
+    }
+
+    .price-by-service {
+      .service-card {
+        border: 1px solid $color-orange;
+        min-height: 220px;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          color: $color-font;
+          background-color: #fcefdf;
+        }
+      }
+      @media (max-width: 595px) {
+        .service-card {
+          min-height: 100px;
+        }
+      }
+    }
+  }
+}
+

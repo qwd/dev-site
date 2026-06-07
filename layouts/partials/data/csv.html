@@ -1,0 +1,8 @@
+{{- $path := printf "data/table/%s.csv" . -}}
+{{- $data := slice -}}
+{{- with resources.Get $path -}}
+  {{- $data = transform.Unmarshal (dict "format" "csv" "targetType" "slice") . -}}
+{{- else -}}
+  {{- errorf "CSV resource not found: %s" $path -}}
+{{- end -}}
+{{- return $data -}}
