@@ -3,17 +3,90 @@
   <section class="masthead docs"><div class="container"><h1>{{ .Title }}</h1><p class="text-center">{{ .Description }}</p></div></section>
   <main class="docs-home container-lg pb-5">
     <section class="row refer-content mb-4">
-      {{ range hugo.Data.contents.reference_docs }}
-        {{ $overview := partial "docs/page-by-ref.html" (dict "site" $.Site "ref" .overview) }}
-        {{ with $overview }}
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
-          <div class="resource border-r10 p-4">
-            <h2 class="mb-4"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            <p>{{ .Description }}</p>
-          </div>
+      <div class="col-12 col-md-12 col-lg-5 mb-4 mb-lg-0">
+        <div class="start card border-r10 p-4">
+          {{- range where hugo.Data.contents.reference_docs "overview" "start-overview" }}
+            {{- $overview := partial "docs/page-by-ref.html" (dict "site" $.Site "ref" .overview) }}
+            {{- with $overview }}<h2 class="color-white mb-4"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
+          {{- end }}
+          <ul class="clear-list">
+            {{- range where hugo.Data.contents.reference_docs "overview" "start-overview" }}
+              {{- range .list }}{{ $page := partial "docs/page-by-ref.html" (dict "site" $.Site "ref" .name) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+            {{- end }}
+            {{- range where hugo.Data.contents.reference_docs "overview" "finance-overview" }}
+              {{- range .list }}{{ $page := partial "docs/page-by-ref.html" (dict "site" $.Site "ref" .name) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+            {{- end }}
+          </ul>
         </div>
-        {{ end }}
-      {{ end }}
+      </div>
+      {{- range slice
+        (dict "overview" "res-overview" "class" "resource")
+        (dict "overview" "bp-overview" "class" "bp")
+      }}
+      <div class="col-12 col-md-6 col-lg mb-4 mb-md-0">
+        <div class="{{ .class }} border-r10 p-4">
+          {{- range where hugo.Data.contents.reference_docs "overview" .overview }}
+            {{- $overview := partial "docs/page-by-ref.html" (dict "site" $.Site "ref" .overview) }}
+            {{- with $overview }}<h2 class="mb-4"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
+            <ul class="clear-list">
+              {{- range .list }}{{ $page := partial "docs/page-by-ref.html" (dict "site" $.Site "ref" .name) }}{{ with $page }}<li class="mb-2"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+            </ul>
+          {{- end }}
+        </div>
+      </div>
+      {{- end }}
+    </section>
+    <section class="row dev-docs">
+      {{- range where hugo.Data.contents.reference_docs "overview" "0-api-overview" }}
+        {{- range .list }}
+          {{- $section := . -}}
+          {{- $overview := partial "docs/page-by-ref.html" (dict "site" $.Site "ref" .name) -}}
+          {{- with $overview }}
+          <div class="col-12 mb-4">
+            <div class="data border-r10 p-3">
+              <h2 class="mb-4">{{ .Title }}</h2>
+              <p class="mb-4">{{ .Description }}</p>
+              <div class="row">
+                {{- range $section.data }}
+                  {{- $type := .type -}}
+                  {{- range $.Site.RegularPages }}
+                    {{- $tags := .Params.tag | default slice -}}
+                    {{- if and (gt (len $tags) 0) (strings.HasPrefix .RelPermalink $overview.RelPermalink) (eq (index $tags (sub (len $tags) 1)) $type) }}
+                <div class="col-12 col-md-auto mb-3">
+                  <h4 class="mb-2">{{ .Title }}</h4>
+                  <ul class="clear-list d-flex"><li class="mr-2"><a class="border-blue-link d-inline-block px-2 border-r10 no-underline" href="{{ .RelPermalink }}">API</a></li></ul>
+                </div>
+                    {{- end }}
+                  {{- end }}
+                {{- end }}
+              </div>
+            </div>
+          </div>
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    </section>
+    <section class="row help-lib">
+      {{- range slice
+        (dict "key" "showcase-home" "class" "lib")
+        (dict "key" "faq" "class" "help")
+      }}
+        {{- $class := .class -}}
+        {{- $card := index (where $.Site.RegularPages "TranslationKey" .key) 0 -}}
+        {{- with $card }}
+      <div class="col-12 col-md-6 mb-4 mb-md-0">
+        <a class="d-block light-link no-underline {{ $class }} border-r10 p-4" href="{{ .RelPermalink }}">
+          <h2 class="color-white mb-4">{{ .Title }}</h2>
+          <p>{{ .Description }}</p>
+          {{- if eq .TranslationKey "faq" }}
+          <ul>
+            {{- range slice "fi-q-general" "fi-q-dev" "fi-q-license" "fi-q-finance" "fi-q-user" "fi-q-term" }}<li>{{ index hugo.Data.t $.Language.Lang . }}</li>{{ end }}
+          </ul>
+          {{- end }}
+        </a>
+      </div>
+        {{- end }}
+      {{- end }}
     </section>
   </main>
   {{ else }}

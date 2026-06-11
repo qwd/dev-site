@@ -147,6 +147,33 @@
         }
       }
 
+      // OpenAPI response fields with indentation that preserves schema hierarchy.
+      .api-response-tree {
+        padding-left: 0;
+        list-style: none;
+
+        li {
+          margin-bottom: 12px;
+        }
+
+        ul {
+          margin: 8px 0 0 8px;
+          padding-left: 20px;
+          border-left: 1px solid $color-light;
+          list-style: none;
+        }
+
+        .api-response-field {
+          line-height: 1.6;
+        }
+
+        .api-response-type {
+          margin: 0 8px;
+          color: $color-grey;
+          font-size: $small-font-size;
+        }
+      }
+
       .request-param {
         h5 {
           display: inline-block;

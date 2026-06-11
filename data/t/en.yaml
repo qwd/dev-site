@@ -121,7 +121,7 @@ pi-req-mo: Requests(per month)
 pi-price-req: Price(per request)
 over: Over
 next: Next
-si-biref: Welcome to share your code for using QWeather dev service, you can edit <a href="https://github.com/qwd/dev-site/edit/master/_data/showcase.yml" target="_blank" rel="noopener noreferrer">this file</a> and submit a PR.
+si-biref: Welcome to share your code for using QWeather dev service, you can edit <a href="https://github.com/qwd/dev-site/edit/master/data/showcase.yaml" target="_blank" rel="noopener noreferrer">this file</a> and submit a PR.
 si-note: We cannot guarantee the availability of these works, please contact the author. 
 fi-q-general: General
 fi-q-dev: Development

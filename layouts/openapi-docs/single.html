@@ -1,0 +1,26 @@
+{{ define "main" }}
+  {{/* Reuse the existing docs page shell so generated pages match handwritten docs. */}}
+  {{ partial "docs/breadcrumbs.html" . }}
+  <div class="main-content container-fluid d-flex">
+    <aside class="docs-nav small pt-5 pb-3 pr-3 mr-4 d-none d-md-block">
+      {{ partial "docs/nav.html" . }}
+    </aside>
+    <article class="article pt-4 width100">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-10 py-3 content-border border-r10" style="width: 0;">
+            <section class="article-headline mb-5 pb-3 border-bottom">
+              <h1 class="mr-2 d-inline-block">{{ .Title }}</h1>
+            </section>
+            {{/* Render the Node-normalized intermediate model; Hugo does not parse OpenAPI here. */}}
+            <section class="doc-content">{{ partial "openapi-intermediate/operation.html" . }}</section>
+          </div>
+          <aside class="docs-toc small col-lg-2 d-none d-lg-block">
+            <h4 class="mb-2">{{ index hugo.Data.t .Language.Lang "tocnav" }}</h4>
+            {{ .TableOfContents }}
+          </aside>
+        </div>
+      </div>
+    </article>
+  </div>
+{{ end }}

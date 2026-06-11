@@ -1,0 +1,19 @@
+{
+  "code": "200",
+  "radiation": [
+    {
+      "fxTime": "2021-02-16T14:00+08:00",
+      "net": "4.68",
+      "diffuse": "4.32",
+      "direct": "0.29"
+    }
+  ],
+  "refer": {
+    "sources": [
+      "QWeather"
+    ],
+    "license": [
+      "QWeather Developers License"
+    ]
+  }
+}

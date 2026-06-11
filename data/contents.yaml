@@ -31,46 +31,46 @@ reference_docs:
           - type: poi-range
       - name: 0-api-weather
         data: 
-          - type: now
-          - type: daily
-          - type: hourly
-          - type: grid-now
-          - type: grid-daily
-          - type: grid-hourly
+          - type: weather-now
+          - type: weather-daily-forecast
+          - type: weather-hourly-forecast
+          - type: grid-weather-now
+          - type: grid-weather-daily-forecast
+          - type: grid-weather-hourly-forecast
       - name: 0-api-minutely
         data: 
-          - type: precip
+          - type: minutely-precipitation
       - name: 0-api-warning
         data: 
-          - type: current
+          - type: weather-alert
       - name: 0-api-indices
         data: 
-          - type: forecast
+          - type: indices-forecast
       - name: 0-api-aq
         data: 
-          - type: now-v1
-          - type: hourly-v1
-          - type: daily-v1
-          - type: station-v1
+          - type: air-current
+          - type: air-hourly-forecast
+          - type: air-daily-forecast
+          - type: air-station
       - name: 0-api-time-machine
         data: 
-          - type: weather
-          - type: air
+          - type: time-machine-weather
+          - type: time-machine-air
       - name: 0-api-tropical
         data: 
-          - type: forecast
-          - type: track
-          - type: list
+          - type: storm-forecast
+          - type: storm-track
+          - type: storm-list
       - name: 0-api-ocean
         data: 
           - type: tide
       - name: 0-api-solar-radiation
         data: 
-          - type: forecast
+          - type: solar-radiation-forecast
       - name: 0-api-astronomy
         data: 
-          - type: sun
-          - type: moon
+          - type: sunrise-sunset
+          - type: moon-and-moon-phase
           - type: solar-elevation-angle
       - name: 0-api-console
         data: 

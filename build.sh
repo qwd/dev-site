@@ -1,3 +1,4 @@
 #!/bin/bash
-jekyll clean
-JEKYLL_ENV=production jekyll build
+set -e
+
+npm run build

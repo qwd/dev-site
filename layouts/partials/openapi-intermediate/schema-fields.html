@@ -1,0 +1,40 @@
+{{- $lang := .lang -}}
+{{- $node := .node -}}
+{{- $depth := .depth -}}
+{{- if lt $depth 12 -}}
+  {{- range $node.children }}
+    {{- partial "openapi-intermediate/schema-field.html" (dict "lang" $lang "field" . "depth" $depth) -}}
+  {{- end }}
+  {{- range $node.allOf }}
+    {{- partial "openapi-intermediate/schema-fields.html" (dict "lang" $lang "node" . "depth" $depth) -}}
+  {{- end }}
+  {{- range $index, $alternative := $node.oneOf }}
+    <li>
+      <div class="api-response-field"><em class="api-response-type">oneOf {{ add $index 1 }}{{ with $alternative.type }}: {{ . }}{{ end }}</em></div>
+      <ul>{{ partial "openapi-intermediate/schema-fields.html" (dict "lang" $lang "node" $alternative "depth" (add $depth 1)) }}</ul>
+    </li>
+  {{- end }}
+  {{- range $index, $alternative := $node.anyOf }}
+    <li>
+      <div class="api-response-field"><em class="api-response-type">anyOf {{ add $index 1 }}{{ with $alternative.type }}: {{ . }}{{ end }}</em></div>
+      <ul>{{ partial "openapi-intermediate/schema-fields.html" (dict "lang" $lang "node" $alternative "depth" (add $depth 1)) }}</ul>
+    </li>
+  {{- end }}
+  {{- with $node.items }}
+    {{- partial "openapi-intermediate/schema-fields.html" (dict "lang" $lang "node" . "depth" $depth) -}}
+  {{- end }}
+  {{- with $node.additionalProperties }}
+    <li>
+      <div class="api-response-field"><code>*</code> <em class="api-response-type">{{ .type | default "any" }}</em> <span class="api-response-description">{{ if eq $lang "zh" }}其他属性{{ else }}Additional property{{ end }}</span></div>
+      <ul>{{ partial "openapi-intermediate/schema-fields.html" (dict "lang" $lang "node" . "depth" (add $depth 1)) }}</ul>
+    </li>
+  {{- end }}
+  {{- with $node.not }}
+    <li><div class="api-response-field"><em class="api-response-type">not{{ with .type }}: {{ . }}{{ end }}</em></div></li>
+  {{- end }}
+  {{- with $node.recursiveRef }}
+    <li><div class="api-response-field"><em class="api-response-type">{{ if eq $lang "zh" }}递归引用{{ else }}Recursive reference{{ end }}</em> <code>{{ . }}</code></div></li>
+  {{- end }}
+{{- else -}}
+  {{- errorf "OpenAPI intermediate field tree exceeded depth limit" -}}
+{{- end -}}

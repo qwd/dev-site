@@ -1,0 +1,3431 @@
+---
+openapi: 3.0.0
+info:
+  title: 和风天气开发者服务 APIs
+  description: QWeather API reference.
+  version: latest
+  termsOfService: https://www.qweather.com/terms/developers-eula
+  contact:
+    name: 和风天气开发者服务
+    url: https://dev.qweather.com
+  license:
+    name: 开发者许可协议
+    url: https://www.qweather.com/terms/developers-eula
+servers:
+- url: https://{API Host}
+  description: Enter your API Host below.
+  variables:
+    API Host:
+      default: ''
+      description: Find your API Host in the Console settings.
+security:
+- jwt: []
+- apiKey: []
+tags:
+- name: Geo
+  description: Location lookup and city search.
+  externalDocs:
+    description: Find out more
+    url: https://dev.qweather.com/docs/api/geoapi/
+- name: Weather
+  description: Weather data for a specified location.
+  externalDocs:
+    description: Find out more
+    url: https://dev.qweather.com/docs/api/weather/
+- name: Weather Alert
+  description: Official severe weather alerts.
+  externalDocs:
+    description: Find out more
+    url: https://dev.qweather.com/docs/api/warning/
+- name: Air Quality
+  description: Air quality data for a specified location.
+  externalDocs:
+    description: Find out more
+    url: https://dev.qweather.com/docs/api/air-quality/
+- name: Storm
+  description: Tropical cyclone data for the seas near China.
+  externalDocs:
+    description: Find out more
+    url: https://dev.qweather.com/docs/api/tropical-cyclone/
+- name: Ocean
+  description: Tide and ocean current data for major ports and cities worldwide.
+  externalDocs:
+    description: Find out more
+    url: https://dev.qweather.com/docs/api/ocean/
+- name: Solar Irradiation
+  description: Gridded solar irradiance forecasts.
+  externalDocs:
+    description: Find out more
+    url: https://dev.qweather.com/docs/api/solar-radiation/
+- name: Astronomy
+  description: Astronomical data for a specified location.
+  externalDocs:
+    description: Find out more
+    url: https://dev.qweather.com/docs/api/astronomy/
+- name: Console
+  description: Console APIs.
+  externalDocs:
+    description: Find out more
+    url: https://dev.qweather.com/docs/api/console/
+paths:
+  "/geo/v2/city/lookup":
+    get:
+      operationId: getGeoCitylookup
+      summary: City Lookup
+      description: |-
+        City Lookup provides reverse geocoding, geolocation lookup services, supports multi-language, fuzzy search and other functions.
+
+        With the City Lookup, you can get the basic information of the city, including the Location ID of the city (you need this ID to get the weather), multilingual name, latitude and longitude, time zone, altitude, rank, administrative, etc.
+
+        In addition, GeoAPI - City Lookup can also help you to implement fuzzy search in your APP, users only need to type 1 or 2 words to get results.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/geoapi/city-lookup/
+      tags:
+      - Geo
+      parameters:
+      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/admQuery"
+      - "$ref": "#/components/parameters/rangeQuery"
+      - "$ref": "#/components/parameters/numberQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Request successful
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getCityLookup"
+              examples:
+                response:
+                  externalValue: "./examples/getGeoCitylookup.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/geo/v2/poi/lookup":
+    get:
+      operationId: getGeoPoilookup
+      summary: POI Lookup
+      description: POI Lookup API provides basic information of POI(scenic spot, tide stations, etc.)
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/geoapi/poi-lookup/
+      tags:
+      - Geo
+      parameters:
+      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/poiTypeQuery"
+      - "$ref": "#/components/parameters/poiCityQuery"
+      - "$ref": "#/components/parameters/numberQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Request successful
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getPoiLookup"
+              examples:
+                response:
+                  externalValue: "./examples/getGeoPoilookup.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/weather/now":
+    get:
+      operationId: getWeatherNow
+      tags:
+      - Weather
+      summary: Real-time Weather
+      description: |-
+        Get real-time weather data for 200,000+ cities around the world, including temperature, wind, humidity, pressure, precipitation, visibility, etc.
+
+        > **Note:** The real-time data are all near real-time data. Compared with the real physical world, it will be delayed by 5-20 minutes. Please determine the accurate time corresponding to the data according to the `obsTime` in the data.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/weather/weather-now/
+      parameters:
+      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getWeatherNow"
+              examples:
+                response:
+                  externalValue: "./examples/getWeatherNow.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/weather/{days}":
+    get:
+      operationId: getWeatherDailyForecast
+      tags:
+      - Weather
+      summary: Weather Daily Forecast
+      description: Get weather daily forecasts for the next 3-30 days for cities around the world.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/weather/weather-daily-forecast/
+      parameters:
+      - "$ref": "#/components/parameters/days30Path"
+      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getWeatherDaily"
+              examples:
+                response:
+                  externalValue: "./examples/getWeatherDailyForecast.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/weather/{hours}":
+    get:
+      operationId: getWeatherHourlyForecast
+      tags:
+      - Weather
+      summary: Weather Hourly Forecast
+      description: Get hourly weather forecasts for cities around the world for the next 24-168 hours.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/weather/weather-hourly-forecast/
+      parameters:
+      - "$ref": "#/components/parameters/hours168Path"
+      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getWeatherHourly"
+              examples:
+                response:
+                  externalValue: "./examples/getWeatherHourlyForecast.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/minutely/5m":
+    get:
+      operationId: getMinutelyPrecipitation
+      tags:
+      - Weather
+      summary: Minutely Precipitation
+      description: |-
+        Get minute-level precipitation forecast data every 5 minutes for the next 2 hours in China.
+
+        > This data is only supported for Chinese cities.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/minutely/minutely-precipitation/
+      parameters:
+      - "$ref": "#/components/parameters/lonlatQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getMinutely"
+              examples:
+                response:
+                  externalValue: "./examples/getMinutelyPrecipitation.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/indices/{days}":
+    get:
+      operationId: getWeatherIndices
+      tags:
+      - Weather
+      summary: Weather Indices Forecast
+      description: |-
+        Get weather indices forecast data for cities in China and around the world.
+
+        - Weather Indices in China: Comfort Indices, Car Wash Indices, Dressing Indices, Cold Indices, Sports Indices, Travel Indices, UV Indices, Air Pollution Indices, Air Conditioning Indices, Allergy Indices, Sunglasses Indices, Makeup Indices, Sunshine Indices, Traffic Indices, Fishing Indices, Sun Protection Indices
+        - Weather Indices worldwide: Sports Indices, Car Wash Indices, UV Indices, Fishing Indices
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/indices/indices-forecast/
+      parameters:
+      - "$ref": "#/components/parameters/days3Path"
+      - "$ref": "#/components/parameters/indexTypeQuery"
+      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getWeatherIndex"
+              examples:
+                response:
+                  externalValue: "./examples/getWeatherIndices.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/weatheralert/v1/current/{latitude}/{longitude}":
+    get:
+      operationId: getWeatherAlertCurrent
+      tags:
+      - Weather Alert
+      summary: Weather Alert
+      description: |-
+        Get officially issued real-time severe weather alert data around the world.
+
+        > **Hint:** For the implementation of weather alert, see [Resource - Alert Info](/en/docs/resource/warning-info/) in advance.
+      parameters:
+      - "$ref": "#/components/parameters/latPath"
+      - "$ref": "#/components/parameters/lonPath"
+      - "$ref": "#/components/parameters/localtimeQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getAlert"
+              examples:
+                response:
+                  externalValue: "./examples/getWeatherAlertCurrent-en.json"
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/warning/weather-alert/
+  "/v7/warning/now":
+    get:
+      operationId: getWarningNow
+      tags:
+      - Weather Alert
+      summary: Legacy Weather Warning
+      description: This API is deprecated and will be discontinued on September 1, 2026. Use `/weatheralert/v1/current/` instead.
+      deprecated: true
+      parameters:
+      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getWarning"
+              examples:
+                response:
+                  externalValue: "./examples/getWarningNow.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/airquality/v1/current/{latitude}/{longitude}":
+    get:
+      operationId: getAirqualityCurrent
+      tags:
+      - Air Quality
+      summary: Current Air Quality
+      description: |-
+        The current air quality (AQI) API provides real-time air quality data for specified locations, data resolution is 1x1 km.
+
+        - AQI, category, color and primary pollutant based on local standards for each country or region
+        - Generic QWeather AQI
+        - Pollutant concentration values and their sub-index.
+        - Health effects and advice
+        - Associated monitoring station information
+
+        We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn about the AQIs, pollutants, supported regions and more.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/air-quality/air-current/
+      parameters:
+      - "$ref": "#/components/parameters/latPath"
+      - "$ref": "#/components/parameters/lonPath"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getAirQualityCurrent"
+              examples:
+                response:
+                  externalValue: "./examples/getAirqualityCurrent.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/airquality/v1/daily/{latitude}/{longitude}":
+    get:
+      operationId: getAirqualityDailyForecast
+      tags:
+      - Air Quality
+      summary: Air Quality Daily Forecast
+      description: |-
+        Air quality (AQI) dailay forecasts, pollutants, and health advice for the next 3 days.
+
+        We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn about the AQIs, pollutants, supported regions and more.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/air-quality/air-daily-forecast/
+      parameters:
+      - "$ref": "#/components/parameters/latPath"
+      - "$ref": "#/components/parameters/lonPath"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getAirQualityDaily"
+              examples:
+                response:
+                  externalValue: "./examples/getAirqualityDailyForecast.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/airquality/v1/hourly/{latitude}/{longitude}":
+    get:
+      operationId: getAirqualityHourlyForecast
+      tags:
+      - Air Quality
+      summary: Air Quality Hourly Forecast
+      description: |-
+        The air quality hourly forecast API provides air quality forecast data for each hour of the next 24 hours, including AQI, pollutants concentration, sub-indexes, health effects and advice.
+
+        We recommend to read [Air Quality Info](/en/docs/resource/air-info/) to learn about the AQIs, pollutants, supported regions and more.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/air-quality/air-hourly-forecast/
+      parameters:
+      - "$ref": "#/components/parameters/latPath"
+      - "$ref": "#/components/parameters/lonPath"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getAirQualityHourly"
+              examples:
+                response:
+                  externalValue: "./examples/getAirqualityHourlyForecast.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/airquality/v1/stations/{locationId}":
+    get:
+      operationId: getAirqualityAirStation
+      tags:
+      - Air Quality
+      summary: Monitoring Station Data
+      description: |-
+        Monitoring Station Data API provides pollutant concentration values from air quality monitoring stations in each country or region.
+
+        > **Warning:** Monitoring station data is for reference only, it may be delayed, incorrect or unavailable due to various reasons such as failure, removal, maintenance or local laws and regulations.
+        {.bqdanger}
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/air-quality/air-station/
+      parameters:
+      - "$ref": "#/components/parameters/airStationIdPath"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getAirStation"
+              examples:
+                response:
+                  externalValue: "./examples/getAirqualityAirStation.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/air/now":
+    get:
+      operationId: getAirNowV7
+      tags:
+      - Air Quality
+      summary: Legacy Current Air Quality
+      description: This API is deprecated and will be discontinued on June 1, 2026. Use `/airquality/v1/current` instead.
+      deprecated: true
+      parameters:
+      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getAqiNowV7"
+              examples:
+                response:
+                  externalValue: "./examples/getAirNowV7.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/air/5d":
+    get:
+      operationId: getAirDailyV7
+      tags:
+      - Air Quality
+      summary: Legacy Air Quality Daily Forecast
+      description: This API is deprecated and will be discontinued on June 1, 2026. Use `/airquality/v1/daily` instead.
+      deprecated: true
+      parameters:
+      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getAqiDailyV7"
+              examples:
+                response:
+                  externalValue: "./examples/getAirDailyV7.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/tropical/storm-forecast":
+    get:
+      operationId: getStormForecast
+      tags:
+      - Storm
+      summary: Storm Forecast
+      description: |-
+        Storm Forecast API provides tropical cyclones information for a specific tropical cyclone, the data including forecast tropical cyclones location, level, pressure, wind and etc.
+
+        > **Note:** For inactive storms, the returned data is **NULL**, please get the storms status by [Storm List API](/en/docs/api/tropical-cyclone/storm-list/) first.
+      parameters:
+      - "$ref": "#/components/parameters/stormIdQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getStormForecast"
+              examples:
+                response:
+                  externalValue: "./examples/getStormForecast.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/tropical-cyclone/storm-forecast/
+  "/v7/tropical/storm-track":
+    get:
+      operationId: getStormTrack
+      tags:
+      - Storm
+      summary: Storm Track
+      description: Get the tropical cyclones location, level, pressure, windspeed, and track path of active storm in major ocean basins around the world.
+      parameters:
+      - "$ref": "#/components/parameters/stormIdQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getStormTrack"
+              examples:
+                response:
+                  externalValue: "./examples/getStormTrack.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/tropical-cyclone/storm-track/
+  "/v7/tropical/storm-list":
+    get:
+      operationId: getStormList
+      tags:
+      - Storm
+      summary: Storm List
+      description: |-
+        Get a list of tropical cyclones for the last 2 years in major ocean basins around the world.
+
+        > Only the coastal areas of China are supported now, i.e. `basin=NP`
+      parameters:
+      - "$ref": "#/components/parameters/basinQuery"
+      - "$ref": "#/components/parameters/stormYearQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getStormList"
+              examples:
+                response:
+                  externalValue: "./examples/getStormList.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/tropical-cyclone/storm-list/
+  "/v7/ocean/tide":
+    get:
+      operationId: getOceanTide
+      tags:
+      - Ocean
+      summary: Tide
+      description: Global tidal data for the next 10 days, including tide table and hourly tide forecast data.
+      parameters:
+      - "$ref": "#/components/parameters/tideStationIdQuery"
+      - "$ref": "#/components/parameters/date10Query"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getTide"
+              examples:
+                response:
+                  externalValue: "./examples/getOceanTide.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/ocean/tide/
+  "/v7/ocean/currents":
+    get:
+      operationId: getOceanCurrents
+      tags:
+      - Ocean
+      summary: Ocean Currents
+      description: Provides surface ocean current speed and direction forecasts for the next 10 days.
+      deprecated: true
+      parameters:
+      - "$ref": "#/components/parameters/currentsStationIdQuery"
+      - "$ref": "#/components/parameters/date10Query"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getCurrents"
+              examples:
+                response:
+                  externalValue: "./examples/getOceanCurrents.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/solarradiation/v1/forecast/{latitude}/{longitude}":
+    get:
+      operationId: getSolarradiationForecast
+      tags:
+      - Solar Irradiation
+      summary: Solar Radiation Forecast
+      description: Provide solar radiation forecasts and related data at 15-minute intervals for any location worldwide, up to 60 hours ahead, with a spatial resolution of 1×1 km.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/solar-radiation/solar-radiation-forecast/
+      parameters:
+      - "$ref": "#/components/parameters/latPath"
+      - "$ref": "#/components/parameters/lonPath"
+      - "$ref": "#/components/parameters/solarRadiationHoursQuery"
+      - "$ref": "#/components/parameters/solarRadiationIntervalQuery"
+      - "$ref": "#/components/parameters/solarRadiationTiltQuery"
+      - "$ref": "#/components/parameters/solarRadiationAzimuthQuery"
+      - "$ref": "#/components/parameters/solarRadiationExtraQuery"
+      - "$ref": "#/components/parameters/localtimeQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getSolarRadiationForecast"
+              examples:
+                response:
+                  externalValue: "./examples/getSolarradiationForecast.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/solar-radiation/{hours}":
+    get:
+      operationId: getSolarRadiationV7
+      tags:
+      - Solar Irradiation
+      summary: Legacy Solar Radiation
+      deprecated: true
+      description: This API is deprecated and will be discontinued on December 31, 2026. Use `/solarradiation/v1/forecast/` instead.
+      parameters:
+      - "$ref": "#/components/parameters/hours72Path"
+      - "$ref": "#/components/parameters/lonlatQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getSolarRadiation"
+              examples:
+                response:
+                  externalValue: "./examples/getSolarRadiationV7.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/astronomy/moon":
+    get:
+      operationId: getAstronomyMoon
+      tags:
+      - Astronomy
+      summary: Moon and Moon Phase
+      description: Get moonrise and moonset and hourly moon phase data for the next 60 days at any location worldwide.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/astronomy/moon-and-moon-phase/
+      parameters:
+      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/date60Query"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getMoon"
+              examples:
+                response:
+                  externalValue: "./examples/getAstronomyMoon.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/astronomy/sun":
+    get:
+      operationId: getAstronomSun
+      tags:
+      - Astronomy
+      summary: Sunrise and Sunset
+      description: Get the sunrise and sunset times for the next 60 days at any location worldwide.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/astronomy/sunrise-sunset/
+      parameters:
+      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/date60Query"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getSun"
+              examples:
+                response:
+                  externalValue: "./examples/getAstronomSun.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/astronomy/solar-elevation-angle":
+    get:
+      operationId: getAstronomySolarElevationAngle
+      tags:
+      - Astronomy
+      summary: Solar Elevation Angle
+      description: Get global solar elevation angle and azimuth.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/astronomy/solar-elevation-angle/
+      parameters:
+      - "$ref": "#/components/parameters/lonlatQuery"
+      - "$ref": "#/components/parameters/dateQuery"
+      - "$ref": "#/components/parameters/timeQuery"
+      - "$ref": "#/components/parameters/tzQuery"
+      - "$ref": "#/components/parameters/altQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getSolarAngles"
+              examples:
+                response:
+                  externalValue: "./examples/getAstronomySolarElevationAngle.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/finance/v1/summary":
+    get:
+      operationId: getConsoleFinance
+      tags:
+      - Console
+      summary: Finance Summary
+      description: |-
+        Retrieve your financial and billing summary.
+
+        > **Hint:** The data returned is as of the previous hour or earlier, it may be delayed from the data displayed in the Console.
+
+        ## Privileges
+
+        This API requires the account owner to enable permissions for the credentials in the Console.
+
+        1. [Go to Console - Project](https://console.qweather.com/project)
+        2. Click on the credential that requires the Console API to be enabled.
+        3. Scroll down to "Console data privileges".
+        4. Check "Allow access to finance summary data".
+        5. Click the Save button.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/console/finance/
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getFinance"
+              examples:
+                response:
+                  externalValue: "./examples/getConsoleFinance.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/metrics/v1/stats":
+    get:
+      operationId: getConsoleStats
+      tags:
+      - Console
+      summary: Stats
+      description: |-
+        Retrieve your API traffic statistics for the last 24 hours.
+
+        > **Hint:** The data returned is as of the previous hour or earlier, it may be delayed from the data displayed in the Console.
+
+        ## Privileges
+
+        This API requires the account owner to enable permissions for the credentials in the Console.
+
+        1. [Go to Console - Project](https://console.qweather.com/project)
+        2. Click on the credential that requires the Console API to be enabled.
+        3. Scroll down to "Console data privileges".
+        4. Check the desired permissions in "API traffic stats":
+           - "Allow access to overall API traffic stats", aggregate all projects and credentials, including deleted.
+           - "Allow access to API traffic stats by project", filtered by `project` parameter.
+           - “Allow access to API traffic by stats credential”, filtered by `credential` parameter.
+        5. Click the Save button.
+
+        Note: deleted projects or credentials cannot be queried individually (such as using filters `project` or `credential`), but their traffic stats are included in the overall aggregation.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/console/stats/
+      parameters:
+      - "$ref": "#/components/parameters/pidQuery"
+      - "$ref": "#/components/parameters/kidQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getStats"
+              examples:
+                response:
+                  externalValue: "./examples/getConsoleStats.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/geo/v2/city/top":
+    get:
+      operationId: getGeoTopcity
+      tags:
+      - Geo
+      summary: Top City
+      description: Get a list of popular cities around the world.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/geoapi/top-city/
+      parameters:
+      - "$ref": "#/components/parameters/rangeQuery"
+      - "$ref": "#/components/parameters/numberQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getTopCity"
+              examples:
+                response:
+                  externalValue: "./examples/getGeoTopcity.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/geo/v2/poi/range":
+    get:
+      operationId: getGeoPoirange
+      tags:
+      - Geo
+      summary: POI Range
+      description: POI Range API provides the ability to query all POI information within a specified area.
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/geoapi/poi-range/
+      parameters:
+      - "$ref": "#/components/parameters/lonlatQuery"
+      - "$ref": "#/components/parameters/poiTypeQuery"
+      - "$ref": "#/components/parameters/radiusQuery"
+      - "$ref": "#/components/parameters/numberQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getPoiRange"
+              examples:
+                response:
+                  externalValue: "./examples/getGeoPoirange.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/grid-weather/now":
+    get:
+      operationId: getGridWeatherNow
+      tags:
+      - Weather
+      summary: Grid Weather Real-time
+      description: |-
+        Weather forecast data based on numerical models, to provide current weather data at specified coordinates around the world, with a spatial resolution of 3-5 kilometers.
+
+        > **Hint:** The grid weather data is based on Numerical Weather Prediction (NWP) models, and it is not suitable for comparison with observation station data. For station-based city weather data, please refer to the [City Weather API](/en/docs/api/weather/weather-now/). Grid weather uses UTC+0 as the time zone.
+      parameters:
+      - "$ref": "#/components/parameters/lonlatQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      - "$ref": "#/components/parameters/unitQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getGridWeatherNow"
+              examples:
+                response:
+                  externalValue: "./examples/getGridWeatherNow.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/weather/grid-weather-now/
+  "/v7/grid-weather/{days}":
+    get:
+      operationId: getGridWeatherDaily
+      tags:
+      - Weather
+      summary: Grid Weather Daily Forecast
+      description: |-
+        Weather forecast data based on numerical models, to provide daily weather forecasts at specified coordinates around the world, with a spatial resolution of 3-5 kilometers.
+
+        > **Hint:** The grid weather data is based on Numerical Weather Prediction (NWP) models, and it is not suitable for comparison with observation station data. For station-based city weather data, please refer to the [City Weather API](/en/docs/api/weather/weather-daily-forecast/). Grid weather uses UTC+0 as the time zone.
+      parameters:
+      - "$ref": "#/components/parameters/days7Path"
+      - "$ref": "#/components/parameters/lonlatQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      - "$ref": "#/components/parameters/unitQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getGridWeatherDaily"
+              examples:
+                response:
+                  externalValue: "./examples/getGridWeatherDaily.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/weather/grid-weather-daily-forecast/
+  "/v7/grid-weather/{hours}":
+    get:
+      operationId: getGridWeatherHourly
+      tags:
+      - Weather
+      summary: Grid Weather Hourly Forecast
+      description: |-
+        Weather forecast data based on numerical models, to provide hourly weather forecasts at specified coordinates around the world, with a spatial resolution of 3-5 kilometers.
+
+        > **Hint:** The grid weather data is based on Numerical Weather Prediction (NWP) models, and it is not suitable for comparison with observation station data. For station-based city weather data, please refer to the [City Weather API](/en/docs/api/weather/weather-hourly-forecast/). Grid weather uses UTC+0 as the time zone.
+      parameters:
+      - "$ref": "#/components/parameters/hours72Path"
+      - "$ref": "#/components/parameters/lonlatQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      - "$ref": "#/components/parameters/unitQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getGridWeatherHourly"
+              examples:
+                response:
+                  externalValue: "./examples/getGridWeatherHourly.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/weather/grid-weather-hourly-forecast/
+  "/v7/historical/weather":
+    get:
+      operationId: getHistoricalWeather
+      tags:
+      - Weather
+      summary: Time Machine for Weather
+      description: "Get the last 10 days of weather history data.\n\n> Let's say, today is December 30, you can get historical data from Dec. 20 to Dec. 29.\n\n> QWeather also provides historical reanalysis weather data from 2000 to present. If you need more historical weather data, please provide the following information to <sales@qweather.com>.\n> \n> * Company name\n> * Contact information\n> * City or coordinates\n> * Date range"
+      parameters:
+      - "$ref": "#/components/parameters/locationIdQuery"
+      - "$ref": "#/components/parameters/historicalDateQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      - "$ref": "#/components/parameters/unitQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getHistoricalWeather"
+              examples:
+                response:
+                  externalValue: "./examples/getHistoricalWeather.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/time-machine/time-machine-weather/
+      x-aliases:
+      - "/docs/histroical/histroical-weather/"
+  "/v7/historical/air":
+    get:
+      operationId: getHistoricalAir
+      tags:
+      - Air Quality
+      summary: Time Machine for Air Quality
+      description: |-
+        Get the last 10 days of air quality history data.
+
+        > Let's say, today is December 30, you can get data from Dec. 20 to Dec. 29.
+      parameters:
+      - "$ref": "#/components/parameters/locationIdQuery"
+      - "$ref": "#/components/parameters/historicalDateQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getHistoricalAir"
+              examples:
+                response:
+                  externalValue: "./examples/getHistoricalAir.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/time-machine/time-machine-air/
+      x-aliases:
+      - "/docs/histroical/histroical-air/"
+components:
+  securitySchemes:
+    jwt:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-QW-Api-Key
+  responses:
+    defaultError:
+      description: Request failed, see [Error Code](https://dev.qweather.com/docs/resource/error-code/).
+      content:
+        application/problem+json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: object
+                description: Error details.
+                properties:
+                  status:
+                    type: number
+                    description: The HTTP status code for this error.
+                    enum:
+                    - 400
+                    - 401
+                    - 403
+                    - 404
+                    - 429
+                    - 500
+                  type:
+                    type: string
+                    description: A URL that identifies the error type. Open the URL for more information.
+                  title:
+                    type: string
+                    description: A short description of the error.
+                  detail:
+                    type: string
+                    description: A detailed description of the error.
+                  invalidParams:
+                    type: array
+                    description: The invalid or missing parameters.
+                    items:
+                      type: string
+                      description: An invalid or missing parameter. Returned only for HTTP 400 errors.
+  parameters:
+    latPath:
+      name: latitude
+      in: path
+      required: true
+      description: The latitude of the desired location. Decimal format, up to 2 decimal places. For example `39.92`
+      schema:
+        type: number
+        minimum: -90
+        maximum: 90
+        example: 39.92
+    lonPath:
+      name: longitude
+      in: path
+      description: The longitude of the desired location. Decimal format, up to 2 decimal places. For example `116.41`
+      required: true
+      schema:
+        type: number
+        minimum: -180
+        maximum: 180
+        example: 116.41
+    airStationIdPath:
+      name: locationId
+      in: path
+      description: LocationID of air quality monitoring station, LocationID can be obtained by [GeoAPI](/en/docs/api/geoapi/). For example `P58911`
+      required: true
+      schema:
+        type: string
+        example: P58911
+    locationQuery:
+      name: location
+      in: query
+      description: 'The location to be queried, support [LocationID](/en/docs/resource/glossary/#locationid) or comma-separated [longitude and latitude](/en/docs/resource/glossary/#coordinate) (decimal, up to 2 decimal places), LocationID can be obtained by [GeoAPI](/en/docs/api/geoapi/). Example: `location=101010100` or `location=116.41,39.92`'
+      required: true
+      schema:
+        type: string
+        example: 116.41,39.92
+    lonlatQuery:
+      name: location
+      in: query
+      description: |-
+        The comma-separated [longitude and latitude](/en/docs/resource/glossary/#coordinate) (decimal, up to 2 decimal places) of the location to be queried.
+
+        For example: `location=116.41,39.92`
+      required: true
+      schema:
+        type: string
+        example: 116.41,39.92
+    airStationIdQuery:
+      name: location
+      in: query
+      description: The monitoring station [LocationID](/en/docs/resource/glossary/#locationid), for example `location=P58911`.
+      required: true
+      schema:
+        type: string
+        example: P58911
+    locationIdQuery:
+      name: location
+      in: query
+      description: "The location to be queried, only support [LocationID](/en/docs/resource/glossary/#locationid) and LocationID can be obtained by [GeoAPI](/en/docs/api/geoapi/). \n\nFor example: `location=101010100`"
+      required: true
+      schema:
+        type: string
+        example: '101010100'
+    colorQuery:
+      name: color
+      in: query
+      description: The color scheme. See [Color Palette](/en/docs/resource/color-pallet/).
+      required: false
+      schema:
+        type: string
+        default: light
+        enum:
+        - light
+        - dark
+        - local
+        example: light
+    tideStationIdQuery:
+      name: location
+      in: query
+      description: The tide station [LocationID](/en/docs/resource/glossary/#locationid), for example `location=P66981`.
+      required: true
+      schema:
+        type: string
+        example: P66981
+    currentsStationIdQuery:
+      name: location
+      in: query
+      description: The ocean current station [LocationID](/en/docs/resource/glossary/#locationid), for example `location=P2951`.
+      required: true
+      schema:
+        type: string
+        example: P2951
+    admQuery:
+      name: adm
+      in: query
+      description: Superior administrative divisions of a city, useful for excluding cities with similar names or for filtering results. Example `adm = beijing`
+      required: false
+      schema:
+        type: string
+        example: beijing
+    rangeQuery:
+      name: range
+      in: query
+      description: 'Set to search only within a certain country or region. The country and region name needs to use [country code ISO 3166](/en/docs/resource/glossary/#iso-3166). If this parameter is not set, the search range will be all cities. Example: `range=cn`'
+      required: false
+      schema:
+        type: string
+        example: cn
+    numberQuery:
+      name: number
+      in: query
+      description: Number of the results in response, from 1 to 20, 10 is the default.
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 20
+        default: 10
+        example: 10
+    poiTypeQuery:
+      name: type
+      description: "Choose to search for a certain type of POI. \n\n- `scenic` Scenic Spot\n- `TSTA` Tide Station"
+      in: query
+      required: true
+      schema:
+        type: string
+        enum:
+        - scenic
+        - CSTA
+        - TSTA
+        example: scenic
+    poiCityQuery:
+      name: city
+      description: "Search for POI within a given city. The city name can be text or the city's LocationID. \n\n> The city name is an exact match. It is recommended to use LocaitonID. If the text cannot be matched, the data returned will be empty."
+      in: query
+      required: false
+      schema:
+        type: string
+        example: '101010100'
+    langQuery:
+      name: lang
+      in: query
+      description: Multi-language setting, please see [Language](/en/docs/resource/language/) to find out how our multi-language works and how to set up.
+      required: false
+      schema:
+        type: string
+        example: en
+    stormIdQuery:
+      name: stormid
+      in: query
+      description: The storm ID that needs to be queried, StormID can be obtained by [Storm List API](/en/docs/api/tropical-cyclone/storm-list/), e.g., `stormid=NP2018`
+      required: true
+      schema:
+        type: string
+        example: NP2018
+    indexTypeQuery:
+      name: type
+      in: query
+      description: Weather indices type ID, including car wash index, clothing index, fishing index, etc. You can get multiple types of weather indices at one time, and multiple types are separated by comma, e.g., `type=3,5`, and all indices type see [Indices Info](/en/docs/resource/indices-info/).
+      required: true
+      schema:
+        type: string
+        example: '1'
+    localtimeQuery:
+      name: localTime
+      in: query
+      description: Whether to return local time for the requested location. `true` returns local time; `false` returns UTC time (default).
+      required: false
+      schema:
+        type: boolean
+        default: false
+        example: false
+    solarRadiationHoursQuery:
+      name: hours
+      in: query
+      description: 'Forecast hours, supports 1-60 hours, default is `24`. For example: `hours=12`'
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 60
+        default: 24
+        example: 24
+    solarRadiationIntervalQuery:
+      name: interval
+      in: query
+      description: 'Interval of forecast data, supports `15`, `30`, `60` minutes, default is `60`. For example: `interval=15`'
+      required: false
+      schema:
+        type: integer
+        default: 60
+        enum:
+        - 15
+        - 30
+        - 60
+        example: 60
+    solarRadiationTiltQuery:
+      name: tilt
+      in: query
+      description: 'The tilt angle of the PV system (range 0-90, integer). Required when `extra=poa`. For example: `tilt=30`'
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 90
+    solarRadiationAzimuthQuery:
+      name: azimuth
+      in: query
+      description: 'The azimuth angle of the PV system (range 0-359, integer, 0 = North). Required when `extra=poa`. For example: `azimuth=180`'
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 359
+    solarRadiationExtraQuery:
+      name: extra
+      in: query
+      description: 'Additional information provided for the current solar radiation forecast, optional `weather` (basic weather data) and `poa` (plane of array irradiance, must pass both `tilt` and `azimuth`), multiple items are separated by commas. For example: `extra=weather`'
+      required: false
+      schema:
+        type: string
+    timeQuery:
+      name: time
+      in: query
+      description: Set time, format is HHmm, 24-hour, e.g., `time=1230`
+      required: true
+      schema:
+        type: string
+        example: '1230'
+    dateQuery:
+      name: date
+      in: query
+      description: Set date, format is yyyyMMdd, e.g., `date=20200531`
+      required: true
+      schema:
+        type: string
+        example: '20180531'
+        format: date
+    date10Query:
+      name: date
+      in: query
+      description: 'Set the date, up to 10 days in the future (including today). The date format is yyyyMMdd. Eexample: `date=20200531`'
+      required: true
+      schema:
+        type: string
+        format: date
+        example: '20200531'
+    date60Query:
+      name: date
+      in: query
+      description: 'Set the date, up to 60 days in the future (including today). The date format is yyyyMMdd. Example: `date=20200531`'
+      required: true
+      schema:
+        type: string
+        format: date
+        example: '20200531'
+    days30Path:
+      name: days
+      in: path
+      description: "Forecast days, supports up to 30 days, available value:\n \n- `3d` 3 days forecast.\n- `7d` 7 days forecast.\n- `10d` 10 days forecast.\n- `15d` 15 days forecast.\n- `15d` 30 days forecast."
+      required: true
+      schema:
+        type: string
+        example: 3d
+        enum:
+        - 3d
+        - 7d
+        - 10d
+        - 15d
+        - 30d
+    tzQuery:
+      name: tz
+      in: query
+      description: Location time zone, e.g., `tz=0800` or `tz=-0530`
+      required: true
+      schema:
+        type: string
+        example: '0800'
+    altQuery:
+      name: alt
+      in: query
+      description: Location altitude, in meters, e.g., `alt=43`
+      required: true
+      schema:
+        type: number
+        example: 43
+    days3Path:
+      name: days
+      in: path
+      description: "Forecast days, supports up to 3 days, available value:\n \n- `1d` 1 days forecast.\n- `3d` 3 days forecast."
+      required: true
+      schema:
+        type: string
+        example: 1d
+        enum:
+        - 1d
+        - 3d
+    hours168Path:
+      name: hours
+      in: path
+      description: "Forecast hours, supports up to 168 hours, available value:\n \n- `24h` 24 hours forecast.\n- `72h` 72 hours forecast.\n- `168h` 168 hours forecast."
+      required: true
+      schema:
+        type: string
+        example: 24h
+        enum:
+        - 24h
+        - 72h
+        - 168h
+    hours72Path:
+      name: hours
+      in: path
+      description: "Forecast hours, supports up to 72 hours, available value:\n \n- `24h` 24 hours forecast.\n- `72h` 72 hours forecast."
+      required: true
+      schema:
+        type: string
+        example: 24h
+        enum:
+        - 24h
+        - 72h
+    basinQuery:
+      name: basin
+      in: query
+      description: |-
+        The basin where the storm needs to be queried. For now, only support `NP`.
+        - `AL` North Atlantic
+        - `EP` Eastern Pacific
+        - `NP` NorthWest Pacific
+        - `SP` SouthWestern Pacific
+        - `NI` North Indian North Indian Ocean
+        - `SI` South Indian South Indian Ocean
+      required: true
+      schema:
+        type: string
+        example: NP
+        enum:
+        - NP
+    stormYearQuery:
+      name: year
+      in: query
+      description: Support to query storm of this year and last year, e.g., `year=2020`
+      required: true
+      schema:
+        type: number
+        example: 2023
+    pidQuery:
+      name: project
+      in: query
+      description: Specify a Project ID to get its API traffic stats. Do not pass both `project` and `credential` in a single request.
+      required: false
+      schema:
+        type: string
+        example: project_123
+    kidQuery:
+      name: cred
+      in: query
+      description: Specify a Credential ID to get its API traffic stats. Do not pass both `project` and `credential` a single request.
+      required: false
+      schema:
+        type: string
+        example: cred_abc
+    radiusQuery:
+      name: radius
+      in: query
+      required: false
+      description: Search radius from 1 to 50 kilometers. The default is 5 kilometers.
+      schema:
+        type: number
+        minimum: 1
+        maximum: 50
+        default: 5
+        example: 10
+    unitQuery:
+      name: unit
+      in: query
+      required: false
+      description: Data unit. Use `m` for metric units (default) or `i` for imperial units.
+      schema:
+        type: string
+        enum:
+        - m
+        - i
+        default: m
+        example: m
+    days7Path:
+      name: days
+      in: path
+      required: true
+      description: Forecast days. Available values are `3d` and `7d`.
+      schema:
+        type: string
+        enum:
+        - 3d
+        - 7d
+        example: 3d
+    historicalDateQuery:
+      name: date
+      in: query
+      required: true
+      description: A date within the most recent 10 days, excluding today, in `yyyyMMdd` format.
+      schema:
+        type: string
+        example: '20200725'
+  schemas:
+    asOf:
+      type: string
+      description: The cutoff time for the current data in ISO 8601 UTC format.
+      format: date-time
+    referObject:
+      type: object
+      description: Data sources and licensing information.
+      properties:
+        sources:
+          type: array
+          description: Data source and other statements, **may be null**
+          nullable: true
+          items:
+            type: string
+        license:
+          type: array
+          description: Data license, **may be null**
+          nullable: true
+          items:
+            type: string
+    metaTagObject:
+      type: object
+      properties:
+        tag:
+          type: string
+          description: Unique tag for this data
+    metaObsObject:
+      type: object
+      properties:
+        observationTime:
+          type: string
+          description: The actual observation time.
+          format: date-time
+    metaAttributeObject:
+      type: object
+      properties:
+        attributions:
+          type: array
+          items:
+            type: string
+            description: Data source attribution, URL, or statement that must be displayed with the current data. May be empty.
+          description: Attribution data.
+    metaZeroObject:
+      type: object
+      properties:
+        zeroResult:
+          type: boolean
+          description: "`true` indicates the request is successful but no data is available, e.g. no alert data for the queried location."
+          default: false
+    getCityLookup:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        location:
+          "$ref": "#/components/schemas/locationArray"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    locationArray:
+      type: array
+      description: Location information list.
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: Location Name
+          id:
+            type: string
+            description: Location ID
+          lat:
+            type: string
+            description: Latitude of the location
+          lon:
+            type: string
+            description: Longitude of the location
+          adm2:
+            type: string
+            description: Name of the superior administrative division of the location
+          adm1:
+            type: string
+            description: The first-level administrative area of ​​the location
+          country:
+            type: string
+            description: Country name of the location
+          tz:
+            type: string
+            description: Location [timezone](/en/docs/resource/glossary/#timezone)
+          utcOffset:
+            type: string
+            description: The number of hours offset between local time and UTC time, refer to [UTC Offset](/en/docs/resource/glossary/#utc-offset)
+          isDst:
+            type: string
+            description: Is the location currently on [daylight saving time](/en/docs/resource/glossary/#daylight-saving-time). `1` for daylight saving time and `0` for not in daylight saving time
+          type:
+            type: string
+            description: Location type
+          rank:
+            type: string
+            description: "[Location Rank](/en/docs/resource/glossary/#rank)"
+          fxLink:
+            type: string
+            format: uri
+            description: Responsive web page of this location, easy to embed in your website or APP
+    getPoiLookup:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        poi:
+          "$ref": "#/components/schemas/poiArray"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getWeatherNow:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        now:
+          allOf:
+          - type: object
+            properties:
+              obsTime:
+                "$ref": "#/components/schemas/obsTime"
+                description: Observation time
+          - "$ref": "#/components/schemas/weatherBasicObject"
+          - type: object
+            properties:
+              feelsLike:
+                type: string
+                description: Feels like temperature
+              vis:
+                type: string
+                description: Visibility, KM
+          description: Current data.
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getWeatherDaily:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        daily:
+          "$ref": "#/components/schemas/weatherDailyArray"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getWeatherHourly:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        hourly:
+          allOf:
+          - type: object
+            properties:
+              fxTime:
+                "$ref": "#/components/schemas/fxTime"
+                description: Forecast time
+          - "$ref": "#/components/schemas/weatherBasicObject"
+          - type: object
+            properties:
+              pop:
+                type: string
+                description: Precipitation probability in percent, **may be null**
+          description: Hourly data.
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    weatherBasicObject:
+      type: object
+      properties:
+        temp:
+          type: string
+          description: 'Temperature, default unit: Celsius.'
+        icon:
+          type: string
+          description: "[Icon code](/en/docs/resource/icons/) for weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)."
+        text:
+          type: string
+          description: Weather condition description.
+        wind360:
+          type: string
+          description: "[Wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree"
+        windDir:
+          type: string
+          description: "[Wind direction](/en/docs/resource/wind-info/#wind-direction)"
+        windScale:
+          type: string
+          description: "[Wind scale](/en/docs/resource/wind-info/#wind-scale)"
+        windSpeed:
+          type: string
+          description: "[Wind speed](/en/docs/resource/wind-info/#wind-speed), km/h."
+        humidity:
+          type: string
+          description: Relative humidity in percent
+        precip:
+          type: string
+          description: 'Precipitation, default unit: millimeters.'
+        pressure:
+          type: string
+          description: 'Atmospheric pressure, default unit: hPa.'
+        cloud:
+          type: string
+          description: Cloud cover in percent, **may be null**
+        dew:
+          type: string
+          description: Dew point temperature, **may be null**
+    weatherDailyArray:
+      type: array
+      description: Daily weather forecast list.
+      items:
+        type: object
+        properties:
+          fxDate:
+            "$ref": "#/components/schemas/fxDate"
+            description: Forecast date
+          sunrise:
+            type: string
+            description: "[Sunrise time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**"
+          sunset:
+            type: string
+            description: "[Sunset time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**"
+          moonrise:
+            type: string
+            description: "[Moonrise time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**"
+          moonset:
+            type: string
+            description: "[Moonset time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**"
+          moonPhase:
+            type: string
+            description: "[Moon phase name](/en/docs/resource/sun-moon-info/#moon-phase)"
+          moonPhaseIcon:
+            type: string
+            description: "[Icon code](/en/docs/resource/icons/) for moon phase. See also [QWeather Icons](https://icons.qweather.com/en/)"
+          tempMax:
+            type: string
+            description: The highest temperature of the day
+          tempMin:
+            type: string
+            description: The lowest temperature of the day
+          iconDay:
+            type: string
+            description: "[Icon code](/en/docs/resource/icons/) for daytime weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)"
+          textDay:
+            type: string
+            description: Weather conditions for daytime
+          iconNight:
+            type: string
+            description: "[Icon code](/en/docs/resource/icons/) for night weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)"
+          textNight:
+            type: string
+            description: Weather conditions for night
+          wind360Day:
+            type: string
+            description: Daytime [wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree
+          windDirDay:
+            type: string
+            description: Daytime [wind direction](/en/docs/resource/wind-info/#wind-direction)
+          windScaleDay:
+            type: string
+            description: Daytime [wind scale](/en/docs/resource/wind-info/#wind-scale)
+          windSpeedDay:
+            type: string
+            description: Daytime [wind speed](/en/docs/resource/wind-info/#wind-speed), KM/H
+          wind360Night:
+            type: string
+            description: Nightly [wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree
+          windDirNight:
+            type: string
+            description: Nightly [wind direction](/en/docs/resource/wind-info/#wind-direction)
+          windScaleNight:
+            type: string
+            description: Nightly [wind scale](/en/docs/resource/wind-info/#wind-scale)
+          windSpeedNight:
+            type: string
+            description: Nightly [wind speed](/en/docs/resource/wind-info/#wind-speed), KM/H
+          humidity:
+            type: string
+            description: Relative humidity in percent
+          precip:
+            type: string
+            description: Estimated total precipitation for the day
+          uvIndex:
+            type: string
+            description: UV index
+          pressure:
+            type: string
+            description: 'Atmospheric pressure, default unit: hPa.'
+          vis:
+            type: string
+            description: Visibility, KM
+          cloud:
+            type: string
+            description: Cloud cover in percent, **may be null**
+          dew:
+            type: string
+            description: Dew point temperature, **may be null**
+    getWeatherIndex:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        daily:
+          type: array
+          items:
+            type: object
+            properties:
+              date:
+                type: string
+                format: date
+                description: Forecast date
+              type:
+                type: string
+                description: Weather indices forecast type ID
+              name:
+                type: string
+                description: Name of weather indices type
+              level:
+                type: string
+                description: Weather indices level
+              category:
+                type: string
+                description: Weather indices category name
+              text:
+                type: string
+                description: Description of the weather indices, **may be null**
+          description: Daily forecast data.
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getMinutely:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        summary:
+          type: string
+          description: Precipitation description
+        minutely:
+          type: array
+          description: Minutely precipitation data.
+          items:
+            type: object
+            properties:
+              fxTime:
+                "$ref": "#/components/schemas/fxTime"
+                description: Forecast time
+              precip:
+                type: string
+                description: Accumulated precipitation in 5 minutes, unit is millimeter.
+              type:
+                type: string
+                description: Type of precipitation, `rain` and `snow`
+                enum:
+                - rain
+                - snow
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getAlert:
+      type: object
+      properties:
+        metadata:
+          allOf:
+          - "$ref": "#/components/schemas/metaTagObject"
+          - "$ref": "#/components/schemas/metaZeroObject"
+          - "$ref": "#/components/schemas/metaAttributeObject"
+          description: Metadata for this response.
+        alerts:
+          type: array
+          description: Weather alert list.
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The ID of this alert message
+              senderName:
+                type: string
+                description: The name of the agency or authority issuing this alert, **may be null**
+                nullable: true
+              issuedTime:
+                type: string
+                format: date-time
+                description: The time when the original alert message was generated. The actual release or receipt time may be slightly delayed.
+              messageType:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    enum:
+                    - alert
+                    - update
+                    - cancel
+                    description: "[The code of the alert message nature](/en/docs/resource/warning-info/#message-type)"
+                  supersedes:
+                    type: array
+                    description: Alert IDs that are superseded by this message, only relevant when `messageType.code` is **update** or **cancel**.
+                    items:
+                      type: string
+                description: messageType data.
+              eventType:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: "[Name of the alert event type](/en/docs/resource/warning-info/#event-and-code)"
+                  code:
+                    type: string
+                    description: "[Code of the alert event type](/en/docs/resource/warning-info/#event-and-code)"
+                description: eventType data.
+              urgency:
+                type: string
+                description: The [urgency](/en/docs/resource/warning-info/#urgency) of the alert message, **may be null**
+                nullable: true
+              severity:
+                type: string
+                description: The [severity](/en/docs/resource/warning-info/#severity) of the alert message
+              certainty:
+                type: string
+                description: The [certainty](/en/docs/resource/warning-info/#certainty) of the alert message, **may be null**
+                nullable: true
+              icon:
+                type: string
+                description: "[Icon code](/en/docs/resource/icons/) for this alert"
+              color:
+                type: object
+                description: RGBA color representing the alert severity.
+                properties:
+                  code:
+                    type: string
+                    description: "[Color code for this alert](/en/docs/resource/warning-info/#color)"
+                  red:
+                    type: number
+                    description: Red component in RGBA for this alert, range 0–255
+                  green:
+                    type: number
+                    description: Green component in RGBA for this alert, range 0–255
+                  blue:
+                    type: number
+                    description: Blue component in RGBA for this alert, range 0–255
+                  alpha:
+                    type: number
+                    description: Alpha (opacity) in RGBA for this alert, range 0-1
+              effectiveTime:
+                type: string
+                format: date-time
+                description: The effective time of the alert message, **may be null**
+              onsetTime:
+                type: string
+                format: date-time
+                description: The expected time of the beginning of this alert event, **may be null**
+              expireTime:
+                type: string
+                format: date-time
+                description: The expiry time of the alert message
+              headline:
+                type: string
+                description: Headline or brief of the alert message
+              description:
+                type: string
+                description: Description of the alert message
+              criteria:
+                type: string
+                nullable: true
+                description: The criteria or condition for triggering this alert. This is for reference only and may out of date with official standard. **May be null**
+              responseTypes:
+                type: array
+                description: Type code of recommended action for this alert, **may be null**
+                nullable: true
+                items:
+                  type: string
+              instruction:
+                type: string
+                description: The recommended action for this alert, **may be null**
+                nullable: true
+    getWarning:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        warning:
+          "$ref": "#/components/schemas/warningArray"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    warningArray:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+            description: The unique ID of this warning, which can be used to determine whether this warning already exists.
+          sender:
+            type: string
+            description: Warning issuing unit, **may be null**
+          pubTime:
+            type: string
+            format: date-time
+            description: Warning release time
+          title:
+            type: string
+            description: Title of warning
+          startTime:
+            type: string
+            format: date-time
+            description: Warning start time
+          endTime:
+            type: string
+            format: date-time
+            description: End time of warning
+          status:
+            type: string
+            description: The release status of the warning message, including "Active" and "Update". When the warning message is "Update", it means that this warning replaces or updates the warning message specified in `related`.
+          level:
+            type: string
+            description: Warning level, this field is deprecated and the value will be null or out of date. Please uses `severity` instead
+          severity:
+            type: string
+            description: Warning severity, including "unknown", "Minor", "Moderate", "Severe" and "Extreme"
+          severityColor:
+            type: string
+            description: Warning severity color, including "White", "Blue", "Green", "Yellow", "Orange", "Red" and "Black". **may be null**
+          type:
+            type: string
+            description: "[Warning event type ID](/en/docs/resource/warning-info/#event-and-code)"
+          typeName:
+            type: string
+            description: "[Warning event type name](/en/docs/resource/warning-info/#event-and-code)"
+          urgency:
+            type: string
+            description: "[The urgency of the warning message](/en/docs/resource/warning-info/#urgency), **may be null**"
+          certainty:
+            type: string
+            description: "[The certainty of the warning message](/en/docs/resource/warning-info/#certainty), **may be null**"
+          text:
+            type: string
+            description: Description of the warning
+          related:
+            type: string
+            description: The warning ID associated with this warning, returned when the warning status is `update`. **May be null**
+    getAqiNowV7:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        now:
+          "$ref": "#/components/schemas/aqiNowObjectV7"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    aqiNowObjectV7:
+      type: object
+      properties:
+        pubTime:
+          type: string
+          format: date-time
+          description: Air quality data publication time.
+        aqi:
+          type: string
+          description: Air Quality Index
+        level:
+          type: string
+          description: AQI level
+        category:
+          type: string
+          description: AQI category
+        primary:
+          type: string
+          description: The main pollutant. If `level=1`, return `NA`
+        pm10:
+          type: string
+          description: PM10
+        pm2p5:
+          type: string
+          description: PM2.5
+        no2:
+          type: string
+          description: Nitrogen dioxide
+        so2:
+          type: string
+          description: Sulfur dioxide
+        co:
+          type: string
+          description: Carbon monoxide
+        o3:
+          type: string
+          description: Ozone
+        station:
+          type: array
+          description: Monitoring station air quality data.
+          items:
+            type: object
+            properties:
+              pubTime:
+                type: string
+                format: date-time
+                description: Air quality data publication time.
+              name:
+                type: string
+                description: Monitoring station name.
+              id:
+                type: string
+                description: Monitoring station ID.
+              aqi:
+                type: string
+                description: Air Quality Index
+              level:
+                type: string
+                description: AQI level
+              category:
+                type: string
+                description: AQI category
+              primary:
+                type: string
+                description: The main pollutant. If `level=1`, return `NA`
+              pm10:
+                type: string
+                description: PM10
+              pm2p5:
+                type: string
+                description: PM2.5
+              no2:
+                type: string
+                description: Nitrogen dioxide
+              so2:
+                type: string
+                description: Sulfur dioxide
+              co:
+                type: string
+                description: Carbon monoxide
+              o3:
+                type: string
+                description: Ozone
+    getAqiDailyV7:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        daily:
+          "$ref": "#/components/schemas/aqiDailyV7"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    aqiDailyV7:
+      type: array
+      description: Daily air quality forecast data.
+      items:
+        type: object
+        properties:
+          fxDate:
+            "$ref": "#/components/schemas/fxDate"
+            description: Forecast date
+          aqi:
+            type: string
+            description: Air Quality Index
+          level:
+            type: string
+            description: AQI level
+          category:
+            type: string
+            description: AQI category
+          primary:
+            type: string
+            description: The main pollutant. If `level=1`, return `NA`
+    getAirQualityCurrent:
+      type: object
+      properties:
+        metadata:
+          allOf:
+          - "$ref": "#/components/schemas/metaTagObject"
+          - "$ref": "#/components/schemas/metaAttributeObject"
+          description: Metadata for this response.
+        indexes:
+          "$ref": "#/components/schemas/aqisArray"
+        pollutants:
+          "$ref": "#/components/schemas/pollutantSubindexArray"
+        stations:
+          "$ref": "#/components/schemas/aqiStationsArray"
+    getAirQualityDaily:
+      type: object
+      properties:
+        metadata:
+          "$ref": "#/components/schemas/metaTagObject"
+        days:
+          type: array
+          items:
+            type: object
+            properties:
+              forecastStartTime:
+                "$ref": "#/components/schemas/forecastStartTime"
+                description: The start time of the forecast data, [ISO8601 format](/docs/resource/glossary/#date-time)
+              forecastEndTime:
+                "$ref": "#/components/schemas/forecastEndTime"
+                description: The end time of the forecast data, [ISO8601 format](/docs/resource/glossary/#date-time)
+              indexes:
+                "$ref": "#/components/schemas/aqisArray"
+              pollutants:
+                "$ref": "#/components/schemas/pollutantSubindexArray"
+          description: Daily data.
+    getAirQualityHourly:
+      type: object
+      properties:
+        metadata:
+          "$ref": "#/components/schemas/metaTagObject"
+        hours:
+          type: array
+          items:
+            type: object
+            properties:
+              forecastTime:
+                "$ref": "#/components/schemas/fxTime"
+                description: Forecast time, [ISO8601 format](/docs/resource/glossary/#date-time)
+              indexes:
+                "$ref": "#/components/schemas/aqisArray"
+              pollutants:
+                "$ref": "#/components/schemas/pollutantSubindexArray"
+          description: Hourly error requests stats for the last 24 hours, ending at `asOf` (e.g., asOf=2025-03-20T09:59Z means the last array item covers 09:00–09:59 UTC).
+    getAirStation:
+      type: object
+      properties:
+        metadata:
+          "$ref": "#/components/schemas/metaAttributeObject"
+        pollutants:
+          type: array
+          description: Pollutants supported by this monitoring station.
+          items:
+            "$ref": "#/components/schemas/pollutantObject"
+    aqisArray:
+      type: array
+      description: Air quality index list.
+      minItems: 1
+      maxItems: 2
+      items:
+        type: object
+        properties:
+          code:
+            type: string
+            description: Code of [air quality index](/en/docs/resource/air-info/#supported-aqis)
+          name:
+            type: string
+            description: Name of air quality index
+          aqi:
+            type: number
+            description: "[Value of air quality index](/en/docs/resource/air-info/#aqi-value)"
+          aqiDisplay:
+            type: string
+            description: "[Display name of the AQI value](/en/docs/resource/air-info/#aqi-value)"
+          level:
+            type: string
+            description: Level of air quality index
+          category:
+            type: string
+            description: Category of air quality index
+          color:
+            type: object
+            description: RGBA color for the air quality index.
+            properties:
+              red:
+                type: number
+                description: Red in RGBA color for AQI
+                maximum: 255
+                minimum: 0
+              green:
+                type: number
+                description: Green in RGBA color for AQI
+                maximum: 255
+                minimum: 0
+              blue:
+                type: number
+                description: Blue in RGBA color for AQI
+                maximum: 255
+                minimum: 0
+              alpha:
+                type: number
+                description: Alpha in RGBA color for AQI
+                maximum: 1
+                minimum: 0
+          primaryPollutant:
+            type: object
+            description: "[Primary pollutant](/en/docs/resource/air-info/#primary-pollutant). May be empty."
+            nullable: true
+            properties:
+              code:
+                type: string
+                description: The [primary pollutant](/en/docs/resource/air-info/#primary-pollutant) code, maybe NULL.
+              name:
+                type: string
+                description: Name of primary pollutant, maybe NULL.
+              fullName:
+                type: string
+                description: Full name of primary pollutant, maybe NULL.
+          health:
+            type: object
+            nullable: true
+            description: "[AQI health information](/en/docs/resource/air-info/#health-effects-and-advice)."
+            properties:
+              effect:
+                type: string
+                description: "[Health effects of air quality](/en/docs/resource/air-info/#health-effects-and-advice), maybe NULL."
+              advice:
+                type: object
+                description: Health advice for the general and sensitive populations. May be empty.
+                properties:
+                  generalPopulation:
+                    type: string
+                    description: Health advice for general population, maybe NULL.
+                  sensitivePopulation:
+                    type: string
+                    description: Health advice for sensitive population, maybe NULL.
+    pollutantObject:
+      type: object
+      properties:
+        code:
+          type: string
+          description: The [pollutant](/en/docs/resource/air-info/#pollutants) code.
+        name:
+          type: string
+          description: Name of pollutant.
+        fullName:
+          type: string
+          description: Full name of pollutant.
+        concentration:
+          type: object
+          properties:
+            value:
+              type: number
+              description: Concentration values of pollutants.
+            unit:
+              type: string
+              description: Units for concentration values of pollutants.
+          description: concentration data.
+    pollutantSubindexArray:
+      description: Pollutant sub-index data.
+      type: array
+      items:
+        allOf:
+        - "$ref": "#/components/schemas/pollutantObject"
+        - type: object
+          properties:
+            subIndexes:
+              type: array
+              nullable: true
+              description: Sub-index list.
+              items:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    description: Code of [air quality sub-index](/en/docs/resource/air-info/#pollutant-sub-index), maybe NULL.
+                  aqi:
+                    type: number
+                    description: "[Sub-index value for pollutant](/en/docs/resource/air-info/#pollutant-sub-index), maybe NULL."
+                  aqiDisplay:
+                    type: string
+                    description: Sub-index for display, maybe NULL.
+    aqiStationsArray:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+            description: Location ID of the monitoring station for this AQI reference, maybe NULL.
+          name:
+            type: string
+            description: Name of the monitoring station for this AQI reference, maybe NULL.
+    getStormForecast:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        forecast:
+          type: array
+          description: Tropical cyclone forecast data.
+          items:
+            allOf:
+            - type: object
+              properties:
+                fxTime:
+                  "$ref": "#/components/schemas/fxTime"
+                  description: Storm forecast time
+            - "$ref": "#/components/schemas/stormObject"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getStormTrack:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        isActive:
+          type: string
+          description: Whether it is an active storm? `1` = Active and `0` = Stopped
+          enum:
+          - 0
+          - 1
+        now:
+          type: object
+          description: Current tropical cyclone data. May be null when the storm has ended.
+          nullable: true
+          allOf:
+          - type: object
+            properties:
+              pubTime:
+                "$ref": "#/components/schemas/pubTime"
+                description: The data release time from the data source
+          - "$ref": "#/components/schemas/stormObject"
+          - "$ref": "#/components/schemas/stormWindRadiusObject"
+        track:
+          type: array
+          description: Tropical cyclone track data.
+          items:
+            allOf:
+            - type: object
+              properties:
+                time:
+                  type: string
+                  format: date-time
+                  description: Storm information release time
+            - "$ref": "#/components/schemas/stormObject"
+            - "$ref": "#/components/schemas/stormWindRadiusObject"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getStormList:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        storm:
+          "$ref": "#/components/schemas/stormListArray"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    stormObject:
+      type: object
+      description: Current tropical cyclone data.
+      properties:
+        lat:
+          type: string
+          description: Storm latitude
+        lon:
+          type: string
+          description: Storm longitude
+        type:
+          type: string
+          description: Storm type
+        pressure:
+          type: string
+          description: Center pressure of the storm
+        windSpeed:
+          type: string
+          description: Maximum wind speed near the strom
+        moveSpeed:
+          type: string
+          description: Storm moving speed
+        moveDir:
+          type: string
+          description: Storm moving direction
+        move360:
+          type: string
+          description: Storm movement direction in azimuth degre
+    stormWindRadiusObject:
+      type: object
+      description: Tropical cyclone wind radius.
+      properties:
+        windRadius30:
+          type: object
+          description: Radius of force 7 winds.
+          properties:
+            neRadius:
+              type: string
+              description: The northeast wind radius quadrants of the strom with level 7 wind circle, **may be null**
+            seRadius:
+              type: string
+              description: The southeast wind radius quadrants of the strom with level 7 wind circle, **may be null**
+            swRadius:
+              type: string
+              description: The southwest wind radius quadrants of the strom with level 7 wind circle, **may be null**
+            nwRadius:
+              type: string
+              description: The northwest wind radius quadrants of the strom with level 7 wind circle, **may be null**
+        windRadius50:
+          type: object
+          description: Radius of force 10 winds.
+          properties:
+            neRadius:
+              type: string
+              description: The northeast wind radius quadrants of the strom with level 10 wind circle, **may be null**
+            seRadius:
+              type: string
+              description: The southeast wind radius quadrants of the strom with level 10 wind circle, **may be null**
+            swRadius:
+              type: string
+              description: The southwest wind radius quadrants of the strom with level 10 wind circle, **may be null**
+            nwRadius:
+              type: string
+              description: The northwest wind radius quadrants of the strom with level 10 wind circle, **may be null**
+        windRadius64:
+          type: object
+          description: Radius of force 12 winds.
+          properties:
+            neRadius:
+              type: string
+              description: The northeast wind radius quadrants of the strom with level 12 wind circle, **may be null**
+            seRadius:
+              type: string
+              description: The southeast wind radius quadrants of the strom with level 12 wind circle, **may be null**
+            swRadius:
+              type: string
+              description: The southwest wind radius quadrants of the strom with level 12 wind circle, **may be null**
+            nwRadius:
+              type: string
+              description: The northwest wind radius quadrants of the strom with level 12 wind circle, **may be null**
+    stormListArray:
+      type: array
+      description: Tropical cyclone list.
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+            description: Storm ID
+          name:
+            type: string
+            description: Storm name
+          basin:
+            type: string
+            description: The basin of the storm
+          year:
+            type: string
+            description: Year of the storm
+          isActive:
+            type: string
+            description: Whether it is an active storm? `1` = Active and `0` = Stopped
+    getTide:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        tideTable:
+          "$ref": "#/components/schemas/tideTableArray"
+        tideHourly:
+          "$ref": "#/components/schemas/tideHourlyArray"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getCurrents:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        currentsTable:
+          "$ref": "#/components/schemas/currentsTableArray"
+        currentsHourly:
+          "$ref": "#/components/schemas/currentsHourlyArray"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    tideTableArray:
+      type: array
+      description: Tide table data.
+      items:
+        type: object
+        properties:
+          fxTime:
+            "$ref": "#/components/schemas/fxTime"
+            description: Forecast time
+          height:
+            type: string
+            description: The height of the wave, in meters
+          type:
+            type: string
+            description: High tide (H) or Low tide (L)
+    tideHourlyArray:
+      type: array
+      description: Hourly tide forecast.
+      items:
+        type: object
+        properties:
+          fxTime:
+            "$ref": "#/components/schemas/fxTime"
+            description: Forecast time
+          height:
+            type: string
+            description: The height of the wave, in meters
+    currentsTableArray:
+      type: array
+      description: Ocean current table data.
+      items:
+        type: object
+        properties:
+          dir360:
+            type: string
+            description: Ocean current direction in degrees.
+          fxTime:
+            "$ref": "#/components/schemas/fxTime"
+            description: Forecast time
+          speedMax:
+            type: string
+            description: Maximum ocean current speed in centimeters per second.
+    currentsHourlyArray:
+      type: array
+      description: Hourly ocean current forecast.
+      items:
+        type: object
+        properties:
+          dir360:
+            type: string
+            description: Ocean current direction in degrees.
+          fxTime:
+            "$ref": "#/components/schemas/fxTime"
+            description: Forecast time
+          speed:
+            type: string
+            description: Ocean current speed in centimeters per second.
+    getSolarRadiation:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        radiation:
+          "$ref": "#/components/schemas/radiationArray"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    radiationArray:
+      type: array
+      description: Hourly solar radiation forecast.
+      items:
+        type: object
+        properties:
+          fxTime:
+            "$ref": "#/components/schemas/fxTime"
+            description: Hourly forecast time
+          net:
+            type: string
+            description: Net surface solar radiation, W/m<sup>2</sup>
+          diffuse:
+            type: string
+            description: Diffuse solar radiation, W/m<sup>2</sup>
+          direct:
+            type: string
+            description: Direct solar radiation, W/m<sup>2</sup>
+    getSolarRadiationForecast:
+      type: object
+      properties:
+        metadata:
+          "$ref": "#/components/schemas/metaTagObject"
+        forecasts:
+          type: array
+          description: Solar irradiance forecast data.
+          items:
+            type: object
+            properties:
+              forecastTime:
+                "$ref": "#/components/schemas/fxTime"
+                description: Forecast time, [ISO8601 format](/en/docs/resource/glossary/#date-time)
+              solarAngle:
+                type: object
+                description: Solar angle.
+                properties:
+                  azimuth:
+                    type: number
+                    description: Solar azimuth angle, 0 degree for North, increasing clockwise
+                    maximum: 359
+                    minimum: 0
+                  elevation:
+                    type: number
+                    description: Solar elevation angle
+                    minimum: 0
+                    maximum: 90
+              dni:
+                allOf:
+                - "$ref": "#/components/schemas/solarRadiationValueObject"
+                description: Direct normal irradiance.
+              dhi:
+                allOf:
+                - "$ref": "#/components/schemas/solarRadiationValueObject"
+                description: Diffuse horizontal irradiance.
+              ghi:
+                allOf:
+                - "$ref": "#/components/schemas/solarRadiationValueObject"
+                description: Global horizontal irradiance.
+              weather:
+                type: object
+                description: Basic weather data. Returned only when `extra=weather`.
+                properties:
+                  temperature:
+                    "$ref": "#/components/schemas/solarRadiationValueObject"
+                  windSpeed:
+                    "$ref": "#/components/schemas/solarRadiationValueObject"
+                    description: Wind speed.
+                  humidity:
+                    type: number
+                    description: Relative humidity in percent
+              poa:
+                type: object
+                description: Plane-of-array irradiance. Returned only when `extra=poa`.
+                properties:
+                  global:
+                    "$ref": "#/components/schemas/solarRadiationValueObject"
+                  direct:
+                    "$ref": "#/components/schemas/solarRadiationValueObject"
+                    description: Direct solar radiation, W/m<sup>2</sup>
+                  diffuse:
+                    "$ref": "#/components/schemas/solarRadiationValueObject"
+                    description: Diffuse solar radiation, W/m<sup>2</sup>
+                  reflected:
+                    "$ref": "#/components/schemas/solarRadiationValueObject"
+    solarRadiationValueObject:
+      type: object
+      properties:
+        value:
+          type: number
+          description: Value.
+        unit:
+          type: string
+          description: Unit.
+    getSun:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        sunrise:
+          type: string
+          description: "[Sunrise time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**"
+        sunset:
+          type: string
+          description: "[Sunset time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getSolarAngles:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        solarElevationAngle:
+          type: string
+          description: Solar Elevation Angle in degree
+        solarAzimuthAngle:
+          type: string
+          description: Solar azimuth angle
+        solarHour:
+          type: string
+          description: Solar time, HHmm format
+        hourAngle:
+          type: string
+          description: Hour Angle
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getMoon:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+          description: Responsive web page of this data, for embedding in a website or app.
+        moonrise:
+          type: string
+          description: "[Moonrise time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**"
+        moonset:
+          type: string
+          description: "[Moonset time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**"
+        moonPhase:
+          "$ref": "#/components/schemas/moonPhaseArray"
+          description: "[Moon phase name](/en/docs/resource/sun-moon-info/#moon-phase)"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    moonPhaseArray:
+      type: array
+      description: Moon phase data, including illumination and phase details.
+      items:
+        type: object
+        properties:
+          fxTime:
+            type: string
+            format: date-time
+            description: Moon phase forecast time
+          value:
+            type: string
+            description: Moon phase value
+          name:
+            type: string
+            description: "[Moon phase name](/en/docs/resource/sun-moon-info/#moon-phase)"
+          illumination:
+            type: string
+            description: Moon illuminance in percent
+          icon:
+            type: string
+            description: "[Icon code](/en/docs/resource/icons/) for moon phase. See also [QWeather Icons](https://icons.qweather.com/en/)"
+    getFinance:
+      type: object
+      properties:
+        asOf:
+          "$ref": "#/components/schemas/asOf"
+          description: The date and time for this data.
+        currency:
+          description: Currency code, including `CNY` and `USD`.
+          type: string
+          enum:
+          - CNY
+          - USD
+        balance:
+          description: Account balance.
+          type: number
+        accruedCharges:
+          type: object
+          properties:
+            previousDay:
+              type: number
+              description: Charges accrued during the previous calendar day.
+            thisMonth:
+              type: number
+              description: Total charges accrued in the current calendar month.
+            sinceLastBill:
+              type: number
+              description: Charges accrued since the last billing.
+          description: accruedCharges data.
+        pendingBills:
+          "$ref": "#/components/schemas/billingArray"
+        availableSavingsPlans:
+          "$ref": "#/components/schemas/savingsPlansArray"
+        availableResourcePlans:
+          "$ref": "#/components/schemas/resourcePlansArray"
+    billingArray:
+      type: array
+      items:
+        type: object
+        properties:
+          number:
+            type: string
+            description: Unpaid or overdue bill number.
+          date:
+            type: string
+            format: date-time
+            description: The issue date of the bill.
+          type:
+            type: string
+            enum:
+            - subscription
+            - savingPlans
+            - resourcePlans
+            description: The type of bill.
+          status:
+            type: string
+            enum:
+            - unpaid
+            - overdue
+            description: Payment status of the bill, including `unpaid`, `outstanding` and `overdue`.
+          amount:
+            type: number
+            description: Total amount of the bill.
+          amountDue:
+            type: number
+            description: The unpaid portion of the bill that is still due.
+          dueDate:
+            type: string
+            format: date-time
+            description: The due date for the bill payment.
+    resourcePlansArray:
+      type: array
+      description: Active or pending resource plans.
+      items:
+        type: object
+        properties:
+          billNumber:
+            type: string
+            description: Bill number for resource plans in active or pending.
+          status:
+            type: string
+            enum:
+            - pending
+            - active
+            description: Status of the resource plan, including `pending` and `active`.
+          type:
+            type: string
+            enum:
+            - general
+            - solar-irradiation
+            description: Type of resource plan.
+          requests:
+            type: number
+            description: Total request volume included in the resource plan.
+          used:
+            type: number
+            description: Number of requests used from the resource plan.
+          effectiveTime:
+            type: string
+            format: date-time
+            description: Time when the resource plan becomes effective.
+    savingsPlansArray:
+      type: array
+      items:
+        type: object
+        properties:
+          billNumber:
+            type: string
+            description: Bill number for the savings plans in active or pending.
+          status:
+            type: string
+            enum:
+            - pending
+            - active
+            description: Status of the savings plan, including `pending` and `active`.
+          term:
+            type: string
+            description: Duration of the savings plan commitment, default is 1 year.
+          commitments:
+            type: number
+            description: Total committed amount under the savings plan.
+          utilized:
+            type: number
+            description: Committed amount that has been utilized.
+          effectiveTime:
+            type: string
+            format: date-time
+            description: Time when the savings plan becomes effective.
+    getStats:
+      type: object
+      properties:
+        metadata:
+          "$ref": "#/components/schemas/metaTagObject"
+        asOf:
+          "$ref": "#/components/schemas/asOf"
+        success:
+          type: array
+          items:
+            type: object
+            properties:
+              api:
+                type: string
+                description: API name of the successful requests.
+              hours:
+                type: array
+                description: Hourly successful requests stats for the last 24 hours, ending at `asOf` (e.g., asOf=2025-03-20T09:59Z means the last array item covers 09:00–09:59 UTC).
+                items:
+                  type: number
+          description: success data.
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              api:
+                type: string
+                description: API name of the error requests.
+              hours:
+                type: array
+                description: Hourly error requests stats for the last 24 hours, ending at `asOf` (e.g., asOf=2025-03-20T09:59Z means the last array item covers 09:00–09:59 UTC).
+                items:
+                  type: number
+          description: errors data.
+    fxDate:
+      type: string
+      description: Forecast date in ISO 8601 format.
+      format: date
+    fxTime:
+      type: string
+      description: Forecast time in ISO 8601 format.
+      format: date-time
+    pubTime:
+      type: string
+      description: Original data publication time.
+      format: date-time
+    obsTime:
+      type: string
+      description: Observation time.
+      format: date-time
+    forecastStartTime:
+      type: string
+      description: Forecast start time in ISO 8601 format.
+      format: date-time
+    forecastEndTime:
+      type: string
+      description: Forecast end time in ISO 8601 format.
+      format: date-time
+    statusCode:
+      type: string
+      description: API status code. See [Status Code](/en/docs/resource/status-code/).
+    updateTime:
+      type: string
+      description: The [latest update time](/en/docs/resource/glossary/#update-time) of the current API.
+      format: date-time
+    fxLink:
+      type: string
+      description: Responsive web page of this data, for embedded in website or APP
+      format: uri
+    getTopCity:
+      type: object
+      properties:
+        code:
+          type: string
+          description: See [Status Code](/en/docs/resource/status-code/)
+        topCityList:
+          "$ref": "#/components/schemas/locationArray"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getHistoricalWeather:
+      type: object
+      properties:
+        code:
+          type: string
+          description: See [Status Code](/en/docs/resource/status-code/)
+        fxLink:
+          type: string
+          description: Responsive web page of this data, for embedding in a website or app.
+        weatherDaily:
+          type: object
+          description: Historical daily weather data.
+          properties:
+            date:
+              type: string
+              description: Date
+            sunrise:
+              type: string
+              description: "[Sunrise time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**"
+            sunset:
+              type: string
+              description: "[Sunset time](/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**"
+            moonrise:
+              type: string
+              description: "[Moonrise time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**"
+            moonset:
+              type: string
+              description: "[Moonset time](/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**"
+            moonPhase:
+              type: string
+              description: "[Moon phase name](/en/docs/resource/sun-moon-info/#moon-phase)"
+            tempMax:
+              type: string
+              description: The highest temperature of the day
+            tempMin:
+              type: string
+              description: The lowest temperature of the day
+            humidity:
+              type: string
+              description: Relative humidity in percent
+            precip:
+              type: string
+              description: Hourly accumulated precipitation
+            pressure:
+              type: string
+              description: Atmospheric pressure, hPa
+        weatherHourly:
+          type: array
+          description: Historical hourly weather data.
+          items:
+            type: object
+            properties:
+              time:
+                type: string
+                description: Time of the day
+              temp:
+                type: string
+                description: Hourly temperature
+              icon:
+                type: string
+                description: "[Icon code](/en/docs/resource/icons/) for hourly weather conditions of the day. See also [QWeather Icons](https://icons.qweather.com/en/)"
+              text:
+                type: string
+                description: Hourly weather condition
+              precip:
+                type: string
+                description: Hourly accumulated precipitation
+              wind360:
+                type: string
+                description: Hourly [wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree
+              windDir:
+                type: string
+                description: Hourly [wind direction](/en/docs/resource/wind-info/#wind-direction)
+              windScale:
+                type: string
+                description: Hourly [wind scale](/en/docs/resource/wind-info/#wind-scale)
+              windSpeed:
+                type: string
+                description: Hourly [wind speed](/en/docs/resource/wind-info/#wind-speed), KM/H
+              humidity:
+                type: string
+                description: Relative humidity in percent
+              pressure:
+                type: string
+                description: Atmospheric pressure, hPa
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getHistoricalAir:
+      type: object
+      properties:
+        code:
+          type: string
+          description: See [Status Code](/en/docs/resource/status-code/)
+        fxLink:
+          type: string
+          description: Responsive web page of this data, for embedding in a website or app.
+        airHourly:
+          type: array
+          description: Historical hourly air quality data.
+          items:
+            type: object
+            properties:
+              pubTime:
+                type: string
+                description: The data release time from the data source
+              aqi:
+                type: string
+                description: Air Quality Index
+              level:
+                type: string
+                description: AQI level
+              category:
+                type: string
+                description: AQI category
+              primary:
+                type: string
+                description: The main pollutant. If `level=1`, return `NA`
+              pm10:
+                type: string
+                description: PM10
+              pm2p5:
+                type: string
+                description: PM2.5
+              no2:
+                type: string
+                description: Nitrogen dioxide
+              so2:
+                type: string
+                description: Sulfur dioxide
+              co:
+                type: string
+                description: Carbon monoxide
+              o3:
+                type: string
+                description: Ozone
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getPoiRange:
+      type: object
+      properties:
+        code:
+          type: string
+          description: See [Status Code](/en/docs/resource/status-code/)
+        poi:
+          "$ref": "#/components/schemas/poiArray"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getGridWeatherNow:
+      type: object
+      properties:
+        code:
+          type: string
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          type: string
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          type: string
+          description: Responsive web page of this data, for embedding in a website or app.
+        now:
+          type: object
+          description: Current data.
+          properties:
+            obsTime:
+              type: string
+              description: Observation time
+            temp:
+              type: string
+              description: temperature
+            icon:
+              type: string
+              description: "[Icon code](/en/docs/resource/icons/) for weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)"
+            text:
+              type: string
+              description: Weather conditions
+            wind360:
+              type: string
+              description: "[Wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree"
+            windDir:
+              type: string
+              description: "[Wind direction](/en/docs/resource/wind-info/#wind-direction)"
+            windScale:
+              type: string
+              description: "[Wind scale](/en/docs/resource/wind-info/#wind-scale)"
+            windSpeed:
+              type: string
+              description: "[Wind speed](/en/docs/resource/wind-info/#wind-speed), KM/H"
+            humidity:
+              type: string
+              description: Relative humidity in percent
+            precip:
+              type: string
+              description: Accumulated precipitation in the last hour
+            pressure:
+              type: string
+              description: Atmospheric pressure, hPa
+            cloud:
+              type: string
+              description: Cloud cover in percent, **may be null**
+            dew:
+              type: string
+              description: Dew point temperature, **may be null**
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getGridWeatherDaily:
+      type: object
+      properties:
+        code:
+          type: string
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          type: string
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          type: string
+          description: Responsive web page of this data, for embedding in a website or app.
+        daily:
+          type: array
+          description: Daily forecast data.
+          items:
+            type: object
+            properties:
+              fxDate:
+                type: string
+                description: Forecast date
+              tempMax:
+                type: string
+                description: The highest temperature of the day
+              tempMin:
+                type: string
+                description: The lowest temperature of the day
+              iconDay:
+                type: string
+                description: "[Icon code](/en/docs/resource/icons/) for daytime weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)"
+              iconNight:
+                type: string
+                description: "[Icon code](/en/docs/resource/icons/) for night weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)"
+              textDay:
+                type: string
+                description: Weather conditions for daytime
+              textNight:
+                type: string
+                description: Weather conditions for night
+              wind360Day:
+                type: string
+                description: Daytime [wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree
+              windDirDay:
+                type: string
+                description: Daytime [wind direction](/en/docs/resource/wind-info/#wind-direction)
+              windScaleDay:
+                type: string
+                description: Daytime [wind scale](/en/docs/resource/wind-info/#wind-scale)
+              windSpeedDay:
+                type: string
+                description: Daytime [wind speed](/en/docs/resource/wind-info/#wind-speed), KM/H
+              wind360Night:
+                type: string
+                description: Nightly [wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree
+              windDirNight:
+                type: string
+                description: Nightly [wind direction](/en/docs/resource/wind-info/#wind-direction)
+              windScaleNight:
+                type: string
+                description: Nightly [wind scale](/en/docs/resource/wind-info/#wind-scale)
+              windSpeedNight:
+                type: string
+                description: Nightly [wind speed](/en/docs/resource/wind-info/#wind-speed), KM/H
+              humidity:
+                type: string
+                description: Relative humidity in percent
+              precip:
+                type: string
+                description: Estimated total precipitation for the day
+              pressure:
+                type: string
+                description: Atmospheric pressure, hPa
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    getGridWeatherHourly:
+      type: object
+      properties:
+        code:
+          type: string
+          description: See [Status Code](/en/docs/resource/status-code/)
+        updateTime:
+          type: string
+          description: "[API last update time](/en/docs/resource/glossary/#update-time)"
+        fxLink:
+          type: string
+          description: Responsive web page of this data, for embedding in a website or app.
+        hourly:
+          type: array
+          description: Hourly data.
+          items:
+            type: object
+            properties:
+              fxTime:
+                type: string
+                description: Forecast time
+              temp:
+                type: string
+                description: temperature
+              icon:
+                type: string
+                description: "[Icon code](/en/docs/resource/icons/) for weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)"
+              text:
+                type: string
+                description: Weather conditions
+              wind360:
+                type: string
+                description: "[Wind direction](/en/docs/resource/wind-info/#wind-direction) in azimuth degree"
+              windDir:
+                type: string
+                description: "[Wind direction](/en/docs/resource/wind-info/#wind-direction)"
+              windScale:
+                type: string
+                description: "[Wind scale](/en/docs/resource/wind-info/#wind-scale)"
+              windSpeed:
+                type: string
+                description: "[Wind speed](/en/docs/resource/wind-info/#wind-speed), KM/H"
+              humidity:
+                type: string
+                description: Relative humidity in percent
+              precip:
+                type: string
+                description: Accumulated precipitation in the current hour
+              pressure:
+                type: string
+                description: 'Atmospheric pressure, default unit: hPa.'
+              cloud:
+                type: string
+                description: Cloud cover in percent, **may be null**
+              dew:
+                type: string
+                description: Dew point temperature, **may be null**
+        refer:
+          "$ref": "#/components/schemas/referObject"
+    poiArray:
+      type: array
+      description: POI information list.
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: POI Name
+          id:
+            type: string
+            description: POI ID
+          lat:
+            type: string
+            description: Latitude of the POI
+          lon:
+            type: string
+            description: Longitude of the POI
+          adm2:
+            type: string
+            description: Name of the superior administrative division of the POI
+          adm1:
+            type: string
+            description: The first-level administrative area of ​​the POI
+          country:
+            type: string
+            description: Country name of the POI
+          tz:
+            type: string
+            description: POI [timezone](/en/docs/resource/glossary/#timezone)
+          utcOffset:
+            type: string
+            description: The number of hours offset between local time and UTC time, refer to [UTC Offset](/en/docs/resource/glossary/#utc-offset)
+          isDst:
+            type: string
+            description: Is the POI currently on [daylight saving time](/en/docs/resource/glossary/#daylight-saving-time). `1` for daylight saving time and `0` for not in daylight saving time.
+          type:
+            type: string
+            description: POI type
+          rank:
+            type: string
+            description: "[POI Rank](/en/docs/resource/glossary/#rank)"
+          fxLink:
+            type: string
+            format: uri
+            description: Responsive web page of this location, easy to embed in your website or APP

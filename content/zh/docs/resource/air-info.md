@@ -36,7 +36,7 @@ QAQI是和风天气定义的通用的空气质量指数，以[《世卫组织全
 
 {{< aqi-table >}}
 
-*下载完整表格：[aqis.csv](https://raw.githubusercontent.com/qwd/dev-site/master/_data/table/aqis.csv)*
+*下载完整表格：[aqis.csv](https://raw.githubusercontent.com/qwd/dev-site/master/assets/data/table/aqis.csv)*
 
 ## AQI的值 {#aqi-value}
 

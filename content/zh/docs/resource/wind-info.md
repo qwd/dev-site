@@ -17,7 +17,7 @@ translationKey: res-wind
 ### 16位风向方位
 
 ![风向16方位图](/assets/images/content/wind-direction-rose.png)
-*风向16方位图。(图片由QWeather创作并基于[CC BY 4.0许可](https://creativecommons.org/licenses/by/4.0/deed.zh)发布，下载[原图](https://github.com/qwd/dev-site/raw/master/assets/images/content/wind-direction-rose.png))*
+*风向16方位图。(图片由QWeather创作并基于[CC BY 4.0许可](https://creativecommons.org/licenses/by/4.0/deed.zh)发布，下载[原图](https://github.com/qwd/dev-site/raw/master/static/assets/images/content/wind-direction-rose.png))*
 {.figimg}
 16位风向方位的名称、代码和对应风向角度的关系如下：
 

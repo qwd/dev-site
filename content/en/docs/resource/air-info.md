@@ -39,7 +39,7 @@ Check out our supported AQIs and their value ranges, categories and more:
 
 {{< aqi-table >}}
 
-*Download entire table for the above: [aqis.csv](https://raw.githubusercontent.com/qwd/dev-site/master/_data/table/aqis.csv)*
+*Download entire table for the above: [aqis.csv](https://raw.githubusercontent.com/qwd/dev-site/master/assets/data/table/aqis.csv)*
 
 ## AQI value
 

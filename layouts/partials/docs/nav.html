@@ -28,14 +28,15 @@
             </ul>
           </div>
           {{- end }}
-          {{- if and $item.data (gt (len $currentTags) 3) (gt (len $pageTags) 2) (eq (index $currentTags 0) "guide") (ne (index $currentTags (sub (len $currentTags) 1)) "overview") (eq (index $currentTags 2) (index $pageTags 2)) }}
+          {{- $showData := and $item.data (strings.HasPrefix $current.RelPermalink .RelPermalink) -}}
+          {{- if $showData }}
           <div class="sub-nav ml-2 mt-1 pl-2">
             <ul class="clear-list">
               {{- range $item.data }}
                 {{- $type := .type -}}
                 {{- range $current.Site.RegularPages }}
                   {{- $tags := .Params.tag | default slice -}}
-                  {{- if and (gt (len $tags) 3) (eq (index $tags 0) "guide") (eq (index $tags 2) (index $currentTags 2)) (eq (index $tags (sub (len $tags) 1)) $type) }}
+                  {{- if and (gt (len $tags) 0) (strings.HasPrefix .RelPermalink $page.RelPermalink) (eq (index $tags (sub (len $tags) 1)) $type) }}
                 <li class="mb-1{{ if eq .RelPermalink $current.RelPermalink }} active{{ end }}">
                   <a class="dark-link px-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
                 </li>
