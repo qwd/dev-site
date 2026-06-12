@@ -1,4 +1,5 @@
 {{ define "main" }}
+  {{- $docsNav := index hugo.Data "docs-nav" -}}
   {{ partial "docs/breadcrumbs.html" . }}
   <div class="main-content container-fluid d-flex">
     <aside class="docs-nav small pt-5 pb-3 pr-3 mr-4 d-none d-md-block">{{ partial "docs/nav.html" . }}</aside>
@@ -13,28 +14,14 @@
         <section class="doc-content">
           {{ with .Description }}<p>{{ . }}</p>{{ end }}
           {{ .Content }}
-          {{- $current := . -}}
-          {{- range where hugo.Data.contents.reference_docs "overview" .TranslationKey }}
+          {{- $node := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" .TranslationKey) -}}
+          {{- with $node }}
           <ul>
-            {{- range .list }}
-              {{- $page := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .name) -}}
+            {{- range .children }}
+              {{- $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) -}}
               {{- with $page }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
             {{- end }}
           </ul>
-          {{- end }}
-          {{- range where hugo.Data.contents.reference_docs "overview" "0-api-overview" }}
-            {{- range where .list "name" $current.TranslationKey }}
-          <ul>
-              {{- range .data }}
-                {{- $type := .type -}}
-                {{- range $current.RegularPagesRecursive }}
-                  {{- if eq (path.Base .RelPermalink) $type }}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                  {{- end }}
-                {{- end }}
-              {{- end }}
-          </ul>
-            {{- end }}
           {{- end }}
         </section>
       </div></div></div>

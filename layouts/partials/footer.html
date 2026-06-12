@@ -1,4 +1,4 @@
-{{- $nav := hugo.Data.navigation -}}
+{{- $nav := index hugo.Data "footer-nav" -}}
 <footer class="pt-5">
   <div class="container mb-4">
     <div class="content row">

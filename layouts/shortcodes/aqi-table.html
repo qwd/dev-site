@@ -1,4 +1,4 @@
-{{- $rows := after 1 (partial "data/csv.html" "aqis") -}}
+{{- $rows := after 1 (partial "csv.html" "aqis") -}}
 <table class="small"><thead><tr><th>AQI</th><th>{{ T "range" }}</th><th>({{ T "level" }}) {{ T "category" }}</th><th>{{ T "color" }}</th></tr></thead><tbody>
 {{- range $rows }}{{ $row := . }}{{ $ranges := split (index $row 4) "," }}{{ $colors := split (index $row 5) "|" }}{{ $levels := split (index $row 6) "," }}{{ $categories := split (index $row (cond (eq $.Page.Language.Lang "zh") 8 7)) "," }}
 {{- range $i, $range := $ranges }}{{ $color := printf "background-color: rgb%s;" (index $colors $i) }}<tr>{{ if eq $i 0 }}<td rowspan="{{ len $ranges }}"><ul class="clear-list"><li><strong>{{ index $row 1 }}</strong></li><li><code>{{ index $row 0 }}</code></li><li>{{ T "pollutant" }}: {{ index $row 9 }}</li></ul></td>{{ end }}<td>{{ replace $range "-" " ~ " }}</td><td>({{ index $levels $i }}) {{ strings.TrimSpace (index $categories $i) }}</td><td style="{{ $color | safeCSS }}"><span>{{ index $colors $i }}</span></td></tr>{{ end }}{{ end }}

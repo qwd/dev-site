@@ -3,8 +3,6 @@
 {{- if not $resource }}{{ errorf "OpenAPI intermediate model not found: %s; run npm run openapi:generate" $source }}{{ end -}}
 {{- $model := transform.Unmarshal $resource -}}
 {{- range $model.operations -}}
-  {{- $category := path.Dir .pagePath -}}
-  {{- $type := path.Base .pagePath -}}
   {{- $.AddPage (dict
     "aliases" (.aliases | default slice)
     "content" (dict "mediaType" "text/markdown" "value" "## 请求路径 {#endpoint}\n## 参数 {#parameters}\n## 请求示例 {#request-example}\n## 返回数据 {#response}")
@@ -12,10 +10,10 @@
     "params" (dict
       "openapiModelSource" $source
       "operationId" .operationId
-      "translationKey" .operationId
     )
     "path" .pagePath
     "title" .summary
+    "translationKey" .operationId
     "type" "openapi-docs"
   ) -}}
 {{- end -}}

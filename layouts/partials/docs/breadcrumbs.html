@@ -13,13 +13,14 @@
     <select onchange="if (this.value) window.location.href=this.value">
       <option value="">{{ T "docs-category" }}</option>
       {{- $current := . -}}
-      {{- range hugo.Data.contents.reference_docs }}
+      {{- $docsNav := index hugo.Data "docs-nav" -}}
+      {{- range $docsNav }}
         {{- $section := . -}}
-        {{- $overview := partial "docs/page-by-translation-key.html" (dict "site" $current.Site "key" .overview) -}}
+        {{- $overview := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
         {{- with $overview }}
       <optgroup label="{{ .Title }}">
-          {{- range $section.list }}
-            {{- $page := partial "docs/page-by-translation-key.html" (dict "site" $current.Site "key" .name) -}}
+          {{- range $section.children }}
+            {{- $page := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
             {{- with $page }}
         <option value="{{ .RelPermalink }}"{{ if eq .RelPermalink $current.RelPermalink }} selected{{ end }}>{{ .Title }}</option>
             {{- end }}

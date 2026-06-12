@@ -1,21 +1,18 @@
 {{ define "main" }}
+  {{- $docsNav := index hugo.Data "docs-nav" -}}
   {{ if eq .TranslationKey "docs-home" }}
   <section class="masthead docs"><div class="container"><h1>{{ .Title }}</h1><p class="text-center">{{ .Description }}</p></div></section>
   <main class="docs-home container-lg pb-5">
     <section class="row refer-content mb-4">
       <div class="col-12 col-md-12 col-lg-5 mb-4 mb-lg-0">
         <div class="start card border-r10 p-4">
-          {{- range where hugo.Data.contents.reference_docs "overview" "start-overview" }}
-            {{- $overview := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .overview) }}
-            {{- with $overview }}<h2 class="color-white mb-4"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
-          {{- end }}
+          {{- $start := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" "start-overview") -}}
+          {{- $overview := partial "docs/page-by-key.html" (dict "site" $.Site "key" $start.key) }}
+          {{- with $overview }}<h2 class="color-white mb-4"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
           <ul class="clear-list">
-            {{- range where hugo.Data.contents.reference_docs "overview" "start-overview" }}
-              {{- range .list }}{{ $page := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .name) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
-            {{- end }}
-            {{- range where hugo.Data.contents.reference_docs "overview" "finance-overview" }}
-              {{- range .list }}{{ $page := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .name) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
-            {{- end }}
+            {{- range $start.children }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+            {{- $finance := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" "finance-overview") -}}
+            {{- range $finance.children }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
           </ul>
         </div>
       </div>
@@ -25,44 +22,40 @@
       }}
       <div class="col-12 col-md-6 col-lg mb-4 mb-md-0">
         <div class="{{ .class }} border-r10 p-4">
-          {{- range where hugo.Data.contents.reference_docs "overview" .overview }}
-            {{- $overview := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .overview) }}
-            {{- with $overview }}<h2 class="mb-4"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
+          {{- $node := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" .overview) -}}
+          {{- $overview := partial "docs/page-by-key.html" (dict "site" $.Site "key" $node.key) }}
+          {{- with $overview }}<h2 class="mb-4"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
             <ul class="clear-list">
-              {{- range .list }}{{ $page := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .name) }}{{ with $page }}<li class="mb-2"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+              {{- range $node.children }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="mb-2"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
             </ul>
-          {{- end }}
         </div>
       </div>
       {{- end }}
     </section>
     <section class="row dev-docs">
-      {{- range where hugo.Data.contents.reference_docs "overview" "0-api-overview" }}
-        {{- range .list }}
+      {{- $api := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" "0-api-overview") -}}
+      {{- range $api.children }}
           {{- $section := . -}}
-          {{- $overview := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .name) -}}
+          {{- $overview := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) -}}
           {{- with $overview }}
           <div class="col-12 mb-4">
             <div class="data border-r10 p-3">
               <h2 class="mb-4">{{ .Title }}</h2>
               <p class="mb-4">{{ .Description }}</p>
               <div class="row">
-                {{- range $section.data }}
-                  {{- $type := .type -}}
-                  {{- range $.Site.RegularPages }}
-                    {{- if and (strings.HasPrefix .RelPermalink $overview.RelPermalink) (eq (path.Base .RelPermalink) $type) }}
+                {{- range $section.children }}
+                  {{- $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) -}}
+                  {{- with $page }}
                 <div class="col-12 col-md-auto mb-3">
                   <h4 class="mb-2">{{ .Title }}</h4>
                   <ul class="clear-list d-flex"><li class="mr-2"><a class="border-blue-link d-inline-block px-2 border-r10 no-underline" href="{{ .RelPermalink }}">API</a></li></ul>
                 </div>
-                    {{- end }}
                   {{- end }}
                 {{- end }}
               </div>
             </div>
           </div>
           {{- end }}
-        {{- end }}
       {{- end }}
     </section>
     <section class="row help-lib">

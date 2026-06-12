@@ -1,0 +1,108 @@
+- key: start-overview
+  children:
+    - key: feat-overview
+      children:
+        - key: feat-service
+        - key: feat-global
+        - key: feat-performance
+    - key: config-overview
+      children:
+        - key: config-project
+        - key: config-apihost
+        - key: config-auth
+        - key: config-api
+        - key: config-ios
+        - key: config-android
+    - key: account-overview
+      children:
+        - key: account-manage
+        - key: account-developers
+        - key: account-contact
+        - key: account-suspension
+        - key: account-inactive
+- key: 0-api-overview
+  children:
+    - key: 0-api-geo
+      children:
+        - key: getGeoCitylookup
+        - key: getGeoTopcity
+        - key: getGeoPoilookup
+        - key: getGeoPoirange
+    - key: 0-api-weather
+      children:
+        - key: getWeatherNow
+        - key: getWeatherDailyForecast
+        - key: getWeatherHourlyForecast
+        - key: getGridWeatherNow
+        - key: getGridWeatherDaily
+        - key: getGridWeatherHourly
+    - key: 0-api-minutely
+      children:
+        - key: getMinutelyPrecipitation
+    - key: 0-api-warning
+      children:
+        - key: getWeatherAlertCurrent
+    - key: 0-api-indices
+      children:
+        - key: getWeatherIndices
+    - key: 0-api-aq
+      children:
+        - key: getAirqualityCurrent
+        - key: getAirqualityHourlyForecast
+        - key: getAirqualityDailyForecast
+        - key: getAirqualityAirStation
+    - key: 0-api-time-machine
+      children:
+        - key: getHistoricalWeather
+        - key: getHistoricalAir
+    - key: 0-api-tropical
+      children:
+        - key: getStormForecast
+        - key: getStormTrack
+        - key: getStormList
+    - key: 0-api-ocean
+      children:
+        - key: getOceanTide
+    - key: 0-api-solar-radiation
+      children:
+        - key: getSolarradiationForecast
+    - key: 0-api-astronomy
+      children:
+        - key: getAstronomSun
+        - key: getAstronomyMoon
+        - key: getAstronomySolarElevationAngle
+    - key: 0-api-console
+      children:
+        - key: getConsoleFinance
+        - key: getConsoleStats
+- key: res-overview
+  children:
+    - key: res-glossary
+    - key: res-status-code
+    - key: res-lang
+    - key: res-icons
+    - key: res-location-list
+    - key: res-unit
+    - key: res-wind
+    - key: res-warning
+    - key: res-indices
+    - key: res-air
+    - key: res-sunmoon
+- key: bp-overview
+  children:
+    - key: bp-na
+    - key: bp-opz
+    - key: bp-gzip
+    - key: bp-cache
+    - key: bp-protact
+- key: finance-overview
+  children:
+    - key: finance-billing
+    - key: finance-pricing
+    - key: finance-splans
+    - key: finance-vat-invoice
+- key: terms-overview
+  children:
+    - key: terms-restriction
+    - key: terms-attribution
+    - key: terms-tos

@@ -1,4 +1,5 @@
 {{ define "main" }}
+  {{- $docsNav := index hugo.Data "docs-nav" -}}
   {{ partial "docs/breadcrumbs.html" . }}
   <div class="main-content container-fluid d-flex">
     <aside class="docs-nav small pt-5 pb-3 pr-3 mr-4 d-none d-md-block">{{ partial "docs/nav.html" . }}</aside>
@@ -9,9 +10,10 @@
           {{ with .Description }}<p>{{ . }}</p>{{ end }}
           {{ .Content }}
           <div class="row">
-            {{- range where hugo.Data.contents.reference_docs "overview" "0-api-overview" }}
-              {{- range .list }}
-                {{- $overview := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .name) -}}
+            {{- $node := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" .TranslationKey) -}}
+            {{- with $node }}
+              {{- range .children }}
+                {{- $overview := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) -}}
                 {{- with $overview }}
             <div class="col-12 col-lg-4 col-md-6 mb-4"><div class="data p-3"><h3 class="mb-4"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p class="mb-4">{{ .Description }}</p></div></div>
                 {{- end }}
