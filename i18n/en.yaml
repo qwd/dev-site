@@ -1,60 +1,22 @@
 home: Home
-widget: Widget
 icons: Icons
 showcase: Showcase
 price: Price
 blog: Blog
 console: Console
-register: Register
-login: Login
-logout: Logout
 more: More
-auto: Auto
-getapp: Get APP
-tos: Term of Service
-privacy: Privacy
-about: About
 screenshot: Screenshot
-disclaimer: Disclaimer
 contact: Contact
 contact-us: Contact us
-owp: Open Weather Plus
-s6warning: Here is the Weather API version S6, which will be offline on December 31st, 2021 and it is now unavailable for new users. Click to view the latest API service.
-goto-qw: See more weather? Go to QWeather
 params: Parameters
-description: Description
-bizapi: Pro
-devapi: Dev
-rp: params
-qp: QueryParams
-docs: Documentation
 doc: Docs
 feats: Features
 docs-category: Docs Category
-docs-list: Documentation List
-glossary: Glossary
-opt: optional
 rqd: required
 tocnav: On This Page
-faq: FAQ
 help: Help
-resource: Resource
-utility: Utility
-download: Download
-langname: English
-langcode: EN
-free: Free
-see: See
-apply: For
 edit: Edit
-learn: Learn more
-data: Data
-available: Available
-platform: Platform
 quick-start: Quick Start
-api-response-note: The response is in JSON format and is [Gzip compressed](/en/docs/best-practices/gzip/).
-api-url-note: For Free subscription, change the API Host to `devapi.qweather.com`. See [data available for Free subscription](/en/docs/finance/subscription/#comparison).
-doc-incl-data-pricing: Pricing for the following data services
 category: Category
 level: Level
 range: Range
@@ -63,7 +25,7 @@ pollutant: Pollutant
 example-token-hint: Replace `your_token` and `your_api_host` with your [JWT Authentication](/en/docs/configuration/authentication/) and [API Host](/en/docs/configuration/api-host/)
 hp-slogan: Build a beautiful weather program
 hp-slogan-2: to drive your business
-hp-data: Weather Data 
+hp-data: Weather Data
 hp-data-desc: QWeather Develop Service is based on advanced meteorological algorithms and provides a powerful weather service, to help you display weather or drive your business decisions.
 hp-data-refer: See Service and Data
 hp-dev: Developer Friendly
@@ -83,24 +45,19 @@ hp-intro-org: Enterprise Customization
 hp-intro-org-desc: Contact our <a href="https://www.qweather.com/en/contact" target="_blank" rel="noopener noreferrer">business experts</a> for a complete weather solution.
 hp-regnow: Free Registration
 hp-current-ver: Current version
-pi-ourprice: Our Price
 pi-desc: Flexible, Transparent and Affordable
 pi-payg: Pay as you go
-pi-payg-desc: |-
-  QWeather Develop services are all based on pay as you go billing model, you only pay for the services you actually use, no large upfront, no hidden fees, start and stop whenever you want, and no fees when you stop.
+pi-payg-desc: QWeather Develop services are all based on pay as you go billing model, you only pay for the services you actually use, no large upfront, no hidden fees, start and stop whenever you want, and no fees when you stop.
 pi-payg-more: See Billing and Payment
-pi-payg-unit: per Requests
 pi-saving-plans: Savings plans
-pi-saving-plans-desc: |- 
+pi-saving-plans-desc: |-
   If you have a high volume of requests, you can save significant cost with the Savings Plan.
 
   Savings Plans is a discount plan that offers lower pay as you go pricing, in exchange, you need to prepay the committed usage amount.
 pi-saving-plans-more: See Savings plans
 pi-tier-title: Pricing, more use more save
-pi-tier-desc: Pay as you go is tiered pricing, with the higher requests, the lower cost per request. 
+pi-tier-desc: Pay as you go is tiered pricing, with the higher requests, the lower cost per request.
 pi-tier-see: Click to see the price of the services
-pi-tier-weather-remark: Not available for daily forecast over 7 days or hourly forecast over 24 hours.
-pi-tier-weather-extend-remark: Only available for daily forecast over 7 days or hourly forecast over 24 hours.
 pi-calc: Price Calculator
 pi-calc-desc: You can easily use the price calculator to estimate your monthly cost.
 pi-calc-go: Calculate (login required)
@@ -112,24 +69,27 @@ pi-org-desc: |-
   - Higher availability
   - Customized solutions
   - 7x24 technical support
-pi-free-subs: Free Subscription
-pi-free-subs-desc: |-
-  Free Subscription supports limited weather services and requests, it is under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> license. For eligible developers in mainland China, more free requests is also available.
-pi-free-subs-more: See Free Subscription
 pi-more: More
 pi-req-mo: Requests(per month)
 pi-price-req: Price(per request)
-over: Over
-next: Next
 si-biref: Welcome to share your code for using QWeather dev service, you can edit <a href="https://github.com/qwd/dev-site/edit/master/data/showcase.yaml" target="_blank" rel="noopener noreferrer">this file</a> and submit a PR.
-si-note: We cannot guarantee the availability of these works, please contact the author. 
+si-note: We cannot guarantee the availability of these works, please contact the author.
 fi-q-general: General
 fi-q-dev: Development
 fi-q-license: License
 fi-q-finance: Finance and Cost
 fi-q-user: Account Management
 fi-q-term: Legal Terms
-ub-title: Upgrade Your Browser
-ub-desc: Unfortunately, QWeather does not support outdated browsers. It is recommended to use the latest versions of the following modern browsers to access our service, which provide a better and safer Internet surfing experience.
-ub-note: For security reasons, please download browsers only from their official website
-ub-support: If you still have problems, please send an email to support@qwaether.com
+endpoint: Endpoint
+path-params: Path parameters
+query-params: Query parameters
+request-example: Request example
+response: Response
+recursive-reference: Recursive reference
+additional-property: Additional property
+name: Name
+full-name: Full name
+unit-new: Unit (new)
+unit-legacy: Unit (legacy)
+countries-regions: Countries or Regions
+supported-aqis: Supported AQIs

@@ -1,9 +1,5 @@
 ---
 title: 帐号冻结
-tag:
-- account
-- suspension
-ref: account-suspension
 translationKey: account-suspension
 ---
 

@@ -1,4 +1,3 @@
-{{- $t := index hugo.Data.t .Language.Lang -}}
 <nav class="main-nav container-fluid">
   <div class="row">
     <div class="brand col-auto">
@@ -8,16 +7,16 @@
       </a>
     </div>
     <div class="second-menu col-auto order-sm-last ml-auto">
-      <a class="menu-console no-underline link-color border-r10 text-bold small d-inline-block" href="https://id.qweather.com/#/login?redirect=https://console.qweather.com{{ if eq .Language.Lang "en" }}&lang=en{{ end }}" target="_blank" rel="noopener noreferrer">{{ $t.console }}</a>
+      <a class="menu-console no-underline link-color border-r10 text-bold small d-inline-block" href="https://id.qweather.com/#/login?redirect=https://console.qweather.com{{ if eq .Language.Lang "en" }}&lang=en{{ end }}" target="_blank" rel="noopener noreferrer">{{ T "console" }}</a>
     </div>
     <div class="menu col-12 col-sm-auto flex-sm-grow-1 flex-md-grow-0">
       <ul class="clear-list d-flex">
-        <li class="mr-auto mr-md-2{{ if .IsHome }} active{{ end }}"><a class="dark-link no-underline" href="{{ .Site.Home.RelPermalink }}">{{ $t.home }}</a></li>
-        <li class="mr-auto mr-md-2{{ if eq .Section "docs" }} active{{ end }}"><a class="dark-link no-underline" href="{{ relLangURL "docs/" }}">{{ $t.doc }}</a></li>
-        <li class="mr-auto mr-md-2"><a class="dark-link no-underline" href="{{ .Site.Params.links.icons }}{{ if eq .Language.Lang "en" }}/en/{{ end }}" target="_blank" rel="noopener noreferrer">{{ $t.icons }}</a></li>
-        <li class="mr-auto mr-md-2{{ if eq .Type "showcase" }} active{{ end }}"><a class="dark-link no-underline" href="{{ relLangURL "showcase/" }}">{{ $t.showcase }}</a></li>
-        <li class="mr-auto mr-md-2{{ if eq .Type "faq" }} active{{ end }}"><a class="dark-link no-underline" href="{{ relLangURL "help/" }}">{{ $t.help }}</a></li>
-        <li class="mr-auto mr-md-2{{ if eq .Type "price" }} active{{ end }}"><a class="dark-link no-underline" href="{{ relLangURL "price/" }}">{{ $t.price }}</a></li>
+        <li class="mr-auto mr-md-2{{ if .IsHome }} active{{ end }}"><a class="dark-link no-underline" href="{{ .Site.Home.RelPermalink }}">{{ T "home" }}</a></li>
+        <li class="mr-auto mr-md-2{{ if eq .Section "docs" }} active{{ end }}"><a class="dark-link no-underline" href="{{ relLangURL "docs/" }}">{{ T "doc" }}</a></li>
+        <li class="mr-auto mr-md-2"><a class="dark-link no-underline" href="{{ .Site.Params.links.icons }}{{ if eq .Language.Lang "en" }}/en/{{ end }}" target="_blank" rel="noopener noreferrer">{{ T "icons" }}</a></li>
+        <li class="mr-auto mr-md-2{{ if eq .Type "showcase" }} active{{ end }}"><a class="dark-link no-underline" href="{{ relLangURL "showcase/" }}">{{ T "showcase" }}</a></li>
+        <li class="mr-auto mr-md-2{{ if eq .Type "faq" }} active{{ end }}"><a class="dark-link no-underline" href="{{ relLangURL "help/" }}">{{ T "help" }}</a></li>
+        <li class="mr-auto mr-md-2{{ if eq .Type "price" }} active{{ end }}"><a class="dark-link no-underline" href="{{ relLangURL "price/" }}">{{ T "price" }}</a></li>
         <li class="mr-auto mr-md-2"><div id="docsearch"></div></li>
       </ul>
     </div>

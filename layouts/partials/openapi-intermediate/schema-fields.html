@@ -25,7 +25,7 @@
   {{- end }}
   {{- with $node.additionalProperties }}
     <li>
-      <div class="api-response-field"><code>*</code> <em class="api-response-type">{{ .type | default "any" }}</em> <span class="api-response-description">{{ if eq $lang "zh" }}其他属性{{ else }}Additional property{{ end }}</span></div>
+      <div class="api-response-field"><code>*</code> <em class="api-response-type">{{ .type | default "any" }}</em> <span class="api-response-description">{{ T "additional-property" }}</span></div>
       <ul>{{ partial "openapi-intermediate/schema-fields.html" (dict "lang" $lang "node" . "depth" (add $depth 1)) }}</ul>
     </li>
   {{- end }}
@@ -33,7 +33,7 @@
     <li><div class="api-response-field"><em class="api-response-type">not{{ with .type }}: {{ . }}{{ end }}</em></div></li>
   {{- end }}
   {{- with $node.recursiveRef }}
-    <li><div class="api-response-field"><em class="api-response-type">{{ if eq $lang "zh" }}递归引用{{ else }}Recursive reference{{ end }}</em> <code>{{ . }}</code></div></li>
+    <li><div class="api-response-field"><em class="api-response-type">{{ T "recursive-reference" }}</em> <code>{{ . }}</code></div></li>
   {{- end }}
 {{- else -}}
   {{- errorf "OpenAPI intermediate field tree exceeded depth limit" -}}

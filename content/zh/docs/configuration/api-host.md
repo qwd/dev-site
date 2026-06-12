@@ -1,9 +1,5 @@
 ---
 title: API Host
-tag:
-- config
-- apihost
-ref: config-apihost
 translationKey: config-apihost
 ---
 

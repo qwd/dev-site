@@ -1,9 +1,7 @@
 ---
 title: Wind Info
-tag: resource
 description: Learn about the relationship between wind speed and wind scale (Beaufort
   scale), and how to read wind direction in degree, wind 16 direction and wind 8 direction.
-ref: res-wind
 translationKey: res-wind
 ---
 

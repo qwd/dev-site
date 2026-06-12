@@ -1,10 +1,6 @@
 ---
 title: 不要假设
-tag:
-- bp
-- na
 toc: false
-ref: bp-na
 translationKey: bp-na
 ---
 

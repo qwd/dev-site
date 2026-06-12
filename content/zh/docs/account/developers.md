@@ -1,9 +1,5 @@
 ---
 title: 开发者类型
-tag:
-- account
-- developers
-ref: account-developers
 translationKey: account-developers
 ---
 

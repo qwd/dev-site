@@ -1,9 +1,5 @@
 ---
 title: 项目和凭据
-tag:
-- config
-- project
-ref: config-project
 translationKey: config-project
 ---
 

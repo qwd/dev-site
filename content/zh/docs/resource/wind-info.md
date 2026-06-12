@@ -1,8 +1,6 @@
 ---
 title: 风向风速和等级
-tag: resource
 description: 了解风速和风力等级（蒲福风级）的关系，以及风向角度、风向16方位和风向8方位的相关知识。
-ref: res-wind
 translationKey: res-wind
 ---
 

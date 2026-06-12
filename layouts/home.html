@@ -1,5 +1,4 @@
 {{ define "main" }}
-{{- $t := index hugo.Data.t .Language.Lang -}}
 {{- $v := hugo.Data.v -}}
 <main class="homepage">
   <div id="weather-bg" class="hero hero-default">
@@ -11,11 +10,11 @@
       {{ end }}
       <div class="banner col-12 text-center mb-2"><img src="/assets/images/hp-cloudy.png" alt="" width="300"></div>
       <div class="headline col-12 text-center">
-        <h1>{{ index $t "hp-slogan" }}</h1>
-        <h1 class="mb-4">{{ index $t "hp-slogan-2" }}</h1>
-        <a class="d-inline-block btn-link btn-link-blue btn-link-xl text-bold mb-4" href="https://id.qweather.com/#/register?redirect=https://console.qweather.com" target="_blank" rel="noopener noreferrer">{{ index $t "hp-regnow" }}</a>
-        <p class="color-grey-76">{{ index $t "hp-current-ver" }} API v{{ $v.api.version }} · SDK v{{ $v.ios.version }}</p>
-        <a class="d-inline-block" href="{{ relLangURL "docs/start/" }}">{{ index $t "quick-start" }}</a>
+        <h1>{{ T "hp-slogan" }}</h1>
+        <h1 class="mb-4">{{ T "hp-slogan-2" }}</h1>
+        <a class="d-inline-block btn-link btn-link-blue btn-link-xl text-bold mb-4" href="https://id.qweather.com/#/register?redirect=https://console.qweather.com" target="_blank" rel="noopener noreferrer">{{ T "hp-regnow" }}</a>
+        <p class="color-grey-76">{{ T "hp-current-ver" }} API v{{ $v.api.version }} · SDK v{{ $v.ios.version }}</p>
+        <a class="d-inline-block" href="{{ relLangURL "docs/start/" }}">{{ T "quick-start" }}</a>
       </div>
     </div></div>
   </div>
@@ -27,8 +26,8 @@
       }}
       <div class="col-12 col-md-6 mb-5 mb-md-0"><div class="feat-card border-r10">
         <img class="d-block card-bg {{ .class }} width100" src="/assets/images/{{ .image }}" alt="">
-        <div class="card-content p-4"><h3 class="mb-4">{{ index $t .title }}</h3><p>{{ index $t .desc }}</p></div>
-        <div class="card-footer p-4"><a href="{{ relLangURL .url }}">{{ index $t .refer }}</a></div>
+        <div class="card-content p-4"><h3 class="mb-4">{{ T .title }}</h3><p>{{ T .desc }}</p></div>
+        <div class="card-footer p-4"><a href="{{ relLangURL .url }}">{{ T .refer }}</a></div>
       </div></div>
       {{ end }}
     </div>
@@ -39,15 +38,15 @@
       }}
       <div class="col-12 col-md-6 mb-5 mb-md-0"><div class="feat-card border-r10">
         <img class="d-block card-bg {{ .class }} width100" src="/assets/images/{{ .image }}" alt="">
-        <div class="card-content p-4"><h3 class="mb-4">{{ index $t .title }}</h3><p>{{ index $t .desc }}</p></div>
-        <div class="card-footer p-4"><a href="{{ relLangURL .url }}">{{ index $t .refer }}</a></div>
+        <div class="card-content p-4"><h3 class="mb-4">{{ T .title }}</h3><p>{{ T .desc }}</p></div>
+        <div class="card-footer p-4"><a href="{{ relLangURL .url }}">{{ T .refer }}</a></div>
       </div></div>
       {{ end }}
     </div>
     <div class="start-card border-r10 p-4">
       {{ range slice "try" "more" "org" }}
-      <h2 class="color-font my-4">{{ index $t (printf "hp-intro-%s" .) }}</h2>
-      {{ index $t (printf "hp-intro-%s-desc" .) | markdownify }}
+      <h2 class="color-font my-4">{{ T (printf "hp-intro-%s" .) }}</h2>
+      {{ T (printf "hp-intro-%s-desc" .) | markdownify }}
       {{ end }}
     </div>
   </div></div>

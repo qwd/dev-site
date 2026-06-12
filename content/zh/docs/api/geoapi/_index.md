@@ -1,15 +1,9 @@
 ---
 title: GeoAPI
-tag:
-- guide
-- api
-- geo
-- overview
 description: 和风天气GeoAPI提供全球地理位位置、全球城市搜索服务，支持经纬度坐标反查、多语言、模糊搜索等功能。
-ref: 0-api-geo
 url: "/docs/api/geoapi/"
 translationKey: 0-api-geo
-type: guide-overview
+type: docs-overview
 ---
 
 天气数据是基于地理位置的数据，因此获取天气之前需要先知道具体的位置信息。和风天气提供一个功能强大的位置信息搜索API服务：**GeoAPI**。通过GeoAPI，你可获取到需要查询城市或POI的基本信息，包括查询地区的Location ID（你需要这个ID去查询天气），多语言名称、经纬度、时区、海拔、Rank值、归属上级行政区域、所在行政区域等。

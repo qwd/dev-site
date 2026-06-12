@@ -1,8 +1,6 @@
 ---
 title: 多语言
-tag: resource
 description: 和风天气支持30+种主流语言及所在地区的官方语言，包括中英德法西意日韩俄泰等多语言，你可以使用lang参数随时调用。
-ref: res-lang
 aliases:
 - "/docs/start/language/"
 translationKey: res-lang

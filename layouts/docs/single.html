@@ -10,15 +10,15 @@
           <div class="col-12 col-lg-10 py-3 content-border border-r10" style="width: 0;">
             <section class="article-headline mb-5 pb-3 border-bottom">
               <div class="edit-this-docs go-right d-none d-sm-inline-block color-grey">
-                <a class="grey-link no-underline" href="https://github.com/qwd/dev-site/edit/master/{{ .File.Path }}" target="_blank" rel="noopener noreferrer"><i class="ifq-pencil"></i>&nbsp;{{ index hugo.Data.t .Language.Lang "edit" }}</a>
+                <a class="grey-link no-underline" href="https://github.com/qwd/dev-site/edit/master/{{ .File.Path }}" target="_blank" rel="noopener noreferrer"><i class="ifq-pencil"></i>&nbsp;{{ T "edit" }}</a>
               </div>
               <h1 class="mr-2 d-inline-block">{{ .Title }}</h1>
             </section>
             <section class="doc-content">{{ .Content }}</section>
           </div>
-          {{ if and (ne .Params.toc false) (not (in (slice "docs-overview" "guide-overview") .Type)) }}
+          {{ if and (ne .Params.toc false) (ne .Type "docs-overview") }}
           <aside class="docs-toc small col-lg-2 d-none d-lg-block">
-            <h4 class="mb-2">{{ index hugo.Data.t .Language.Lang "tocnav" }}</h4>
+            <h4 class="mb-2">{{ T "tocnav" }}</h4>
             {{ .TableOfContents }}
           </aside>
           {{ end }}

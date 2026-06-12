@@ -1,8 +1,6 @@
 ---
 title: 预警信息
-tag: resource
 description: 和风天气预警提供中国及全球多个国家和地区的官方预警数据，这篇文档可以帮助了解预警数据的详细说明，例如支持的国家或地区列表，预警等级和预警类型。
-ref: res-warning
 translationKey: res-warning
 ---
 

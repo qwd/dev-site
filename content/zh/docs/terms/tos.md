@@ -1,10 +1,6 @@
 ---
 title: 服务条款
-tag:
-- terms
-- tos
 toc: false
-ref: terms-tos
 translationKey: terms-tos
 ---
 

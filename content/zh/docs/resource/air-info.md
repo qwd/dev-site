@@ -1,8 +1,6 @@
 ---
 title: 空气质量信息
-tag: resource
 description: 本篇文档将介绍使用和风天气空气质量API时的一些背景知识和说明。空气质量指数（Air Quality Index）简称AQI，是定量描述空气质量状况的非线性指数，空气污染越严重，对人体的健康危害也就越大。
-ref: res-air
 translationKey: res-air
 ---
 
@@ -36,7 +34,7 @@ QAQI是和风天气定义的通用的空气质量指数，以[《世卫组织全
 
 {{< aqi-table >}}
 
-*下载完整表格：[aqis.csv](https://raw.githubusercontent.com/qwd/dev-site/master/assets/data/table/aqis.csv)*
+*下载完整表格：[aqis.csv](https://raw.githubusercontent.com/qwd/dev-site/master/assets/table/aqis.csv)*
 
 ## AQI的值 {#aqi-value}
 

@@ -1,9 +1,5 @@
 ---
 title: 身份认证
-tag:
-- config
-- jwt
-ref: config-auth
 aliases:
 - "/docs/authentication/"
 - "/docs/authentication/jwt/"

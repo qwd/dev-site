@@ -1,10 +1,6 @@
 ---
 title: No Assumptions
-tag:
-- bp
-- na
 toc: false
-ref: bp-na
 translationKey: bp-na
 ---
 

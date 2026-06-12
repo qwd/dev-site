@@ -1,8 +1,6 @@
 ---
 title: Indices Info
-tag: resource
 description: Learn about Weather Indices type/level and supported countries or regions.
-ref: res-indices
 translationKey: res-indices
 ---
 

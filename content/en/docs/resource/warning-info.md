@@ -1,10 +1,8 @@
 ---
 title: Alert Info
-tag: resource
 description: QWeather provides official alert data for China and many countries and
   regions worldwide. This document helps you understand specifications of alert data,
   such as the supported regions and alert events.
-ref: res-warning
 translationKey: res-warning
 ---
 

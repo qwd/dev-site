@@ -1,10 +1,6 @@
 ---
 title: 开始使用
-tag:
-- start
-- overview
 description: 和风天气提供了一个强大、现代化、开发友好的天气数据服务。如果你是第一次接触我们的天气数据，那么可以根据下方文档快速的了解和风天气是如何运行以及所涉及到的相关概念。
-ref: start-overview
 url: "/docs/start/"
 translationKey: start-overview
 ---

@@ -6,7 +6,7 @@
     <code>{{ $field.name }}</code>
     {{- with $field.type }} <em class="api-response-type">{{ . }}</em>{{ end -}}
     {{- with $field.description }} <span class="api-response-description">{{ . | markdownify }}</span>{{ end -}}
-    {{- with $field.recursiveRef }} <span class="api-response-description">{{ if eq $lang "zh" }}递归引用{{ else }}Recursive reference{{ end }}: <code>{{ . }}</code></span>{{ end -}}
+    {{- with $field.recursiveRef }} <span class="api-response-description">{{ T "recursive-reference" }}: <code>{{ . }}</code></span>{{ end -}}
     {{- if $field.nullable }} <em class="api-response-type">nullable</em>{{ end -}}
     {{- if $field.readOnly }} <em class="api-response-type">readOnly</em>{{ end -}}
     {{- if $field.writeOnly }} <em class="api-response-type">writeOnly</em>{{ end -}}

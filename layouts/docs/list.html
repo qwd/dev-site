@@ -1,20 +1,20 @@
 {{ define "main" }}
-  {{ if eq .Params.ref "docs-home" }}
+  {{ if eq .TranslationKey "docs-home" }}
   <section class="masthead docs"><div class="container"><h1>{{ .Title }}</h1><p class="text-center">{{ .Description }}</p></div></section>
   <main class="docs-home container-lg pb-5">
     <section class="row refer-content mb-4">
       <div class="col-12 col-md-12 col-lg-5 mb-4 mb-lg-0">
         <div class="start card border-r10 p-4">
           {{- range where hugo.Data.contents.reference_docs "overview" "start-overview" }}
-            {{- $overview := partial "docs/page-by-ref.html" (dict "site" $.Site "ref" .overview) }}
+            {{- $overview := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .overview) }}
             {{- with $overview }}<h2 class="color-white mb-4"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
           {{- end }}
           <ul class="clear-list">
             {{- range where hugo.Data.contents.reference_docs "overview" "start-overview" }}
-              {{- range .list }}{{ $page := partial "docs/page-by-ref.html" (dict "site" $.Site "ref" .name) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+              {{- range .list }}{{ $page := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .name) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
             {{- end }}
             {{- range where hugo.Data.contents.reference_docs "overview" "finance-overview" }}
-              {{- range .list }}{{ $page := partial "docs/page-by-ref.html" (dict "site" $.Site "ref" .name) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+              {{- range .list }}{{ $page := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .name) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
             {{- end }}
           </ul>
         </div>
@@ -26,10 +26,10 @@
       <div class="col-12 col-md-6 col-lg mb-4 mb-md-0">
         <div class="{{ .class }} border-r10 p-4">
           {{- range where hugo.Data.contents.reference_docs "overview" .overview }}
-            {{- $overview := partial "docs/page-by-ref.html" (dict "site" $.Site "ref" .overview) }}
+            {{- $overview := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .overview) }}
             {{- with $overview }}<h2 class="mb-4"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
             <ul class="clear-list">
-              {{- range .list }}{{ $page := partial "docs/page-by-ref.html" (dict "site" $.Site "ref" .name) }}{{ with $page }}<li class="mb-2"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+              {{- range .list }}{{ $page := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .name) }}{{ with $page }}<li class="mb-2"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
             </ul>
           {{- end }}
         </div>
@@ -40,7 +40,7 @@
       {{- range where hugo.Data.contents.reference_docs "overview" "0-api-overview" }}
         {{- range .list }}
           {{- $section := . -}}
-          {{- $overview := partial "docs/page-by-ref.html" (dict "site" $.Site "ref" .name) -}}
+          {{- $overview := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .name) -}}
           {{- with $overview }}
           <div class="col-12 mb-4">
             <div class="data border-r10 p-3">
@@ -50,8 +50,7 @@
                 {{- range $section.data }}
                   {{- $type := .type -}}
                   {{- range $.Site.RegularPages }}
-                    {{- $tags := .Params.tag | default slice -}}
-                    {{- if and (gt (len $tags) 0) (strings.HasPrefix .RelPermalink $overview.RelPermalink) (eq (index $tags (sub (len $tags) 1)) $type) }}
+                    {{- if and (strings.HasPrefix .RelPermalink $overview.RelPermalink) (eq (path.Base .RelPermalink) $type) }}
                 <div class="col-12 col-md-auto mb-3">
                   <h4 class="mb-2">{{ .Title }}</h4>
                   <ul class="clear-list d-flex"><li class="mr-2"><a class="border-blue-link d-inline-block px-2 border-r10 no-underline" href="{{ .RelPermalink }}">API</a></li></ul>
@@ -80,7 +79,7 @@
           <p>{{ .Description }}</p>
           {{- if eq .TranslationKey "faq" }}
           <ul>
-            {{- range slice "fi-q-general" "fi-q-dev" "fi-q-license" "fi-q-finance" "fi-q-user" "fi-q-term" }}<li>{{ index hugo.Data.t $.Language.Lang . }}</li>{{ end }}
+            {{- range slice "fi-q-general" "fi-q-dev" "fi-q-license" "fi-q-finance" "fi-q-user" "fi-q-term" }}<li>{{ T . }}</li>{{ end }}
           </ul>
           {{- end }}
         </a>
@@ -101,7 +100,7 @@
           <div class="col-12 col-lg-10 py-3 content-border border-r10" style="width: 0;">
             <section class="article-headline mb-5 pb-3 border-bottom">
               <div class="edit-this-docs go-right d-none d-sm-inline-block color-grey">
-                <a class="grey-link no-underline" href="https://github.com/qwd/dev-site/edit/master/{{ .File.Path }}" target="_blank" rel="noopener noreferrer"><i class="ifq-pencil"></i>&nbsp;{{ index hugo.Data.t .Language.Lang "edit" }}</a>
+                <a class="grey-link no-underline" href="https://github.com/qwd/dev-site/edit/master/{{ .File.Path }}" target="_blank" rel="noopener noreferrer"><i class="ifq-pencil"></i>&nbsp;{{ T "edit" }}</a>
               </div>
               <h1 class="mr-2 d-inline-block">{{ .Title }}</h1>
             </section>

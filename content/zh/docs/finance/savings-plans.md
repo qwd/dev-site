@@ -1,9 +1,5 @@
 ---
 title: 节省计划
-tag:
-- finance
-- splans
-ref: finance-splans
 aliases:
 - "/docs/finance/saving-plans/"
 translationKey: finance-splans

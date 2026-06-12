@@ -1,9 +1,5 @@
 ---
 title: Pricing
-tag:
-- finance
-- pricing
-ref: finance-pricing
 translationKey: finance-pricing
 ---
 

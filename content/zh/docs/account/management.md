@@ -1,9 +1,5 @@
 ---
 title: 用户管理
-tag:
-- account
-- manage
-ref: account-manage
 translationKey: account-manage
 ---
 

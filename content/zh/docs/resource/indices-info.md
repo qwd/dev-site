@@ -1,8 +1,6 @@
 ---
 title: 天气指数信息
-tag: resource
 description: 天气生活指数是一种根据多种气象要素而计算出的指数，使用不同类型的指数可以直观的了解天气对人类活动的影响。了解和风天气生活指数支持的国家或地区以及天气指数的类型和等级说明。
-ref: res-indices
 translationKey: res-indices
 ---
 

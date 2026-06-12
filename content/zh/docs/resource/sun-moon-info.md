@@ -1,7 +1,5 @@
 ---
 title: 太阳和月亮信息
-tag: resource
-ref: res-sunmoon
 translationKey: res-sunmoon
 ---
 

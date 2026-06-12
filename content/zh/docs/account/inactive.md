@@ -1,9 +1,5 @@
 ---
 title: 闲置帐号
-tag:
-- account
-- inactive
-ref: account-inactive
 translationKey: account-inactive
 ---
 

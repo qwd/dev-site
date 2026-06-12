@@ -1,9 +1,5 @@
 ---
 title: iOS SDK配置
-tag:
-- config
-- ios
-ref: config-ios
 translationKey: config-ios
 ---
 

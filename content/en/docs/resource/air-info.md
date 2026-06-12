@@ -1,11 +1,9 @@
 ---
 title: Air Quailty Info
-tag: resource
 description: Air Quality Index (AQI), is a non-linear index that quantitatively describes
   the quality of the air. As air pollution levels rise, so does the AQI, along with
   the associated public health risk. This document will introduce some background
   knowledge and instructions when using Air Quality API.
-ref: res-air
 translationKey: res-air
 ---
 
@@ -39,7 +37,7 @@ Check out our supported AQIs and their value ranges, categories and more:
 
 {{< aqi-table >}}
 
-*Download entire table for the above: [aqis.csv](https://raw.githubusercontent.com/qwd/dev-site/master/assets/data/table/aqis.csv)*
+*Download entire table for the above: [aqis.csv](https://raw.githubusercontent.com/qwd/dev-site/master/assets/table/aqis.csv)*
 
 ## AQI value
 

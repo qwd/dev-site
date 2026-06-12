@@ -1,12 +1,8 @@
 ---
 title: Start
-tag:
-- start
-- overview
 description: QWeather provides a powerful, modern and development-friendly weather
   data service, this document will introduce some basic concepts for getting started
   and understanding how we work.
-ref: start-overview
 url: "/en/docs/start/"
 translationKey: start-overview
 ---

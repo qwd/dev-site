@@ -9,19 +9,19 @@
 
 {{- with $operation.description }}<p>{{ . | markdownify }}</p>{{ end }}
 
-<h2 id="endpoint">{{ if eq $lang "zh" }}请求路径{{ else }}Endpoint{{ end }}<a class="anchor-link" href="#endpoint" aria-label="Permalink">#</a></h2>
+<h2 id="endpoint">{{ T "endpoint" }}<a class="anchor-link" href="#endpoint" aria-label="Permalink">#</a></h2>
 <div class="request-url mb-3"><pre><code>{{ $operation.method }} {{ $operation.endpoint }}</code></pre></div>
 
-<h2 id="parameters">{{ if eq $lang "zh" }}参数{{ else }}Parameters{{ end }}<a class="anchor-link" href="#parameters" aria-label="Permalink">#</a></h2>
+<h2 id="parameters">{{ T "params" }}<a class="anchor-link" href="#parameters" aria-label="Permalink">#</a></h2>
 {{- range $location := slice "path" "query" }}
   {{- $parameters := where $operation.parameters "in" $location -}}
   {{- if $parameters }}
-    <h4>{{ if eq $lang "zh" }}{{ cond (eq $location "path") "路径参数" "查询参数" }}{{ else }}{{ strings.FirstUpper $location }} parameters{{ end }}</h4>
+    <h4>{{ T (cond (eq $location "path") "path-params" "query-params") }}</h4>
     <div class="request-param"><ul>
       {{- range $parameters }}
         <li class="mb-4">
           <code class="mr-1">{{ .name }}</code>
-          {{- if .required }} <span class="mr-1 italic small text-bold">({{ index hugo.Data.t $lang "rqd" }})</span>{{ end }}
+          {{- if .required }} <span class="mr-1 italic small text-bold">({{ T "rqd" }})</span>{{ end }}
           {{ .description | markdownify }}
         </li>
       {{- end }}
@@ -29,11 +29,11 @@
   {{- end }}
 {{- end }}
 
-<h2 id="request-example">{{ if eq $lang "zh" }}请求示例{{ else }}Request example{{ end }}<a class="anchor-link" href="#request-example" aria-label="Permalink">#</a></h2>
+<h2 id="request-example">{{ T "request-example" }}<a class="anchor-link" href="#request-example" aria-label="Permalink">#</a></h2>
 <pre><code class="language-bash">{{ $operation.requestExample }}</code></pre>
-<p class="small italic">{{ index hugo.Data.t $lang "example-token-hint" | markdownify }}</p>
+<p class="small italic">{{ T "example-token-hint" | markdownify }}</p>
 
-<h2 id="response">{{ if eq $lang "zh" }}返回数据{{ else }}Response{{ end }}<a class="anchor-link" href="#response" aria-label="Permalink">#</a></h2>
+<h2 id="response">{{ T "response" }}<a class="anchor-link" href="#response" aria-label="Permalink">#</a></h2>
 {{- if $operation.response.examples }}
   {{- range $operation.response.examples }}
     {{- with .summary }}<h4>{{ . }}</h4>{{ end -}}

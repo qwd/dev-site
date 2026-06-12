@@ -11,15 +11,15 @@
 <section class="doc-bc-mobile sticky-top d-block d-sm-none">
   <div class="container-fluid">
     <select onchange="if (this.value) window.location.href=this.value">
-      <option value="">{{ index hugo.Data.t .Language.Lang "docs-category" }}</option>
+      <option value="">{{ T "docs-category" }}</option>
       {{- $current := . -}}
       {{- range hugo.Data.contents.reference_docs }}
         {{- $section := . -}}
-        {{- $overview := partial "docs/page-by-ref.html" (dict "site" $current.Site "ref" .overview) -}}
+        {{- $overview := partial "docs/page-by-translation-key.html" (dict "site" $current.Site "key" .overview) -}}
         {{- with $overview }}
       <optgroup label="{{ .Title }}">
           {{- range $section.list }}
-            {{- $page := partial "docs/page-by-ref.html" (dict "site" $current.Site "ref" .name) -}}
+            {{- $page := partial "docs/page-by-translation-key.html" (dict "site" $current.Site "key" .name) -}}
             {{- with $page }}
         <option value="{{ .RelPermalink }}"{{ if eq .RelPermalink $current.RelPermalink }} selected{{ end }}>{{ .Title }}</option>
             {{- end }}

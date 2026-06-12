@@ -1,9 +1,5 @@
 ---
 title: Inactive Account
-tag:
-- account
-- inactive
-ref: account-inactive
 translationKey: account-inactive
 ---
 

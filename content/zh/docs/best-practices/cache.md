@@ -1,9 +1,5 @@
 ---
 title: 缓存你的数据
-tag:
-- bp
-- cache
-ref: bp-cache
 translationKey: bp-cache
 ---
 

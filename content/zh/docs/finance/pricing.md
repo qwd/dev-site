@@ -1,9 +1,5 @@
 ---
 title: 按量计费定价
-tag:
-- finance
-- pricing
-ref: finance-pricing
 translationKey: finance-pricing
 ---
 

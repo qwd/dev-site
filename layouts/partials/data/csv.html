@@ -1,4 +1,4 @@
-{{- $path := printf "data/table/%s.csv" . -}}
+{{- $path := printf "table/%s.csv" . -}}
 {{- $data := slice -}}
 {{- with resources.Get $path -}}
   {{- $data = transform.Unmarshal (dict "format" "csv" "targetType" "slice") . -}}

@@ -1,9 +1,5 @@
 ---
 title: VAT Invioce
-tag:
-- finance
-- vat
-ref: finance-vat-invoice
 translationKey: finance-vat-invoice
 ---
 

@@ -1,9 +1,5 @@
 ---
 title: Project and Credential
-tag:
-- config
-- project
-ref: config-project
 aliases:
 - "/docs/configuration/project-and-key/"
 translationKey: config-project

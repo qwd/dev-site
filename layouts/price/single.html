@@ -1,6 +1,5 @@
 {{ define "main" }}
-{{- $t := index hugo.Data.t .Language.Lang -}}
-<section class="masthead price"><div class="container"><h1>{{ .Title }}</h1><p class="text-center">{{ index $t "pi-desc" }}</p></div></section>
+<section class="masthead price"><div class="container"><h1>{{ .Title }}</h1><p class="text-center">{{ T "pi-desc" }}</p></div></section>
 <main class="price-homepage container pb-5">
   <section class="payment-system row mb-5">
     {{ range slice
@@ -9,21 +8,21 @@
     }}
     <div class="col-md-6 col-12 mb-5 mb-md-0"><div class="price-card {{ .class }} p-4">
       <img src="/assets/images/{{ .image }}" alt="" width="240" class="mx-auto mb-4 d-block">
-      <h2 class="mb-5">{{ index $t .title }}</h2>
-      <div class="card-brief-with-height mb-5">{{ index $t .desc | markdownify }}</div>
-      <a class="d-block" href="{{ relLangURL .url }}">{{ index $t .more }}</a>
+      <h2 class="mb-5">{{ T .title }}</h2>
+      <div class="card-brief-with-height mb-5">{{ T .desc | markdownify }}</div>
+      <a class="d-block" href="{{ relLangURL .url }}">{{ T .more }}</a>
     </div></div>
     {{ end }}
   </section>
   <section class="pricing row mb-5"><div class="col-12"><div class="price-card tier p-4">
-    <h2 class="mb-5">{{ index $t "pi-tier-title" }}</h2>
-    <div class="card-brief"><p>{{ index $t "pi-tier-desc" }}</p><p>{{ index $t "pi-tier-see" }}:</p></div>
+    <h2 class="mb-5">{{ T "pi-tier-title" }}</h2>
+    <div class="card-brief"><p>{{ T "pi-tier-desc" }}</p><p>{{ T "pi-tier-see" }}:</p></div>
     <div class="price-by-service row">
       {{ range $index, $group := hugo.Data.price }}
       <div class="col-6 col-md-4 mb-4"><a class="d-block service-card p-3 border-r10 no-underline color-font" href="{{ relLangURL "docs/finance/pricing/" }}#{{ $group.data.en | urlize }}">
         <h4 class="mb-3">{{ index $group.data $.Language.Lang }}</h4>
         <div class="price-content{{ add $index 1 }} d-none d-sm-block"><ul class="clear-list"{{ if eq $index 0 }} style="columns: 2;"{{ end }}>
-          {{ range $group.incl }}{{ $page := partial "docs/page-by-ref.html" (dict "site" $.Site "ref" .) }}{{ with $page }}<li class="small mb-1">{{ .Title }}</li>{{ end }}{{ end }}
+          {{ range $group.incl }}{{ $page := partial "docs/page-by-translation-key.html" (dict "site" $.Site "key" .) }}{{ with $page }}<li class="small mb-1">{{ .Title }}</li>{{ end }}{{ end }}
         </ul></div>
       </a></div>
       {{ end }}
@@ -31,15 +30,15 @@
   </div></div></section>
   <section class="price-calc row mb-5"><div class="col-12"><div class="price-card calc px-4 py-5"><div class="row">
     <div class="col-md-auto col-12 text-center mb-4 mb-md-0"><img src="/assets/images/pi-calc.png" alt="" width="160"></div>
-    <div class="col"><h2 class="mb-4" style="color: #fff;">{{ index $t "pi-calc" }}</h2><div class="card-calc-brief-with-height"><p>{{ index $t "pi-calc-desc" }}</p></div><a href="https://console.qweather.com/price-calculator" class="btn-link btn-link-md btn-link-blue d-inline-block">{{ index $t "pi-calc-go" }}</a></div>
+    <div class="col"><h2 class="mb-4" style="color: #fff;">{{ T "pi-calc" }}</h2><div class="card-calc-brief-with-height"><p>{{ T "pi-calc-desc" }}</p></div><a href="https://console.qweather.com/price-calculator" class="btn-link btn-link-md btn-link-blue d-inline-block">{{ T "pi-calc-go" }}</a></div>
   </div></div></div></section>
   <section class="ent-and-free row mb-5"><div class="col-12 mb-5 mb-md-0"><div class="price-card ent p-4">
-    <h2 class="mb-5">{{ index $t "pi-org" }}</h2><div class="card-brief-with-height mb-5">{{ index $t "pi-org-desc" | markdownify }}</div>
-    <a class="d-block" href="https://www.qweather.com{{ if eq .Language.Lang "en" }}/en{{ end }}/contact" target="_blank" rel="noopener noreferrer">{{ index $t "contact-us" }}</a>
+    <h2 class="mb-5">{{ T "pi-org" }}</h2><div class="card-brief-with-height mb-5">{{ T "pi-org-desc" | markdownify }}</div>
+    <a class="d-block" href="https://www.qweather.com{{ if eq .Language.Lang "en" }}/en{{ end }}/contact" target="_blank" rel="noopener noreferrer">{{ T "contact-us" }}</a>
   </div></div></section>
-  <section class="more text-center mb-5"><h2 class="mb-4">{{ index $t "pi-more" }}</h2><ul class="clear-list">
+  <section class="more text-center mb-5"><h2 class="mb-4">{{ T "pi-more" }}</h2><ul class="clear-list">
     {{ range index hugo.Data.contents "price-more" }}<li class="pb-2 big"><a class="dark-link" href="{{ relLangURL (strings.TrimPrefix "/" .link) }}">{{ index .title $.Language.Lang }}</a></li>{{ end }}
   </ul></section>
-  <section class="register text-center"><a href="https://id.qweather.com/#/register?redirect=https://console.qweather.com{{ if eq .Language.Lang "en" }}&lang=en{{ end }}" class="border-blue-link no-underline d-inline-block px-5 py-3 border-r10 big">{{ index $t "hp-regnow" }}</a></section>
+  <section class="register text-center"><a href="https://id.qweather.com/#/register?redirect=https://console.qweather.com{{ if eq .Language.Lang "en" }}&lang=en{{ end }}" class="border-blue-link no-underline d-inline-block px-5 py-3 border-r10 big">{{ T "hp-regnow" }}</a></section>
 </main>
 {{ end }}

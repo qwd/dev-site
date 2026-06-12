@@ -16,7 +16,7 @@
             <section class="doc-content">{{ partial "openapi-intermediate/operation.html" . }}</section>
           </div>
           <aside class="docs-toc small col-lg-2 d-none d-lg-block">
-            <h4 class="mb-2">{{ index hugo.Data.t .Language.Lang "tocnav" }}</h4>
+            <h4 class="mb-2">{{ T "tocnav" }}</h4>
             {{ .TableOfContents }}
           </aside>
         </div>

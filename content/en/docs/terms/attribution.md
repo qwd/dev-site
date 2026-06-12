@@ -1,9 +1,5 @@
 ---
 title: Attribution
-tag:
-- terms
-- attribution
-ref: terms-attribution
 translationKey: terms-attribution
 ---
 

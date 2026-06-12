@@ -1,9 +1,5 @@
 ---
 title: Savings plans
-tag:
-- finance
-- splans
-ref: finance-splans
 aliases:
 - "/docs/finance/saving-plans/"
 translationKey: finance-splans

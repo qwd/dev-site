@@ -1,11 +1,9 @@
 ---
 title: Language
-tag: resource
 description: QWeather supports 30+ popular languages and the official language of
   the country or region where it is located, ​​including Chinese, English, German,
   French, Spanish, Italian, Japanese, Korean, Russian, Thai, etc., and can be called
   at any time with the lang parameter.
-ref: res-lang
 aliases:
 - "/docs/start/language/"
 translationKey: res-lang

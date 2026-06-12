@@ -1,10 +1,8 @@
 ---
 title: Glossary
-tag: resource
 description: QWeather data service uses many professional terms, and we have adopted
   mostly international standard formats. Here we will explain in detail what QWeather
   coordinates, administrative divisions, KEY, time format, data update time, and etc.
-ref: res-glossary
 aliases:
 - "/docs/start/glossary/"
 translationKey: res-glossary

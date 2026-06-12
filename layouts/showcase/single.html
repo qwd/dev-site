@@ -1,8 +1,7 @@
 {{ define "main" }}
-{{- $t := index hugo.Data.t .Language.Lang -}}
 <section class="masthead showcase"><div class="container"><h1>{{ .Title }}</h1><p class="text-center">{{ .Description }}</p></div></section>
 <main class="main-content narrow container"><div class="article"><section class="showcase-content mb-5 p-5 border-r10">
-  <div class="brief mb-5"><p>🙏❤️👍</p><p>{{ index $t "si-biref" | safeHTML }}</p><p class="italic small text-underline color-grey-76">{{ index $t "si-note" }}</p></div>
+  <div class="brief mb-5"><p>🙏❤️👍</p><p>{{ T "si-biref" | safeHTML }}</p><p class="italic small text-underline color-grey-76">{{ T "si-note" }}</p></div>
   {{ range sort hugo.Data.showcase "language" }}
   <div class="works-list mb-5">
     <h2 class="pb-3 mb-3 works-lang">{{ .language }}</h2>
@@ -11,7 +10,7 @@
       <a class="work-name d-inline-block mb-2" href="{{ .code }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
       <div class="work-meta d-flex mb-2">
         <a class="d-block btn-link btn-link-sm btn-link-purple mr-2" href="{{ .website | default .code }}" target="_blank" rel="noopener noreferrer">@{{ .author }}</a>
-        {{ with .screenshot }}<a class="d-block btn-link btn-link-sm btn-link-pink" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ index $t "screenshot" }}</a>{{ end }}
+        {{ with .screenshot }}<a class="d-block btn-link btn-link-sm btn-link-pink" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ T "screenshot" }}</a>{{ end }}
       </div>
       <p class="d-block">{{ .description | plainify | truncate 200 }}</p>
     </div>

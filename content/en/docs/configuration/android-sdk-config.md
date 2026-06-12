@@ -1,9 +1,5 @@
 ---
 title: Set up Android SDK
-tag:
-- config
-- android
-ref: config-android
 translationKey: config-android
 ---
 

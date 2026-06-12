@@ -1,9 +1,5 @@
 ---
 title: 优化请求
-tag:
-- bp
-- opz
-ref: bp-opz
 translationKey: bp-opz
 ---
 

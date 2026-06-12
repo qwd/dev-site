@@ -1,9 +1,5 @@
 ---
 title: Developer Type
-tag:
-- account
-- developers
-ref: account-developers
 translationKey: account-developers
 ---
 

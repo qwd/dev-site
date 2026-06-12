@@ -1,10 +1,8 @@
 ---
 title: Icons Info
-tag: resource
 description: QWeather Icons is a beautiful weather icon and weather icon font in SVG
   format for easy embedding in websites or APPs. QWeather Icons is open source project
   and you can use it for any project or redesign these icons for free.
-ref: res-icons
 aliases:
 - "/docs/start/icons/"
 translationKey: res-icons

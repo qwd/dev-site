@@ -1,10 +1,6 @@
 ---
 title: 计费方式和支付
-tag:
-- finance
-- billing
 description: 了解和风天气开发服务的账单和支付系统是如何工作的。
-ref: finance-billing
 translationKey: finance-billing
 ---
 

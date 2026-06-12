@@ -1,9 +1,5 @@
 ---
 title: Set up iOS SDK
-tag:
-- config
-- ios
-ref: config-ios
 translationKey: config-ios
 ---
 

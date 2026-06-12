@@ -1,24 +1,22 @@
 {{- $current := . -}}
 {{- range hugo.Data.contents.reference_docs -}}
   {{- $section := . -}}
-  {{- $overview := partial "docs/page-by-ref.html" (dict "site" $current.Site "ref" .overview) -}}
+  {{- $overview := partial "docs/page-by-translation-key.html" (dict "site" $current.Site "key" .overview) -}}
   {{- with $overview }}
   <div class="nav-section start mb-2 pb-2">
     <h4 class="mb-2"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
     <ul class="clear-list">
       {{- range $section.list }}
         {{- $item := . -}}
-        {{- $page := partial "docs/page-by-ref.html" (dict "site" $current.Site "ref" .name) -}}
+        {{- $page := partial "docs/page-by-translation-key.html" (dict "site" $current.Site "key" .name) -}}
         {{- with $page }}
         <li class="mb-1{{ if eq .RelPermalink $current.RelPermalink }} active{{ end }}">
           <a class="grey-link px-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{- $currentTags := $current.Params.tag | default slice -}}
-          {{- $pageTags := .Params.tag | default slice -}}
-          {{- if and $item.sub (gt (len $currentTags) 0) (gt (len $pageTags) 0) (eq (index $currentTags 0) (index $pageTags 0)) }}
+          {{- if and $item.sub (strings.HasPrefix $current.RelPermalink .RelPermalink) }}
           <div class="sub-nav ml-2 mt-1 pl-2">
             <ul class="clear-list">
               {{- range $item.sub }}
-                {{- $subpage := partial "docs/page-by-ref.html" (dict "site" $current.Site "ref" .subname) -}}
+                {{- $subpage := partial "docs/page-by-translation-key.html" (dict "site" $current.Site "key" .subname) -}}
                 {{- with $subpage }}
                 <li class="mb-1{{ if eq .RelPermalink $current.RelPermalink }} active{{ end }}">
                   <a class="dark-link px-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
@@ -35,8 +33,7 @@
               {{- range $item.data }}
                 {{- $type := .type -}}
                 {{- range $current.Site.RegularPages }}
-                  {{- $tags := .Params.tag | default slice -}}
-                  {{- if and (gt (len $tags) 0) (strings.HasPrefix .RelPermalink $page.RelPermalink) (eq (index $tags (sub (len $tags) 1)) $type) }}
+                  {{- if and (strings.HasPrefix .RelPermalink $page.RelPermalink) (eq (path.Base .RelPermalink) $type) }}
                 <li class="mb-1{{ if eq .RelPermalink $current.RelPermalink }} active{{ end }}">
                   <a class="dark-link px-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
                 </li>
