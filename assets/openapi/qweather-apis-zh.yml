@@ -2,7 +2,7 @@
 openapi: 3.0.0
 info:
   title: 和风天气开发者服务 APIs
-  description: 和风天气API列表。
+  description: 和风天气 API 列表。
   version: latest
   termsOfService: https://www.qweather.com/terms/developers-eula
   contact:
@@ -16,7 +16,7 @@ servers:
   description: 在下方填写你的API Host
   variables:
     API Host:
-      default: ''
+      default: 'abc.re.qweatherapi.com'
       description: 在控制台设置中查看你的API Host。
 security:
 - jwt: []
@@ -92,7 +92,7 @@ paths:
                 "$ref": "#/components/schemas/getCityLookup"
               examples:
                 response:
-                  externalValue: "./examples/getGeoCitylookup.json"
+                  externalValue: "./examples/getGeoCitylookup-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/geo/v2/poi/lookup":
@@ -119,7 +119,7 @@ paths:
                 "$ref": "#/components/schemas/getPoiLookup"
               examples:
                 response:
-                  externalValue: "./examples/getGeoPoilookup.json"
+                  externalValue: "./examples/getGeoPoilookup-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/v7/weather/now":
@@ -146,7 +146,7 @@ paths:
                 "$ref": "#/components/schemas/getWeatherNow"
               examples:
                 response:
-                  externalValue: "./examples/getWeatherNow.json"
+                  externalValue: "./examples/getWeatherNow-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/v7/weather/{days}":
@@ -155,7 +155,7 @@ paths:
       tags:
       - Weather
       summary: 每日天气预报
-      description: 每日天气预报API，提供全球城市未来3-30天天气预报，包括：日出日落、月升月落、最高最低温度、天气白天和夜间状况、风力、风速、风向、相对湿度、大气压强、降水量、露点温度、紫外线强度、能见度等。
+      description: 每日天气预报API，提供全球城市未来3-30天天气预报，包括：日出日落、月升月落、最高最低温度、天气白天和夜间状况、风力、风速、风向、相对湿度、站点气压、降水量、露点温度、紫外线强度、能见度等。
       externalDocs:
         url: https://dev.qweather.com/docs/api/weather/weather-daily-forecast/
       parameters:
@@ -171,7 +171,7 @@ paths:
                 "$ref": "#/components/schemas/getWeatherDaily"
               examples:
                 response:
-                  externalValue: "./examples/getWeatherDailyForecast.json"
+                  externalValue: "./examples/getWeatherDailyForecast-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/v7/weather/{hours}":
@@ -180,7 +180,7 @@ paths:
       tags:
       - Weather
       summary: 逐小时天气预报
-      description: 逐小时天气预报API，提供全球城市未来24-168小时逐小时天气预报，包括：温度、天气状况、风力、风速、风向、相对湿度、大气压强、降水概率、露点温度、云量。
+      description: 逐小时天气预报API，提供全球城市未来24-168小时逐小时天气预报，包括：温度、天气状况、风力、风速、风向、相对湿度、站点气压、降水概率、露点温度、云量。
       externalDocs:
         url: https://dev.qweather.com/docs/api/weather/weather-hourly-forecast/
       parameters:
@@ -196,7 +196,7 @@ paths:
                 "$ref": "#/components/schemas/getWeatherHourly"
               examples:
                 response:
-                  externalValue: "./examples/getWeatherHourlyForecast.json"
+                  externalValue: "./examples/getWeatherHourlyForecast-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/v7/minutely/5m":
@@ -220,7 +220,7 @@ paths:
                 "$ref": "#/components/schemas/getMinutely"
               examples:
                 response:
-                  externalValue: "./examples/getMinutelyPrecipitation.json"
+                  externalValue: "./examples/getMinutelyPrecipitation-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/v7/indices/{days}":
@@ -250,7 +250,7 @@ paths:
                 "$ref": "#/components/schemas/getWeatherIndex"
               examples:
                 response:
-                  externalValue: "./examples/getWeatherIndices.json"
+                  externalValue: "./examples/getWeatherIndices-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/weatheralert/v1/current/{latitude}/{longitude}":
@@ -259,7 +259,7 @@ paths:
       tags:
       - Weather Alert
       summary: 实时天气预警
-      description: 根据指定的经纬度坐标，查询中国和全球正在生效的官方天气预警信息。阅读[实用资料-预警](/docs/resource/warning-info/)以了解预警信息支持的国家和地区、事件类型等必要信息。
+      description: 根据指定的经纬度坐标，查询中国和全球正在生效的官方天气预警信息。阅读[实用资料-预警](https://dev.qweather.com/docs/resource/warning-info/)以了解预警信息支持的国家和地区、事件类型等必要信息。
       externalDocs:
         url: https://dev.qweather.com/docs/api/warning/weather-alert/
       parameters:
@@ -297,7 +297,7 @@ paths:
                 "$ref": "#/components/schemas/getWarning"
               examples:
                 response:
-                  externalValue: "./examples/getWarningNow.json"
+                  externalValue: "./examples/getWarningNow-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/airquality/v1/current/{latitude}/{longitude}":
@@ -315,7 +315,7 @@ paths:
         - 健康建议
         - 相关联的监测站信息
 
-        我们推荐阅读[空气质量信息文档](/docs/resource/air-info/)，以便了解指数类型、污染物、支持的国家等信息。
+        我们推荐阅读[空气质量信息文档](https://dev.qweather.com/docs/resource/air-info/)，以便了解指数类型、污染物、支持的国家等信息。
       externalDocs:
         url: https://dev.qweather.com/docs/api/air-quality/air-current/
       parameters:
@@ -343,7 +343,7 @@ paths:
       description: |-
         空气质量每日预报API提供未来3天的空气质量（AQI）预报、污染物浓度值和健康建议。
 
-        我们推荐阅读[空气质量信息文档](/docs/resource/air-info/)，以便了解AQI的类型、污染物、支持的国家等信息。
+        我们推荐阅读[空气质量信息文档](https://dev.qweather.com/docs/resource/air-info/)，以便了解AQI的类型、污染物、支持的国家等信息。
       externalDocs:
         url: https://dev.qweather.com/docs/api/air-quality/air-daily-forecast/
       parameters:
@@ -371,7 +371,7 @@ paths:
       description: |-
         空气质量小时预报API提供未来24小时空气质量的数据，包括AQI、污染物浓度、分指数以及健康建议。
 
-        我们推荐阅读[空气质量信息文档](/docs/resource/air-info/)，以便了解AQI的类型、污染物、支持的国家等信息。
+        我们推荐阅读[空气质量信息文档](https://dev.qweather.com/docs/resource/air-info/)，以便了解AQI的类型、污染物、支持的国家等信息。
       externalDocs:
         url: https://dev.qweather.com/docs/api/air-quality/air-hourly-forecast/
       parameters:
@@ -438,7 +438,7 @@ paths:
                 "$ref": "#/components/schemas/getAqiNowV7"
               examples:
                 response:
-                  externalValue: "./examples/getAirNowV7.json"
+                  externalValue: "./examples/getAirNowV7-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/v7/air/5d":
@@ -461,7 +461,7 @@ paths:
                 "$ref": "#/components/schemas/getAqiDailyV7"
               examples:
                 response:
-                  externalValue: "./examples/getAirDailyV7.json"
+                  externalValue: "./examples/getAirDailyV7-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/v7/tropical/storm-forecast":
@@ -473,7 +473,7 @@ paths:
       description: |-
         台风预报API提供全球主要海洋流域的台风预测位置、等级、气压、风速等。
 
-        > 如果查询的台风已经结束，则返回的数据为空，建议先通过[台风列表接口](/docs/api/tropical-cyclone/storm-list/)获取台风的状态
+        > 如果查询的台风已经结束，则返回的数据为空，建议先通过[台风列表接口](https://dev.qweather.com/docs/api/tropical-cyclone/storm-list/)获取台风的状态
       externalDocs:
         url: https://dev.qweather.com/docs/api/tropical-cyclone/storm-forecast/
       parameters:
@@ -537,7 +537,7 @@ paths:
                 "$ref": "#/components/schemas/getStormList"
               examples:
                 response:
-                  externalValue: "./examples/getStormList.json"
+                  externalValue: "./examples/getStormList-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/v7/ocean/tide":
@@ -562,32 +562,6 @@ paths:
               examples:
                 response:
                   externalValue: "./examples/getOceanTide.json"
-        default:
-          "$ref": "#/components/responses/defaultError"
-  "/v7/ocean/currents":
-    get:
-      operationId: getOceanCurrents
-      tags:
-      - Ocean
-      summary: 潮流数据
-      description: |-
-        查询全球海域未来10天的表层潮流速度和方向预报。
-
-        该接口已弃用，自2026年3月1日停止服务。
-      deprecated: true
-      parameters:
-      - "$ref": "#/components/parameters/currentsStationIdQuery"
-      - "$ref": "#/components/parameters/date10Query"
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/getCurrents"
-              examples:
-                response:
-                  externalValue: "./examples/getOceanCurrents.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/solarradiation/v1/forecast/{latitude}/{longitude}":
@@ -668,7 +642,7 @@ paths:
                 "$ref": "#/components/schemas/getMoon"
               examples:
                 response:
-                  externalValue: "./examples/getAstronomyMoon.json"
+                  externalValue: "./examples/getAstronomyMoon-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/v7/astronomy/sun":
@@ -680,7 +654,7 @@ paths:
       description: |-
         获取未来60天全球任意地点日出日落时间。
 
-        > 在[逐天预报API](/docs/api/weather)中，也会返回对应天数的日出日落、月升月落和月相数据
+        > 在[逐天预报API](https://dev.qweather.com/docs/api/weather)中，也会返回对应天数的日出日落、月升月落和月相数据
       externalDocs:
         url: https://dev.qweather.com/docs/api/astronomy/sunrise-sunset/
       parameters:
@@ -768,7 +742,7 @@ paths:
       description: |-
         查询最近24小时的API请求量统计。
 
-        > **提示：**返回的数据截止至上一个小时或更早时候，它与控制台中显示的数据相比可能有1个小时或更长的延迟。
+        > **提示：** 返回的数据截止至上一个小时或更早时候，它与控制台中显示的数据相比可能有1个小时或更长的延迟。
 
         ## 获取权限 {#privileges}
 
@@ -823,7 +797,7 @@ paths:
                 "$ref": "#/components/schemas/getTopCity"
               examples:
                 response:
-                  externalValue: "./examples/getGeoTopcity.json"
+                  externalValue: "./examples/getGeoTopcity-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/geo/v2/poi/range":
@@ -850,7 +824,7 @@ paths:
                 "$ref": "#/components/schemas/getPoiRange"
               examples:
                 response:
-                  externalValue: "./examples/getGeoPoirange.json"
+                  externalValue: "./examples/getGeoPoirange-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/v7/grid-weather/now":
@@ -862,7 +836,7 @@ paths:
       description: |-
         基于数值模式的天气预报数据，提供全球指定坐标的实时天气，分辨率3-5公里。
 
-        > **提示：** 格点天气预报是基于数值预报模型生成，不适宜与观测站数据对比。如需基于观测站的城市天气，请使用[城市实时天气API](/docs/api/weather/weather-now/)。格点天气采用UTC 0时区表示时间。
+        > **提示：** 格点天气预报是基于数值预报模型生成，不适宜与观测站数据对比。如需基于观测站的城市天气，请使用[城市实时天气API](https://dev.qweather.com/docs/api/weather/weather-now/)。格点天气采用UTC 0时区表示时间。
       externalDocs:
         url: https://dev.qweather.com/docs/api/weather/grid-weather-now/
       parameters:
@@ -878,7 +852,7 @@ paths:
                 "$ref": "#/components/schemas/getGridWeatherNow"
               examples:
                 response:
-                  externalValue: "./examples/getGridWeatherNow.json"
+                  externalValue: "./examples/getGridWeatherNow-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/v7/grid-weather/{days}":
@@ -890,7 +864,7 @@ paths:
       description: |-
         基于数值模式的天气预报数据，提供全球指定坐标的每日天气预报，分辨率3-5公里。
 
-        > **提示：** 格点天气预报是基于数值预报模型生成，不适宜与观测站数据对比。如需基于观测站的城市天气，请使用[城市每日天气API](/docs/api/weather/weather-daily-forecast/)。格点天气采用UTC 0时区表示时间。
+        > **提示：** 格点天气预报是基于数值预报模型生成，不适宜与观测站数据对比。如需基于观测站的城市天气，请使用[城市每日天气API](https://dev.qweather.com/docs/api/weather/weather-daily-forecast/)。格点天气采用UTC 0时区表示时间。
       externalDocs:
         url: https://dev.qweather.com/docs/api/weather/grid-weather-daily-forecast/
       parameters:
@@ -907,7 +881,7 @@ paths:
                 "$ref": "#/components/schemas/getGridWeatherDaily"
               examples:
                 response:
-                  externalValue: "./examples/getGridWeatherDaily.json"
+                  externalValue: "./examples/getGridWeatherDaily-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/v7/grid-weather/{hours}":
@@ -919,7 +893,7 @@ paths:
       description: |-
         基于数值模式的天气预报数据，提供全球指定坐标的逐小时天气预报，分辨率3-5公里。
 
-        > **提示：** 格点天气预报是基于数值预报模型生成，不适宜与观测站数据对比。如需基于观测站的城市天气，请使用[城市逐小时天气API](/docs/api/weather/weather-hourly-forecast/)。格点天气采用UTC 0时区表示时间。
+        > **提示：** 格点天气预报是基于数值预报模型生成，不适宜与观测站数据对比。如需基于观测站的城市天气，请使用[城市逐小时天气API](https://dev.qweather.com/docs/api/weather/weather-hourly-forecast/)。格点天气采用UTC 0时区表示时间。
       externalDocs:
         url: https://dev.qweather.com/docs/api/weather/grid-weather-hourly-forecast/
       parameters:
@@ -936,7 +910,7 @@ paths:
                 "$ref": "#/components/schemas/getGridWeatherHourly"
               examples:
                 response:
-                  externalValue: "./examples/getGridWeatherHourly.json"
+                  externalValue: "./examples/getGridWeatherHourly-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/v7/historical/weather":
@@ -962,7 +936,7 @@ paths:
                 "$ref": "#/components/schemas/getHistoricalWeather"
               examples:
                 response:
-                  externalValue: "./examples/getHistoricalWeather.json"
+                  externalValue: "./examples/getHistoricalWeather-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
       x-aliases:
@@ -972,7 +946,8 @@ paths:
       operationId: getHistoricalAir
       tags:
       - Air Quality
-      summary: 空气质量时光机
+      summary: 空气质量时光机（已弃用）
+      deprecated: true
       description: |-
         获取最近10天的中国空气质量历史再分析数据。
 
@@ -992,7 +967,7 @@ paths:
                 "$ref": "#/components/schemas/getHistoricalAir"
               examples:
                 response:
-                  externalValue: "./examples/getHistoricalAir.json"
+                  externalValue: "./examples/getHistoricalAir-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
       x-aliases:
@@ -1022,13 +997,7 @@ components:
                   status:
                     type: number
                     description: 这个错误的HTTP status code。
-                    enum:
-                    - 400
-                    - 401
-                    - 403
-                    - 404
-                    - 429
-                    - 500
+                    enum: [400, 401, 403, 404, 429, 500]
                   type:
                     type: string
                     description: 一个URL用于标识错误类型，访问URL查看详细错误信息。
@@ -1068,7 +1037,7 @@ components:
     airStationIdPath:
       name: locationId
       in: path
-      description: 空气质量监测站的LocationID，LocationID可通过[GeoAPI](/docs/api/geoapi/)获取。例如 `P58911`
+      description: 空气质量监测站的LocationID，LocationID可通过[GeoAPI](https://dev.qweather.com/docs/api/geoapi/)获取。例如 `P58911`
       required: true
       schema:
         type: string
@@ -1076,7 +1045,7 @@ components:
     locationQuery:
       name: location
       in: query
-      description: 需要查询地区的[LocationID](/docs/resource/glossary/#locationid)或以英文逗号分隔的[经度,纬度坐标](/docs/resource/glossary/#coordinate)（十进制，最多支持小数点后两位），LocationID可通过[GeoAPI](/docs/api/geoapi/)获取。例如 `location=101010100` 或 `location=116.41,39.92`
+      description: 需要查询地区的[LocationID](https://dev.qweather.com/docs/resource/glossary/#locationid)或以英文逗号分隔的[经度,纬度坐标](https://dev.qweather.com/docs/resource/glossary/#coordinate)（十进制，最多支持小数点后两位），LocationID可通过[GeoAPI](https://dev.qweather.com/docs/api/geoapi/)获取。例如 `location=101010100` 或 `location=116.41,39.92`
       required: true
       schema:
         type: string
@@ -1084,7 +1053,7 @@ components:
     lonlatQuery:
       name: location
       in: query
-      description: 需要查询地区的以英文逗号分隔的[经度,纬度坐标](/docs/resource/glossary/#coordinate)（十进制，最多支持小数点后两位）。例如 `location=116.41,39.92`
+      description: 需要查询地区的以英文逗号分隔的[经度,纬度坐标](https://dev.qweather.com/docs/resource/glossary/#coordinate)（十进制，最多支持小数点后两位）。例如 `location=116.41,39.92`
       required: true
       schema:
         type: string
@@ -1100,7 +1069,7 @@ components:
     locationIdQuery:
       name: location
       in: query
-      description: 需要查询的地区，仅支持[LocationID](/docs/resource/glossary/#locationid)，LocationID可通过[GeoAPI](/docs/api/geoapi/)获取。例如 `location=101010100`
+      description: 需要查询的地区，仅支持[LocationID](https://dev.qweather.com/docs/resource/glossary/#locationid)，LocationID可通过[GeoAPI](https://dev.qweather.com/docs/api/geoapi/)获取。例如 `location=101010100`
       required: true
       schema:
         type: string
@@ -1108,17 +1077,12 @@ components:
     colorQuery:
       name: color
       in: query
-      description: '指定颜色方案，参考[颜色](https://dev.qweather.com/docs/resource/color-pallet)。
-
-        '
+      description: '指定颜色方案，参考[颜色](https://dev.qweather.com/docs/resource/color-pallet)。'
       required: false
       schema:
         type: string
         default: light
-        enum:
-        - light
-        - dark
-        - local
+        enum: [light, dark, local]
         example: light
     tideStationIdQuery:
       name: location
@@ -1128,14 +1092,6 @@ components:
       schema:
         type: string
         example: P66981
-    currentsStationIdQuery:
-      name: location
-      in: query
-      description: 潮流观测站的[LocationID](https://dev.qweather.com/docs/resource/glossary/#locationid)，例如 `location=P2951`。
-      required: true
-      schema:
-        type: string
-        example: P2951
     admQuery:
       name: adm
       in: query
@@ -1147,7 +1103,7 @@ components:
     rangeQuery:
       name: range
       in: query
-      description: 搜索范围，可设定只在某个国家或地区范围内进行搜索，国家和地区名称需使用[ISO 3166 所定义的国家代码](/docs/resource/glossary/#iso-3166)。如果不设置此参数，搜索范围将在所有城市。例如 `range=cn`
+      description: 搜索范围，可设定只在某个国家或地区范围内进行搜索，国家和地区名称需使用[ISO 3166 所定义的国家代码](https://dev.qweather.com/docs/resource/glossary/#iso-3166)。如果不设置此参数，搜索范围将在所有城市。例如 `range=cn`
       required: false
       schema:
         type: string
@@ -1173,10 +1129,7 @@ components:
       required: true
       schema:
         type: string
-        enum:
-        - scenic
-        - CSTA
-        - TSTA
+        enum: [scenic, CSTA, TSTA]
         example: scenic
     poiCityQuery:
       name: city
@@ -1192,7 +1145,7 @@ components:
     langQuery:
       name: lang
       in: query
-      description: 多语言设置，请阅读[多语言](/docs/resource/language/)文档，了解我们的多语言是如何工作、如何设置以及数据是否支持多语言。
+      description: 多语言设置，请阅读[多语言](https://dev.qweather.com/docs/resource/language/)文档，了解我们的多语言是如何工作、如何设置以及数据是否支持多语言。
       required: false
       schema:
         type: string
@@ -1200,7 +1153,7 @@ components:
     stormIdQuery:
       name: stormid
       in: query
-      description: 需要查询的台风ID，StormID可通过[台风查询API](/docs/api/tropical-cyclone/storm-list/)获取。例如 `stormid=NP2018`
+      description: 需要查询的台风ID，StormID可通过[台风查询API](https://dev.qweather.com/docs/api/tropical-cyclone/storm-list/)获取。例如 `stormid=NP2018`
       required: true
       schema:
         type: string
@@ -1208,7 +1161,7 @@ components:
     indexTypeQuery:
       name: type
       in: query
-      description: 生活指数的类型ID，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数，多个类型用英文`,`分割。例如`type=3,5`。具体生活指数的ID和等级参考[天气指数信息](/docs/resource/indices-info/)。各项生活指数并非适用于所有城市。
+      description: 生活指数的类型ID，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数，多个类型用英文`,`分割。例如`type=3,5`。具体生活指数的ID和等级参考[天气指数信息](https://dev.qweather.com/docs/resource/indices-info/)。各项生活指数并非适用于所有城市。
       required: true
       schema:
         type: string
@@ -1241,10 +1194,7 @@ components:
       schema:
         type: integer
         default: 60
-        enum:
-        - 15
-        - 30
-        - 60
+        enum: [15, 30, 60]
         example: 60
     solarRadiationTiltQuery:
       name: tilt
@@ -1321,12 +1271,7 @@ components:
       schema:
         type: string
         example: 3d
-        enum:
-        - 3d
-        - 7d
-        - 10d
-        - 15d
-        - 30d
+        enum: [3d, 7d, 10d, 15d, 30d]
     tzQuery:
       name: tz
       in: query
@@ -1355,9 +1300,7 @@ components:
       schema:
         type: string
         example: 1d
-        enum:
-        - 1d
-        - 3d
+        enum: [1d, 3d]
     hours168Path:
       name: hours
       in: path
@@ -1371,10 +1314,7 @@ components:
       schema:
         type: string
         example: 24h
-        enum:
-        - 24h
-        - 72h
-        - 168h
+        enum: [24h, 72h, 168h]
     hours72Path:
       name: hours
       in: path
@@ -1387,9 +1327,7 @@ components:
       schema:
         type: string
         example: 24h
-        enum:
-        - 24h
-        - 72h
+        enum: [24h, 72h]
     basinQuery:
       name: basin
       in: query
@@ -1405,8 +1343,7 @@ components:
       schema:
         type: string
         example: NP
-        enum:
-        - NP
+        enum: [NP]
     stormYearQuery:
       name: year
       in: query
@@ -1449,9 +1386,7 @@ components:
       description: 数据单位，可选 `m`（公制，默认）或 `i`（英制）。
       schema:
         type: string
-        enum:
-        - m
-        - i
+        enum: [m, i]
         default: m
         example: m
     days7Path:
@@ -1461,9 +1396,7 @@ components:
       description: 预报天数，可选 `3d` 或 `7d`。
       schema:
         type: string
-        enum:
-        - 3d
-        - 7d
+        enum: [3d, 7d]
         example: 3d
     historicalDateQuery:
       name: date
@@ -1476,21 +1409,21 @@ components:
   schemas:
     asOf:
       type: string
-      description: 当前数据的截止日期，ISO8601格式，UTC时间.
+      description: 当前数据的截止日期
       format: date-time
     referObject:
       type: object
-      description: 数据来源和许可信息。
+      description: 数据来源和许可信息
       properties:
         sources:
           type: array
-          description: 原始数据来源，或数据源说明，**可能为空**
+          description: 原始数据来源，或数据源说明，可能为空
           nullable: true
           items:
             type: string
         license:
           type: array
-          description: 数据许可或版权声明，**可能为空**
+          description: 数据许可或版权声明，可能为空
           nullable: true
           items:
             type: string
@@ -1499,13 +1432,13 @@ components:
       properties:
         tag:
           type: string
-          description: 数据标签
+          description: 数据唯一标识
     metaObsObject:
       type: object
       properties:
         observationTime:
           type: string
-          description: 数据的实际观测时间.
+          description: 数据的实际观测时间
           format: date-time
     metaAttributeObject:
       type: object
@@ -1514,8 +1447,8 @@ components:
           type: array
           items:
             type: string
-            description: 数据来源的归因信息、URL或声明，必须与当前共同显示，可能为空。
-          description: attribution 数据。
+            description: 数据归因信息、URL或声明，必须与当前数据共同显示
+          description: 数据归因信息，必须与当前数据共同显示
     metaZeroObject:
       type: object
       properties:
@@ -1523,92 +1456,116 @@ components:
           type: boolean
           description: "**true** 表示请求成功，但无数据返回，例如查询地点无预警"
           default: false
+
     getCityLookup:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         location:
           "$ref": "#/components/schemas/locationArray"
         refer:
           "$ref": "#/components/schemas/referObject"
+
     locationArray:
       type: array
-      description: 地区/城市信息列表。
+      description: 地区/城市信息列表
       items:
         type: object
         properties:
           name:
             type: string
-            description: 地区/城市名称
+            description: 位置名称
           id:
             type: string
-            description: 地区/城市ID
+            description: 位置ID
           lat:
             type: string
-            description: 地区/城市纬度
+            description: 纬度
           lon:
             type: string
-            description: 地区/城市经度
+            description: 经度
           adm2:
             type: string
-            description: 地区/城市的上级行政区划名称
+            description: 上级行政区划名称
           adm1:
             type: string
-            description: 地区/城市所属一级行政区域
+            description: 一级行政区域名称
           country:
             type: string
-            description: 地区/城市所属国家名称
+            description: 国家名称
           tz:
             type: string
-            description: 地区/城市所在[时区](/docs/resource/glossary/#timezone)
+            description: "[时区](https://dev.qweather.com/docs/resource/glossary/#timezone)"
           utcOffset:
             type: string
-            description: 地区/城市目前与UTC时间偏移的小时数，参考[详细说明](/docs/resource/glossary/#utc-offset)
+            description: 当前位置与[UTC时间偏移的小时数](https://dev.qweather.com/docs/resource/glossary/#utc-offset)
           isDst:
             type: string
-            description: 地区/城市是否当前处于[夏令时](/docs/resource/glossary/#daylight-saving-time)。`1` 表示当前处于夏令时，`0` 表示当前不是夏令时。
+            description: 是否处于[夏令时](https://dev.qweather.com/docs/resource/glossary/#daylight-saving-time)。`1` 表示当前处于夏令时，`0` 表示当前不是夏令时
           type:
             type: string
-            description: 地区/城市的属性
+            description: 当前位置的属性
           rank:
             type: string
-            description: "[地区评分](/docs/resource/glossary/#rank)"
+            description: "[评分](https://dev.qweather.com/docs/resource/glossary/#rank)"
           fxLink:
             type: string
             format: uri
-            description: 该地区的天气预报网页链接，便于嵌入你的网站或应用
+            description: 该位置的天气预报网页链接，便于嵌入你的网站或应用
+
+    getTopCity:
+      type: object
+      properties:
+        code:
+          $ref: "#/components/schemas/statusCode"
+        topCityList:
+          allOf:
+          - "$ref": "#/components/schemas/locationArray"
+          description: 热门城市/地区列表
+        refer:
+          "$ref": "#/components/schemas/referObject"
+
     getPoiLookup:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         poi:
-          "$ref": "#/components/schemas/poiArray"
+          allOf:
+          - "$ref": "#/components/schemas/locationArray"
+          description: POI 列表
         refer:
           "$ref": "#/components/schemas/referObject"
+
+    getPoiRange:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+        poi:
+          allOf:
+          - "$ref": "#/components/schemas/locationArray"
+          description: POI 列表
+        refer:
+          "$ref": "#/components/schemas/referObject"
+
     getWeatherNow:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         updateTime:
           "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
         fxLink:
           "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
         now:
-          description: 当前天气实况数据。
+          description: 天气实况数据
           allOf:
           - type: object
             properties:
               obsTime:
                 "$ref": "#/components/schemas/obsTime"
-                description: 数据观测时间
           - "$ref": "#/components/schemas/weatherBasicObject"
           - type: object
             properties:
@@ -1620,50 +1577,137 @@ components:
                 description: 能见度，默认单位：公里
         refer:
           "$ref": "#/components/schemas/referObject"
+
     getWeatherDaily:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         updateTime:
           "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
         fxLink:
           "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
         daily:
-          "$ref": "#/components/schemas/weatherDailyArray"
+          description: 每日预报数据列表
+          type: array
+          items:
+            allOf:
+              - type: object
+                properties:
+                  fxDate:
+                    "$ref": "#/components/schemas/fxDate"
+                  sunrise:
+                    type: string
+                    description: "[日出时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
+                  sunset:
+                    type: string
+                    description: "[日落时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
+                  moonrise:
+                    type: string
+                    description: "[月升时间](https://dev.qweather.com/docs/resource/sun-moon-info/#moonrise-and-moonset)，可能为空"
+                  moonset:
+                    type: string
+                    description: "[月落时间](https://dev.qweather.com/docs/resource/sun-moon-info/#moonrise-and-moonset)，可能为空"
+                  moonPhase:
+                    type: string
+                    description: "[月相名称](https://dev.qweather.com/docs/resource/sun-moon-info/#moon-phase)"
+                  moonPhaseIcon:
+                    type: string
+                    description: "月相[图标代码](https://dev.qweather.com/docs/resource/icons/)"
+              - "$ref": "#/components/schemas/weatherDailyBasicObject"
+              - type: object
+                properties:
+                  uvIndex:
+                    type: string
+                    description: 紫外线强度指数
+                  vis:
+                    type: string
+                    description: 能见度，默认单位：公里
+                  cloud:
+                    type: string
+                    description: 云量，百分比数值
         refer:
           "$ref": "#/components/schemas/referObject"
+
     getWeatherHourly:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         updateTime:
           "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
         fxLink:
           "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
         hourly:
+          description: 逐小时数据列表
           allOf:
           - type: object
             properties:
               fxTime:
                 "$ref": "#/components/schemas/fxTime"
-                description: 预报时间
           - "$ref": "#/components/schemas/weatherBasicObject"
           - type: object
             properties:
               pop:
                 type: string
-                description: 逐小时预报降水概率，百分比数值，**可能为空**
-          description: 逐小时数据列表。
+                description: 逐小时预报降水概率，百分比数值，可能为空
         refer:
           "$ref": "#/components/schemas/referObject"
+
+    weatherDailyBasicObject:
+      type: object
+      properties:
+        tempMax:
+            type: string
+            description: 最高温度
+        tempMin:
+          type: string
+          description: 最低温度
+        iconDay:
+          type: string
+          description: 白天天气状况的[图标代码](https://dev.qweather.com/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
+        textDay:
+          type: string
+          description: 白天天气状况文字描述，包括阴晴雨雪等天气状态的描述
+        iconNight:
+          type: string
+          description: 夜间天气状况的[图标代码](https://dev.qweather.com/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
+        textNight:
+          type: string
+          description: 晚间天气状况文字描述，包括阴晴雨雪等天气状态的描述
+        wind360Day:
+          type: string
+          description: 白天[风向](https://dev.qweather.com/docs/resource/wind-info/#wind-direction)360角度
+        windDirDay:
+          type: string
+          description: 白天[风向](https://dev.qweather.com/docs/resource/wind-info/#wind-direction)
+        windScaleDay:
+          type: string
+          description: 白天[风力等级](https://dev.qweather.com/docs/resource/wind-info/#wind-scale)
+        windSpeedDay:
+          type: string
+          description: 白天[风速](https://dev.qweather.com/docs/resource/wind-info/#wind-speed)，公里/小时
+        wind360Night:
+          type: string
+          description: 夜间[风向](https://dev.qweather.com/docs/resource/wind-info/#wind-direction)360角度
+        windDirNight:
+          type: string
+          description: 夜间[风向](https://dev.qweather.com/docs/resource/wind-info/#wind-direction)
+        windScaleNight:
+          type: string
+          description: 夜间[风力等级](https://dev.qweather.com/docs/resource/wind-info/#wind-scale)
+        windSpeedNight:
+          type: string
+          description: 夜间[风速](https://dev.qweather.com/docs/resource/wind-info/#wind-speed)，公里/小时
+        humidity:
+          type: string
+          description: 相对湿度，百分比数值
+        precip:
+          type: string
+          description: 预报当天总降水量，默认单位：毫米
+        pressure:
+          type: string
+          description: 站点气压，默认单位：百帕
     weatherBasicObject:
       type: object
       properties:
@@ -1672,22 +1716,22 @@ components:
           description: 温度，默认单位：摄氏度
         icon:
           type: string
-          description: 天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
+          description: 天气状况的[图标代码](https://dev.qweather.com/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
         text:
           type: string
           description: 天气状况的文字描述，包括阴晴雨雪等天气状态的描述
         wind360:
           type: string
-          description: "[风向](/docs/resource/wind-info/#wind-direction)360角度"
+          description: "[风向](https://dev.qweather.com/docs/resource/wind-info/#wind-direction)360角度"
         windDir:
           type: string
-          description: "[风向](/docs/resource/wind-info/#wind-direction)"
+          description: "[风向](https://dev.qweather.com/docs/resource/wind-info/#wind-direction)"
         windScale:
           type: string
-          description: "[风力等级](/docs/resource/wind-info/#wind-scale)"
+          description: "[风力等级](https://dev.qweather.com/docs/resource/wind-info/#wind-scale)"
         windSpeed:
           type: string
-          description: "[风速](/docs/resource/wind-info/#wind-speed)，公里/小时"
+          description: "[风速](https://dev.qweather.com/docs/resource/wind-info/#wind-speed)，公里/小时"
         humidity:
           type: string
           description: 相对湿度，百分比数值
@@ -1696,115 +1740,22 @@ components:
           description: 降水量，默认单位：毫米
         pressure:
           type: string
-          description: 大气压强，默认单位：百帕
+          description: 站点气压，默认单位：百帕
         cloud:
           type: string
-          description: 云量，百分比数值。**可能为空**
+          description: 云量，百分比数值
         dew:
           type: string
-          description: 露点温度。**可能为空**
-    weatherDailyArray:
-      type: array
-      description: 每日天气预报列表。
-      items:
-        type: object
-        properties:
-          fxDate:
-            "$ref": "#/components/schemas/fxDate"
-            description: 预报日期
-          sunrise:
-            type: string
-            description: "[日出时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
-          sunset:
-            type: string
-            description: "[日落时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
-          moonrise:
-            type: string
-            description: 当天[月升时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**
-          moonset:
-            type: string
-            description: 当天[月落时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**
-          moonPhase:
-            type: string
-            description: "[月相名称](/docs/resource/sun-moon-info/#moon-phase)"
-          moonPhaseIcon:
-            type: string
-            description: 月相[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
-          tempMax:
-            type: string
-            description: 预报当天最高温度
-          tempMin:
-            type: string
-            description: 预报当天最低温度
-          iconDay:
-            type: string
-            description: 预报白天天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
-          textDay:
-            type: string
-            description: 预报白天天气状况文字描述，包括阴晴雨雪等天气状态的描述
-          iconNight:
-            type: string
-            description: 预报夜间天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
-          textNight:
-            type: string
-            description: 预报晚间天气状况文字描述，包括阴晴雨雪等天气状态的描述
-          wind360Day:
-            type: string
-            description: 预报白天[风向](/docs/resource/wind-info/#wind-direction)360角度
-          windDirDay:
-            type: string
-            description: 预报白天[风向](/docs/resource/wind-info/#wind-direction)
-          windScaleDay:
-            type: string
-            description: 预报白天[风力等级](/docs/resource/wind-info/#wind-scale)
-          windSpeedDay:
-            type: string
-            description: 预报白天[风速](/docs/resource/wind-info/#wind-speed)，公里/小时
-          wind360Night:
-            type: string
-            description: 预报夜间[风向](/docs/resource/wind-info/#wind-direction)360角度
-          windDirNight:
-            type: string
-            description: 预报夜间当天[风向](/docs/resource/wind-info/#wind-direction)
-          windScaleNight:
-            type: string
-            description: 预报夜间[风力等级](/docs/resource/wind-info/#wind-scale)
-          windSpeedNight:
-            type: string
-            description: 预报夜间[风速](/docs/resource/wind-info/#wind-speed)，公里/小时
-          humidity:
-            type: string
-            description: 相对湿度，百分比数值
-          precip:
-            type: string
-            description: 预报当天总降水量，默认单位：毫米
-          uvIndex:
-            type: string
-            description: 紫外线强度指数
-          pressure:
-            type: string
-            description: 大气压强，默认单位：百帕
-          vis:
-            type: string
-            description: 能见度，默认单位：公里
-          cloud:
-            type: string
-            description: 云量，百分比数值。**可能为空**
-          dew:
-            type: string
-            description: 露点温度。**可能为空**
+          description: 露点温度
     getWeatherIndex:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         updateTime:
           "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
         fxLink:
           "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
         daily:
           type: array
           items:
@@ -1828,8 +1779,8 @@ components:
                 description: 生活指数预报级别名称
               text:
                 type: string
-                description: 生活指数预报的详细描述，**可能为空**
-          description: 每日预报数据列表。
+                description: 生活指数预报的详细描述，可能为空
+          description: 每日预报数据列表
         refer:
           "$ref": "#/components/schemas/referObject"
     getMinutely:
@@ -1837,34 +1788,28 @@ components:
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         updateTime:
           "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
         fxLink:
           "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
         summary:
           type: string
           description: 分钟降水描述
         minutely:
           type: array
-          description: 每分钟降水数据列表。
+          description: 每分钟降水数据列表
           items:
             type: object
             properties:
               fxTime:
                 "$ref": "#/components/schemas/fxTime"
-                description: 预报时间
               precip:
                 type: string
                 description: 5分钟累计降水量，单位毫米
               type:
                 type: string
                 description: 降水类型：`rain` = 雨，`snow` = 雪
-                enum:
-                - rain
-                - snow
+                enum: [rain, snow]
         refer:
           "$ref": "#/components/schemas/referObject"
     getAlert:
@@ -1875,7 +1820,7 @@ components:
           - "$ref": "#/components/schemas/metaTagObject"
           - "$ref": "#/components/schemas/metaZeroObject"
           - "$ref": "#/components/schemas/metaAttributeObject"
-          description: 当前响应的元数据。
+          description: 当前响应的元数据
         alerts:
           type: array
           description: 预警信息列表
@@ -1887,7 +1832,7 @@ components:
                 description: 本条预警信息的唯一标识
               senderName:
                 type: string
-                description: 预警发布机构的名称，**可能为空**
+                description: 预警发布机构的名称，可能为空
                 nullable: true
               issuedTime:
                 type: string
@@ -1895,71 +1840,70 @@ components:
                 description: 原始预警信息生成的时间，实际发布或接收时间会略有延迟
               messageType:
                 type: object
+                description: 预警信息性质
                 properties:
                   code:
                     type: string
-                    enum:
-                    - alert
-                    - update
-                    - cancel
-                    description: "[预警信息性质的代码](/docs/resource/warning-info/#message-type)，开发者可以了解当前预警是新发布的还是对之前预警的更新。"
+                    enum: [alert, update, cancel]
+                    description: "[预警信息性质的代码](https://dev.qweather.com/docs/resource/warning-info/#message-type)，开发者可以了解当前预警是新发布的还是对之前预警的更新"
                   supersedes:
                     type: array
-                    description: 当前预警取代或取消后续预警ID的列表，仅在 `messageType.code` 为 **update** 或 **cancel** 时返回。
+                    description: 当前预警取代或取消后续预警ID的列表，仅在 `messageType.code` 为 **update** 或 **cancel** 时返回
                     items:
                       type: string
-                description: messageType 数据。
               eventType:
                 type: object
+                description: 预警事件
                 properties:
                   name:
                     type: string
-                    description: "[预警事件类型的名称](/docs/resource/warning-info/#event-and-code)"
+                    description: "[预警事件的名称](https://dev.qweather.com/docs/resource/warning-info/#event-and-code)"
                   code:
                     type: string
-                    description: "[预警事件类型的代码](/docs/resource/warning-info/#event-and-code)"
-                description: eventType 数据。
+                    description: "[预警事件的代码](https://dev.qweather.com/docs/resource/warning-info/#event-and-code)"
               urgency:
                 type: string
-                description: 预警信息的[紧迫程度](/docs/resource/warning-info/#urgency)，**可能为空**
+                description: 预警信息的[紧迫程度](https://dev.qweather.com/docs/resource/warning-info/#urgency)，可能为空
                 nullable: true
               severity:
                 type: string
-                description: 预警信息的[严重程度](/docs/resource/warning-info/#severity)
+                description: 预警信息的[严重程度](https://dev.qweather.com/docs/resource/warning-info/#severity)
               certainty:
                 type: string
-                description: 预警信息的[确定性或可信度](/docs/resource/warning-info/#certainty)，**可能为空**
+                description: 预警信息的[确定性或可信度](https://dev.qweather.com/docs/resource/warning-info/#certainty)，可能为空
                 nullable: true
               icon:
                 type: string
-                description: 预警对应的[图标代码](/docs/resource/icons/)
+                description: 预警对应的[图标代码](https://dev.qweather.com/docs/resource/icons/)
               color:
-                type: object
-                description: 预警信息 RGBA 颜色表示。
-                properties:
-                  code:
-                    type: string
-                    description: "[预警信息的颜色代码](/docs/resource/warning-info/#color)"
-                  red:
-                    type: number
-                    description: 预警信息颜色的红色分量值（RGBA），范围 0–255
-                  green:
-                    type: number
-                    description: 预警颜色的绿色分量值（RGBA），范围 0–255
-                  blue:
-                    type: number
-                    description: 预警颜色的蓝色分量值（RGBA），范围 0–255
-                  alpha:
-                    type: number
-                    description: 预警颜色的透明度分量值（RGBA），范围 0-1
+                description: 预警信息 RGBA 颜色表示
+                allOf:
+                  - properties:
+                      code:
+                        type: string
+                        description: |
+                         颜色代码，包括
+
+                         - `white`
+                         - `gray`
+                         - `green`
+                         - `blue`
+                         - `yellow`
+                         - `amber`
+                         - `orange`
+                         - `red`
+                         - `purple`
+                         - `black`
+                        enum: [white, gray, green, blue, yellow, amber, orange, red, purple, black]
+                  - "$ref": "#/components/schemas/colorObject"
               effectiveTime:
                 type: string
                 format: date-time
-                description: 预警信息的生效时间，**可能为空**
+                description: 预警信息的生效时间，可能为空
               onsetTime:
                 type: string
                 format: date-time
-                description: 预警事件预计开始的时间，**可能为空**
+                description: 预警事件预计开始的时间，可能为空
               expireTime:
                 type: string
                 format: date-time
@@ -1973,31 +1917,47 @@ components:
               criteria:
                 type: string
                 nullable: true
-                description: 当前预警信息的触发标准或条件。仅供参考，可能滞后于官方标准。**可能为空**
+                description: 当前预警信息的触发标准或条件。仅供参考，可能滞后于官方标准。可能为空
               responseTypes:
                 type: array
-                description: 对当前预警的应对方式的类型代码，**可能为空**
+                description: 对当前预警的应对方式的类型代码，可能为空
                 nullable: true
                 items:
                   type: string
               instruction:
                 type: string
-                description: 对当前预警的防御指南或行动指导，**可能为空**
+                description: 对当前预警的防御指南或行动指导，可能为空
                 nullable: true
+    colorObject:
+      type: object
+      description: 数据 RGBA 颜色表示
+      properties:
+        red:
+          type: number
+          description: 红色分量值（RGBA），范围 0–255
+        green:
+          type: number
+          description: 绿色分量值（RGBA），范围 0–255
+        blue:
+          type: number
+          description: 蓝色分量值（RGBA），范围 0–255
+        alpha:
+          type: number
+          description: 透明度分量值（RGBA），范围 0-1
+          nullable: true
     getWarning:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         updateTime:
           "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
         fxLink:
           "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
         warning:
-          "$ref": "#/components/schemas/warningArray"
+          allOf:
+          - "$ref": "#/components/schemas/warningArray"
+          description: 预警信息列表
         refer:
           "$ref": "#/components/schemas/referObject"
     warningArray:
@@ -2010,7 +1970,7 @@ components:
             description: 本条预警的唯一标识，可判断本条预警是否已经存在
           sender:
             type: string
-            description: 预警发布单位，**可能为空**
+            description: 预警发布单位，可能为空
           pubTime:
             type: string
             format: date-time
@@ -2028,7 +1988,7 @@ components:
             description: 预警结束时间
           status:
             type: string
-            description: 预警信息的发布状态，包括“Active”（发布）和 “Update”（更新）。当预警信息为“Update”时，表示本条预警取代或更新了在`related`中指定的预警信息。
+            description: 预警信息的发布状态，包括“Active”（发布）和 “Update”（更新）。当预警信息为“Update”时，表示本条预警取代或更新了在`related`中指定的预警信息
           level:
             type: string
             description: 预警等级，该字段已弃用，目前返回为空或未更新的值。请使用`severity`代替
@@ -2037,48 +1997,63 @@ components:
             description: 预警严重程度，包括 “unknown”、“Minor”、“Moderate”、“Severe” 和 “Extreme”
           severityColor:
             type: string
-            description: 预警严重程度对应的颜色，包括 “White”、“Blue”、“Green”、“Yellow”、“Orange”、“Red” 和 “Black”。**可能为空**
+            description: 预警严重程度对应的颜色，包括 “White”、“Blue”、“Green”、“Yellow”、“Orange”、“Red” 和 “Black”。可能为空
           type:
             type: string
-            description: "[预警事件类型ID](/docs/resource/warning-info/#event-and-code)"
+            description: "[预警事件类型ID](https://dev.qweather.com/docs/resource/warning-info/#event-and-code)"
           typeName:
             type: string
-            description: "[预警事件类型的名称](/docs/resource/warning-info/#event-and-code)"
+            description: "[预警事件类型的名称](https://dev.qweather.com/docs/resource/warning-info/#event-and-code)"
           urgency:
             type: string
-            description: "[预警信息的紧迫程度](/docs/resource/warning-info/#urgency)，**可能为空**"
+            description: "[预警信息的紧迫程度](https://dev.qweather.com/docs/resource/warning-info/#urgency)，可能为空"
           certainty:
             type: string
-            description: "[预警信息的确定性](/docs/resource/warning-info/#certainty)，**可能为空**"
+            description: "[预警信息的确定性](https://dev.qweather.com/docs/resource/warning-info/#certainty)，可能为空"
           text:
             type: string
             description: 预警详细文字描述
           related:
             type: string
-            description: 与本条预警相关联的预警ID，当预警状态为Update时返回。**可能为空**
+            description: 与本条预警相关联的预警ID，当预警状态为Update时返回。可能为空
     getAqiNowV7:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         updateTime:
           "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
         fxLink:
           "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
         now:
-          "$ref": "#/components/schemas/aqiNowObjectV7"
+          type: object
+          description: 空气质量实况数据
+          allOf:
+            - type: object
+              properties:
+                pubTime:
+                  "$ref": "#/components/schemas/pubTime"
+            - "$ref": "#/components/schemas/aqiBasicObjectV7"
+        station:
+          type: array
+          description: 监测站点数据列表
+          items:
+            allOf:
+              - type: object
+                properties:
+                  pubTime:
+                    "$ref": "#/components/schemas/pubTime"
+              - type: object
+                properties:
+                  name:
+                    type: string
+                    description: 监测站点名称
+              - "$ref": "#/components/schemas/aqiBasicObjectV7"
         refer:
           "$ref": "#/components/schemas/referObject"
-    aqiNowObjectV7:
+    aqiBasicObjectV7:
       type: object
       properties:
-        pubTime:
-          type: string
-          format: date-time
-          description: 空气质量数据发布时间
         aqi:
           type: string
           description: 空气质量指数
@@ -2109,155 +2084,115 @@ components:
         o3:
           type: string
           description: 臭氧
-        station:
-          type: array
-          description: 监测站点空气质量数据列表。
-          items:
-            type: object
-            properties:
-              pubTime:
-                type: string
-                format: date-time
-                description: 空气质量数据发布时间
-              name:
-                type: string
-                description: 监测站名称
-              id:
-                type: string
-                description: 监测站ID
-              aqi:
-                type: string
-                description: 空气质量指数
-              level:
-                type: string
-                description: 空气质量指数等级
-              category:
-                type: string
-                description: 空气质量指数级别
-              primary:
-                type: string
-                description: 空气质量的主要污染物，空气质量为优时，返回值为`NA`
-              pm10:
-                type: string
-                description: PM10
-              pm2p5:
-                type: string
-                description: PM2.5
-              no2:
-                type: string
-                description: 二氧化氮
-              so2:
-                type: string
-                description: 二氧化硫
-              co:
-                type: string
-                description: 一氧化碳
-              o3:
-                type: string
-                description: 臭氧
+
     getAqiDailyV7:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         updateTime:
           "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
         fxLink:
           "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
         daily:
-          "$ref": "#/components/schemas/aqiDailyV7"
+         type: array
+         description: 每日空气质量预报数据列表
+         items:
+          type: object
+          properties:
+            fxDate:
+              "$ref": "#/components/schemas/fxDate"
+            aqi:
+              type: string
+              description: 空气质量指数
+            level:
+              type: string
+              description: 空气质量指数等级
+            category:
+              type: string
+              description: 空气质量指数级别
+            primary:
+              type: string
+              description: 空气质量的主要污染物，空气质量为优时，返回值为`NA`
         refer:
           "$ref": "#/components/schemas/referObject"
-    aqiDailyV7:
-      type: array
-      description: 每日空气质量预报数据列表。
-      items:
-        type: object
-        properties:
-          fxDate:
-            "$ref": "#/components/schemas/fxDate"
-            description: 预报日期
-          aqi:
-            type: string
-            description: 空气质量指数
-          level:
-            type: string
-            description: 空气质量指数等级
-          category:
-            type: string
-            description: 空气质量指数级别
-          primary:
-            type: string
-            description: 空气质量的主要污染物，空气质量为优时，返回值为`NA`
+
     getAirQualityCurrent:
       type: object
       properties:
         metadata:
+          description: 当前响应的元数据
           allOf:
           - "$ref": "#/components/schemas/metaTagObject"
           - "$ref": "#/components/schemas/metaAttributeObject"
-          description: 当前响应的元数据。
         indexes:
           "$ref": "#/components/schemas/aqisArray"
         pollutants:
           "$ref": "#/components/schemas/pollutantSubindexArray"
         stations:
           "$ref": "#/components/schemas/aqiStationsArray"
+
     getAirQualityDaily:
       type: object
       properties:
         metadata:
-          "$ref": "#/components/schemas/metaTagObject"
+          allOf:
+          - "$ref": "#/components/schemas/metaTagObject"
+          - "$ref": "#/components/schemas/metaAttributeObject"
+          description: 当前响应的元数据
         days:
           type: array
+          description: 每日空气质量数据列表
           items:
             type: object
             properties:
               forecastStartTime:
                 "$ref": "#/components/schemas/forecastStartTime"
-                description: 预报数据的开始时间，[ISO8601格式](/docs/resource/glossary/#date-time)
               forecastEndTime:
                 "$ref": "#/components/schemas/forecastEndTime"
-                description: 预报数据的结束时间，[ISO8601格式](/docs/resource/glossary/#date-time)
               indexes:
                 "$ref": "#/components/schemas/aqisArray"
               pollutants:
                 "$ref": "#/components/schemas/pollutantSubindexArray"
-          description: 每日数据列表。
+
     getAirQualityHourly:
       type: object
       properties:
         metadata:
-          "$ref": "#/components/schemas/metaTagObject"
+          allOf:
+          - "$ref": "#/components/schemas/metaTagObject"
+          - "$ref": "#/components/schemas/metaAttributeObject"
+          description: 当前响应的元数据
         hours:
           type: array
+          description: 每小时空气质量数据列表
           items:
             type: object
             properties:
               forecastTime:
                 "$ref": "#/components/schemas/fxTime"
-                description: 预报时间，[ISO8601格式](/docs/resource/glossary/#date-time)
               indexes:
                 "$ref": "#/components/schemas/aqisArray"
               pollutants:
                 "$ref": "#/components/schemas/pollutantSubindexArray"
-          description: 最近24小时每小时的成功请求量，结束时间以`asOf`为准。例如 asOf=2025-03-20T09:59Z，则数组中的最后一条数据代表09:00 ～ 09:59（UTC）的请求量。
+
     getAirStation:
       type: object
       properties:
         metadata:
-          "$ref": "#/components/schemas/metaAttributeObject"
+          allOf:
+            - "$ref": "#/components/schemas/metaTagObject"
+            - "$ref": "#/components/schemas/metaAttributeObject"
+          description: 当前响应的元数据
         pollutants:
           type: array
-          description: 该监测站点支持的污染物列表。
+          description: 污染物列表
           items:
             "$ref": "#/components/schemas/pollutantObject"
+
     aqisArray:
       type: array
-      description: AQI列表。
+      description: 空气质量指数列表
       minItems: 1
       maxItems: 2
       items:
@@ -2265,16 +2200,16 @@ components:
         properties:
           code:
             type: string
-            description: "[空气质量指数](/docs/resource/air-info/#supported-aqis)Code"
+            description: "[空气质量指数](https://dev.qweather.com/docs/resource/air-info/#supported-aqis)Code"
           name:
             type: string
             description: 空气质量指数的名字
           aqi:
             type: number
-            description: "[空气质量指数的值](/docs/resource/air-info/#aqi-value)"
+            description: "[空气质量指数的值](https://dev.qweather.com/docs/resource/air-info/#aqi-value)"
           aqiDisplay:
             type: string
-            description: "[空气质量指数的值的文本显示](/docs/resource/air-info/#aqi-value)"
+            description: "[空气质量指数的值的文本显示](https://dev.qweather.com/docs/resource/air-info/#aqi-value)"
           level:
             type: string
             description: 空气质量指数等级，可能为空
@@ -2283,53 +2218,34 @@ components:
             description: 空气质量指数类别，可能为空
           color:
             type: object
-            description: 空气质量指数的RGBA颜色表示。
-            properties:
-              red:
-                type: number
-                description: 空气质量指数的颜色，RGBA中的red
-                maximum: 255
-                minimum: 0
-              green:
-                type: number
-                description: 空气质量指数的颜色，RGBA中的green
-                maximum: 255
-                minimum: 0
-              blue:
-                type: number
-                description: 空气质量指数的颜色，RGBA中的blue
-                maximum: 255
-                minimum: 0
-              alpha:
-                type: number
-                description: 空气质量指数的颜色，RGBA中的alpah
-                maximum: 1
-                minimum: 0
+            description: 空气质量指数的 RGBA 颜色表示
+            allOf:
+              - "$ref": "#/components/schemas/colorObject"
           primaryPollutant:
             type: object
-            description: "[首要污染物](https://dev.qweather.com/docs/resource/air-info/#primary-pollutant)，可能为空。"
+            description: "[首要污染物](https://dev.qweather.com/docs/resource/air-info/#primary-pollutant)，可能为空"
             nullable: true
             properties:
               code:
                 type: string
-                description: "[首要污染物](/docs/resource/air-info/#primary-pollutant)的Code，可能为空"
+                description: "[首要污染物](https://dev.qweather.com/docs/resource/air-info/#primary-pollutant)的Code"
               name:
                 type: string
-                description: 首要污染物的名字，可能为空
+                description: 首要污染物的名字
               fullName:
                 type: string
-                description: 首要污染物的全称，可能为空
+                description: 首要污染物的全称
           health:
             type: object
             nullable: true
-            description: "[AQI的健康信息](https://dev.qweather.com/docs/resource/air-info/#health-effects-and-advice)。"
+            description: "[AQI的健康信息](https://dev.qweather.com/docs/resource/air-info/#health-effects-and-advice)，可能为空"
             properties:
               effect:
                 type: string
-                description: "[空气质量对健康的影响](/docs/resource/air-info/#health-effects-and-advice)，可能为空"
+                description: "[空气质量对健康的影响](https://dev.qweather.com/docs/resource/air-info/#health-effects-and-advice)，可能为空"
               advice:
                 type: object
-                description: 对普通人群和敏感人群的健康建议，可能为空。
+                description: 对普通人群和敏感人群的健康建议，可能为空
                 properties:
                   generalPopulation:
                     type: string
@@ -2342,7 +2258,7 @@ components:
       properties:
         code:
           type: string
-          description: "[污染物](/docs/resource/air-info/#pollutants)的Code"
+          description: "[污染物](https://dev.qweather.com/docs/resource/air-info/#pollutants)的Code"
         name:
           type: string
           description: 污染物的名字
@@ -2351,16 +2267,13 @@ components:
           description: 污染物的全称
         concentration:
           type: object
-          properties:
-            value:
-              type: number
-              description: 污染物的浓度值
-            unit:
-              type: string
-              description: 污染物的浓度值的单位
-          description: concentration 数据。
+          description: 污染物的浓度值，可能为空
+          nullable: true
+          allOf:
+            - "$ref": "#/components/schemas/valueUnitObject"
+
     pollutantSubindexArray:
-      description: 污染物子指数列表，包含对应污染物的子指数信息。
+      description: 污染物列表
       type: array
       items:
         allOf:
@@ -2370,21 +2283,22 @@ components:
             subIndexes:
               type: array
               nullable: true
-              description: 子指数列表。
+              description: 子指数列表
               items:
                 type: object
                 properties:
                   code:
                     type: string
-                    description: "[污染物的分指数的Code](/docs/resource/air-info/#pollutant-sub-index)，可能为空"
+                    description: "[污染物的分指数的Code](https://dev.qweather.com/docs/resource/air-info/#pollutant-sub-index)，可能为空"
                   aqi:
                     type: number
-                    description: "[污染物的分指数的数值](/docs/resource/air-info/#pollutant-sub-index)，可能为空"
+                    description: "[污染物的分指数的数值](https://dev.qweather.com/docs/resource/air-info/#pollutant-sub-index)，可能为空"
                   aqiDisplay:
                     type: string
                     description: 污染物的分指数数值的显示名称
     aqiStationsArray:
       type: array
+      description: 空气质量监测站列表
       items:
         type: object
         properties:
@@ -2394,64 +2308,56 @@ components:
           name:
             type: string
             description: AQI相关联的监测站名称
+
     getStormForecast:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         updateTime:
           "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
         fxLink:
           "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
         forecast:
           type: array
-          description: 台风预报数据列表。
+          description: 台风预报数据列表
           items:
             allOf:
             - type: object
               properties:
                 fxTime:
                   "$ref": "#/components/schemas/fxTime"
-                  description: 台风预报时间
             - "$ref": "#/components/schemas/stormObject"
         refer:
           "$ref": "#/components/schemas/referObject"
+
     getStormTrack:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         updateTime:
           "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
         fxLink:
           "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
         isActive:
           type: string
-          description: 是否为活跃台风。`1` 活跃台风，`0` 停编。
-          enum:
-          - 0
-          - 1
+          description: 是否为活跃台风。`1` 活跃台风，`0` 停编
+          enum: [0, 1]
         now:
           type: object
-          description: 当前台风数据。如台风已结束，该字段可为 null。
+          description: 当前台风数据。如台风已结束，该字段可为 null
           nullable: true
           allOf:
           - type: object
             properties:
               pubTime:
                 "$ref": "#/components/schemas/pubTime"
-                description: 台风信息发布时间
           - "$ref": "#/components/schemas/stormObject"
           - "$ref": "#/components/schemas/stormWindRadiusObject"
         track:
           type: array
-          description: 台风轨迹数据列表。
+          description: 台风轨迹数据列表
           items:
             allOf:
             - type: object
@@ -2464,25 +2370,26 @@ components:
             - "$ref": "#/components/schemas/stormWindRadiusObject"
         refer:
           "$ref": "#/components/schemas/referObject"
+
     getStormList:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         updateTime:
           "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
         fxLink:
           "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
         storm:
-          "$ref": "#/components/schemas/stormListArray"
+          allOf:
+          - "$ref": "#/components/schemas/stormListArray"
+          description: 台风列表
         refer:
           "$ref": "#/components/schemas/referObject"
+
     stormObject:
       type: object
-      description: 当前台风数据。
+      description: 当前台风数据
       properties:
         lat:
           type: string
@@ -2508,61 +2415,62 @@ components:
         move360:
           type: string
           description: 台风移动方位360度方向
+
     stormWindRadiusObject:
       type: object
-      description: 台风风圈半径。
+      description: 台风风圈半径
       properties:
         windRadius30:
           type: object
-          description: 台风7级风圈半径。
+          description: 台风7级风圈半径
           properties:
             neRadius:
               type: string
-              description: 台风7级风圈东北半径，**可能为空**
+              description: 台风7级风圈东北半径，可能为空
             seRadius:
               type: string
-              description: 当前台风7级风圈东南半径，**可能为空**
+              description: 当前台风7级风圈东南半径，可能为空
             swRadius:
               type: string
-              description: 当前台风7级风圈西南半径，**可能为空**
+              description: 当前台风7级风圈西南半径，可能为空
             nwRadius:
               type: string
-              description: 当前台风7级风圈西北半径，**可能为空**
+              description: 当前台风7级风圈西北半径，可能为空
         windRadius50:
           type: object
-          description: 台风10级风圈半径。
+          description: 台风10级风圈半径
           properties:
             neRadius:
               type: string
-              description: 台风10级风圈东北半径，**可能为空**
+              description: 台风10级风圈东北半径，可能为空
             seRadius:
               type: string
-              description: 当前台风10级风圈东南半径，**可能为空**
+              description: 当前台风10级风圈东南半径，可能为空
             swRadius:
               type: string
-              description: 当前台风10级风圈西南半径，**可能为空**
+              description: 当前台风10级风圈西南半径，可能为空
             nwRadius:
               type: string
-              description: 当前台风10级风圈西北半径，**可能为空**
+              description: 当前台风10级风圈西北半径，可能为空
         windRadius64:
           type: object
-          description: 台风12级风圈半径。
+          description: 台风12级风圈半径
           properties:
             neRadius:
               type: string
-              description: 台风12级风圈东北半径，**可能为空**
+              description: 台风12级风圈东北半径，可能为空
             seRadius:
               type: string
-              description: 当前台风12级风圈东南半径，**可能为空**
+              description: 当前台风12级风圈东南半径，可能为空
             swRadius:
               type: string
-              description: 当前台风12级风圈西南半径，**可能为空**
+              description: 当前台风12级风圈西南半径，可能为空
             nwRadius:
               type: string
-              description: 当前台风12级风圈西北半径，**可能为空**
+              description: 当前台风12级风圈西北半径，可能为空
     stormListArray:
       type: array
-      description: 台风列表。
+      description: 台风列表
       items:
         type: object
         properties:
@@ -2580,149 +2488,92 @@ components:
             description: 台风所处年份
           isActive:
             type: string
-            description: 是否为活跃台风。`1` 活跃台风，`0` 停编。
+            description: 是否为活跃台风。`1` 活跃台风，`0` 停编
+
     getTide:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         updateTime:
           "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
         fxLink:
           "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
         tideTable:
-          "$ref": "#/components/schemas/tideTableArray"
+          type: array
+          description: 潮汐表列表
+          items:
+            type: object
+            properties:
+              fxTime:
+                "$ref": "#/components/schemas/fxTime"
+              height:
+                type: string
+                description: 海水高度，单位：米
+              type:
+                type: string
+                description: 满潮（H）或干潮（L）
         tideHourly:
-          "$ref": "#/components/schemas/tideHourlyArray"
+          type: array
+          description: 小时潮汐数据
+          items:
+            type: object
+            properties:
+              fxTime:
+                "$ref": "#/components/schemas/fxTime"
+              height:
+                type: string
+                description: 海水高度，单位：米
         refer:
           "$ref": "#/components/schemas/referObject"
-    getCurrents:
-      type: object
-      properties:
-        code:
-          "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
-        updateTime:
-          "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
-        fxLink:
-          "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
-        currentsTable:
-          "$ref": "#/components/schemas/currentsTableArray"
-        currentsHourly:
-          "$ref": "#/components/schemas/currentsHourlyArray"
-        refer:
-          "$ref": "#/components/schemas/referObject"
-    tideTableArray:
-      type: array
-      description: 潮汐表列表。
-      items:
-        type: object
-        properties:
-          fxTime:
-            "$ref": "#/components/schemas/fxTime"
-            description: 预报时间
-          height:
-            type: string
-            description: 海水高度，单位：米
-          type:
-            type: string
-            description: 满潮（H）或干潮（L）
-    tideHourlyArray:
-      type: array
-      description: 潮汐逐小时预报。
-      items:
-        type: object
-        properties:
-          fxTime:
-            "$ref": "#/components/schemas/fxTime"
-            description: 预报时间
-          height:
-            type: string
-            description: 海水高度，单位：米
-    currentsTableArray:
-      type: array
-      description: 潮流表数据列表。
-      items:
-        type: object
-        properties:
-          dir360:
-            type: string
-            description: 潮流方向（度）。
-          fxTime:
-            "$ref": "#/components/schemas/fxTime"
-            description: 预报时间
-          speedMax:
-            type: string
-            description: 潮流最大流速，单位：厘米/秒。
-    currentsHourlyArray:
-      type: array
-      description: 潮流逐小时预报。
-      items:
-        type: object
-        properties:
-          dir360:
-            type: string
-            description: 潮流方向（度）。
-          fxTime:
-            "$ref": "#/components/schemas/fxTime"
-            description: 预报时间
-          speed:
-            type: string
-            description: 潮流流速，单位：厘米/秒。
+
     getSolarRadiation:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         radiation:
-          "$ref": "#/components/schemas/radiationArray"
+          type: array
+          description: 太阳辐射逐小时预报列表
+          items:
+            type: object
+            properties:
+              fxTime:
+                "$ref": "#/components/schemas/fxTime"
+              net:
+                type: string
+                description: 净太阳辐射，W/m<sup>2</sup>
+              diffuse:
+                type: string
+                description: 太阳散射辐射，W/m<sup>2</sup>
+              direct:
+                type: string
+                description: 太阳直接辐射，W/m<sup>2</sup>
         refer:
           "$ref": "#/components/schemas/referObject"
-    radiationArray:
-      type: array
-      description: 太阳辐射逐小时预报列表。
-      items:
-        type: object
-        properties:
-          fxTime:
-            "$ref": "#/components/schemas/fxTime"
-            description: 逐小时预报时间
-          net:
-            type: string
-            description: 净太阳辐射，W/m<sup>2</sup>
-          diffuse:
-            type: string
-            description: 太阳散射辐射，W/m<sup>2</sup>
-          direct:
-            type: string
-            description: 太阳直接辐射，W/m<sup>2</sup>
+
     getSolarRadiationForecast:
       type: object
       properties:
         metadata:
-          "$ref": "#/components/schemas/metaTagObject"
+          allOf:
+          - "$ref": "#/components/schemas/metaTagObject"
+          description: 当前响应的元数据
         forecasts:
           type: array
-          description: 太阳辐照预报数据列表。
+          description: 太阳辐照预报数据列表
           items:
             type: object
             properties:
               forecastTime:
                 "$ref": "#/components/schemas/fxTime"
-                description: 预报时间，[ISO8601格式](/docs/resource/glossary/#date-time)
               solarAngle:
                 type: object
-                description: 太阳角度。
+                description: 太阳角度
                 properties:
                   azimuth:
                     type: number
-                    description: 太阳方位角，正北为0度，顺时针增加
+                    description: 太阳方位角，正北为0度
                     maximum: 359
                     minimum: 0
                   elevation:
@@ -2732,83 +2583,93 @@ components:
                     maximum: 90
               dni:
                 allOf:
-                - "$ref": "#/components/schemas/solarRadiationValueObject"
-                description: 法向直接辐照。
+                - "$ref": "#/components/schemas/valueUnitObject"
+                description: 法向直接辐照
               dhi:
                 allOf:
-                - "$ref": "#/components/schemas/solarRadiationValueObject"
-                description: 散射水平面辐照。
+                - "$ref": "#/components/schemas/valueUnitObject"
+                description: 散射水平面辐照
               ghi:
                 allOf:
-                - "$ref": "#/components/schemas/solarRadiationValueObject"
-                description: 总水平面辐照。
+                - "$ref": "#/components/schemas/valueUnitObject"
+                description: 总水平面辐照
               weather:
                 type: object
-                description: 基本天气数据，仅在 `extra=weather` 时返回。
+                description: 基本天气数据，仅在 `extra=weather` 时返回
                 properties:
                   temperature:
-                    "$ref": "#/components/schemas/solarRadiationValueObject"
+                    allOf:
+                      - "$ref": "#/components/schemas/valueUnitObject"
+                    description: 温度
                   windSpeed:
-                    "$ref": "#/components/schemas/solarRadiationValueObject"
-                    description: 风速。
+                    allOf:
+                    - "$ref": "#/components/schemas/valueUnitObject"
+                    description: 风速
                   humidity:
                     type: number
-                    description: 相对湿度，百分比数值
+                    description: 相对湿度
               poa:
                 type: object
-                description: 阵列平面辐照度，仅在 `extra=poa` 时返回。
+                description: 阵列平面辐照度，仅在 `extra=poa` 时返回
                 properties:
                   global:
-                    "$ref": "#/components/schemas/solarRadiationValueObject"
+                    description: 阵列平面总辐照度
+                    allOf:
+                      - "$ref": "#/components/schemas/valueUnitObject"
                   direct:
-                    "$ref": "#/components/schemas/solarRadiationValueObject"
-                    description: 太阳直接辐射，W/m<sup>2</sup>
+                    allOf:
+                    - "$ref": "#/components/schemas/valueUnitObject"
+                    description: 阵列平面直接辐照度
                   diffuse:
-                    "$ref": "#/components/schemas/solarRadiationValueObject"
-                    description: 太阳散射辐射，W/m<sup>2</sup>
+                    allOf:
+                    - "$ref": "#/components/schemas/valueUnitObject"
+                    description: 阵列平面散射辐照度
                   reflected:
-                    "$ref": "#/components/schemas/solarRadiationValueObject"
-    solarRadiationValueObject:
+                    allOf:
+                    - "$ref": "#/components/schemas/valueUnitObject"
+                    description: 阵列平面反射辐照度
+
+    valueUnitObject:
       type: object
       properties:
         value:
           type: number
-          description: 数值。
+          description: 数值
         unit:
           type: string
-          description: 单位。
+          description: 单位
+
     getSun:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         updateTime:
           "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
         fxLink:
           "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
         sunrise:
           type: string
-          description: "[日出时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
+          nullable: true
+          description: "[日出时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
         sunset:
           type: string
-          description: "[日落时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
+          nullable: true
+          description: "[日落时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
         refer:
           "$ref": "#/components/schemas/referObject"
+
     getSolarAngles:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         solarElevationAngle:
           type: string
           description: 太阳高度角
         solarAzimuthAngle:
           type: string
-          description: 太阳方位角，正北顺时针方向角度
+          description: 太阳方位角，0度为正北
         solarHour:
           type: string
           description: 太阳时，HHmm格式
@@ -2817,240 +2678,223 @@ components:
           description: 时角
         refer:
           "$ref": "#/components/schemas/referObject"
+
     getMoon:
       type: object
       properties:
         code:
           "$ref": "#/components/schemas/statusCode"
-          description: 请参考[状态码](/docs/resource/status-code/)
         updateTime:
           "$ref": "#/components/schemas/updateTime"
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
         fxLink:
           "$ref": "#/components/schemas/fxLink"
-          description: 当前数据的响应式页面，便于嵌入网站或应用
         moonrise:
           type: string
-          description: 当天[月升时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**
+          description: 当天[月升时间](https://dev.qweather.com/docs/resource/sun-moon-info/#moonrise-and-moonset)，可能为空
         moonset:
           type: string
-          description: 当天[月落时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**
+          description: 当天[月落时间](https://dev.qweather.com/docs/resource/sun-moon-info/#moonrise-and-moonset)，可能为空
         moonPhase:
-          "$ref": "#/components/schemas/moonPhaseArray"
-          description: "[月相名称](/docs/resource/sun-moon-info/#moon-phase)"
+          type: array
+          description: 月相数据列表
+          items:
+            type: object
+            properties:
+              fxTime:
+                type: string
+                format: date-time
+                description: 月相逐小时预报时间
+              value:
+                type: string
+                description: 月相数值
+              name:
+                type: string
+                description: "[月相名称](https://dev.qweather.com/docs/resource/sun-moon-info/#moon-phase)"
+              illumination:
+                type: string
+                description: 月亮照明度，百分比数值
+              icon:
+                type: string
+                description: 月相[图标代码](https://dev.qweather.com/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
         refer:
           "$ref": "#/components/schemas/referObject"
-    moonPhaseArray:
-      type: array
-      description: 月相数据列表，包含照明度和相位详情。
-      items:
-        type: object
-        properties:
-          fxTime:
-            type: string
-            format: date-time
-            description: 月相逐小时预报时间
-          value:
-            type: string
-            description: 月相数值
-          name:
-            type: string
-            description: "[月相名称](/docs/resource/sun-moon-info/#moon-phase)"
-          illumination:
-            type: string
-            description: 月亮照明度，百分比数值
-          icon:
-            type: string
-            description: 月相[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
+
     getFinance:
       type: object
       properties:
+        metadata:
+          allOf:
+          - "$ref": "#/components/schemas/metaTagObject"
+          description: 当前响应的元数据
         asOf:
           "$ref": "#/components/schemas/asOf"
-          description: 当前数据的截止日期。
         currency:
-          description: 货币代码，包括：`CNY`和`USD`。
+          description: 货币代码，包括：`CNY`和`USD`
           type: string
-          enum:
-          - CNY
-          - USD
+          enum: [CNY, USD]
         balance:
-          description: 可用额度。
+          description: 可用额度
           type: number
         accruedCharges:
+          description: 应计费用
           type: object
           properties:
             previousDay:
               type: number
-              description: 前一天应计费用总额。
+              description: 前一天应计费用总额
             thisMonth:
               type: number
-              description: 本月应计费用总额。
+              description: 本月应计费用总额
             sinceLastBill:
               type: number
-              description: 从上次出账以来的应计费用总额。
-          description: accruedCharges 数据。
+              description: 从上次出账以来的应计费用总额
         pendingBills:
-          "$ref": "#/components/schemas/billingArray"
+          type: array
+          description: 待支付时账单列表
+          items:
+            type: object
+            properties:
+              number:
+                type: string
+                description: 账单号
+              date:
+                type: string
+                format: date-time
+                description: 账单出账日期
+              type:
+                type: string
+                enum: [subscription, savingPlans, resourcePlans]
+                description: 账单的类型
+              status:
+                type: string
+                enum: [unpaid, overdue]
+                description: 账单的状态，包括：`unpaid`和`overdue`
+              amount:
+                type: number
+                description: 账单的总金额
+              amountDue:
+                type: number
+                description: 账单剩余应付金额
+              dueDate:
+                type: string
+                format: date-time
+                description: 应付日期
         availableSavingsPlans:
-          "$ref": "#/components/schemas/savingsPlansArray"
+          description: 可用的节省计划列表
+          type: array
+          items:
+            type: object
+            properties:
+              billNumber:
+                type: string
+                description: 账单号
+              status:
+                type: string
+                enum: [pending, active]
+                description: 节省计划状态，包括 `pending`和`active`
+              term:
+                type: string
+                description: 承诺期限
+              commitments:
+                type: number
+                description: 承诺金额
+              utilized:
+                type: number
+                description: 已用承诺金额
+              effectiveTime:
+                type: string
+                format: date-time
+                description: 生效时间
         availableResourcePlans:
-          "$ref": "#/components/schemas/resourcePlansArray"
-    billingArray:
-      type: array
-      items:
-        type: object
-        properties:
-          number:
-            type: string
-            description: 待支付账单号。
-          date:
-            type: string
-            format: date-time
-            description: 待支付账单出账日期。
-          type:
-            type: string
-            enum:
-            - subscription
-            - savingPlans
-            - resourcePlans
-            description: 待支付账单的类型。
-          status:
-            type: string
-            enum:
-            - unpaid
-            - overdue
-            description: 待支付账单的状态，包括：`unpaid`和`overdue`
-          amount:
-            type: number
-            description: 账单的总金额。
-          amountDue:
-            type: number
-            description: 账单剩余应付金额。
-          dueDate:
-            type: string
-            format: date-time
-            description: 应付日期。
-    resourcePlansArray:
-      type: array
-      description: 仅返回生效或待生效的资源包
-      items:
-        type: object
-        properties:
-          billNumber:
-            type: string
-            description: 生效中或待生效的资源包账单号。
-          status:
-            type: string
-            enum:
-            - pending
-            - active
-            description: 资源包状态，包括 `pending`和`active`。
-          type:
-            type: string
-            enum:
-            - general
-            - solar-irradiation
-            description: 资源包类型。
-          requests:
-            type: number
-            description: 总请求量。
-          used:
-            type: number
-            description: 资源包已使用的请求数量。
-          effectiveTime:
-            type: string
-            format: date-time
-            description: 生效时间。
-    savingsPlansArray:
-      type: array
-      items:
-        type: object
-        properties:
-          billNumber:
-            type: string
-            description: 生效中或待生效的节省计划账单号。
-          status:
-            type: string
-            enum:
-            - pending
-            - active
-            description: 节省计划状态，包括 `pending`和`active`。
-          term:
-            type: string
-            description: 承诺期限。
-          commitments:
-            type: number
-            description: 承诺金额。
-          utilized:
-            type: number
-            description: 已用承诺金额。
-          effectiveTime:
-            type: string
-            format: date-time
-            description: 生效时间。
+          type: array
+          description: 可用的资源包列表
+          items:
+            type: object
+            properties:
+              billNumber:
+                type: string
+                description: 账单号
+              status:
+                type: string
+                enum: [pending, active]
+                description: 资源包状态，包括 `pending`和`active`
+              requests:
+                type: number
+                description: 总请求量
+              utilized:
+                type: number
+                description: 已使用的请求数量
+              effectiveTime:
+                type: string
+                format: date-time
+                description: 生效时间
+
     getStats:
       type: object
       properties:
         metadata:
-          "$ref": "#/components/schemas/metaTagObject"
+          allOf:
+          - "$ref": "#/components/schemas/metaTagObject"
+          description: 当前响应的元数据
         asOf:
           "$ref": "#/components/schemas/asOf"
         success:
           type: array
+          description: 成功的请求数据
           items:
             type: object
             properties:
               api:
                 type: string
-                description: 成功请求的API名称。
+                description: 成功请求的API名称
               hours:
                 type: array
-                description: 最近24小时每小时的成功请求量，结束时间以`asOf`为准。例如 asOf=2025-03-20T09:59Z，则数组中的最后一条数据代表09:00 ～ 09:59（UTC）的请求量。
+                description: 最近24小时每小时的成功请求量，结束时间以`asOf`为准。例如 asOf=2025-03-20T09:59Z，则数组中的最后一条数据代表09:00 ～ 09:59（UTC）的请求量
                 items:
                   type: number
-          description: success 数据。
         errors:
           type: array
+          description: 错误的请求数据
           items:
             type: object
             properties:
               api:
                 type: string
-                description: 错误请求的API名称。
+                description: 错误请求的API名称
               hours:
                 type: array
-                description: 最近24小时每小时的错误请求量，结束时间以`asOf`为准。例如 asOf=2025-03-20T09:59Z，则数组中的最后一条数据代表09:00 ～ 09:59（UTC）的请求量。
+                description: 最近24小时每小时的错误请求量，结束时间以`asOf`为准。例如 asOf=2025-03-20T09:59Z 则数组中的最后一条数据代表09:00 ～ 09:59（UTC）的请求量
                 items:
                   type: number
-          description: errors 数据。
+
     fxDate:
       type: string
-      description: 预报日期，ISO8601 格式。
+      description: 预报日期，ISO8601 格式
       format: date
     fxTime:
       type: string
-      description: 预报时间，ISO8601 格式。
+      description: 预报时间，ISO8601 格式
       format: date-time
     pubTime:
       type: string
-      description: 原始数据发布时间。
+      description: 原始数据发布时间
       format: date-time
     obsTime:
       type: string
-      description: 观测数据时间。
+      description: 观测时间
       format: date-time
     forecastStartTime:
       type: string
-      description: 预报数据的开始时间，ISO8601 格式。
+      description: 预报数据的开始时间，ISO8601 格式
       format: date-time
     forecastEndTime:
       type: string
-      description: 预报数据的结束时间，ISO8601 格式。
+      description: 预报数据的结束时间，ISO8601 格式
       format: date-time
     statusCode:
       type: string
-      description: API 状态码 v1, 参考[错误码](https://dev.qweather.com/docs/resource/status-code/).
+      description: |-
+       [API状态码](https://dev.qweather.com/docs/resource/error-code/#error-code-v1)
     updateTime:
       type: string
       description: 当前API的[最近更新时间](https://dev.qweather.com/docs/resource/glossary/#update-time)
@@ -3059,396 +2903,172 @@ components:
       type: string
       description: 当前数据的响应式页面，便于嵌入网站或应用
       format: uri
-    getTopCity:
-      type: object
-      properties:
-        code:
-          type: string
-          description: 请参考[状态码](/docs/resource/status-code/)
-        topCityList:
-          "$ref": "#/components/schemas/locationArray"
-        refer:
-          "$ref": "#/components/schemas/referObject"
+
     getHistoricalWeather:
       type: object
       properties:
         code:
-          type: string
-          description: 请参考[状态码](/docs/resource/status-code/)
+          "$ref": "#/components/schemas/statusCode"
         fxLink:
-          type: string
-          description: 当前数据的响应式页面，便于嵌入网站或应用
+          "$ref": "#/components/schemas/fxLink"
         weatherDaily:
           type: object
-          description: 历史每日天气数据。
+          description: 历史每日天气数据
           properties:
             date:
               type: string
-              description: 当天日期
+              description: 日期
             sunrise:
               type: string
-              description: 当天[日出时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**
+              description: "[日出时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
             sunset:
               type: string
-              description: "[日落时间](/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
+              description: "[日落时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
             moonrise:
               type: string
-              description: 当天[月升时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**
+              description: "[月升时间](https://dev.qweather.com/docs/resource/sun-moon-info/#moonrise-and-moonset)，可能为空"
             moonset:
               type: string
-              description: 当天[月落时间](/docs/resource/sun-moon-info/#moonrise-and-moonset)，**可能为空**
+              description: "[月落时间](https://dev.qweather.com/docs/resource/sun-moon-info/#moonrise-and-moonset)，可能为空"
             moonPhase:
               type: string
-              description: 当天[月相名称](/docs/resource/sun-moon-info/#moon-phase)
+              description: "[月相名称](https://dev.qweather.com/docs/resource/sun-moon-info/#moon-phase)"
             tempMax:
-              type: string
-              description: 当天最高温度
+                type: string
+                description: 最高温度
             tempMin:
               type: string
-              description: 当天最低温度
+              description: 最低温度
             humidity:
               type: string
               description: 相对湿度，百分比数值
             precip:
               type: string
-              description: 5分钟累计降水量，单位毫米
+              description: 预报当天总降水量，默认单位：毫米
             pressure:
               type: string
-              description: 大气压强，默认单位：百帕
+              description: 站点气压，默认单位：百帕
         weatherHourly:
           type: array
-          description: 历史逐小时天气数据列表。
+          description: 历史逐小时天气数据列表
           items:
             type: object
             properties:
               time:
                 type: string
-                description: 当天时间
-              temp:
-                type: string
-                description: 当天每小时温度，默认单位：摄氏度
-              icon:
-                type: string
-                description: 当天每小时天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
-              text:
-                type: string
-                description: 当天每小时天气状况的文字描述，包括阴晴雨雪等天气状态的描述
-              precip:
-                type: string
-                description: 5分钟累计降水量，单位毫米
-              wind360:
-                type: string
-                description: 当天每小时[风向](/docs/resource/wind-info/#wind-direction)360角度
-              windDir:
-                type: string
-                description: 当天每小时[风向](/docs/resource/wind-info/#wind-direction)
-              windScale:
-                type: string
-                description: 当天每小时[风力等级](/docs/resource/wind-info/#wind-scale)
-              windSpeed:
-                type: string
-                description: 当天每小时[风速](/docs/resource/wind-info/#wind-speed)，公里/小时
-              humidity:
-                type: string
-                description: 相对湿度，百分比数值
-              pressure:
-                type: string
-                description: 大气压强，默认单位：百帕
-        refer:
-          "$ref": "#/components/schemas/referObject"
-    getHistoricalAir:
-      type: object
-      properties:
-        code:
-          type: string
-          description: 请参考[状态码](/docs/resource/status-code/)
-        fxLink:
-          type: string
-          description: 当前数据的响应式页面，便于嵌入网站或应用
-        airHourly:
-          type: array
-          description: 历史逐小时空气质量数据列表。
-          items:
-            type: object
-            properties:
-              pubTime:
-                type: string
-                description: 空气质量数据发布时间
-              aqi:
-                type: string
-                description: 空气质量指数
-              level:
-                type: string
-                description: 空气质量指数等级
-              category:
-                type: string
-                description: 空气质量指数级别
-              primary:
-                type: string
-                description: 空气质量的主要污染物，空气质量为优时，返回值为`NA`
-              pm10:
-                type: string
-                description: PM10
-              pm2p5:
-                type: string
-                description: PM2.5
-              no2:
-                type: string
-                description: 二氧化氮
-              so2:
-                type: string
-                description: 二氧化硫
-              co:
-                type: string
-                description: 一氧化碳
-              o3:
-                type: string
-                description: 臭氧
-        refer:
-          "$ref": "#/components/schemas/referObject"
-    getPoiRange:
-      type: object
-      properties:
-        code:
-          type: string
-          description: 请参考[状态码](/docs/resource/status-code/)
-        poi:
-          "$ref": "#/components/schemas/poiArray"
-        refer:
-          "$ref": "#/components/schemas/referObject"
-    getGridWeatherNow:
-      type: object
-      properties:
-        code:
-          type: string
-          description: 请参考[状态码](/docs/resource/status-code/)
-        updateTime:
-          type: string
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
-        fxLink:
-          type: string
-          description: 当前数据的响应式页面，便于嵌入网站或应用
-        now:
-          type: object
-          description: 当前数据。
-          properties:
-            obsTime:
-              type: string
-              description: 数据观测时间
-            temp:
-              type: string
-              description: 温度，默认单位：摄氏度
-            icon:
-              type: string
-              description: 天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
-            text:
-              type: string
-              description: 天气状况的文字描述，包括阴晴雨雪等天气状态的描述
-            wind360:
-              type: string
-              description: "[风向](/docs/resource/wind-info/#wind-direction)360角度"
-            windDir:
-              type: string
-              description: "[风向](/docs/resource/wind-info/#wind-direction)"
-            windScale:
-              type: string
-              description: "[风力等级](/docs/resource/wind-info/#wind-scale)"
-            windSpeed:
-              type: string
-              description: "[风速](/docs/resource/wind-info/#wind-speed)，公里/小时"
-            humidity:
-              type: string
-              description: 相对湿度，百分比数值
-            precip:
-              type: string
-              description: 过去1小时降水量，默认单位：毫米
-            pressure:
-              type: string
-              description: 大气压强，默认单位：百帕
-            cloud:
-              type: string
-              description: 云量，百分比数值。**可能为空**
-            dew:
-              type: string
-              description: 露点温度。**可能为空**
-        refer:
-          "$ref": "#/components/schemas/referObject"
-    getGridWeatherDaily:
-      type: object
-      properties:
-        code:
-          type: string
-          description: 请参考[状态码](/docs/resource/status-code/)
-        updateTime:
-          type: string
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
-        fxLink:
-          type: string
-          description: 当前数据的响应式页面，便于嵌入网站或应用
-        daily:
-          type: array
-          description: 每日预报数据列表。
-          items:
-            type: object
-            properties:
-              fxDate:
-                type: string
-                description: 预报日期
-              tempMax:
-                type: string
-                description: 预报当天最高温度
-              tempMin:
-                type: string
-                description: 预报当天最低温度
-              iconDay:
-                type: string
-                description: 预报白天天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
-              iconNight:
-                type: string
-                description: 预报夜间天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
-              textDay:
-                type: string
-                description: 预报白天天气状况文字描述，包括阴晴雨雪等天气状态的描述
-              textNight:
-                type: string
-                description: 预报晚间天气状况文字描述，包括阴晴雨雪等天气状态的描述
-              wind360Day:
-                type: string
-                description: 预报白天[风向](/docs/resource/wind-info/#wind-direction)360角度
-              windDirDay:
-                type: string
-                description: 预报白天[风向](/docs/resource/wind-info/#wind-direction)
-              windScaleDay:
-                type: string
-                description: 预报白天[风力等级](/docs/resource/wind-info/#wind-scale)
-              windSpeedDay:
-                type: string
-                description: 预报白天[风速](/docs/resource/wind-info/#wind-speed)，公里/小时
-              wind360Night:
-                type: string
-                description: 预报夜间[风向](/docs/resource/wind-info/#wind-direction)360角度
-              windDirNight:
-                type: string
-                description: 预报夜间当天[风向](/docs/resource/wind-info/#wind-direction)
-              windScaleNight:
-                type: string
-                description: 预报夜间[风力等级](/docs/resource/wind-info/#wind-scale)
-              windSpeedNight:
-                type: string
-                description: 预报夜间[风速](/docs/resource/wind-info/#wind-speed)，公里/小时
-              humidity:
-                type: string
-                description: 相对湿度，百分比数值
-              precip:
-                type: string
-                description: 预报当天总降水量，默认单位：毫米
-              pressure:
-                type: string
-                description: 大气压强，默认单位：百帕
-        refer:
-          "$ref": "#/components/schemas/referObject"
-    getGridWeatherHourly:
-      type: object
-      properties:
-        code:
-          type: string
-          description: 请参考[状态码](/docs/resource/status-code/)
-        updateTime:
-          type: string
-          description: 当前[API的最近更新时间](/docs/resource/glossary/#update-time)
-        fxLink:
-          type: string
-          description: 当前数据的响应式页面，便于嵌入网站或应用
-        hourly:
-          type: array
-          description: 逐小时数据列表。
-          items:
-            type: object
-            properties:
-              fxTime:
-                type: string
-                description: 预报时间
+                description: 时间
               temp:
                 type: string
                 description: 温度，默认单位：摄氏度
               icon:
                 type: string
-                description: 天气状况的[图标代码](/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
+                description: 天气状况的[图标代码](https://dev.qweather.com/docs/resource/icons/)，另请参考[天气图标项目](https://icons.qweather.com/)
               text:
                 type: string
                 description: 天气状况的文字描述，包括阴晴雨雪等天气状态的描述
               wind360:
                 type: string
-                description: "[风向](/docs/resource/wind-info/#wind-direction)360角度"
+                description: "[风向](https://dev.qweather.com/docs/resource/wind-info/#wind-direction)360角度"
               windDir:
                 type: string
-                description: "[风向](/docs/resource/wind-info/#wind-direction)"
+                description: "[风向](https://dev.qweather.com/docs/resource/wind-info/#wind-direction)"
               windScale:
                 type: string
-                description: "[风力等级](/docs/resource/wind-info/#wind-scale)"
+                description: "[风力等级](https://dev.qweather.com/docs/resource/wind-info/#wind-scale)"
               windSpeed:
                 type: string
-                description: "[风速](/docs/resource/wind-info/#wind-speed)，公里/小时"
+                description: "[风速](https://dev.qweather.com/docs/resource/wind-info/#wind-speed)，公里/小时"
               humidity:
                 type: string
                 description: 相对湿度，百分比数值
               precip:
                 type: string
-                description: 当前小时累计降水量，默认单位：毫米
+                description: 降水量，默认单位：毫米
               pressure:
                 type: string
-                description: 大气压强，默认单位：百帕
-              cloud:
-                type: string
-                description: 云量，百分比数值。**可能为空**
-              dew:
-                type: string
-                description: 露点温度。**可能为空**
+                description: 站点气压，默认单位：百帕
         refer:
           "$ref": "#/components/schemas/referObject"
-    poiArray:
-      type: array
-      description: POI 信息列表。
-      items:
-        type: object
-        properties:
-          name:
-            type: string
-            description: POI（兴趣点）名称
-          id:
-            type: string
-            description: POI（兴趣点）ID
-          lat:
-            type: string
-            description: POI（兴趣点）纬度
-          lon:
-            type: string
-            description: POI（兴趣点）经度
-          adm2:
-            type: string
-            description: POI（兴趣点）的上级行政区划名称
-          adm1:
-            type: string
-            description: POI（兴趣点）所属一级行政区域
-          country:
-            type: string
-            description: POI（兴趣点）所属国家名称
-          tz:
-            type: string
-            description: POI（兴趣点）所在[时区](/docs/resource/glossary/#timezone)
-          utcOffset:
-            type: string
-            description: POI（兴趣点）目前与UTC时间偏移的小时数，参考[详细说明](/docs/resource/glossary/#utc-offset)
-          isDst:
-            type: string
-            description: POI（兴趣点）是否当前处于[夏令时](/docs/resource/glossary/#daylight-saving-time)。`1` 表示当前处于夏令时，`0` 表示当前不是夏令时
-          type:
-            type: string
-            description: POI（兴趣点）的属性
-          rank:
-            type: string
-            description: "[地区评分](/docs/resource/glossary/#rank)"
-          fxLink:
-            type: string
-            format: uri
-            description: 该地区的天气预报网页链接，便于嵌入你的网站或应用
+
+    getHistoricalAir:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+        airHourly:
+          type: array
+          description: 逐小时空气质量数据列表
+          items:
+            type: object
+            allOf:
+              - type: object
+                properties:
+                  pubTime:
+                    "$ref": "#/components/schemas/pubTime"
+              - "$ref": "#/components/schemas/aqiBasicObjectV7"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+
+    getGridWeatherNow:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+        now:
+          description: 天气实况数据
+          allOf:
+          - type: object
+            properties:
+              obsTime:
+                "$ref": "#/components/schemas/obsTime"
+          - "$ref": "#/components/schemas/weatherBasicObject"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+
+    getGridWeatherDaily:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+        daily:
+          type: array
+          description: 每日预报数据列表
+          items:
+            allOf:
+              - type: object
+                properties:
+                  fxDate:
+                    type: string
+                    description: 预报日期
+              - $ref: "#/components/schemas/weatherDailyBasicObject"
+        refer:
+          "$ref": "#/components/schemas/referObject"
+
+    getGridWeatherHourly:
+      type: object
+      properties:
+        code:
+          "$ref": "#/components/schemas/statusCode"
+        updateTime:
+          "$ref": "#/components/schemas/updateTime"
+        fxLink:
+          "$ref": "#/components/schemas/fxLink"
+        hourly:
+          allOf:
+          - type: object
+            properties:
+              fxTime:
+                "$ref": "#/components/schemas/fxTime"
+          - "$ref": "#/components/schemas/weatherBasicObject"
+        refer:
+          "$ref": "#/components/schemas/referObject"

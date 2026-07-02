@@ -1,7 +1,7 @@
 {
   "code": "200",
   "updateTime": "2021-12-16T18:35+08:00",
-  "fxLink": "http://hfx.link/2ax2",
+  "fxLink": "https://www.qweather.com/indices/chaoyang-101010300.html",
   "daily": [
     {
       "date": "2021-12-16",
@@ -22,7 +22,7 @@
   ],
   "refer": {
     "sources": [
-      "QWeather"
+      "https://developer.qweather.com/attribution.html"
     ],
     "license": [
       "QWeather Developers License"

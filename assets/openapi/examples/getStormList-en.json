@@ -5,161 +5,161 @@
   "storm": [
     {
       "id": "NP_2022",
-      "name": "环高",
+      "name": "Vamco",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2021",
-      "name": "艾涛",
+      "name": "Etau",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2020",
-      "name": "艾莎尼",
+      "name": "Atsani",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2019",
-      "name": "天鹅",
+      "name": "Goni",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2018",
-      "name": "莫拉菲",
+      "name": "Molave",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2017",
-      "name": "沙德尔",
+      "name": "Saudel",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_200012",
-      "name": "无命名",
+      "name": "Unnamed",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2016",
-      "name": "浪卡",
+      "name": "Nangka",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2015",
-      "name": "莲花",
+      "name": "Linfa",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2014",
-      "name": "灿鸿",
+      "name": "Chan-hom",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2013",
-      "name": "鲸鱼",
+      "name": "Kujira",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2012",
-      "name": "白海豚",
+      "name": "Dolphin",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2011",
-      "name": "红霞",
+      "name": "Noul",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2010",
-      "name": "海神",
+      "name": "Haishen",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2009",
-      "name": "美莎克",
+      "name": "Maysak",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2008",
-      "name": "巴威",
+      "name": "Bavi",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2007",
-      "name": "海高斯",
+      "name": "Higos",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2006",
-      "name": "米克拉",
+      "name": "Mekkhala",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2005",
-      "name": "蔷薇",
+      "name": "Jangmi",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2004",
-      "name": "黑格比",
+      "name": "Hagupit",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2003",
-      "name": "森拉克",
+      "name": "Sinlaku",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2002",
-      "name": "鹦鹉",
+      "name": "Nuri",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
     },
     {
       "id": "NP_2001",
-      "name": "黄蜂",
+      "name": "Vongfong",
       "basin": "NP",
       "year": "2020",
       "isActive": "0"
@@ -167,7 +167,7 @@
   ],
   "refer": {
     "sources": [
-      "NMC"
+      "https://developer.qweather.com/attribution.html"
     ],
     "license": [
       "QWeather Developers License"

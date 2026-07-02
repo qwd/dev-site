@@ -94,7 +94,7 @@
   ],
   "refer": {
     "sources": [
-      "QWeather"
+      "https://developer.qweather.com/attribution.html"
     ],
     "license": [
       "QWeather Developers License"

@@ -1,7 +1,7 @@
 {
   "code": "200",
   "updateTime": "2020-06-30T22:00+08:00",
-  "fxLink": "http://hfx.link/2ax1",
+  "fxLink": "https://www.qweather.com/en/weather/beijing-101010100.html",
   "now": {
     "obsTime": "2020-06-30T21:40+08:00",
     "temp": "24",
@@ -21,9 +21,7 @@
   },
   "refer": {
     "sources": [
-      "QWeather",
-      "NMC",
-      "ECMWF"
+      "https://developer.qweather.com/attribution.html"
     ],
     "license": [
       "QWeather Developers License"

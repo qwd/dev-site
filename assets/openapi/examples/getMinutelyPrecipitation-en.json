@@ -2,7 +2,7 @@
   "code": "200",
   "updateTime": "2021-12-16T18:55+08:00",
   "fxLink": "https://www.qweather.com",
-  "summary": "95分钟后雨就停了",
+  "summary": "Rain will stop in 95 minutes",
   "minutely": [
     {
       "fxTime": "2021-12-16T18:55+08:00",
@@ -127,7 +127,7 @@
   ],
   "refer": {
     "sources": [
-      "QWeather"
+      "https://developer.qweather.com/attribution.html"
     ],
     "license": [
       "QWeather Developers License"

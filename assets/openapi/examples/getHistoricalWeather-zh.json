@@ -1,6 +1,6 @@
 {
   "code": "200",
-  "fxLink": "http://hfx.link/2ax6",
+  "fxLink": "https://www.qweather.com",
   "weatherDaily": {
     "date": "2020-07-25",
     "sunrise": "05:08",
@@ -330,7 +330,7 @@
   ],
   "refer": {
     "sources": [
-      "QWeather"
+      "https://developer.qweather.com/attribution.html"
     ],
     "license": [
       "QWeather Developers License"

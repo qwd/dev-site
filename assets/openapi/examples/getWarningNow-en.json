@@ -1,0 +1,33 @@
+{
+  "code": "200",
+  "updateTime": "2023-04-03T14:20+08:00",
+  "fxLink": "https://www.qweather.com/en/severe-weather/shanghai-101020100.html",
+  "warning": [
+    {
+      "id": "10102010020230403103000500681616",
+      "sender": "Shanghai Central Meteorological Observatory",
+      "pubTime": "2023-04-03T10:30+08:00",
+      "title": "Shanghai Central Meteorological Observatory issues a blue gale warning [Level IV/General]",
+      "startTime": "2023-04-03T10:30+08:00",
+      "endTime": "2023-04-04T10:30+08:00",
+      "status": "active",
+      "level": "",
+      "severity": "Minor",
+      "severityColor": "Blue",
+      "type": "1006",
+      "typeName": "Gale",
+      "urgency": "",
+      "certainty": "",
+      "text": "At 10:30 on April 3, 2023, the Shanghai Central Meteorological Observatory issued a blue gale warning [Level IV/General]: Affected by a Jianghuai cyclone, southeasterly winds of force 6 with gusts of force 7-8 are expected across most of the city before tomorrow evening, with force 7 winds and gusts of force 8-9 along rivers and coastal areas. Take precautions against the adverse effects of strong winds on work at height, transportation, and protected agriculture.",
+      "related": ""
+    }
+  ],
+  "refer": {
+    "sources": [
+      "https://developer.qweather.com/attribution.html"
+    ],
+    "license": [
+      "QWeather Developers License"
+    ]
+  }
+}

@@ -13,7 +13,7 @@
       "utcOffset": "+08:00",
       "isDst": "0",
       "type": "scenic",
-      "rank": "67",
+      "rank": "671",
       "fxLink": "https://www.qweather.com"
     },
     {
@@ -34,7 +34,7 @@
   ],
   "refer": {
     "sources": [
-      "QWeather"
+      "https://developer.qweather.com/attribution.html"
     ],
     "license": [
       "QWeather Developers License"

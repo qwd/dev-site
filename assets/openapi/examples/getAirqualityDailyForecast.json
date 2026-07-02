@@ -1,6 +1,9 @@
 {
   "metadata": {
-    "tag": "4b78230843e636a6f910631d94878da73aa980a66abfcf53d35f9c06493a292d"
+    "tag": "4b78230843e636a6f910631d94878da73aa980a66abfcf53d35f9c06493a292d",
+    "attributions": [
+      "https://developer.qweather.com/attribution.html"
+    ]
   },
   "days": [
     {

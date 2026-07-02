@@ -1,0 +1,28 @@
+{
+  "code": "200",
+  "poi": [
+    {
+      "name": "Nanluoguxiang Alley",
+      "id": "10101010005A",
+      "lat": "39.93000",
+      "lon": "116.40000",
+      "adm2": "Beijing",
+      "adm1": "Beijing",
+      "country": "China",
+      "tz": "Asia/Shanghai",
+      "utcOffset": "+08:00",
+      "isDst": "0",
+      "type": "scenic",
+      "rank": "86",
+      "fxLink": "https://www.qweather.com"
+    }
+  ],
+  "refer": {
+    "sources": [
+      "https://developer.qweather.com/attribution.html"
+    ],
+    "license": [
+      "QWeather Developers License"
+    ]
+  }
+}

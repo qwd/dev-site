@@ -1,7 +1,7 @@
 {
   "code": "200",
   "updateTime": "2021-02-16T13:35+08:00",
-  "fxLink": "http://hfx.link/2ax1",
+  "fxLink": "https://www.qweather.com/en/weather/beijing-101010100.html",
   "hourly": [
     {
       "fxTime": "2021-02-16T15:00+08:00",
@@ -390,9 +390,7 @@
   ],
   "refer": {
     "sources": [
-      "QWeather",
-      "NMC",
-      "ECMWF"
+      "https://developer.qweather.com/attribution.html"
     ],
     "license": [
       "QWeather Developers License"

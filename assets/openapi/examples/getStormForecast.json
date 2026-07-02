@@ -83,7 +83,7 @@
   ],
   "refer": {
     "sources": [
-      "NMC"
+      "https://developer.qweather.com/attribution.html"
     ],
     "license": [
       "QWeather Developers License"
