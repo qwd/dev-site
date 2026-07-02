@@ -1,6 +1,6 @@
 ---
-title: Android SDK 文档已迁移
-description: 和风天气 Android SDK 文档已迁移至 GitHub 仓库，旧文档 URL 将跳转至此通知页。
+title: Android SDK Documentation Has Been Moved
+description: QWeather Android SDK documentation has moved to GitHub. Legacy documentation URLs redirect to this notice.
 seoType: WebPage
 translationKey: android-sdk-redirection
 aliases:
@@ -43,6 +43,6 @@ aliases:
 - "/docs/android-sdk/weather/android-weather-now/"
 ---
 
-Android SDK 文档已从开发者网站迁移至 GitHub 仓库。请访问以下仓库获取最新文档、示例代码、版本和问题追踪：
+The Android SDK documentation has moved to GitHub. Visit the repository below for current documentation, examples, releases, and issue tracking:
 
-[➡️ Android SDK 仓库](https://github.com/qwd/qweather-android-sdk)
+[➡️ Android SDK repository](https://github.com/qwd/qweather-android-sdk)
