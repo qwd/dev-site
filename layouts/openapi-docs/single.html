@@ -13,7 +13,7 @@
               <h1 class="mr-2 d-inline-block">{{ .Title }}</h1>
             </section>
             {{/* Render the Node-normalized intermediate model; Hugo does not parse OpenAPI here. */}}
-            <section class="doc-content">{{ partial "openapi-intermediate/operation.html" . }}</section>
+            <section class="doc-content">{{ partial "openapi/operation.html" . }}</section>
           </div>
           <aside class="docs-toc small col-lg-2 d-none d-lg-block">
             <h4 class="mb-2">{{ T "tocnav" }}</h4>

@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { normalizeDocument } from "./generate.mjs";
+import { normalizeDocument } from "./generate-parsed-openapi.mjs";
 
 const model = await normalizeDocument({
   lang: "fixture",

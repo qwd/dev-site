@@ -3,17 +3,19 @@
   "private": true,
   "scripts": {
     "build": "npm run openapi:generate && hugo --cleanDestinationDir",
-    "dev": "npm run openapi:generate && concurrently --kill-others --names openapi,hugo \"npm:openapi:watch\" \"hugo server --disableFastRender\"",
-    "openapi:generate": "node scripts/openapi/generate.mjs",
+    "start": "npm run openapi:generate && concurrently --kill-others --names openapi,hugo \"npm:openapi:watch\" \"hugo server --disableFastRender\"",
+    "dev": "npm start",
+    "openapi:generate": "npm run openapi:generate-docs",
+    "openapi:generate-docs": "node scripts/openapi/generate-parsed-openapi.mjs",
     "openapi:watch": "node scripts/openapi/watch.mjs",
     "openapi:test": "node scripts/openapi/test-compatibility.mjs"
   },
   "dependencies": {
-    "@apidevtools/swagger-parser": "12.1.0",
-    "yaml": "2.9.0"
+    "@apidevtools/swagger-parser": "^12.1.0",
+    "yaml": "^2.9.0"
   },
   "devDependencies": {
-    "chokidar": "4.0.3",
-    "concurrently": "9.2.1"
+    "chokidar": "^4.0.3",
+    "concurrently": "^9.2.1"
   }
 }

@@ -1,7 +1,8 @@
 # OpenAPI intermediate model
 
-`generate.mjs` validates the Chinese and English OpenAPI documents, then
-normalizes them into ignored JSON files under `assets/openapi/generated/`.
+`generate-parsed-openapi.mjs` validates the Chinese and English OpenAPI
+documents, then normalizes them into ignored JSON files under
+`assets/openapi/generated/`.
 Hugo reads only this intermediate model; it does not resolve OpenAPI references.
 
 Ordered OpenAPI collections are represented as arrays. In particular, response

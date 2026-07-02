@@ -1,6 +1,8 @@
 {{- $lang := .lang -}}
 {{- $field := .field -}}
 {{- $depth := add .depth 1 -}}
+{{/* Render one response field row; nested schema structures are delegated back
+  to response-tree.html so recursion has a single entry point. */}}
 <li>
   <div class="api-response-field">
     <code>{{ $field.name }}</code>
@@ -16,7 +18,7 @@
   {{- $hasChildren := or $field.children $field.items $field.allOf $field.oneOf $field.anyOf $field.additionalProperties $field.not -}}
   {{- if $hasChildren }}
     <ul>
-      {{- partial "openapi-intermediate/schema-fields.html" (dict "lang" $lang "node" $field "depth" $depth) -}}
+      {{- partial "openapi/response-tree.html" (dict "lang" $lang "node" $field "depth" $depth) -}}
     </ul>
   {{- end }}
 </li>

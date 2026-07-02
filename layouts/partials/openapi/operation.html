@@ -1,5 +1,9 @@
 {{- $page := . -}}
 {{- $lang := .Language.Lang -}}
+{{/*
+  Each generated API page stores the parsed model path and operationId in
+  front matter. Load the shared model, then pick the operation for this page.
+*/}}
 {{- $resource := resources.Get .Params.openapiModelSource -}}
 {{- if not $resource }}{{ errorf "OpenAPI intermediate model not found: %s" .Params.openapiModelSource }}{{ end -}}
 {{- $model := transform.Unmarshal $resource -}}
@@ -9,10 +13,10 @@
 
 {{- with $operation.description }}<p>{{ . | markdownify }}</p>{{ end }}
 
-<h2 id="endpoint">{{ T "endpoint" }}<a class="anchor-link" href="#endpoint" aria-label="Permalink">#</a></h2>
+<h2 id="endpoint">{{ T "endpoint" }}<a class="anchor-link" href="#endpoint" aria-label="{{ T "permalink" }}">#</a></h2>
 <div class="request-url mb-3"><pre><code>{{ $operation.method }} {{ $operation.endpoint }}</code></pre></div>
 
-<h2 id="parameters">{{ T "params" }}<a class="anchor-link" href="#parameters" aria-label="Permalink">#</a></h2>
+<h2 id="parameters">{{ T "params" }}<a class="anchor-link" href="#parameters" aria-label="{{ T "permalink" }}">#</a></h2>
 {{- range $location := slice "path" "query" }}
   {{- $parameters := where $operation.parameters "in" $location -}}
   {{- if $parameters }}
@@ -29,11 +33,17 @@
   {{- end }}
 {{- end }}
 
-<h2 id="request-example">{{ T "request-example" }}<a class="anchor-link" href="#request-example" aria-label="Permalink">#</a></h2>
+<h2 id="request-example">{{ T "request-example" }}<a class="anchor-link" href="#request-example" aria-label="{{ T "permalink" }}">#</a></h2>
 <pre><code class="language-bash">{{ $operation.requestExample }}</code></pre>
 <p class="small italic">{{ T "example-token-hint" | markdownify }}</p>
+{{- if and $operation.operationId $operation.tags }}
+  {{/* Swagger UI anchors use the first OpenAPI tag plus operationId. */}}
+  {{- $tag := index $operation.tags 0 -}}
+  {{- $explorerURL := printf "%s#/%s/%s" (relLangURL "api-explore/") $tag $operation.operationId -}}
+  <p><a class="btn-link btn-link-md btn-link-blue d-inline-block" href="{{ $explorerURL }}" target="_blank" rel="noopener noreferrer">{{ T "try-it" }}</a></p>
+{{- end }}
 
-<h2 id="response">{{ T "response" }}<a class="anchor-link" href="#response" aria-label="Permalink">#</a></h2>
+<h2 id="response">{{ T "response" }}<a class="anchor-link" href="#response" aria-label="{{ T "permalink" }}">#</a></h2>
 {{- if $operation.response.examples }}
   {{- range $operation.response.examples }}
     {{- with .summary }}<h4>{{ . }}</h4>{{ end -}}
@@ -42,16 +52,19 @@
     {{- $exampleSource := strings.TrimPrefix "assets/" . -}}
     {{- $example := resources.Get $exampleSource -}}
     {{- if not $example }}{{ errorf "OpenAPI response example not found: %s" $exampleSource }}{{ end -}}
+    {{/* Render external JSON as raw source so example field order is preserved. */}}
     <div class="api-snippets">{{ highlight $example.Content "json" "" }}</div>
     {{- else with .value }}
       <div class="api-snippets">{{ highlight (. | jsonify (dict "indent" "  ")) "json" "" }}</div>
     {{- end -}}
   {{- end }}
 {{- else }}
+  {{/* Only used when the OpenAPI response has no explicit example. */}}
   {{- with $operation.response.fallbackExample }}
     <div class="api-snippets">{{ highlight (. | jsonify (dict "indent" "  ")) "json" "" }}</div>
   {{- end }}
 {{- end }}
 <ul class="api-response-tree">
-  {{ partial "openapi-intermediate/schema-fields.html" (dict "lang" $lang "node" $operation.response.fields "depth" 0) }}
+  {{/* Render the normalized response schema as an indented field tree. */}}
+  {{ partial "openapi/response-tree.html" (dict "lang" $lang "node" $operation.response.fields "depth" 0) }}
 </ul>

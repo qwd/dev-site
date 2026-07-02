@@ -7,6 +7,8 @@ import YAML from "yaml";
 const root = process.cwd();
 const sourceDir = path.join(root, "assets/openapi");
 const outputDir = path.join(sourceDir, "generated");
+// These are the authoring OpenAPI documents. The generated JSON files below are
+// intentionally ignored because they are derived from these source files.
 const sources = [
   { lang: "zh", file: "qweather-apis-zh.yml" },
   { lang: "en", file: "qweather-apis-en.yml" }
@@ -20,6 +22,8 @@ const constraintKeys = [
 
 class OpenAPIDiagnostic extends Error {
   constructor(context, keyword, message) {
+    // Include enough OpenAPI context to fix the source document without
+    // reproducing the full generator state.
     const detail = [
       `language=${context.lang}`,
       `operationId=${context.operationId || "<unknown>"}`,
@@ -44,6 +48,8 @@ class Resolver {
     const absolute = path.resolve(file);
     if (!this.documents.has(absolute)) {
       const raw = await fs.readFile(absolute, "utf8");
+      // YAML.parse preserves object insertion order, which keeps response field
+      // descriptions in the same order as the OpenAPI source.
       this.documents.set(absolute, YAML.parse(raw));
     }
     return this.documents.get(absolute);
@@ -98,10 +104,14 @@ async function normalizeSchema(schema, resolver, file, context, stack = []) {
     const normalized = await normalizeSchema(resolved.value, resolver, resolved.file, context, [...stack, resolved.key]);
     return {
       ...normalized,
+      // OpenAPI 3.0 ignores most sibling fields beside $ref, but the source may
+      // still use a local description. Preserve it for generated docs.
       description: schema.description || normalized.description
     };
   }
 
+  // This normalized node is the contract consumed by Hugo templates. Keep this
+  // shape stable unless the response-tree partials are updated together.
   const node = {
     ...emptySchemaNode(),
     type: schemaType(schema),
@@ -178,6 +188,8 @@ function emptySchemaNode() {
 }
 
 function fallbackExample(node, depth = 0) {
+  // Used only when the OpenAPI response has no explicit example. It should be
+  // predictable, not realistic; real examples should live in assets/openapi/examples.
   if (!node || depth > 12 || node.oneOf.length || node.anyOf.length || node.recursiveRef) return null;
   if (node.type === "array" || node.items) {
     const item = fallbackExample(node.items, depth + 1);
@@ -212,6 +224,8 @@ function selectSuccessResponse(responses, context) {
 }
 
 async function loadExamples(mediaType, file, context) {
+  // Preserve external examples as paths so Hugo can render the original JSON
+  // text and keep field order/formatting visible in API docs.
   const normalized = [];
   const examples = mediaType?.examples || {};
   for (const [name, exampleRef] of Object.entries(examples)) {
@@ -245,6 +259,8 @@ async function normalizeParameter(parameterRef, resolver, file, context) {
   const schemaResolved = await resolveObject(parameter.schema || {}, resolver, resolved.file, context);
   const schema = schemaResolved.value || {};
   if (!["path", "query"].includes(parameter.in)) {
+    // Fail loudly for valid OpenAPI features the current page design does not
+    // render, instead of silently dropping important request information.
     throw new OpenAPIDiagnostic(context, "parameters", `Parameter location is not rendered yet: ${parameter.in}`);
   }
   if (parameter.style || parameter.explode !== undefined || parameter.content) {
@@ -285,6 +301,8 @@ function requestExample(method, endpoint, parameters) {
 export async function normalizeDocument(source) {
   const entryFile = source.path ? path.resolve(root, source.path) : path.join(sourceDir, source.file);
   try {
+    // Validate before normalization so unsupported syntax is clearly separated
+    // from invalid OpenAPI input.
     await SwaggerParser.validate(entryFile);
   } catch (error) {
     throw new Error(`OpenAPI validation failed language=${source.lang} source=${entryFile}: ${error.message}`, { cause: error });
@@ -297,6 +315,9 @@ export async function normalizeDocument(source) {
     for (const method of methods) {
       const operation = pathItem[method];
       if (!operation?.operationId || !operation.externalDocs?.url) continue;
+      // Deprecated endpoints stay in the source OpenAPI for compatibility and
+      // Swagger UI visibility, but they should not create regular docs pages.
+      if (operation.deprecated) continue;
       const baseContext = {
         lang: source.lang,
         operationId: operation.operationId,
@@ -330,6 +351,8 @@ export async function normalizeDocument(source) {
       if (!mediaType?.schema) {
         throw new OpenAPIDiagnostic(responseContext, "content", "Successful response has no application/json schema");
       }
+      // Convert the response schema into a tree that Hugo can render without
+      // resolving OpenAPI references in templates.
       const fields = await normalizeSchema(
         mediaType.schema,
         resolver,
@@ -337,6 +360,8 @@ export async function normalizeDocument(source) {
         cloneContext(responseContext, { schemaPath: `${responseContext.schemaPath}.content.application/json.schema` })
       );
       const examples = await loadExamples(mediaType, responseResolved.file, responseContext);
+      // externalDocs is the canonical URL for the handwritten document this
+      // generated page replaces; strip the site prefix to get the Hugo path.
       const pagePath = operation.externalDocs.url
         .replace(/^https:\/\/dev\.qweather\.com\/(?:en\/)?docs\/api\//, "")
         .replace(/^\/|\/$/g, "");
@@ -374,7 +399,8 @@ if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   for (const source of sources) {
     const model = await normalizeDocument(source);
     const output = `${JSON.stringify(model, null, 2)}\n`;
-    await fs.writeFile(path.join(outputDir, `${source.lang}.json`), output);
+    // Hugo content adapters read this parsed model; it is not published directly.
+    await fs.writeFile(path.join(outputDir, `parsed-openapi-${source.lang}.json`), output);
     console.log(`${source.lang}: generated ${model.operations.length} operations`);
   }
 }
