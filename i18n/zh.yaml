@@ -8,6 +8,8 @@ more: 更多
 screenshot: 截图
 contact: 联系
 contact-us: 联系我们
+search-docs: 搜索文档
+permalink: 永久链接
 params: 参数
 doc: 文档
 feats: 特性
@@ -15,7 +17,6 @@ docs-category: 文档目录
 rqd: 必选
 tocnav: 本页导航
 help: 帮助
-edit: 编辑
 quick-start: 快速开始
 category: 类别
 level: 级别
@@ -75,6 +76,10 @@ pi-org-desc: |-
   - 定制化解决方案
   - 7x24小时技术支持
 pi-more: 更多信息
+pi-more-free-trial: 我可以免费试用吗?
+pi-more-request: 什么是一次请求?
+pi-more-discounts: 是否有更多折扣?
+pi-more-vat: 价格是否含税?
 pi-req-mo: 请求量(每月)
 pi-price-req: 价格(每次请求)
 si-biref: 欢迎分享你使用和风天气开发服务的代码，你可以修改<a href="https://github.com/qwd/dev-site/edit/master/data/showcase.yaml" target="_blank" rel="noopener noreferrer">这个文件</a>并提交一个PR。
@@ -89,9 +94,12 @@ endpoint: 请求路径
 path-params: 路径参数
 query-params: 查询参数
 request-example: 请求示例
+try-it: 试一下
 response: 返回数据
 recursive-reference: 递归引用
 additional-property: 其他属性
+code: 代码
+event: 事件
 name: 名称
 full-name: 全称
 unit-new: 单位（新版）

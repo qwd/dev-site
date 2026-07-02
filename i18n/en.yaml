@@ -8,6 +8,8 @@ more: More
 screenshot: Screenshot
 contact: Contact
 contact-us: Contact us
+search-docs: Search docs
+permalink: Permalink
 params: Parameters
 doc: Docs
 feats: Features
@@ -15,7 +17,6 @@ docs-category: Docs Category
 rqd: required
 tocnav: On This Page
 help: Help
-edit: Edit
 quick-start: Quick Start
 category: Category
 level: Level
@@ -70,6 +71,10 @@ pi-org-desc: |-
   - Customized solutions
   - 7x24 technical support
 pi-more: More
+pi-more-free-trial: Can I try it for free?
+pi-more-request: What is a request?
+pi-more-discounts: Need More Requests
+pi-more-vat: Do the pricing include VAT?
 pi-req-mo: Requests(per month)
 pi-price-req: Price(per request)
 si-biref: Welcome to share your code for using QWeather dev service, you can edit <a href="https://github.com/qwd/dev-site/edit/master/data/showcase.yaml" target="_blank" rel="noopener noreferrer">this file</a> and submit a PR.
@@ -84,9 +89,12 @@ endpoint: Endpoint
 path-params: Path parameters
 query-params: Query parameters
 request-example: Request example
+try-it: Try it
 response: Response
 recursive-reference: Recursive reference
 additional-property: Additional property
+code: Code
+event: Event
 name: Name
 full-name: Full name
 unit-new: Unit (new)

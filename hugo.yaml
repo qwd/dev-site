@@ -4,7 +4,7 @@ timeZone: Asia/Shanghai
 defaultContentLanguage: zh
 defaultContentLanguageInSubdir: false
 disableKinds:
-  - RSS
+  - rss
   - taxonomy
   - term
 
@@ -13,17 +13,17 @@ languages:
     contentDir: content/zh
     locale: zh
     label: 中文
-    title: 和风天气开发服务
+    title: 和风天气开发者服务
     weight: 1
   en:
     contentDir: content/en
     locale: en
     label: English
-    title: QWeather Developers
+    title: QWeather Developer Services
     weight: 2
 
 params:
-  logo: https://cdn.qweather.com/media/qw-logo-s-dark-800.png
+  logo: https://dl.qweather.com/common/qweather-logo-1x.png
   description:
     zh: 强大、丰富的天气数据服务
     en: Powerful and Various Weather Data Services
@@ -53,6 +53,8 @@ markup:
         block: true
     renderer:
       unsafe: true
+  highlight:
+    noClasses: false
 
 minify:
   minifyOutput: false
