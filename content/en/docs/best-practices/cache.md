@@ -1,9 +1,5 @@
 ---
 title: Cache
-tag:
-- bp
-- cache
-ref: bp-cache
 translationKey: bp-cache
 ---
 

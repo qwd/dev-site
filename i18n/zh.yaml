@@ -1,0 +1,108 @@
+home: 首页
+icons: 图标
+showcase: 展示
+price: 价格
+blog: 博客
+console: 控制台
+more: 更多
+screenshot: 截图
+contact: 联系
+contact-us: 联系我们
+search-docs: 搜索文档
+permalink: 永久链接
+params: 参数
+doc: 文档
+feats: 特性
+docs-category: 文档目录
+rqd: 必选
+tocnav: 本页导航
+help: 帮助
+quick-start: 快速开始
+category: 类别
+level: 级别
+range: 取值范围
+color: 颜色
+pollutant: 污染物
+example-token-hint: 请将`your_token`替换为你的[JWT身份认证](/docs/configuration/authentication/)，将`your_api_host`替换为你的[API Host](/docs/configuration/api-host/)
+hp-slogan: 创建一个漂亮的天气项目
+hp-slogan-2: 驱动你的业务
+hp-data: 强大的气象数据
+hp-data-desc: 和风天气开发服务基于先进的气象和人工智能算法，为开发者和企业提供了强大、丰富的天气数据服务，帮助你在应用中展示天气，或助力你的业务决策。
+hp-data-refer: 查看服务和数据
+hp-dev: 开发友好
+hp-dev-desc: 标准的API和开箱即用的SDK，让你的开发工作变得更加轻松。
+hp-dev-refer: 查看开发文档
+hp-ww: 全球运营
+hp-ww-desc: 我们提供了全球部署的能力，你不再需要面对各国不同的文化和本地化问题或者世界各地复杂的网络环境，并且这一切都是自动的。
+hp-ww-refer: 查看全球部署
+hp-price: 灵活的定价
+hp-price-desc: 我们支持按量计费模式，只需要为你真正使用的服务付费，无需预付，没有隐藏费用，随时开始和停止。
+hp-price-refer: 查看价格
+hp-intro-try: 试试看
+hp-intro-try-desc: 非常简单！<a href="https://id.qweather.com/#/register?redirect=https%3A%2F%2Fconsole.qweather.com" target="_blank" rel="noopener noreferrer">注册</a>，根据[快速开始](/docs/start/)文档创建免费订阅的项目和KEY即可获取天气数据。
+hp-intro-more: 了解更多
+hp-intro-more-desc: 我们提供了详实的文档用于你的开发，包括[开发文档](/docs/api/)、[实用资料](/docs/resource/)、[最佳实践](/docs/best-practices/)以及其他开发者提供的[作品展示](/showcase/)。
+hp-intro-org: 企业定制
+hp-intro-org-desc: 联系我们的<a href="https://www.qweather.com/contact" target="_blank" rel="noopener noreferrer">商务专家</a>，将为您提供完整的气象解决方案。
+hp-regnow: 免费注册
+hp-current-ver: 当前版本
+pi-desc: 非常简单，免费或者按实际使用付费
+pi-payg: 按量付费
+pi-payg-desc: |-
+  和风天气开发服务均采用按量计费模式，你只需要为你真正使用的服务付费，无需投入大量资金，没有隐藏费用，随时开始和停止，停止后不会产生费用。
+
+  按量计费让你可以轻松面对不断变化的业务需求，你可以灵活的根据实际需求调整如何使用和风天气云服务，避免造成资金的浪费或不足。
+pi-payg-more: 了解账单系统
+pi-saving-plans: 节省计划
+pi-saving-plans-desc: |-
+  当你的请求量较多或者业务需求较稳定的时候，通过节省计划可以节省大量成本。
+
+  节省计划是一项折扣方案，它不依赖于具体的服务，而是根据你承诺的年消费金额而提供大量折扣，最多可节省60%的成本。
+
+  你可以理解为节省计划是办了一张VIP卡，预存金额享受商品折扣。
+pi-saving-plans-more: 了解节省计划
+pi-tier-title: 价格，越用越省
+pi-tier-desc: 按量计费采取阶梯价的方式，请求量越大，单价成本越低。使用节省计划同样适用阶梯价并在此基础上提供折扣。
+pi-tier-see: 点击查看不同服务的价格
+pi-calc: 价格计算器
+pi-calc-desc: 你可以方便的使用价格计算器来预估你的每月账单费用，或者了解需要购买多少金额的节省计划。
+pi-calc-go: 计算(需要登录)
+pi-org: 企业用户
+pi-org-desc: |-
+  有大量请求数（通常指的是日均百万次以上）需求的企业客户，我们提供更多解决方案：
+  - 更多折扣
+  - 更高性能的服务资源
+  - 更高可用性
+  - 定制化解决方案
+  - 7x24小时技术支持
+pi-more: 更多信息
+pi-more-free-trial: 我可以免费试用吗?
+pi-more-request: 什么是一次请求?
+pi-more-discounts: 是否有更多折扣?
+pi-more-vat: 价格是否含税?
+pi-req-mo: 请求量(每月)
+pi-price-req: 价格(每次请求)
+si-biref: 欢迎分享你使用和风天气开发服务的代码，你可以修改<a href="https://github.com/qwd/dev-site/edit/master/data/showcase.yaml" target="_blank" rel="noopener noreferrer">这个文件</a>并提交一个PR。
+si-note: 我们无法确保这些代码的有效性，请与作者联系。如有争议或版权问题，请与我们联系。
+fi-q-general: 一般问题
+fi-q-dev: 开发和技术
+fi-q-license: 授权许可
+fi-q-finance: 财务和费用
+fi-q-user: 帐号管理
+fi-q-term: 法律条款
+endpoint: 请求路径
+path-params: 路径参数
+query-params: 查询参数
+request-example: 请求示例
+try-it: 试一下
+response: 返回数据
+recursive-reference: 递归引用
+additional-property: 其他属性
+code: 代码
+event: 事件
+name: 名称
+full-name: 全称
+unit-new: 单位（新版）
+unit-legacy: 单位（旧版）
+countries-regions: 国家或地区
+supported-aqis: 支持的 AQIs

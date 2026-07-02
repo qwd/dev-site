@@ -1,0 +1,103 @@
+home: Home
+icons: Icons
+showcase: Showcase
+price: Price
+blog: Blog
+console: Console
+more: More
+screenshot: Screenshot
+contact: Contact
+contact-us: Contact us
+search-docs: Search docs
+permalink: Permalink
+params: Parameters
+doc: Docs
+feats: Features
+docs-category: Docs Category
+rqd: required
+tocnav: On This Page
+help: Help
+quick-start: Quick Start
+category: Category
+level: Level
+range: Range
+color: Color
+pollutant: Pollutant
+example-token-hint: Replace `your_token` and `your_api_host` with your [JWT Authentication](/en/docs/configuration/authentication/) and [API Host](/en/docs/configuration/api-host/)
+hp-slogan: Build a beautiful weather program
+hp-slogan-2: to drive your business
+hp-data: Weather Data
+hp-data-desc: QWeather Develop Service is based on advanced meteorological algorithms and provides a powerful weather service, to help you display weather or drive your business decisions.
+hp-data-refer: See Service and Data
+hp-dev: Developer Friendly
+hp-dev-desc: RESTful APIs and out-of-the-box SDKs make your development work easier.
+hp-dev-refer: See Develop Guide
+hp-ww: Worldwide
+hp-ww-desc: We provides global deployment capability, so you no longer have to struggle with localization issues or complex network environments around the world.
+hp-ww-refer: See Global Deployment
+hp-price: Flexible Pricing
+hp-price-desc: We support Pay as you go billing model, pay only for the services you actually use, no upfront payments, no hidden fees, start and stop whenever you want.
+hp-price-refer: See Price
+hp-intro-try: Try it out
+hp-intro-try-desc: Very easy! <a href="https://id.qweather.com/#/register?redirect=https%3A%2F%2Fconsole.qweather.com" target="_blank" rel="noopener noreferrer">Sign up</a> and create a Project and KEY with free subscription to get weather data. See [Quick Start](/en/docs/start/).
+hp-intro-more: Learn more
+hp-intro-more-desc: We provide useful documentation for your development, including [Develop Guide](/docs/api/), [Resource](/en/docs/resource/), [Best Practices](/en/docs/best-practices/) and [Showcases](/en/showcase/).
+hp-intro-org: Enterprise Customization
+hp-intro-org-desc: Contact our <a href="https://www.qweather.com/en/contact" target="_blank" rel="noopener noreferrer">business experts</a> for a complete weather solution.
+hp-regnow: Free Registration
+hp-current-ver: Current version
+pi-desc: Flexible, Transparent and Affordable
+pi-payg: Pay as you go
+pi-payg-desc: QWeather Develop services are all based on pay as you go billing model, you only pay for the services you actually use, no large upfront, no hidden fees, start and stop whenever you want, and no fees when you stop.
+pi-payg-more: See Billing and Payment
+pi-saving-plans: Savings plans
+pi-saving-plans-desc: |-
+  If you have a high volume of requests, you can save significant cost with the Savings Plan.
+
+  Savings Plans is a discount plan that offers lower pay as you go pricing, in exchange, you need to prepay the committed usage amount.
+pi-saving-plans-more: See Savings plans
+pi-tier-title: Pricing, more use more save
+pi-tier-desc: Pay as you go is tiered pricing, with the higher requests, the lower cost per request.
+pi-tier-see: Click to see the price of the services
+pi-calc: Price Calculator
+pi-calc-desc: You can easily use the price calculator to estimate your monthly cost.
+pi-calc-go: Calculate (login required)
+pi-org: Organization
+pi-org-desc: |-
+  For enterprise customers with a large volume of requests (usually million or more requests per day), we offer additional solutions:
+  - More discounts
+  - Higher performance service resources
+  - Higher availability
+  - Customized solutions
+  - 7x24 technical support
+pi-more: More
+pi-more-free-trial: Can I try it for free?
+pi-more-request: What is a request?
+pi-more-discounts: Need More Requests
+pi-more-vat: Do the pricing include VAT?
+pi-req-mo: Requests(per month)
+pi-price-req: Price(per request)
+si-biref: Welcome to share your code for using QWeather dev service, you can edit <a href="https://github.com/qwd/dev-site/edit/master/data/showcase.yaml" target="_blank" rel="noopener noreferrer">this file</a> and submit a PR.
+si-note: We cannot guarantee the availability of these works, please contact the author.
+fi-q-general: General
+fi-q-dev: Development
+fi-q-license: License
+fi-q-finance: Finance and Cost
+fi-q-user: Account Management
+fi-q-term: Legal Terms
+endpoint: Endpoint
+path-params: Path parameters
+query-params: Query parameters
+request-example: Request example
+try-it: Try it
+response: Response
+recursive-reference: Recursive reference
+additional-property: Additional property
+code: Code
+event: Event
+name: Name
+full-name: Full name
+unit-new: Unit (new)
+unit-legacy: Unit (legacy)
+countries-regions: Countries or Regions
+supported-aqis: Supported AQIs

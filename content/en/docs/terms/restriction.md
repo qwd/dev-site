@@ -1,9 +1,5 @@
 ---
 title: Usage Restriction
-tag:
-- terms
-- restriction
-ref: terms-restriction
 translationKey: terms-restriction
 ---
 

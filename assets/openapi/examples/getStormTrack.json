@@ -1,0 +1,120 @@
+{
+  "code": "200",
+  "updateTime": "2024-05-30T06:11+00:00",
+  "fxLink": "https://www.qweather.com",
+  "isActive": "1",
+  "now": {
+      "pubTime": "2024-05-30T05:00+08:00",
+      "lat": "27.7",
+      "lon": "134.5",
+      "type": "STS",
+      "pressure": "980",
+      "windSpeed": "30",
+      "moveSpeed": "21",
+      "moveDir": "NE",
+      "move360": "",
+      "windRadius30": {
+        "neRadius": "120",
+        "seRadius": "150",
+        "swRadius": "120",
+        "nwRadius": "100"
+      },
+      "windRadius50": {
+        "neRadius": "60",
+        "seRadius": "60",
+        "swRadius": "60",
+        "nwRadius": "50"
+      }
+    },
+  "track": [
+    {
+      "time": "2024-05-29T17:00+08:00",
+      "lat": "26.1",
+      "lon": "132.5",
+      "type": "TY",
+      "pressure": "970",
+      "windSpeed": "35",
+      "moveSpeed": "28",
+      "moveDir": "NE",
+      "move360": "",
+      "windRadius30": {
+        "neRadius": "120",
+        "seRadius": "150",
+        "swRadius": "120",
+        "nwRadius": "100"
+      },
+      "windRadius50": {
+        "neRadius": "60",
+        "seRadius": "70",
+        "swRadius": "60",
+        "nwRadius": "50"
+      },
+      "windRadius64": {
+        "neRadius": "30",
+        "seRadius": "30",
+        "swRadius": "30",
+        "nwRadius": "30"
+      }
+    },
+    {
+      "time": "2024-05-29T20:00+08:00",
+      "lat": "26.5",
+      "lon": "133.2",
+      "type": "TY",
+      "pressure": "975",
+      "windSpeed": "33",
+      "moveSpeed": "27",
+      "moveDir": "NE",
+      "move360": "",
+      "windRadius30": {
+        "neRadius": "120",
+        "seRadius": "150",
+        "swRadius": "120",
+        "nwRadius": "100"
+      },
+      "windRadius50": {
+        "neRadius": "60",
+        "seRadius": "70",
+        "swRadius": "60",
+        "nwRadius": "50"
+      },
+      "windRadius64": {
+        "neRadius": "30",
+        "seRadius": "30",
+        "swRadius": "30",
+        "nwRadius": "30"
+      }
+    },
+    {
+      "time": "2024-05-30T02:00+08:00",
+      "lat": "27.1",
+      "lon": "133.9",
+      "type": "STS",
+      "pressure": "980",
+      "windSpeed": "30",
+      "moveSpeed": "23",
+      "moveDir": "NE",
+      "move360": "",
+      "windRadius30": {
+        "neRadius": "120",
+        "seRadius": "150",
+        "swRadius": "120",
+        "nwRadius": "100"
+      },
+      "windRadius50": {
+        "neRadius": "60",
+        "seRadius": "70",
+        "swRadius": "60",
+        "nwRadius": "50"
+      }
+    }
+  ],
+  "refer": {
+    "sources": [
+      "https://developer.qweather.com/attribution.html"
+    ],
+    "license": [
+      "QWeather Developers License"
+    ]
+  }
+}

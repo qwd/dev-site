@@ -1,10 +1,6 @@
 ---
 title: Billing and Payment
-tag:
-- finance
-- billing
 description: Learn how the billing and payment system works for QWeather Develop Services.
-ref: finance-billing
 translationKey: finance-billing
 ---
 

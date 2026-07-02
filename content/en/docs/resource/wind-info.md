@@ -1,9 +1,7 @@
 ---
 title: Wind Info
-tag: resource
 description: Learn about the relationship between wind speed and wind scale (Beaufort
   scale), and how to read wind direction in degree, wind 16 direction and wind 8 direction.
-ref: res-wind
 translationKey: res-wind
 ---
 
@@ -18,7 +16,7 @@ In a geographic coordinate system, the wind has a total of 32 different directio
 ### 16 wind directions
 
 ![16 wind direction rose](/assets/images/content/wind-direction-rose.png)
-*16 wind direction rose. (Created by QWeather and published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), Download [original image](https://github.com/qwd/dev-site/raw/master/assets/images/content/wind-direction-rose.png))*
+*16 wind direction rose. (Created by QWeather and published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), Download [original image](https://github.com/qwd/dev-site/raw/master/static/assets/images/content/wind-direction-rose.png))*
 {.figimg}
 16 wind direction：
 

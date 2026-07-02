@@ -1,9 +1,5 @@
 ---
 title: Android SDK配置
-tag:
-- config
-- android
-ref: config-android
 translationKey: config-android
 ---
 

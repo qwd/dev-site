@@ -1,11 +1,9 @@
 ---
 title: Location List
-tag: resource
 toc: false
 description: QWeather location list with points of interest, attractions, air monitoring
   station, and Chinese cities. The list including IDs, latitude/longitude and more
   information.
-ref: res-location-list
 aliases:
 - "/docs/start/location-list/"
 translationKey: res-location-list

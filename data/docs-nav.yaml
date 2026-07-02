@@ -1,0 +1,107 @@
+- key: start-overview
+  subitems:
+    - key: feat-overview
+      subitems:
+        - key: feat-service
+        - key: feat-global
+        - key: feat-performance
+    - key: config-overview
+      subitems:
+        - key: config-project
+        - key: config-apihost
+        - key: config-auth
+        - key: config-api
+        - key: config-ios
+        - key: config-android
+    - key: account-overview
+      subitems:
+        - key: account-manage
+        - key: account-developers
+        - key: account-contact
+        - key: account-suspension
+        - key: account-inactive
+- key: 0-api-overview
+  subitems:
+    - key: 0-api-geo
+      subitems:
+        - key: getGeoCitylookup
+        - key: getGeoTopcity
+        - key: getGeoPoilookup
+        - key: getGeoPoirange
+    - key: 0-api-weather
+      subitems:
+        - key: getWeatherNow
+        - key: getWeatherDailyForecast
+        - key: getWeatherHourlyForecast
+        - key: getGridWeatherNow
+        - key: getGridWeatherDaily
+        - key: getGridWeatherHourly
+    - key: 0-api-minutely
+      subitems:
+        - key: getMinutelyPrecipitation
+    - key: 0-api-warning
+      subitems:
+        - key: getWeatherAlertCurrent
+    - key: 0-api-indices
+      subitems:
+        - key: getWeatherIndices
+    - key: 0-api-aq
+      subitems:
+        - key: getAirqualityCurrent
+        - key: getAirqualityHourlyForecast
+        - key: getAirqualityDailyForecast
+        - key: getAirqualityAirStation
+    - key: 0-api-time-machine
+      subitems:
+        - key: getHistoricalWeather
+    - key: 0-api-tropical
+      subitems:
+        - key: getStormForecast
+        - key: getStormTrack
+        - key: getStormList
+    - key: 0-api-ocean
+      subitems:
+        - key: getOceanTide
+    - key: 0-api-solar-radiation
+      subitems:
+        - key: getSolarradiationForecast
+    - key: 0-api-astronomy
+      subitems:
+        - key: getAstronomSun
+        - key: getAstronomyMoon
+        - key: getAstronomySolarElevationAngle
+    - key: 0-api-console
+      subitems:
+        - key: getConsoleFinance
+        - key: getConsoleStats
+- key: res-overview
+  subitems:
+    - key: res-glossary
+    - key: res-status-code
+    - key: res-lang
+    - key: res-icons
+    - key: res-location-list
+    - key: res-unit
+    - key: res-wind
+    - key: res-warning
+    - key: res-indices
+    - key: res-air
+    - key: res-sunmoon
+- key: bp-overview
+  subitems:
+    - key: bp-na
+    - key: bp-opz
+    - key: bp-gzip
+    - key: bp-cache
+    - key: bp-protact
+- key: finance-overview
+  subitems:
+    - key: finance-billing
+    - key: finance-pricing
+    - key: finance-splans
+    - key: finance-vat-invoice
+- key: terms-overview
+  subitems:
+    - key: terms-restriction
+    - key: terms-attribution
+    - key: terms-tos

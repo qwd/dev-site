@@ -1,10 +1,6 @@
 ---
 title: Deprecated
-tag:
-- legacy
-- overview
 description: Documentation for the deprecated products.
-ref: legacy-overview
 url: "/en/docs/deprecated/"
 translationKey: legacy-overview
 type: legacy-docs

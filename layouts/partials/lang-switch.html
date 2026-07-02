@@ -6,6 +6,6 @@
     {{- range $translations }}
       {{- if eq .Language.Lang $site.Language.Lang }}{{ $target = .RelPermalink }}{{ end -}}
     {{- end }}
-  <option value="{{ $target }}"{{ if eq $.Language.Lang $site.Language.Lang }} selected="selected"{{ end }}>{{ index hugo.Data.t $site.Language.Lang "langname" }}</option>
+  <option value="{{ $target }}"{{ if eq $.Language.Lang $site.Language.Lang }} selected="selected"{{ end }}>{{ $site.Language.Label }}</option>
   {{- end }}
 </select>

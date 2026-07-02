@@ -1,9 +1,5 @@
 ---
 title: 全球部署
-tag:
-- feat
-- global
-ref: feat-global
 translationKey: feat-global
 ---
 

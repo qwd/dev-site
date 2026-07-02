@@ -1,16 +1,10 @@
 ---
 title: Console API
-tag:
-- guide
-- api
-- console
-- overview
 description: Account owners can enable console API permissions for specified credentials
   to easily access console data locally for current financial and API traffic metrics.
-ref: 0-api-console
 url: "/en/docs/api/console/"
 translationKey: 0-api-console
-type: guide-overview
+type: docs-overview
 ---
 
 ## Enable Console API

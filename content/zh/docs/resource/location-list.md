@@ -1,9 +1,7 @@
 ---
 title: 常见城市列表
-tag: resource
 toc: false
 description: 和风天气城市列表，提供兴趣点、景点、环保部国控站点以及全国3000+市县区名称、ID、经纬度等信息。
-ref: res-location-list
 aliases:
 - "/docs/start/location-list/"
 translationKey: res-location-list

@@ -1,9 +1,5 @@
 ---
 title: Security Guidelines
-tag:
-- bp
-- protact
-ref: bp-protact
 aliases:
 - "/docs/best-practices/protect-data-key/"
 translationKey: bp-protact

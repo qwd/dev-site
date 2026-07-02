@@ -1,0 +1,31 @@
+{
+  "code": "200",
+  "updateTime": "2021-12-16T18:35+08:00",
+  "fxLink": "https://www.qweather.com/en/indices/chaoyang-101010300.html",
+  "daily": [
+    {
+      "date": "2021-12-16",
+      "type": "1",
+      "name": "Sports",
+      "level": "3",
+      "category": "Poor",
+      "text": "The weather is generally good, but it is cold and windy. Indoor exercise is recommended. If exercising outdoors, keep warm and prepare properly."
+    },
+    {
+      "date": "2021-12-16",
+      "type": "2",
+      "name": "Car Wash",
+      "level": "3",
+      "category": "Poor",
+      "text": "Car washing is not recommended. No rain is expected in the next day, but strong winds may cover your car with dust after washing."
+    }
+  ],
+  "refer": {
+    "sources": [
+      "https://developer.qweather.com/attribution.html"
+    ],
+    "license": [
+      "QWeather Developers License"
+    ]
+  }
+}

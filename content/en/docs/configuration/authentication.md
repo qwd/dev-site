@@ -1,9 +1,5 @@
 ---
 title: Authentication
-tag:
-- config
-- jwt
-ref: config-auth
 translationKey: config-auth
 ---
 

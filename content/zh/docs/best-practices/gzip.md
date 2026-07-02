@@ -1,9 +1,5 @@
 ---
 title: 处理Gzip
-tag:
-- bp
-- gzip
-ref: bp-gzip
 translationKey: bp-gzip
 ---
 

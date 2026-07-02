@@ -1,8 +1,6 @@
 ---
 title: 错误码
-tag: resource
 description: 和风天气API的错误码和错误信息说明，出现错误的时候，请先参考此文档。
-ref: res-status-code
 aliases:
 - "/docs/start/status-code/"
 - "/docs/resource/status-code/"

@@ -1,9 +1,7 @@
 ---
 title: Error Code
-tag: resource
 description: Introduce error code and error message for QWeather API. When an error
   occurs, please refer to this document first.
-ref: res-status-code
 aliases:
 - "/docs/start/status-code/"
 - "/docs/resource/status-code/"

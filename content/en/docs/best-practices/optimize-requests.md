@@ -1,9 +1,5 @@
 ---
 title: Optimize Requests
-tag:
-- bp
-- opz
-ref: bp-opz
 translationKey: bp-opz
 ---
 

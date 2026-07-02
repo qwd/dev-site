@@ -1,9 +1,5 @@
 ---
 title: Performance
-tag:
-- feat
-- performance
-ref: feat-performance
 translationKey: feat-performance
 ---
 

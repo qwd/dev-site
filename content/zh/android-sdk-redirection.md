@@ -1,7 +1,8 @@
 ---
-title: Android SDK 文档已迁移至 GitHub
+title: Android SDK 文档已迁移
 description: 和风天气 Android SDK 文档已迁移至 GitHub 仓库，旧文档 URL 将跳转至此通知页。
 seoType: WebPage
+translationKey: android-sdk-redirection
 aliases:
 - "/docs/android-sdk/"
 - "/docs/android-sdk/air-quality/"
@@ -40,51 +41,8 @@ aliases:
 - "/docs/android-sdk/weather/android-weather-daily-forecast/"
 - "/docs/android-sdk/weather/android-weather-hourly-forecast/"
 - "/docs/android-sdk/weather/android-weather-now/"
-- "/en/docs/android-sdk/"
-- "/en/docs/android-sdk/air-quality/"
-- "/en/docs/android-sdk/air-quality/android-air-current/"
-- "/en/docs/android-sdk/air-quality/android-air-daily-forecast/"
-- "/en/docs/android-sdk/air-quality/android-air-hourly-forecast/"
-- "/en/docs/android-sdk/air-quality/android-air-station/"
-- "/en/docs/android-sdk/astronomy/"
-- "/en/docs/android-sdk/astronomy/android-moon-and-moon-phase/"
-- "/en/docs/android-sdk/astronomy/android-solar-elevation-angle/"
-- "/en/docs/android-sdk/astronomy/android-sunrise-sunset/"
-- "/en/docs/android-sdk/geoapi/"
-- "/en/docs/android-sdk/geoapi/android-city-lookup/"
-- "/en/docs/android-sdk/geoapi/android-poi-lookup/"
-- "/en/docs/android-sdk/geoapi/android-poi-range/"
-- "/en/docs/android-sdk/geoapi/android-top-city/"
-- "/en/docs/android-sdk/indices/"
-- "/en/docs/android-sdk/indices/android-indices-forecast/"
-- "/en/docs/android-sdk/minutely/"
-- "/en/docs/android-sdk/minutely/android-minutely-precipitation/"
-- "/en/docs/android-sdk/ocean/"
-- "/en/docs/android-sdk/ocean/android-tide/"
-- "/en/docs/android-sdk/time-machine/"
-- "/en/docs/android-sdk/time-machine/android-time-machine-air/"
-- "/en/docs/android-sdk/time-machine/android-time-machine-weather/"
-- "/en/docs/android-sdk/tropical-cyclone/"
-- "/en/docs/android-sdk/tropical-cyclone/android-storm-forecast/"
-- "/en/docs/android-sdk/tropical-cyclone/android-storm-list/"
-- "/en/docs/android-sdk/tropical-cyclone/android-storm-track/"
-- "/en/docs/android-sdk/warning/"
-- "/en/docs/android-sdk/warning/android-weather-alert/"
-- "/en/docs/android-sdk/weather/"
-- "/en/docs/android-sdk/weather/android-grid-weather-daily-forecast/"
-- "/en/docs/android-sdk/weather/android-grid-weather-hourly-forecast/"
-- "/en/docs/android-sdk/weather/android-grid-weather-now/"
-- "/en/docs/android-sdk/weather/android-weather-daily-forecast/"
-- "/en/docs/android-sdk/weather/android-weather-hourly-forecast/"
-- "/en/docs/android-sdk/weather/android-weather-now/"
 ---
 
-旧版 Android SDK 文档已从开发者网站迁移至 GitHub。请访问以下仓库获取最新文档、示例代码、版本和问题追踪：
+Android SDK 文档已从开发者网站迁移至 GitHub 仓库。请访问以下仓库获取最新文档、示例代码、版本和问题追踪：
 
-[前往 Android SDK GitHub 仓库](https://github.com/qwd/qweather-android-sdk)
-
-## Android SDK documentation has moved to GitHub
-
-The legacy Android SDK documentation has moved from the developer website to GitHub. Visit the repository below for current documentation, examples, releases, and issue tracking:
-
-[Open the Android SDK GitHub repository](https://github.com/qwd/qweather-android-sdk)
+[➡️ Android SDK 仓库](https://github.com/qwd/qweather-android-sdk)

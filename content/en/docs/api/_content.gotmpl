@@ -1,0 +1,30 @@
+{{- $source := "openapi/generated/parsed-openapi-en.json" -}}
+{{- $resource := resources.Get $source -}}
+{{- if not $resource }}{{ errorf "OpenAPI intermediate model not found: %s; run npm run openapi:generate" $source }}{{ end -}}
+{{- $model := transform.Unmarshal $resource -}}
+{{- range $model.operations -}}
+  {{- /*
+    The generated page content only provides headings for Hugo's TableOfContents.
+    The visible API body is rendered by layouts/partials/openapi/operation.html
+    from the parsed OpenAPI model.
+  */ -}}
+  {{- $content := printf "## %s {#endpoint}\n## %s {#parameters}\n## %s {#request-example}\n## %s {#response}"
+    (T "endpoint")
+    (T "params")
+    (T "request-example")
+    (T "response")
+  -}}
+  {{- $.AddPage (dict
+    "aliases" (.aliases | default slice)
+    "content" (dict "mediaType" "text/markdown" "value" $content)
+    "kind" "page"
+    "params" (dict
+      "openapiModelSource" $source
+      "operationId" .operationId
+    )
+    "path" .pagePath
+    "title" .summary
+    "translationKey" .operationId
+    "type" "openapi-docs"
+  ) -}}
+{{- end -}}

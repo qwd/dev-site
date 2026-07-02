@@ -1,9 +1,5 @@
 ---
 title: 通知接收人
-tag:
-- account
-- contact
-ref: account-contact
 translationKey: account-contact
 ---
 

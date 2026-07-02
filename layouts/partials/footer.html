@@ -1,5 +1,4 @@
-{{- $t := index hugo.Data.t .Language.Lang -}}
-{{- $nav := hugo.Data.navigation -}}
+{{- $nav := index hugo.Data "footer-nav" -}}
 <footer class="pt-5">
   <div class="container mb-4">
     <div class="content row">
@@ -9,8 +8,8 @@
           <h3 class="color-white d-inline-block">{{ .Site.Title }}</h3>
         </a>
         <div class="mb-4">
-          <a class="light-link mr-1" href="{{ .Site.Params.links.qweather }}{{ if eq .Language.Lang "en" }}/en{{ end }}/contact/" target="_blank" rel="noopener noreferrer">{{ $t.contact }}</a>&bull;
-          <a class="light-link mx-1" href="{{ .Site.Params.links.blog }}" target="_blank" rel="noopener noreferrer">{{ $t.blog }}</a>&bull;
+          <a class="light-link mr-1" href="{{ .Site.Params.links.qweather }}{{ if eq .Language.Lang "en" }}/en{{ end }}/contact/" target="_blank" rel="noopener noreferrer">{{ T "contact" }}</a>&bull;
+          <a class="light-link mx-1" href="{{ .Site.Params.links.blog }}" target="_blank" rel="noopener noreferrer">{{ T "blog" }}</a>&bull;
           <a class="light-link ml-1" href="{{ .Site.Params.links.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
         <div class="mb-4 mb-md-0">
@@ -20,7 +19,7 @@
       </div>
       {{ range slice "docs" "features" "products" }}
       <div class="col-4 col-md text-md-left text-center">
-        <h3 class="color-light mb-4">{{ index $t (cond (eq . "features") "feats" (cond (eq . "products") "more" "doc")) }}</h3>
+        <h3 class="color-light mb-4">{{ T (cond (eq . "features") "feats" (cond (eq . "products") "more" "doc")) }}</h3>
         <ul class="clear-list">
           {{ range index $nav.footer . }}
           <li class="mb-2"><a class="light-link" href="{{ index .url $.Language.Lang | default .url }}">{{ index .title $.Language.Lang }}</a></li>

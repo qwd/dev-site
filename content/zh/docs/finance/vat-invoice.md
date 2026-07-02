@@ -1,9 +1,5 @@
 ---
 title: 增值税发票
-tag:
-- finance
-- vat
-ref: finance-vat-invoice
 translationKey: finance-vat-invoice
 ---
 

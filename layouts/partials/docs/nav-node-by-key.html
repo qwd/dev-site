@@ -1,0 +1,10 @@
+{{- $match := false -}}
+{{- range .nodes -}}
+  {{- if eq .key $.key -}}
+    {{- $match = . -}}
+  {{- else if and (not $match) .subitems -}}
+    {{- $childMatch := partial "docs/nav-node-by-key.html" (dict "nodes" .subitems "key" $.key) -}}
+    {{- with $childMatch }}{{ $match = . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $match -}}

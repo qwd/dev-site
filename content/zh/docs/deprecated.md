@@ -1,10 +1,6 @@
 ---
 title: 已弃用的产品文档
-tag:
-- legacy
-- overview
 description: 已弃用产品的开发文档。
-ref: legacy-overview
 url: "/docs/deprecated/"
 translationKey: legacy-overview
 type: legacy-docs

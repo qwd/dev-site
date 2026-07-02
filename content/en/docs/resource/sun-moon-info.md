@@ -1,7 +1,5 @@
 ---
 title: Sun and Moon Info
-tag: resource
-ref: res-sunmoon
 translationKey: res-sunmoon
 ---
 

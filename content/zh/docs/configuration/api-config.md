@@ -1,9 +1,5 @@
 ---
 title: API 配置
-tag:
-- config
-- api
-ref: config-api
 translationKey: config-api
 ---
 

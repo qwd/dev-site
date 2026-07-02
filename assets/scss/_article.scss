@@ -87,11 +87,6 @@
         border-radius: 10px;
         color: $color-grey;
       }
-      .edit-this-docs {
-        padding-top: 18px;
-        font-weight: $font-weight-light;
-        font-size: 1.2rem;
-      }
     }
     .platform {
       margin-top: -20px;
@@ -144,6 +139,33 @@
           max-height: 300px;
           overflow-y: scroll;
           -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
+      }
+
+      // OpenAPI response fields with indentation that preserves schema hierarchy.
+      .api-response-tree {
+        padding-left: 0;
+        list-style: none;
+
+        li {
+          margin-bottom: 12px;
+        }
+
+        ul {
+          margin: 8px 0 0 8px;
+          padding-left: 20px;
+          border-left: 1px solid $color-light;
+          list-style: none;
+        }
+
+        .api-response-field {
+          line-height: 1.6;
+        }
+
+        .api-response-type {
+          margin: 0 8px;
+          color: $color-grey;
+          font-size: $small-font-size;
         }
       }
 

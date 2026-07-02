@@ -1,9 +1,5 @@
 ---
 title: Suspension Account
-tag:
-- account
-- suspension
-ref: account-suspension
 translationKey: account-suspension
 ---
 

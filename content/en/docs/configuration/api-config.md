@@ -1,9 +1,5 @@
 ---
 title: Create API Request
-tag:
-- config
-- api
-ref: config-api
 translationKey: config-api
 ---
 

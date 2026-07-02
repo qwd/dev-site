@@ -1,9 +1,5 @@
 ---
 title: Terms of Service
-tag:
-- terms
-- tos
-ref: terms-tos
 translationKey: terms-tos
 ---
 

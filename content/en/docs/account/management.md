@@ -1,9 +1,5 @@
 ---
 title: Management
-tag:
-- account
-- manage
-ref: account-manage
 translationKey: account-manage
 ---
 

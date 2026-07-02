@@ -1,9 +1,5 @@
 ---
 title: Recipients
-tag:
-- account
-- contact
-ref: account-contact
 translationKey: account-contact
 ---
 

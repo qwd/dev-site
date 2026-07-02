@@ -1,4 +1,4 @@
-{{- $rows := partial "data/csv.html" "warning-type" -}}
+{{- $rows := partial "csv.html" "warning-type" -}}
 <table><thead><tr><th>Code</th><th>Event</th></tr></thead><tbody>
 {{- range after 1 $rows }}<tr><td>{{ index . 0 }}</td><td>{{ if eq $.Page.Language.Lang "zh" }}{{ index . 1 }}{{ else }}{{ index . 2 }}{{ end }}</td></tr>{{ end }}
 </tbody></table>

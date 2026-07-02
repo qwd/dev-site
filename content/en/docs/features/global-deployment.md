@@ -1,9 +1,5 @@
 ---
 title: Global Deployment
-tag:
-- feat
-- global
-ref: feat-global
 translationKey: feat-global
 ---
 

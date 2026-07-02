@@ -1,9 +1,5 @@
 ---
 title: Gzip
-tag:
-- bp
-- gzip
-ref: bp-gzip
 translationKey: bp-gzip
 ---
 

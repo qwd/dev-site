@@ -1,15 +1,9 @@
 ---
 title: 控制台API
-tag:
-- guide
-- api
-- console
-- overview
 description: 帐号所有者可以为指定凭据开启控制台API权限，以便轻松的在本地访问控制台数据，了解当前财务和请求量统计。
-ref: 0-api-console
 url: "/docs/api/console/"
 translationKey: 0-api-console
-type: guide-overview
+type: docs-overview
 ---
 
 ## 启用控制台API

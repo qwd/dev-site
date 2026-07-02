@@ -1,7 +1,8 @@
 ---
-title: iOS SDK 文档已迁移至 GitHub
+title: iOS SDK 文档已迁移
 description: 和风天气 iOS SDK 文档已迁移至 GitHub 仓库，旧文档 URL 将跳转至此通知页。
 seoType: WebPage
+translationKey: ios-sdk-redirection
 aliases:
 - "/docs/ios-sdk/"
 - "/docs/ios-sdk/air-quality/"
@@ -40,51 +41,8 @@ aliases:
 - "/docs/ios-sdk/weather/ios-weather-daily-forecast/"
 - "/docs/ios-sdk/weather/ios-weather-hourly-forecast/"
 - "/docs/ios-sdk/weather/ios-weather-now/"
-- "/en/docs/ios-sdk/"
-- "/en/docs/ios-sdk/air-quality/"
-- "/en/docs/ios-sdk/air-quality/ios-air-current/"
-- "/en/docs/ios-sdk/air-quality/ios-air-daily-forecast/"
-- "/en/docs/ios-sdk/air-quality/ios-air-hourly-forecast/"
-- "/en/docs/ios-sdk/air-quality/ios-air-station/"
-- "/en/docs/ios-sdk/astronomy/"
-- "/en/docs/ios-sdk/astronomy/ios-moon-and-moon-phase/"
-- "/en/docs/ios-sdk/astronomy/ios-solar-elevation-angle/"
-- "/en/docs/ios-sdk/astronomy/ios-sunrise-sunset/"
-- "/en/docs/ios-sdk/geoapi/"
-- "/en/docs/ios-sdk/geoapi/ios-city-lookup/"
-- "/en/docs/ios-sdk/geoapi/ios-poi-lookup/"
-- "/en/docs/ios-sdk/geoapi/ios-poi-range/"
-- "/en/docs/ios-sdk/geoapi/ios-top-city/"
-- "/en/docs/ios-sdk/indices/"
-- "/en/docs/ios-sdk/indices/ios-indices-forecast/"
-- "/en/docs/ios-sdk/minutely/"
-- "/en/docs/ios-sdk/minutely/ios-minutely-precipitation/"
-- "/en/docs/ios-sdk/ocean/"
-- "/en/docs/ios-sdk/ocean/ios-tide/"
-- "/en/docs/ios-sdk/time-machine/"
-- "/en/docs/ios-sdk/time-machine/ios-time-machine-air/"
-- "/en/docs/ios-sdk/time-machine/ios-time-machine-weather/"
-- "/en/docs/ios-sdk/tropical-cyclone/"
-- "/en/docs/ios-sdk/tropical-cyclone/ios-storm-forecast/"
-- "/en/docs/ios-sdk/tropical-cyclone/ios-storm-list/"
-- "/en/docs/ios-sdk/tropical-cyclone/ios-storm-track/"
-- "/en/docs/ios-sdk/warning/"
-- "/en/docs/ios-sdk/warning/ios-weather-alert/"
-- "/en/docs/ios-sdk/weather/"
-- "/en/docs/ios-sdk/weather/ios-grid-weather-daily-forecast/"
-- "/en/docs/ios-sdk/weather/ios-grid-weather-hourly-forecast/"
-- "/en/docs/ios-sdk/weather/ios-grid-weather-now/"
-- "/en/docs/ios-sdk/weather/ios-weather-daily-forecast/"
-- "/en/docs/ios-sdk/weather/ios-weather-hourly-forecast/"
-- "/en/docs/ios-sdk/weather/ios-weather-now/"
 ---
 
-旧版 iOS SDK 文档已从开发者网站迁移至 GitHub。请访问以下仓库获取最新文档、示例代码、版本和问题追踪：
+iOS SDK 文档已从开发者网站迁移至 GitHub 仓库。请访问以下仓库获取最新文档、示例代码、版本和问题追踪：
 
-[前往 iOS SDK GitHub 仓库](https://github.com/qwd/qweather-ios-sdk)
-
-## iOS SDK documentation has moved to GitHub
-
-The legacy iOS SDK documentation has moved from the developer website to GitHub. Visit the repository below for current documentation, examples, releases, and issue tracking:
-
-[Open the iOS SDK GitHub repository](https://github.com/qwd/qweather-ios-sdk)
+[➡️ iOS SDK 仓库](https://github.com/qwd/qweather-ios-sdk)

@@ -1,9 +1,5 @@
 ---
 title: Service and Data
-tag:
-- feat
-- service
-ref: feat-service
 translationKey: feat-service
 ---
 

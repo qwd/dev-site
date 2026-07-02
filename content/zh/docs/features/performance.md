@@ -1,9 +1,5 @@
 ---
 title: 性能
-tag:
-- feat
-- performance
-ref: feat-performance
 translationKey: feat-performance
 ---
 
