@@ -10,9 +10,9 @@
           {{- $overview := partial "docs/page-by-key.html" (dict "site" $.Site "key" $start.key) }}
           {{- with $overview }}<h2 class="color-white mb-4"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
           <ul class="clear-list">
-            {{- range $start.children }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+            {{- range $start.subitems }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
             {{- $finance := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" "finance-overview") -}}
-            {{- range $finance.children }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+            {{- range $finance.subitems }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
           </ul>
         </div>
       </div>
@@ -26,7 +26,7 @@
           {{- $overview := partial "docs/page-by-key.html" (dict "site" $.Site "key" $node.key) }}
           {{- with $overview }}<h2 class="mb-4"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
             <ul class="clear-list">
-              {{- range $node.children }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="mb-2"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+              {{- range $node.subitems }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="mb-2"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
             </ul>
         </div>
       </div>
@@ -34,7 +34,7 @@
     </section>
     <section class="row dev-docs">
       {{- $api := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" "0-api-overview") -}}
-      {{- range $api.children }}
+      {{- range $api.subitems }}
           {{- $section := . -}}
           {{- $overview := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) -}}
           {{- with $overview }}
@@ -43,7 +43,7 @@
               <h2 class="mb-4">{{ .Title }}</h2>
               <p class="mb-4">{{ .Description }}</p>
               <div class="row">
-                {{- range $section.children }}
+                {{- range $section.subitems }}
                   {{- $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) -}}
                   {{- with $page }}
                 <div class="col-12 col-md-auto mb-3">
@@ -92,9 +92,6 @@
         <div class="row">
           <div class="col-12 col-lg-10 py-3 content-border border-r10" style="width: 0;">
             <section class="article-headline mb-5 pb-3 border-bottom">
-              <div class="edit-this-docs go-right d-none d-sm-inline-block color-grey">
-                <a class="grey-link no-underline" href="https://github.com/qwd/dev-site/edit/master/{{ .File.Path }}" target="_blank" rel="noopener noreferrer"><i class="ifq-pencil"></i>&nbsp;{{ T "edit" }}</a>
-              </div>
               <h1 class="mr-2 d-inline-block">{{ .Title }}</h1>
             </section>
             <section class="doc-content">{{ .Content }}</section>

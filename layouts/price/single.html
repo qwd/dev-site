@@ -38,11 +38,11 @@
   </div></div></section>
   <section class="more text-center mb-5"><h2 class="mb-4">{{ T "pi-more" }}</h2><ul class="clear-list">
     {{ range slice
-      (dict "title" (dict "zh" "我可以免费试用吗?" "en" "Can I try it for free?") "link" "help/#can-i-try-it-for-free")
-      (dict "title" (dict "zh" "什么是一次请求?" "en" "What is a request?") "link" "help/#what-is-a-request")
-      (dict "title" (dict "zh" "是否有更多折扣?" "en" "Need More Requests") "link" "help/#are-there-more-discounts-if-i-have-a-high-volume-of-requests")
-      (dict "title" (dict "zh" "价格是否含税?" "en" "Do the pricing include VAT?") "link" "help/#do-the-pricing-include-vat")
-    }}<li class="pb-2 big"><a class="dark-link" href="{{ relLangURL .link }}">{{ index .title $.Language.Lang }}</a></li>{{ end }}
+      (dict "title" "pi-more-free-trial" "link" "help/#can-i-try-it-for-free")
+      (dict "title" "pi-more-request" "link" "help/#what-is-a-request")
+      (dict "title" "pi-more-discounts" "link" "help/#are-there-more-discounts-if-i-have-a-high-volume-of-requests")
+      (dict "title" "pi-more-vat" "link" "help/#do-the-pricing-include-vat")
+    }}<li class="pb-2 big"><a class="dark-link" href="{{ relLangURL .link }}">{{ T .title }}</a></li>{{ end }}
   </ul></section>
   <section class="register text-center"><a href="https://id.qweather.com/#/register?redirect=https://console.qweather.com{{ if eq .Language.Lang "en" }}&lang=en{{ end }}" class="border-blue-link no-underline d-inline-block px-5 py-3 border-r10 big">{{ T "hp-regnow" }}</a></section>
 </main>

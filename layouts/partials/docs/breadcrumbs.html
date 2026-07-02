@@ -19,7 +19,7 @@
         {{- $overview := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
         {{- with $overview }}
       <optgroup label="{{ .Title }}">
-          {{- range $section.children }}
+          {{- range $section.subitems }}
             {{- $page := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
             {{- with $page }}
         <option value="{{ .RelPermalink }}"{{ if eq .RelPermalink $current.RelPermalink }} selected{{ end }}>{{ .Title }}</option>

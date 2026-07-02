@@ -6,9 +6,6 @@
     <article class="article pt-4 width100">
       <div class="container"><div class="row"><div class="col-12 col-lg-10 py-3 content-border border-r10" style="width: 0;">
         <section class="article-headline mb-5 pb-3 border-bottom">
-          <div class="edit-this-docs go-right d-none d-sm-inline-block color-grey">
-            <a class="grey-link no-underline" href="https://github.com/qwd/dev-site/edit/master/{{ .File.Path }}" target="_blank" rel="noopener noreferrer"><i class="ifq-pencil"></i>&nbsp;{{ T "edit" }}</a>
-          </div>
           <h1 class="mr-2 d-inline-block">{{ .Title }}</h1>
         </section>
         <section class="doc-content">
@@ -17,7 +14,7 @@
           {{- $node := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" .TranslationKey) -}}
           {{- with $node }}
           <ul>
-            {{- range .children }}
+            {{- range .subitems }}
               {{- $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) -}}
               {{- with $page }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
             {{- end }}

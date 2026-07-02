@@ -7,16 +7,16 @@
   <div class="nav-section start mb-2 pb-2">
     <h4 class="mb-2"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
     <ul class="clear-list">
-      {{- range $section.children }}
+      {{- range $section.subitems }}
         {{- $item := . -}}
         {{- $page := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
         {{- with $page }}
         <li class="mb-1{{ if eq .RelPermalink $current.RelPermalink }} active{{ end }}">
           <a class="grey-link px-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{- if and $item.children (strings.HasPrefix $current.RelPermalink .RelPermalink) }}
+          {{- if and $item.subitems (strings.HasPrefix $current.RelPermalink .RelPermalink) }}
           <div class="sub-nav ml-2 mt-1 pl-2">
             <ul class="clear-list">
-              {{- range $item.children }}
+              {{- range $item.subitems }}
                 {{- $subpage := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
                 {{- with $subpage }}
                 <li class="mb-1{{ if eq .RelPermalink $current.RelPermalink }} active{{ end }}">

@@ -1,12 +1,12 @@
 - key: start-overview
-  children:
+  subitems:
     - key: feat-overview
-      children:
+      subitems:
         - key: feat-service
         - key: feat-global
         - key: feat-performance
     - key: config-overview
-      children:
+      subitems:
         - key: config-project
         - key: config-apihost
         - key: config-auth
@@ -14,22 +14,22 @@
         - key: config-ios
         - key: config-android
     - key: account-overview
-      children:
+      subitems:
         - key: account-manage
         - key: account-developers
         - key: account-contact
         - key: account-suspension
         - key: account-inactive
 - key: 0-api-overview
-  children:
+  subitems:
     - key: 0-api-geo
-      children:
+      subitems:
         - key: getGeoCitylookup
         - key: getGeoTopcity
         - key: getGeoPoilookup
         - key: getGeoPoirange
     - key: 0-api-weather
-      children:
+      subitems:
         - key: getWeatherNow
         - key: getWeatherDailyForecast
         - key: getWeatherHourlyForecast
@@ -37,46 +37,45 @@
         - key: getGridWeatherDaily
         - key: getGridWeatherHourly
     - key: 0-api-minutely
-      children:
+      subitems:
         - key: getMinutelyPrecipitation
     - key: 0-api-warning
-      children:
+      subitems:
         - key: getWeatherAlertCurrent
     - key: 0-api-indices
-      children:
+      subitems:
         - key: getWeatherIndices
     - key: 0-api-aq
-      children:
+      subitems:
         - key: getAirqualityCurrent
         - key: getAirqualityHourlyForecast
         - key: getAirqualityDailyForecast
         - key: getAirqualityAirStation
     - key: 0-api-time-machine
-      children:
+      subitems:
         - key: getHistoricalWeather
-        - key: getHistoricalAir
     - key: 0-api-tropical
-      children:
+      subitems:
         - key: getStormForecast
         - key: getStormTrack
         - key: getStormList
     - key: 0-api-ocean
-      children:
+      subitems:
         - key: getOceanTide
     - key: 0-api-solar-radiation
-      children:
+      subitems:
         - key: getSolarradiationForecast
     - key: 0-api-astronomy
-      children:
+      subitems:
         - key: getAstronomSun
         - key: getAstronomyMoon
         - key: getAstronomySolarElevationAngle
     - key: 0-api-console
-      children:
+      subitems:
         - key: getConsoleFinance
         - key: getConsoleStats
 - key: res-overview
-  children:
+  subitems:
     - key: res-glossary
     - key: res-status-code
     - key: res-lang
@@ -89,20 +88,20 @@
     - key: res-air
     - key: res-sunmoon
 - key: bp-overview
-  children:
+  subitems:
     - key: bp-na
     - key: bp-opz
     - key: bp-gzip
     - key: bp-cache
     - key: bp-protact
 - key: finance-overview
-  children:
+  subitems:
     - key: finance-billing
     - key: finance-pricing
     - key: finance-splans
     - key: finance-vat-invoice
 - key: terms-overview
-  children:
+  subitems:
     - key: terms-restriction
     - key: terms-attribution
     - key: terms-tos
