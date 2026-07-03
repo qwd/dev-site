@@ -62,4 +62,8 @@ watcher.on("all", (event, file) => {
   generate();
 });
 
+watcher.on("error", (error) => {
+  console.error("OpenAPI watcher error:", error);
+});
+
 console.log(`Watching ${watched.join(", ")}`);

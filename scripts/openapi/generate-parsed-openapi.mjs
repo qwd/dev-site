@@ -223,13 +223,13 @@ function selectSuccessResponse(responses, context) {
   throw new OpenAPIDiagnostic(context, "responses", "No successful response found");
 }
 
-async function loadExamples(mediaType, file, context) {
+async function loadExamples(mediaType, resolver, file, context) {
   // Preserve external examples as paths so Hugo can render the original JSON
   // text and keep field order/formatting visible in API docs.
   const normalized = [];
   const examples = mediaType?.examples || {};
   for (const [name, exampleRef] of Object.entries(examples)) {
-    const resolved = await resolveObject(exampleRef, new Resolver(file, context.lang), file, context);
+    const resolved = await resolveObject(exampleRef, resolver, file, context);
     const example = resolved.value;
     if (example.externalValue) {
       if (/^https?:\/\//.test(example.externalValue)) {
@@ -298,6 +298,42 @@ function requestExample(method, endpoint, parameters) {
   return `curl -X ${method.toUpperCase()} --compressed \\\n-H 'Authorization: Bearer your_token' \\\n'${url}'`;
 }
 
+async function parameterKey(parameterRef, resolver, file, context) {
+  const resolved = await resolveObject(parameterRef, resolver, file, context);
+  const parameter = resolved.value;
+  if (!parameter?.name || !parameter?.in) {
+    throw new OpenAPIDiagnostic(context, "parameters", "Parameter must include both name and in");
+  }
+  return `${parameter.in}:${parameter.name}`;
+}
+
+async function mergeParameters(pathParameters, operationParameters, resolver, file, context) {
+  const merged = new Map();
+  for (const parameter of pathParameters || []) {
+    merged.set(await parameterKey(parameter, resolver, file, context), parameter);
+  }
+  for (const parameter of operationParameters || []) {
+    // Operation-level parameters override path-level parameters with the same
+    // name and location, matching OpenAPI Path Item Object semantics.
+    merged.set(await parameterKey(parameter, resolver, file, context), parameter);
+  }
+  return [...merged.values()];
+}
+
+function pagePathFromExternalDocs(url, context) {
+  let pathname;
+  try {
+    pathname = new URL(url).pathname;
+  } catch (error) {
+    throw new OpenAPIDiagnostic(context, "externalDocs", `externalDocs.url must be an absolute URL: ${url}`);
+  }
+  const pagePath = pathname.replace(/^\/(?:en\/)?docs\/api\//, "").replace(/^\/|\/$/g, "");
+  if (!pagePath || pagePath === pathname.replace(/^\/|\/$/g, "")) {
+    throw new OpenAPIDiagnostic(context, "externalDocs", `externalDocs.url must point under /docs/api/: ${url}`);
+  }
+  return pagePath;
+}
+
 export async function normalizeDocument(source) {
   const entryFile = source.path ? path.resolve(root, source.path) : path.join(sourceDir, source.file);
   try {
@@ -310,6 +346,7 @@ export async function normalizeDocument(source) {
   const resolver = new Resolver(entryFile, source.lang);
   const document = await resolver.load(entryFile);
   const operations = [];
+  const operationIds = new Set();
 
   for (const [endpoint, pathItem] of Object.entries(document.paths || {})) {
     for (const method of methods) {
@@ -318,6 +355,14 @@ export async function normalizeDocument(source) {
       // Deprecated endpoints stay in the source OpenAPI for compatibility and
       // Swagger UI visibility, but they should not create regular docs pages.
       if (operation.deprecated) continue;
+      if (operationIds.has(operation.operationId)) {
+        throw new OpenAPIDiagnostic(
+          { lang: source.lang, operationId: operation.operationId, responseStatus: "", schemaPath: `paths.${endpoint}.${method}` },
+          "operationId",
+          `Duplicate operationId: ${operation.operationId}`
+        );
+      }
+      operationIds.add(operation.operationId);
       const baseContext = {
         lang: source.lang,
         operationId: operation.operationId,
@@ -331,7 +376,7 @@ export async function normalizeDocument(source) {
       if (operation.callbacks && Object.keys(operation.callbacks).length) {
         throw new OpenAPIDiagnostic(baseContext, "callbacks", "Callbacks are valid OpenAPI but not rendered by the current endpoint template");
       }
-      for (const parameter of [...(pathItem.parameters || []), ...(operation.parameters || [])]) {
+      for (const parameter of await mergeParameters(pathItem.parameters, operation.parameters, resolver, entryFile, baseContext)) {
         parameters.push(await normalizeParameter(parameter, resolver, entryFile, baseContext));
       }
 
@@ -359,12 +404,10 @@ export async function normalizeDocument(source) {
         responseResolved.file,
         cloneContext(responseContext, { schemaPath: `${responseContext.schemaPath}.content.application/json.schema` })
       );
-      const examples = await loadExamples(mediaType, responseResolved.file, responseContext);
+      const examples = await loadExamples(mediaType, resolver, responseResolved.file, responseContext);
       // externalDocs is the canonical URL for the handwritten document this
       // generated page replaces; strip the site prefix to get the Hugo path.
-      const pagePath = operation.externalDocs.url
-        .replace(/^https:\/\/dev\.qweather\.com\/(?:en\/)?docs\/api\//, "")
-        .replace(/^\/|\/$/g, "");
+      const pagePath = pagePathFromExternalDocs(operation.externalDocs.url, baseContext);
 
       operations.push({
         lang: source.lang,
