@@ -43,6 +43,8 @@ aliases:
 - "/docs/ios-sdk/weather/ios-weather-now/"
 ---
 
-The iOS SDK documentation has moved to GitHub. Visit the repository below for current documentation, examples, releases, and issue tracking:
+The iOS SDK documentation has moved to GitHub. 
+
+Visit the repository below for current documentation, examples, releases, and issue tracking.
 
 [➡️ iOS SDK repository](https://github.com/qwd/qweather-ios-sdk)

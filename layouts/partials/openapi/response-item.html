@@ -6,14 +6,20 @@
 <li>
   <div class="api-response-field">
     <code>{{ $field.name }}</code>
-    {{- with $field.type }} <em class="api-response-type">{{ . }}</em>{{ end -}}
+    {{- with $field.type }} <span class="api-response-type">{{ . }}</span>{{ end -}}
     {{- with $field.description }} <span class="api-response-description">{{ . | markdownify }}</span>{{ end -}}
+    {{/*
+      Keep schema metadata in the intermediate model, but do not render it in
+      public field descriptions for now. Most nullable fields already explain
+      the null behavior in their descriptions, and badges such as readOnly or
+      discriminator add noise to the handwritten-doc style we are matching.
     {{- with $field.recursiveRef }} <span class="api-response-description">{{ T "recursive-reference" }}: <code>{{ . }}</code></span>{{ end -}}
     {{- if $field.nullable }} <em class="api-response-type">nullable</em>{{ end -}}
     {{- if $field.readOnly }} <em class="api-response-type">readOnly</em>{{ end -}}
     {{- if $field.writeOnly }} <em class="api-response-type">writeOnly</em>{{ end -}}
     {{- if $field.deprecated }} <em class="api-response-type">deprecated</em>{{ end -}}
     {{- with $field.discriminator }} <span class="api-response-description">discriminator: <code>{{ .propertyName }}</code></span>{{ end -}}
+    */}}
   </div>
   {{- $hasChildren := or $field.children $field.items $field.allOf $field.oneOf $field.anyOf $field.additionalProperties $field.not -}}
   {{- if $hasChildren }}

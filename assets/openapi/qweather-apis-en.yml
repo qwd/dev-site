@@ -16,7 +16,7 @@ servers:
   description: Enter your API Host below.
   variables:
     API Host:
-      default: ''
+      default: 'abc.xyz.qweatherapi.com'
       description: Find your API Host in the Console settings.
 security:
 - jwt: []
@@ -134,7 +134,7 @@ paths:
       - Weather
       summary: Real-time Weather
       description: |-
-        Get real-time weather data for 200,000+ cities around the world, including temperature, wind, humidity, pressure, precipitation, visibility, etc.
+        Get real-time weather data for 500,000+ cities around the world, including temperature, wind, humidity, pressure, precipitation, visibility, etc.
 
         > **Note:** The real-time data are all near real-time data. Compared with the real physical world, it will be delayed by 5-20 minutes. Please determine the accurate time corresponding to the data according to the `obsTime` in the data.
       externalDocs:
@@ -983,10 +983,18 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
+      description: |
+       Fill in the full Token (without the Bearer prefix). See [JWT Docs](https://dev.qweather.com/en/docs/configuration/authentication/#json-web-token). 
+       
+       Do not use both JWT and API KEY at the same time.
     apiKey:
       type: apiKey
       in: header
       name: X-QW-Api-Key
+      description: |
+       See [API Key Docs](https://dev.qweather.com/en/docs/configuration/authentication/#api-key). 
+       
+       Do not use both JWT and API KEY at the same time.
   responses:
     defaultError:
       description: Request failed, see [Error Code](https://dev.qweather.com/en/docs/resource/error-code/).
@@ -1002,13 +1010,7 @@ components:
                   status:
                     type: number
                     description: The HTTP status code for this error.
-                    enum:
-                    - 400
-                    - 401
-                    - 403
-                    - 404
-                    - 429
-                    - 500
+                    enum: [400, 401, 403, 404, 429, 500]
                   type:
                     type: string
                     description: A URL that identifies the error type. Open the URL for more information.
@@ -1064,10 +1066,7 @@ components:
     lonlatQuery:
       name: location
       in: query
-      description: |-
-        The comma-separated [longitude and latitude](https://dev.qweather.com/en/docs/resource/glossary/#coordinate) (decimal, up to 2 decimal places) of the location to be queried.
-
-        For example: `location=116.41,39.92`
+      description: The comma-separated [longitude and latitude](https://dev.qweather.com/en/docs/resource/glossary/#coordinate) (decimal, up to 2 decimal places) of the location to be queried. For example `location=116.41,39.92`
       required: true
       schema:
         type: string
@@ -1083,7 +1082,7 @@ components:
     locationIdQuery:
       name: location
       in: query
-      description: "The location to be queried, only support [LocationID](https://dev.qweather.com/en/docs/resource/glossary/#locationid) and LocationID can be obtained by [GeoAPI](https://dev.qweather.com/en/docs/api/geoapi/). \n\nFor example: `location=101010100`"
+      description: "The location to be queried, only support [LocationID](https://dev.qweather.com/en/docs/resource/glossary/#locationid) and LocationID can be obtained by [GeoAPI](https://dev.qweather.com/en/docs/api/geoapi/). For example `location=101010100`"
       required: true
       schema:
         type: string
@@ -1135,7 +1134,7 @@ components:
         example: 10
     poiTypeQuery:
       name: type
-      description: "Choose to search for a certain type of POI. \n\n- `scenic` Scenic Spot\n- `TSTA` Tide Station"
+      description: "Choose to search for a certain type of POI. `scenic` for Scenic Spot, `TSTA` for Tide Station"
       in: query
       required: true
       schema:
@@ -1144,7 +1143,7 @@ components:
         example: scenic
     poiCityQuery:
       name: city
-      description: "Search for POI within a given city. The city name can be text or the city's LocationID. \n\n> The city name is an exact match. It is recommended to use LocaitonID. If the text cannot be matched, the data returned will be empty."
+      description: "Search for POI within a given city. The city name can be text or the city's LocationID. The city name is an exact match. It is recommended to use LocaitonID. If the text cannot be matched, the data returned will be empty."
       in: query
       required: false
       schema:
@@ -1267,7 +1266,7 @@ components:
     days30Path:
       name: days
       in: path
-      description: "Forecast days, supports up to 30 days, available value:\n \n- `3d` 3 days forecast.\n- `7d` 7 days forecast.\n- `10d` 10 days forecast.\n- `15d` 15 days forecast.\n- `15d` 30 days forecast."
+      description: "Forecast days, supports up to 30 days, available value: `3d`, `7d`, `10d`, `15d`, `30d`"
       required: true
       schema:
         type: string
@@ -1292,7 +1291,7 @@ components:
     days3Path:
       name: days
       in: path
-      description: "Forecast days, supports up to 3 days, available value:\n \n- `1d` 1 days forecast.\n- `3d` 3 days forecast."
+      description: "Forecast days, supports up to 3 days, available value: `1d`, `3d`"
       required: true
       schema:
         type: string
@@ -1301,7 +1300,7 @@ components:
     hours168Path:
       name: hours
       in: path
-      description: "Forecast hours, supports up to 168 hours, available value:\n \n- `24h` 24 hours forecast.\n- `72h` 72 hours forecast.\n- `168h` 168 hours forecast."
+      description: "Forecast hours, supports up to 168 hours, available value: `24h`, `72h`, `168h`"
       required: true
       schema:
         type: string
@@ -1310,7 +1309,7 @@ components:
     hours72Path:
       name: hours
       in: path
-      description: "Forecast hours, supports up to 72 hours, available value:\n \n- `24h` 24 hours forecast.\n- `72h` 72 hours forecast."
+      description: "Forecast hours, supports up to 72 hours, available value: `24h`, `72h`"
       required: true
       schema:
         type: string
@@ -1496,7 +1495,7 @@ components:
             description: Location type
           rank:
             type: string
-            description: "[Rank](https://dev.qweather.com/en/docs/resource/glossary/#rank)"
+            description: "[Location rank](https://dev.qweather.com/en/docs/resource/glossary/#rank)"
           fxLink:
             type: string
             format: uri
@@ -1585,16 +1584,16 @@ components:
                     "$ref": "#/components/schemas/fxDate"
                   sunrise:
                     type: string
-                    description: "[Sunrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**"
+                    description: "[Sunrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). Maybe null in high latitude area"
                   sunset:
                     type: string
-                    description: "[Sunset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**"
+                    description: "[Sunset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). Maybe null in high latitude area"
                   moonrise:
                     type: string
-                    description: "[Moonrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**"
+                    description: "[Moonrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. Maybe null"
                   moonset:
                     type: string
-                    description: "[Moonset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**"
+                    description: "[Moonset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. Maybe null"
                   moonPhase:
                     type: string
                     description: "[Moon phase name](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moon-phase)"
@@ -1830,27 +1829,28 @@ components:
                 description: The time when the original alert message was generated. The actual release or receipt time may be slightly delayed
               messageType:
                 type: object
+                description: "[The nature of the alert message](https://dev.qweather.com/en/docs/resource/warning-info/#message-type)"
                 properties:
                   code:
                     type: string
                     enum: [alert, update, cancel]
-                    description: "[The code of the alert message nature](https://dev.qweather.com/en/docs/resource/warning-info/#message-type)"
+                    description: "Nature code"
                   supersedes:
                     type: array
-                    description: Alert IDs that are superseded by this message, only relevant when `messageType.code` is **update** or **cancel**
+                    nullable: true
+                    description: Alert IDs that are superseded by this message, return null when it is a new alert.
                     items:
                       type: string
-                description: messageType data
               eventType:
                 type: object
-                description: The type of the alert event, including name and code. See [Event and Code](https://dev.qweather.com/en/docs/resource/warning-info/#event-and-code) for details.
+                description: "[The type of the alert event](https://dev.qweather.com/en/docs/resource/warning-info/#event-and-code)"
                 properties:
                   name:
                     type: string
-                    description: "[Name of the alert event](https://dev.qweather.com/en/docs/resource/warning-info/#event-and-code)"
+                    description: "Name of the alert event"
                   code:
                     type: string
-                    description: "[Code of the alert event](https://dev.qweather.com/en/docs/resource/warning-info/#event-and-code)"
+                    description: "Code of the alert event"
               urgency:
                 type: string
                 description: The [urgency](https://dev.qweather.com/en/docs/resource/warning-info/#urgency) of the alert message, may be null
@@ -1872,19 +1872,7 @@ components:
                   - properties:
                       code:
                         type: string
-                        description: |-
-                         Color code for this alert, available values:
-
-                         - `white`
-                         - `gray`
-                         - `green`
-                         - `blue`
-                         - `yellow`
-                         - `amber`
-                         - `orange`
-                         - `red`
-                         - `purple`
-                         - `black`
+                        description: "[Color code](https://dev.qweather.com/docs/resource/warning-info/#color) for this alert"
                   - "$ref": "#/components/schemas/colorObject"
               effectiveTime:
                 type: string
@@ -2183,7 +2171,7 @@ components:
 
     aqisArray:
       type: array
-      description: Air quality index list
+      description: "[Air quality index](https://dev.qweather.com/en/docs/resource/air-info/#supported-aqis) list"
       minItems: 1
       maxItems: 2
       items:
@@ -2191,7 +2179,7 @@ components:
         properties:
           code:
             type: string
-            description: Code of [air quality index](https://dev.qweather.com/en/docs/resource/air-info/#supported-aqis)
+            description: Code of air quality index
           name:
             type: string
             description: Name of air quality index
@@ -2218,7 +2206,7 @@ components:
             properties:
               code:
                 type: string
-                description: The [primary pollutant](https://dev.qweather.com/en/docs/resource/air-info/#primary-pollutant) code
+                description: Code of primary pollutan
               name:
                 type: string
                 description: Name of primary pollutant
@@ -2232,10 +2220,10 @@ components:
             properties:
               effect:
                 type: string
-                description: "[Health effects of air quality](https://dev.qweather.com/en/docs/resource/air-info/#health-effects-and-advice), maybe NULL"
+                description: "Health effects of air quality, maybe NULL"
               advice:
                 type: object
-                description: Health advice for the general and sensitive populations, may be NULL
+                description: Health advice, may be NULL
                 properties:
                   generalPopulation:
                     type: string
@@ -2248,7 +2236,7 @@ components:
       properties:
         code:
           type: string
-          description: "[Pollutant](https://dev.qweather.com/en/docs/resource/air-info/#pollutants) code"
+          description: "Code of pollutant"
         name:
           type: string
           description: Name of pollutant
@@ -2262,7 +2250,7 @@ components:
           allOf:
             - "$ref": "#/components/schemas/valueUnitObject"
     pollutantSubindexArray:
-      description: Pollutants list, may be NULL
+      description: "[Pollutant](https://dev.qweather.com/en/docs/resource/air-info/#pollutants) list, may be NULL"
       type: array
       nullable: true
       items:
@@ -2273,30 +2261,31 @@ components:
             subIndexes:
               type: array
               nullable: true
-              description: Sub-index list, maybe NULL
+              description: "[Sub-index](https://dev.qweather.com/en/docs/resource/air-info/#pollutant-sub-index) list, maybe NULL"
               items:
                 type: object
                 properties:
                   code:
                     type: string
-                    description: Code of [air quality sub-index](https://dev.qweather.com/en/docs/resource/air-info/#pollutant-sub-index)
+                    description: Code of sub-index
                   aqi:
                     type: number
-                    description: "[Sub-index value for pollutant](https://dev.qweather.com/en/docs/resource/air-info/#pollutant-sub-index)"
+                    description: Sub-index value for pollutant
                   aqiDisplay:
                     type: string
                     description: Sub-index for display
     aqiStationsArray:
       type: array
+      description: Monitoring station for this AQI reference, maybe NULL
       items:
         type: object
         properties:
           id:
             type: string
-            description: Location ID of the monitoring station for this AQI reference, maybe NULL
+            description: Location ID of the monitoring station
           name:
             type: string
-            description: Name of the monitoring station for this AQI reference, maybe NULL
+            description: Name of the monitoring station
     getStormForecast:
       type: object
       properties:
@@ -2632,11 +2621,11 @@ components:
         sunrise:
           type: string
           nullable: true
-          description: "[Sunrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**"
+          description: "[Sunrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). Maybe null in high latitude area"
         sunset:
           type: string
           nullable: true
-          description: "[Sunset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**"
+          description: "[Sunset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). Maybe null in high latitude area"
         refer:
           "$ref": "#/components/schemas/referObject"
 
@@ -2672,11 +2661,11 @@ components:
         moonrise:
           type: string
           nullable: true
-          description: "[Moonrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**"
+          description: "[Moonrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. Maybe null"
         moonset:
           type: string
           nullable: true
-          description: "[Moonset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**"
+          description: "[Moonset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. Maybe null"
         moonPhase:
           type: array
           description: Moon phase data list
@@ -2875,10 +2864,10 @@ components:
       format: date-time
     statusCode:
       type: string
-      description: API status code. See [Status Code](https://dev.qweather.com/en/docs/resource/status-code/)
+      description: "[Status code](https://dev.qweather.com/en/docs/resource/status-code/)"
     updateTime:
       type: string
-      description: The [latest update time](https://dev.qweather.com/en/docs/resource/glossary/#update-time) of the current API
+      description: "[API latest update time](https://dev.qweather.com/en/docs/resource/glossary/#update-time)"
       format: date-time
     fxLink:
       type: string
@@ -2901,16 +2890,16 @@ components:
               description: Date
             sunrise:
               type: string
-              description: "[Sunrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**"
+              description: "[Sunrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). Maybe null in high latitude area"
             sunset:
               type: string
-              description: "[Sunset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). **Maybe null in high latitude area**"
+              description: "[Sunset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). Maybe null in high latitude area"
             moonrise:
               type: string
-              description: "[Moonrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**"
+              description: "[Moonrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. Maybe null"
             moonset:
               type: string
-              description: "[Moonset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. **Maybe null**"
+              description: "[Moonset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) of current day. Maybe null"
             moonPhase:
               type: string
               description: "[Moon phase name](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moon-phase)"

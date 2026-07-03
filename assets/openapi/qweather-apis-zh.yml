@@ -2,7 +2,10 @@
 openapi: 3.0.0
 info:
   title: 和风天气开发者服务 APIs
-  description: 和风天气 API 列表。
+  description: |
+   和风天气 API 列表
+
+   *如需调试，必须输入完整的 API Host 和凭据（API Key 或 JWT Token）*
   version: latest
   termsOfService: https://www.qweather.com/terms/developers-eula
   contact:
@@ -16,7 +19,7 @@ servers:
   description: 在下方填写你的API Host
   variables:
     API Host:
-      default: 'abc.re.qweatherapi.com'
+      default: 'abc.xyz.qweatherapi.com'
       description: 在控制台设置中查看你的API Host。
 security:
 - jwt: []
@@ -129,9 +132,9 @@ paths:
       - Weather
       summary: 实时天气
       description: |-
-        获取中国3000+市县区和海外20万个城市实时天气数据，包括实时温度、体感温度、风力风向、相对湿度、大气压强、降水量、能见度、露点温度、云量等。
+        获取中国3000+市县区和海外50万个城市实时天气数据，包括实时温度、体感温度、风力风向、相对湿度、大气压强、降水量、能见度、露点温度、云量等。
 
-        > **注意：**实况数据均为近实时数据，相比真实的物理世界有5-20分钟的延迟，请根据实况数据中的`obsTime`确定数据对应的准确时间。
+        > **注意：** 实况数据均为近实时数据，相比真实的物理世界有5-20分钟的延迟，请根据实况数据中的`obsTime`确定数据对应的准确时间。
       externalDocs:
         url: https://dev.qweather.com/docs/api/weather/weather-now/
       parameters:
@@ -978,10 +981,13 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
+      description: "输入完整 Token。[查看 JWT 文档](https://dev.qweather.com/docs/configuration/authentication/#json-web-token)。不要同时使用JWT 和 API KEY。"
     apiKey:
       type: apiKey
       in: header
       name: X-QW-Api-Key
+      description: "[查看 API Key 文档](https://dev.qweather.com/docs/configuration/authentication/#api-key)。不要同时使用JWT 和 API KEY。"
+
   responses:
     defaultError:
       description: Request failed, see [Error Code](https://dev.qweather.com/docs/resource/error-code/).
@@ -1121,10 +1127,7 @@ components:
         example: 10
     poiTypeQuery:
       name: type
-      description: |-
-        POI类型，可选择搜索某一类型的POI。
-        - `scenic` 景点
-        - `TSTA` 潮汐站点
+      description: "POI类型，可选择搜索某一类型的POI。`scenic` 景点，`TSTA` 潮汐站点"
       in: query
       required: true
       schema:
@@ -1133,10 +1136,7 @@ components:
         example: scenic
     poiCityQuery:
       name: city
-      description: |-
-        选择POI所在城市，可设定只搜索在特定城市内的POI信息。城市名称可以是文字或城市的LocationID。**默认不限制特定城市**。
-
-        > 城市名称为精准匹配，建议使用LocaitonID，如文字无法匹配，则数据返回为空。
+      description: 选择POI所在城市，可设定只搜索在特定城市内的POI信息。城市名称可以是文字或城市的LocationID。城市名称为精准匹配，建议使用LocaitonID，如文字无法匹配，则数据返回为空。**默认不限制特定城市**。
       in: query
       required: false
       schema:
@@ -1259,14 +1259,7 @@ components:
     days30Path:
       name: days
       in: path
-      description: |-
-        预报天数，支持最多30天预报，可选值：
-
-        - `3d` 3天预报。
-        - `7d` 7天预报。
-        - `10d` 10天预报。
-        - `15d` 15天预报。
-        - `30d` 30天预报。
+      description: 预报天数，支持最多30天预报，可选值：`3d`、`7d`、`10d`、`15d`、`30d`
       required: true
       schema:
         type: string
@@ -1291,11 +1284,7 @@ components:
     days3Path:
       name: days
       in: path
-      description: |-
-        预报天数，支持最多3天预报，可选值：
-
-        - `1d` 1天预报。
-        - `3d` 3天预报。
+      description: 预报天数，支持最多3天预报，可选值：`1d`、`3d`
       required: true
       schema:
         type: string
@@ -1304,12 +1293,7 @@ components:
     hours168Path:
       name: hours
       in: path
-      description: |-
-        预报小时数，支持最多168小时预报，可选值：
-
-        - `24h` 24小时预报。
-        - `72h` 72小时预报。
-        - `168h` 168小时预报。
+      description: 预报小时数，支持最多168小时预报，可选值：`24h`、`72h`、`168h`
       required: true
       schema:
         type: string
@@ -1318,11 +1302,7 @@ components:
     hours72Path:
       name: hours
       in: path
-      description: |-
-        预报小时数，支持最多72小时预报，可选值：
-
-        - `24h` 24小时预报。
-        - `72h` 72小时预报。
+      description: 预报小时数，支持最多72小时预报，可选值：`24h`、`72h`
       required: true
       schema:
         type: string
@@ -1505,10 +1485,10 @@ components:
             description: 是否处于[夏令时](https://dev.qweather.com/docs/resource/glossary/#daylight-saving-time)。`1` 表示当前处于夏令时，`0` 表示当前不是夏令时
           type:
             type: string
-            description: 当前位置的属性
+            description: 位置的属性
           rank:
             type: string
-            description: "[评分](https://dev.qweather.com/docs/resource/glossary/#rank)"
+            description: "[位置的评分](https://dev.qweather.com/docs/resource/glossary/#rank)"
           fxLink:
             type: string
             format: uri
@@ -1598,10 +1578,10 @@ components:
                     "$ref": "#/components/schemas/fxDate"
                   sunrise:
                     type: string
-                    description: "[日出时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
+                    description: "[日出时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，在高纬度地区可能为空"
                   sunset:
                     type: string
-                    description: "[日落时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
+                    description: "[日落时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，在高纬度地区可能为空"
                   moonrise:
                     type: string
                     description: "[月升时间](https://dev.qweather.com/docs/resource/sun-moon-info/#moonrise-and-moonset)，可能为空"
@@ -1840,27 +1820,27 @@ components:
                 description: 原始预警信息生成的时间，实际发布或接收时间会略有延迟
               messageType:
                 type: object
-                description: 预警信息性质
+                description: "[预警信息的性质](https://dev.qweather.com/docs/resource/warning-info/#message-type)，开发者可以了解当前预警是新发布的还是对之前预警的更新"
                 properties:
                   code:
                     type: string
                     enum: [alert, update, cancel]
-                    description: "[预警信息性质的代码](https://dev.qweather.com/docs/resource/warning-info/#message-type)，开发者可以了解当前预警是新发布的还是对之前预警的更新"
+                    description: "性质的代码"
                   supersedes:
                     type: array
-                    description: 当前预警取代或取消后续预警ID的列表，仅在 `messageType.code` 为 **update** 或 **cancel** 时返回
+                    description: 当前预警取代或取消后续预警ID的列表，当这是一条新预警信息时，返回为空
                     items:
                       type: string
               eventType:
                 type: object
-                description: 预警事件
+                description: "[预警事件类型](https://dev.qweather.com/docs/resource/warning-info/#event-and-code)"
                 properties:
                   name:
                     type: string
-                    description: "[预警事件的名称](https://dev.qweather.com/docs/resource/warning-info/#event-and-code)"
+                    description: 事件名称
                   code:
                     type: string
-                    description: "[预警事件的代码](https://dev.qweather.com/docs/resource/warning-info/#event-and-code)"
+                    description: 事件代码
               urgency:
                 type: string
                 description: 预警信息的[紧迫程度](https://dev.qweather.com/docs/resource/warning-info/#urgency)，可能为空
@@ -1881,19 +1861,7 @@ components:
                   - properties:
                       code:
                         type: string
-                        description: |
-                         颜色代码，包括
-
-                         - `white`
-                         - `gray`
-                         - `green`
-                         - `blue`
-                         - `yellow`
-                         - `amber`
-                         - `orange`
-                         - `red`
-                         - `purple`
-                         - `black`
+                        description: "[颜色代码](https://dev.qweather.com/docs/resource/warning-info/#color)"
                         enum: [white, gray, green, blue, yellow, amber, orange, red, purple, black]
                   - "$ref": "#/components/schemas/colorObject"
               effectiveTime:
@@ -2192,7 +2160,7 @@ components:
 
     aqisArray:
       type: array
-      description: 空气质量指数列表
+      description: "[空气质量指数](https://dev.qweather.com/docs/resource/air-info/#supported-aqis)列表"
       minItems: 1
       maxItems: 2
       items:
@@ -2200,7 +2168,7 @@ components:
         properties:
           code:
             type: string
-            description: "[空气质量指数](https://dev.qweather.com/docs/resource/air-info/#supported-aqis)Code"
+            description: "空气质量指数 Code"
           name:
             type: string
             description: 空气质量指数的名字
@@ -2228,7 +2196,7 @@ components:
             properties:
               code:
                 type: string
-                description: "[首要污染物](https://dev.qweather.com/docs/resource/air-info/#primary-pollutant)的Code"
+                description: "首要污染物的Code"
               name:
                 type: string
                 description: 首要污染物的名字
@@ -2242,10 +2210,10 @@ components:
             properties:
               effect:
                 type: string
-                description: "[空气质量对健康的影响](https://dev.qweather.com/docs/resource/air-info/#health-effects-and-advice)，可能为空"
+                description: "空气质量对健康的影响，可能为空"
               advice:
                 type: object
-                description: 对普通人群和敏感人群的健康建议，可能为空
+                description: 健康建议，可能为空
                 properties:
                   generalPopulation:
                     type: string
@@ -2258,7 +2226,7 @@ components:
       properties:
         code:
           type: string
-          description: "[污染物](https://dev.qweather.com/docs/resource/air-info/#pollutants)的Code"
+          description: "污染物的Code"
         name:
           type: string
           description: 污染物的名字
@@ -2273,7 +2241,7 @@ components:
             - "$ref": "#/components/schemas/valueUnitObject"
 
     pollutantSubindexArray:
-      description: 污染物列表
+      description: "[污染物](https://dev.qweather.com/docs/resource/air-info/#pollutants)列表"
       type: array
       items:
         allOf:
@@ -2283,31 +2251,31 @@ components:
             subIndexes:
               type: array
               nullable: true
-              description: 子指数列表
+              description: "[污染物的分指数](https://dev.qweather.com/docs/resource/air-info/#pollutant-sub-index)列表，可能为空"
               items:
                 type: object
                 properties:
                   code:
                     type: string
-                    description: "[污染物的分指数的Code](https://dev.qweather.com/docs/resource/air-info/#pollutant-sub-index)，可能为空"
+                    description: "分指数的Code"
                   aqi:
                     type: number
-                    description: "[污染物的分指数的数值](https://dev.qweather.com/docs/resource/air-info/#pollutant-sub-index)，可能为空"
+                    description: "分指数的数值"
                   aqiDisplay:
                     type: string
-                    description: 污染物的分指数数值的显示名称
+                    description: 分指数数值的显示名称
     aqiStationsArray:
       type: array
-      description: 空气质量监测站列表
+      description: 当前参考的空气质量监测站列表，可能为空
       items:
         type: object
         properties:
           id:
             type: string
-            description: AQI相关联的监测站Location ID，可能为空
+            description: 监测站Location ID
           name:
             type: string
-            description: AQI相关联的监测站名称
+            description: 监测站名称
 
     getStormForecast:
       type: object
@@ -2651,11 +2619,11 @@ components:
         sunrise:
           type: string
           nullable: true
-          description: "[日出时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
+          description: "[日出时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，在高纬度地区可能为空"
         sunset:
           type: string
           nullable: true
-          description: "[日落时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
+          description: "[日落时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，在高纬度地区可能为空"
         refer:
           "$ref": "#/components/schemas/referObject"
 
@@ -2893,11 +2861,10 @@ components:
       format: date-time
     statusCode:
       type: string
-      description: |-
-       [API状态码](https://dev.qweather.com/docs/resource/error-code/#error-code-v1)
+      description: "[状态码](https://dev.qweather.com/docs/resource/error-code/)"
     updateTime:
       type: string
-      description: 当前API的[最近更新时间](https://dev.qweather.com/docs/resource/glossary/#update-time)
+      description: "[API的最近更新时间](https://dev.qweather.com/docs/resource/glossary/#update-time)"
       format: date-time
     fxLink:
       type: string
@@ -2920,10 +2887,10 @@ components:
               description: 日期
             sunrise:
               type: string
-              description: "[日出时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
+              description: "[日出时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，在高纬度地区可能为空"
             sunset:
               type: string
-              description: "[日落时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，**在高纬度地区可能为空**"
+              description: "[日落时间](https://dev.qweather.com/docs/resource/sun-moon-info/#sunrise-and-sunset)，在高纬度地区可能为空"
             moonrise:
               type: string
               description: "[月升时间](https://dev.qweather.com/docs/resource/sun-moon-info/#moonrise-and-moonset)，可能为空"

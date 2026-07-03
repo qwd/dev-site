@@ -43,6 +43,6 @@ aliases:
 - "/docs/android-sdk/weather/android-weather-now/"
 ---
 
-Android SDK 文档已从开发者网站迁移至 GitHub 仓库。请访问以下仓库获取最新文档、示例代码、版本和问题追踪：
+Android SDK 文档已从开发者网站迁移至 GitHub 仓库。请访问以下仓库获取最新文档、示例代码、版本和问题追踪。
 
 [➡️ Android SDK 仓库](https://github.com/qwd/qweather-android-sdk)

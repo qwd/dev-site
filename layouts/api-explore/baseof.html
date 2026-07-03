@@ -6,7 +6,9 @@
     {{ partial "seo.html" . }}
     <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
     <link rel="stylesheet" href="/assets/swagger-ui/swagger-ui.css">
-    <link rel="stylesheet" href="/assets/swagger-ui/qweather-overrides.css">
+    {{- with resources.Get "scss/qweather-overrides.scss" | css.Sass (dict "targetPath" "assets/swagger-ui/qweather-overrides.css") }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{- end }}
   </head>
   <body>
     {{ block "main" . }}{{ end }}

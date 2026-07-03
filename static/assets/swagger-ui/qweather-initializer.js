@@ -11,7 +11,7 @@ window.onload = function () {
     dom_id: "#swagger-ui",
     url: specUrl,
     deepLinking: true,
-    docExpansion: "none",
+    docExpansion: "list",
     validatorUrl: null,
     presets: [
       SwaggerUIBundle.presets.apis,

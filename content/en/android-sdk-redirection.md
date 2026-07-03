@@ -43,6 +43,8 @@ aliases:
 - "/docs/android-sdk/weather/android-weather-now/"
 ---
 
-The Android SDK documentation has moved to GitHub. Visit the repository below for current documentation, examples, releases, and issue tracking:
+The Android SDK documentation has moved to GitHub. 
+
+Visit the repository below for current documentation, examples, releases, and issue tracking.
 
 [➡️ Android SDK repository](https://github.com/qwd/qweather-android-sdk)

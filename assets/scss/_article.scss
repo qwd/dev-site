@@ -144,7 +144,7 @@
 
       // OpenAPI response fields with indentation that preserves schema hierarchy.
       .api-response-tree {
-        padding-left: 0;
+        padding-left: 40px;
         list-style: none;
 
         li {
@@ -152,7 +152,7 @@
         }
 
         ul {
-          margin: 8px 0 0 8px;
+          // margin: 8px 0 0 8px;
           padding-left: 20px;
           border-left: 1px solid $color-light;
           list-style: none;
@@ -166,6 +166,7 @@
           margin: 0 8px;
           color: $color-grey;
           font-size: $small-font-size;
+          font-family: $code-font-family;
         }
       }
 
