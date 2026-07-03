@@ -9,7 +9,7 @@ translationKey: res-air
 
 Air Quality Index (AQI), is a non-linear index that quantitatively describes the quality of the air. As air pollution levels rise, so does the AQI, along with the associated public health risk. This document will introduce some background knowledge and instructions when using Air Quality API.
 
-> This document only applies to the [Air Quality API v1](/en/docs/api/air-quality/), for other version please refer to [Air Quality in Web API v7](/en/docs/api/air/).
+> This document only applies to the [Air Quality API v1](/en/docs/api/air-quality/), for other version please refer to [Air Quality in Web API v7](/en/docs/api/air-quality/).
 
 ## Supported regions
 

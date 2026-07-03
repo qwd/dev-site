@@ -657,7 +657,7 @@ paths:
       description: |-
         获取未来60天全球任意地点日出日落时间。
 
-        > 在[逐天预报API](https://dev.qweather.com/docs/api/weather)中，也会返回对应天数的日出日落、月升月落和月相数据
+        > 在[逐天预报API](https://dev.qweather.com/docs/api/weather/)中，也会返回对应天数的日出日落、月升月落和月相数据
       externalDocs:
         url: https://dev.qweather.com/docs/api/astronomy/sunrise-sunset/
       parameters:

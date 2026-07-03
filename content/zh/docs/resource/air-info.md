@@ -6,7 +6,7 @@ translationKey: res-air
 
 空气质量指数（Air Quality Index）简称AQI，是定量描述空气质量状况的非线性指数，空气污染越严重，对人体的健康危害也就越大。本篇文档将介绍使用和风天气空气质量API时的一些背景知识和说明。
 
-> 本文档仅适用于[空气质量v1](/docs/api/air-quality/)版本，其他版本请参考[Web API v7 中的空气质量](/docs/api/air/)。
+> 本文档仅适用于[空气质量v1](/docs/api/air-quality/)版本，其他版本请参考[Web API v7 中的空气质量](/docs/api/air-quality/)。
 
 ## 支持的国家或地区 {#supported-regions}
 
