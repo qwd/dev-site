@@ -26,9 +26,9 @@ We support weather data services in China (including Hong Kong, Macau and Taiwan
 | Real-time weather        | 15 min          | Real-time | Real Time  | Global     |
 | Daily forecast           | 8 hrs           | Daily     | 1-30 days  | Global     |
 | Hourly forecast          | 1 hr            | Hourly    | 1-168 hrs  | Global     |
-| Real-time Weather (Grid) | 20 min          | Real-time | Realtime   | Global      |
-| Daily forecast (Grid)    | 6 hrs          | Daily     | 1-7 days   | Global      |
-| Hourly forecast (Grid)   | 1 hr            | Hourly    | 1-72 hrs   | Global      |
+| Real-time Weather (Grid) | 20 min          | Real-time | Realtime   | Global     |
+| Daily forecast (Grid)    | 6 hrs           | Daily     | 1-7 days   | Global     |
+| Hourly forecast (Grid)   | 1 hr            | Hourly    | 1-72 hrs   | Global     |
 | Minute Precip (Grid)     | 5 min           | 5 min     | 1-2 hrs    | China      |
 
 ### Weather Indices
@@ -54,17 +54,23 @@ We support weather data services in China (including Hong Kong, Macau and Taiwan
 
 ### Air Quality
 
-| Data                       | Update interval | Time step | Time range | Geographic |
-| -------------------------- | --------------- | --------- | ---------- | ---------- |
-| Real-time Air Quality      | 1 hr            | Real Time | Real Time  | Global      |
-| Air Quality daily forecast | 1 hr            | Daily     | 1-7 days   | Global      |
-| Air Quality hourly forecast | 1 hr            | Hourly     | 1-72 hrs   | Global      |
+| Data                        | Update interval | Time step | Time range | Geographic |
+| --------------------------- | --------------- | --------- | ---------- | ---------- |
+| Real-time Air Quality       | 1 hr            | Real Time | Real Time  | Global     |
+| Air Quality daily forecast  | 1 hr            | Daily     | 1-7 days   | Global     |
+| Air Quality hourly forecast | 1 hr            | Hourly    | 1-72 hrs   | Global     |
 
 ### Warning
 
-| Data              | Update interval | Time step | Time range | Geographic |
-| ----------------- | --------------- | --------- | ---------- | ---------- |
-| Warning           | 5 min           | Real-time | Real-time  | Global      |
+| Data    | Update interval | Time step | Time range | Geographic |
+| ------- | --------------- | --------- | ---------- | ---------- |
+| Warning | 5 min           | Real-time | Real-time  | Global     |
+
+### Solar Radiation
+
+| Data                     | Update interval | Time step | Time range | Geographic |
+| ------------------------ | --------------- | --------- | ---------- | ---------- |
+| Solar Radiation Forecast | 1 hr            | 15 min    | 1-60 hrs   | Global     |
 
 ### Astronomy
 
@@ -76,14 +82,14 @@ We support weather data services in China (including Hong Kong, Macau and Taiwan
 
 ### Ocean
 
-| Data     | Update interval | Time step | Time range | Geographic |
-| -------- | --------------- | --------- | ---------- | ---------- |
-| Tides    | 24 hrs          | Daily     | 1-10 days   | Global     |
+| Data  | Update interval | Time step | Time range | Geographic |
+| ----- | --------------- | --------- | ---------- | ---------- |
+| Tides | 24 hrs          | Daily     | 1-10 days  | Global     |
 
 ### Tropical Cyclones
 
-| Data                       | Update interval | Time step     | Time range         | Geographic |
-| -------------------------- | --------------- | ------------- | ------------------ | ---------- |
-| Storm List               | 1 hr            | Daily weather | 365 days           | China     |
-| Storm Forecast           | 1 hr            | Hour-by-Hour  | 1-72 hrs           | China     |
-| Storm Location and Track | 1 hr            | Hour-by-Hour  | Typhoon Life Cycle | China     |
+| Data                     | Update interval | Time step     | Time range         | Geographic |
+| ------------------------ | --------------- | ------------- | ------------------ | ---------- |
+| Storm List               | 1 hr            | Daily weather | 365 days           | China      |
+| Storm Forecast           | 1 hr            | Hour-by-Hour  | 1-72 hrs           | China      |
+| Storm Location and Track | 1 hr            | Hour-by-Hour  | Typhoon Life Cycle | China      |
