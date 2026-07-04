@@ -2,7 +2,7 @@
   {{/* Reuse the existing docs page shell so generated pages match handwritten docs. */}}
   {{ partial "docs/breadcrumbs.html" . }}
   <div class="main-content tw:w-full tw:flex tw:px-6">
-    <aside class="docs-nav small tw:hidden tw:md:block tw:shrink-0 tw:pt-12 tw:pb-6 tw:pr-6 tw:mr-8">
+    <aside class="docs-nav tw:text-sm tw:hidden tw:md:block tw:shrink-0 tw:pt-12 tw:pb-6 tw:pr-6 tw:mr-8">
       {{ partial "docs/nav.html" . }}
     </aside>
     <article class="article tw:pt-8 tw:flex-1 tw:min-w-0">
@@ -15,7 +15,7 @@
             {{/* Render the Node-normalized intermediate model; Hugo does not parse OpenAPI here. */}}
             <section class="doc-content">{{ partial "openapi/operation.html" . }}</section>
           </div>
-          <aside class="docs-toc small tw:lg:w-2/12 tw:px-6 tw:hidden tw:lg:block">
+          <aside class="docs-toc tw:text-sm tw:lg:w-2/12 tw:px-6 tw:hidden tw:lg:block">
             <h4 class="tw:mb-4">{{ T "tocnav" }}</h4>
             {{ .TableOfContents }}
           </aside>

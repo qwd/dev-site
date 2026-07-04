@@ -72,11 +72,9 @@
   /**
    * Remove the gray background on active links in IE 10.
    */
-  
-  a {
-    background-color: transparent;
-  }
-  
+
+  // a { background-color: transparent; } — moved to @layer base in main.css
+   
   /**
    * 1. Remove the bottom border in Chrome 57-
    * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.

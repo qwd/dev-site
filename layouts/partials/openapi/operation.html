@@ -25,7 +25,7 @@
       {{- range $parameters }}
         <li class="tw:mb-8">
           <code class="tw:mr-2">{{ .name }}</code>
-          {{- if .required }} <span class="tw:mr-2 italic small tw:font-bold">({{ T "rqd" }})</span>{{ end }}
+          {{- if .required }} <span class="tw:mr-2 tw:italic tw:text-sm tw:font-bold">({{ T "rqd" }})</span>{{ end }}
           {{ .description | markdownify }}
         </li>
       {{- end }}
@@ -35,7 +35,7 @@
 
 <h2 id="request-example">{{ T "request-example" }}<a class="anchor-link" href="#request-example" aria-label="{{ T "permalink" }}">#</a></h2>
 <pre><code class="language-bash">{{ $operation.requestExample }}</code></pre>
-<p class="small italic">{{ T "example-token-hint" | markdownify }}</p>
+<p class="tw:text-sm tw:italic">{{ T "example-token-hint" | markdownify }}</p>
 {{- if and $operation.operationId $operation.tags }}
   {{/* Swagger UI anchors use the first OpenAPI tag plus operationId. */}}
   {{- $tag := index $operation.tags 0 -}}

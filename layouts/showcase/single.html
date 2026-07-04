@@ -1,7 +1,7 @@
 {{ define "main" }}
-<section class="masthead showcase"><div class="qw-container"><h1>{{ .Title }}</h1><p class="text-center">{{ .Description }}</p></div></section>
+<section class="masthead showcase"><div class="qw-container"><h1>{{ .Title }}</h1><p class="tw:text-center">{{ .Description }}</p></div></section>
 <main class="main-content qw-container-narrow"><div class="article"><section class="showcase-content tw:mb-12 tw:p-12 tw:rounded-card">
-  <div class="brief tw:mb-12"><p>🙏❤️👍</p><p>{{ T "si-biref" | safeHTML }}</p><p class="italic small tw:underline tw:text-qw-muted-2">{{ T "si-note" }}</p></div>
+  <div class="brief tw:mb-12"><p>🙏❤️👍</p><p>{{ T "si-biref" | safeHTML }}</p><p class="tw:italic tw:text-sm tw:underline tw:text-qw-muted-2">{{ T "si-note" }}</p></div>
   {{ range sort hugo.Data.showcase "language" }}
   <div class="works-list tw:mb-12">
     <h2 class="tw:pb-6 tw:mb-6 works-lang">{{ .language }}</h2>

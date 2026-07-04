@@ -4,12 +4,12 @@
   <div id="weather-bg" class="hero hero-default">
     <div class="qw-container">
       {{ with hugo.Data.announce.url }}
-      <div class="announce text-center">
+      <div class="announce tw:text-center">
         &#128227; <a class="tw:text-qw-muted tw:hover:text-qw-text" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ index hugo.Data.announce.title $.Language.Lang }}</a>
       </div>
       {{ end }}
-      <div class="banner text-center tw:mb-4"><img src="/assets/images/hp-cloudy.png" alt="" width="300"></div>
-      <div class="headline text-center">
+      <div class="banner tw:text-center tw:mb-4"><img src="/assets/images/hp-cloudy.png" alt="" width="300"></div>
+      <div class="headline tw:text-center">
         <h1>{{ T "hp-slogan" }}</h1>
         <h1 class="tw:mb-8">{{ T "hp-slogan-2" }}</h1>
         <a class="tw:inline-block tw:rounded-btn tw:bg-qw-link tw:text-white tw:py-[10px] tw:px-[20px] tw:text-[1.8rem] tw:font-bold tw:mb-8 tw:hover:no-underline" href="https://id.qweather.com/#/register?redirect=https://console.qweather.com" target="_blank" rel="noopener noreferrer">{{ T "hp-regnow" }}</a>
