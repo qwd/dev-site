@@ -1,15 +1,15 @@
-<section class="doc-bc small d-none d-sm-block sticky-top">
-  <div class="container-fluid">
-    <ul class="clear-list d-flex">
+<section class="doc-bc small tw:hidden tw:sm:block sticky-top">
+  <div class="tw:w-full tw:px-6">
+    <ul class="clear-list tw:flex">
       {{ range where .Ancestors.Reverse "IsHome" false }}
-      <li class="py-2 mr-1"><a class="d-inline-block no-underline text-lighter" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      <li class="tw:py-4 tw:mr-2"><a class="tw:inline-block no-underline text-lighter" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}
-      <li class="py-2 mr-1 active"><a class="d-inline-block no-underline text-lighter" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      <li class="tw:py-4 tw:mr-2 active"><a class="tw:inline-block no-underline text-lighter" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     </ul>
   </div>
 </section>
-<section class="doc-bc-mobile sticky-top d-block d-sm-none">
-  <div class="container-fluid">
+<section class="doc-bc-mobile sticky-top tw:block tw:sm:hidden">
+  <div class="tw:w-full tw:px-6">
     <select onchange="if (this.value) window.location.href=this.value">
       <option value="">{{ T "docs-category" }}</option>
       {{- $current := . -}}

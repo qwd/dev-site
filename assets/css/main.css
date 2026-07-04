@@ -43,4 +43,10 @@
 
   /* Letter spacing */
   --tracking-body: 0.2px;
+
+  /* Breakpoints — use px (rem in media queries resolves against browser default, not html font-size) */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
 }
