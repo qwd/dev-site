@@ -50,3 +50,38 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
 }
+
+/* Container — stepped responsive max-width matching Bootstrap behaviour at TW breakpoints */
+.qw-container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+@media (min-width: 640px) {
+  .qw-container { max-width: 600px; }
+}
+@media (min-width: 768px) {
+  .qw-container { max-width: 720px; }
+}
+@media (min-width: 1024px) {
+  .qw-container { max-width: 960px; }
+}
+@media (min-width: 1280px) {
+  .qw-container { max-width: 1140px; }
+}
+
+/* Narrow variant — caps at 960px (no xl step), matches old .narrow.container */
+.qw-container-narrow {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+@media (min-width: 640px) {
+  .qw-container-narrow { max-width: 600px; }
+}
+@media (min-width: 768px) {
+  .qw-container-narrow { max-width: 720px; }
+}
+@media (min-width: 1024px) {
+  .qw-container-narrow { max-width: 960px; }
+}

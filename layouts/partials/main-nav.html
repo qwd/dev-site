@@ -1,5 +1,5 @@
 <nav class="main-nav tw:w-full tw:px-6">
-  <div class="tw:flex tw:flex-wrap tw:items-center tw:-mx-6">
+  <div class="tw:flex tw:flex-wrap tw:md:flex-nowrap tw:items-center tw:-mx-6">
     <div class="brand tw:flex-none tw:px-6">
       <a class="dark-link no-underline tw:py-4 tw:inline-block" href="{{ .Site.Home.RelPermalink }}">
         <svg class="logo tw:inline-block tw:mr-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30" height="30" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
@@ -8,10 +8,10 @@
         <span class="sitename tw:inline-block text-bold">{{ .Site.Title }}</span>
       </a>
     </div>
-    <div class="second-menu tw:flex-none tw:sm:order-last tw:ml-auto tw:px-6">
+    <div class="second-menu tw:flex-none tw:md:order-last tw:ml-auto tw:px-6">
       <a class="menu-console no-underline link-color border-r10 text-bold small tw:inline-block" href="https://id.qweather.com/#/login?redirect=https://console.qweather.com{{ if eq .Language.Lang "en" }}&lang=en{{ end }}" target="_blank" rel="noopener noreferrer">{{ T "console" }}</a>
     </div>
-    <div class="menu tw:w-full tw:sm:w-auto tw:sm:grow tw:md:grow-0 tw:px-6">
+    <div class="menu tw:w-full tw:md:w-auto tw:md:flex-1 tw:px-6">
       <ul class="clear-list tw:flex">
         <li class="tw:mr-auto tw:md:mr-4{{ if .IsHome }} active{{ end }}"><a class="dark-link no-underline" href="{{ .Site.Home.RelPermalink }}">{{ T "home" }}</a></li>
         <li class="tw:mr-auto tw:md:mr-4{{ if eq .Section "docs" }} active{{ end }}"><a class="dark-link no-underline" href="{{ relLangURL "docs/" }}">{{ T "doc" }}</a></li>
@@ -19,7 +19,7 @@
         <li class="tw:mr-auto tw:md:mr-4{{ if eq .Type "showcase" }} active{{ end }}"><a class="dark-link no-underline" href="{{ relLangURL "showcase/" }}">{{ T "showcase" }}</a></li>
         <li class="tw:mr-auto tw:md:mr-4{{ if eq .Type "faq" }} active{{ end }}"><a class="dark-link no-underline" href="{{ relLangURL "help/" }}">{{ T "help" }}</a></li>
         <li class="tw:mr-auto tw:md:mr-4{{ if eq .Type "price" }} active{{ end }}"><a class="dark-link no-underline" href="{{ relLangURL "price/" }}">{{ T "price" }}</a></li>
-        <li class="tw:mr-auto tw:md:mr-4"><div id="docsearch"></div></li>
+        <li class="tw:md:mr-4"><div id="docsearch"></div></li>
       </ul>
     </div>
   </div>

@@ -2,53 +2,55 @@
 {{- $versions := hugo.Data.versions -}}
 <main class="homepage">
   <div id="weather-bg" class="hero hero-default">
-    <div class="container"><div class="row justify-content-center">
+    <div class="qw-container">
       {{ with hugo.Data.announce.url }}
-      <div class="announce col-12 text-center">
+      <div class="announce text-center">
         &#128227; <a class="grey-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ index hugo.Data.announce.title $.Language.Lang }}</a>
       </div>
       {{ end }}
-      <div class="banner col-12 text-center mb-2"><img src="/assets/images/hp-cloudy.png" alt="" width="300"></div>
-      <div class="headline col-12 text-center">
+      <div class="banner text-center tw:mb-4"><img src="/assets/images/hp-cloudy.png" alt="" width="300"></div>
+      <div class="headline text-center">
         <h1>{{ T "hp-slogan" }}</h1>
-        <h1 class="mb-4">{{ T "hp-slogan-2" }}</h1>
-        <a class="d-inline-block btn-link btn-link-blue btn-link-xl text-bold mb-4" href="https://id.qweather.com/#/register?redirect=https://console.qweather.com" target="_blank" rel="noopener noreferrer">{{ T "hp-regnow" }}</a>
+        <h1 class="tw:mb-8">{{ T "hp-slogan-2" }}</h1>
+        <a class="tw:inline-block btn-link btn-link-blue btn-link-xl text-bold tw:mb-8" href="https://id.qweather.com/#/register?redirect=https://console.qweather.com" target="_blank" rel="noopener noreferrer">{{ T "hp-regnow" }}</a>
         <p class="color-grey-76">{{ T "hp-current-ver" }} API v{{ $versions.api.version }} · SDK v{{ $versions.ios.version }}</p>
-        <a class="d-inline-block" href="{{ relLangURL "docs/start/" }}">{{ T "quick-start" }}</a>
+        <a class="tw:inline-block" href="{{ relLangURL "docs/start/" }}">{{ T "quick-start" }}</a>
       </div>
-    </div></div>
+    </div>
   </div>
-  <div class="feats pb-5"><div class="container">
-    <div class="row mb-md-5">
-      {{ range slice
-        (dict "class" "service-data" "image" "hp-feat-data.png" "title" "hp-data" "desc" "hp-data-desc" "refer" "hp-data-refer" "url" "docs/features/service-and-data/")
-        (dict "class" "devtools" "image" "hp-feat-devtools.png" "title" "hp-dev" "desc" "hp-dev-desc" "refer" "hp-dev-refer" "url" "docs/api/")
-      }}
-      <div class="col-12 col-md-6 mb-5 mb-md-0"><div class="feat-card border-r10">
-        <img class="d-block card-bg {{ .class }} width100" src="/assets/images/{{ .image }}" alt="">
-        <div class="card-content p-4"><h3 class="mb-4">{{ T .title }}</h3><p>{{ T .desc }}</p></div>
-        <div class="card-footer p-4"><a href="{{ relLangURL .url }}">{{ T .refer }}</a></div>
-      </div></div>
-      {{ end }}
+  <div class="feats tw:pb-12">
+    <div class="qw-container">
+      <div class="tw:flex tw:flex-wrap tw:-mx-6 tw:md:mb-12">
+        {{ range slice
+          (dict "class" "service-data" "image" "hp-feat-data.png" "title" "hp-data" "desc" "hp-data-desc" "refer" "hp-data-refer" "url" "docs/features/service-and-data/")
+          (dict "class" "devtools" "image" "hp-feat-devtools.png" "title" "hp-dev" "desc" "hp-dev-desc" "refer" "hp-dev-refer" "url" "docs/api/")
+        }}
+        <div class="tw:w-full tw:md:w-1/2 tw:px-6 tw:mb-12 tw:md:mb-0"><div class="feat-card border-r10">
+          <img class="tw:block card-bg {{ .class }} tw:w-full" src="/assets/images/{{ .image }}" alt="">
+          <div class="card-content tw:p-8"><h3 class="tw:mb-8">{{ T .title }}</h3><p>{{ T .desc }}</p></div>
+          <div class="card-footer tw:p-8"><a href="{{ relLangURL .url }}">{{ T .refer }}</a></div>
+        </div></div>
+        {{ end }}
+      </div>
+      <div class="tw:flex tw:flex-wrap tw:-mx-6 tw:md:mb-12">
+        {{ range slice
+          (dict "class" "worldwide" "image" "hp-feat-global.png" "title" "hp-ww" "desc" "hp-ww-desc" "refer" "hp-ww-refer" "url" "docs/features/global-deployment/")
+          (dict "class" "price" "image" "hp-feat-price.png" "title" "hp-price" "desc" "hp-price-desc" "refer" "hp-price-refer" "url" "price/")
+        }}
+        <div class="tw:w-full tw:md:w-1/2 tw:px-6 tw:mb-12 tw:md:mb-0"><div class="feat-card border-r10">
+          <img class="tw:block card-bg {{ .class }} tw:w-full" src="/assets/images/{{ .image }}" alt="">
+          <div class="card-content tw:p-8"><h3 class="tw:mb-8">{{ T .title }}</h3><p>{{ T .desc }}</p></div>
+          <div class="card-footer tw:p-8"><a href="{{ relLangURL .url }}">{{ T .refer }}</a></div>
+        </div></div>
+        {{ end }}
+      </div>
+      <div class="start-card border-r10 tw:p-8">
+        {{ range slice "try" "more" "org" }}
+        <h2 class="color-font tw:my-8">{{ T (printf "hp-intro-%s" .) }}</h2>
+        {{ T (printf "hp-intro-%s-desc" .) | markdownify }}
+        {{ end }}
+      </div>
     </div>
-    <div class="row mb-md-5">
-      {{ range slice
-        (dict "class" "worldwide" "image" "hp-feat-global.png" "title" "hp-ww" "desc" "hp-ww-desc" "refer" "hp-ww-refer" "url" "docs/features/global-deployment/")
-        (dict "class" "price" "image" "hp-feat-price.png" "title" "hp-price" "desc" "hp-price-desc" "refer" "hp-price-refer" "url" "price/")
-      }}
-      <div class="col-12 col-md-6 mb-5 mb-md-0"><div class="feat-card border-r10">
-        <img class="d-block card-bg {{ .class }} width100" src="/assets/images/{{ .image }}" alt="">
-        <div class="card-content p-4"><h3 class="mb-4">{{ T .title }}</h3><p>{{ T .desc }}</p></div>
-        <div class="card-footer p-4"><a href="{{ relLangURL .url }}">{{ T .refer }}</a></div>
-      </div></div>
-      {{ end }}
-    </div>
-    <div class="start-card border-r10 p-4">
-      {{ range slice "try" "more" "org" }}
-      <h2 class="color-font my-4">{{ T (printf "hp-intro-%s" .) }}</h2>
-      {{ T (printf "hp-intro-%s-desc" .) | markdownify }}
-      {{ end }}
-    </div>
-  </div></div>
+  </div>
 </main>
 {{ end }}
