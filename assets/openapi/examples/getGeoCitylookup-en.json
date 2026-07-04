@@ -1,0 +1,28 @@
+{
+  "code": "200",
+  "location": [
+    {
+      "name": "Dongcheng",
+      "id": "101011600",
+      "lat": "39.91755",
+      "lon": "116.41876",
+      "adm2": "Beijing",
+      "adm1": "Beijing",
+      "country": "China",
+      "tz": "Asia/Shanghai",
+      "utcOffset": "+08:00",
+      "isDst": "0",
+      "type": "city",
+      "rank": "35",
+      "fxLink": "https://www.qweather.com/weather/dongcheng-101011600.html"
+    }
+  ],
+  "refer": {
+    "sources": [
+      "https://developer.qweather.com/attribution.html"
+    ],
+    "license": [
+      "QWeather Developers License"
+    ]
+  }
+}

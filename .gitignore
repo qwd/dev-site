@@ -40,13 +40,6 @@ $RECYCLE.BIN/
 # nodejs
 node_modules/
 
-# jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-Gemfile.lock
-
 # hugo
 /resources/
 /public/
@@ -55,3 +48,6 @@ Gemfile.lock
 # Misc
 *.tmp
 *.bak
+.local/
+test/
+assets/openapi/generated/

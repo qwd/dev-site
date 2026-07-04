@@ -1,0 +1,11 @@
+{{- $translations := .AllTranslations -}}
+<select id="change-language" onchange="if (this.value) window.location.href=this.value">
+  {{- range hugo.Sites }}
+    {{- $site := . -}}
+    {{- $target := $site.Home.RelPermalink -}}
+    {{- range $translations }}
+      {{- if eq .Language.Lang $site.Language.Lang }}{{ $target = .RelPermalink }}{{ end -}}
+    {{- end }}
+  <option value="{{ $target }}"{{ if eq $.Language.Lang $site.Language.Lang }} selected="selected"{{ end }}>{{ $site.Language.Label }}</option>
+  {{- end }}
+</select>

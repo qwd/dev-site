@@ -1,0 +1,78 @@
+{
+  "code": "200",
+  "updateTime": "2023-05-30T18:00+08:00",
+  "fxLink": "https://www.qweather.com",
+  "daily": [
+    {
+      "fxDate": "2023-05-30",
+      "tempMax": "28",
+      "tempMin": "21",
+      "iconDay": "102",
+      "iconNight": "306",
+      "textDay": "Few Clouds",
+      "textNight": "Moderate Rain",
+      "wind360Day": "129",
+      "windDirDay": "SE",
+      "windScaleDay": "2",
+      "windSpeedDay": "7",
+      "wind360Night": "107",
+      "windDirNight": "ESE",
+      "windScaleNight": "2",
+      "windSpeedNight": "8",
+      "humidity": "91",
+      "precip": "11.55",
+      "pressure": "1004",
+      "cloud": "70"
+    },
+    {
+      "fxDate": "2023-05-31",
+      "tempMax": "24",
+      "tempMin": "20",
+      "iconDay": "307",
+      "iconNight": "306",
+      "textDay": "Heavy Rain",
+      "textNight": "Moderate Rain",
+      "wind360Day": "96",
+      "windDirDay": "E",
+      "windScaleDay": "1",
+      "windSpeedDay": "4",
+      "wind360Night": "86",
+      "windDirNight": "E",
+      "windScaleNight": "1",
+      "windSpeedNight": "3",
+      "humidity": "93",
+      "precip": "23.16",
+      "pressure": "1004",
+      "cloud": "66"
+    },
+    {
+      "fxDate": "2023-06-01",
+      "tempMax": "30",
+      "tempMin": "22",
+      "iconDay": "101",
+      "iconNight": "150",
+      "textDay": "Cloudy",
+      "textNight": "Sunny",
+      "wind360Day": "111",
+      "windDirDay": "ESE",
+      "windScaleDay": "1",
+      "windSpeedDay": "4",
+      "wind360Night": "103",
+      "windDirNight": "ESE",
+      "windScaleNight": "1",
+      "windSpeedNight": "4",
+      "humidity": "89",
+      "precip": "0.00",
+      "pressure": "1003",
+      "cloud": "22"
+    }
+  ],
+  "refer": {
+    "sources": [
+      "https://developer.qweather.com/attribution.html"
+    ],
+    "license": [
+      "QWeather Developers License"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{{ define "main" }}
+<section class="masthead faq"><div class="container"><h1>{{ .Title }}</h1><p class="text-center">{{ .Description }}</p></div></section>
+<main class="main-content narrow container"><div class="article"><section class="faq-content p-5 border-r10">
+  <div class="mb-5 faq-toc">{{ .TableOfContents }}</div>
+  <div class="border-r10 doc-content">{{ .Content }}</div>
+</section></div></main>
+{{ end }}

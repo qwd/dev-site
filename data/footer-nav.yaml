@@ -1,0 +1,35 @@
+footer:
+  docs:
+    - title: { zh: 开始使用, en: Get Started }
+      url: { zh: /docs/start/, en: /en/docs/start/ }
+    - title: { zh: 开发配置, en: Configuration }
+      url: { zh: /docs/configuration/, en: /en/docs/configuration/ }
+    - title: { zh: 开发文档, en: API Reference }
+      url: { zh: /docs/api/, en: /en/docs/api/ }
+    - title: { zh: 财务与费用, en: Finance and Billing }
+      url: { zh: /docs/finance/, en: /en/docs/finance/ }
+    - title: { zh: 最佳实践, en: Best Practices }
+      url: { zh: /docs/best-practices/, en: /en/docs/best-practices/ }
+    - title: { zh: 实用资料, en: Resources }
+      url: { zh: /docs/resource/, en: /en/docs/resource/ }
+  features:
+    - title: { zh: 服务和数据, en: Services and Data }
+      url: { zh: /docs/features/service-and-data/, en: /en/docs/features/service-and-data/ }
+    - title: { zh: 全球部署, en: Global Deployment }
+      url: { zh: /docs/features/global-deployment/, en: /en/docs/features/global-deployment/ }
+    - title: { zh: 性能, en: Performance }
+      url: { zh: /docs/features/performance/, en: /en/docs/features/performance/ }
+  products:
+    - title: { zh: 天气预报, en: Weather }
+      url: { zh: https://www.qweather.com, en: https://www.qweather.com }
+    - title: { zh: 天气地图, en: Weather Map }
+      url: { zh: https://map.qweather.com, en: https://map.qweather.com }
+    - title: { zh: 下载APP, en: Get APP }
+      url: { zh: https://www.qweather.com/app/, en: https://www.qweather.com/app/ }
+  terms:
+    - title: { zh: 许可协议, en: EULA }
+      url: { zh: https://www.qweather.com/terms/developers-eula/, en: https://www.qweather.com/terms/developers-eula/ }
+    - title: { zh: 隐私政策, en: Privacy }
+      url: { zh: https://www.qweather.com/terms/privacy, en: https://www.qweather.com/terms/privacy }
+    - title: { zh: 免责声明, en: Disclaimer }
+      url: { zh: https://www.qweather.com/terms/disclaimer/, en: https://www.qweather.com/terms/disclaimer/ }

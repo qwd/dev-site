@@ -1,0 +1,12 @@
+{{- $mode := .Get "mode" -}}
+{{- $rows := partial "csv.html" "regions" -}}
+<table>
+  <thead><tr><th>ISO 3166-1</th><th>{{ T "countries-regions" }}</th>{{ if eq $mode "air" }}<th>{{ T "supported-aqis" }}</th>{{ end }}</tr></thead>
+  <tbody>
+  {{- range after 1 $rows }}
+    {{- if or (and (eq $mode "air") (eq (index . 8) "TRUE")) (and (eq $mode "warning") (eq (index . 7) "TRUE")) }}
+    <tr><td>{{ lower (index . 2) }}</td><td>{{ if eq $.Page.Language.Lang "zh" }}{{ index . 1 }}{{ else }}{{ index . 0 }}{{ end }}</td>{{ if eq $mode "air" }}<td>{{ range split (index . 9) "," }}<code>{{ strings.TrimSpace . }}</code> {{ end }}</td>{{ end }}</tr>
+    {{- end }}
+  {{- end }}
+  </tbody>
+</table>

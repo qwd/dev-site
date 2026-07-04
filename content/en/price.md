@@ -1,0 +1,7 @@
+---
+title: Price
+description: The price of QWeather service, we offer a completely free plan to developers and pay-as-you-go for business use, we also offer additional discounts for a lot of calls.
+type: price
+translationKey: price
+url: /en/price/
+---

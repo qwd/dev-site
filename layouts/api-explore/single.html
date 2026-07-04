@@ -1,0 +1,10 @@
+{{ define "main" }}
+  {{/*
+    Publish the source OpenAPI documents for Swagger UI. API docs still use the
+    parsed JSON model; this page only needs the original YAML specs.
+  */}}
+  {{- range resources.Match "openapi/qweather-apis-*.yml" -}}
+    {{- $published := (resources.Copy (printf "assets/openapi/%s" (path.Base .Name)) .).RelPermalink -}}
+  {{- end -}}
+  <div id="swagger-ui"></div>
+{{ end }}

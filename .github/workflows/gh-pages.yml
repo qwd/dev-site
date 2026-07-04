@@ -4,10 +4,13 @@ on:
   push:
     branches:
       - master
-    paths: 
-      - '_data/**'
-      - 'docs/**'
-      - 'pages/**'
+    paths:
+      - 'assets/**'
+      - 'content/**'
+      - 'data/**'
+      - 'i18n/**'
+      - 'layouts/**'
+      - 'static/**'
   workflow_dispatch:
 
 jobs:
@@ -15,17 +18,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+        uses: actions/checkout@v7
+      - name: Setup Node
+        uses: actions/setup-node@v6
         with:
-          ruby-version: '3.1' 
-          bundler-cache: true 
-          cache-version: 0
-      - name: Build with Jekyll
-        run: JEKYLL_ENV=production bundle exec jekyll build
+          node-version: '22'
+          cache: npm
+      - name: Install Node dependencies
+        run: npm ci
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.163.3'
+          extended: true
+      - name: Build with Hugo
+        run: npm run build
       - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: public
 
   deploy:
     needs: build
@@ -40,7 +51,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
   
   oss:
     needs: deploy
@@ -49,7 +60,7 @@ jobs:
       UPLOAD_DIR: ghp-for-oss
     steps:
       - name: Download artifacts from build
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with: 
           name: github-pages
       - name: Unpack artifacts

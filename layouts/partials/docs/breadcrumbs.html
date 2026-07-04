@@ -1,0 +1,33 @@
+<section class="doc-bc small d-none d-sm-block sticky-top">
+  <div class="container-fluid">
+    <ul class="clear-list d-flex">
+      {{ range where .Ancestors.Reverse "IsHome" false }}
+      <li class="py-2 mr-1"><a class="d-inline-block no-underline text-lighter" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+      <li class="py-2 mr-1 active"><a class="d-inline-block no-underline text-lighter" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    </ul>
+  </div>
+</section>
+<section class="doc-bc-mobile sticky-top d-block d-sm-none">
+  <div class="container-fluid">
+    <select onchange="if (this.value) window.location.href=this.value">
+      <option value="">{{ T "docs-category" }}</option>
+      {{- $current := . -}}
+      {{- $docsNav := index hugo.Data "docs-nav" -}}
+      {{- range $docsNav }}
+        {{- $section := . -}}
+        {{- $overview := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
+        {{- with $overview }}
+      <optgroup label="{{ .Title }}">
+          {{- range $section.subitems }}
+            {{- $page := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
+            {{- with $page }}
+        <option value="{{ .RelPermalink }}"{{ if eq .RelPermalink $current.RelPermalink }} selected{{ end }}>{{ .Title }}</option>
+            {{- end }}
+          {{- end }}
+      </optgroup>
+        {{- end }}
+      {{- end }}
+    </select>
+  </div>
+</section>

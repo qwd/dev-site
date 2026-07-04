@@ -1,0 +1,22 @@
+openapi: 3.0.3
+info:
+  title: Unsupported feature diagnostic fixture
+  version: "1"
+paths:
+  /fixture:
+    post:
+      operationId: postUnsupportedFixture
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/generated/unsupported-fixture/
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Fixture response
+          content:
+            application/json:
+              schema:
+                type: object

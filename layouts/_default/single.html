@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <div class="main-content container-fluid d-flex">
+    <article class="article pt-4 container">
+        <div class="row">
+            <div class="article-headline mb-5 pb-3 border-bottom width100">
+              <h1 class="mr-2 d-inline-block">{{ .Title }}</h1>
+            </div>
+            <section class="doc-content">{{ .Content }}</section>
+        </div>
+    </article>
+  </div>
+{{ end }}

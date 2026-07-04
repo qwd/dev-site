@@ -1,0 +1,31 @@
+{{- $description := .Description | default (index .Site.Params.description .Language.Lang) -}}
+{{- $seoTitle := cond .IsHome .Site.Title .Title -}}
+{{- $pageTitle := cond .IsHome (printf "%s ~ %s" .Site.Title $description) (printf "%s | %s" .Title .Site.Title) -}}
+{{- $type := .Params.seoType | default (cond .IsPage "Article" "WebPage") -}}
+<title>{{ $pageTitle }}</title>
+{{- if or (eq .Params.seo false) .Params.noindex }}
+<meta name="robots" content="noindex">
+{{- else }}
+<meta name="description" content="{{ $description }}">
+<link rel="canonical" href="{{ .Permalink }}">
+{{- range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ .Permalink }}">
+{{- end }}
+<meta property="og:title" content="{{ $seoTitle }}">
+<meta property="og:locale" content="{{ .Language.Locale }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:type" content="{{ lower $type }}">
+{{- with .Params.image }}
+<meta property="og:image" content="{{ . | absURL }}">
+{{- end }}
+<script type="application/ld+json">
+{{ dict "@context" "https://schema.org" "@type" $type "headline" $seoTitle "description" $description "url" .Permalink "publisher" (dict "@type" "Organization" "name" .Site.Title "logo" (dict "@type" "ImageObject" "url" .Site.Params.logo)) | jsonify | safeJS }}
+</script>
+{{- end }}
+{{- with .Site.Params.webmasterVerifications }}
+<meta name="google-site-verification" content="{{ .google }}">
+<meta name="msvalidate.01" content="{{ .bing }}">
+<meta name="baidu-site-verification" content="{{ .baidu }}">
+{{- end }}

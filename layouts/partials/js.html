@@ -1,0 +1,47 @@
+<script src="/assets/docsearch/docsearch@3.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (document.querySelector("#docsearch") && typeof docsearch === "function") {
+      {{- if eq .Language.Lang "zh" }}
+      const docSearchTranslations = {
+        modal: {
+          searchBox: {
+            resetButtonTitle: "清空",
+            cancelButtonText: "取消",
+          },
+          errorScreen: {
+            titleText: "无法获取结果",
+            helpText: "请检查你的网络连接。",
+          },
+          footer: {
+            selectText: "选择",
+            navigateText: "移动",
+            closeText: "关闭",
+          },
+          noResultsScreen: {
+            noResultsText: "找不到",
+            suggestedQueryText: "试试搜索",
+          },
+        },
+      };
+      {{- end }}
+
+      docsearch({
+        container: "#docsearch",
+        appId: {{ .Site.Params.algolia.appId | jsonify | safeJS }},
+        indexName: {{ .Site.Params.algolia.indexName | jsonify | safeJS }},
+        apiKey: {{ .Site.Params.algolia.apiKey | jsonify | safeJS }},
+        disableUserPersonalization: true{{ if eq .Language.Lang "zh" }},
+        placeholder: {{ T "search-docs" | jsonify | safeJS }},
+        translations: docSearchTranslations{{ end }}
+      });
+    }
+
+    for (const link of document.links) {
+      if (link.hostname && link.hostname !== document.location.hostname) {
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+      }
+    }
+  });
+</script>

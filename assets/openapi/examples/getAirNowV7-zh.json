@@ -1,0 +1,88 @@
+{
+  "code": "200",
+  "updateTime": "2021-02-16T14:42+08:00",
+  "fxLink": "https://www.qweather.com/air/beijing-101010100.html",
+  "now": {
+    "pubTime": "2021-02-16T14:00+08:00",
+    "aqi": "28",
+    "level": "1",
+    "category": "优",
+    "primary": "NA",
+    "pm10": "28",
+    "pm2p5": "5",
+    "no2": "3",
+    "so2": "2",
+    "co": "0.2",
+    "o3": "76"
+  },
+  "station": [
+    {
+      "pubTime": "2021-02-16T14:00+08:00",
+      "name": "密云镇",
+      "id": "CNA3697",
+      "aqi": "20",
+      "level": "1",
+      "category": "优",
+      "primary": "NA",
+      "pm10": "4",
+      "pm2p5": "4",
+      "no2": "4",
+      "so2": "3",
+      "co": "0.2",
+      "o3": "63"
+    },
+    {
+      "pubTime": "2021-02-16T14:00+08:00",
+      "name": "丰台小屯",
+      "id": "CNA3696",
+      "aqi": "57",
+      "level": "2",
+      "category": "良",
+      "primary": "PM10",
+      "pm10": "63",
+      "pm2p5": "6",
+      "no2": "4",
+      "so2": "2",
+      "co": "0.2",
+      "o3": "73"
+    },
+    {
+      "pubTime": "2021-02-16T14:00+08:00",
+      "name": "怀柔新城",
+      "id": "CNA3695",
+      "aqi": "25",
+      "level": "1",
+      "category": "优",
+      "primary": "NA",
+      "pm10": "7",
+      "pm2p5": "3",
+      "no2": "2",
+      "so2": "3",
+      "co": "0.1",
+      "o3": "78"
+    },
+    {
+      "pubTime": "2021-02-16T14:00+08:00",
+      "name": "延庆石河营",
+      "id": "CNA3694",
+      "aqi": "26",
+      "level": "1",
+      "category": "优",
+      "primary": "NA",
+      "pm10": "15",
+      "pm2p5": "3",
+      "no2": "4",
+      "so2": "2",
+      "co": "0.4",
+      "o3": "83"
+    }
+  ],
+  "refer": {
+    "sources": [
+      "https://developer.qweather.com/attribution.html"
+    ],
+    "license": [
+      "QWeather Developers License"
+    ]
+  }
+}

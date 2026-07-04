@@ -1,0 +1,88 @@
+{
+  "code": "200",
+  "poi": [
+    {
+      "name": "Nanluoguxiang Alley",
+      "id": "10101010005A",
+      "lat": "39.93000",
+      "lon": "116.40000",
+      "adm2": "Beijing",
+      "adm1": "Beijing",
+      "country": "China",
+      "tz": "Asia/Shanghai",
+      "utcOffset": "+08:00",
+      "isDst": "0",
+      "type": "scenic",
+      "rank": "86",
+      "fxLink": "https://www.qweather.com/en"
+    },
+    {
+      "name": "Jingshan Park",
+      "id": "10101010012A",
+      "lat": "39.92000",
+      "lon": "116.39000",
+      "adm2": "Beijing",
+      "adm1": "Beijing",
+      "country": "China",
+      "tz": "Asia/Shanghai",
+      "utcOffset": "+08:00",
+      "isDst": "0",
+      "type": "scenic",
+      "rank": "67",
+      "fxLink": "https://www.qweather.com/en"
+    },
+    {
+      "name": "Zhongshan Park",
+      "id": "10101010016A",
+      "lat": "39.91000",
+      "lon": "116.39000",
+      "adm2": "Beijing",
+      "adm1": "Beijing",
+      "country": "China",
+      "tz": "Asia/Shanghai",
+      "utcOffset": "+08:00",
+      "isDst": "0",
+      "type": "scenic",
+      "rank": "86",
+      "fxLink": "https://www.qweather.com/en"
+    },
+    {
+      "name": "The Palace Museum",
+      "id": "10101010018A",
+      "lat": "39.91000",
+      "lon": "116.39000",
+      "adm2": "Beijing",
+      "adm1": "Beijing",
+      "country": "China",
+      "tz": "Asia/Shanghai",
+      "utcOffset": "+08:00",
+      "isDst": "0",
+      "type": "scenic",
+      "rank": "67",
+      "fxLink": "https://www.qweather.com/en"
+    },
+    {
+      "name": "Beijing Imperial Academy",
+      "id": "10101010006A",
+      "lat": "39.94000",
+      "lon": "116.41000",
+      "adm2": "Beijing",
+      "adm1": "Beijing",
+      "country": "China",
+      "tz": "Asia/Shanghai",
+      "utcOffset": "+08:00",
+      "isDst": "0",
+      "type": "scenic",
+      "rank": "68",
+      "fxLink": "https://www.qweather.com/en"
+    }
+  ],
+  "refer": {
+    "sources": [
+      "https://developer.qweather.com/attribution.html"
+    ],
+    "license": [
+      "QWeather Developers License"
+    ]
+  }
+}

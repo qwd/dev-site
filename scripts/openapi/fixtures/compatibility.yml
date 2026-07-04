@@ -1,0 +1,91 @@
+openapi: 3.0.3
+info:
+  title: OpenAPI compatibility fixture
+  version: "1"
+paths:
+  /fixture:
+    get:
+      operationId: getCompatibilityFixture
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/generated/compatibility-fixture/
+      responses:
+        "200":
+          description: Fixture response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Fixture"
+components:
+  schemas:
+    Fixture:
+      type: object
+      properties:
+        all:
+          allOf:
+            - type: object
+              properties:
+                first:
+                  type: string
+            - type: object
+              properties:
+                second:
+                  type: string
+        one:
+          oneOf:
+            - type: string
+            - type: number
+        any:
+          anyOf:
+            - type: object
+              properties:
+                alpha:
+                  type: string
+            - type: object
+              properties:
+                beta:
+                  type: string
+        arrayChoice:
+          type: array
+          items:
+            oneOf:
+              - type: string
+              - type: number
+        map:
+          type: object
+          additionalProperties:
+            type: string
+        external:
+          $ref: "./external-schema.yml#/External"
+        constrained:
+          type: string
+          nullable: true
+          readOnly: true
+          deprecated: true
+          not:
+            enum:
+              - forbidden
+        secret:
+          type: string
+          writeOnly: true
+        discriminated:
+          oneOf:
+            - $ref: "#/components/schemas/Cat"
+            - $ref: "#/components/schemas/Dog"
+          discriminator:
+            propertyName: kind
+        recursive:
+          $ref: "#/components/schemas/Fixture"
+    Cat:
+      type: object
+      properties:
+        kind:
+          type: string
+        hunts:
+          type: boolean
+    Dog:
+      type: object
+      properties:
+        kind:
+          type: string
+        bark:
+          type: boolean

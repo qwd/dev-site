@@ -1,0 +1,21 @@
+{
+  "name": "qweather-dev-site",
+  "private": true,
+  "scripts": {
+    "build": "npm run openapi:generate && hugo --cleanDestinationDir",
+    "start": "npm run openapi:generate && concurrently --kill-others --names openapi,hugo \"npm:openapi:watch\" \"hugo server --disableFastRender\"",
+    "dev": "npm start",
+    "openapi:generate": "npm run openapi:generate-docs",
+    "openapi:generate-docs": "node scripts/openapi/generate-parsed-openapi.mjs",
+    "openapi:watch": "node scripts/openapi/watch.mjs",
+    "openapi:test": "node scripts/openapi/test-compatibility.mjs"
+  },
+  "dependencies": {
+    "@apidevtools/swagger-parser": "^12.1.0",
+    "yaml": "^2.9.0"
+  },
+  "devDependencies": {
+    "chokidar": "^4.0.3",
+    "concurrently": "^9.2.1"
+  }
+}

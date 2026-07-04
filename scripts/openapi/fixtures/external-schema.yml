@@ -1,0 +1,7 @@
+External:
+  type: object
+  properties:
+    externalFirst:
+      type: string
+    externalSecond:
+      type: string
