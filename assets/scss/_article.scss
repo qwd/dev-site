@@ -292,13 +292,13 @@
       }
 
       // reset internal site link style
-      // a[href*="qweather.com"]::after,
-      // a[href*="hecdn.net"]::after {
-      //   content: none;
-      //   font-family: $font-family;
-      //   margin-right: 0;
-      //   margin-left: 0;
-      // }
+      a[href^="https://dev.qweather.com/"]::after,
+      a[href^="http://dev.qweather.com/"]::after,
+      a[href^="//dev.qweather.com/"]::after {
+        content: none;
+        margin-right: 0;
+        margin-left: 0;
+      }
     }
   }
   
