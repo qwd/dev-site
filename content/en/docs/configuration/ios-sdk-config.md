@@ -3,7 +3,7 @@ title: Set up iOS SDK
 translationKey: config-ios
 ---
 
-This document will introduce how to configure the iOS SDK for QWeather API.
+This document will introduce how to configure the iOS SDK for QWeather API. For more SDK development documentation, please [visit the SDK repository](https://github.com/qwd/qweather-ios-sdk/blob/main/README.md).
 
 <strong>OS Requirement:</strong>
 

@@ -3,7 +3,7 @@ title: Set up Android SDK
 translationKey: config-android
 ---
 
-This document will introduce how to configure the Android SDK for QWeather API.
+This document will introduce how to configure the Android SDK for QWeather API. For more SDK development documentation, please [visit the SDK repository](https://github.com/qwd/qweather-android-sdk/blob/main/README.md).
 
 <strong>OS requirement:</strong>
 

@@ -3,7 +3,7 @@ title: Android SDK配置
 translationKey: config-android
 ---
 
-这篇文档将介绍如何配置和风天气开发服务中的Android SDK。
+这篇文档将介绍如何配置和风天气开发者服务的Android SDK，具体的开发文档请[前往 SDK 仓库查看](https://github.com/qwd/qweather-android-sdk/blob/main/README-zh.md)。
 
 > <strong>隐私声明：</strong>和风天气Android SDK<strong>不需要电话、位置、设备唯一标识符等任何特殊权限</strong>，我们不会也无法通过本SDK收集用户隐私信息。
 
