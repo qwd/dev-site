@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "chokidar": "^4.0.3",
-    "concurrently": "^9.2.1"
+    "concurrently": "^9.2.3"
   }
 }
