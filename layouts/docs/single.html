@@ -1,21 +1,21 @@
 {{ define "main" }}
   {{ partial "docs/breadcrumbs.html" . }}
-  <div class="main-content container-fluid d-flex">
-    <aside class="docs-nav small pt-5 pb-3 pr-3 mr-4 d-none d-md-block">
+  <div class="main-content tw:w-full tw:flex tw:px-6">
+    <aside class="docs-nav small tw:hidden tw:md:block tw:shrink-0 tw:pt-12 tw:pb-6 tw:pr-6 tw:mr-8">
       {{ partial "docs/nav.html" . }}
     </aside>
-    <article class="article pt-4 width100">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-lg-10 py-3 content-border border-r10" style="width: 0;">
-            <section class="article-headline mb-5 pb-3 border-bottom">
-              <h1 class="mr-2 d-inline-block">{{ .Title }}</h1>
+    <article class="article tw:pt-8 tw:flex-1 tw:min-w-0">
+      <div class="tw:mx-auto tw:max-w-[1140px]">
+        <div class="tw:flex tw:flex-wrap">
+          <div class="tw:w-full tw:lg:w-10/12 tw:px-6 tw:py-6 tw:min-w-0 content-border border-r10">
+            <section class="article-headline tw:mb-12 tw:pb-6 border-bottom">
+              <h1 class="tw:mr-4 tw:inline-block">{{ .Title }}</h1>
             </section>
             <section class="doc-content">{{ .Content }}</section>
           </div>
           {{ if and (ne .Params.toc false) (ne .Type "docs-overview") }}
-          <aside class="docs-toc small col-lg-2 d-none d-lg-block">
-            <h4 class="mb-2">{{ T "tocnav" }}</h4>
+          <aside class="docs-toc small tw:lg:w-2/12 tw:px-6 tw:hidden tw:lg:block">
+            <h4 class="tw:mb-4">{{ T "tocnav" }}</h4>
             {{ .TableOfContents }}
           </aside>
           {{ end }}

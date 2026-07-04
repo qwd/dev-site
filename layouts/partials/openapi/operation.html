@@ -14,7 +14,7 @@
 {{- with $operation.description }}<p>{{ . | markdownify }}</p>{{ end }}
 
 <h2 id="endpoint">{{ T "endpoint" }}<a class="anchor-link" href="#endpoint" aria-label="{{ T "permalink" }}">#</a></h2>
-<div class="request-url mb-3"><pre><code>{{ $operation.method }} {{ $operation.endpoint }}</code></pre></div>
+<div class="request-url tw:mb-6"><pre><code>{{ $operation.method }} {{ $operation.endpoint }}</code></pre></div>
 
 <h2 id="parameters">{{ T "params" }}<a class="anchor-link" href="#parameters" aria-label="{{ T "permalink" }}">#</a></h2>
 {{- range $location := slice "path" "query" }}
@@ -23,9 +23,9 @@
     <h4>{{ T (cond (eq $location "path") "path-params" "query-params") }}</h4>
     <div class="request-param"><ul>
       {{- range $parameters }}
-        <li class="mb-4">
-          <code class="mr-1">{{ .name }}</code>
-          {{- if .required }} <span class="mr-1 italic small text-bold">({{ T "rqd" }})</span>{{ end }}
+        <li class="tw:mb-8">
+          <code class="tw:mr-2">{{ .name }}</code>
+          {{- if .required }} <span class="tw:mr-2 italic small text-bold">({{ T "rqd" }})</span>{{ end }}
           {{ .description | markdownify }}
         </li>
       {{- end }}
@@ -40,7 +40,7 @@
   {{/* Swagger UI anchors use the first OpenAPI tag plus operationId. */}}
   {{- $tag := index $operation.tags 0 -}}
   {{- $explorerURL := printf "%s#/%s/%s" (relLangURL "api-explore/") $tag $operation.operationId -}}
-  <p><a class="btn-link btn-link-md btn-link-blue d-inline-block" href="{{ $explorerURL }}" target="_blank" rel="noopener noreferrer">{{ T "try-it" }}</a></p>
+  <p><a class="btn-link btn-link-md btn-link-blue tw:inline-block" href="{{ $explorerURL }}" target="_blank" rel="noopener noreferrer">{{ T "try-it" }}</a></p>
 {{- end }}
 
 <h2 id="response">{{ T "response" }}<a class="anchor-link" href="#response" aria-label="{{ T "permalink" }}">#</a></h2>

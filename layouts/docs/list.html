@@ -1,18 +1,18 @@
 {{ define "main" }}
   {{- $docsNav := index hugo.Data "docs-nav" -}}
   {{ if eq .TranslationKey "docs-home" }}
-  <section class="masthead docs"><div class="container"><h1>{{ .Title }}</h1><p class="text-center">{{ .Description }}</p></div></section>
-  <main class="docs-home container-lg pb-5">
-    <section class="row refer-content mb-4">
-      <div class="col-12 col-md-12 col-lg-5 mb-4 mb-lg-0">
-        <div class="start card border-r10 p-4">
+  <section class="masthead docs"><div class="tw:mx-auto tw:max-w-[1140px] tw:px-6"><h1>{{ .Title }}</h1><p class="text-center">{{ .Description }}</p></div></section>
+  <main class="docs-home tw:mx-auto tw:max-w-[1140px] tw:px-6 tw:pb-12">
+    <section class="tw:flex tw:flex-wrap tw:-mx-6 tw:mb-8 refer-content">
+      <div class="tw:w-full tw:lg:w-5/12 tw:px-6 tw:mb-8 tw:lg:mb-0">
+        <div class="start card border-r10 tw:p-8">
           {{- $start := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" "start-overview") -}}
           {{- $overview := partial "docs/page-by-key.html" (dict "site" $.Site "key" $start.key) }}
-          {{- with $overview }}<h2 class="color-white mb-4"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
+          {{- with $overview }}<h2 class="color-white tw:mb-8"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
           <ul class="clear-list">
-            {{- range $start.subitems }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+            {{- range $start.subitems }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="tw:mb-4"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
             {{- $finance := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" "finance-overview") -}}
-            {{- range $finance.subitems }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="mb-2"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+            {{- range $finance.subitems }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="tw:mb-4"><a class="light-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
           </ul>
         </div>
       </div>
@@ -20,35 +20,35 @@
         (dict "overview" "res-overview" "class" "resource")
         (dict "overview" "bp-overview" "class" "bp")
       }}
-      <div class="col-12 col-md-6 col-lg mb-4 mb-md-0">
-        <div class="{{ .class }} border-r10 p-4">
+      <div class="tw:w-full tw:md:w-1/2 tw:lg:flex-1 tw:px-6 tw:mb-8 tw:md:mb-0">
+        <div class="{{ .class }} border-r10 tw:p-8">
           {{- $node := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" .overview) -}}
           {{- $overview := partial "docs/page-by-key.html" (dict "site" $.Site "key" $node.key) }}
-          {{- with $overview }}<h2 class="mb-4"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
+          {{- with $overview }}<h2 class="tw:mb-8"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
             <ul class="clear-list">
-              {{- range $node.subitems }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="mb-2"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+              {{- range $node.subitems }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}{{ with $page }}<li class="tw:mb-4"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
             </ul>
         </div>
       </div>
       {{- end }}
     </section>
-    <section class="row dev-docs">
+    <section class="tw:flex tw:flex-wrap tw:-mx-6 dev-docs">
       {{- $api := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" "0-api-overview") -}}
       {{- range $api.subitems }}
           {{- $section := . -}}
           {{- $overview := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) -}}
           {{- with $overview }}
-          <div class="col-12 mb-4">
-            <div class="data border-r10 p-3">
-              <h2 class="mb-4">{{ .Title }}</h2>
-              <p class="mb-4">{{ .Description }}</p>
-              <div class="row">
+          <div class="tw:w-full tw:px-6 tw:mb-8">
+            <div class="data border-r10 tw:p-6">
+              <h2 class="tw:mb-8">{{ .Title }}</h2>
+              <p class="tw:mb-8">{{ .Description }}</p>
+              <div class="tw:flex tw:flex-wrap tw:-mx-6">
                 {{- range $section.subitems }}
                   {{- $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) -}}
                   {{- with $page }}
-                <div class="col-12 col-md-auto mb-3">
-                  <h4 class="mb-2">{{ .Title }}</h4>
-                  <ul class="clear-list d-flex"><li class="mr-2"><a class="border-blue-link d-inline-block px-2 border-r10 no-underline" href="{{ .RelPermalink }}">API</a></li></ul>
+                <div class="tw:w-full tw:md:w-auto tw:px-6 tw:mb-6">
+                  <h4 class="tw:mb-4">{{ .Title }}</h4>
+                  <ul class="clear-list tw:flex"><li class="tw:mr-4"><a class="border-blue-link tw:inline-block tw:px-4 border-r10 no-underline" href="{{ .RelPermalink }}">API</a></li></ul>
                 </div>
                   {{- end }}
                 {{- end }}
@@ -58,7 +58,7 @@
           {{- end }}
       {{- end }}
     </section>
-    <section class="row help-lib">
+    <section class="tw:flex tw:flex-wrap tw:-mx-6 help-lib">
       {{- range slice
         (dict "key" "showcase-home" "class" "lib")
         (dict "key" "faq" "class" "help")
@@ -66,9 +66,9 @@
         {{- $class := .class -}}
         {{- $card := index (where $.Site.RegularPages "TranslationKey" .key) 0 -}}
         {{- with $card }}
-      <div class="col-12 col-md-6 mb-4 mb-md-0">
-        <a class="d-block light-link no-underline {{ $class }} border-r10 p-4" href="{{ .RelPermalink }}">
-          <h2 class="color-white mb-4">{{ .Title }}</h2>
+      <div class="tw:w-full tw:md:w-1/2 tw:px-6 tw:mb-8 tw:md:mb-0">
+        <a class="tw:block light-link no-underline {{ $class }} border-r10 tw:p-8" href="{{ .RelPermalink }}">
+          <h2 class="color-white tw:mb-8">{{ .Title }}</h2>
           <p>{{ .Description }}</p>
           {{- if eq .TranslationKey "faq" }}
           <ul>
@@ -83,16 +83,16 @@
   </main>
   {{ else }}
   {{ partial "docs/breadcrumbs.html" . }}
-  <div class="main-content container-fluid d-flex">
-    <aside class="docs-nav small pt-5 pb-3 pr-3 mr-4 d-none d-md-block">
+  <div class="main-content tw:w-full tw:flex tw:px-6">
+    <aside class="docs-nav small tw:hidden tw:md:block tw:shrink-0 tw:pt-12 tw:pb-6 tw:pr-6 tw:mr-8">
       {{ partial "docs/nav.html" . }}
     </aside>
-    <article class="article pt-4 width100">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-lg-10 py-3 content-border border-r10" style="width: 0;">
-            <section class="article-headline mb-5 pb-3 border-bottom">
-              <h1 class="mr-2 d-inline-block">{{ .Title }}</h1>
+    <article class="article tw:pt-8 tw:flex-1 tw:min-w-0">
+      <div class="tw:mx-auto tw:max-w-[1140px]">
+        <div class="tw:flex tw:flex-wrap">
+          <div class="tw:w-full tw:lg:w-10/12 tw:px-6 tw:py-6 tw:min-w-0 content-border border-r10">
+            <section class="article-headline tw:mb-12 tw:pb-6 border-bottom">
+              <h1 class="tw:mr-4 tw:inline-block">{{ .Title }}</h1>
             </section>
             <section class="doc-content">{{ .Content }}</section>
           </div>

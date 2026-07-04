@@ -1,18 +1,5 @@
-// more normalize
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
+// more normalize — margin reset for elements with browser default margins
+figure {
   margin: 0;
 }
 
