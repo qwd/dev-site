@@ -360,21 +360,21 @@ blockquote {
   }
 }
 
-// link
-a {
-  color: $color-link;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-    color: $color-link;
-  }
-
-  &:active,
-  &:focus {
-    color: $color-link;
-  }
-}
+// link — moved to @layer base in main.css
+// a {
+//   color: $color-link;
+//   text-decoration: none;
+//
+//   &:hover {
+//     text-decoration: underline;
+//     color: $color-link;
+//   }
+//
+//   &:active,
+//   &:focus {
+//     color: $color-link;
+//   }
+// }
 
 .light-link {
   color: $color-fa;

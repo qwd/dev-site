@@ -2,7 +2,7 @@
 <div class="upgrade-browser tw:mx-auto tw:my-0 tw:py-12 tw:px-6 tw:max-w-[680px]">
   <h1 class="tw:mb-8">{{ .Title }}</h1>
   {{ .Content }}
-  <ul class="clear-list tw:my-6">
+  <ul class="tw:list-none tw:p-0 tw:m-0 tw:my-6">
     {{ range slice
       (dict "name" "Safari (macOS only)" "url" "https://www.apple.com/safari/")
       (dict "name" "Firefox" "url" "https://www.mozilla.org/firefox/")

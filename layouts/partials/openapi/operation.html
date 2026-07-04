@@ -25,7 +25,7 @@
       {{- range $parameters }}
         <li class="tw:mb-8">
           <code class="tw:mr-2">{{ .name }}</code>
-          {{- if .required }} <span class="tw:mr-2 italic small text-bold">({{ T "rqd" }})</span>{{ end }}
+          {{- if .required }} <span class="tw:mr-2 italic small tw:font-bold">({{ T "rqd" }})</span>{{ end }}
           {{ .description | markdownify }}
         </li>
       {{- end }}
@@ -40,7 +40,7 @@
   {{/* Swagger UI anchors use the first OpenAPI tag plus operationId. */}}
   {{- $tag := index $operation.tags 0 -}}
   {{- $explorerURL := printf "%s#/%s/%s" (relLangURL "api-explore/") $tag $operation.operationId -}}
-  <p><a class="btn-link btn-link-md btn-link-blue tw:inline-block" href="{{ $explorerURL }}" target="_blank" rel="noopener noreferrer">{{ T "try-it" }}</a></p>
+  <p><a class="tw:inline-block tw:rounded-btn tw:bg-qw-link tw:text-white tw:text-[1.4rem] tw:py-[8px] tw:px-[12px] tw:hover:no-underline" href="{{ $explorerURL }}" target="_blank" rel="noopener noreferrer">{{ T "try-it" }}</a></p>
 {{- end }}
 
 <h2 id="response">{{ T "response" }}<a class="anchor-link" href="#response" aria-label="{{ T "permalink" }}">#</a></h2>

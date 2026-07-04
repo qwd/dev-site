@@ -5,22 +5,22 @@
   {{- $overview := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
   {{- with $overview }}
   <div class="nav-section start tw:mb-4 tw:pb-4">
-    <h4 class="tw:mb-4"><a class="dark-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
-    <ul class="clear-list">
+    <h4 class="tw:mb-4"><a class="tw:text-qw-heading tw:hover:text-black" href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+    <ul class="tw:list-none tw:p-0 tw:m-0">
       {{- range $section.subitems }}
         {{- $item := . -}}
         {{- $page := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
         {{- with $page }}
         <li class="tw:mb-2{{ if eq .RelPermalink $current.RelPermalink }} active{{ end }}">
-          <a class="grey-link tw:px-4" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <a class="tw:text-qw-muted tw:hover:text-qw-text tw:px-4" href="{{ .RelPermalink }}">{{ .Title }}</a>
           {{- if and $item.subitems (strings.HasPrefix $current.RelPermalink .RelPermalink) }}
           <div class="sub-nav tw:ml-4 tw:mt-2 tw:pl-4">
-            <ul class="clear-list">
+            <ul class="tw:list-none tw:p-0 tw:m-0">
               {{- range $item.subitems }}
                 {{- $subpage := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
                 {{- with $subpage }}
                 <li class="tw:mb-2{{ if eq .RelPermalink $current.RelPermalink }} active{{ end }}">
-                  <a class="dark-link tw:px-4" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  <a class="tw:text-qw-heading tw:hover:text-black tw:px-4" href="{{ .RelPermalink }}">{{ .Title }}</a>
                 </li>
                 {{- end }}
               {{- end }}

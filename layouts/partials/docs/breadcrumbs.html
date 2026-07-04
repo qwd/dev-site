@@ -1,14 +1,14 @@
-<section class="doc-bc small tw:hidden tw:sm:block sticky-top">
+<section class="doc-bc small tw:hidden tw:sm:block tw:sticky tw:top-0 tw:z-10">
   <div class="tw:w-full tw:px-6">
-    <ul class="clear-list tw:flex">
+    <ul class="tw:list-none tw:p-0 tw:m-0 tw:flex">
       {{ range where .Ancestors.Reverse "IsHome" false }}
-      <li class="tw:py-4 tw:mr-2"><a class="tw:inline-block no-underline text-lighter" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      <li class="tw:py-4 tw:mr-2"><a class="tw:inline-block tw:hover:no-underline tw:[font-weight:lighter]" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}
-      <li class="tw:py-4 tw:mr-2 active"><a class="tw:inline-block no-underline text-lighter" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      <li class="tw:py-4 tw:mr-2 active"><a class="tw:inline-block tw:hover:no-underline tw:[font-weight:lighter]" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     </ul>
   </div>
 </section>
-<section class="doc-bc-mobile sticky-top tw:block tw:sm:hidden">
+<section class="doc-bc-mobile tw:sticky tw:top-0 tw:z-10 tw:block tw:sm:hidden">
   <div class="tw:w-full tw:px-6">
     <select onchange="if (this.value) window.location.href=this.value">
       <option value="">{{ T "docs-category" }}</option>

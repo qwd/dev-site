@@ -1,10 +1,25 @@
-@layer theme, components, utilities;
+@layer base, theme, components, utilities;
 
 @import "tailwindcss/theme.css" layer(theme) prefix(tw);
 @import "tailwindcss/utilities.css" layer(utilities) prefix(tw);
 
 @source "../../layouts";
 @source "../../content";
+
+@layer base {
+  a {
+    color: var(--tw-color-qw-link);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: var(--tw-color-qw-link);
+  }
+  a:active,
+  a:focus {
+    color: var(--tw-color-qw-link);
+  }
+}
 
 @theme {
   /* Brand colors */
