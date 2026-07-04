@@ -1,0 +1,46 @@
+@layer theme, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme) prefix(tw);
+@import "tailwindcss/utilities.css" layer(utilities) prefix(tw);
+
+@source "../../layouts";
+@source "../../content";
+
+@theme {
+  /* Brand colors */
+  --color-qw-text: #333;
+  --color-qw-heading: #231815;
+  --color-qw-muted: #696969;
+  --color-qw-muted-2: #767676;
+  --color-qw-link: #0D7FEF;
+  --color-qw-link-dark: #004085;
+  --color-qw-info-bg: #f0fcff;
+  --color-qw-surface-muted: #fafafa;
+  --color-qw-purple: #855CF8;
+  --color-qw-pink: #FDACC9;
+  --color-qw-orange: #F7931A;
+  --color-qw-success: #20894D;
+  --color-qw-danger: #ff2525;
+
+  /* Font families */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Font sizes — calibrated for html { font-size: 10px } from old SCSS */
+  --text-xs: 1.2rem;
+  --text-sm: 1.4rem;
+  --text-base: 1.6rem;
+  --text-lg: 2rem;
+  --text-xl: 2rem;
+  --text-2xl: 2.4rem;
+  --text-3xl: 3.2rem;
+  --text-4xl: 4rem;
+
+  /* Border radius */
+  --radius-card: 10px;
+  --radius-btn: 5px;
+  --radius-code: 4px;
+
+  /* Letter spacing */
+  --tracking-body: 0.2px;
+}

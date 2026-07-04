@@ -2,8 +2,9 @@
   "name": "qweather-dev-site",
   "private": true,
   "scripts": {
-    "build": "npm run openapi:generate && hugo --cleanDestinationDir",
-    "start": "npm run openapi:generate && concurrently --kill-others --names openapi,hugo \"npm:openapi:watch\" \"hugo server --disableFastRender\"",
+    "build:css": "tailwindcss -i assets/css/main.css -o static/assets/css/tailwind.css --minify",
+    "build": "npm run openapi:generate && npm run build:css && hugo --cleanDestinationDir",
+    "start": "npm run openapi:generate && concurrently --kill-others --names openapi,tailwind,hugo \"npm:openapi:watch\" \"tailwindcss -i assets/css/main.css -o static/assets/css/tailwind.css --watch\" \"hugo server --disableFastRender\"",
     "dev": "npm start",
     "openapi:generate": "npm run openapi:generate-docs",
     "openapi:generate-docs": "node scripts/openapi/generate-parsed-openapi.mjs",
@@ -15,7 +16,9 @@
     "yaml": "^2.9.0"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.3.2",
     "chokidar": "^4.0.3",
-    "concurrently": "^9.2.3"
+    "concurrently": "^9.2.3",
+    "tailwindcss": "^4.3.2"
   }
 }

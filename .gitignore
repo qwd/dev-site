@@ -44,6 +44,7 @@ node_modules/
 /resources/
 /public/
 .hugo_build.lock
+static/assets/css/tailwind.css
 
 # Misc
 *.tmp
