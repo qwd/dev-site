@@ -2,7 +2,7 @@
   {{- $docsNav := index hugo.Data "docs-nav" -}}
   {{ if eq .TranslationKey "docs-home" }}
   <section class="tw:mb-[30px] tw:pt-[30px] tw:pb-5 tw:text-center tw:bg-[#0B2F94] tw:bg-[linear-gradient(60deg,#0D7FEF,#0456A6,#550DEF)]"><div class="qw-container"><h1 class="tw:text-white tw:mb-[30px] tw:tracking-[1px]">{{ .Title }}</h1><p class="tw:text-center tw:text-[#ebebeb]">{{ .Description }}</p></div></section>
-  <main class="docs-home qw-container tw:pb-[30px]">
+  <div class="qw-container tw:pb-[30px]">
     <section class="tw:flex tw:flex-wrap tw:-mx-[15px] tw:mb-5 refer-content">
       <div class="tw:w-full tw:lg:w-5/12 tw:px-[15px] tw:mb-5 tw:lg:mb-0">
         <div class="start card tw:bg-qw-link tw:min-h-[330px] tw:max-[991px]:min-h-auto tw:rounded-[10px] tw:p-5">
@@ -80,7 +80,7 @@
         {{- end }}
       {{- end }}
     </section>
-  </main>
+  </div>
   {{ else }}
   {{ partial "docs/breadcrumbs.html" . }}
   <div class="main-content tw:w-full tw:flex tw:px-[15px] tw:pb-10">

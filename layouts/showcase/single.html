@@ -1,6 +1,6 @@
 {{ define "main" }}
 <section class="tw:mb-[30px] tw:pt-[30px] tw:pb-5 tw:text-center tw:bg-[#5C27F1] tw:bg-[linear-gradient(60deg,#855CF8,#8520EA,#5D24FD)]"><div class="qw-container"><h1 class="tw:text-white tw:mb-[30px] tw:tracking-[1px]">{{ .Title }}</h1><p class="tw:text-center tw:text-[#ebebeb]">{{ .Description }}</p></div></section>
-<main class="main-content qw-container-narrow tw:pb-10"><div class="article"><section class="showcase-content tw:border tw:border-qw-purple tw:mb-[30px] tw:p-[30px] tw:rounded-[10px]">
+<div class="main-content qw-container-narrow tw:pb-10"><div class="article"><section class="showcase-content tw:border tw:border-qw-purple tw:mb-[30px] tw:p-[30px] tw:rounded-[10px]">
   <div class="brief tw:mb-[30px]"><p>🙏❤️👍</p><p>{{ T "si-biref" | safeHTML }}</p><p class="tw:italic tw:text-sm tw:underline tw:text-qw-muted">{{ T "si-note" }}</p></div>
   {{ range sort hugo.Data.showcase "language" }}
   <div class="works-list tw:mb-[30px]">
@@ -17,5 +17,5 @@
     {{ end }}
   </div>
   {{ end }}
-</section></div></main>
+</section></div></div>
 {{ end }}

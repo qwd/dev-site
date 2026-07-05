@@ -1,6 +1,6 @@
 {{ define "main" }}
 <section class="tw:mb-[30px] tw:pt-[30px] tw:pb-5 tw:text-center tw:bg-[#c2eafd] tw:bg-[linear-gradient(60deg,#FFE8EA,#FFF6E8,#E8EEFF)]"><div class="qw-container"><h1 class="tw:text-black tw:mb-[30px] tw:tracking-[1px]">{{ .Title }}</h1><p class="tw:text-center tw:text-qw-text">{{ T "pi-desc" }}</p></div></section>
-<main class="price-homepage qw-container tw:pb-[30px]">
+<div class="qw-container tw:pb-[30px]">
   <section class="payment-system tw:flex tw:flex-wrap tw:-mx-[15px] tw:mb-[30px]">
     {{ range slice
       (dict "class" "tw:border-qw-link" "image" "pi-payg-cart.png" "title" "pi-payg" "desc" "pi-payg-desc" "more" "pi-payg-more" "url" "docs/finance/billing-and-payment/")
@@ -45,5 +45,5 @@
     }}<li class="tw:pb-2.5 tw:text-xl"><a class="tw:text-qw-heading tw:hover:text-black" href="{{ relLangURL .link }}">{{ T .title }}</a></li>{{ end }}
   </ul></section>
   <section class="register tw:text-center"><a href="https://id.qweather.com/#/register?redirect=https://console.qweather.com{{ if eq .Language.Lang "en" }}&lang=en{{ end }}" class="tw:text-qw-link tw:bg-white tw:border tw:border-qw-link tw:hover:bg-qw-link tw:hover:text-white tw:hover:no-underline tw:inline-block tw:px-[30px] tw:py-[15px] tw:rounded-[10px] tw:text-xl">{{ T "hp-regnow" }}</a></section>
-</main>
+</div>
 {{ end }}

@@ -1,0 +1,15 @@
+.swagger-ui {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.swagger-ui code,
+.swagger-ui pre {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.swagger-ui a {
+  color: #0D7FEF;
+  text-decoration: none;
+}
+.swagger-ui a:hover {
+  color: #0D7FEF;
+  text-decoration: underline;
+}
