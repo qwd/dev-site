@@ -4,7 +4,7 @@
   {{- $section := . -}}
   {{- $overview := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
   {{- with $overview }}
-  <div class="nav-section start mb-2.5 pb-2.5 border-b border-[#dfdfdf] last:border-b-0">
+  <div class="nav-section start mb-2.5 pb-2.5 border-b border-qw-border-mid last:border-b-0">
     <h4 class="mb-2.5"><a class="text-qw-heading hover:text-black" href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
     <ul class="list-none p-0 m-0">
       {{- range $section.subitems }}

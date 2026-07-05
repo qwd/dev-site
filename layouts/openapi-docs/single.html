@@ -2,14 +2,14 @@
   {{/* Reuse the existing docs page shell so generated pages match handwritten docs. */}}
   {{ partial "docs/breadcrumbs.html" . }}
   <div class="main-content w-full flex px-[15px] pb-10">
-    <aside class="docs-nav min-w-[180px] border-r border-[#dfdfdf] text-sm hidden md:block shrink-0 pt-[30px] pb-[15px] pr-[15px] mr-5">
+    <aside class="docs-nav min-w-[180px] border-r border-qw-border-mid text-sm hidden md:block shrink-0 pt-[30px] pb-[15px] pr-[15px] mr-5">
       {{ partial "docs/nav.html" . }}
     </aside>
     <article class="article pt-5 flex-1 min-w-0">
       <div class="qw-container">
         <div class="flex flex-wrap -mx-[15px]">
-          <div class="w-full lg:w-10/12 px-[15px] py-[15px] min-w-0 border border-[#dfdfdf] rounded-[10px]">
-            <section class="article-headline leading-none mb-[30px] pb-[15px] border-b border-[#ebebeb]">
+          <div class="w-full lg:w-10/12 px-[15px] py-[15px] min-w-0 border border-qw-border-mid rounded-[10px]">
+            <section class="article-headline leading-none mb-[30px] pb-[15px] border-b border-qw-border-light">
               <h1 class="mr-2.5 inline-block">{{ .Title }}</h1>
             </section>
             {{/* Render the Node-normalized intermediate model; Hugo does not parse OpenAPI here. */}}

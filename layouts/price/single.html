@@ -21,7 +21,7 @@
       {{ range $index, $group := hugo.Data.price }}
       <div class="w-1/2 md:w-1/3 px-[15px] mb-5"><a class="block service-card border border-qw-orange min-h-[220px] max-[595px]:min-h-[100px] p-[15px] rounded-[10px] hover:no-underline text-qw-text hover:bg-[#fcefdf] hover:text-qw-text focus:bg-[#fcefdf] focus:text-qw-text active:bg-[#fcefdf] active:text-qw-text" href="{{ relLangURL "docs/finance/pricing/" }}#{{ $group.data.en | urlize }}">
         <h4 class="mb-[15px]">{{ index $group.data $.Language.Lang }}</h4>
-        <div class="price-content{{ add $index 1 }} hidden sm:block"><ul class="list-none p-0 m-0"{{ if eq $index 0 }} style="columns: 2;"{{ end }}>
+        <div class="price-content{{ add $index 1 }} hidden sm:block"><ul class="list-none p-0 m-0{{ if eq $index 0 }} columns-2{{ end }}">
           {{ range $group.incl }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .) }}{{ with $page }}<li class="text-sm mb-[5px]">{{ .Title }}</li>{{ end }}{{ end }}
         </ul></div>
       </a></div>

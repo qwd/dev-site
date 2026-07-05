@@ -13,7 +13,7 @@
 </section>
 <section class="doc-bc-mobile sticky top-0 z-10 block sm:hidden">
   <div class="w-full px-[15px]">
-      <select class="min-h-[30px] text-[#ebebeb] bg-[rgba(17,17,17,0.85)] w-full p-2.5 mt-2.5 rounded-[10px] leading-5" onchange="if (this.value) window.location.href=this.value">
+      <select class="min-h-[30px] text-qw-border-light bg-[rgba(17,17,17,0.85)] w-full p-2.5 mt-2.5 rounded-[10px] leading-5" onchange="if (this.value) window.location.href=this.value">
       <option value="">{{ T "docs-category" }}</option>
       {{- $current := . -}}
       {{- $docsNav := index hugo.Data "docs-nav" -}}

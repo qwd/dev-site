@@ -1,10 +1,10 @@
 {{ define "main" }}
-<section class="mb-[30px] pt-[30px] pb-5 text-center bg-[#5C27F1] bg-[linear-gradient(60deg,#855CF8,#8520EA,#5D24FD)]"><div class="qw-container"><h1 class="text-white mb-[30px] tracking-[1px]">{{ .Title }}</h1><p class="text-center text-[#ebebeb]">{{ .Description }}</p></div></section>
+<section class="mb-[30px] pt-[30px] pb-5 text-center bg-[#5C27F1] bg-[linear-gradient(60deg,#855CF8,#8520EA,#5D24FD)]"><div class="qw-container"><h1 class="text-white mb-[30px] tracking-[1px]">{{ .Title }}</h1><p class="text-center text-qw-border-light">{{ .Description }}</p></div></section>
 <div class="main-content qw-container-narrow pb-10"><div class="article"><section class="showcase-content border border-qw-purple mb-[30px] p-[30px] rounded-[10px]">
   <div class="brief mb-[30px]"><p>🙏❤️👍</p><p>{{ T "si-biref" | safeHTML }}</p><p class="italic text-sm underline text-qw-muted">{{ T "si-note" }}</p></div>
   {{ range sort hugo.Data.showcase "language" }}
   <div class="works-list mb-[30px]">
-    <h2 class="pb-[15px] mb-[15px] border-b border-[#ebebeb]">{{ .language }}</h2>
+    <h2 class="pb-[15px] mb-[15px] border-b border-qw-border-light">{{ .language }}</h2>
     {{ range sort .works "name" }}
     <div class="works-item ml-[15px] mb-5">
       <a class="inline-block mb-2.5 text-lg" href="{{ .code }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>

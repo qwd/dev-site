@@ -35,10 +35,10 @@
     <div class="qw-container">
       <div class="flex flex-wrap">
         <div class="w-full md:w-auto mb-[5px] md:mb-0">
-          <ul class="list-none p-0 m-0">
-            <li class="mr-2.5 float-left">&copy; {{ now.Year }} <a class="text-qw-surface-muted hover:text-white" href="https://www.qweather.com/en/" target="_blank" rel="noopener noreferrer">QWeather</a></li>
+          <ul class="flex list-none p-0 m-0">
+            <li class="mr-2.5">&copy; {{ now.Year }} <a class="text-qw-surface-muted hover:text-white" href="https://www.qweather.com/en/" target="_blank" rel="noopener noreferrer">QWeather</a></li>
             {{ range $nav.footer.terms }}
-            <li class="mr-2.5 float-left"><a class="text-qw-surface-muted hover:text-white" href="{{ index .url $.Language.Lang }}" target="_blank" rel="noopener noreferrer">{{ index .title $.Language.Lang }}</a></li>
+            <li class="mr-2.5"><a class="text-qw-surface-muted hover:text-white" href="{{ index .url $.Language.Lang }}" target="_blank" rel="noopener noreferrer">{{ index .title $.Language.Lang }}</a></li>
             {{ end }}
           </ul>
         </div>
