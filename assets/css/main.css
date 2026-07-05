@@ -7,6 +7,17 @@
 @source "../../content";
 
 @layer base {
+  html {
+    box-sizing: border-box;
+  }
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+
+  figure {
+    margin: 0;
+  }
+
   a {
     color: var(--tw-color-qw-link);
     text-decoration: none;
@@ -23,7 +34,107 @@
 
   h1, h2, h3, h4, h5 {
     color: var(--tw-color-qw-heading);
+    font-weight: bold;
     margin: 0;
+  }
+  h1 { font-size: 3.2rem; }
+  h2 { font-size: 2.4rem; }
+  h3 { font-size: 2rem; }
+  h4 { font-size: 1.6rem; }
+  h5 { font-size: 1.5rem; }
+
+  small {
+    font-size: 87.5%;
+  }
+
+  p {
+    font-size: 1.6rem;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    margin: 0 0 10px;
+  }
+
+  ul li, ol li {
+    line-height: 1.5;
+  }
+
+  code, pre {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  code {
+    background-color: #ecedf2;
+    padding: 1px 4px;
+    color: #333;
+    margin: 0 .1rem;
+    font-size: 1.4rem;
+    border-radius: 4px;
+  }
+
+  pre {
+    display: block;
+    padding: 15px;
+    margin: 0 0 10px;
+    background-color: #f3f4f5;
+    border-radius: 8px;
+    overflow: auto;
+  }
+  pre code {
+    padding: 0;
+    background-color: inherit;
+  }
+
+  blockquote {
+    padding: 15px;
+    margin: 20px 0;
+    color: #696969;
+    background-color: #f0fcff;
+    border-radius: 8px;
+    border: 1px solid #abf0ff;
+  }
+  blockquote p:last-child,
+  blockquote ul:last-child,
+  blockquote ol:last-child {
+    margin-bottom: 0;
+  }
+  blockquote.bqwarning {
+    color: #696969;
+    background-color: #feffec;
+    border-color: #ffde7e;
+  }
+  blockquote.bqdanger {
+    color: #696969;
+    background-color: #fff7fd;
+    border-color: #ffc4e9;
+  }
+  blockquote.bqcode {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    background-color: #f3f4f5;
+    border: none;
+  }
+
+  table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+    border-collapse: collapse;
+  }
+  table thead {
+    background-color: #e9ecef;
+  }
+  table thead th {
+    padding: 5px 10px;
+    line-height: 20px;
+    vertical-align: top;
+    text-align: left;
+  }
+  table tbody td {
+    padding: 5px 10px;
+    vertical-align: center;
+    line-height: 20px;
+  }
+  table tbody tr {
+    border-bottom: 1px solid #dee2e6;
   }
 }
 
