@@ -116,7 +116,6 @@
 }
 
 @theme {
-  --spacing: 2.5px;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --color-qw-text: #2B2B2C;
   --color-qw-heading: #111;

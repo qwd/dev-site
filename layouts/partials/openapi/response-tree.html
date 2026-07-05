@@ -13,13 +13,13 @@
   {{/* oneOf/anyOf alternatives stay visible instead of picking one branch. */}}
   {{- range $index, $alternative := $node.oneOf }}
     <li>
-      <div class="api-response-field tw:leading-[1.6]"><em class="api-response-type tw:mx-3 tw:text-qw-muted tw:text-xs tw:font-mono">oneOf {{ add $index 1 }}{{ with $alternative.type }}: {{ . }}{{ end }}</em></div>
+      <div class="api-response-field tw:leading-[1.6]"><em class="api-response-type tw:mx-[7.5px] tw:text-qw-muted tw:text-xs tw:font-mono">oneOf {{ add $index 1 }}{{ with $alternative.type }}: {{ . }}{{ end }}</em></div>
       <ul>{{ partial "openapi/response-tree.html" (dict "lang" $lang "node" $alternative "depth" (add $depth 1)) }}</ul>
     </li>
   {{- end }}
   {{- range $index, $alternative := $node.anyOf }}
     <li>
-      <div class="api-response-field tw:leading-[1.6]"><em class="api-response-type tw:mx-3 tw:text-qw-muted tw:text-xs tw:font-mono">anyOf {{ add $index 1 }}{{ with $alternative.type }}: {{ . }}{{ end }}</em></div>
+      <div class="api-response-field tw:leading-[1.6]"><em class="api-response-type tw:mx-[7.5px] tw:text-qw-muted tw:text-xs tw:font-mono">anyOf {{ add $index 1 }}{{ with $alternative.type }}: {{ . }}{{ end }}</em></div>
       <ul>{{ partial "openapi/response-tree.html" (dict "lang" $lang "node" $alternative "depth" (add $depth 1)) }}</ul>
     </li>
   {{- end }}
@@ -30,15 +30,15 @@
   {{- with $node.additionalProperties }}
     {{/* Map-like objects show "*" to indicate arbitrary property names. */}}
     <li>
-      <div class="api-response-field tw:leading-[1.6]"><code>*</code> <em class="api-response-type tw:mx-3 tw:text-qw-muted tw:text-xs tw:font-mono">{{ .type | default "any" }}</em> <span class="api-response-description">{{ T "additional-property" }}</span></div>
+      <div class="api-response-field tw:leading-[1.6]"><code>*</code> <em class="api-response-type tw:mx-[7.5px] tw:text-qw-muted tw:text-xs tw:font-mono">{{ .type | default "any" }}</em> <span class="api-response-description">{{ T "additional-property" }}</span></div>
       <ul>{{ partial "openapi/response-tree.html" (dict "lang" $lang "node" . "depth" (add $depth 1)) }}</ul>
     </li>
   {{- end }}
   {{- with $node.not }}
-    <li><div class="api-response-field tw:leading-[1.6]"><em class="api-response-type tw:mx-3 tw:text-qw-muted tw:text-xs tw:font-mono">not{{ with .type }}: {{ . }}{{ end }}</em></div></li>
+    <li><div class="api-response-field tw:leading-[1.6]"><em class="api-response-type tw:mx-[7.5px] tw:text-qw-muted tw:text-xs tw:font-mono">not{{ with .type }}: {{ . }}{{ end }}</em></div></li>
   {{- end }}
   {{- with $node.recursiveRef }}
-    <li><div class="api-response-field tw:leading-[1.6]"><em class="api-response-type tw:mx-3 tw:text-qw-muted tw:text-xs tw:font-mono">{{ T "recursive-reference" }}</em> <code>{{ . }}</code></div></li>
+    <li><div class="api-response-field tw:leading-[1.6]"><em class="api-response-type tw:mx-[7.5px] tw:text-qw-muted tw:text-xs tw:font-mono">{{ T "recursive-reference" }}</em> <code>{{ . }}</code></div></li>
   {{- end }}
 {{- else -}}
   {{- errorf "OpenAPI intermediate field tree exceeded depth limit" -}}
