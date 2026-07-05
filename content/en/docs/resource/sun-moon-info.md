@@ -5,7 +5,7 @@ translationKey: res-sunmoon
 
 Generally, we can see the sun and moon every day, but if you look closely, you will find that in some regions and on special dates, the sun or moon does not appear. This documentation will introduce the special case about [Sun and Moon](/en/docs/api/astronomy/).
 
-> <strong>Note:</strong> You need to adapt sunrise/set or moonrise/set to return null to avoid program failure.
+> You need to adapt sunrise/set or moonrise/set to return null to avoid program failure.
 
 ## Sunrise and sunset
 
@@ -45,32 +45,35 @@ This means that each day's moonrise is delayed by about 50 minutes compared to t
 
 So if you see the moon rise at 9 pm, then in about 15 days, you will find the moon rising at 9 am. Generally speaking, around the new moon, the moon appears almost only during the day, while around the full moon, the moon is there all night long.
 
-> <strong>Note:</strong> The above calculations and data are for example only and are not rigorous. In practice, the Moon rises 30 to 70 minutes later each day/night than the day/night before.
+> **Note:** The above calculations and data are for example only and are not rigorous. In practice, the Moon rises 30 to 70 minutes later each day/night than the day/night before.
 
 ### Why is there a Moon all day long?
 
 Unlike most satellites of other planets, the Moon's orbital plane is closer to the ecliptic plane than to the planet's equatorial plane, you can understand that the Moon is tilted to rotate around the Earth, so at high latitude areas, there is at least one day in each month that the Moon is not visible at all, and at least one day that the Moon appears throughout the day. In this case, `moonrise` and `moonset` will be null.
 
-![Earth and moon orbits](/assets/images/content/earth-moon-orbit-en.png)
-*Earth and moon orbits（original image [Wikimedia](https://commons.wikimedia.org/wiki/File:Earth-Moon-zh-Hant.PNG)）*
-{.figimg}
+> ![Earth and moon orbits](/assets/images/content/earth-moon-orbit-en.png)
+>
+> *Earth and moon orbits（original image [Wikimedia](https://commons.wikimedia.org/wiki/File:Earth-Moon-zh-Hant.PNG)）*
+
 ### Only moonrise or moonset
 
 Remember we said above that every day the moonrise is 50 minutes later than the previous day? So when the moonrise on a given day at 23:10-23:59, then the next moonrise is delayed until 00:00-00:49 on the third day. Typically, each month has one day with only a moonrise and one day with only a moonset, and it usually occurs around when the moon phase is first quarter and last quarter.
 
-![Moonrise and moonset table for Beijing](/assets/images/content/moon-rise-set-beijing-2022.jpg)
-*Moonrise and moonset table for Beijing in 2022. Blank spaces in the table indicate that a rising or a setting did not occur during that 24 hr interval.*
-{.figimg}
+> ![Moonrise and moonset table for Beijing](/assets/images/content/moon-rise-set-beijing-2022.jpg)
+>
+> *Moonrise and moonset table for Beijing in 2022. Blank spaces in the table indicate that a rising or a setting did not occur during that 24 hr interval.*
+
 ## Moon phase
 
 Moon phase(or Lunar phase) is the shape of the Moon's directly sunlit portion, which can be expressed quantitatively using areas or angles, or described qualitatively using the terminology of the 4 major phases: new moon, first quarter, full moon, last quarter and 4 minor phases: waxing crescent, waxing gibbous, waning gibbous, and waning crescent.
 
-![Moon phase](/assets/images/content/moon-phases-en.jpg)
-*This image represents the relative positions of the Sun, Earth, and Moon for different moon phase, at this time the observer is located in the northern hemisphere, if the observer is located in the southern hemisphere, the shape of the moon phase seen is inverted from left to right.（original image [Wikimedia](https://commons.wikimedia.org/wiki/File:Moon_phases_en.jpg) by [Orion 8](https://commons.wikimedia.org/wiki/User:Orion_8)）*
-{.figimg}
+> ![Moon phase](/assets/images/content/moon-phases-en.jpg)
+>
+> *This image represents the relative positions of the Sun, Earth, and Moon for different moon phase, at this time the observer is located in the northern hemisphere, if the observer is located in the southern hemisphere, the shape of the moon phase seen is inverted from left to right.（original image [Wikimedia](https://commons.wikimedia.org/wiki/File:Moon_phases_en.jpg) by [Orion 8](https://commons.wikimedia.org/wiki/User:Orion_8)）*
+
 The table below shows examples for moon phases.
 
-> <strong>Note:</strong> The shape of the moon phase as viewed in the northern and southern hemispheres is inverted from left to right, but the name is the same. The data in `moonPhase.icon` is already adapted. For example, when it is in waxing crescent, `moonPhase.icon = 801` for the northern hemisphere and `moonPhase.icon = 807` for the southern hemisphere.
+> ** The shape of the moon phase as viewed in the northern and southern hemispheres is inverted from left to right, but the name is the same. The data in `moonPhase.icon` is already adapted. For example, when it is in waxing crescent, `moonPhase.icon = 801` for the northern hemisphere and `moonPhase.icon = 807` for the southern hemisphere.
 
 | Moon phase | Northern Hemisphere Visibility | Southern Hemisphere Visibility | Avg. Moonrise | Avg. Moonset | Northern Hemisphere Illustration  | Southern Hemisphere Illustration |
 |---|---|---|---|---|---|---|

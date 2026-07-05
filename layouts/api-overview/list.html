@@ -1,14 +1,14 @@
 {{ define "main" }}
   {{- $docsNav := index hugo.Data "docs-nav" -}}
   {{ partial "docs/breadcrumbs.html" . }}
-  <div class="main-content tw:w-full tw:flex tw:px-6">
+  <div class="main-content tw:w-full tw:flex tw:px-6 tw:pb-16">
     <aside class="docs-nav tw:min-w-[180px] tw:border-r tw:border-[#dfdfdf] tw:text-sm tw:hidden tw:md:block tw:shrink-0 tw:pt-12 tw:pb-6 tw:pr-6 tw:mr-8">{{ partial "docs/nav.html" . }}</aside>
     <article class="article tw:pt-8 tw:flex-1 tw:min-w-0">
       <div class="qw-container">
         <div class="tw:flex tw:flex-wrap tw:-mx-6">
-          <div class="tw:w-full tw:lg:w-10/12 tw:px-6 tw:py-6 tw:min-w-0 content-border tw:rounded-card">
+          <div class="tw:w-full tw:lg:w-10/12 tw:px-6 tw:py-6 tw:min-w-0 tw:border tw:border-[#dfdfdf] tw:rounded-card">
             <section class="article-headline tw:leading-none tw:mb-12 tw:pb-6 tw:border-b tw:border-[#ebebeb]"><h1 class="tw:mr-4 tw:inline-block">{{ .Title }}</h1></section>
-            <section class="doc-content">
+            <section class="doc-content tw:[&_img]:my-4 tw:[&_img]:block tw:[&_img]:h-auto tw:[&_img]:max-w-full tw:[&_li]:mb-2 tw:[&_li_ul]:mt-4">
               {{ with .Description }}<p>{{ . }}</p>{{ end }}
               {{ .Content }}
               <div class="tw:flex tw:flex-wrap tw:-mx-6">

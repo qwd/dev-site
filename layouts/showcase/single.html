@@ -1,16 +1,16 @@
 {{ define "main" }}
-<section class="masthead showcase"><div class="qw-container"><h1>{{ .Title }}</h1><p class="tw:text-center">{{ .Description }}</p></div></section>
-<main class="main-content qw-container-narrow"><div class="article"><section class="showcase-content tw:mb-12 tw:p-12 tw:rounded-card">
+<section class="tw:mb-12 tw:pt-12 tw:pb-8 tw:text-center tw:bg-[#5C27F1] tw:bg-[linear-gradient(60deg,#855CF8,#8520EA,#5D24FD)]"><div class="qw-container"><h1 class="tw:text-white tw:mb-12 tw:tracking-[1px]">{{ .Title }}</h1><p class="tw:text-center tw:text-[#ebebeb]">{{ .Description }}</p></div></section>
+<main class="main-content qw-container-narrow tw:pb-16"><div class="article"><section class="showcase-content tw:border tw:border-qw-purple tw:mb-12 tw:p-12 tw:rounded-card">
   <div class="brief tw:mb-12"><p>🙏❤️👍</p><p>{{ T "si-biref" | safeHTML }}</p><p class="tw:italic tw:text-sm tw:underline tw:text-qw-muted-2">{{ T "si-note" }}</p></div>
   {{ range sort hugo.Data.showcase "language" }}
   <div class="works-list tw:mb-12">
-    <h2 class="tw:pb-6 tw:mb-6 works-lang">{{ .language }}</h2>
+    <h2 class="tw:pb-6 tw:mb-6 tw:border-b tw:border-[#ebebeb]">{{ .language }}</h2>
     {{ range sort .works "name" }}
     <div class="works-item tw:ml-6 tw:mb-8">
-      <a class="work-name tw:inline-block tw:mb-4" href="{{ .code }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+      <a class="tw:inline-block tw:mb-4 tw:text-lg" href="{{ .code }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
       <div class="work-meta tw:flex tw:mb-4">
-        <a class="tw:block tw:rounded-[4px] tw:text-white tw:text-[1.4rem] tw:py-[2px] tw:px-[4px] tw:bg-[#b69cfd] tw:mr-4 tw:hover:no-underline" href="{{ .website | default .code }}" target="_blank" rel="noopener noreferrer">@{{ .author }}</a>
-        {{ with .screenshot }}<a class="tw:block tw:rounded-[4px] tw:text-white tw:text-[1.4rem] tw:py-[2px] tw:px-[4px] tw:bg-qw-pink tw:hover:no-underline" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ T "screenshot" }}</a>{{ end }}
+        <a class="tw:block tw:rounded-code tw:text-white tw:text-sm tw:py-[2px] tw:px-[4px] tw:bg-[#b69cfd] tw:mr-4 tw:hover:no-underline" href="{{ .website | default .code }}" target="_blank" rel="noopener noreferrer">@{{ .author }}</a>
+        {{ with .screenshot }}<a class="tw:block tw:rounded-code tw:text-white tw:text-sm tw:py-[2px] tw:px-[4px] tw:bg-qw-pink tw:hover:no-underline" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ T "screenshot" }}</a>{{ end }}
       </div>
       <p class="tw:block">{{ .description | plainify | truncate 200 }}</p>
     </div>

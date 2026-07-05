@@ -8,15 +8,14 @@ translationKey: res-wind
 
 ## 风向 {#wind-direction}
 
-风向是指<strong>风吹来的方向</strong>，例如东南风表示从东南方向吹来的风。在和风天气，我们通过风向角度和风向方位来描述具体的风向。
+风向是指**风吹来的方向**，例如东南风表示从东南方向吹来的风。在和风天气，我们通过风向角度和风向方位来描述具体的风向。
 
-风向角度以正北为0°，顺时针旋转360度。风向方位通常采用16个方位，即将360°平分为16份，正北=0°（360°），正东=90°，正南=180°，正西=270°。我国一般采用8个方位来预报风向[^1]，因此对于中国地区的城市，我们仅提供8个方位的风向方位数值，在中国以外的城市和全部格点化数据中继续采用16方位。如果你希望在中国城市也使用16方位，可以通过风向角度进行换算。
+风向角度以正北为0°，顺时针旋转360度。风向方位通常采用16个方位，即将360°平分为16份，正北=0°（360°），正东=90°，正南=180°，正西=270°。
 
 ### 16位风向方位
 
-![风向16方位图](/assets/images/content/wind-direction-rose.png)
-*风向16方位图。(图片由QWeather创作并基于[CC BY 4.0许可](https://creativecommons.org/licenses/by/4.0/deed.zh)发布，下载[原图](https://github.com/qwd/dev-site/raw/master/static/assets/images/content/wind-direction-rose.png))*
-{.figimg}
+<img class="tw:w-3/5 tw:mx-auto" src="/assets/images/content/wind-direction-rose.png" alt="风向16方位图">
+
 16位风向方位的名称、代码和对应风向角度的关系如下：
 
 | 方位       | 方位代码 | 对应角度(°) | 角度范围(°)     |
@@ -44,6 +43,7 @@ translationKey: res-wind
 
 > <strong>注意：</strong>在中国城市天气中，除了8位风向方位以外，还有两种较为少见的风向方位：旋转风和无持续风向。
 {.bqwarning}
+
 | 方位       | 方位代码   | 对应角度(°) | 角度范围(°)   |
 | ---------- | ---------- | ----------- | ------------- |
 | 北风       | N          | 0           | 337.5 - 22.25 |
@@ -59,18 +59,21 @@ translationKey: res-wind
 
 > <strong>注意：</strong>在windDir数据中，如果语言设置为中文，则返回中文方位名称，如果设置为其他语言，则返回方位代码。
 {.bqwarning}
+
 ## 风速 {#wind-speed}
 
 除非特别说明，和风天气提供的风速均为地面10米高度的风速。风速单位默认为公里/小时。
 
 ## 风力等级 {#wind-scale}
 
-风力等级采用[蒲福风级](https://en.wikipedia.org/wiki/Beaufort_scale)（Beaufort scale或Beaufort wind force scale），根据风的强弱，将风力划分为0-12共13个等级。在1946年，蒲福风级扩展到17级，主要适用于热带气旋，扩展级别目前仅在少数国家和地区使用，中国气象局在热带气旋中使用到了扩展级别[^2]。
+风力等级采用[蒲福风级](https://en.wikipedia.org/wiki/Beaufort_scale)（Beaufort scale或Beaufort wind force scale），根据风的强弱，将风力划分为0-12共13个等级。在1946年，蒲福风级扩展到17级，主要适用于热带气旋，中国台风网[在热带气旋中使用到了扩展级别](https://tcdata.typhoon.org.cn/zy_wind.html)。
 
 风力等级与风速的经验方程如下：
 
-> V = 0.836 ×（B<sup>3/2</sup>）
-{.bqcode}
+```
+V = 0.836 × B^(3/2)
+```
+
 其中`V`是海平面以上10米处的等效风速，`B`是蒲福级数。例如，B = 9.5 与 24.5 m/s 相关，等于“蒲福风级10级”的下限。
 
 ### 风级的对应关系 {#scale-description}
@@ -95,7 +98,7 @@ translationKey: res-wind
 
 #### 扩展蒲福风级13-17
 
-| 蒲福风级 | 风速                                              | 浪高  | 对应台风等级[^3] |
+| 蒲福风级 | 风速                                              | 浪高  | 对应台风等级 |
 | -------- | ------------------------------------------------- | ----- | ---------------- |
 | 13       | 72～80 knots<br> 134-149 km/h<br> 37.0-41.4 m/s   | >14 m | 台风 TY          |
 | 14       | 81～89 knots<br> 150-166 km/h<br> 41.5-46.1 m/s   | >14 m | 强台风 STY       |
@@ -104,6 +107,4 @@ translationKey: res-wind
 | 17       | 109～119 knots<br> 202-220 km/h<br> 56.1-61.2 m/s | >14 m | 超强台风 SuperTY |
 | >17      | ≧120 knots<br> ≥221 km/h<br> ≥61.3 m/s            | >14 m | 超强台风 SuperTY |
 
-[^1]: 在实践中，我国天气预报关于风向的描述均采用8方位，气象主管部门也有类似介绍：[天气预报用语解释](https://www.cma.gov.cn/kppd/kppdqxsj/kppdqxgc/201212/t20121212_195901.html)，[风矢和风力的等级划分](https://www.cma.gov.cn/2011xzt/kpbd/gale/2018050902/201807/t20180717_473666.html)
-[^2]: [扩展的蒲福风力等级表](https://tcdata.typhoon.org.cn/zy_wind.html)，来自[中国台风网](https://www.typhoon.org.cn)
-[^3]: 参考[《热带气旋等级 GBT 19201-2006》](https://tcdata.typhoon.org.cn/data/doc/TC_std.pdf)
+台风等级参考：[《热带气旋等级 GBT 19201-2006》](https://tcdata.typhoon.org.cn/data/doc/TC_std.pdf)。

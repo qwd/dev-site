@@ -11,13 +11,12 @@ This document will describes the wind direction, wind speed and wind scale in th
 
 Wind direction is generally reported by <strong>the direction from which it originates</strong>. For example, a north or northerly wind blows from the north to the south. In QWeather, we describe the specific wind direction by degree and direction.
 
-In a geographic coordinate system, the wind has a total of 32 different directions, but only 16 directions are commonly used. China generally uses 8 directions to forecast wind directions[^1], so for cities in the China region, we only provide 8 wind directions, and use 16 wind directions for cities outside of China and for all Grid data.
+In a geographic coordinate system, the wind has a total of 32 different directions, but only 16 directions are commonly used.
 
 ### 16 wind directions
 
-![16 wind direction rose](/assets/images/content/wind-direction-rose.png)
-*16 wind direction rose. (Created by QWeather and published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), Download [original image](https://github.com/qwd/dev-site/raw/master/static/assets/images/content/wind-direction-rose.png))*
-{.figimg}
+> ![16 wind direction rose](/assets/images/content/wind-direction-rose.png)
+
 16 wind direction：
 
 | Direction       | Code | Degree(°) | Degree range(°) |
@@ -43,7 +42,7 @@ In a geographic coordinate system, the wind has a total of 32 different directio
 
 8 wind direction is only available for China city weather data.
 
-> <strong>Tips:</strong> In China's city weather, in addition to the 8 wind directions, there are two more wind directions: Rotational wind and no sustained wind direction.
+> **Tips:** In China's city weather, in addition to the 8 wind directions, there are two more wind directions: Rotational wind and no sustained wind direction.
 
 | Direction    | Code       | Degree(°) | Degree range(°) |
 | ------------ | ---------- | --------- | --------------- |
@@ -58,20 +57,23 @@ In a geographic coordinate system, the wind has a total of 32 different directio
 | Rotational   | Rotational | -999      | -               |
 | No sustained | None       | -1        | -               |
 
-> <strong>Note:</strong> In the `windDir`, if the language is set to Chinese, the Chinese direction name is responded, if it is set to other languages, the direction code is responded.
+> **Note:** In the `windDir`, if the language is set to Chinese, the Chinese direction name is responded, if it is set to other languages, the direction code is responded.
 {.bqwarning}
+
 ## Wind Speed
 
 Unless otherwise noted, wind speed provided by QWeather are at 10 meters above ground level. Wind speed units are defaulted to kilometers per hour.
 
 ## Wind Scale
 
-Wind scale is based on the [Beaufort wind force scale](https://en.wikipedia.org/wiki/Beaufort_scale), which divides the wind scale into 13 classes from 0-12. The Beaufort scale was extended in 1946 when forces 13 to 17 were added. However, forces 13 to 17 were intended to apply only to special cases, such as tropical cyclones. The extended scale is currently used only in a few countries and regions, and the China Meteorological Administration uses the extended scale in tropical cyclones.[^2]
+Wind scale is based on the [Beaufort wind force scale](https://en.wikipedia.org/wiki/Beaufort_scale), which divides the wind scale into 13 classes from 0-12. The Beaufort scale was extended in 1946 when forces 13 to 17 were added. However, forces 13 to 17 were intended to apply only to special cases, such as tropical cyclones. The China Meteorological Administration [uses the extended scale in tropical cyclones](https://tcdata.typhoon.org.cn/zy_wind.html).
 
 Wind speed on the 1946 Beaufort scale is based on the empirical relationship:
 
-> V = 0.836 ×（B<sup>3/2</sup>）
-{.bqcode}
+```
+V = 0.836 × B^(3/2)
+```
+
 Where `V` is the equivalent wind speed at 10 metres above the sea surface and `B` is Beaufort scale number. For example, B = 9.5 is related to 24.5 m/s which is equal to the lower limit of "10 Beaufort".
 
 ### Scale description
@@ -97,7 +99,7 @@ Where `V` is the equivalent wind speed at 10 metres above the sea surface and `B
 
 #### Extend Beaufort scale 13-17
 
-| Beaufort number | Wind Speed                                 | Wave height  | Typhoon level[^3] |
+| Beaufort number | Wind Speed                                 | Wave height  | Typhoon level |
 | -------- | ------------------------------------------------- | ----- | ---------------- |
 | 13       | 72～80 knots<br> 134-149 km/h<br> 37.0-41.4 m/s   | >14 m | Typhoon (TY)          |
 | 14       | 81～89 knots<br> 150-166 km/h<br> 41.5-46.1 m/s   | >14 m | Severe Typhoon (STY)       |
@@ -106,6 +108,4 @@ Where `V` is the equivalent wind speed at 10 metres above the sea surface and `B
 | 17       | 109～119 knots<br> 202-220 km/h<br> 56.1-61.2 m/s | >14 m | Super Typhoon (SuperTY) |
 | >17      | ≧120 knots<br> ≥221 km/h<br> ≥61.3 m/s            | >14 m | Super Typhoon (SuperTY) |
 
-[^1]: In practice, China's city weather forecasts on the description of wind direction are used 8 directions, the CMA also have a similar introduction: [天气预报用语解释](https://www.cma.gov.cn/kppd/kppdqxsj/kppdqxgc/201212/t20121212_195901.html)，[风矢和风力的等级划分](https://www.cma.gov.cn/2011xzt/kpbd/gale/2018050902/201807/t20180717_473666.html)
-[^2]: [扩展的蒲福风力等级表](https://tcdata.typhoon.org.cn/zy_wind.html)，from [Typhoon Online](https://www.typhoon.org.cn)
-[^3]: Refer to [《热带气旋等级 GBT 19201-2006》](https://tcdata.typhoon.org.cn/data/doc/TC_std.pdf)
+Reference for typhoon levels: [Tropical cyclone grade GBT 19201-2006](https://tcdata.typhoon.org.cn/data/doc/TC_std.pdf).

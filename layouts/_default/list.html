@@ -1,7 +1,7 @@
 {{ define "main" }}
   <section class="qw-container">
     <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p class="tw:text-lg tw:[font-weight:lighter]">{{ . }}</p>{{ end }}
+    {{ with .Description }}<p class="tw:text-xl tw:[font-weight:lighter]">{{ . }}</p>{{ end }}
     {{ .Content }}
     <ul>
       {{ range .Pages.ByTitle }}

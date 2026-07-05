@@ -1,35 +1,10 @@
-@layer base, theme, components, utilities;
-
-@import "tailwindcss/theme.css" layer(theme) prefix(tw);
-@import "tailwindcss/utilities.css" layer(utilities) prefix(tw);
+@import "tailwindcss" prefix(tw);
 
 @source "../../layouts";
 @source "../../content";
 
 @layer base {
-  html {
-    box-sizing: border-box;
-    font-size: 10px;
-    position: relative;
-    min-height: 100%;
-    line-height: 1;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-  }
-  *, *::before, *::after {
-    box-sizing: inherit;
-  }
-
-  figure {
-    margin: 0;
-  }
-
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-weight: 400;
-    font-size: 1.6rem;
-    background-color: #fff;
-    color: #333;
     margin-bottom: 316px;
   }
 
@@ -52,18 +27,14 @@
     font-weight: bold;
     margin: 0;
   }
-  h1 { font-size: 3.2rem; }
-  h2 { font-size: 2.4rem; }
-  h3 { font-size: 2rem; }
-  h4 { font-size: 1.6rem; }
-  h5 { font-size: 1.5rem; }
-
-  small {
-    font-size: 87.5%;
-  }
+  h1 { font-size: 32px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 20px; }
+  h4 { font-size: 16px; }
+  h5 { font-size: 15px; }
 
   p {
-    font-size: 1.6rem;
+    font-size: 16px;
     letter-spacing: 0.2px;
     line-height: 1.5;
     margin: 0 0 10px;
@@ -81,8 +52,8 @@
     background-color: #ecedf2;
     padding: 1px 4px;
     color: #333;
-    margin: 0 .1rem;
-    font-size: 1.4rem;
+    margin: 0 1px;
+    font-size: 14px;
     border-radius: 4px;
   }
 
@@ -122,16 +93,11 @@
     background-color: #fff7fd;
     border-color: #ffc4e9;
   }
-  blockquote.bqcode {
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    background-color: #f3f4f5;
-    border: none;
-  }
 
   table {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 15px;
     border-collapse: collapse;
   }
   table thead {
@@ -154,6 +120,10 @@
 }
 
 @theme {
+  --spacing: 2.5px;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
   --color-qw-text: #333;
   --color-qw-heading: #231815;
   --color-qw-muted: #696969;
@@ -168,14 +138,10 @@
   --color-qw-success: #20894D;
   --color-qw-danger: #ff2525;
 
-  --text-xs: 1.2rem;
-  --text-sm: 1.4rem;
-  --text-base: 1.6rem;
-  --text-lg: 2rem;
-  --text-xl: 2rem;
-  --text-2xl: 2.4rem;
-  --text-3xl: 3.2rem;
-  --text-4xl: 4rem;
+  --text-hero: 40px;
+
+  --tracking-body: 0.2px;
+  --tracking-hero: 1.2px;
 
   --radius-card: 10px;
   --radius-btn: 5px;
@@ -186,7 +152,7 @@
 .qw-container {
   width: 100%;
   margin-inline: auto;
-  padding-inline: 1.5rem;
+  padding-inline: 15px;
 }
 @media (min-width: 640px) {
   .qw-container { max-width: 600px; }
@@ -204,7 +170,7 @@
 .qw-container-narrow {
   width: 100%;
   margin-inline: auto;
-  padding-inline: 1.5rem;
+  padding-inline: 15px;
 }
 @media (min-width: 640px) {
   .qw-container-narrow { max-width: 600px; }
@@ -216,61 +182,11 @@
   .qw-container-narrow { max-width: 960px; }
 }
 
-/* ═══════════════ homepage — decorative backgrounds ══════════════ */
-
-.homepage .hero.hero-default {
-  background:
-    linear-gradient(180deg, rgba(240, 254, 255, 0.3), rgba(245, 245, 247, 1) 90%),
-    radial-gradient(ellipse at top right, #fbac5a, transparent 50%),
-    radial-gradient(ellipse at top left, #0084f8, transparent 50%),
-    radial-gradient(ellipse at center top, #1e8c98, transparent 50%),
-    radial-gradient(ellipse at center bottom, #b8cfff, transparent 50%),
-    radial-gradient(ellipse at center, #079b9d, transparent 50%),
-    radial-gradient(ellipse at bottom left, #6dc2ff, transparent 50%),
-    radial-gradient(ellipse at bottom right, #ac82f4, transparent 40%);
-  background-color: #93d3e9;
-}
-
-.homepage .hero.hero-sunny {
-  background: linear-gradient(200deg, #ffe4c8, #c7fffd 60%, #A6E8FF);
-}
-
-.homepage .hero.hero-cloudy {
-  background: linear-gradient(200deg, #D0DAE8, #CCD4DF 60%, #A5B3C5);
-}
-
-.homepage .hero.hero-rain {
-  background: linear-gradient(200deg, #DBEBFF, #DDE5F4 60%, #BECDDD);
-}
-
-.homepage .hero.hero-snow {
-  background: linear-gradient(200deg, #D2F0FD, #E6F8FE 60%, #F8FFFF);
-}
-
-.homepage .feats {
-  background: linear-gradient(to bottom, #F5F5F7, #fff);
-  background-color: #F5F5F7;
-}
-
-/* ═══════════════ responsive — must be unlayered to override @layer ══════════════ */
-
-@media (max-width: 991px) {
-  .docs-home .start {
-    min-height: auto;
-  }
-  .docs-home .start ul {
-    columns: 3;
-  }
-}
+/* ═══════════════ responsive content generated from Markdown ══════════════ */
 
 @media (max-width: 767px) {
   body {
     margin-bottom: 468px;
-  }
-  .docs-home .start,
-  .docs-home .bp,
-  .docs-home .resource {
-    min-height: auto;
   }
   table {
     display: block;
@@ -281,420 +197,24 @@
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
-  .main-content .article .figimg {
-    width: 100%;
-  }
 }
 
 @media (max-width: 575px) {
   body:lang(en) {
     margin-bottom: 510px;
   }
-  .homepage .hero .headline h1 {
-    font-size: 3.2rem;
-  }
-  .docs-home .start ul {
-    columns: 2;
-  }
-}
-
-/* ═══════════════ nav overrides — unlayered so they beat TW utilities ══════════════ */
-
-.main-nav .menu li.active > a {
-  border-bottom: 2px solid #000;
-  padding-bottom: 5px;
-  font-weight: 700;
-}
-
-.docs-nav .nav-section {
-  border-bottom: 1px solid #dfdfdf;
-}
-.docs-nav .nav-section:last-child {
-  border-bottom: none;
-}
-.docs-nav .nav-section li.active > a {
-  font-weight: bold;
-  color: #000;
-  display: block;
-  background-color: #f0fcff;
-  border-radius: 6px;
 }
 
 /* ═══════════════ components ══════════════ */
 
 @layer components {
 
-  /* shared anchor-link for heading permalinks */
-  .anchor-link {
-    margin-left: 5px;
-    color: #dadada;
-  }
-  .anchor-link:hover {
-    color: #0D7FEF;
-  }
-
-  /* footnotes */
-  .footnotes {
-    padding: 15px;
-    margin: 40px 0 20px;
-    color: #696969;
-    font-size: 1.4rem;
-    background-color: #fafafa;
-    border-radius: 8px;
-  }
-  .footnotes p:last-child,
-  .footnotes ul:last-child,
-  .footnotes ol:last-child {
-    margin-bottom: 0;
-  }
-  .footnotes:lang(zh)::before {
-    content: "本文参考资料";
-    display: block;
-    font-size: 1.6rem;
-    font-weight: bold;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #333;
-  }
-  .footnotes:lang(en)::before {
-    content: "References";
-    display: block;
-    font-size: 1.6rem;
-    font-weight: bold;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #333;
-  }
-
-  /* label */
-  .label {
-    display: inline;
-    padding: 2px 4px;
-    margin: 0 5px;
-    font-size: 1.2rem;
-    font-weight: 300;
-    line-height: 1;
-    color: #696969;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 4px;
-  }
-  .label.code {
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    background-color: #ecedf2;
-    padding: 1px 4px;
-    color: #333;
-    margin: 0 .1rem;
-    font-size: 1.4rem;
-  }
-
-  /* masthead */
-  .masthead {
-    margin-bottom: 30px;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    text-align: center;
-  }
-  .masthead h1 {
-    color: #fff;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
-  }
-  .masthead p {
-    color: #ebebeb;
-  }
-  .masthead.price {
-    background: linear-gradient(60deg, #FFE8EA, #FFF6E8, #E8EEFF);
-    background-color: #c2eafd;
-  }
-  .masthead.price h1 {
-    color: #000;
-  }
-  .masthead.price p {
-    color: #333;
-  }
-  .masthead.showcase {
-    background: linear-gradient(60deg, #855CF8, #8520EA, #5D24FD);
-    background-color: #5C27F1;
-  }
-  .masthead.docs {
-    background: linear-gradient(60deg, #0D7FEF, #0456A6, #550DEF);
-    background-color: #0B2F94;
-  }
-  .masthead.faq {
-    background: linear-gradient(60deg, #5A9CBE, #7482A9, #694F97);
-    background-color: #7482A9;
-  }
-
-  /* breadcrumbs */
-  .doc-bc li + li::before {
-    margin-right: 5px;
-    content: "\003e";
-    color: #bbb;
-  }
-  .doc-bc li.active > a {
-    color: #fff;
-    font-weight: normal;
-  }
-  .doc-bc a {
-    color: #ccc;
-  }
-  .doc-bc a:focus,
-  .doc-bc a:hover {
-    text-decoration: none;
-    background-color: transparent;
-    color: #fafafa;
-  }
-
-  /* docs TOC */
-  .docs-toc {
-    position: sticky;
-    align-self: flex-start;
-    top: 61px;
-    z-index: 10;
-  }
-  .docs-toc ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .docs-toc ul li {
-    margin-bottom: 5px;
-  }
-  .docs-toc ul li > ul {
-    padding-left: 10px;
-    margin-top: 5px;
-  }
-  .docs-toc ul ul:last-child,
-  .docs-toc ul li:last-child {
-    margin-bottom: 0;
-  }
-
-  /* FAQ TOC */
-  .faq-toc ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .faq-toc ul li {
-    font-size: 2rem;
-    margin-bottom: 5px;
-  }
-  .faq-toc ul li a {
-    color: #333;
-  }
-  .faq-toc ul li a:hover,
-  .faq-toc ul li a:focus,
-  .faq-toc ul li a:active,
-  .faq-toc ul li a.active {
-    color: #333;
-    text-decoration: none !important;
-  }
-  .faq-toc ul li > ul {
-    list-style: disc;
-    padding-left: 40px;
-    margin-top: 10px;
-  }
-  .faq-toc ul li > ul li {
-    font-size: 1.6rem;
-  }
-  .faq-toc ul ul:last-child,
-  .faq-toc ul li:last-child {
-    margin-bottom: 0;
-  }
-
-  /* docs-nav sidebar */
-  .docs-nav .nav-section ul:last-child,
-  .docs-nav .nav-section li:last-child {
-    margin-bottom: 0 !important;
-  }
-
-  /* ——————————— article content ——————————— */
-
-  .main-content {
-    padding-bottom: 40px;
-  }
-
-  .main-content .article .content-border {
-    border: 1px solid #dfdfdf;
-  }
-
-  .main-content .article h2,
-  .main-content .article h3,
-  .main-content .article h4 {
-    margin-bottom: 20px;
-  }
-
-  .main-content .article img {
-    margin: 10px 0;
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .main-content .article .figimg {
-    margin: 0 auto 10px auto;
-    padding: 8px;
-    border: 1px solid #767676;
-    background-color: #e9ecef;
-    text-align: center;
-    width: 80%;
-  }
-  .main-content .article .figimg img {
-    margin: 0 auto 10px auto;
-  }
-  .main-content .article .figimg em {
-    font-size: 14px;
-  }
-
-  .main-content .article li {
-    margin-bottom: 5px;
-  }
-
-  .main-content .article li ul {
-    margin-top: 10px;
-  }
-
-  .main-content .article .article-headline .platform_version {
-    background-color: #edf7fe;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    border-radius: 10px;
-    color: #696969;
-  }
-
-  .main-content .article .platform {
-    margin-top: -20px;
-  }
-  .main-content .article .platform li.active > a {
-    color: #fff;
-    background-color: #0D7FEF;
-  }
-
-  .main-content .article .doc-content h2,
-  .main-content .article .doc-content h3,
-  .main-content .article .doc-content h4 {
+  .doc-content h2,
+  .doc-content h3,
+  .doc-content h4 {
     padding-top: 40px;
     margin-top: -20px;
-  }
-
-  .main-content .article .doc-content .api-snippets {
-    display: block;
     margin-bottom: 20px;
-  }
-  .main-content .article .doc-content .api-snippets pre {
-    max-height: 300px;
-    overflow-y: scroll;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-  }
-
-  .main-content .article .doc-content .api-response-tree {
-    padding-left: 40px;
-    list-style: none;
-  }
-  .main-content .article .doc-content .api-response-tree li {
-    margin-bottom: 12px;
-  }
-  .main-content .article .doc-content .api-response-tree ul {
-    padding-left: 20px;
-    border-left: 1px solid #ebebeb;
-    list-style: none;
-  }
-  .main-content .article .doc-content .api-response-tree .api-response-field {
-    line-height: 1.6;
-  }
-  .main-content .article .doc-content .api-response-tree .api-response-type {
-    margin: 0 8px;
-    color: #696969;
-    font-size: 1.2rem;
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  }
-
-  .main-content .article .doc-content .request-param h5 {
-    display: inline-block;
-    margin: 1rem 0;
-  }
-  .main-content .article .doc-content .request-param h5::after {
-    content: " ";
-    padding: 2px 4px;
-    margin: 0 5px;
-    font-size: 1.2rem;
-    font-weight: 300;
-    line-height: 1;
-    color: #696969;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 4px;
-  }
-  .main-content .article .doc-content .request-param h5:lang(zh)::after {
-    content: "可选";
-    background-color: #d2e9d4;
-  }
-  .main-content .article .doc-content .request-param h5:lang(en)::after {
-    content: "optional";
-    background-color: #d2e9d4;
-  }
-  .main-content .article .doc-content .request-param h5.rqd:lang(zh)::after {
-    content: "必选";
-    background-color: #fde8d5;
-  }
-  .main-content .article .doc-content .request-param h5.rqd:lang(en)::after {
-    content: "required";
-    background-color: #fde8d5;
-  }
-
-  .main-content .article .faq-content {
-    border: 1px solid #5A9CBE;
-  }
-  .main-content .article .faq-content h2 {
-    margin-top: 40px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ebebeb;
-  }
-  .main-content .article .faq-content h3 {
-    margin-top: 30px;
-    font-size: 18px;
-  }
-  .main-content .article .faq-content .faq-toc-item-2 {
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ebebeb;
-    margin-bottom: 20px;
-  }
-  .main-content .article .faq-content .faq-toc-item-2:last-child {
-    border-bottom: none;
-  }
-  .main-content .article .faq-content .faq-toc-item-2 a {
-    color: #333;
-  }
-  .main-content .article .faq-content .faq-toc-item-2 a:hover,
-  .main-content .article .faq-content .faq-toc-item-2 a:focus,
-  .main-content .article .faq-content .faq-toc-item-2 a:active,
-  .main-content .article .faq-content .faq-toc-item-2 a.active {
-    color: #333;
-  }
-  .main-content .article .faq-content .faq-toc-item-3 a {
-    color: #0D7FEF;
-    font-size: 1.6rem;
-  }
-  .main-content .article .faq-content .faq-toc-item-3 a:hover,
-  .main-content .article .faq-content .faq-toc-item-3 a:focus,
-  .main-content .article .faq-content .faq-toc-item-3 a:active,
-  .main-content .article .faq-content .faq-toc-item-3 a.active {
-    color: #0D7FEF;
-  }
-
-  .main-content .article .showcase-content {
-    border: 1px solid #855CF8;
-  }
-  .main-content .article .showcase-content .works-lang {
-    border-bottom: 1px solid #ebebeb;
-  }
-  .main-content .article .showcase-content .work-name {
-    font-size: 1.8rem;
   }
 
   /* external link icon */

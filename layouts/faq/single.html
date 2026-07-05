@@ -1,7 +1,7 @@
 {{ define "main" }}
-<section class="masthead faq"><div class="qw-container"><h1>{{ .Title }}</h1><p class="tw:text-center">{{ .Description }}</p></div></section>
-<main class="main-content qw-container-narrow"><div class="article"><section class="faq-content tw:p-12 tw:rounded-card">
-  <div class="tw:mb-12 faq-toc">{{ .TableOfContents }}</div>
-  <div class="tw:rounded-card doc-content">{{ .Content }}</div>
+<section class="tw:mb-12 tw:pt-12 tw:pb-8 tw:text-center tw:bg-[#7482A9] tw:bg-[linear-gradient(60deg,#5A9CBE,#7482A9,#694F97)]"><div class="qw-container"><h1 class="tw:text-white tw:mb-12 tw:tracking-[1px]">{{ .Title }}</h1><p class="tw:text-center tw:text-[#ebebeb]">{{ .Description }}</p></div></section>
+<main class="main-content qw-container-narrow tw:pb-16"><div class="article"><section class="faq-content tw:border tw:border-[#5A9CBE] tw:p-12 tw:rounded-card">
+  <div class="tw:mb-12 faq-toc tw:[&_ul]:list-none tw:[&_ul]:p-0 tw:[&_ul]:mt-0 tw:[&_ul]:mb-0 tw:[&_li]:text-xl tw:[&_li]:mb-2 tw:[&_a]:text-qw-text tw:[&_a:hover]:text-qw-text tw:[&_a:hover]:no-underline tw:[&_a:focus]:text-qw-text tw:[&_a:active]:text-qw-text tw:[&_a.active]:text-qw-text tw:[&_li>ul]:list-disc tw:[&_li>ul]:pl-16 tw:[&_li>ul]:mt-4 tw:[&_li>ul_li]:text-base tw:[&_ul:last-child]:mb-0 tw:[&_li:last-child]:mb-0">{{ .TableOfContents }}</div>
+  <div class="tw:rounded-card tw:[&_h2]:mt-16 tw:[&_h2]:pb-4 tw:[&_h2]:border-b tw:[&_h2]:border-[#ebebeb] tw:[&_h3]:mt-12 tw:[&_h3]:text-lg">{{ .Content }}</div>
 </section></div></main>
 {{ end }}

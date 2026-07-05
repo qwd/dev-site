@@ -58,15 +58,17 @@ When an error occurs, please stop the request before troubleshooting. However so
 
 Simple formula:
 
-> t = b<sup>c</sup>
-{.bqcode}
+```
+t = b^c
+```
+
 Here, `t` is the interval between the next request, or waiting period, `b` is the multiplicative factor or "base" and `c` is the number of errors.
 
-If we follow the above example and assume that `b = 2`, then on the first error, the next request should wait for <span class="label code">2<sup>1</sup> = 2 seconds</span>, then another request should wait for <span class="label code">2<sup>2</sup> = 4 seconds</span>, and the third request wait for <span class="label code">2<sup>3</sup> = 8 seconds</span>, if the response to the fourth request is correct, the previous request frequency is restored and we can reset `c = 1`.
+If we follow the above example and assume that `b = 2`, then on the first error, the next request should wait for `2¹ = 2 seconds`, then another request should wait for `2² = 4 seconds`, and the third request wait for `2³ = 8 seconds`, if the response to the fourth request is correct, the previous request frequency is restored and we can reset `c = 1`.
 
 #### Avoid confict
 
-If you have a large number of devices sending requests, in order to avoid conflicts between these devices that have the same waiting period, you can set a random number in the waiting period (or called a slot), the value range of this random number can be <span class="label code">0～2<sup>c</sup>-1</span>. In the above example, the random numbers for the three waiting periods are:
+If you have a large number of devices sending requests, in order to avoid conflicts between these devices that have the same waiting period, you can set a random number in the waiting period (or called a slot), the value range of this random number can be `[0, 2]^c - 1`. In the above example, the random numbers for the three waiting periods are:
 
 - first: 0, 1
 - second: 0, 1, 2, 3

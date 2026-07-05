@@ -1,16 +1,19 @@
-<section class="doc-bc tw:bg-[#231815] tw:min-h-[40px] tw:leading-[20px] tw:text-sm tw:hidden tw:sm:block tw:sticky tw:top-0 tw:z-10">
+<section class="doc-bc tw:bg-[#231815] tw:min-h-16 tw:leading-8 tw:text-sm tw:hidden tw:sm:block tw:sticky tw:top-0 tw:z-10">
   <div class="tw:w-full tw:px-6">
     <ul class="tw:list-none tw:p-0 tw:m-0 tw:flex">
-      {{ range where .Ancestors.Reverse "IsHome" false }}
-      <li class="tw:py-4 tw:mr-2"><a class="tw:inline-block tw:hover:no-underline tw:[font-weight:lighter]" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{- $ancestors := where .Ancestors.Reverse "IsHome" false -}}
+      {{ range $index, $ancestor := $ancestors }}
+      {{ if gt $index 0 }}<li class="tw:py-4 tw:mr-2 tw:text-[#bbb]" aria-hidden="true">&gt;</li>{{ end }}
+      <li class="tw:py-4 tw:mr-2"><a class="tw:inline-block tw:text-[#ccc] tw:hover:text-qw-surface-muted tw:hover:no-underline tw:[font-weight:lighter]" href="{{ $ancestor.RelPermalink }}">{{ $ancestor.Title }}</a></li>
       {{ end }}
-      <li class="tw:py-4 tw:mr-2 active"><a class="tw:inline-block tw:hover:no-underline tw:[font-weight:lighter]" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ if gt (len $ancestors) 0 }}<li class="tw:py-4 tw:mr-2 tw:text-[#bbb]" aria-hidden="true">&gt;</li>{{ end }}
+      <li class="tw:py-4 tw:mr-2"><a class="tw:inline-block tw:text-white tw:hover:text-white tw:hover:no-underline tw:font-normal" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     </ul>
   </div>
 </section>
 <section class="doc-bc-mobile tw:sticky tw:top-0 tw:z-10 tw:block tw:sm:hidden">
   <div class="tw:w-full tw:px-6">
-      <select class="tw:min-h-[30px] tw:text-[#ebebeb] tw:bg-[rgba(17,17,17,0.85)] tw:w-full tw:p-[10px] tw:mt-[10px] tw:rounded-card tw:leading-[20px]" onchange="if (this.value) window.location.href=this.value">
+      <select class="tw:min-h-12 tw:text-[#ebebeb] tw:bg-[rgba(17,17,17,0.85)] tw:w-full tw:p-4 tw:mt-4 tw:rounded-card tw:leading-8" onchange="if (this.value) window.location.href=this.value">
       <option value="">{{ T "docs-category" }}</option>
       {{- $current := . -}}
       {{- $docsNav := index hugo.Data "docs-nav" -}}
