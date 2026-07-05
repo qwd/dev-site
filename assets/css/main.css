@@ -229,11 +229,9 @@
   .main-content .article .faq-content a[href^="http://"]::after,
   .main-content .article .faq-content a[href^="https://"]::after,
   .main-content .article .faq-content a[href^="//"]::after {
-    font-family: "iconfont-for-qw" !important;
-    font-size: 85%;
-    content: "\e900";
-    margin-left: 4px;
-    margin-right: 4px;
+    content: "\2197\fe0e";
+    font-family: system-ui, Arial, Helvetica, sans-serif;
+    margin-left: 2px;
   }
 
   /* reset internal site link icon */
