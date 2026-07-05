@@ -7,5 +7,5 @@
     {{ partial "assets.html" . }}
     {{ partial "gtm.html" . }}
   </head>
-  <body class="tw:bg-white tw:font-sans tw:text-base tw:text-qw-text">{{ block "main" . }}{{ end }}</body>
+  <body class="tw:bg-white tw:font-sans tw:text-base tw:text-qw-text tw:mb-[316px] tw:max-[767px]:mb-[468px]{{ if eq .Language.Lang "en" }} tw:max-[575px]:mb-[510px]{{ end }}">{{ block "main" . }}{{ end }}</body>
 </html>

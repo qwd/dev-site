@@ -40,7 +40,7 @@
   {{/* Swagger UI anchors use the first OpenAPI tag plus operationId. */}}
   {{- $tag := index $operation.tags 0 -}}
   {{- $explorerURL := printf "%s#/%s/%s" (relLangURL "api-explore/") $tag $operation.operationId -}}
-  <p><a class="tw:inline-block tw:rounded-btn tw:bg-qw-link tw:text-white tw:text-sm tw:py-[8px] tw:px-[12px] tw:hover:no-underline" href="{{ $explorerURL }}" target="_blank" rel="noopener noreferrer">{{ T "try-it" }}</a></p>
+  <p><a class="tw:inline-block tw:rounded-[5px] tw:bg-qw-link tw:text-white tw:text-sm tw:py-[8px] tw:px-[12px] tw:hover:no-underline" href="{{ $explorerURL }}" target="_blank" rel="noopener noreferrer">{{ T "try-it" }}</a></p>
 {{- end }}
 
 <h2 id="response">{{ T "response" }}<a class="tw:ml-2 tw:text-[#dadada] tw:hover:text-qw-link" href="#response" aria-label="{{ T "permalink" }}">#</a></h2>

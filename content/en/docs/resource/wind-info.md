@@ -15,7 +15,7 @@ In a geographic coordinate system, the wind has a total of 32 different directio
 
 ### 16 wind directions
 
-> ![16 wind direction rose](/assets/images/content/wind-direction-rose.png)
+<img class="tw:w-3/5 tw:mx-auto" src="/assets/images/content/wind-direction-rose.png" alt="16 wind direction rose">
 
 16 wind direction：
 

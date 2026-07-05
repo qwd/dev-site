@@ -13,7 +13,7 @@
 </section>
 <section class="doc-bc-mobile tw:sticky tw:top-0 tw:z-10 tw:block tw:sm:hidden">
   <div class="tw:w-full tw:px-6">
-      <select class="tw:min-h-12 tw:text-[#ebebeb] tw:bg-[rgba(17,17,17,0.85)] tw:w-full tw:p-4 tw:mt-4 tw:rounded-card tw:leading-8" onchange="if (this.value) window.location.href=this.value">
+      <select class="tw:min-h-12 tw:text-[#ebebeb] tw:bg-[rgba(17,17,17,0.85)] tw:w-full tw:p-4 tw:mt-4 tw:rounded-[10px] tw:leading-8" onchange="if (this.value) window.location.href=this.value">
       <option value="">{{ T "docs-category" }}</option>
       {{- $current := . -}}
       {{- $docsNav := index hugo.Data "docs-nav" -}}

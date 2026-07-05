@@ -4,10 +4,6 @@
 @source "../../content";
 
 @layer base {
-  body {
-    margin-bottom: 316px;
-  }
-
   a {
     color: var(--tw-color-qw-link);
     text-decoration: none;
@@ -121,13 +117,10 @@
 
 @theme {
   --spacing: 2.5px;
-
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
-  --color-qw-text: #333;
-  --color-qw-heading: #231815;
-  --color-qw-muted: #696969;
-  --color-qw-muted-2: #767676;
+  --color-qw-text: #2B2B2C;
+  --color-qw-heading: #111;
+  --color-qw-muted: #606D73;
   --color-qw-link: #0D7FEF;
   --color-qw-link-dark: #004085;
   --color-qw-info-bg: #f0fcff;
@@ -137,15 +130,6 @@
   --color-qw-orange: #F7931A;
   --color-qw-success: #20894D;
   --color-qw-danger: #ff2525;
-
-  --text-hero: 40px;
-
-  --tracking-body: 0.2px;
-  --tracking-hero: 1.2px;
-
-  --radius-card: 10px;
-  --radius-btn: 5px;
-  --radius-code: 4px;
 }
 
 /* Container — stepped responsive max-width matching Bootstrap behaviour at TW breakpoints */
@@ -185,9 +169,6 @@
 /* ═══════════════ responsive content generated from Markdown ══════════════ */
 
 @media (max-width: 767px) {
-  body {
-    margin-bottom: 468px;
-  }
   table {
     display: block;
     width: 100%;
@@ -196,12 +177,6 @@
     overflow-x: auto;
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-  }
-}
-
-@media (max-width: 575px) {
-  body:lang(en) {
-    margin-bottom: 510px;
   }
 }
 
@@ -215,6 +190,37 @@
     padding-top: 40px;
     margin-top: -20px;
     margin-bottom: 20px;
+  }
+
+  .doc-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-block: 10px;
+  }
+
+  .doc-content ul,
+  .doc-content ol {
+    padding-left: 40px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .doc-content ul {
+    list-style: disc;
+  }
+
+  .doc-content ol {
+    list-style: decimal;
+  }
+
+  .doc-content li {
+    margin-bottom: 5px;
+  }
+
+  .doc-content li ul,
+  .doc-content li ol {
+    margin-top: 10px;
   }
 
   /* external link icon */

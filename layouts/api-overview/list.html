@@ -6,9 +6,9 @@
     <article class="article tw:pt-8 tw:flex-1 tw:min-w-0">
       <div class="qw-container">
         <div class="tw:flex tw:flex-wrap tw:-mx-6">
-          <div class="tw:w-full tw:lg:w-10/12 tw:px-6 tw:py-6 tw:min-w-0 tw:border tw:border-[#dfdfdf] tw:rounded-card">
+          <div class="tw:w-full tw:lg:w-10/12 tw:px-6 tw:py-6 tw:min-w-0 tw:border tw:border-[#dfdfdf] tw:rounded-[10px]">
             <section class="article-headline tw:leading-none tw:mb-12 tw:pb-6 tw:border-b tw:border-[#ebebeb]"><h1 class="tw:mr-4 tw:inline-block">{{ .Title }}</h1></section>
-            <section class="doc-content tw:[&_img]:my-4 tw:[&_img]:block tw:[&_img]:h-auto tw:[&_img]:max-w-full tw:[&_li]:mb-2 tw:[&_li_ul]:mt-4">
+            <section class="doc-content">
               {{ with .Description }}<p>{{ . }}</p>{{ end }}
               {{ .Content }}
               <div class="tw:flex tw:flex-wrap tw:-mx-6">
