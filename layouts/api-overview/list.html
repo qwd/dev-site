@@ -2,12 +2,12 @@
   {{- $docsNav := index hugo.Data "docs-nav" -}}
   {{ partial "docs/breadcrumbs.html" . }}
   <div class="main-content tw:w-full tw:flex tw:px-6">
-    <aside class="docs-nav tw:text-sm tw:hidden tw:md:block tw:shrink-0 tw:pt-12 tw:pb-6 tw:pr-6 tw:mr-8">{{ partial "docs/nav.html" . }}</aside>
+    <aside class="docs-nav tw:min-w-[180px] tw:border-r tw:border-[#dfdfdf] tw:text-sm tw:hidden tw:md:block tw:shrink-0 tw:pt-12 tw:pb-6 tw:pr-6 tw:mr-8">{{ partial "docs/nav.html" . }}</aside>
     <article class="article tw:pt-8 tw:flex-1 tw:min-w-0">
       <div class="qw-container">
         <div class="tw:flex tw:flex-wrap tw:-mx-6">
           <div class="tw:w-full tw:lg:w-10/12 tw:px-6 tw:py-6 tw:min-w-0 content-border tw:rounded-card">
-            <section class="article-headline tw:mb-12 tw:pb-6 tw:border-b tw:border-solid tw:border-[#ebebeb]"><h1 class="tw:mr-4 tw:inline-block">{{ .Title }}</h1></section>
+            <section class="article-headline tw:leading-none tw:mb-12 tw:pb-6 tw:border-b tw:border-[#ebebeb]"><h1 class="tw:mr-4 tw:inline-block">{{ .Title }}</h1></section>
             <section class="doc-content">
               {{ with .Description }}<p>{{ . }}</p>{{ end }}
               {{ .Content }}

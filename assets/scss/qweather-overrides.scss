@@ -1,19 +1,17 @@
-@import "var";
-
 .swagger-ui {
-  font-family: $font-family;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   code,
   pre {
-    font-family: $code-font-family;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   a {
-    color: $color-link;
+    color: #0D7FEF;
     text-decoration: none;
 
     &:hover {
-      color: $color-link;
+      color: #0D7FEF;
       text-decoration: underline;
     }
   }

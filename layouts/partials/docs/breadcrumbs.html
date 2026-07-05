@@ -1,4 +1,4 @@
-<section class="doc-bc tw:text-sm tw:hidden tw:sm:block tw:sticky tw:top-0 tw:z-10">
+<section class="doc-bc tw:bg-[#231815] tw:min-h-[40px] tw:leading-[20px] tw:text-sm tw:hidden tw:sm:block tw:sticky tw:top-0 tw:z-10">
   <div class="tw:w-full tw:px-6">
     <ul class="tw:list-none tw:p-0 tw:m-0 tw:flex">
       {{ range where .Ancestors.Reverse "IsHome" false }}
@@ -10,7 +10,7 @@
 </section>
 <section class="doc-bc-mobile tw:sticky tw:top-0 tw:z-10 tw:block tw:sm:hidden">
   <div class="tw:w-full tw:px-6">
-    <select onchange="if (this.value) window.location.href=this.value">
+      <select class="tw:min-h-[30px] tw:text-[#ebebeb] tw:bg-[rgba(17,17,17,0.85)] tw:w-full tw:p-[10px] tw:mt-[10px] tw:rounded-card tw:leading-[20px]" onchange="if (this.value) window.location.href=this.value">
       <option value="">{{ T "docs-category" }}</option>
       {{- $current := . -}}
       {{- $docsNav := index hugo.Data "docs-nav" -}}
