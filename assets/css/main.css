@@ -1,25 +1,25 @@
-@import "tailwindcss" prefix(tw);
+@import "tailwindcss";
 
 @source "../../layouts";
 @source "../../content";
 
 @layer base {
   a {
-    color: var(--tw-color-qw-link);
+    color: var(--color-qw-link);
     text-decoration: none;
     background-color: transparent;
   }
   a:hover {
     text-decoration: underline;
-    color: var(--tw-color-qw-link);
+    color: var(--color-qw-link);
   }
   a:active,
   a:focus {
-    color: var(--tw-color-qw-link);
+    color: var(--color-qw-link);
   }
 
   h1, h2, h3, h4, h5 {
-    color: var(--tw-color-qw-heading);
+    color: var(--color-qw-heading);
     font-weight: bold;
     margin: 0;
   }
@@ -38,10 +38,6 @@
 
   ul li, ol li {
     line-height: 1.5;
-  }
-
-  code, pre {
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   code {
@@ -116,7 +112,6 @@
 }
 
 @theme {
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --color-qw-text: #2B2B2C;
   --color-qw-heading: #111;
   --color-qw-muted: #606D73;

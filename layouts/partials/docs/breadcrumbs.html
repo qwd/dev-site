@@ -1,19 +1,19 @@
-<section class="doc-bc tw:bg-[#231815] tw:min-h-10 tw:leading-5 tw:text-sm tw:hidden tw:sm:block tw:sticky tw:top-0 tw:z-10">
-  <div class="tw:w-full tw:px-[15px]">
-    <ul class="tw:list-none tw:p-0 tw:m-0 tw:flex">
+<section class="doc-bc bg-[#231815] min-h-10 leading-5 text-sm hidden sm:block sticky top-0 z-10">
+  <div class="w-full px-[15px]">
+    <ul class="list-none p-0 m-0 flex">
       {{- $ancestors := where .Ancestors.Reverse "IsHome" false -}}
       {{ range $index, $ancestor := $ancestors }}
-      {{ if gt $index 0 }}<li class="tw:py-2.5 tw:mr-[5px] tw:text-[#bbb]" aria-hidden="true">&gt;</li>{{ end }}
-      <li class="tw:py-2.5 tw:mr-[5px]"><a class="tw:inline-block tw:text-[#ccc] tw:hover:text-qw-surface-muted tw:hover:no-underline tw:[font-weight:lighter]" href="{{ $ancestor.RelPermalink }}">{{ $ancestor.Title }}</a></li>
+      {{ if gt $index 0 }}<li class="py-2.5 mr-[5px] text-[#bbb]" aria-hidden="true">&gt;</li>{{ end }}
+      <li class="py-2.5 mr-[5px]"><a class="inline-block text-[#ccc] hover:text-qw-surface-muted hover:no-underline [font-weight:lighter]" href="{{ $ancestor.RelPermalink }}">{{ $ancestor.Title }}</a></li>
       {{ end }}
-      {{ if gt (len $ancestors) 0 }}<li class="tw:py-2.5 tw:mr-[5px] tw:text-[#bbb]" aria-hidden="true">&gt;</li>{{ end }}
-      <li class="tw:py-2.5 tw:mr-[5px]"><a class="tw:inline-block tw:text-white tw:hover:text-white tw:hover:no-underline tw:font-normal" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ if gt (len $ancestors) 0 }}<li class="py-2.5 mr-[5px] text-[#bbb]" aria-hidden="true">&gt;</li>{{ end }}
+      <li class="py-2.5 mr-[5px]"><a class="inline-block text-white hover:text-white hover:no-underline font-normal" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     </ul>
   </div>
 </section>
-<section class="doc-bc-mobile tw:sticky tw:top-0 tw:z-10 tw:block tw:sm:hidden">
-  <div class="tw:w-full tw:px-[15px]">
-      <select class="tw:min-h-[30px] tw:text-[#ebebeb] tw:bg-[rgba(17,17,17,0.85)] tw:w-full tw:p-2.5 tw:mt-2.5 tw:rounded-[10px] tw:leading-5" onchange="if (this.value) window.location.href=this.value">
+<section class="doc-bc-mobile sticky top-0 z-10 block sm:hidden">
+  <div class="w-full px-[15px]">
+      <select class="min-h-[30px] text-[#ebebeb] bg-[rgba(17,17,17,0.85)] w-full p-2.5 mt-2.5 rounded-[10px] leading-5" onchange="if (this.value) window.location.href=this.value">
       <option value="">{{ T "docs-category" }}</option>
       {{- $current := . -}}
       {{- $docsNav := index hugo.Data "docs-nav" -}}

@@ -1,6 +1,6 @@
 <h{{ .Level }} id="{{ .Anchor | safeURL }}"{{- with .Attributes.class }} class="{{ . }}"{{ end }}>
   {{- .Text | safeHTML -}}
   {{- if and (ge .Level 2) (le .Level 3) -}}
-    <a class="tw:ml-[5px] tw:text-[#dadada] tw:hover:text-qw-link" href="#{{ .Anchor | safeURL }}" aria-label="{{ T "permalink" }}">#</a>
+    <a class="ml-[5px] text-[#dadada] hover:text-qw-link" href="#{{ .Anchor | safeURL }}" aria-label="{{ T "permalink" }}">#</a>
   {{- end -}}
 </h{{ .Level }}>

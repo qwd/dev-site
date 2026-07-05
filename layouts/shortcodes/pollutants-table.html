@@ -1,4 +1,4 @@
 {{- $rows := partial "csv.html" "air-pollutant" -}}
 <table><thead><tr><th>Code</th><th>{{ T "name" }}</th><th>{{ T "full-name" }}</th><th>{{ T "unit-new" }}</th><th>{{ T "unit-legacy" }}</th></tr></thead><tbody>
-{{- range after 1 $rows }}<tr><td><code>{{ index . 0 }}</code></td><td>{{ index . 1 }}</td><td>{{ if eq $.Page.Language.Lang "zh" }}{{ index . 2 }}{{ else }}{{ index . 3 }}{{ end }}</td><td><ul class="tw:list-none tw:p-0 tw:m-0">{{ range split (index . 4) "," }}<li>{{ . }}</li>{{ end }}</ul></td><td>{{ index . 5 }}</td></tr>{{ end }}
+{{- range after 1 $rows }}<tr><td><code>{{ index . 0 }}</code></td><td>{{ index . 1 }}</td><td>{{ if eq $.Page.Language.Lang "zh" }}{{ index . 2 }}{{ else }}{{ index . 3 }}{{ end }}</td><td><ul class="list-none p-0 m-0">{{ range split (index . 4) "," }}<li>{{ . }}</li>{{ end }}</ul></td><td>{{ index . 5 }}</td></tr>{{ end }}
 </tbody></table>

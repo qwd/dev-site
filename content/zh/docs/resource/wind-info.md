@@ -14,7 +14,7 @@ translationKey: res-wind
 
 ### 16位风向方位
 
-<img class="tw:w-3/5 tw:mx-auto" src="/assets/images/content/wind-direction-rose.png" alt="风向16方位图">
+<img class="w-3/5 mx-auto" src="/assets/images/content/wind-direction-rose.png" alt="风向16方位图">
 
 16位风向方位的名称、代码和对应风向角度的关系如下：
 

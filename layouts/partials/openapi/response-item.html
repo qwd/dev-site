@@ -4,9 +4,9 @@
 {{/* Render one response field row; nested schema structures are delegated back
   to response-tree.html so recursion has a single entry point. */}}
 <li>
-  <div class="api-response-field tw:leading-[1.6]">
+  <div class="api-response-field leading-[1.6]">
     <code>{{ $field.name }}</code>
-    {{- with $field.type }} <span class="api-response-type tw:mx-[7.5px] tw:text-qw-muted tw:text-xs tw:font-mono">{{ . }}</span>{{ end -}}
+    {{- with $field.type }} <span class="api-response-type mx-[7.5px] text-qw-muted text-xs font-mono">{{ . }}</span>{{ end -}}
     {{- with $field.description }} <span class="api-response-description">{{ . | markdownify }}</span>{{ end -}}
     {{/*
       Keep schema metadata in the intermediate model, but do not render it in
@@ -14,10 +14,10 @@
       the null behavior in their descriptions, and badges such as readOnly or
       discriminator add noise to the handwritten-doc style we are matching.
     {{- with $field.recursiveRef }} <span class="api-response-description">{{ T "recursive-reference" }}: <code>{{ . }}</code></span>{{ end -}}
-    {{- if $field.nullable }} <em class="api-response-type tw:mx-[7.5px] tw:text-qw-muted tw:text-xs tw:font-mono">nullable</em>{{ end -}}
-    {{- if $field.readOnly }} <em class="api-response-type tw:mx-[7.5px] tw:text-qw-muted tw:text-xs tw:font-mono">readOnly</em>{{ end -}}
-    {{- if $field.writeOnly }} <em class="api-response-type tw:mx-[7.5px] tw:text-qw-muted tw:text-xs tw:font-mono">writeOnly</em>{{ end -}}
-    {{- if $field.deprecated }} <em class="api-response-type tw:mx-[7.5px] tw:text-qw-muted tw:text-xs tw:font-mono">deprecated</em>{{ end -}}
+    {{- if $field.nullable }} <em class="api-response-type mx-[7.5px] text-qw-muted text-xs font-mono">nullable</em>{{ end -}}
+    {{- if $field.readOnly }} <em class="api-response-type mx-[7.5px] text-qw-muted text-xs font-mono">readOnly</em>{{ end -}}
+    {{- if $field.writeOnly }} <em class="api-response-type mx-[7.5px] text-qw-muted text-xs font-mono">writeOnly</em>{{ end -}}
+    {{- if $field.deprecated }} <em class="api-response-type mx-[7.5px] text-qw-muted text-xs font-mono">deprecated</em>{{ end -}}
     {{- with $field.discriminator }} <span class="api-response-description">discriminator: <code>{{ .propertyName }}</code></span>{{ end -}}
     */}}
   </div>
