@@ -1,27 +1,31 @@
 {{ define "main" }}
   {{- $docsNav := index hugo.Data "docs-nav" -}}
   {{ partial "docs/breadcrumbs.html" . }}
-  <div class="main-content container-fluid d-flex">
-    <aside class="docs-nav small pt-5 pb-3 pr-3 mr-4 d-none d-md-block">{{ partial "docs/nav.html" . }}</aside>
-    <article class="article pt-4 width100">
-      <div class="container"><div class="row"><div class="col-12 col-lg-10 py-3 content-border border-r10" style="width: 0;">
-        <section class="article-headline mb-5 pb-3 border-bottom"><h1 class="mr-2 d-inline-block">{{ .Title }}</h1></section>
-        <section class="doc-content">
-          {{ with .Description }}<p>{{ . }}</p>{{ end }}
-          {{ .Content }}
-          <div class="row">
-            {{- $node := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" .TranslationKey) -}}
-            {{- with $node }}
-              {{- range .children }}
-                {{- $overview := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) -}}
-                {{- with $overview }}
-            <div class="col-12 col-lg-4 col-md-6 mb-4"><div class="data p-3"><h3 class="mb-4"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p class="mb-4">{{ .Description }}</p></div></div>
+  <div class="main-content w-full flex px-[15px] pb-10">
+    <aside class="docs-nav min-w-[180px] border-r border-qw-neutral-200 text-sm hidden md:block shrink-0 pt-[30px] pb-[15px] pr-[15px] mr-5">{{ partial "docs/nav.html" . }}</aside>
+    <article class="article pt-5 flex-1 min-w-0">
+      <div class="qw-container">
+        <div class="flex flex-wrap -mx-[15px]">
+          <div class="w-full lg:w-10/12 px-[15px] py-[15px] min-w-0 border border-qw-neutral-200 rounded-[10px]">
+            <section class="article-headline leading-none mb-[30px] pb-[15px] border-b border-qw-neutral-200"><h1 class="mr-2.5 inline-block">{{ .Title }}</h1></section>
+            <section class="doc-content">
+              {{ with .Description }}<p>{{ . }}</p>{{ end }}
+              {{ .Content }}
+              <div class="flex flex-wrap -mx-[15px]">
+                {{- $node := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" .TranslationKey) -}}
+                {{- with $node }}
+                  {{- range .children }}
+                    {{- $overview := partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) -}}
+                    {{- with $overview }}
+                <div class="w-full md:w-1/2 lg:w-1/3 px-[15px] mb-5"><div class="data p-[15px]"><h3 class="mb-5"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p class="mb-5">{{ .Description }}</p></div></div>
+                    {{- end }}
+                  {{- end }}
                 {{- end }}
-              {{- end }}
-            {{- end }}
+              </div>
+            </section>
           </div>
-        </section>
-      </div></div></div>
+        </div>
+      </div>
     </article>
   </div>
 {{ end }}

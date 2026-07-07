@@ -1,49 +1,49 @@
 {{ define "main" }}
-<section class="masthead price"><div class="container"><h1>{{ .Title }}</h1><p class="text-center">{{ T "pi-desc" }}</p></div></section>
-<main class="price-homepage container pb-5">
-  <section class="payment-system row mb-5">
+<section class="mb-[30px] pt-[30px] pb-5 text-center bg-[#c2eafd] bg-[linear-gradient(60deg,#FFE8EA,#FFF6E8,#E8EEFF)]"><div class="qw-container"><h1 class="text-black mb-[30px] tracking-[1px]">{{ .Title }}</h1><p class="text-center text-qw-text">{{ T "pi-desc" }}</p></div></section>
+<div class="qw-container pb-[30px]">
+  <section class="payment-system flex flex-wrap -mx-[15px] mb-[30px]">
     {{ range slice
-      (dict "class" "payg" "image" "pi-payg-cart.png" "title" "pi-payg" "desc" "pi-payg-desc" "more" "pi-payg-more" "url" "docs/finance/billing-and-payment/")
-      (dict "class" "splan" "image" "pi-savingpot.png" "title" "pi-saving-plans" "desc" "pi-saving-plans-desc" "more" "pi-saving-plans-more" "url" "docs/finance/savings-plans/")
+      (dict "class" "border-qw-blue" "image" "pi-payg-cart.png" "title" "pi-payg" "desc" "pi-payg-desc" "more" "pi-payg-more" "url" "docs/finance/billing-and-payment/")
+      (dict "class" "border-qw-pink" "image" "pi-savingpot.png" "title" "pi-saving-plans" "desc" "pi-saving-plans-desc" "more" "pi-saving-plans-more" "url" "docs/finance/savings-plans/")
     }}
-    <div class="col-md-6 col-12 mb-5 mb-md-0"><div class="price-card {{ .class }} p-4">
-      <img src="/assets/images/{{ .image }}" alt="" width="240" class="mx-auto mb-4 d-block">
-      <h2 class="mb-5">{{ T .title }}</h2>
-      <div class="card-brief-with-height mb-5">{{ T .desc | markdownify }}</div>
-      <a class="d-block" href="{{ relLangURL .url }}">{{ T .more }}</a>
+    <div class="w-full md:w-1/2 px-[15px] mb-[30px] md:mb-0"><div class="price-card border rounded-[10px] {{ .class }} p-5">
+      <img src="/assets/images/{{ .image }}" alt="" width="240" class="mx-auto mb-5 block">
+      <h2 class="text-3xl mb-[30px]">{{ T .title }}</h2>
+      <div class="card-brief-with-height min-h-[200px] mb-[30px]">{{ T .desc | markdownify }}</div>
+      <a class="block" href="{{ relLangURL .url }}">{{ T .more }}</a>
     </div></div>
     {{ end }}
   </section>
-  <section class="pricing row mb-5"><div class="col-12"><div class="price-card tier p-4">
-    <h2 class="mb-5">{{ T "pi-tier-title" }}</h2>
+  <section class="pricing flex flex-wrap -mx-[15px] mb-[30px]"><div class="w-full px-[15px]"><div class="price-card border rounded-[10px] border-qw-orange p-5">
+    <h2 class="text-3xl mb-[30px]">{{ T "pi-tier-title" }}</h2>
     <div class="card-brief"><p>{{ T "pi-tier-desc" }}</p><p>{{ T "pi-tier-see" }}:</p></div>
-    <div class="price-by-service row">
+    <div class="price-by-service flex flex-wrap -mx-[15px]">
       {{ range $index, $group := hugo.Data.price }}
-      <div class="col-6 col-md-4 mb-4"><a class="d-block service-card p-3 border-r10 no-underline color-font" href="{{ relLangURL "docs/finance/pricing/" }}#{{ $group.data.en | urlize }}">
-        <h4 class="mb-3">{{ index $group.data $.Language.Lang }}</h4>
-        <div class="price-content{{ add $index 1 }} d-none d-sm-block"><ul class="clear-list"{{ if eq $index 0 }} style="columns: 2;"{{ end }}>
-          {{ range $group.incl }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .) }}{{ with $page }}<li class="small mb-1">{{ .Title }}</li>{{ end }}{{ end }}
+      <div class="w-1/2 md:w-1/3 px-[15px] mb-5"><a class="block service-card border border-qw-orange min-h-[220px] max-[595px]:min-h-[100px] p-[15px] rounded-[10px] hover:no-underline text-qw-text hover:bg-[#fcefdf] hover:text-qw-text focus:bg-[#fcefdf] focus:text-qw-text active:bg-[#fcefdf] active:text-qw-text" href="{{ relLangURL "docs/finance/pricing/" }}#{{ $group.data.en | urlize }}">
+        <h4 class="mb-[15px]">{{ index $group.data $.Language.Lang }}</h4>
+        <div class="price-content{{ add $index 1 }} hidden sm:block"><ul class="list-none p-0 m-0{{ if eq $index 0 }} columns-2{{ end }}">
+          {{ range $group.incl }}{{ $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" .) }}{{ with $page }}<li class="text-sm mb-[5px]">{{ .Title }}</li>{{ end }}{{ end }}
         </ul></div>
       </a></div>
       {{ end }}
     </div>
   </div></div></section>
-  <section class="price-calc row mb-5"><div class="col-12"><div class="price-card calc px-4 py-5"><div class="row">
-    <div class="col-md-auto col-12 text-center mb-4 mb-md-0"><img src="/assets/images/pi-calc.png" alt="" width="160"></div>
-    <div class="col"><h2 class="mb-4" style="color: #fff;">{{ T "pi-calc" }}</h2><div class="card-calc-brief-with-height"><p>{{ T "pi-calc-desc" }}</p></div><a href="https://console.qweather.com/price-calculator" class="btn-link btn-link-md btn-link-blue d-inline-block">{{ T "pi-calc-go" }}</a></div>
+  <section class="price-calc flex flex-wrap -mx-[15px] mb-[30px]"><div class="w-full px-[15px]"><div class="price-card border border-white rounded-[10px] bg-[#374A57] text-white px-5 py-[30px]"><div class="flex flex-wrap -mx-[15px]">
+    <div class="md:w-auto w-full px-[15px] text-center mb-5 md:mb-0"><img src="/assets/images/pi-calc.png" alt="" width="160"></div>
+    <div class="flex-1 min-w-0 px-[15px]"><h2 class="text-3xl mb-5 text-white">{{ T "pi-calc" }}</h2><div class="card-calc-brief-with-height min-h-[80px]"><p>{{ T "pi-calc-desc" }}</p></div><a href="https://console.qweather.com/price-calculator" class="inline-block rounded-[5px] bg-qw-blue text-white text-sm py-2 px-3 hover:no-underline">{{ T "pi-calc-go" }}</a></div>
   </div></div></div></section>
-  <section class="ent-and-free row mb-5"><div class="col-12 mb-5 mb-md-0"><div class="price-card ent p-4">
-    <h2 class="mb-5">{{ T "pi-org" }}</h2><div class="card-brief-with-height mb-5">{{ T "pi-org-desc" | markdownify }}</div>
-    <a class="d-block" href="https://www.qweather.com{{ if eq .Language.Lang "en" }}/en{{ end }}/contact" target="_blank" rel="noopener noreferrer">{{ T "contact-us" }}</a>
+  <section class="ent-and-free flex flex-wrap -mx-[15px] mb-[30px]"><div class="w-full px-[15px] mb-[30px] md:mb-0"><div class="price-card border rounded-[10px] border-qw-purple p-5">
+    <h2 class="text-3xl mb-[30px]">{{ T "pi-org" }}</h2><div class="card-brief-with-height min-h-[200px] mb-[30px]">{{ T "pi-org-desc" | markdownify }}</div>
+    <a class="block" href="https://www.qweather.com{{ if eq .Language.Lang "en" }}/en{{ end }}/contact" target="_blank" rel="noopener noreferrer">{{ T "contact-us" }}</a>
   </div></div></section>
-  <section class="more text-center mb-5"><h2 class="mb-4">{{ T "pi-more" }}</h2><ul class="clear-list">
+  <section class="more text-center mb-[30px]"><h2 class="mb-5">{{ T "pi-more" }}</h2><ul class="list-none p-0 m-0">
     {{ range slice
       (dict "title" "pi-more-free-trial" "link" "help/#can-i-try-it-for-free")
       (dict "title" "pi-more-request" "link" "help/#what-is-a-request")
       (dict "title" "pi-more-discounts" "link" "help/#are-there-more-discounts-if-i-have-a-high-volume-of-requests")
       (dict "title" "pi-more-vat" "link" "help/#do-the-pricing-include-vat")
-    }}<li class="pb-2 big"><a class="dark-link" href="{{ relLangURL .link }}">{{ T .title }}</a></li>{{ end }}
+    }}<li class="pb-2.5 text-xl"><a class="text-qw-heading hover:text-black" href="{{ relLangURL .link }}">{{ T .title }}</a></li>{{ end }}
   </ul></section>
-  <section class="register text-center"><a href="https://id.qweather.com/#/register?redirect=https://console.qweather.com{{ if eq .Language.Lang "en" }}&lang=en{{ end }}" class="border-blue-link no-underline d-inline-block px-5 py-3 border-r10 big">{{ T "hp-regnow" }}</a></section>
-</main>
+  <section class="register text-center"><a href="https://id.qweather.com/#/register?redirect=https://console.qweather.com{{ if eq .Language.Lang "en" }}&lang=en{{ end }}" class="text-qw-blue bg-white border border-qw-blue hover:bg-qw-blue hover:text-white hover:no-underline inline-block px-[30px] py-[15px] rounded-[10px] text-xl">{{ T "hp-regnow" }}</a></section>
+</div>
 {{ end }}

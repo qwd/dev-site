@@ -19,7 +19,7 @@ languages:
     contentDir: content/en
     locale: en
     label: English
-    title: QWeather Developer Services
+    title: QWeather Developers
     weight: 2
 
 params:

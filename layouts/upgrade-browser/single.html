@@ -1,15 +1,15 @@
 {{ define "main" }}
-<div class="upgrade-browser mx-auto my-0 py-5 px-3" style="max-width: 680px;">
-  <h1 class="mb-4">{{ .Title }}</h1>
+<div class="upgrade-browser mx-auto my-0 py-[30px] px-[15px] max-w-[680px]">
+  <h1 class="mb-5">{{ .Title }}</h1>
   {{ .Content }}
-  <ul class="clear-list my-3">
+  <ul class="list-none p-0 m-0 my-[15px]">
     {{ range slice
       (dict "name" "Safari (macOS only)" "url" "https://www.apple.com/safari/")
       (dict "name" "Firefox" "url" "https://www.mozilla.org/firefox/")
       (dict "name" "Chrome" "url" "https://www.google.com/chrome/index.html")
       (dict "name" "Edge" "url" "https://www.microsoft.com/edge")
     }}
-    <li class="mb-4"><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a></li>
+    <li class="mb-5"><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a></li>
     {{ end }}
   </ul>
 </div>

@@ -1,7 +1,7 @@
 {{ define "main" }}
-<section class="masthead faq"><div class="container"><h1>{{ .Title }}</h1><p class="text-center">{{ .Description }}</p></div></section>
-<main class="main-content narrow container"><div class="article"><section class="faq-content p-5 border-r10">
-  <div class="mb-5 faq-toc">{{ .TableOfContents }}</div>
-  <div class="border-r10 doc-content">{{ .Content }}</div>
-</section></div></main>
+<section class="mb-[30px] pt-[30px] pb-5 text-center bg-[#7482A9] bg-[linear-gradient(60deg,#5A9CBE,#7482A9,#694F97)]"><div class="qw-container"><h1 class="text-white mb-[30px] tracking-[1px]">{{ .Title }}</h1><p class="text-center text-qw-cool-white">{{ .Description }}</p></div></section>
+<div class="main-content qw-container-narrow pb-10"><div class="article"><section class="faq-content border border-[#5A9CBE] p-[30px] rounded-[10px]">
+  <div class="mb-[30px] faq-toc [&_ul]:list-none [&_ul]:p-0 [&_ul]:mt-0 [&_ul]:mb-0 [&_li]:text-xl [&_li]:mb-[5px] [&_a]:text-qw-text [&_a:hover]:text-qw-text [&_a:hover]:no-underline [&_a:focus]:text-qw-text [&_a:active]:text-qw-text [&_a.active]:text-qw-text [&_li>ul]:list-disc [&_li>ul]:pl-10 [&_li>ul]:mt-2.5 [&_li>ul_li]:text-base [&_ul:last-child]:mb-0 [&_li:last-child]:mb-0">{{ .TableOfContents }}</div>
+  <div class="rounded-[10px] [&_h2]:mt-10 [&_h2]:pb-2.5 [&_h2]:border-b [&_h2]:border-qw-neutral-200 [&_h3]:mt-[30px] [&_h3]:text-lg">{{ .Content }}</div>
+</section></div></div>
 {{ end }}

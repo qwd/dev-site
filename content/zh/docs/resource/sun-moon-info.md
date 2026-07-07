@@ -25,7 +25,7 @@ translationKey: res-sunmoon
 
 为什么有时候月升的时间是上午9点？月亮不是只在晚上出现吗？你们的数据出错了吧？
 
-<strong>*实际上，月亮并非只在晚上出现。</strong>*
+***实际上，月亮并非只在晚上出现。***
 
 月球的公转周期大约是29.53天，因此对于地球来说，月球每天移动的角度是:
 
@@ -43,29 +43,33 @@ translationKey: res-sunmoon
 
 因此如果你在晚上9点看到月亮升起来了，那么大概再过15天，你将发现月亮在早上9点升起来了。一般来说，在新月前后，月亮几乎只在白天出现，而在满月前后，月亮则在一整晚都在。
 
-> <strong>提示：</strong>上述计算和数据仅为举例说明，并非严谨计算。实际上每天的月升时间相比前一天可能推迟30-70分钟。
+> **提示：** 上述计算和数据仅为举例说明，并非严谨计算。实际上每天的月升时间相比前一天可能推迟30-70分钟。
 
 ### 为什么一整天都有月亮？ {#why-is-there-a-moon-all-day-long}
 
 由于月球的公转轨道不是地球的赤道平面，而是比较接近黄道平面，你可以理解为月亮是倾斜着围绕地球进行公转，因此在高纬度地区，每个月至少有一天完全看不到月亮，也至少有一天月亮在一整天都出现，此时`moonrise` 和 `moonset`可能为空。
 
-![月球轨道](/assets/images/content/earth-moon-orbit-zh.png)
-*地球和月球轨道（原始图片[Wikimedia](https://commons.wikimedia.org/wiki/File:Earth-Moon-zh-Hant.PNG)）*
-{.figimg}
+> ![地球和月球轨道](/assets/images/content/earth-moon-orbit-zh.png)
+>
+> *地球和月球轨道（原始图片[Wikimedia](https://commons.wikimedia.org/wiki/File:Earth-Moon-zh-Hant.PNG)）*
+
 ### 只有月升或只有月落 {#only-moonrise-or-moonset}
 
 还记得上边我们说到每天月升时间都会比前一天晚50分钟吗？所以当一个特定日期的月升时间在23:10-23:59分时，那么下一次的月升则会推迟到第三天的00:00-00:49，月落也是如此。因此通常情况下，每个月都会有一天只有月升，有一天只有月落，并且一般发生在上弦月和下弦月的前后。
 
-![北京月升月落时间表](/assets/images/content/moon-rise-set-beijing-2022.jpg)
-*北京2022年月升月落时间表，空白的地方表示月升或月落时间没有发生在当天24小时内。这并非是月亮惹的祸，而是我们的人为的历法导致的。*
-{.figimg}
+
+> ![北京月升月落时间表](/assets/images/content/moon-rise-set-beijing-2022.jpg)
+>
+> *北京2022年月升月落时间表，空白的地方表示月升或月落时间没有发生在当天24小时内。这并非是月亮惹的祸，而是我们的人为的历法导致的。*
+
 ## 月相 {#moon-phase}
 
 月相，是由地球上所观看之月光形态。月球本身不发光，月球直接被太阳照射之部分反射太阳光，才可见发亮，当地球位于月球和太阳之间时，我们可以看到整个被太阳直射的月球部分，这就是“满月”。当月球位于地球和太阳之间时，我们只能看到月球不被太阳照射的部分，这就是“朔”，而当首度再见到月球明亮的部分时，称为“新月”。
 
-![月相](/assets/images/content/moon-phases-zh.jpg)
-*这张图代表了不同月相对应的太阳、地球和月球的相对位置，此时观察者位于北半球，如果观察者位于南半球时，看到的月相形状是左右倒置的。（原始图片[Wikimedia](https://commons.wikimedia.org/wiki/File:Moon_phases_en.jpg) by [Orion 8](https://commons.wikimedia.org/wiki/User:Orion_8)）*
-{.figimg}
+>![月相](/assets/images/content/moon-phases-zh.jpg)
+>
+>*这张图代表了不同月相对应的太阳、地球和月球的相对位置，此时观察者位于北半球，如果观察者位于南半球时，看到的月相形状是左右倒置的。（原始图片[Wikimedia](https://commons.wikimedia.org/wiki/File:Moon_phases_en.jpg) by [Orion 8](https://commons.wikimedia.org/wiki/User:Orion_8)）*
+
 下方表格代表了不同月相的示例。
 
 > <strong>提示：</strong>因为月球轨道较接近黄道而非赤道，故下表南北半球的分界严格来说以黄道为分割。

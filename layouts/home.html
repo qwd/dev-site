@@ -1,54 +1,53 @@
 {{ define "main" }}
 {{- $versions := hugo.Data.versions -}}
-<main class="homepage">
-  <div id="weather-bg" class="hero hero-default">
-    <div class="container"><div class="row justify-content-center">
+  <div id="weather-bg" class="hero bg-[#93d3e9] bg-[linear-gradient(180deg,rgba(240,254,255,0.3),rgba(245,245,247,1)_90%),radial-gradient(ellipse_at_top_right,#fbac5a,transparent_50%),radial-gradient(ellipse_at_top_left,#0084f8,transparent_50%),radial-gradient(ellipse_at_center_top,#1e8c98,transparent_50%),radial-gradient(ellipse_at_center_bottom,#b8cfff,transparent_50%),radial-gradient(ellipse_at_center,#079b9d,transparent_50%),radial-gradient(ellipse_at_bottom_left,#6dc2ff,transparent_50%),radial-gradient(ellipse_at_bottom_right,#ac82f4,transparent_40%)] pt-10 pb-10">
+    <div class="qw-container">
       {{ with hugo.Data.announce.url }}
-      <div class="announce col-12 text-center">
-        &#128227; <a class="grey-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ index hugo.Data.announce.title $.Language.Lang }}</a>
+      <div class="announce text-center">
+        &#128227; <a class="text-qw-slate hover:text-qw-text" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ index hugo.Data.announce.title $.Language.Lang }}</a>
       </div>
       {{ end }}
-      <div class="banner col-12 text-center mb-2"><img src="/assets/images/hp-cloudy.png" alt="" width="300"></div>
-      <div class="headline col-12 text-center">
-        <h1>{{ T "hp-slogan" }}</h1>
-        <h1 class="mb-4">{{ T "hp-slogan-2" }}</h1>
-        <a class="d-inline-block btn-link btn-link-blue btn-link-xl text-bold mb-4" href="https://id.qweather.com/#/register?redirect=https://console.qweather.com" target="_blank" rel="noopener noreferrer">{{ T "hp-regnow" }}</a>
-        <p class="color-grey-76">{{ T "hp-current-ver" }} API v{{ $versions.api.version }} · SDK v{{ $versions.ios.version }}</p>
-        <a class="d-inline-block" href="{{ relLangURL "docs/start/" }}">{{ T "quick-start" }}</a>
+      <div class="banner text-center mb-2.5 flex justify-center"><img src="/assets/images/hp-cloudy.png" alt="" width="300" class="max-w-full"></div>
+      <div class="headline text-center">
+        <h1 class="text-[40px] max-[575px]:text-[32px] leading-normal tracking-[1.2px]">{{ T "hp-slogan" }}</h1>
+        <h1 class="text-[40px] max-[575px]:text-[32px] leading-normal tracking-[1.2px] mb-5">{{ T "hp-slogan-2" }}</h1>
+        <a class="inline-block rounded-[5px] bg-qw-blue text-white py-2.5 px-5 text-lg font-bold mb-5 hover:no-underline" href="https://id.qweather.com/#/register?redirect=https://console.qweather.com" target="_blank" rel="noopener noreferrer">{{ T "hp-regnow" }}</a>
+        <div><a class="inline-block" href="{{ relLangURL "docs/start/" }}">{{ T "quick-start" }}</a></div>
       </div>
-    </div></div>
+    </div>
   </div>
-  <div class="feats pb-5"><div class="container">
-    <div class="row mb-md-5">
-      {{ range slice
-        (dict "class" "service-data" "image" "hp-feat-data.png" "title" "hp-data" "desc" "hp-data-desc" "refer" "hp-data-refer" "url" "docs/features/service-and-data/")
-        (dict "class" "devtools" "image" "hp-feat-devtools.png" "title" "hp-dev" "desc" "hp-dev-desc" "refer" "hp-dev-refer" "url" "docs/api/")
-      }}
-      <div class="col-12 col-md-6 mb-5 mb-md-0"><div class="feat-card border-r10">
-        <img class="d-block card-bg {{ .class }} width100" src="/assets/images/{{ .image }}" alt="">
-        <div class="card-content p-4"><h3 class="mb-4">{{ T .title }}</h3><p>{{ T .desc }}</p></div>
-        <div class="card-footer p-4"><a href="{{ relLangURL .url }}">{{ T .refer }}</a></div>
-      </div></div>
-      {{ end }}
+  <div class="feats bg-[#F5F5F7] bg-[linear-gradient(to_bottom,#F5F5F7,#fff)] pt-10 pb-[30px]">
+    <div class="qw-container">
+      <div class="flex flex-wrap -mx-[15px] md:mb-[30px]">
+        {{ range slice
+          (dict "class" "bg-[#EEF7FF]" "image" "hp-feat-data.png" "title" "hp-data" "desc" "hp-data-desc" "refer" "hp-data-refer" "url" "docs/features/service-and-data/")
+          (dict "class" "bg-[#efeaff]" "image" "hp-feat-devtools.png" "title" "hp-dev" "desc" "hp-dev-desc" "refer" "hp-dev-refer" "url" "docs/api/")
+        }}
+        <div class="w-full md:w-1/2 px-[15px] mb-[30px] md:mb-0"><div class="feat-card rounded-[10px] shadow-[0_2px_5px_2px_rgba(184,184,184,0.2)]">
+          <img class="block card-bg rounded-tl-[10px] rounded-tr-[10px] {{ .class }} w-full" src="/assets/images/{{ .image }}" alt="">
+          <div class="card-content min-h-[200px] p-5"><h3 class="mb-5">{{ T .title }}</h3><p>{{ T .desc }}</p></div>
+          <div class="card-footer p-5"><a href="{{ relLangURL .url }}">{{ T .refer }}</a></div>
+        </div></div>
+        {{ end }}
+      </div>
+      <div class="flex flex-wrap -mx-[15px] md:mb-[30px]">
+        {{ range slice
+          (dict "class" "bg-[#f3f3f3]" "image" "hp-feat-global.png" "title" "hp-ww" "desc" "hp-ww-desc" "refer" "hp-ww-refer" "url" "docs/features/global-deployment/")
+          (dict "class" "bg-[#FFF6E8]" "image" "hp-feat-price.png" "title" "hp-price" "desc" "hp-price-desc" "refer" "hp-price-refer" "url" "price/")
+        }}
+        <div class="w-full md:w-1/2 px-[15px] mb-[30px] md:mb-0"><div class="feat-card rounded-[10px] shadow-[0_2px_5px_2px_rgba(184,184,184,0.2)]">
+          <img class="block card-bg rounded-tl-[10px] rounded-tr-[10px] {{ .class }} w-full" src="/assets/images/{{ .image }}" alt="">
+          <div class="card-content min-h-[200px] p-5"><h3 class="mb-5">{{ T .title }}</h3><p>{{ T .desc }}</p></div>
+          <div class="card-footer p-5"><a href="{{ relLangURL .url }}">{{ T .refer }}</a></div>
+        </div></div>
+        {{ end }}
+      </div>
+      <div class="start-card bg-qw-info-bg rounded-[10px] p-5">
+        {{ range slice "try" "more" "org" }}
+        <h2 class="text-qw-text my-5">{{ T (printf "hp-intro-%s" .) }}</h2>
+        {{ T (printf "hp-intro-%s-desc" .) | markdownify }}
+        {{ end }}
+      </div>
     </div>
-    <div class="row mb-md-5">
-      {{ range slice
-        (dict "class" "worldwide" "image" "hp-feat-global.png" "title" "hp-ww" "desc" "hp-ww-desc" "refer" "hp-ww-refer" "url" "docs/features/global-deployment/")
-        (dict "class" "price" "image" "hp-feat-price.png" "title" "hp-price" "desc" "hp-price-desc" "refer" "hp-price-refer" "url" "price/")
-      }}
-      <div class="col-12 col-md-6 mb-5 mb-md-0"><div class="feat-card border-r10">
-        <img class="d-block card-bg {{ .class }} width100" src="/assets/images/{{ .image }}" alt="">
-        <div class="card-content p-4"><h3 class="mb-4">{{ T .title }}</h3><p>{{ T .desc }}</p></div>
-        <div class="card-footer p-4"><a href="{{ relLangURL .url }}">{{ T .refer }}</a></div>
-      </div></div>
-      {{ end }}
-    </div>
-    <div class="start-card border-r10 p-4">
-      {{ range slice "try" "more" "org" }}
-      <h2 class="color-font my-4">{{ T (printf "hp-intro-%s" .) }}</h2>
-      {{ T (printf "hp-intro-%s-desc" .) | markdownify }}
-      {{ end }}
-    </div>
-  </div></div>
-</main>
+  </div>
 {{ end }}

@@ -1,5 +1,5 @@
 {{- $translations := .AllTranslations -}}
-<select id="change-language" onchange="if (this.value) window.location.href=this.value">
+<select class="min-h-[30px] rounded-[5px] border border-qw-slate bg-white px-2.5 py-1 text-qw-text leading-normal" id="change-language" onchange="if (this.value) window.location.href=this.value">
   {{- range hugo.Sites }}
     {{- $site := . -}}
     {{- $target := $site.Home.RelPermalink -}}

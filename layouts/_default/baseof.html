@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ .Language.Locale }}">
+<html class="relative min-h-full" lang="{{ .Language.Locale }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,7 @@
     {{ partial "assets.html" . }}
     {{ partial "gtm.html" . }}
   </head>
-  <body>
+  <body class="bg-white font-sans text-base text-qw-text mb-[316px] max-[767px]:mb-[468px]{{ if eq .Language.Lang "en" }} max-[575px]:mb-[510px]{{ end }}">
     {{ partial "main-nav.html" . }}
     <main>
       {{ block "main" . }}{{ end }}

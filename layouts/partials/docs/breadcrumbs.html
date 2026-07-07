@@ -1,16 +1,19 @@
-<section class="doc-bc small d-none d-sm-block sticky-top">
-  <div class="container-fluid">
-    <ul class="clear-list d-flex">
-      {{ range where .Ancestors.Reverse "IsHome" false }}
-      <li class="py-2 mr-1"><a class="d-inline-block no-underline text-lighter" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+<section class="doc-bc bg-[#231815] min-h-10 leading-5 text-sm hidden sm:block sticky top-0 z-10">
+  <div class="w-full px-[15px]">
+    <ul class="list-none p-0 m-0 flex">
+      {{- $ancestors := where .Ancestors.Reverse "IsHome" false -}}
+      {{ range $index, $ancestor := $ancestors }}
+      {{ if gt $index 0 }}<li class="py-2.5 mr-[5px] text-qw-neutral-300" aria-hidden="true">&gt;</li>{{ end }}
+      <li class="py-2.5 mr-[5px]"><a class="inline-block text-qw-neutral-300 hover:text-white hover:no-underline [font-weight:lighter]" href="{{ $ancestor.RelPermalink }}">{{ $ancestor.Title }}</a></li>
       {{ end }}
-      <li class="py-2 mr-1 active"><a class="d-inline-block no-underline text-lighter" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ if gt (len $ancestors) 0 }}<li class="py-2.5 mr-[5px] text-qw-neutral-300" aria-hidden="true">&gt;</li>{{ end }}
+      <li class="py-2.5 mr-[5px]"><a class="inline-block text-white hover:text-white hover:no-underline font-normal" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     </ul>
   </div>
 </section>
-<section class="doc-bc-mobile sticky-top d-block d-sm-none">
-  <div class="container-fluid">
-    <select onchange="if (this.value) window.location.href=this.value">
+<section class="doc-bc-mobile sticky top-0 z-10 block sm:hidden">
+  <div class="w-full px-[15px]">
+      <select class="min-h-[30px] text-qw-cool-white bg-black/80 w-full p-2.5 mt-2.5 rounded-[10px] leading-5" onchange="if (this.value) window.location.href=this.value">
       <option value="">{{ T "docs-category" }}</option>
       {{- $current := . -}}
       {{- $docsNav := index hugo.Data "docs-nav" -}}

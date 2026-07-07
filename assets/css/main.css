@@ -1,0 +1,311 @@
+@import "tailwindcss";
+
+@source "../../layouts";
+@source "../../content";
+
+@layer base {
+  a {
+    color: var(--color-qw-blue);
+    text-decoration: none;
+    background-color: transparent;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: var(--color-qw-blue);
+  }
+  a:active,
+  a:focus {
+    color: var(--color-qw-blue);
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: var(--color-qw-heading);
+    font-weight: bold;
+    margin: 0;
+  }
+  h1 { font-size: 32px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 20px; }
+  h4 { font-size: 16px; }
+  h5 { font-size: 15px; }
+
+  p {
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    margin: 0 0 10px;
+  }
+
+  ul li, ol li {
+    line-height: 1.5;
+  }
+
+  code {
+    background-color: var(--color-qw-code-bg);
+    padding: 1px 4px;
+    color: var(--color-qw-text);
+    margin: 0 1px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+
+  pre {
+    display: block;
+    padding: 15px;
+    margin: 0 0 10px;
+    line-height: 1;
+    background-color: var(--color-qw-pre-bg);
+    border-radius: 8px;
+    overflow: auto;
+  }
+  pre code {
+    padding: 0;
+    line-height: inherit;
+    background-color: inherit;
+  }
+
+  blockquote {
+    padding: 15px;
+    margin: 20px 0;
+    color: var(--color-qw-neutral-500);
+    background-color: var(--color-qw-info-bg);
+    border-radius: 8px;
+    border: 1px solid var(--color-qw-blockquote-border);
+  }
+  blockquote p:last-child,
+  blockquote ul:last-child,
+  blockquote ol:last-child {
+    margin-bottom: 0;
+  }
+  blockquote.bqwarning {
+    color: var(--color-qw-neutral-500);
+    background-color: var(--color-qw-blockquote-warning-bg);
+    border-color: var(--color-qw-blockquote-warning-border);
+  }
+  blockquote.bqdanger {
+    color: var(--color-qw-neutral-500);
+    background-color: var(--color-qw-blockquote-danger-bg);
+    border-color: var(--color-qw-blockquote-danger-border);
+  }
+
+  table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+  table thead {
+    background-color: var(--color-qw-table-head-bg);
+  }
+  table thead th {
+    padding: 5px 10px;
+    line-height: 20px;
+    vertical-align: top;
+    text-align: left;
+  }
+  table tbody td {
+    padding: 5px 10px;
+    vertical-align: middle;
+    line-height: 20px;
+  }
+  table tbody tr {
+    border-bottom: 1px solid var(--color-qw-table-border);
+  }
+}
+
+@theme {
+  --color-qw-text: #2B2B2C;
+  --color-qw-heading: #111;
+  --color-qw-slate: #606D73;
+  --color-qw-blue: #0D7FEF;
+  --color-qw-info-bg: #f0fcff;
+  --color-qw-cool-white: #F7F8F9;
+  --color-qw-purple: #855CF8;
+  --color-qw-pink: #FDACC9;
+  --color-qw-orange: #F7931A;
+  --color-qw-neutral-200: #e5e5e5;
+  --color-qw-neutral-300: #DBDBD7;
+  --color-qw-neutral-500: #696969;
+  --color-qw-code-bg: #ecedf2;
+  --color-qw-pre-bg: #f3f4f5;
+  --color-qw-blockquote-border: #abf0ff;
+  --color-qw-blockquote-warning-bg: #feffec;
+  --color-qw-blockquote-warning-border: #ffde7e;
+  --color-qw-blockquote-danger-bg: #fff7fd;
+  --color-qw-blockquote-danger-border: #ffc4e9;
+  --color-qw-table-head-bg: #E2E8F0;
+  --color-qw-table-border: #dee2e6;
+}
+
+@layer components {
+
+  .qw-container {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 15px;
+  }
+  @media (min-width: 640px) {
+    .qw-container { max-width: 600px; }
+  }
+  @media (min-width: 768px) {
+    .qw-container { max-width: 720px; }
+  }
+  @media (min-width: 1024px) {
+    .qw-container { max-width: 960px; }
+  }
+  @media (min-width: 1280px) {
+    .qw-container { max-width: 1140px; }
+  }
+
+  .qw-container-narrow {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 15px;
+  }
+  @media (min-width: 640px) {
+    .qw-container-narrow { max-width: 600px; }
+  }
+  @media (min-width: 768px) {
+    .qw-container-narrow { max-width: 720px; }
+  }
+  @media (min-width: 1024px) {
+    .qw-container-narrow { max-width: 960px; }
+  }
+
+  @media (max-width: 767px) {
+    table {
+      display: block;
+      width: 100%;
+      min-height: .01%;
+      white-space: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+  }
+
+
+
+  .doc-content h2,
+  .doc-content h3,
+  .doc-content h4 {
+    padding-top: 40px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+
+  .doc-content img {
+    display: block;
+    margin-block: 10px;
+  }
+
+  .doc-content ul,
+  .doc-content ol {
+    padding-left: 40px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .doc-content ul {
+    list-style-type: disc;
+  }
+
+  .doc-content ol {
+    list-style-type: decimal;
+  }
+
+  .doc-content li {
+    margin-bottom: 5px;
+  }
+
+  .doc-content li ul,
+  .doc-content li ol {
+    margin-top: 10px;
+  }
+
+  /* external link icon */
+  .main-content .article .doc-content a[href^="http://"]::after,
+  .main-content .article .doc-content a[href^="https://"]::after,
+  .main-content .article .doc-content a[href^="//"]::after,
+  .main-content .article .faq-content a[href^="http://"]::after,
+  .main-content .article .faq-content a[href^="https://"]::after,
+  .main-content .article .faq-content a[href^="//"]::after {
+    content: "\2197\fe0e";
+    font-family: system-ui, Arial, Helvetica, sans-serif;
+    margin-left: 2px;
+  }
+
+  /* reset internal site link icon */
+  .main-content .article .doc-content a[href^="https://dev.qweather.com/"]::after,
+  .main-content .article .doc-content a[href^="http://dev.qweather.com/"]::after,
+  .main-content .article .doc-content a[href^="//dev.qweather.com/"]::after,
+  .main-content .article .faq-content a[href^="https://dev.qweather.com/"]::after,
+  .main-content .article .faq-content a[href^="http://dev.qweather.com/"]::after,
+  .main-content .article .faq-content a[href^="//dev.qweather.com/"]::after {
+    content: none;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  /* syntax highlighting (Chroma) */
+  .highlight .hll { background-color: #ffffcc }
+  .highlight .c { color: #0099FF; font-style: italic }
+  .highlight .err { color: #AA0000; background-color: #FFAAAA }
+  .highlight .k { color: #006699; font-weight: bold }
+  .highlight .o { color: #555555 }
+  .highlight .cm { color: #0099FF; font-style: italic }
+  .highlight .cp { color: #009999 }
+  .highlight .c1 { color: #0099FF; font-style: italic }
+  .highlight .cs { color: #0099FF; font-weight: bold; font-style: italic }
+  .highlight .gd { background-color: #FFCCCC; border: 1px solid #CC0000 }
+  .highlight .ge { font-style: italic }
+  .highlight .gr { color: #FF0000 }
+  .highlight .gh { color: #003300; font-weight: bold }
+  .highlight .gi { background-color: #CCFFCC; border: 1px solid #00CC00 }
+  .highlight .go { color: #AAAAAA }
+  .highlight .gp { color: #000099; font-weight: bold }
+  .highlight .gs { font-weight: bold }
+  .highlight .gu { color: #003300; font-weight: bold }
+  .highlight .gt { color: #99CC66 }
+  .highlight .kc { color: #006699; font-weight: bold }
+  .highlight .kd { color: #006699; font-weight: bold }
+  .highlight .kn { color: #006699; font-weight: bold }
+  .highlight .kp { color: #006699 }
+  .highlight .kr { color: #006699; font-weight: bold }
+  .highlight .kt { color: #007788; font-weight: bold }
+  .highlight .m { color: #FF6600 }
+  .highlight .s { color: #CC3300 }
+  .highlight .na { color: #330099 }
+  .highlight .nb { color: #336666 }
+  .highlight .nc { color: #00AA88; font-weight: bold }
+  .highlight .no { color: #336600 }
+  .highlight .nd { color: #9999FF }
+  .highlight .ni { color: #999999; font-weight: bold }
+  .highlight .ne { color: #CC0000; font-weight: bold }
+  .highlight .nf { color: #CC00FF }
+  .highlight .nl { color: #9999FF }
+  .highlight .nn { color: #00CCFF; font-weight: bold }
+  .highlight .nt { color: #330099; font-weight: bold }
+  .highlight .nv { color: #003333 }
+  .highlight .ow { color: #000000; font-weight: bold }
+  .highlight .w { color: #bbbbbb }
+  .highlight .mf { color: #FF6600 }
+  .highlight .mh { color: #FF6600 }
+  .highlight .mi { color: #FF6600 }
+  .highlight .mo { color: #FF6600 }
+  .highlight .sb { color: #CC3300 }
+  .highlight .sc { color: #CC3300 }
+  .highlight .sd { color: #CC3300; font-style: italic }
+  .highlight .s2 { color: #CC3300 }
+  .highlight .se { color: #CC3300; font-weight: bold }
+  .highlight .sh { color: #CC3300 }
+  .highlight .si { color: #AA0000 }
+  .highlight .sx { color: #CC3300 }
+  .highlight .sr { color: #33AAAA }
+  .highlight .s1 { color: #CC3300 }
+  .highlight .ss { color: #FFCC33 }
+  .highlight .bp { color: #336666 }
+  .highlight .vc { color: #003333 }
+  .highlight .vg { color: #003333 }
+  .highlight .vi { color: #003333 }
+  .highlight .il { color: #FF6600 }
+}

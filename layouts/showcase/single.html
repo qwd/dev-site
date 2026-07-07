@@ -1,21 +1,21 @@
 {{ define "main" }}
-<section class="masthead showcase"><div class="container"><h1>{{ .Title }}</h1><p class="text-center">{{ .Description }}</p></div></section>
-<main class="main-content narrow container"><div class="article"><section class="showcase-content mb-5 p-5 border-r10">
-  <div class="brief mb-5"><p>🙏❤️👍</p><p>{{ T "si-biref" | safeHTML }}</p><p class="italic small text-underline color-grey-76">{{ T "si-note" }}</p></div>
+<section class="mb-[30px] pt-[30px] pb-5 text-center bg-[#5C27F1] bg-[linear-gradient(60deg,#855CF8,#8520EA,#5D24FD)]"><div class="qw-container"><h1 class="text-white mb-[30px] tracking-[1px]">{{ .Title }}</h1><p class="text-center text-qw-cool-white">{{ .Description }}</p></div></section>
+<div class="main-content qw-container-narrow pb-10"><div class="article"><section class="showcase-content border border-qw-purple mb-[30px] p-[30px] rounded-[10px]">
+  <div class="brief mb-[30px]"><p>🙏❤️👍</p><p>{{ T "si-biref" | safeHTML }}</p><p class="italic text-sm underline text-qw-slate">{{ T "si-note" }}</p></div>
   {{ range sort hugo.Data.showcase "language" }}
-  <div class="works-list mb-5">
-    <h2 class="pb-3 mb-3 works-lang">{{ .language }}</h2>
+  <div class="works-list mb-[30px]">
+    <h2 class="pb-[15px] mb-[15px] border-b border-qw-neutral-200">{{ .language }}</h2>
     {{ range sort .works "name" }}
-    <div class="works-item ml-3 mb-4">
-      <a class="work-name d-inline-block mb-2" href="{{ .code }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
-      <div class="work-meta d-flex mb-2">
-        <a class="d-block btn-link btn-link-sm btn-link-purple mr-2" href="{{ .website | default .code }}" target="_blank" rel="noopener noreferrer">@{{ .author }}</a>
-        {{ with .screenshot }}<a class="d-block btn-link btn-link-sm btn-link-pink" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ T "screenshot" }}</a>{{ end }}
+    <div class="works-item ml-[15px] mb-5">
+      <a class="inline-block mb-2.5 text-lg" href="{{ .code }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+      <div class="work-meta flex mb-2.5">
+        <a class="block rounded text-white text-sm py-0.5 px-1 bg-[#b69cfd] mr-2.5 hover:no-underline" href="{{ .website | default .code }}" target="_blank" rel="noopener noreferrer">@{{ .author }}</a>
+        {{ with .screenshot }}<a class="block rounded text-white text-sm py-0.5 px-1 bg-qw-pink hover:no-underline" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ T "screenshot" }}</a>{{ end }}
       </div>
-      <p class="d-block">{{ .description | plainify | truncate 200 }}</p>
+      <p class="block">{{ .description | plainify | truncate 200 }}</p>
     </div>
     {{ end }}
   </div>
   {{ end }}
-</section></div></main>
+</section></div></div>
 {{ end }}
