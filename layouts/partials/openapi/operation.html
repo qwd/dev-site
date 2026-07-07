@@ -11,12 +11,12 @@
 {{- if ne (len $matches) 1 }}{{ errorf "Expected one intermediate operation %s, found %d" .Params.operationId (len $matches) }}{{ end -}}
 {{- $operation := index $matches 0 -}}
 
-{{- with $operation.description }}<p>{{ . | markdownify }}</p>{{ end }}
+{{- with $operation.description }}{{ . | markdownify }}{{ end }}
 
-<h2 id="endpoint">{{ T "endpoint" }}<a class="ml-[5px] text-qw-permalink hover:text-qw-link" href="#endpoint" aria-label="{{ T "permalink" }}">#</a></h2>
+<h2 id="endpoint">{{ T "endpoint" }}<a class="ml-[5px] text-qw-neutral-300 hover:text-qw-blue" href="#endpoint" aria-label="{{ T "permalink" }}">#</a></h2>
 <div class="request-url mb-[15px]"><pre><code>{{ $operation.method }} {{ $operation.endpoint }}</code></pre></div>
 
-<h2 id="parameters">{{ T "params" }}<a class="ml-[5px] text-qw-permalink hover:text-qw-link" href="#parameters" aria-label="{{ T "permalink" }}">#</a></h2>
+<h2 id="parameters">{{ T "params" }}<a class="ml-[5px] text-qw-neutral-300 hover:text-qw-blue" href="#parameters" aria-label="{{ T "permalink" }}">#</a></h2>
 {{- range $location := slice "path" "query" }}
   {{- $parameters := where $operation.parameters "in" $location -}}
   {{- if $parameters }}
@@ -33,21 +33,21 @@
   {{- end }}
 {{- end }}
 
-<h2 id="request-example">{{ T "request-example" }}<a class="ml-[5px] text-qw-permalink hover:text-qw-link" href="#request-example" aria-label="{{ T "permalink" }}">#</a></h2>
+<h2 id="request-example">{{ T "request-example" }}<a class="ml-[5px] text-qw-neutral-300 hover:text-qw-blue" href="#request-example" aria-label="{{ T "permalink" }}">#</a></h2>
 <pre><code class="language-bash">{{ $operation.requestExample }}</code></pre>
 <p class="text-sm italic">{{ T "example-token-hint" | markdownify }}</p>
 {{- if and $operation.operationId $operation.tags }}
   {{/* Swagger UI anchors use the first OpenAPI tag plus operationId. */}}
   {{- $tag := index $operation.tags 0 -}}
   {{- $explorerURL := printf "%s#/%s/%s" (relLangURL "api-explore/") $tag $operation.operationId -}}
-  <p><a class="inline-block rounded-[5px] bg-qw-link text-white text-sm py-2 px-3 hover:no-underline" href="{{ $explorerURL }}" target="_blank" rel="noopener noreferrer">{{ T "try-it" }}</a></p>
+  <p><a class="inline-block rounded-[5px] bg-qw-blue text-white text-sm py-2 px-3 hover:no-underline" href="{{ $explorerURL }}" target="_blank" rel="noopener noreferrer">{{ T "try-it" }}</a></p>
 {{- end }}
 
-<h2 id="response">{{ T "response" }}<a class="ml-[5px] text-qw-permalink hover:text-qw-link" href="#response" aria-label="{{ T "permalink" }}">#</a></h2>
+<h2 id="response">{{ T "response" }}<a class="ml-[5px] text-qw-neutral-300 hover:text-qw-blue" href="#response" aria-label="{{ T "permalink" }}">#</a></h2>
 {{- if $operation.response.examples }}
   {{- range $operation.response.examples }}
     {{- with .summary }}<h4>{{ . }}</h4>{{ end -}}
-    {{- with .description }}<p>{{ . | markdownify }}</p>{{ end -}}
+    {{- with .description }}{{ . | markdownify }}{{ end -}}
     {{- with .externalPath }}
     {{- $exampleSource := strings.TrimPrefix "assets/" . -}}
     {{- $example := resources.Get $exampleSource -}}
@@ -64,7 +64,7 @@
     <div class="api-snippets block mb-5 [&_pre]:max-h-[300px] [&_pre]:overflow-y-scroll">{{ highlight (. | jsonify (dict "indent" "  ")) "json" "" }}</div>
   {{- end }}
 {{- end }}
-<ul class="api-response-tree list-none pl-10 [&_li]:mb-3 [&_ul]:list-none [&_ul]:pl-5 [&_ul]:border-l [&_ul]:border-qw-border-light">
+<ul class="api-response-tree list-none pl-10 [&_li]:mb-3 [&_ul]:list-none [&_ul]:pl-5 [&_ul]:border-l [&_ul]:border-qw-neutral-200">
   {{/* Render the normalized response schema as an indented field tree. */}}
   {{ partial "openapi/response-tree.html" (dict "lang" $lang "node" $operation.response.fields "depth" 0) }}
 </ul>

@@ -3,7 +3,7 @@
 <div class="qw-container pb-[30px]">
   <section class="payment-system flex flex-wrap -mx-[15px] mb-[30px]">
     {{ range slice
-      (dict "class" "border-qw-link" "image" "pi-payg-cart.png" "title" "pi-payg" "desc" "pi-payg-desc" "more" "pi-payg-more" "url" "docs/finance/billing-and-payment/")
+      (dict "class" "border-qw-blue" "image" "pi-payg-cart.png" "title" "pi-payg" "desc" "pi-payg-desc" "more" "pi-payg-more" "url" "docs/finance/billing-and-payment/")
       (dict "class" "border-qw-pink" "image" "pi-savingpot.png" "title" "pi-saving-plans" "desc" "pi-saving-plans-desc" "more" "pi-saving-plans-more" "url" "docs/finance/savings-plans/")
     }}
     <div class="w-full md:w-1/2 px-[15px] mb-[30px] md:mb-0"><div class="price-card border rounded-[10px] {{ .class }} p-5">
@@ -30,7 +30,7 @@
   </div></div></section>
   <section class="price-calc flex flex-wrap -mx-[15px] mb-[30px]"><div class="w-full px-[15px]"><div class="price-card border border-white rounded-[10px] bg-[#374A57] text-white px-5 py-[30px]"><div class="flex flex-wrap -mx-[15px]">
     <div class="md:w-auto w-full px-[15px] text-center mb-5 md:mb-0"><img src="/assets/images/pi-calc.png" alt="" width="160"></div>
-    <div class="flex-1 min-w-0 px-[15px]"><h2 class="text-3xl mb-5 text-white">{{ T "pi-calc" }}</h2><div class="card-calc-brief-with-height min-h-[80px]"><p>{{ T "pi-calc-desc" }}</p></div><a href="https://console.qweather.com/price-calculator" class="inline-block rounded-[5px] bg-qw-link text-white text-sm py-2 px-3 hover:no-underline">{{ T "pi-calc-go" }}</a></div>
+    <div class="flex-1 min-w-0 px-[15px]"><h2 class="text-3xl mb-5 text-white">{{ T "pi-calc" }}</h2><div class="card-calc-brief-with-height min-h-[80px]"><p>{{ T "pi-calc-desc" }}</p></div><a href="https://console.qweather.com/price-calculator" class="inline-block rounded-[5px] bg-qw-blue text-white text-sm py-2 px-3 hover:no-underline">{{ T "pi-calc-go" }}</a></div>
   </div></div></div></section>
   <section class="ent-and-free flex flex-wrap -mx-[15px] mb-[30px]"><div class="w-full px-[15px] mb-[30px] md:mb-0"><div class="price-card border rounded-[10px] border-qw-purple p-5">
     <h2 class="text-3xl mb-[30px]">{{ T "pi-org" }}</h2><div class="card-brief-with-height min-h-[200px] mb-[30px]">{{ T "pi-org-desc" | markdownify }}</div>
@@ -44,6 +44,6 @@
       (dict "title" "pi-more-vat" "link" "help/#do-the-pricing-include-vat")
     }}<li class="pb-2.5 text-xl"><a class="text-qw-heading hover:text-black" href="{{ relLangURL .link }}">{{ T .title }}</a></li>{{ end }}
   </ul></section>
-  <section class="register text-center"><a href="https://id.qweather.com/#/register?redirect=https://console.qweather.com{{ if eq .Language.Lang "en" }}&lang=en{{ end }}" class="text-qw-link bg-white border border-qw-link hover:bg-qw-link hover:text-white hover:no-underline inline-block px-[30px] py-[15px] rounded-[10px] text-xl">{{ T "hp-regnow" }}</a></section>
+  <section class="register text-center"><a href="https://id.qweather.com/#/register?redirect=https://console.qweather.com{{ if eq .Language.Lang "en" }}&lang=en{{ end }}" class="text-qw-blue bg-white border border-qw-blue hover:bg-qw-blue hover:text-white hover:no-underline inline-block px-[30px] py-[15px] rounded-[10px] text-xl">{{ T "hp-regnow" }}</a></section>
 </div>
 {{ end }}

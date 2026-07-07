@@ -4,14 +4,14 @@
     <div class="qw-container">
       {{ with hugo.Data.announce.url }}
       <div class="announce text-center">
-        &#128227; <a class="text-qw-muted hover:text-qw-text" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ index hugo.Data.announce.title $.Language.Lang }}</a>
+        &#128227; <a class="text-qw-slate hover:text-qw-text" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ index hugo.Data.announce.title $.Language.Lang }}</a>
       </div>
       {{ end }}
       <div class="banner text-center mb-2.5 flex justify-center"><img src="/assets/images/hp-cloudy.png" alt="" width="300" class="max-w-full"></div>
       <div class="headline text-center">
         <h1 class="text-[40px] max-[575px]:text-[32px] leading-normal tracking-[1.2px]">{{ T "hp-slogan" }}</h1>
         <h1 class="text-[40px] max-[575px]:text-[32px] leading-normal tracking-[1.2px] mb-5">{{ T "hp-slogan-2" }}</h1>
-        <a class="inline-block rounded-[5px] bg-qw-link text-white py-2.5 px-5 text-lg font-bold mb-5 hover:no-underline" href="https://id.qweather.com/#/register?redirect=https://console.qweather.com" target="_blank" rel="noopener noreferrer">{{ T "hp-regnow" }}</a>
+        <a class="inline-block rounded-[5px] bg-qw-blue text-white py-2.5 px-5 text-lg font-bold mb-5 hover:no-underline" href="https://id.qweather.com/#/register?redirect=https://console.qweather.com" target="_blank" rel="noopener noreferrer">{{ T "hp-regnow" }}</a>
         <div><a class="inline-block" href="{{ relLangURL "docs/start/" }}">{{ T "quick-start" }}</a></div>
       </div>
     </div>

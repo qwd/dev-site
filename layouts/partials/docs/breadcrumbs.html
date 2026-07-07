@@ -3,17 +3,17 @@
     <ul class="list-none p-0 m-0 flex">
       {{- $ancestors := where .Ancestors.Reverse "IsHome" false -}}
       {{ range $index, $ancestor := $ancestors }}
-      {{ if gt $index 0 }}<li class="py-2.5 mr-[5px] text-[#bbb]" aria-hidden="true">&gt;</li>{{ end }}
-      <li class="py-2.5 mr-[5px]"><a class="inline-block text-[#ccc] hover:text-qw-surface-muted hover:no-underline [font-weight:lighter]" href="{{ $ancestor.RelPermalink }}">{{ $ancestor.Title }}</a></li>
+      {{ if gt $index 0 }}<li class="py-2.5 mr-[5px] text-qw-neutral-300" aria-hidden="true">&gt;</li>{{ end }}
+      <li class="py-2.5 mr-[5px]"><a class="inline-block text-qw-neutral-300 hover:text-white hover:no-underline [font-weight:lighter]" href="{{ $ancestor.RelPermalink }}">{{ $ancestor.Title }}</a></li>
       {{ end }}
-      {{ if gt (len $ancestors) 0 }}<li class="py-2.5 mr-[5px] text-[#bbb]" aria-hidden="true">&gt;</li>{{ end }}
+      {{ if gt (len $ancestors) 0 }}<li class="py-2.5 mr-[5px] text-qw-neutral-300" aria-hidden="true">&gt;</li>{{ end }}
       <li class="py-2.5 mr-[5px]"><a class="inline-block text-white hover:text-white hover:no-underline font-normal" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     </ul>
   </div>
 </section>
 <section class="doc-bc-mobile sticky top-0 z-10 block sm:hidden">
   <div class="w-full px-[15px]">
-      <select class="min-h-[30px] text-qw-border-light bg-[rgba(17,17,17,0.85)] w-full p-2.5 mt-2.5 rounded-[10px] leading-5" onchange="if (this.value) window.location.href=this.value">
+      <select class="min-h-[30px] text-qw-cool-white bg-black/80 w-full p-2.5 mt-2.5 rounded-[10px] leading-5" onchange="if (this.value) window.location.href=this.value">
       <option value="">{{ T "docs-category" }}</option>
       {{- $current := . -}}
       {{- $docsNav := index hugo.Data "docs-nav" -}}

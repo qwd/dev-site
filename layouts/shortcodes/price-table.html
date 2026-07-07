@@ -1,7 +1,7 @@
 {{- range hugo.Data.price }}
 {{- $title := index .data $.Page.Language.Lang -}}
 {{- $id := .data.en | urlize -}}
-<h3 id="{{ $id }}">{{ $title }}<a class="ml-[5px] text-qw-permalink hover:text-qw-link" href="#{{ $id }}" aria-label="{{ T "permalink" }}">#</a></h3>
+<h3 id="{{ $id }}">{{ $title }}<a class="ml-[5px] text-qw-neutral-300 hover:text-qw-blue" href="#{{ $id }}" aria-label="{{ T "permalink" }}">#</a></h3>
 <table><thead><tr><th>{{ T "pi-req-mo" }}</th><th>{{ T "pi-price-req" }}</th></tr></thead><tbody>
 {{- range .price }}<tr><td>{{ .tier }}</td><td>{{ if ne (printf "%v" .value) "" }}CNY {{ .value }}{{ else }}{{ T "contact-us" }}{{ end }}</td></tr>{{ end }}
 </tbody></table>

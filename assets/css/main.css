@@ -5,17 +5,17 @@
 
 @layer base {
   a {
-    color: var(--color-qw-link);
+    color: var(--color-qw-blue);
     text-decoration: none;
     background-color: transparent;
   }
   a:hover {
     text-decoration: underline;
-    color: var(--color-qw-link);
+    color: var(--color-qw-blue);
   }
   a:active,
   a:focus {
-    color: var(--color-qw-link);
+    color: var(--color-qw-blue);
   }
 
   h1, h2, h3, h4, h5 {
@@ -43,7 +43,7 @@
   code {
     background-color: var(--color-qw-code-bg);
     padding: 1px 4px;
-    color: var(--color-qw-code-text);
+    color: var(--color-qw-text);
     margin: 0 1px;
     font-size: 14px;
     border-radius: 4px;
@@ -53,19 +53,21 @@
     display: block;
     padding: 15px;
     margin: 0 0 10px;
+    line-height: 1;
     background-color: var(--color-qw-pre-bg);
     border-radius: 8px;
     overflow: auto;
   }
   pre code {
     padding: 0;
+    line-height: inherit;
     background-color: inherit;
   }
 
   blockquote {
     padding: 15px;
     margin: 20px 0;
-    color: var(--color-qw-blockquote-text);
+    color: var(--color-qw-neutral-500);
     background-color: var(--color-qw-info-bg);
     border-radius: 8px;
     border: 1px solid var(--color-qw-blockquote-border);
@@ -76,12 +78,12 @@
     margin-bottom: 0;
   }
   blockquote.bqwarning {
-    color: var(--color-qw-blockquote-text);
+    color: var(--color-qw-neutral-500);
     background-color: var(--color-qw-blockquote-warning-bg);
     border-color: var(--color-qw-blockquote-warning-border);
   }
   blockquote.bqdanger {
-    color: var(--color-qw-blockquote-text);
+    color: var(--color-qw-neutral-500);
     background-color: var(--color-qw-blockquote-danger-bg);
     border-color: var(--color-qw-blockquote-danger-border);
   }
@@ -113,26 +115,24 @@
 @theme {
   --color-qw-text: #2B2B2C;
   --color-qw-heading: #111;
-  --color-qw-muted: #606D73;
-  --color-qw-link: #0D7FEF;
+  --color-qw-slate: #606D73;
+  --color-qw-blue: #0D7FEF;
   --color-qw-info-bg: #f0fcff;
-  --color-qw-surface-muted: #fafafa;
+  --color-qw-cool-white: #F7F8F9;
   --color-qw-purple: #855CF8;
   --color-qw-pink: #FDACC9;
   --color-qw-orange: #F7931A;
-  --color-qw-border-light: #ebebeb;
-  --color-qw-border-mid: #dfdfdf;
-  --color-qw-permalink: #dadada;
+  --color-qw-neutral-200: #e5e5e5;
+  --color-qw-neutral-300: #DBDBD7;
+  --color-qw-neutral-500: #696969;
   --color-qw-code-bg: #ecedf2;
-  --color-qw-code-text: #333;
   --color-qw-pre-bg: #f3f4f5;
-  --color-qw-blockquote-text: #696969;
   --color-qw-blockquote-border: #abf0ff;
   --color-qw-blockquote-warning-bg: #feffec;
   --color-qw-blockquote-warning-border: #ffde7e;
   --color-qw-blockquote-danger-bg: #fff7fd;
   --color-qw-blockquote-danger-border: #ffc4e9;
-  --color-qw-table-head-bg: #e9ecef;
+  --color-qw-table-head-bg: #E2E8F0;
   --color-qw-table-border: #dee2e6;
 }
 
