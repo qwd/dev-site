@@ -5,7 +5,7 @@ translationKey: config-android
 
 This document will introduce how to configure the Android SDK for QWeather API. For more SDK development documentation, please [visit the SDK repository](https://github.com/qwd/qweather-android-sdk/blob/main/README.md).
 
-<strong>OS requirement:</strong>
+**OS requirement:**
 
 Android 8.0+, minSDK 26
 
@@ -84,7 +84,7 @@ QWeather.getInstance(MainActivity.this, "{YOUR_HOST}") // Initialize api host
 
 ### Set up the token generator
 
-> <strong>Hint:</strong> Android SDK only support [JWT](/docs/configuration/authentication/#json-web-token) for authentication.
+> **Hint:** Android SDK only support [JWT](/docs/configuration/authentication/#json-web-token) for authentication.
 
 For security purposes, please ensure proper management of sensitive information such as private key, project ID, and credential ID, avoiding storage or transmission in plaintext.
 

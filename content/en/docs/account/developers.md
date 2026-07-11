@@ -5,7 +5,7 @@ translationKey: account-developers
 
 When you first start the developer services, you will be asked to choose a developer type. There is no data or performance difference between developer types.
 
-> <strong>Hint:</strong> Switching developer type is not supported at this time.
+> **Hint:** Switching developer type is not supported at this time.
 
 ## Individual
 

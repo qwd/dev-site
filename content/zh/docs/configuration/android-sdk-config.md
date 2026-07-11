@@ -5,9 +5,9 @@ translationKey: config-android
 
 这篇文档将介绍如何配置和风天气开发者服务的Android SDK，具体的开发文档请[前往 SDK 仓库查看](https://github.com/qwd/qweather-android-sdk/blob/main/README-zh.md)。
 
-> <strong>隐私声明：</strong>和风天气Android SDK<strong>不需要电话、位置、设备唯一标识符等任何特殊权限</strong>，我们不会也无法通过本SDK收集用户隐私信息。
+> **隐私声明：** 和风天气Android SDK**不需要电话、位置、设备唯一标识符等任何特殊权限**，我们不会也无法通过本SDK收集用户隐私信息。
 
-<strong>适配版本</strong>
+**适配版本**
 
 Android 8.0+, minSDK 26
 
@@ -87,7 +87,7 @@ QWeather.getInstance(MainActivity.this, "{YOUR_HOST}") // 初始化服务地址
 
 ### 设置Token生成器
 
-> <strong>提示：</strong>Android SDK仅支持[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
+> **提示：** Android SDK仅支持[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
 
 为安全考虑，请妥善管理您的私钥、项目ID、凭据ID避免明文使用。
 

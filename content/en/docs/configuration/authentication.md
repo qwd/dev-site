@@ -65,9 +65,9 @@ Once your Ed25519 keys is generated, you need to add the public key to the QWeat
 
 1. [Go to Console-Project](https://console.qweather.com/project)
 2. Choose the project where you want to add the public key.
-3. Click the <strong>Add Credential</strong> button in the credential section.
+3. Click the **Add Credential** button in the credential section.
 4. Enter the credential name.
-5. Select the authentication method: <strong>JSON Web Token</strong>.
+5. Select the authentication method: **JSON Web Token**.
 6. Use any text editor to open the public key (like ed25519-public.pem which was generated in the previous step), and copy the entire contents of it. The content looks like:
 ```
    -----BEGIN PUBLIC KEY-----
@@ -75,9 +75,9 @@ Once your Ed25519 keys is generated, you need to add the public key to the QWeat
    -----END PUBLIC KEY-----
    ```
 7. Paste the public key in the textarea.
-8. Click <strong>Save</strong> button
+8. Click **Save** button
 
-You will see the <strong>Create Credential Success</strong> page and it shows the creation date, credential ID and SHA-256. For security reasons, you cannot view this public key in the Console again. However, you can use the SHA-256 value of the public key to compare it with the local SHA-256 in order to confirm that the correct public key was used (leading/trailing whitespace and line breaks of the uploaded public key will be removed before SHA256 calculation).
+You will see the **Create Credential Success** page and it shows the creation date, credential ID and SHA-256. For security reasons, you cannot view this public key in the Console again. However, you can use the SHA-256 value of the public key to compare it with the local SHA-256 in order to confirm that the correct public key was used (leading/trailing whitespace and line breaks of the uploaded public key will be removed before SHA256 calculation).
 
 ### Generate JWT
 
@@ -89,7 +89,7 @@ A complete JWT consists of three parts: Header, Payload and Signature. we will i
 
 Header includes the following parameters and saved in JSON object format:
 
-- `alg` The signature algorithm, set the value to <strong>EdDSA</strong>.
+- `alg` The signature algorithm, set the value to **EdDSA**.
 - `kid` Your Credential ID, you can copy it in [Console - Project Management](https://console.qweather.com/project).
 
 For example:
@@ -119,7 +119,7 @@ For example:
 }
 ```
 
-> <strong>Warning:</strong> Only add the specified parameters above in the Header and Payload, do not add any other sensitive information and irrelevant parameters.
+> **Warning:** Only add the specified parameters above in the Header and Payload, do not add any other sensitive information and irrelevant parameters.
 {.bqdanger}
 #### Signature
 
@@ -139,7 +139,7 @@ The following are reserved fields in the JWT Header and Payload, but are not cur
 
 Some JWT libraries may include these fields by default. We recommend removing them to avoid potential issues when these fields are enforced for authentication in the future.
 
-- `typ` Must be set to <strong>JWT</strong> if it is added.
+- `typ` Must be set to **JWT** if it is added.
 - `iss`
 - `aud`
 - `nbf`
@@ -158,21 +158,21 @@ curl --compressed \
 
 We provide two tools to help with JWT generation and validation:
 
-<strong>JWT Debugger</strong>
+**JWT Debugger**
 
 An open-source, offline JWT debugging tool to generate Ed25519 key and create JWTs for testing.
 
-> <strong>Note:</strong> This tool is for debugging and testing only. Generate JWT in your project using application code or third-party libraries.
+> **Note:** This tool is for debugging and testing only. Generate JWT in your project using application code or third-party libraries.
 
-- Go <strong><https://jwt.qweather.com></strong>
+- Go **<https://jwt.qweather.com>**
 - Copy or download the Ed25519 key. Click “Re-generate” or refresh your browser to generate a new key.
 - Click the orange text, replace it with your `kid`, `sub`, `iat`, and `exp`, paste your private key into the private key field, and the JWT will be generated immediately.
 
-<strong>JWT Validator</strong>
+**JWT Validator**
 
 If the API returns a [401 error](/en/docs/resource/error-code/#unauthorized), use the Console JWT Validator to check your token:
 
-> <strong>Note:</strong> For security reasons, only JWTs that match your account can be verified.
+> **Note:** For security reasons, only JWTs that match your account can be verified.
 
 1. [Go to Console-JWT Validation](https://console.qweather.com/support/jwt-validation)
 2. Paste your token into the textbox
@@ -182,7 +182,7 @@ If the API returns a [401 error](/en/docs/resource/error-code/#unauthorized), us
 
 Please replace `YOUR_KEY_ID`, `YOUR_PROJECT_ID`, `YOUR_PRIVATE_KEY` or `PATH_OF_YOUR_PRIVATE_KEY` in the code with your values.
 
-> <strong>Hint:</strong> These demos are for reference and test only, we can't guarantee that they will work in any environment.
+> **Hint:** These demos are for reference and test only, we can't guarantee that they will work in any environment.
 
 #### Java 15+
 
@@ -398,15 +398,15 @@ echo "$jwt"
 
 API KEY is a common and simple authentication method. Compared to JWT, API KEY is less secure in some scenarios.
 
-> <strong>Note:</strong> To improve security, we will limit the volume of daily requests for authentication using API KEY from 2027-01-01.
+> **Note:** To improve security, we will limit the volume of daily requests for authentication using API KEY from 2027-01-01.
 
 ### Generate API KEY
 
 You can log in to the Console to easily generate an API KEY:
 
-1. Click <strong>Project</strong> in the left menu.
+1. Click **Project** in the left menu.
 2. Click on the project where you want to add the API KEY.
-3. Click the <strong>Create Credential</strong> button in the Credential section.
+3. Click the **Create Credential** button in the Credential section.
 4. Choose API KEY as the authentication method.
 5. Enter the name of the API KEY, e.g. “Travel App Test”.
 6. Click the Create button
@@ -415,7 +415,7 @@ You can always check the API KEY in [Console - Project Management](https://conso
 
 ### API KEY authorize request
 
-> <strong>Warning:</strong> Please DO NOT use multiple authentication methods at the same time, it may cause authentication failure.
+> **Warning:** Please DO NOT use multiple authentication methods at the same time, it may cause authentication failure.
 {.bqdanger}
 We support two authentication methods for API KEYs.
 

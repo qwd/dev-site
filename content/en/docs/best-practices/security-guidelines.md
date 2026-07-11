@@ -34,13 +34,13 @@ Supported app restrictions include:
 
 To set an app restriction, go to [Console - Project](https://console.qweather.com/project), select the needed project and click on the credentials you want to set.
 
-> <strong>Hint:</strong> Only one app restriction can be set per credential.
+> **Hint:** Only one app restriction can be set per credential.
 
 ### Websites
 
 Up to 10 websites can be added to use the credentials. If left blank, all referrer URLs are allowed to access data.
 
-- <strong>DO NOT</strong> enter the protocol, e.g. `https://` or `http://`, just `yourdomain.com`
+- **DO NOT** enter the protocol, e.g. `https://` or `http://`, just `yourdomain.com`
 - Support root domains: `yourdoamin.com`, please note that the root domain does not include `www.yourdomain.com`
 - Supprot subdomain: `sub.yourdomain.com` or `www.yourdomain.com`
 - Support subdomain with a wildcard asterisk(*): `*.yourdomain.com`. Please note that the subdomain wildcard cannot be used in combination with other characters and can only be used at the beginning. For example:
@@ -48,7 +48,7 @@ Up to 10 websites can be added to use the credentials. If left blank, all referr
   - ✅ `*.abc.yourdomain.com`
   - ❌ `*abc.yourdomain.com`
   - ❌ `abc.*.yourdomain.com`
-- Ports, paths and parameters are <strong>NOT Supported</strong>:
+- Ports, paths and parameters are **NOT Supported**:
   - ❌`www.yourdomain.com:8080`
   - ❌`www.yourdomain.com/path/`
   - ❌`www.yourdomain.com?params`
@@ -102,13 +102,13 @@ If you have KEYs that are no longer in use, please delete them promptly to avoid
 
 When using [JWT](/en/docs/configuration/authentication/#json-web-token/) for authentication in front-end or client-side applications, we recommend that you store the Private KEY in a secure authentication server, which will issue a Token to your application and then request data from QWeather by your application.
 
-<strong>Always keep the connection between the application and the authentication server is secure.</strong>
+**Always keep the connection between the application and the authentication server is secure.**
 
 ## Using proxy server
 
 For front-end or client-side applications, you can set up a proxy server where the API KEY or Private KEY is stored and your application sends requests to us through the proxy server.
 
-<strong>Always keep the connection between the application and the proxy server is secure.</strong>
+**Always keep the connection between the application and the proxy server is secure.**
 
 ## Encrypt KEY
 

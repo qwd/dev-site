@@ -6,7 +6,7 @@ translationKey: finance-billing
 
 QWeather Developer Services's billing system based on the pay-as-you-go subscription model, it is a more transparent, simple and competitive pricing scheme. This document describes how the billing and payment system works.
 
-> <strong>Hint</strong>: Price calculations in this document are estimates and final costs may vary slightly.
+> **Hint**: Price calculations in this document are estimates and final costs may vary slightly.
 
 ## Billing
 
@@ -14,33 +14,33 @@ QWeather developer services use a pay-as-you-go model, so you don't need to pay 
 
 All your requests volume and cost will be listed on the bill and you should send us a payment based on the bill amount. Here are important rules for billing:
 
-- <strong>Billing unit:</strong> The billing unit is a single request.
-- <strong>Billing cycle:</strong> The billing cycle is one month and is generated before the 1st of each month.
-- <strong>Accrued charges:</strong> Accrued charge is your requests and costs for the previous hour, and the total of all accrued charges in a month is your monthly bill.
-- <strong>Tiered price progression cycle:</strong> The tiered price progression cycle is one month, which means that at the very beginning of each month, it will start at the first tier of the tiered price.
-- <strong>Minimum billing amount:</strong> ¥0.01. Under ¥0.01 will be billed as ¥0.01
+- **Billing unit:** The billing unit is a single request.
+- **Billing cycle:** The billing cycle is one month and is generated before the 1st of each month.
+- **Accrued charges:** Accrued charge is your requests and costs for the previous hour, and the total of all accrued charges in a month is your monthly bill.
+- **Tiered price progression cycle:** The tiered price progression cycle is one month, which means that at the very beginning of each month, it will start at the first tier of the tiered price.
+- **Minimum billing amount:** ¥0.01. Under ¥0.01 will be billed as ¥0.01
 
 For pay-as-you-go pricing, please refer to [Pricing](/en/docs/finance/pricing/).
 
 #### Examples
 
-<strong>*30,000 weather API requests in one month</strong>*
+***30,000 weather API requests in one month***
 
-Next month you will be charged <strong>CNY 0</strong>
+Next month you will be charged **CNY 0**
 
 ```
 30,000 requests x CNY 0 = CNY 0
 ```
 
-<strong>*1 million weather API requests and 1 million warning API requests in one month</strong>*
+***1 million weather API requests and 1 million warning API requests in one month***
 
-Next month you will be charged <strong> CNY 1,165</strong>
+Next month you will be charged ** CNY 1,165**
 
 ```
 50,000 requests x CNY 0 + 950,000 requests x CNY 0.0007 + 1,000,000 requests x CNY 0.0005 = CNY 1,165
 ```
 
-<strong>*150 weather API requests in an hour (with tier 2 prices)</strong>*
+***150 weather API requests in an hour (with tier 2 prices)***
 
 The accrued charge for this hour is CNY 0.11 (less than ¥0.01 is calculated as ¥0.01)
 
@@ -112,16 +112,16 @@ If you have a [savings plan](/en/docs/finance/savings-plans/), the commitment am
 
 We offer a variety of payment methods.
 
-<strong>Alipay</strong>
+**Alipay**
 
 We recommend using Alipay for payment, it support credit and debit cards.
 
-<strong>Bank Transfer</strong>
+**Bank Transfer**
 
 For organization developers in China, we support using bank transfer for payment:
 
 - Your bank account name should be the same as your organization developer name, otherwise we will not add the amount to your account balance or refund it within 30 days.
-- You need to <strong>specify your Developer ID</strong> when transferring funds so that we can quickly identify and prevent financial fraud, otherwise we will not add the transfer amount to your account balance, in this case <strong>you have to submit a ticket and upload the corresponding bank statement</strong>.
+- You need to **specify your Developer ID** when transferring funds so that we can quickly identify and prevent financial fraud, otherwise we will not add the transfer amount to your account balance, in this case **you have to submit a ticket and upload the corresponding bank statement**.
 - When the transfer is completed, you don't need to do anything, we will check the payment information and the amount, then
 - Bank transfer is subject to bank confirmation (may be delayed in case of holidays), real-time payment is not possible. When the transfer is completed, we will add the transfer amount to your account balance and you will get the receipt via email. Bank transfer may be delayed in case of holidays, real-time payment is not possible.
 
@@ -129,13 +129,13 @@ For organization developers in China, we support using bank transfer for payment
 
 If a bill is not paid by the due date, it will be marked with a "Overdue" status and your developer services will be disrupted, so please complete payment of your bill as soon as possible.
 
-> <strong>WARNING:</strong> Your account will be suspended if the "outstanding" over 30 days.
+> **WARNING:** Your account will be suspended if the "outstanding" over 30 days.
 {.bqdanger}
 ## Refund
 
 You can request a refund for both the savings plans and the positive balance, where the savings plans must not be active and no VAT invoice has been issued. Refund for balance will be made the following month when the pay-as-you-go subscription is billed.
 
-All refunds are subject to a <strong>5% transaction fee</strong> and the refund amount will be issued to the original payment methods. To request a refund, please [submit a ticket](https://console.qweather.com/support/ticket/new/).
+All refunds are subject to a **5% transaction fee** and the refund amount will be issued to the original payment methods. To request a refund, please [submit a ticket](https://console.qweather.com/support/ticket/new/).
 
 Refunds cannot be requested if your account has been suspended or payments have been made for more than 180 days.
 

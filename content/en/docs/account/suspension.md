@@ -20,19 +20,19 @@ The QWeather's legal terms help provide fair service to all users and protect th
 
 When your account is suspended, you will receive an email notification from us with the reason for the suspension. In general, common reasons for suspensions include:
 
-1. <strong>Outstanding bills over 30 days</strong>
+1. **Outstanding bills over 30 days**
 
    If you have a outstanding bill, your QWeather develop service will stop, you can complete the payment of the outstanding bill at any time and all service will resume immediately. However, if that outstanding bill is unpaid for more than 30 days, your account will be suspended.
 
-2. <strong>Large number of incorrect requests</strong>
+2. **Large number of incorrect requests**
 
    When your application sends a lot of incorrect requests to QWeather and the number of incorrect requests is more than reasonable, in this case we will suspend your account.
 
-3. <strong>Violation of license and attribution requirements</strong>
+3. **Violation of license and attribution requirements**
 
    You should follow the requirements of [developers license](/en/docs/terms/tos/) and [attribution](/en/docs/terms/attribution/). When you violate these terms, your account will be suspended.
 
-4. <strong>Providing fake information</strong>
+4. **Providing fake information**
 
    If your account contains fake information, such as incorrect email and etc., we will suspend your account in this case. Please note that fake information includes a temporary email or temporary phone number.
 

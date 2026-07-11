@@ -27,7 +27,7 @@ Moonrise and moonset are more complex and variable, and we have listed some comm
 
 Why does the moon sometimes rise at 9:00 a.m.? Doesn't the moon only appear at night? You have made a mistake in your data...
 
-<strong>*Actually, the moon does not appear only at night.</strong>*
+***Actually, the moon does not appear only at night.***
 
 The rotation period of the Moon is about 29.53 days, so for the Earth, the Moon moves every day at an angle of:
 
@@ -86,7 +86,7 @@ The table below shows examples for moon phases.
 | Last quarter | Left side 50% | Right side 50% | 00:00 | 12:00 | <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="qi-806" viewBox="0 0 16 16"><path d="M8 0a8.031 8.031 0 0 0-1.065.079 7.992 7.992 0 0 0-.354 15.788h.001A7.952 7.952 0 0 0 8 16 8 8 0 0 0 8 0zM1 8a7.008 7.008 0 0 1 6.204-6.951A25.25 25.25 0 0 1 8 7.5a24.131 24.131 0 0 1-1.067 7.41A7.005 7.005 0 0 1 1 8z"/></svg> | <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="qi-802" viewBox="0 0 16 16"><path d="M8 0a8.031 8.031 0 0 0-1.065.079 7.992 7.992 0 0 0-.354 15.788h.001A7.952 7.952 0 0 0 8 16 8 8 0 0 0 8 0zm0 15.5a6.836 6.836 0 0 1-.725-.04A24.01 24.01 0 0 0 8.5 7.5 25.697 25.697 0 0 0 7.593.514C7.734.504 7.868.5 8 .5a7.5 7.5 0 0 1 0 15z"/></svg> |
 | Waning crescent | Left side 49–1% | Right side 49–1% | 03:00 | 15:00 | <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="qi-807" viewBox="0 0 16 16"><path d="M9.555.154C9.513.145 9.47.142 9.426.134A7.983 7.983 0 0 0 8.795.04 8 8 0 1 0 8 16a7.955 7.955 0 0 0 .795-.04c.214-.021.423-.057.631-.094.043-.008.087-.011.13-.02a7.998 7.998 0 0 0 0-15.692zm.113 15.158A7.5 7.5 0 1 1 8 .5a7.44 7.44 0 0 1 1.668.189 8.497 8.497 0 0 0 0 14.623z"/></svg> | <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="qi-801" viewBox="0 0 16 16"><path d="M8 0a7.955 7.955 0 0 0-.795.04 7.985 7.985 0 0 0-.631.094c-.043.008-.087.011-.13.02a7.998 7.998 0 0 0 0 15.692c.043.009.087.012.13.02.208.037.417.073.631.094A8 8 0 1 0 8 0zm0 15.5a7.46 7.46 0 0 1-1.668-.188 8.497 8.497 0 0 0 0-14.623A7.5 7.5 0 1 1 8 15.5z"/></svg> |
 
-<strong>Learn more:</strong>
+**Learn more:**
 
 - The video in this article represents the hourly changes in the moon phase and the Moon's position relative to Earth in 2022: [Moon Phase and Libration, 2022](https://svs.gsfc.nasa.gov/4955)
 - This video provides an illustration of how the Moon passes through its phases — a product of its orbit, which allows different parts of its surface to be illuminated by the Sun over the course of a month. The camera is locked to the Moon as the Earth rapidly rotates in the foreground: [The Moon's Phases as Seen from Space](https://www.eso.org/public/videos/moon_phases-1/)

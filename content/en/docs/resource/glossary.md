@@ -89,7 +89,7 @@ Bundle ID is only support alphanumeric, dashes and underscores.
 
 ## Android Package Name
 
-Open the <strong>AndroidManifest.xml</strong> configuration file of the Android project, and the content corresponding to the <strong>package</strong> attribute is the Package Name.
+Open the **AndroidManifest.xml** configuration file of the Android project, and the content corresponding to the **package** attribute is the Package Name.
 
 Android Package Name only support alphanumeric, dashes and underscores.
 
@@ -112,4 +112,4 @@ The Wind Scale is used for direct display and is not recommended as an enumerate
 
 The Wind Scale is based on the wind speed, please refer to [Wind Speed ​​and Wind Speed ​​Comparison](/en/docs/resource/wind-info/), and QWeather uses KM/H as the unit.
 
-When the Wind Scale is 0, the wind direction angle is -1, and the wind direction is <strong>no continuous wind direction</strong>.
+When the Wind Scale is 0, the wind direction angle is -1, and the wind direction is **no continuous wind direction**.

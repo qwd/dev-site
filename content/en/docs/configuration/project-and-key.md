@@ -9,7 +9,7 @@ Before you start requesting the API, you need to create the project and credenti
 
 ## Project
 
-<strong>Project</strong> is the container for QWeather API, which can also be understood as a product you need to develop, such as a "travel app" or a "graduation design".
+**Project** is the container for QWeather API, which can also be understood as a product you need to develop, such as a "travel app" or a "graduation design".
 
 ### Create project
 
@@ -22,7 +22,7 @@ You can create up to 10 projects.
 
 ### Delete Project
 
-> <strong>Warning:</strong> The deletion action is irrevocable, the Project and all credentials in this Project will be permanently deleted, and you can no longer use this Project and credentials for API authentication.
+> **Warning:** The deletion action is irrevocable, the Project and all credentials in this Project will be permanently deleted, and you can no longer use this Project and credentials for API authentication.
 {.bqdanger}
 1. Click the project name you wish to delete.
 2. Click the “Delete” button at the bottom of the page.
@@ -32,7 +32,7 @@ You can create up to 10 projects.
 
 ## Credential
 
-<strong>Credentials</strong> are used for API authentication and is your core sensitive data. See [security guidelines](/en/docs/best-practices/security-guidelines/) for a secure request API. See [authentication](/en/docs/configuration/authentication/) for how authentication works.
+**Credentials** are used for API authentication and is your core sensitive data. See [security guidelines](/en/docs/best-practices/security-guidelines/) for a secure request API. See [authentication](/en/docs/configuration/authentication/) for how authentication works.
 
 Depending on the authentication method, there are JWT credentials and API KEY credentials. Up to 20 credentials are created per project.
 
@@ -44,7 +44,7 @@ To add JWT credentials, you need to create Ed25519 public and private keys first
 2. Choose the project where you want to add the public key.
 3. Click the "Add Credential" button in the credential section.
 4. Enter the credential name.
-5. Select the authentication method: <strong>JSON Web Token</strong>.
+5. Select the authentication method: **JSON Web Token**.
 6. Use any text editor to open the public key (like ed25519-public.pem which was generated in the previous step), and copy the entire contents of it. The content looks like:
 ```
    -----BEGIN PUBLIC KEY-----
@@ -54,21 +54,21 @@ To add JWT credentials, you need to create Ed25519 public and private keys first
 7. Paste the public key in the textarea.
 8. Click "Save" button
 
-You will see the <strong>Create Credential Success</strong> page and it shows the creation date, credential ID and SHA-256. For security reasons, you cannot view this public key in the Console again. However, you can use the SHA-256 value of the public key to compare it with the local SHA-256 in order to confirm that the correct public key was used.
+You will see the **Create Credential Success** page and it shows the creation date, credential ID and SHA-256. For security reasons, you cannot view this public key in the Console again. However, you can use the SHA-256 value of the public key to compare it with the local SHA-256 in order to confirm that the correct public key was used.
 
 ### Add credential for API KEY
 
 API KEY is a simple but less secure authentication method. We recommend using [JWT Authentication](/en/docs/configuration/authentication/#json-web-token).
 
-> <strong>Note:</strong> We will limit the volume of daily requests for authentication using API KEY from 2027-02-01.
+> **Note:** We will limit the volume of daily requests for authentication using API KEY from 2027-02-01.
 
-> <strong>Note:</strong> SDK v5+ only supports JWT.
+> **Note:** SDK v5+ only supports JWT.
 
 1. [Go to Console - Project](https://console.qweather.com/project)
 2. Choose the project where you want to add the public key.
 3. Click the "Add Credential" button in the credential section.
 4. Enter the credential name.
-5. Select the authentication method: <strong>API KEY</strong>.
+5. Select the authentication method: **API KEY**.
 6. Click "Save" button.
 
 ### Security restrictions
@@ -83,7 +83,7 @@ For a Higher level of security for credentials, we recommend adding security res
 
 ### Delete credential
 
-> <strong>Warning:</strong> The deletion is irrevocable, and you can no longer use this credential for API authentication.
+> **Warning:** The deletion is irrevocable, and you can no longer use this credential for API authentication.
 {.bqdanger}
 1. Select the KEY you want to delete.
 2. Click "Delete" button.
