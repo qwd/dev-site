@@ -81,7 +81,7 @@ You will see the **Create Credential Success** page and it shows the creation da
 
 ### Generate JWT
 
-QWeather supports the [JWT protocol and specification](https://datatracker.ietf.org/doc/html/rfc7519), in most cases you don't need to write your own code for generating JWT, almost all programming languages have third-party open source libraries for JWT generation, you can find these libraries in [JWT.io]( https://jwt.io/libraries).
+QWeather supports the [JWT protocol and specification](https://datatracker.ietf.org/doc/html/rfc7519), in most cases you don't need to write your own code for generating JWT, almost all programming languages have third-party open source libraries for JWT generation, you can find these libraries in [JWT.io](https://jwt.io/libraries).
 
 A complete JWT consists of three parts: Header, Payload and Signature. we will introduce the mandatory parameters in each part:
 

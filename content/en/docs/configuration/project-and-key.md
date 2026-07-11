@@ -16,7 +16,7 @@ Before you start requesting the API, you need to create the project and credenti
 You can create up to 10 projects.
 
 1. [Go to Console - Project](https://console.qweather.com/project)
-2. Click the "Create Project" button in the upper right corner..
+2. Click the "Create Project" button in the upper right corner.
 3. Set Project name, Project name can be up to 20 characters. You can modify the name later.
 4. Click "Save" button.
 

@@ -82,7 +82,7 @@ You can specify the language of the data using the query parameter `lang`, here 
 | Icelandic | is |IS |IS |
 | Norwegian | nb |NB |NB |
 
-## Sample Code：
+## Sample Code:
 
 Swift
 ```swift

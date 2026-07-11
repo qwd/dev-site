@@ -21,12 +21,12 @@ To change your business name or unified social credit code, please refer to the 
 
 1. [Go to Console - Settings](https://console.qweather.com/setting)
 2. Click “Edit” next to your business name.
-3. Click on “Change Business Developer Information”. 4.
+3. Click on “Change Business Developer Information”.
 4. Fill in the contact information of the applicant and select the type of change.
 5. If the change to another organization, fill in the new organization's name and USCI, and upload the new business license. Click “Next”, download the application form, print, stamp, scan and upload it, and submit it for review.
-6. If it is only a name change, fill in the new business name, upload new business license and name change statement by government departments or screenshot of the National Enterprise Credit Information Publicity System. Click “Next”, reviw the information and submit.
+6. If it is only a name change, fill in the new business name, upload new business license and name change statement by government departments or screenshot of the National Enterprise Credit Information Publicity System. Click “Next”, review the information and submit.
 
-To change other organization information, such as contact information, address or phone number, please go to [Bill Contact Information](https://console.qweather.com/finance/contact/) or [VAT Invoice Information](https://console.qweather.com/finance /vat-invoice/info/) to change them yourself.
+To change other organization information, such as contact information, address or phone number, please go to [Bill Contact Information](https://console.qweather.com/finance/contact/) or [VAT Invoice Information](https://console.qweather.com/finance/vat-invoice/info/) to change them yourself.
 
 ## Comparisons
 

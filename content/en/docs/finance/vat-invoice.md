@@ -23,7 +23,7 @@ According to the policy of tax administration, we will adjust the tax rate, whic
 
 ## Invoice format
 
-**Fully Digitalized E-Invoice (FDEI)**. See [Announcement of the Beijing Municipal Tax Bureau for Taxation on the Pilot Work of Fully Digitalized E-Invoice](https://www.beijing.gov.cn/zhengce/zhengcefagui/202312/t20231207_3493065.html)。
+**Fully Digitalized E-Invoice (FDEI)**. See [Announcement of the Beijing Municipal Tax Bureau for Taxation on the Pilot Work of Fully Digitalized E-Invoice](https://www.beijing.gov.cn/zhengce/zhengcefagui/202312/t20231207_3493065.html).
 
 FDEI sample:
 

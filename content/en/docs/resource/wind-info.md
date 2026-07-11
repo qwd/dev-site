@@ -17,7 +17,7 @@ In a geographic coordinate system, the wind has a total of 32 different directio
 
 <img class="w-3/5 mx-auto" src="/assets/images/content/wind-direction-rose.png" alt="16 wind direction rose">
 
-16 wind direction：
+16 wind direction:
 
 | Direction       | Code | Degree(°) | Degree range(°) |
 | --------------- | ---- | --------- | --------------- |

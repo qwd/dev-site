@@ -68,7 +68,7 @@ In GeoAPI, `utcOffset` indicates the offset between the current time of the area
 
 `updateTime` is different from `pubTime`. This time is the time when the QWeather system updates the data and represents the time of the last update of the currently data.
 
-- The same `updateTime` can be used to determine whether the data content has changed, but different update times cannot be used to determine that the data content must have changed. In some cases, the calculation results of the meteorological model may get the same result at different update times .
+- The same `updateTime` can be used to determine whether the data content has changed, but different update times cannot be used to determine that the data content must have changed. In some cases, the calculation results of the meteorological model may get the same result at different update times.
 - Due to weather data is constantly updated, the exact update time cannot be determined. Please refer to the `updateTime` field of the data returned by the API/SDK.
 
 | Data | Update interval |

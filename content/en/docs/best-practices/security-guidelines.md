@@ -59,7 +59,7 @@ Up to 10 IP addresses can be added to use the credentials. If left blank, all IP
 
 - Support IPv4: `192.168.0.1`
 - Support IPv6: `2001:db8::1`
-- Support CIDR for subnet：`192.168.0.0/12` or `2001:db8::/64`
+- Support CIDR for subnet: `192.168.0.0/12` or `2001:db8::/64`
 
 ### iOS Apps
 

@@ -120,7 +120,7 @@ You can use the [Monitoring Station Data](/en/docs/api/air-quality/air-station/)
 
 For AQI in China, please refer to the following instruction:
 
-- The calculation of AQI is in accordance with the [Technical Regulation on Ambient Air Quality Index (AQI) (Trial) (HJ 633-2012)](https://www.mee.gov.cn/ywgz/fgbz/bz/bzwb/jcffbz/201203/ t20120302_224166.shtml).
+- The calculation of AQI is in accordance with the [Technical Regulation on Ambient Air Quality Index (AQI) (Trial) (HJ 633-2012)](https://www.mee.gov.cn/ywgz/fgbz/bz/bzwb/jcffbz/201203/t20120302_224166.shtml).
 - QAQI is not supported
 - Pollutants are not supported in Air Quality Forecast API.
 - If the pollutant sub-index is < 50, the primary pollutant in AQI (CN) is null.
