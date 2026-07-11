@@ -9,13 +9,13 @@ Pay as you go is tiered pricing model, with the higher requests, the lower cost 
 
 ## Specifications
 
-- <strong>Billing unit:</strong> pre request. See [What is a request](/en/help/#what-is-a-request).
-- <strong>Billing cycle:</strong> monthly
-- <strong>Accrued charges cycle:</strong> hourly
-- <strong>Tiered price progression cycle:</strong> monthly
-- <strong>Minimum billing amount:</strong> ¥0.01. Under ¥0.01 will be billed as ¥0.01
+- **Billing unit:** pre request. See [What is a request](/en/help/#what-is-a-request).
+- **Billing cycle:** monthly
+- **Accrued charges cycle:** hourly
+- **Tiered price progression cycle:** monthly
+- **Minimum billing amount:** ¥0.01. Under ¥0.01 will be billed as ¥0.01
 
-> <strong>Example:</strong> you have 1,000,000 requests per month, the monthly cost is: (50,000 requests x ¥0) + (950,000 requests x ¥0.0007) = ¥665
+> **Example:** you have 1,000,000 requests per month, the monthly cost is: (50,000 requests x ¥0) + (950,000 requests x ¥0.0007) = ¥665
 >
 > *Note: this is an approximation and the final cost may vary slightly due to the actual request volume per hour.*
 
@@ -25,6 +25,6 @@ Pay-as-you-go is tiered pricing model, with tier requests calculated as the sum 
 
 [Savings plans](/en/docs/finance/savings-plans/) can significantly reduce the cost.
 
-> <strong>Note:</strong> When your average daily request volume is over <strong>1,000,000</strong> (or <strong>500</strong> for solar irradiation), please email <sales@qweather.com> and our business experts will provide a more flexible and cost-effective solution for you.
+> **Note:** When your average daily request volume is over **1,000,000** (or **500** for solar irradiation), please email <sales@qweather.com> and our business experts will provide a more flexible and cost-effective solution for you.
 
 {{< price-table >}}

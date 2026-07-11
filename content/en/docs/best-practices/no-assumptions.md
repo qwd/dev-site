@@ -4,11 +4,11 @@ toc: false
 translationKey: bp-na
 ---
 
-Weather changes rapidly, as does weather data, and to ensure that your program is strong at all times, <strong>please do not assume that all responses are complete, or make assumptions about the length or range of response data</strong>.
+Weather changes rapidly, as does weather data, and to ensure that your program is strong at all times, **please do not assume that all responses are complete, or make assumptions about the length or range of response data**.
 
 Weather data can be affected by a variety of factors, and in most cases are completely unavoidable, including natural and physical phenomena, changes in administrative boundaries, publication rules of national meteorological services, iterations of weather algorithms, etc., which can cause changes in weather data.
 
-> <strong>For example:</strong> when our data source is missing some data it may cause null values to be returned; there may be no sunrise or sunset on a particular day in high latitudes; new codes may be added to the warning type; new parameters may be added when our service is upgraded.
+> **For example:** when our data source is missing some data it may cause null values to be returned; there may be no sunrise or sunset on a particular day in high latitudes; new codes may be added to the warning type; new parameters may be added when our service is upgraded.
 
 Therefore it is important to consider how to handle these issues in your program.
 

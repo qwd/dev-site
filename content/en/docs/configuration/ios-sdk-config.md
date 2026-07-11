@@ -5,7 +5,7 @@ translationKey: config-ios
 
 This document will introduce how to configure the iOS SDK for QWeather API. For more SDK development documentation, please [visit the SDK repository](https://github.com/qwd/qweather-ios-sdk/blob/main/README.md).
 
-<strong>OS Requirement:</strong>
+**OS Requirement:**
 
 - iOS 15.0+
 - macOS 11.0+
@@ -51,7 +51,7 @@ QWeather iOS SDK can be installed via [CocoaPods](https://cocoapods.org/). Cocoa
    pod install
    ```
 
-<strong>Update SDK</strong>
+**Update SDK**
 
 Open a terminal and go to the directory containing the `Podfile` and run:
 
@@ -71,7 +71,7 @@ pod update
 
 Replace `YOUR_HOST` with your [API Host](/docs/configuration/api-host/).
 
-<strong>Swift</strong>
+**Swift**
 
 ```swift
 import QWeatherSDK
@@ -84,7 +84,7 @@ try await QWeather
 
 ```
 
-<strong>Objective-C</strong>
+**Objective-C**
 
 ```objc
 #import <QWeatherSDK/QWeatherSDK-Swift.h>
@@ -100,11 +100,11 @@ try await QWeather
 
 ### Set up the token generator
 
-> <strong>Hint:</strong> iOS SDK only support [JWT](/docs/configuration/authentication/#json-web-token) for authentication.
+> **Hint:** iOS SDK only support [JWT](/docs/configuration/authentication/#json-web-token) for authentication.
 
 The SDK provides two token generation mechanisms: TokenGenerator and closure-based implementation. Developers can choose either approach based on their needs. It is important to note that if both methods are configured simultaneously, the closure implementation will be automatically disabled. For security purposes, please ensure proper management of sensitive information such as private key, project ID, and credential ID, avoiding storage or transmission in plaintext.
 
-<strong>Swift</strong>
+**Swift**
 
 ```swift
 // Configure the token generator using the JWTGenerator class provided by the SDK
@@ -122,7 +122,7 @@ instance.setupTokenGenerator({
 })
 ```
 
-<strong>Objective-C</strong>
+**Objective-C**
 
 ```objc
 // Set the token generator using the method provided by the SDK.
@@ -184,7 +184,7 @@ WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101010100
 
 Follow the steps below to systematically check your Xcode project configuration. We recommend integrating the QWeatherSDK via CocoaPods or Swift Package Manager (SPM), as these tools handle most dependency and configuration issues automatically.
 
-<strong>1. Verify SDK Configuration</strong>
+**1. Verify SDK Configuration**
 
 Swift Library Settings
 
@@ -204,17 +204,17 @@ Target → Build Settings → Other Linker Flags = -ObjC -framework "QWeatherSDK
 Target → Build Settings → Other Linker Flags += -L$(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME)
 ```
 
-<strong>2. Clear Build Cache</strong>
+**2. Clear Build Cache**
 
 1. Delete the build cache folder: Open Finder, go to `~/Library/Developer/Xcode/DerivedData/` and remove the folder related to your project.
 2. Clean the build folder: In Xcode, select Product → Clean Build Folder (shortcut: Shift + Command + K).
 3. Quit Xcode and restart it.
 4. Rebuild your project.
 
-<strong>3. Check Sample Project</strong>
+**3. Check Sample Project**
 
 Refer to our sample project <https://github.com/qwd/qweather-ios-sdk/tree/main/Example>.
 
-<strong>4. Last Resort</strong>
+**4. Last Resort**
 
 If the issue persists, try creating a brand-new Xcode project and integrate `QWeatherSDK.xcframework` directly. This helps rule out issues caused by complex or corrupted settings in your existing project.

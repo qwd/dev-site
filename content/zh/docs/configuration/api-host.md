@@ -23,5 +23,5 @@ abc1234xyz.def.qweatherapi.com
 - [安装和配置 iOS SDK](/docs/configuration/ios-sdk-config/)
 - [安装和配置 Android SDK](/docs/configuration/android-sdk-config/)
 
-> <strong>警告：</strong> 如果是使用的是原公共API地址，例如`api.qweather.com`、`devapi.qweather.com`或`geoapi.qweather.com`，请尽快更换为你自己的API Host以提供更高的安全性，[原公共API地址将从2026年起逐步停止服务](https://blog.qweather.com/announce/public-api-domain-change-to-api-host/)。
+> **警告：** 如果是使用的是原公共API地址，例如`api.qweather.com`、`devapi.qweather.com`或`geoapi.qweather.com`，请尽快更换为你自己的API Host以提供更高的安全性，[原公共API地址将从2026年起逐步停止服务](https://blog.qweather.com/announce/public-api-domain-change-to-api-host/)。
 {.bqdanger}

@@ -5,7 +5,7 @@ translationKey: config-ios
 
 这篇文档将介绍如何配置和风天气开发者服务的iOS SDK，具体的开发文档请[前往 SDK 仓库查看](https://github.com/qwd/qweather-ios-sdk/blob/main/README-zh.md)。
 
-> <strong>隐私声明：</strong>和风天气iOS SDK<strong>不需要电话、位置、设备唯一标识符等任何特殊权限</strong>，我们不会也无法通过本SDK收集用户隐私信息。
+> **隐私声明：** 和风天气iOS SDK**不需要电话、位置、设备唯一标识符等任何特殊权限**，我们不会也无法通过本SDK收集用户隐私信息。
 
 和风天气iOS SDK支持下列操作系统：
 - iOS 15.0+
@@ -53,7 +53,7 @@ iOS SDK支持使用Swift Package Manager集成，具体步骤请参考[Adding pa
       pod install
       ```
 
-<strong>更新SDK</strong>
+**更新SDK**
 
 打开终端，进入包含`Podfile`的目录，运行：
 
@@ -74,7 +74,7 @@ pod update
 
 将代码中的`YOUR_HOST`替换为您的[API Host](/docs/configuration/api-host)
 
-<strong>Swift</strong>
+**Swift**
 
 ```swift
 import QWeatherSDK
@@ -87,7 +87,7 @@ try await QWeather
 
 ```
 
-<strong>Objective-C</strong>
+**Objective-C**
 
 ```objc
 #import <QWeatherSDK/QWeatherSDK-Swift.h>
@@ -103,11 +103,11 @@ try await QWeather
 
 ### 设置Token生成器
 
-> <strong>提示：</strong>iOS SDK仅支持[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
+> **提示：** iOS SDK仅支持[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
 
 SDK支持通过TokenGenerator和闭包两种机制生成访问令牌，开发者可根据需求任选其一。需注意当同时配置两种方式时，闭包实现将自动失效。出于安全考虑，请确保妥善保管私钥、项目ID及凭据ID等敏感信息，避免以明文形式存储或传输。
 
-<strong>Swift</strong>
+**Swift**
 
 ```swift
 // 通过SDK提供的JWTGenerator设置令牌生成器，其遵从TokenGenerator协议
@@ -125,7 +125,7 @@ instance.setupTokenGenerator({
 })
 ```
 
-<strong>Objective-C</strong>
+**Objective-C**
 
 ```objc
 // 通过SDK提供的方法设置令牌生成器
@@ -145,7 +145,7 @@ instance.setupTokenGenerator({
 
 请求北京实时天气。
 
-<strong>Swift</strong>
+**Swift**
 
 ```swift
 import QWeatherSDK
@@ -165,7 +165,7 @@ Task {
 }
 ```
 
-<strong>Objective-C</strong>
+**Objective-C**
 
 ```objc
 #import <QWeatherSDK/QWeatherSDK-Swift.h>
@@ -187,7 +187,7 @@ WeatherParameter *parameter = [WeatherParameter instanceWithLocation:@"101010100
 
 请按照以下步骤逐项排查你的 Xcode 项目配置。我们推荐使用 CocoaPods 或 Swift Package Manager (SPM) 来集成 QWeatherSDK，这将自动处理大部分配置依赖问题。
 
-<strong>1. 检查SDK配置</strong>
+**1. 检查SDK配置**
 
 Swift 标准库配置
 ```
@@ -207,17 +207,17 @@ Target → Build Settings → Other Linker Flags += -L$(DEVELOPER_DIR)/Toolchain
 
 ```
 
-<strong>2. 清理缓存</strong>
+**2. 清理缓存**
 
 1. 删除编译缓存目录：打开 Finder，前往 `~/Library/Developer/Xcode/DerivedData/` 删除与当前项目对应的文件夹
 2. 删除编译目录：在 Xcode 中点击菜单 Product → Clean Build Folder (快捷键 Shift + Command + K)
 3. 完全退出并重启 Xcode
 4. 重新编译项目
 
-<strong>3. 参考示例</strong>
+**3. 参考示例**
 
 参考我们的示例项目：<https://github.com/qwd/qweather-ios-sdk/tree/main/Example>
 
-<strong>4. 终极尝试</strong>
+**4. 终极尝试**
 
 如果问题依然存在，请尝试创建一个全新的 Xcode 工程添加 QWeatherSDK.xcframework 进行集成测试。这有助于排除原有工程复杂配置或损坏带来的干扰。

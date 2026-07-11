@@ -34,7 +34,7 @@ Weather indices are not available for all countries or regions. Currently, for C
 | Traffic         | 15      | PTFC              | PTFC        |
 | SPF             | 16      | SPI               | SPI         |
 
-## Sample Code：
+## Sample Code:
 
 Swift
 ```swift

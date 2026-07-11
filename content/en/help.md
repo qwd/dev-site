@@ -28,7 +28,7 @@ The coverage is varied by data. For Weather/Ocean/Solar Radiation/Astronomy, the
 
 We offer a free request amount per month, please refer to [Pricing](/docs/finance/pricing/).
 
-### Is the QWeather service available anywhere in the world？
+### Is the QWeather service available anywhere in the world?
 
 Yes, based on QWeather's global data center and CDN edge acceleration capabilities, you can use our weather service anywhere in the world. Learn about [Global Deployment](/en/docs/features/global-deployment/) and [Service Performance](/en/docs/features/performance/).
 

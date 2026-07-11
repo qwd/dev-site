@@ -34,13 +34,13 @@ translationKey: bp-protact
 
 如要设置应用限制，请访问[控制台-项目管理](https://console.qweather.com/project)，选择需要的项目和凭据。
 
-> <strong>提示：</strong>每个凭据仅限设置一种应用限制。
+> **提示：** 每个凭据仅限设置一种应用限制。
 
 ### 网址限制 {#websites}
 
 最多可以添加10个网址允许使用凭据请求API。如果留空，则允许所有来源网址访问。
 
-- <strong>不需要</strong>输入协议，例如`https://`或`http://`，仅输入`yourdomain.com`即可。
+- **不需要**输入协议，例如`https://`或`http://`，仅输入`yourdomain.com`即可。
 - 支持根域名：`yourdoamin.com`，请注意根域名不包括www.yourdomain.com
 - 支持子域名：`sub.yourdomain.com` 或 `www.yourdomain.com`
 - 支持子域名使用通配符：`*.yourdomain.com`，请注意子域名通配符不能与其他字符组合使用，且只能在开头使用。例如：
@@ -48,7 +48,7 @@ translationKey: bp-protact
   - ✅ `*.abc.yourdomain.com`
   - ❌ `*abc.yourdomain.com`
   - ❌ `abc.*.yourdomain.com`
-- <strong>不支持</strong>端口、路径和参数：
+- **不支持**端口、路径和参数：
   - ❌`www.yourdomain.com:8080`
   - ❌`www.yourdomain.com/path/`
   - ❌`www.yourdomain.com?params`
@@ -117,13 +117,13 @@ curl -X GET --compressed \
 
 当前端或客户端应用使用[JWT](/docs/configuration/authentication/#json-web-token/)进行身份认证时，我们推荐你将Private KEY存储在一台安全的认证服务器中，由认证服务器向你的应用颁发Token，然后再通过应用请求和风天气的数据。
 
-<strong>请始终确保应用与身份认证服务器的连接是安全的。</strong>
+**请始终确保应用与身份认证服务器的连接是安全的。**
 
 ## 使用代理服务器 {#using-proxy-server}
 
 对于前端或客户端应用，你可以设置一台代理服务器，API KEY或Private KEY储存在代理服务器中，你的应用通过代理服务器向我们发送请求。
 
-<strong>请始终确保应用与代理服务器的连接是安全的。</strong>
+**请始终确保应用与代理服务器的连接是安全的。**
 
 ## 混淆或加密KEY {#encrypt-key}
 

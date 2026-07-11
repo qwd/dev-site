@@ -31,7 +31,7 @@ Check out [GeoAPI](/en/docs/api/geoapi/).
 
 Behind your access to API services, there are 10 data centers and hundreds CDN nodes around the world for QWeather, which allows your Apps to get weather services fast and stable.
 
-- <strong>Automatic Routing:</strong> No matter where your Apps is deployed, your data requests are automatically routed to the nearest data center.
-- <strong>Load Balancing:</strong> When one data center fails or the load is high, your requests will be automatically assigned to the data center that is running normally, ensuring your Apps is always online.
-- <strong>CDN Edge Acceleration:</strong> For regions without a data center, we will provide CDN edge acceleration capability for stable delivery of your requests.
-- <strong>Custom Data Center:</strong> For enterprise developers, we offer to build dedicated data centers in specified countries or regions, which will greatly accelerate your local requests.
+- **Automatic Routing:** No matter where your Apps is deployed, your data requests are automatically routed to the nearest data center.
+- **Load Balancing:** When one data center fails or the load is high, your requests will be automatically assigned to the data center that is running normally, ensuring your Apps is always online.
+- **CDN Edge Acceleration:** For regions without a data center, we will provide CDN edge acceleration capability for stable delivery of your requests.
+- **Custom Data Center:** For enterprise developers, we offer to build dedicated data centers in specified countries or regions, which will greatly accelerate your local requests.

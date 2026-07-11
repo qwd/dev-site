@@ -23,7 +23,7 @@ QWeather supports two kinds of AQI and responds up to two AQI data in the API: Q
 
 ### QAQI
 
-> <strong>Hint:</strong> QAQI is not available for China.
+> **Hint:** QAQI is not available for China.
 
 QAQI is a generic air quality index defined by QWeather, based on the [WHO Air Quality Guidelines 2021](https://www.who.int/news-room/feature-stories/detail/what-are-the-who-air-quality-guidelines) and adapted for various countries and regions with their natural environments, economic bases and social conditions.
 
@@ -75,13 +75,13 @@ Health advice will be provided separately according to healthy populations and s
 
 Health effects and advice are not available for all countries and regions.
 
-> <strong>Warning:</strong> Health effects and advice are not regulatory advice and do not have the force of law, and you should be aware of, or inform your users to: under any circumstances, people who are unwell should seek immediate medical attention and follow medical advice.
+> **Warning:** Health effects and advice are not regulatory advice and do not have the force of law, and you should be aware of, or inform your users to: under any circumstances, people who are unwell should seek immediate medical attention and follow medical advice.
 {.bqdanger}
 ## Pollutants
 
 Air quality is based on air pollutants, and the higher the concentration of a pollutant, the more harmful it is to humans. Air pollutants are complex mixture of solid particles, liquid droplets, as well as gases, which come from many sources, for example: household fuel burning, industrial chimneys, traffic exhausts, power generation, open burning of waste, agricultural practices, desert dust and many other sources. The pollutants mentioned in the [WHO Global Air Quality Guidelines](https://www.who.int/news-room/feature-stories/detail/what-are-the-who-air-quality-guidelines) are PM2.5, PM10, O3, NO2, SO2, and CO, however, environmental authorities have different definitions of pollutants, e.g., China requires 6 pollutants for air quality, while the European Environment Agency requires 5 pollutants.
 
-> <strong>Note:</strong> In practice, pollutants in the AQI are not consistent and pollutants may not be available in some areas, this is because:
+> **Note:** In practice, pollutants in the AQI are not consistent and pollutants may not be available in some areas, this is because:
 >
 > - Different standards for pollutants in local regulations
 > - Monitoring stations malfunction or are closed
@@ -106,7 +106,7 @@ The Pollutant sub-index gives us an idea of the current levels of each pollutant
 
 The pollutant with the highest concentration value or the worst pollutant sub-index is the primary pollutant, which represents the primary source of current air pollution.
 
-> <strong>Hint:</strong> Depending on local AQI standard, the primary pollutant may not be calculated, and in this case the primary pollutant is null.
+> **Hint:** Depending on local AQI standard, the primary pollutant may not be calculated, and in this case the primary pollutant is null.
 
 ## Monitoring Station
 
@@ -114,14 +114,14 @@ At most locations, we will reference data from nearby air quality monitoring sta
 
 You can use the [Monitoring Station Data](/en/docs/api/air-quality/air-station/) to obtain values of pollutant concentrations measured at specific monitoring stations.
 
-> <strong>Warning:</strong> Monitoring stations may not be able to provide data for a variety of reasons, such as failures, maintenance, etc., and it is not possible to know when or if they will be restored.
+> **Warning:** Monitoring stations may not be able to provide data for a variety of reasons, such as failures, maintenance, etc., and it is not possible to know when or if they will be restored.
 {.bqdanger}
 ## China AQI
 
 For AQI in China, please refer to the following instruction:
 
-- The calculation of AQI is in accordance with the [Technical Regulation on Ambient Air Quality Index (AQI) (Trial) (HJ 633-2012)](https://www.mee.gov.cn/ywgz/fgbz/bz/bzwb/jcffbz/201203/ t20120302_224166.shtml).
+- The calculation of AQI is in accordance with the [Technical Regulation on Ambient Air Quality Index (AQI) (Trial) (HJ 633-2012)](https://www.mee.gov.cn/ywgz/fgbz/bz/bzwb/jcffbz/201203/t20120302_224166.shtml).
 - QAQI is not supported
 - Pollutants are not supported in Air Quality Forecast API.
 - If the pollutant sub-index is < 50, the primary pollutant in AQI (CN) is null.
-- The air quality data are <strong>for reference only, have not been revised and confirmed by a full audit process, and are not applicable for evaluating the compliance status or any official assessment</strong>. Please refer to the air quality data released by [China national Environmental Monitoring Centre](https://www.cnemc.cn).
+- The air quality data are **for reference only, have not been revised and confirmed by a full audit process, and are not applicable for evaluating the compliance status or any official assessment**. Please refer to the air quality data released by [China national Environmental Monitoring Centre](https://www.cnemc.cn).

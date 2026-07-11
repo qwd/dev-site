@@ -5,7 +5,7 @@ translationKey: account-contact
 
 You can add up to 5 notification recipients to your account who can receive all notifications for your account. For example, if you want other people in your organization to receive billing or service notifications, you can add them to your notification recipients.
 
-> <strong>Hint:</strong> All security and privacy related notifications will not be sent to the recipient, e.g. authentication, password reset etc.
+> **Hint:** All security and privacy related notifications will not be sent to the recipient, e.g. authentication, password reset etc.
 
 ### Aadd recipients
 

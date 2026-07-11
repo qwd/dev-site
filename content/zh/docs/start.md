@@ -16,7 +16,7 @@ translationKey: start-overview
 在请求数据之前，需要一些准备工作：
 
 - 创建[项目和凭据](/docs/configuration/project-and-key/)用来管理你的API。
-- 了解[身份认证](/docs/configuration/authentication/)，和风天气支持两种身份认证方式：<strong>JSON Web Token (JWT)</strong> 以及 <strong>API KEY</strong>。
+- 了解[身份认证](/docs/configuration/authentication/)，和风天气支持两种身份认证方式：**JSON Web Token (JWT)** 以及 **API KEY**。
 - 获取[API Host](/docs/configuration/api-host/)，这是你独立的API请求地址。
 - 如何[发送API请求](/docs/configuration/api-config/)。
 - 安装和配置 [iOS SDK](/docs/configuration/ios-sdk-config/) 或 [Android SDK](/docs/configuration/android-sdk-config/)。

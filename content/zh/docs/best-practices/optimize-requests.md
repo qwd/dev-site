@@ -19,15 +19,15 @@ https://abcxyz.qweatherapi.com/v7/weather/3d?parameters
 
 ### 特殊字符 {#special-characters}
 
-根据 [RFC 3986 URI 标准](https://datatracker.ietf.org/doc/html/rfc3986)，URL 中除英文字母、数字和部分非预留字符（- _ . ~）外，其他字符在<strong>请求参数值</strong>中都必须进行 URL 编码（URL encoding）或称之为百分号编码（Percent-encoding），以确保请求能被正确解析和传输。
+根据 [RFC 3986 URI 标准](https://datatracker.ietf.org/doc/html/rfc3986)，URL 中除英文字母、数字和部分非预留字符（- _ . ~）外，其他字符在**请求参数值** 中都必须进行 URL 编码（URL encoding）或称之为百分号编码（Percent-encoding），以确保请求能被正确解析和传输。
 
-请求参数中<strong>无需编码</strong>的字符：
+请求参数中**无需编码**的字符：
 
 - 英文字母：`A-Z`, `a-z`
 - 数字：`0-9`
 - 非预留字符：`-` `_` `.` `~`
 
-请求参数<strong>必须编码</strong>的字符：
+请求参数**必须编码**的字符：
 
 - 空格，请编码为`%20`，不建议使用 `+`，例如 `new york` ➡️ `new%20york`
 - 中文或其他非 ASCII 字符，例如 `北京` ➡️ `%E5%8C%97%E4%BA%AC`
@@ -50,7 +50,7 @@ https://abcxyz.qweatherapi.com/v7/weather/3d?parameters
 
 当你的请求返回[错误码](/docs/resource/error-code/)时，你需要暂停请求并妥善的处理这些错误，否则这些错误可能看起来像DDoS攻击，我们的安全策略将冻结你的帐号。
 
-> <strong>例如:</strong> 当你传入了错误的参数或KEY，将返回`400`或`403`，此时你应该暂停这一次的请求，排除故障后再继续。否则当程序不断重试而产生大量失败的请求时，这违反了我们的许可协议且被视为一种攻击，我们将中止你的服务并冻结你的帐号。
+> **例如:** 当你传入了错误的参数或KEY，将返回`400`或`403`，此时你应该暂停这一次的请求，排除故障后再继续。否则当程序不断重试而产生大量失败的请求时，这违反了我们的许可协议且被视为一种攻击，我们将中止你的服务并冻结你的帐号。
 
 ### 了解状态码 {#understanding-error-codes}
 
@@ -88,6 +88,6 @@ t = b^c
 
 仅在需要天气数据的时候再进行请求。
 
-> <strong>例如：</strong>在APP中，天气内容的位置较为靠下，你可以让程序在用户滑动到天气内容部分再进行请求。
+> **例如：** 在APP中，天气内容的位置较为靠下，你可以让程序在用户滑动到天气内容部分再进行请求。
 
 如果已经加载了天气内容，你也可以为这个内容设置缓存时间，或者增加一个刷新按钮，让用户手动去刷新数据。关于设置缓存，请参考[缓存你的数据](/docs/best-practices/cache/)。
