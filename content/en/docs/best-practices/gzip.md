@@ -5,7 +5,7 @@ translationKey: bp-gzip
 
 QWeather's Web API uses [Gzip](https://www.gnu.org/software/gzip/) for compression by default, which will greatly reduce network traffic and speed up requests.
 
-> <strong>Hint:</strong> If you use iOS SDK or Android SDK, you don't need to consider to process Gzip.
+> **Hint:** If you use iOS SDK or Android SDK, you don't need to consider to process Gzip.
 
 Here is the official documentation for processing Gzip in various languages.
 

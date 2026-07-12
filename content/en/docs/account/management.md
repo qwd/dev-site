@@ -47,7 +47,7 @@ See [Change organization information](/docs/account/developers/#change-organizat
 
 You can close developer services if you no longer using it.
 
-> <strong>Warning:</strong>
+> **Warning:**
 > - Close action cannot be undone.
 > - All user data, develop data and statistic history will be deleted.
 > - Transaction and VAT invoice will be retained for compliance purposes, but the user data contained therein will be removed and unrecoverable.

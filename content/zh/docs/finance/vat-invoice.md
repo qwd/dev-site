@@ -5,7 +5,7 @@ translationKey: finance-vat-invoice
 
 对于中国地区的用户，和风天气开发服务的费用均已包含增值税，你可以在支付账单后申请开具增值税发票。
 
-> <strong>注意：</strong>请认真阅读本篇文档，了解我们如何向你开具增值税发票、增值税发票的类型、开票时间以及开票限制，必要时请将本篇文档发送给你的财务人员查看。
+> **注意：** 请认真阅读本篇文档，了解我们如何向你开具增值税发票、增值税发票的类型、开票时间以及开票限制，必要时请将本篇文档发送给你的财务人员查看。
 {.bqwarning}
 ## 开票金额 {#invoice-amount}
 
@@ -36,7 +36,7 @@ translationKey: finance-vat-invoice
 
 ## 发票格式 {#invoice-format}
 
-<strong>全面数字化的电子发票</strong>（数电发票），其法律效力、基本用途与现有增值税发票相同，相关政策请参考[《国家税务总局北京市税务局关于开展全面数字化的电子发票试点工作的公告》](https://www.beijing.gov.cn/zhengce/zhengcefagui/202312/t20231207_3493065.html)。
+**全面数字化的电子发票**（数电发票），其法律效力、基本用途与现有增值税发票相同，相关政策请参考[《国家税务总局北京市税务局关于开展全面数字化的电子发票试点工作的公告》](https://www.beijing.gov.cn/zhengce/zhengcefagui/202312/t20231207_3493065.html)。
 
 数电发票参考样例：
 
@@ -47,7 +47,7 @@ translationKey: finance-vat-invoice
 
 申请发票之前，你需要先添加发票信息。如果你是企业开发者且只需要增值税普通发票，则可以跳过这一步。
 
-> <strong>提示：</strong> 请务必与你的财务人员确认企业信息，建议复制粘贴企业信息，避免打字错误。
+> **提示：** 请务必与你的财务人员确认企业信息，建议复制粘贴企业信息，避免打字错误。
 
 1. [前往控制台-发票信息](https://console.qweather.com/finance/vat-invoice/info)
 2. 填写基本信息，如需要增值税专用发票，还需要填写扩展信息
@@ -73,11 +73,11 @@ translationKey: finance-vat-invoice
 
 1. [前往控制台-增值税发票](https://console.qweather.com/finance/vat-invoice)
 2. 点击需要修改或取消的发票
-3. 在页面下方点击<strong>取消申请发票</strong>按钮
+3. 在页面下方点击**取消申请发票**按钮
 
 如发票开具后出现错误或需要修改，请[提交工单](https://console.qweather.com/support/ticket)进行修改，每年度仅限修改3次。
 
-> <strong>提示：</strong> 请在开具发票完成后的12个月内提出修改申请，逾期不再受理。
+> **提示：** 请在开具发票完成后的12个月内提出修改申请，逾期不再受理。
 
 ## 限制 {#restriction}
 

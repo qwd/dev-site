@@ -18,13 +18,13 @@ scheme           host                  path              path      query
                                                         params     params 
 ```
 
-- <strong>scheme:</strong> 仅支持HTTPS协议。
-- <strong>host:</strong> 开发者的[API Host](/docs/configuration/api-host/)，请在[控制台-设置](https://console.qweather.com/setting)中查看。
-- <strong>path:</strong> API的请求路径（或称之为API端点、Endpoint）。
-- <strong>path params:</strong> 路径参数均为必选参数。
-- <strong>query params:</strong> 查询参数，包括必选和可选参数，多个查询参数使用`&`分割。
+- **scheme:** 仅支持HTTPS协议。
+- **host:** 开发者的[API Host](/docs/configuration/api-host/)，请在[控制台-设置](https://console.qweather.com/setting)中查看。
+- **path:** API的请求路径（或称之为API端点、Endpoint）。
+- **path params:** 路径参数均为必选参数。
+- **query params:** 查询参数，包括必选和可选参数，多个查询参数使用`&`分割。
 
-> <strong>提示：</strong>你必须对参数中的[特殊字符](/docs/best-practices/optimize-requests/#special-characters)进行URL编码。
+> **提示：** 你必须对参数中的[特殊字符](/docs/best-practices/optimize-requests/#special-characters)进行URL编码。
 
 
 ## 添加身份认证 {#add-authentication}

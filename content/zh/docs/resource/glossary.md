@@ -88,7 +88,7 @@ Xcode切换到Info下，可查看Bundle Identifier。
 
 ## Android Package Name
 
-打开Android 应用工程的<strong>AndroidManifest.xml</strong>配置文件，<strong>package</strong>属性所对应的内容为应用包名。
+打开Android 应用工程的**AndroidManifest.xml**配置文件，**package**属性所对应的内容为应用包名。
 
 请注意Android Package Name仅限英文字母、数字、短横线和下划线。
 

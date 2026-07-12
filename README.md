@@ -6,7 +6,7 @@
 
 欢迎帮助我们改进文档质量，你可以直接修改下列文件并向我们提交 PR。感谢～
 
-- API 文档由一个 OpenAPI 3.0 规格的文件生成，位于` assets/openapi/qweather-apis-{lang}.yml`
+- API 文档由一个 OpenAPI 3.0 规格的文件生成，位于 `assets/openapi/qweather-apis-{lang}.yml`
 - 其他文档位于 `content` 目录
 
 ## 本地运行

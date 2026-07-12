@@ -7,7 +7,7 @@ translationKey: config-project
 
 ## 项目 {#project}
 
-<strong>项目</strong>是承载和风天气数据服务的容器，也可以理解为是你需要开发的一个产品，例如“旅游APP”或者“毕业设计”。项目不仅可以区分你的产品，还可以用于数据统计或费用分摊。
+**项目**是承载和风天气数据服务的容器，也可以理解为是你需要开发的一个产品，例如“旅游APP”或者“毕业设计”。项目不仅可以区分你的产品，还可以用于数据统计或费用分摊。
 
 ### 创建项目 {#create-project}
 
@@ -20,7 +20,7 @@ translationKey: config-project
 
 ### 删除项目 {#delete-project}
 
-> <strong>警告：</strong>删除动作不可撤销，删除成功后，该项目及项目中的所有凭据都将被删除且无法恢复，你无法再使用这个项目中的凭据获取数据。
+> **警告：** 删除动作不可撤销，删除成功后，该项目及项目中的所有凭据都将被删除且无法恢复，你无法再使用这个项目中的凭据获取数据。
 {.bqdanger}
 1. 在项目列表中点击你希望删除的项目
 2. 在页面最下方点击“删除”按钮
@@ -30,7 +30,7 @@ translationKey: config-project
 
 ## 凭据 {#credential}
 
-<strong>凭据</strong>用于API的身份认证，是你的核心敏感数据。关于安全的请求API，请参考[安全指南](/docs/best-practices/security-guidelines/)。关于身份认证的方式，请参考[身份认证](/docs/configuration/authentication/)。
+**凭据**用于API的身份认证，是你的核心敏感数据。关于安全的请求API，请参考[安全指南](/docs/best-practices/security-guidelines/)。关于身份认证的方式，请参考[身份认证](/docs/configuration/authentication/)。
 
 根据身份认证方式的不同，凭据分为JWT凭据和API KEY凭据。每个项目最多创建20个凭据。
 
@@ -59,9 +59,9 @@ translationKey: config-project
 
 API KEY提供了简单但安全性较弱的认证方式。我们推荐使用[JWT身份认证](/docs/configuration/authentication/#json-web-token)。
 
-> <strong>注意：</strong>从2027年2月1日起，我们将逐步限制使用API KEY进行身份认证的每日请求数量。
+> **注意：** 从2027年2月1日起，我们将逐步限制使用API KEY进行身份认证的每日请求数量。
 
-> <strong>注意：</strong>SDK v5.x及以上版本仅支持JWT认证。
+> **注意：** SDK v5.x及以上版本仅支持JWT认证。
 
 1. [前往控制台-项目管理](https://console.qweather.com/project)
 2. 在项目列表中点击你需要添加凭据的项目
@@ -81,7 +81,7 @@ API KEY提供了简单但安全性较弱的认证方式。我们推荐使用[JWT
 
 ### 删除凭据 {#delete-credential}
 
-> <strong>警告：</strong>删除动作不可撤销，删除成功后，你无法再使用这个凭据进行API身份认证。
+> **警告：** 删除动作不可撤销，删除成功后，你无法再使用这个凭据进行API身份认证。
 {.bqdanger}
 1. 选择你希望删除的凭据
 2. 在网页最下方点击“删除凭据”按钮

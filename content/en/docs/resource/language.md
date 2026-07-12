@@ -23,13 +23,13 @@ Multi-language is optional, the default value is the official language of the co
 
 If some data does not respond to your language setting, it will fall back to the next supported language in the following order:
 
-Multi-language <strong>is not set</strong>, the default language will be used, the order is:
+Multi-language **is not set**, the default language will be used, the order is:
 
 ```
 Official language > English
 ```
 
-A specified language <strong>is set</strong>, the order is:
+A specified language **is set**, the order is:
 
 ```
 Specified language > Official language > English
@@ -82,7 +82,7 @@ You can specify the language of the data using the query parameter `lang`, here 
 | Icelandic | is |IS |IS |
 | Norwegian | nb |NB |NB |
 
-## Sample Code：
+## Sample Code:
 
 Swift
 ```swift

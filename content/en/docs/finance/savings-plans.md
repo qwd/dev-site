@@ -7,7 +7,7 @@ translationKey: finance-splans
 
 Savings Plans is a discount plan that offers lower pay as you go pricing, in exchange, you need to prepay the committed usage amount.
 
-> <strong>For example:</strong> you commit to spending ¥1,000 per year and upfront for 1 year, your API price will be calculated at a 30% discount, i.e. the price for real-time weather is reduced from ¥0.0007 per request to ¥0.00049 per request. Or it can be understood that you paid ¥1,000 for about 1.6 million requests by default and will get about 2.5 million requests with purchasing a Savings plan.
+> **For example:** you commit to spending ¥1,000 per year and upfront for 1 year, your API price will be calculated at a 30% discount, i.e. the price for real-time weather is reduced from ¥0.0007 per request to ¥0.00049 per request. Or it can be understood that you paid ¥1,000 for about 1.6 million requests by default and will get about 2.5 million requests with purchasing a Savings plan.
 
 ## Commitment Amount
 
@@ -21,7 +21,7 @@ The commitment term is the total duration to be prepaid, now commitment term sup
 
 The savings rate is a discount rate for API pricing.
 
-> <strong>For example:</strong> After purchasing a 1-year savings plan, the cost of a single request for real-time weather is: ¥0.0007 x 0.7 savings rate = ¥0.00049
+> **For example:** After purchasing a 1-year savings plan, the cost of a single request for real-time weather is: ¥0.0007 x 0.7 savings rate = ¥0.00049
 
 | Commitment Terms | Savings Rate |
 | ---------------- | ------------ |
@@ -57,11 +57,11 @@ Assumptions: A savings plan(1-year) is purchased on March 20, 2022
 
 When purchasing a savings plan, you can choose when it will take effect:
 
-<strong>Upon payment</strong>
+**Upon payment**
 
 When you create a savings plan successfully, you have up to 24 hours to make a payment, and the savings plan takes effect immediately after payment.
 
-<strong>Specified time</strong>
+**Specified time**
 
 When you create a savings plan successfully and complete payment, the savings plan will take effect at the time you specify.
 

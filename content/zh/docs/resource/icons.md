@@ -28,7 +28,7 @@ git clone https://github.com/qwd/Icons.git
 
 ## 图标代码说明 {#icon-code}
 
-> <strong>注意：</strong>图标和图标代码将不断的更新，包括新增、修改和删除，因此你必须对你的程序进行适配，以便在发生变化的时候不会导致错误出现！
+> **注意：** 图标和图标代码将不断的更新，包括新增、修改和删除，因此你必须对你的程序进行适配，以便在发生变化的时候不会导致错误出现！
 {.bqwarning}
 ### 天气图标 {#weather-icons}
 
@@ -125,6 +125,6 @@ git clone https://github.com/qwd/Icons.git
 
 ## 早期版本 {#previous-versions}
 
-> <strong>注意：</strong>早期版本不再提供任何更新，有可能与目前最新的天气图标代码不匹配
+> **注意：** 早期版本不再提供任何更新，有可能与目前最新的天气图标代码不匹配
 {.bqwarning}
 和风天气图标的前身是天气图标项目，这个项目提供了两套PNG格式的图标，包括彩色和单色版本，如果你倾向使用这个早期版本的图标，请访问天气图标项目的[Github仓库](https://github.com/qwd/WeatherIcon)进行下载。

@@ -9,7 +9,7 @@ This document will describes the wind direction, wind speed and wind scale in th
 
 ## Wind Direction
 
-Wind direction is generally reported by <strong>the direction from which it originates</strong>. For example, a north or northerly wind blows from the north to the south. In QWeather, we describe the specific wind direction by degree and direction.
+Wind direction is generally reported by **the direction from which it originates**. For example, a north or northerly wind blows from the north to the south. In QWeather, we describe the specific wind direction by degree and direction.
 
 In a geographic coordinate system, the wind has a total of 32 different directions, but only 16 directions are commonly used.
 
@@ -17,7 +17,7 @@ In a geographic coordinate system, the wind has a total of 32 different directio
 
 <img class="w-3/5 mx-auto" src="/assets/images/content/wind-direction-rose.png" alt="16 wind direction rose">
 
-16 wind direction：
+16 wind direction:
 
 | Direction       | Code | Degree(°) | Degree range(°) |
 | --------------- | ---- | --------- | --------------- |

@@ -18,7 +18,7 @@ You will need to [register for an account](https://id.qweather.com/#/register?re
 Before requesting data, some preparations are needed:
 
 - Create [projects and credentials](/en/docs/configuration/project-and-key/) to manage your API.
-- Learn about [authentication](/en/docs/configuration/authentication/). QWeather supports two authentication methods: <strong>JSON Web Token (JWT)</strong> and <strong>API KEY</strong>.
+- Learn about [authentication](/en/docs/configuration/authentication/). QWeather supports two authentication methods: **JSON Web Token (JWT)** and **API KEY**.
 - Obtain the [API Host](/en/docs/configuration/api-host/), which is your dedicated API domain name.
 - Learn [how to send API requests](/en/docs/configuration/api-config/).
 - Install and setup the [iOS SDK](/en/docs/configuration/ios-sdk-config/) or [Android SDK](/en/docs/configuration/android-sdk-config/).

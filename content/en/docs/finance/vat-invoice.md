@@ -5,7 +5,7 @@ translationKey: finance-vat-invoice
 
 For users in China, our price include VAT and you can apply for a VAT invoice when your bill is paid.
 
-> <strong>Note:</strong> Please read this document carefully to understand how we issue VAT invoices to you and send this document to your finance professional for review if necessary.
+> **Note:** Please read this document carefully to understand how we issue VAT invoices to you and send this document to your finance professional for review if necessary.
 {.bqwarning}
 ## Invoice amount
 
@@ -23,7 +23,7 @@ According to the policy of tax administration, we will adjust the tax rate, whic
 
 ## Invoice format
 
-<strong>Fully Digitalized E-Invoice (FDEI)</strong>. See [Announcement of the Beijing Municipal Tax Bureau for Taxation on the Pilot Work of Fully Digitalized E-Invoice](https://www.beijing.gov.cn/zhengce/zhengcefagui/202312/t20231207_3493065.html)。
+**Fully Digitalized E-Invoice (FDEI)**. See [Announcement of the Beijing Municipal Tax Bureau for Taxation on the Pilot Work of Fully Digitalized E-Invoice](https://www.beijing.gov.cn/zhengce/zhengcefagui/202312/t20231207_3493065.html).
 
 FDEI sample:
 
@@ -34,7 +34,7 @@ FDEI sample:
 
 Before request an invoice, you need to add the invoice information. You can skip this step if you are a organization developer and only need a general VAT invoice.
 
-> <strong>Hint:</strong> Please make sure to confirm your company information with your finance officer, copy and paste is recommended to avoid typing errors.
+> **Hint:** Please make sure to confirm your company information with your finance officer, copy and paste is recommended to avoid typing errors.
 
 1. [Go to Console - Invoice Information](https://console.qweather.com/finance/vat-invoice/info)
 2. Fill in the basic information, and if you need a VAT spceial invoice, you need to fill in the extended information.
@@ -59,11 +59,11 @@ You can cancel the request for an invoice at any time before the invoice is issu
 
 1. [Go to Console - VAT Invoice](https://console.qweather.com/finance/vat-invoice)
 2. Click on the invoice that needs to be modified or canceled
-3. Click on the <strong>Cancel Invoice Application</strong> button
+3. Click on the **Cancel Invoice Application** button
 
 If there is an error or need to modify the invoice after it is issued, please [submit a ticket](https://console.qweather.com/support/ticket) for modification and the modification is limited to 3 times per year.
 
-> <strong>Hint:</strong> Please submit your modification within 12 months after the invoice is issued.
+> **Hint:** Please submit your modification within 12 months after the invoice is issued.
 
 ## Restriction
 

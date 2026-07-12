@@ -30,7 +30,7 @@ Or visit our [Github repo](https://github.com/qwd/Icons) for source code of QWea
 
 ## Icon Code
 
-> <strong>Please note</strong>: icons and icon codes are constantly being updated, including additions, modifications and deletions, you have to make sure that your program is compatible so that these changes do not cause errors!
+> **Please note**: icons and icon codes are constantly being updated, including additions, modifications and deletions, you have to make sure that your program is compatible so that these changes do not cause errors!
 {.bqwarning}
 ### Weather icons
 

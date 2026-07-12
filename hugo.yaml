@@ -3,6 +3,7 @@ title: QWeather Developers
 timeZone: Asia/Shanghai
 defaultContentLanguage: zh
 defaultContentLanguageInSubdir: false
+disableHugoGeneratorInject: true
 disableKinds:
   - rss
   - taxonomy
@@ -48,6 +49,10 @@ params:
 
 markup:
   goldmark:
+    extensions:
+      linkify: false
+      typographer:
+        disable: true
     parser:
       attribute:
         block: true
