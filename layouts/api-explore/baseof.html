@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ partial "seo.html" . }}
     <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
-    <link rel="stylesheet" href="/assets/swagger-ui/swagger-ui.css">
-    <link rel="stylesheet" href="/assets/swagger-ui/qweather-overrides.css">
+    <link rel="stylesheet" href="/assets/swagger-ui/swagger-ui.css?{{ readFile "static/assets/swagger-ui/swagger-ui.css" | md5 }}">
+    <link rel="stylesheet" href="/assets/swagger-ui/qweather-overrides.css?{{ readFile "static/assets/swagger-ui/qweather-overrides.css" | md5 }}">
   </head>
   <body>
     {{ block "main" . }}{{ end }}
