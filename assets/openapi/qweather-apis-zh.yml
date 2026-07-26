@@ -138,7 +138,7 @@ paths:
       externalDocs:
         url: https://dev.qweather.com/docs/api/weather/weather-now/
       parameters:
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -163,7 +163,7 @@ paths:
         url: https://dev.qweather.com/docs/api/weather/weather-daily-forecast/
       parameters:
       - "$ref": "#/components/parameters/days30Path"
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -188,7 +188,7 @@ paths:
         url: https://dev.qweather.com/docs/api/weather/weather-hourly-forecast/
       parameters:
       - "$ref": "#/components/parameters/hours168Path"
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -242,7 +242,7 @@ paths:
       parameters:
       - "$ref": "#/components/parameters/days3Path"
       - "$ref": "#/components/parameters/indexTypeQuery"
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -289,7 +289,7 @@ paths:
       description: 该接口已弃用，自2026年9月1日停止服务。请使用 /weatheralert/v1/current/ 代替
       deprecated: true
       parameters:
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -430,7 +430,7 @@ paths:
       description: 该接口已弃用，自2026年6月1日停止服务。请使用 /airquality/v1/current 代替
       deprecated: true
       parameters:
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -453,7 +453,7 @@ paths:
       description: 该接口已弃用，自2026年6月1日停止服务。请使用 /airquality/v1/daily 代替
       deprecated: true
       parameters:
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -633,7 +633,7 @@ paths:
       externalDocs:
         url: https://dev.qweather.com/docs/api/astronomy/moon-and-moon-phase/
       parameters:
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/date60Query"
       - "$ref": "#/components/parameters/langQuery"
       responses:
@@ -661,7 +661,7 @@ paths:
       externalDocs:
         url: https://dev.qweather.com/docs/api/astronomy/sunrise-sunset/
       parameters:
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/date60Query"
       responses:
         '200':
@@ -1049,6 +1049,14 @@ components:
         type: string
         example: P58911
     locationQuery:
+      name: location
+      in: query
+      description: 需要查询地区的名称、[LocationID](https://dev.qweather.com/docs/resource/glossary/#locationid)或以英文逗号分隔的[经度,纬度坐标](https://dev.qweather.com/docs/resource/glossary/#coordinate)（十进制），LocationID可通过[GeoAPI](https://dev.qweather.com/docs/api/geoapi/)获取。例如 `location=101010100` 或 `location=116.41,39.92`
+      required: true
+      schema:
+        type: string
+        example: 116.41,39.92
+    locationIdCoordQuery:
       name: location
       in: query
       description: 需要查询地区的[LocationID](https://dev.qweather.com/docs/resource/glossary/#locationid)或以英文逗号分隔的[经度,纬度坐标](https://dev.qweather.com/docs/resource/glossary/#coordinate)（十进制，最多支持小数点后两位），LocationID可通过[GeoAPI](https://dev.qweather.com/docs/api/geoapi/)获取。例如 `location=101010100` 或 `location=116.41,39.92`

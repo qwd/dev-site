@@ -64,7 +64,7 @@
     <div class="api-snippets block mb-5 [&_pre]:max-h-[300px] [&_pre]:overflow-y-scroll">{{ highlight (. | jsonify (dict "indent" "  ")) "json" "" }}</div>
   {{- end }}
 {{- end }}
-<ul class="api-response-tree list-none pl-10 [&_li]:mb-3 [&_ul]:list-none [&_ul]:pl-5 [&_ul]:border-l [&_ul]:border-qw-neutral-200">
+<ul class="api-response-tree list-none pl-10">
   {{/* Render the normalized response schema as an indented field tree. */}}
   {{ partial "openapi/response-tree.html" (dict "lang" $lang "node" $operation.response.fields "depth" 0) }}
 </ul>

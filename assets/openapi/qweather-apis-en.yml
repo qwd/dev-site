@@ -140,7 +140,7 @@ paths:
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/weather/weather-now/
       parameters:
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -165,7 +165,7 @@ paths:
         url: https://dev.qweather.com/en/docs/api/weather/weather-daily-forecast/
       parameters:
       - "$ref": "#/components/parameters/days30Path"
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -190,7 +190,7 @@ paths:
         url: https://dev.qweather.com/en/docs/api/weather/weather-hourly-forecast/
       parameters:
       - "$ref": "#/components/parameters/hours168Path"
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -247,7 +247,7 @@ paths:
       parameters:
       - "$ref": "#/components/parameters/days3Path"
       - "$ref": "#/components/parameters/indexTypeQuery"
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -297,7 +297,7 @@ paths:
       description: This API is deprecated and will be discontinued on September 1, 2026. Use `/weatheralert/v1/current/` instead.
       deprecated: true
       parameters:
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -438,7 +438,7 @@ paths:
       description: This API is deprecated and will be discontinued on June 1, 2026. Use `/airquality/v1/current` instead.
       deprecated: true
       parameters:
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -461,7 +461,7 @@ paths:
       description: This API is deprecated and will be discontinued on June 1, 2026. Use `/airquality/v1/daily` instead.
       deprecated: true
       parameters:
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -638,7 +638,7 @@ paths:
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/astronomy/moon-and-moon-phase/
       parameters:
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/date60Query"
       - "$ref": "#/components/parameters/langQuery"
       responses:
@@ -663,7 +663,7 @@ paths:
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/astronomy/sunrise-sunset/
       parameters:
-      - "$ref": "#/components/parameters/locationQuery"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
       - "$ref": "#/components/parameters/date60Query"
       responses:
         '200':
@@ -1056,6 +1056,14 @@ components:
         type: string
         example: P58911
     locationQuery:
+      name: location
+      in: query
+      description: "The location to be queried, support location name, [LocationID](https://dev.qweather.com/en/docs/resource/glossary/#locationid) or comma-separated [longitude and latitude](https://dev.qweather.com/en/docs/resource/glossary/#coordinate) (decimal, up to 2 decimal places), LocationID can be obtained by [GeoAPI](https://dev.qweather.com/en/docs/api/geoapi/). Example: `location=beijing` or `location=101010100` or `location=116.41,39.92`"
+      required: true
+      schema:
+        type: string
+        example: 116.41,39.92
+    locationIdCoordQuery:
       name: location
       in: query
       description: 'The location to be queried, support [LocationID](https://dev.qweather.com/en/docs/resource/glossary/#locationid) or comma-separated [longitude and latitude](https://dev.qweather.com/en/docs/resource/glossary/#coordinate) (decimal, up to 2 decimal places), LocationID can be obtained by [GeoAPI](https://dev.qweather.com/en/docs/api/geoapi/). Example: `location=101010100` or `location=116.41,39.92`'
