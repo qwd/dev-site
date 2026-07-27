@@ -60,8 +60,9 @@
   {{- end }}
 {{- else }}
   {{/* Only used when the OpenAPI response has no explicit example. */}}
-  {{- with $operation.response.fallbackExample }}
-    <div class="api-snippets block mb-5 [&_pre]:max-h-[300px] [&_pre]:overflow-y-scroll">{{ highlight (. | jsonify (dict "indent" "  ")) "json" "" }}</div>
+  {{- with $operation.response.fallbackExampleJson }}
+    {{/* Node serializes this before Hugo turns objects into key-sorted maps. */}}
+    <div class="api-snippets block mb-5 [&_pre]:max-h-[300px] [&_pre]:overflow-y-scroll">{{ highlight . "json" "" }}</div>
   {{- end }}
 {{- end }}
 <ul class="api-response-tree list-none pl-10">

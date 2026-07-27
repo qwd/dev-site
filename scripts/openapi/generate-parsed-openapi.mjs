@@ -405,6 +405,7 @@ export async function normalizeDocument(source) {
         cloneContext(responseContext, { schemaPath: `${responseContext.schemaPath}.content.application/json.schema` })
       );
       const examples = await loadExamples(mediaType, resolver, responseResolved.file, responseContext);
+      const generatedFallbackExample = fallbackExample(fields);
       // externalDocs is the canonical URL for the handwritten document this
       // generated page replaces; strip the site prefix to get the Hugo path.
       const pagePath = pagePathFromExternalDocs(operation.externalDocs.url, baseContext);
@@ -427,7 +428,12 @@ export async function normalizeDocument(source) {
           status: responseStatus,
           description: responseResolved.value.description || "",
           examples,
-          fallbackExample: fallbackExample(fields),
+          fallbackExample: generatedFallbackExample,
+          // Hugo's jsonify sorts map keys. Serialize the fallback while it is
+          // still an ordered JavaScript object so schema property order survives.
+          fallbackExampleJson: generatedFallbackExample === null
+            ? ""
+            : JSON.stringify(generatedFallbackExample, null, 2),
           fields
         }
       });
