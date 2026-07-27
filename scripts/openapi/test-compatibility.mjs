@@ -37,6 +37,11 @@ assert.equal(byName.discriminated.discriminator.propertyName, "kind");
 assert.equal(byName.discriminated.oneOf.length, 2);
 assert.equal(byName.recursive.recursiveRef, "#/components/schemas/Fixture");
 
+const fallbackJson = model.operations[0].response.fallbackExampleJson;
+assert.ok(fallbackJson.indexOf('"all"') < fallbackJson.indexOf('"arrayChoice"'));
+assert.ok(fallbackJson.indexOf('"arrayChoice"') < fallbackJson.indexOf('"map"'));
+assert.ok(fallbackJson.indexOf('"map"') < fallbackJson.indexOf('"external"'));
+
 await assert.rejects(
   normalizeDocument({
     lang: "fixture",
