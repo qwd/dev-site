@@ -15,7 +15,6 @@
 
 <h2 id="endpoint">{{ T "endpoint" }}<a class="ml-[5px] text-qw-neutral-300 hover:text-qw-blue" href="#endpoint" aria-label="{{ T "permalink" }}">#</a></h2>
 <div class="request-url mb-[15px]"><pre><code>{{ $operation.method }} {{ $operation.endpoint }}</code></pre></div>
-
 <h2 id="parameters">{{ T "params" }}<a class="ml-[5px] text-qw-neutral-300 hover:text-qw-blue" href="#parameters" aria-label="{{ T "permalink" }}">#</a></h2>
 {{- range $location := slice "path" "query" }}
   {{- $parameters := where $operation.parameters "in" $location -}}
@@ -23,10 +22,14 @@
     <h4>{{ T (cond (eq $location "path") "path-params" "query-params") }}</h4>
     <ul class="list-disc pl-10 m-0">
       {{- range $parameters }}
-        <li class="!mb-5">
-          <code class="mr-[5px]">{{ .name }}</code>
-          {{- if .required }} <span class="mr-[5px] italic text-sm font-bold">({{ T "rqd" }})</span>{{ end }}
-          {{ .description | markdownify }}
+        <li class="mb-5!">
+          <div class="request-params flex flex-col md:flex-row leading-[1.6]">
+            <div class="font-mono shrink-0 mr-4 mb-2.5 md:mb-0">
+              <div class="request-params-name font-bold">{{ .name }}{{- if .required }}<sup class="text-xs font-light italic text-rose-400"> {{ T "rqd" }}</sup>{{ end }}</div>
+              <div class="request-params-property text-qw-neutral-500 text-xs">{{ .type }}</div>
+            </div>
+            <div class="request-params-desc">{{ .description | markdownify }}</div>
+          </div>
         </li>
       {{- end }}
     </ul>
@@ -65,7 +68,7 @@
     <div class="api-snippets block mb-5 [&_pre]:max-h-[300px] [&_pre]:overflow-y-scroll">{{ highlight . "json" "" }}</div>
   {{- end }}
 {{- end }}
-<ul class="api-response-tree list-none pl-10">
+<ul class="api-response-tree list-none pl-5">
   {{/* Render the normalized response schema as an indented field tree. */}}
   {{ partial "openapi/response-tree.html" (dict "lang" $lang "node" $operation.response.fields "depth" 0) }}
 </ul>

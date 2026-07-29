@@ -4,10 +4,12 @@
 {{/* Render one response field row; nested schema structures are delegated back
   to response-tree.html so recursion has a single entry point. */}}
 <li class="mb-3">
-  <div class="api-response-field leading-[1.6]">
-    <code>{{ $field.name }}</code>
-    {{- with $field.type }} <span class="api-response-type mx-[7.5px] text-qw-slate text-xs font-mono">{{ . }}</span>{{ end -}}
-    {{- with $field.description }} <span class="api-response-description">{{ . | markdownify }}</span>{{ end -}}
+  <div class="api-response-field leading-[1.6] flex flex-col md:flex-row">
+    <div class="mr-4 font-mono mb-2 md:mb-0">
+      <div class="field-name font-bold">{{ $field.name }}</div>
+      <div class="field-property text-qw-neutral-500 text-xs">{{ $field.type }}</div>
+    </div>
+    <div class="api-response-description">{{ $field.description | markdownify }}</div>
     {{/*
       Keep schema metadata in the intermediate model, but do not render it in
       public field descriptions for now. Most nullable fields already explain
@@ -23,7 +25,7 @@
   </div>
   {{- $hasChildren := or $field.children $field.items $field.allOf $field.oneOf $field.anyOf $field.additionalProperties $field.not -}}
   {{- if $hasChildren }}
-    <ul class="list-none pl-5 border-l border-qw-neutral-200">
+    <ul class="list-none pl-5 border-l border-qw-signal-blue">
       {{- partial "openapi/response-tree.html" (dict "lang" $lang "node" $field "depth" $depth) -}}
     </ul>
   {{- end }}
