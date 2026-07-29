@@ -20,7 +20,7 @@
   {{- $parameters := where $operation.parameters "in" $location -}}
   {{- if $parameters }}
     <h4>{{ T (cond (eq $location "path") "path-params" "query-params") }}</h4>
-    <ul class="list-disc pl-10 mb-0">
+    <ul class="list-disc pl-10 m-0">
       {{- range $parameters }}
         <li class="mb-5!">
           <div class="request-params flex flex-col md:flex-row leading-[1.6]">
