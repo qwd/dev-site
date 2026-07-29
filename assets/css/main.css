@@ -113,6 +113,15 @@
 }
 
 @theme {
+  --color-qw-signal-blue: #005B9C;
+  --color-qw-signal-purple: #804782;
+  --color-qw-signal-red: #CA2824;
+  --color-qw-signal-orange: #EA6B21;
+  --color-qw-signal-yellow: #F2A900;
+  --color-qw-signal-green: #208250;
+  --color-qw-signal-white: #ECECE7;
+  --color-qw-signal-black: #2B2B2C;
+  --color-qw-signal-gray: #606D73;
   --color-qw-text: #2B2B2C;
   --color-qw-heading: #111;
   --color-qw-slate: #606D73;
