@@ -81,6 +81,7 @@
     - key: res-lang
     - key: res-icons
     - key: res-location-list
+    - key: res-meta
     - key: res-unit
     - key: res-wind
     - key: res-warning
