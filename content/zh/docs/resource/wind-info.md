@@ -16,8 +16,6 @@ translationKey: res-wind
 
 ### 风向方位 {#compass-direction}
 
-<!-- <img class="w-3/5 mx-auto" src="/assets/images/content/wind-direction-rose.png" alt="风向16方位图"> -->
-
 风向方位通常采用16个方位（[示意图](https://dl.qweather.com/sites/dev/wind-direction-compass.png)），即将360°平分为16份，正北=0°（360°），正东=90°，正南=180°，正西=270°。
 
 
@@ -40,7 +38,7 @@ translationKey: res-wind
 | `nw`     | 西北风     | 315         | 303.75 - 326.25 |
 | `nnw`    | 西北偏北风 | 337.5       | 326.25 - 348.75 |
 | `none`   | 无持续风向 | null        |                 |
-| `vbr`    | 持续变化风 | null        |                 |
+| `vrb`    | 风向变化不定 | null        |                 |
 
 ### 旧版本风向 {#legacy-wind-direction}
 

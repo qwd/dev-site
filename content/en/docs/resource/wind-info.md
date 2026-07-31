@@ -16,8 +16,6 @@ Wind direction is measured clockwise from true north at 0°, with values ranging
 
 ### Compass direction
 
-<!-- <img class="w-3/5 mx-auto" src="/assets/images/content/wind-direction-rose.png" alt="16-point compass rose for wind direction"> -->
-
 Wind direction commonly uses 16 compass points ([diagram](https://dl.qweather.com/sites/dev/wind-direction-compass.png)), dividing 360° into 16 equal sectors: true north = 0° (360°), east = 90°, south = 180°, and west = 270°.
 
 | Direction code | Description     | Degree (°) | Degree range (°) |
@@ -39,7 +37,7 @@ Wind direction commonly uses 16 compass points ([diagram](https://dl.qweather.co
 | `nw`           | Northwest       | 315        | 303.75 - 326.25  |
 | `nnw`          | North-northwest | 337.5      | 326.25 - 348.75  |
 | `none`         | No sustained direction | null |                  |
-| `vbr`          | Variable direction     | null |                  |
+| `vrb`          | Variable wind direction     | null |                  |
 
 ### Legacy wind direction
 
