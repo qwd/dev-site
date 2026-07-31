@@ -1674,7 +1674,7 @@ components:
           description: 白天[风力等级](https://dev.qweather.com/docs/resource/wind-info/#wind-scale)
         windSpeedDay:
           type: string
-          description: 白天[风速](https://dev.qweather.com/docs/resource/wind-info/#wind-speed)，公里/小时
+          description: 白天风速，公里/小时
         wind360Night:
           type: string
           description: 夜间[风向](https://dev.qweather.com/docs/resource/wind-info/#wind-direction)360角度
@@ -1686,7 +1686,7 @@ components:
           description: 夜间[风力等级](https://dev.qweather.com/docs/resource/wind-info/#wind-scale)
         windSpeedNight:
           type: string
-          description: 夜间[风速](https://dev.qweather.com/docs/resource/wind-info/#wind-speed)，公里/小时
+          description: 夜间风速，公里/小时
         humidity:
           type: string
           description: 相对湿度，百分比数值
@@ -1719,7 +1719,7 @@ components:
           description: "[风力等级](https://dev.qweather.com/docs/resource/wind-info/#wind-scale)"
         windSpeed:
           type: string
-          description: "[风速](https://dev.qweather.com/docs/resource/wind-info/#wind-speed)，公里/小时"
+          description: "风速，公里/小时"
         humidity:
           type: string
           description: 相对湿度，百分比数值
@@ -2952,7 +2952,7 @@ components:
                 description: "[风力等级](https://dev.qweather.com/docs/resource/wind-info/#wind-scale)"
               windSpeed:
                 type: string
-                description: "[风速](https://dev.qweather.com/docs/resource/wind-info/#wind-speed)，公里/小时"
+                description: "风速，公里/小时"
               humidity:
                 type: string
                 description: 相对湿度，百分比数值
