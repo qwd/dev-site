@@ -30,12 +30,12 @@
         - key: getGeoPoirange
     - key: 0-api-weather
       subitems:
-        - key: getWeatherNow
-        - key: getWeatherDailyForecast
-        - key: getWeatherHourlyForecast
-        - key: getGridWeatherNow
-        - key: getGridWeatherDaily
-        - key: getGridWeatherHourly
+        - key: getWeatherCurrent
+        - key: getWeatherDaily
+        - key: getWeatherHourly
+        - key: getWeatherNowV7
+        - key: getWeatherDailyV7
+        - key: getWeatherHourlyV7
     - key: 0-api-minutely
       subitems:
         - key: getMinutelyPrecipitation

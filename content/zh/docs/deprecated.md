@@ -24,11 +24,14 @@ type: legacy-docs
 
 ### WebAPI v7
 
-- 最后版本: 7.1
-- 停服日期: 从 2026-06-01 起
-- 包含APIs:
-  - 空气质量
-  - 天气预警
-  - 太阳辐照
-- 升级至: 查看文档详情
-- [下载文档](https://dl.qweather.com/sites/dev/qweather-webapi-v7-deprecated-zh.md)
+下列 WebAPI v7 的服务已经弃用或停止服务
+
+| API | endpoint | 停服日期 | 公告 |
+|---|---|---|---|
+| 空气质量 | `/v7/air/now`<br>`/v7/air/5d` | 2026-06-01 | [查看](https://blog.qweather.com/announce/aqi-webapi-v7-is-about-to-close-in-mid-2026/) |
+| 太阳辐照 | `/v7/solar-radiation/{hours}` | 2026-09-01 | [查看](https://blog.qweather.com/announce/solar-radiation-webapi-v7-discontinue/) |
+| 天气预警 | `/v7/warning/now` | 2026-10-01 | [查看](https://blog.qweather.com/announce/weather-warning-webapi-v7-discontinue/) |
+| 格点天气预报 | `/v7/grid-weather/now`<br>`/v7/grid-weather/{days}`<br>`/v7/grid-weather/{hours}` | 2027-06-01 | [查看](https://blog.qweather.com/announce/weather-forecast-webapi-v7-discontinue/) |
+| 城市天气预报 | `/v7/weather/now`<br>`/v7/weather/{days}`<br>`/v7/weather/{hours}` | 2027-06-01 | [查看](https://blog.qweather.com/announce/weather-forecast-webapi-v7-discontinue/) |
+
+[下载 WebAPI v7 文档](https://dl.qweather.com/sites/dev/qweather-webapi-v7-deprecated-zh.md)

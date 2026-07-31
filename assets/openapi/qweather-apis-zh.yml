@@ -125,20 +125,22 @@ paths:
                   externalValue: "./examples/getGeoPoilookup-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
-  "/v7/weather/now":
+  "/weather/v1/current/{latitude}/{longitude}":
     get:
-      operationId: getWeatherNow
+      operationId: getWeatherCurrent
       tags:
       - Weather
       summary: 实时天气
-      description: |-
-        获取中国3000+市县区和海外50万个城市实时天气数据，包括实时温度、体感温度、风力风向、相对湿度、大气压强、降水量、能见度、露点温度、云量等。
+      description: |
+       获取指定经纬度位置的实时天气数据，1公里分辨率，覆盖全球任意地点，分钟级更新。
 
-        > **注意：** 实况数据均为近实时数据，相比真实的物理世界有5-20分钟的延迟，请根据实况数据中的`obsTime`确定数据对应的准确时间。
+       实时天气包括：天气现象、温度、体感温度、相对湿度、风向和风速、阵风风速、降水量、海平面气压、能见度、露点温度、云量、紫外线指数等。
       externalDocs:
-        url: https://dev.qweather.com/docs/api/weather/weather-now/
+        url: https://dev.qweather.com/docs/api/weather/weather-current/
       parameters:
-      - "$ref": "#/components/parameters/locationIdCoordQuery"
+      - "$ref": "#/components/parameters/latPath"
+      - "$ref": "#/components/parameters/lonPath"
+      - "$ref": "#/components/parameters/localtimeQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -146,49 +148,31 @@ paths:
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/getWeatherNow"
+                "$ref": "#/components/schemas/getWeatherCurrent"
               examples:
                 response:
-                  externalValue: "./examples/getWeatherNow-zh.json"
+                  externalValue: "./examples/getWeatherCurrent-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
-  "/v7/weather/{days}":
+      x-aliases:
+      - "/docs/api/weather/weather-now/"
+  "/weather/v1/hourly/{latitude}/{longitude}":
     get:
-      operationId: getWeatherDailyForecast
+      operationId: getWeatherHourly
       tags:
       - Weather
-      summary: 每日天气预报
-      description: 每日天气预报API，提供全球城市未来3-30天天气预报，包括：日出日落、月升月落、最高最低温度、天气白天和夜间状况、风力、风速、风向、相对湿度、站点气压、降水量、露点温度、紫外线强度、能见度等。
-      externalDocs:
-        url: https://dev.qweather.com/docs/api/weather/weather-daily-forecast/
-      parameters:
-      - "$ref": "#/components/parameters/days30Path"
-      - "$ref": "#/components/parameters/locationIdCoordQuery"
-      - "$ref": "#/components/parameters/langQuery"
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/getWeatherDaily"
-              examples:
-                response:
-                  externalValue: "./examples/getWeatherDailyForecast-zh.json"
-        default:
-          "$ref": "#/components/responses/defaultError"
-  "/v7/weather/{hours}":
-    get:
-      operationId: getWeatherHourlyForecast
-      tags:
-      - Weather
-      summary: 逐小时天气预报
-      description: 逐小时天气预报API，提供全球城市未来24-168小时逐小时天气预报，包括：温度、天气状况、风力、风速、风向、相对湿度、站点气压、降水概率、露点温度、云量。
+      summary: 小时天气预报
+      description: |
+       获取指定经纬度位置的每小时天气预报，最多240小时，1公里分辨率，覆盖全球任意地点。
+
+       每小时预报包括：天气现象、温度、体感温度、相对湿度、风向和风速、阵风风速、降水量和概率、海平面气压、能见度、露点温度、云量、紫外线指数等。
       externalDocs:
         url: https://dev.qweather.com/docs/api/weather/weather-hourly-forecast/
       parameters:
-      - "$ref": "#/components/parameters/hours168Path"
-      - "$ref": "#/components/parameters/locationIdCoordQuery"
+      - "$ref": "#/components/parameters/latPath"
+      - "$ref": "#/components/parameters/lonPath"
+      - "$ref": "#/components/parameters/hours240Query"
+      - "$ref": "#/components/parameters/localtimeQuery"
       - "$ref": "#/components/parameters/langQuery"
       responses:
         '200':
@@ -199,7 +183,120 @@ paths:
                 "$ref": "#/components/schemas/getWeatherHourly"
               examples:
                 response:
-                  externalValue: "./examples/getWeatherHourlyForecast-zh.json"
+                  externalValue: "./examples/getWeatherHourly-zh.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/weather/v1/daily/{latitude}/{longitude}":
+    get:
+      operationId: getWeatherDaily
+      tags:
+      - Weather
+      summary: 每日天气预报
+      description: |
+       获取指定经纬度位置的每日天气预报，最多10天预报，1公里分辨率，覆盖全球任意地点。
+
+       每日预报提供白天 [07:00, 19:00)、晚间 [19:00, 次日07:00) 的预报数据，包括：最高和最低温度、天气现象、最大阵风、最大紫外线指数、降水量和概率、海平面气压、湿度、风向和风速、云量、日出日落、月升月落和月相等。
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/weather/weather-daily-forecast/
+      parameters:
+      - "$ref": "#/components/parameters/latPath"
+      - "$ref": "#/components/parameters/lonPath"
+      - "$ref": "#/components/parameters/days10Query"
+      - "$ref": "#/components/parameters/localtimeQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getWeatherDaily"
+              examples:
+                response:
+                  externalValue: "./examples/getWeatherDaily-zh.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/weather/now":
+    get:
+      operationId: getWeatherNowV7
+      tags:
+      - Weather
+      summary: 城市实时天气
+      description: |
+       > **注意：** WebAPI v7版本的城市实时天气即将弃用，请使用[实时天气 v1](https://dev.qweather.com/docs/api/weather/weather-current/)代替。
+
+       获取中国3000+市县区和海外50万个城市实时天气数据，包括实时温度、体感温度、风力风向、相对湿度、大气压强、降水量、能见度、露点温度、云量等。
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/weather/weather-now-webapi-v7/
+      parameters:
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getWeatherNowV7"
+              examples:
+                response:
+                  externalValue: "./examples/getWeatherNowV7-zh.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/weather/{days}":
+    get:
+      operationId: getWeatherDailyV7
+      tags:
+      - Weather
+      summary: 城市每日预报
+      description: |
+       > **注意：** WebAPI v7版本的城市天气预报即将弃用，请使用[每日天气预报 v1](https://dev.qweather.com/docs/api/weather/weather-daily-forecast/)代替。
+
+       每日天气预报API，提供全球城市未来3-30天天气预报，包括：日出日落、月升月落、最高最低温度、天气白天和夜间状况、风力、风速、风向、相对湿度、站点气压、降水量、露点温度、紫外线强度、能见度等。
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/weather/weather-daily-forecast-webapi-v7/
+      parameters:
+      - "$ref": "#/components/parameters/days30Path"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getWeatherDailyV7"
+              examples:
+                response:
+                  externalValue: "./examples/getWeatherDailyV7-zh.json"
+        default:
+          "$ref": "#/components/responses/defaultError"
+  "/v7/weather/{hours}":
+    get:
+      operationId: getWeatherHourlyV7
+      tags:
+      - Weather
+      summary: 城市小时预报
+      description: |
+       > **注意：** WebAPI v7版本的城市天气预报即将弃用，请使用[小时天气预报 v1](https://dev.qweather.com/docs/api/weather/weather-hourly-forecast/)代替。
+
+       逐小时天气预报API，提供全球城市未来24-168小时逐小时天气预报，包括：温度、天气状况、风力、风速、风向、相对湿度、站点气压、降水概率、露点温度、云量。
+      externalDocs:
+        url: https://dev.qweather.com/docs/api/weather/weather-hourly-forecast-webapi-v7/
+      parameters:
+      - "$ref": "#/components/parameters/hours168Path"
+      - "$ref": "#/components/parameters/locationIdCoordQuery"
+      - "$ref": "#/components/parameters/langQuery"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/getWeatherHourlyV7"
+              examples:
+                response:
+                  externalValue: "./examples/getWeatherHourlyV7-zh.json"
         default:
           "$ref": "#/components/responses/defaultError"
   "/v7/minutely/5m":
@@ -654,10 +751,7 @@ paths:
       tags:
       - Astronomy
       summary: 日出日落
-      description: |-
-        获取未来60天全球任意地点日出日落时间。
-
-        > 在[逐天预报API](https://dev.qweather.com/docs/api/weather/)中，也会返回对应天数的日出日落、月升月落和月相数据
+      description: 获取未来60天全球任意地点日出日落时间。
       externalDocs:
         url: https://dev.qweather.com/docs/api/astronomy/sunrise-sunset/
       parameters:
@@ -835,11 +929,9 @@ paths:
       operationId: getGridWeatherNow
       tags:
       - Weather
+      deprecated: true
       summary: 格点实时天气
-      description: |-
-        基于数值模式的天气预报数据，提供全球指定坐标的实时天气，分辨率3-5公里。
-
-        > **提示：** 格点天气预报是基于数值预报模型生成，不适宜与观测站数据对比。如需基于观测站的城市天气，请使用[城市实时天气API](https://dev.qweather.com/docs/api/weather/weather-now/)。格点天气采用UTC 0时区表示时间。
+      description: 该接口已弃用，自2027年2月1日停止服务。请使用 /weather/v1/current/ 代替。
       externalDocs:
         url: https://dev.qweather.com/docs/api/weather/grid-weather-now/
       parameters:
@@ -863,11 +955,9 @@ paths:
       operationId: getGridWeatherDaily
       tags:
       - Weather
+      deprecated: true
       summary: 格点每日天气预报
-      description: |-
-        基于数值模式的天气预报数据，提供全球指定坐标的每日天气预报，分辨率3-5公里。
-
-        > **提示：** 格点天气预报是基于数值预报模型生成，不适宜与观测站数据对比。如需基于观测站的城市天气，请使用[城市每日天气API](https://dev.qweather.com/docs/api/weather/weather-daily-forecast/)。格点天气采用UTC 0时区表示时间。
+      description: 该接口已弃用，自2027年2月1日停止服务。请使用 /weather/v1/daily/ 代替。
       externalDocs:
         url: https://dev.qweather.com/docs/api/weather/grid-weather-daily-forecast/
       parameters:
@@ -892,11 +982,10 @@ paths:
       operationId: getGridWeatherHourly
       tags:
       - Weather
+      deprecated: true
       summary: 格点逐小时天气预报
       description: |-
-        基于数值模式的天气预报数据，提供全球指定坐标的逐小时天气预报，分辨率3-5公里。
-
-        > **提示：** 格点天气预报是基于数值预报模型生成，不适宜与观测站数据对比。如需基于观测站的城市天气，请使用[城市逐小时天气API](https://dev.qweather.com/docs/api/weather/weather-hourly-forecast/)。格点天气采用UTC 0时区表示时间。
+        该接口已弃用，自2027年2月1日停止服务。请使用 /weather/v1/hourly/ 代替。
       externalDocs:
         url: https://dev.qweather.com/docs/api/weather/grid-weather-hourly-forecast/
       parameters:
@@ -1144,7 +1233,7 @@ components:
         example: scenic
     poiCityQuery:
       name: city
-      description: 选择POI所在城市，可设定只搜索在特定城市内的POI信息。城市名称可以是文字或城市的LocationID。城市名称为精准匹配，建议使用LocaitonID，如文字无法匹配，则数据返回为空。**默认不限制特定城市**。
+      description: 选择POI所在城市，可设定只搜索在特定城市内的POI信息。城市名称可以是文字或城市的LocationID。城市名称为精准匹配，建议使用LocaitonID，如文字无法匹配，则数据返回为空。**默认不限制特定城市**
       in: query
       required: false
       schema:
@@ -1153,7 +1242,7 @@ components:
     langQuery:
       name: lang
       in: query
-      description: 多语言设置，请阅读[多语言](https://dev.qweather.com/docs/resource/language/)文档，了解我们的多语言是如何工作、如何设置以及数据是否支持多语言。
+      description: "[多语言设置](https://dev.qweather.com/docs/resource/language/)"
       required: false
       schema:
         type: string
@@ -1169,7 +1258,7 @@ components:
     indexTypeQuery:
       name: type
       in: query
-      description: 生活指数的类型ID，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数，多个类型用英文`,`分割。例如`type=3,5`。具体生活指数的ID和等级参考[天气指数信息](https://dev.qweather.com/docs/resource/indices-info/)。各项生活指数并非适用于所有城市。
+      description: 生活指数的类型ID，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数，多个类型用英文`,`分割。例如`type=3,5`。具体生活指数的ID和等级参考[天气指数信息](https://dev.qweather.com/docs/resource/indices-info/)。各项生活指数并非适用于所有城市
       required: true
       schema:
         type: string
@@ -1177,7 +1266,10 @@ components:
     localtimeQuery:
       name: localTime
       in: query
-      description: 是否返回查询地点的本地时间。**true** 返回本地时间，**false** 返回UTC时间（默认）。
+      description: |
+       是否返回查询地点的本地时间
+
+       可选值： `false` UTC时间（默认），`true` 本地时间
       required: false
       schema:
         type: boolean
@@ -1394,7 +1486,394 @@ components:
       schema:
         type: string
         example: '20200725'
+    hours240Query:
+      name: hours
+      in: query
+      description: 预报小时数，支持 `1-240` 小时，默认返回 `24` 小时
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 240
+        default: 24
+    days10Query:
+      name: days
+      in: query
+      description: 预报天数，支持 `1-10` 天，默认返回 `7` 天
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 10
+        default: 7
   schemas:
+    getWeatherCurrent:
+      description: 实时天气响应
+      allOf:
+        - type: object
+          properties:
+            metadata:
+              $ref: "#/components/schemas/metadataBaseObject"
+        - $ref: "#/components/schemas/weatherBaseObject"
+        - type: object
+          properties:
+            precipitation:
+              description: 降水数据
+              allOf:
+                - $ref: "#/components/schemas/precipAmount1hObject"
+                - $ref: "#/components/schemas/precipIntensityObject"
+                - $ref: "#/components/schemas/precipTypeObject"
+        - $ref: "#/components/schemas/weatherSupplementalObject"
+
+    weatherBaseObject:
+      type: object
+      description: 实时天气和逐小时天气预报在共用的基础天气字段
+      properties:
+        condition:
+          $ref: "#/components/schemas/weatherConditionObject"
+        temperature:
+          $ref: "#/components/schemas/temperatureObject"
+        feelsLike:
+          description: 体感温度
+          $ref: "#/components/schemas/temperatureObject"
+        humidity:
+          type: number
+          description: 相对湿度，取值范围 `[0, 1]`
+          maximum: 1
+          minimum: 0
+        wind:
+          $ref: "#/components/schemas/windObject"
+        windGust:
+          $ref: "#/components/schemas/windGustObject"
+    weatherConditionObject:
+      type: object
+      description: "[天气现象](https://dev.qweather.com/docs/resource/weather-conditions/)"
+      properties:
+        text:
+          type: string
+          description: 天气现象的本地化描述
+        code:
+          type: string
+          description: 天气现象代码
+    temperatureObject:
+      description: 温度数据
+      "$ref": "#/components/schemas/valueUnitObject"
+    windObject:
+      type: object
+      description: 风的数据
+      properties:
+        direction:
+          type: object
+          description: "[风向](https://dev.qweather.com/docs/resource/wind-info/#wind-direction)"
+          properties:
+            degree:
+              type: number
+              description: 风向角度，取值范围 `[0, 359]`
+              maximum: 359
+              minimum: 0
+              nullable: true
+            compass:
+              type: string
+              description: |
+               风向的方位代码
+
+               可选值: `n`, `nne`, `ne`, `ene`, `e`, `ese`, `se`, `sse`, `s`, `ssw`, `sw`, `wsw`, `w`, `wnw`, `nw`, `nnw`, `none`, `vrb`
+              enum: [n, nne, ne, ene, e, ese, se, sse, s, ssw, sw, wsw, w, wnw, nw, nnw, none, vrb]
+        speed:
+          type: object
+          description: 风速
+          $ref: "#/components/schemas/valueUnitObject"
+        scale:
+          type: number
+          description: "[蒲福风级](https://dev.qweather.com/docs/resource/wind-info/#wind-scale)"
+          maximum: 17
+          minimum: 0
+    windGustObject:
+      type: object
+      description: 阵风风速
+      nullable: true
+      $ref: "#/components/schemas/valueUnitObject"
+    precipAmount1hObject:
+      type: object
+      properties:
+        amount:
+          type: object
+          description: 累计一小时降水量
+          $ref: "#/components/schemas/valueUnitObject"
+    precipAmountObject:
+      type: object
+      properties:
+        amount:
+          type: object
+          description: 当前数据时段内的累计降水量
+          $ref: "#/components/schemas/valueUnitObject"
+    precipIntensityObject:
+      type: object
+      properties:
+        intensity:
+          type: object
+          description: 降水强度
+          $ref: "#/components/schemas/valueUnitObject"
+    precipTypeObject:
+      type: object
+      properties:
+        type:
+          type: string
+          description: 降水类型代码： `rain`（雨）、`snow`（雪）、`ice`（冰粒或冻雨）、 `mixed`（混合降水）、`none`（无降水）、`unknown`（未知）
+          enum: [rain, snow, ice, mixed, none, unknown]
+    precipProbabilityObject:
+      type: object
+      properties:
+        probability:
+          type: number
+          description: 预报降水数据，取值范围 `[0, 1]`
+          maximum: 1
+          minimum: 0
+    weatherSupplementalObject:
+      type: object
+      description: 实时天气和逐小时天气预报共用的补充天气字段。
+      properties:
+        pressure:
+          description: 海平面气压
+          allOf:
+            - $ref: "#/components/schemas/valueUnitObject"
+            # - type: object
+            #   properties:
+            #     trend:
+            #       type: string
+            #       description: |
+            #        气压变化趋势
+
+            #        可选值: `rising` 上升，`falling` 下降，`steady` 稳定
+            #       enum: [rising, falling, steady]
+        visibility:
+          description: 能见度
+          $ref: "#/components/schemas/valueUnitObject"
+        dewPoint:
+          $ref: "#/components/schemas/valueUnitObject"
+          description: 露点温度
+        cloudCover:
+          type: number
+          description: 云量，取值范围 `[0, 1]`
+          maximum: 1
+          minimum: 0
+        uvIndex:
+          type: number
+          description: 紫外线指数，取值范围 `[0, 15]`
+          maximum: 15
+          minimum: 0
+
+    getWeatherHourly:
+      type: object
+      description: 逐小时天气预报响应。
+      properties:
+        metadata:
+          $ref: "#/components/schemas/metadataBaseObject"
+        hours:
+          type: array
+          description: 逐小时天气预报列表
+          items:
+            allOf:
+              - type: object
+                properties:
+                  forecastTime:
+                    $ref: "#/components/schemas/fxTime"
+              - $ref: "#/components/schemas/weatherHourlyObject"
+    weatherHourlyObject:
+      description: 逐小时天气预报字段
+      allOf:
+        - $ref: "#/components/schemas/weatherBaseObject"
+        - type: object
+          properties:
+            precipitation:
+              description: 降水数据
+              allOf:
+                - $ref: "#/components/schemas/precipAmountObject"
+                - $ref: "#/components/schemas/precipIntensityObject"
+                - $ref: "#/components/schemas/precipTypeObject"
+                - $ref: "#/components/schemas/precipProbabilityObject"
+        - $ref: "#/components/schemas/weatherSupplementalObject"
+
+    getWeatherDaily:
+      type: object
+      description: 逐日天气预报响应
+      properties:
+        metadata:
+          $ref: "#/components/schemas/metadataBaseObject"
+        days:
+          type: array
+          description: 每日天气预报列表
+          items:
+            allOf:
+              - type: object
+                properties:
+                  forecastStartTime:
+                    $ref: "#/components/schemas/forecastStartTime"
+                  forecastEndTime:
+                    $ref: "#/components/schemas/forecastEndTime"
+                  astro:
+                    description: 太阳和月亮天文事件
+                    allOf:
+                      - $ref: "#/components/schemas/sunEventObject"
+                      - $ref: "#/components/schemas/moonEventObject"
+              - $ref: "#/components/schemas/maxMinTemperatureObject"
+              - type: object
+                properties:
+                  temperatureAvg:
+                    type: object
+                    description: 当日平均温度
+                    "$ref": "#/components/schemas/valueUnitObject"
+              - type: object
+                properties:
+                  uvIndexMax:
+                    type: number
+                    description: 当日最大紫外线指数，取值范围 `[0, 15]`
+                    maximum: 15
+                    minimum: 0
+              - type: object
+                properties:
+                  daytime:
+                    allOf:
+                      - $ref: "#/components/schemas/weatherDayNightObject"
+                    description: 白天预报，当地时间 `[07:00, 19:00)`
+                  nighttime:
+                    allOf:
+                      - $ref: "#/components/schemas/weatherDayNightObject"
+                    description: 夜间预报，当地时间 `[19:00, 次日07:00)`
+    sunEventObject:
+      type: object
+      description: 太阳事件时间；极昼、极夜等情况下无法计算的事件可为 `null`。
+      properties:
+        sunrise:
+          type: string
+          description: 日出时间
+          format: date-time
+          nullable: true
+        sunset:
+          type: string
+          description: 日落时间
+          format: date-time
+          nullable: true
+        astronomicalDawn:
+          type: string
+          description: 天文晨光的开始时间
+          format: date-time
+          nullable: true
+        nauticalDawn:
+          type: string
+          description: 航海晨光的开始时间
+          format: date-time
+          nullable: true
+        civilDawn:
+          type: string
+          description: 民用晨光的开始时间
+          format: date-time
+          nullable: true
+        astronomicalDusk:
+          type: string
+          description: 天文暮光的结束时间
+          format: date-time
+          nullable: true
+        nauticalDusk:
+          type: string
+          description: 航海暮光的结束时间
+          format: date-time
+          nullable: true
+        civilDusk:
+          type: string
+          description: 民用暮光的结束时间
+          format: date-time
+          nullable: true
+        solarNoon:
+          type: string
+          description: 太阳正午时间
+          format: date-time
+          nullable: true
+        solarMidnight:
+          type: string
+          description: 太阳子夜时间
+          format: date-time
+          nullable: true
+    moonEventObject:
+      type: object
+      description: 月亮事件和月相数据；当天未发生的月出、月落等事件可为 `null`。
+      properties:
+        moonrise:
+          type: string
+          description: 月出时间
+          format: date-time
+          nullable: true
+        moonset:
+          type: string
+          description: 月落时间
+          format: date-time
+          nullable: true
+        moonTransit:
+          type: string
+          description: 月亮上中天时间
+          format: date-time
+          nullable: true
+        moonUnderfoot:
+          type: string
+          description: 月亮下中天时间
+          format: date-time
+          nullable: true
+        moonPhase:
+          type: string
+          description: |
+           当天主导月相，可选值：
+
+           `new-moon`(新月)、`waxing-crescent`(蛾眉月)、`first-quarter`(上弦月)、`waxing-gibbous`(盈凸月)、`full-moon`(满月)、`waning-gibbous`(亏凸月)、`last-quarter`(下弦月)、`waning-crescent`(残月)
+    maxMinTemperatureObject:
+      type: object
+      description: 当前预报时段的最高和最低温度
+      properties:
+        temperatureMax:
+          allOf:
+            - $ref: "#/components/schemas/temperatureObject"
+          description: 预报时段的最高温度
+        temperatureMin:
+          allOf:
+            - $ref: "#/components/schemas/temperatureObject"
+          description: 预报时段的最低温度
+    weatherDayNightObject:
+      description: 每日预报中的白天或夜间天气数据
+      allOf:
+        - type: object
+          properties:
+            forecastStartTime:
+              $ref: "#/components/schemas/forecastStartTime"
+            forecastEndTime:
+              $ref: "#/components/schemas/forecastEndTime"
+        - type: object
+          properties:
+            condition:
+              $ref: "#/components/schemas/weatherConditionObject"
+        - $ref: "#/components/schemas/maxMinTemperatureObject"
+        - type: object
+          properties:
+            humidity:
+              type: number
+              description: 预报时段的平均相对湿度，取值范围 `[0, 1]`
+              maximum: 1
+              minimum: 0
+            wind:
+              $ref: "#/components/schemas/windObject"
+            windGustMax:
+              $ref: "#/components/schemas/windGustObject"
+              description: 预报时段的最大阵风风速
+              nullable: true
+            precipitation:
+              description: 降水数据
+              allOf:
+                - $ref: "#/components/schemas/precipAmountObject"
+                - $ref: "#/components/schemas/precipTypeObject"
+                - $ref: "#/components/schemas/precipProbabilityObject"
+            cloudCover:
+              type: number
+              description: 预报时段的平均总云量，取值范围 `[0, 1]`
+              maximum: 1
+              minimum: 0
     asOf:
       type: string
       description: 当前数据的截止日期
@@ -1415,35 +1894,36 @@ components:
           nullable: true
           items:
             type: string
-    metaTagObject:
+    metaTag:
+      type: string
+      description: 数据唯一标识
+    metaAttributions:
+      type: array
+      description: 数据归因信息或声明，必须与当前数据共同显示
+      items:
+        type: string
+    metaZeroResult:
+      type: boolean
+      description: "**true** 表示请求成功，但无数据返回，例如查询地点无预警"
+      default: false
+    metadataBaseObject:
       type: object
+      description: "[元数据](https://dev.qweather.com/docs/resource/metadata/)"
       properties:
         tag:
-          type: string
-          description: 数据唯一标识
-    metaObsObject:
-      type: object
-      properties:
-        observationTime:
-          type: string
-          description: 数据的实际观测时间
-          format: date-time
-    metaAttributeObject:
-      type: object
-      properties:
+          $ref: "#/components/schemas/metaTag"
         attributions:
-          type: array
-          items:
-            type: string
-            description: 数据归因信息、URL或声明，必须与当前数据共同显示
-          description: 数据归因信息，必须与当前数据共同显示
-    metaZeroObject:
+          $ref: "#/components/schemas/metaAttributions"
+    metadataBaseZeroResultObject:
       type: object
+      description: 当前响应的[元数据](https://dev.qweather.com/docs/resource/metadata/)
       properties:
+        tag:
+          $ref: "#/components/schemas/metaTag"
+        attributions:
+          $ref: "#/components/schemas/metaAttributions"
         zeroResult:
-          type: boolean
-          description: "**true** 表示请求成功，但无数据返回，例如查询地点无预警"
-          default: false
+          $ref: "#/components/schemas/metaZeroResult"
 
     getCityLookup:
       type: object
@@ -1538,7 +2018,7 @@ components:
         refer:
           "$ref": "#/components/schemas/referObject"
 
-    getWeatherNow:
+    getWeatherNowV7:
       type: object
       properties:
         code:
@@ -1566,7 +2046,7 @@ components:
         refer:
           "$ref": "#/components/schemas/referObject"
 
-    getWeatherDaily:
+    getWeatherDailyV7:
       type: object
       properties:
         code:
@@ -1617,7 +2097,7 @@ components:
         refer:
           "$ref": "#/components/schemas/referObject"
 
-    getWeatherHourly:
+    getWeatherHourlyV7:
       type: object
       properties:
         code:
@@ -1804,11 +2284,7 @@ components:
       type: object
       properties:
         metadata:
-          allOf:
-          - "$ref": "#/components/schemas/metaTagObject"
-          - "$ref": "#/components/schemas/metaZeroObject"
-          - "$ref": "#/components/schemas/metaAttributeObject"
-          description: 当前响应的元数据
+          "$ref": "#/components/schemas/metadataBaseZeroResultObject"
         alerts:
           type: array
           description: 预警信息列表
@@ -1837,6 +2313,7 @@ components:
                   supersedes:
                     type: array
                     description: 当前预警取代或取消后续预警ID的列表，当这是一条新预警信息时，返回为空
+                    nullable: true
                     items:
                       type: string
               eventType:
@@ -2097,10 +2574,7 @@ components:
       type: object
       properties:
         metadata:
-          description: 当前响应的元数据
-          allOf:
-          - "$ref": "#/components/schemas/metaTagObject"
-          - "$ref": "#/components/schemas/metaAttributeObject"
+          "$ref": "#/components/schemas/metadataBaseObject"
         indexes:
           "$ref": "#/components/schemas/aqisArray"
         pollutants:
@@ -2112,10 +2586,7 @@ components:
       type: object
       properties:
         metadata:
-          allOf:
-          - "$ref": "#/components/schemas/metaTagObject"
-          - "$ref": "#/components/schemas/metaAttributeObject"
-          description: 当前响应的元数据
+          "$ref": "#/components/schemas/metadataBaseObject"
         days:
           type: array
           description: 每日空气质量数据列表
@@ -2135,10 +2606,7 @@ components:
       type: object
       properties:
         metadata:
-          allOf:
-          - "$ref": "#/components/schemas/metaTagObject"
-          - "$ref": "#/components/schemas/metaAttributeObject"
-          description: 当前响应的元数据
+          "$ref": "#/components/schemas/metadataBaseObject"
         hours:
           type: array
           description: 每小时空气质量数据列表
@@ -2156,10 +2624,7 @@ components:
       type: object
       properties:
         metadata:
-          allOf:
-            - "$ref": "#/components/schemas/metaTagObject"
-            - "$ref": "#/components/schemas/metaAttributeObject"
-          description: 当前响应的元数据
+          "$ref": "#/components/schemas/metadataBaseObject"
         pollutants:
           type: array
           description: 污染物列表
@@ -2532,9 +2997,7 @@ components:
       type: object
       properties:
         metadata:
-          allOf:
-          - "$ref": "#/components/schemas/metaTagObject"
-          description: 当前响应的元数据
+          "$ref": "#/components/schemas/metadataBaseObject"
         forecasts:
           type: array
           description: 太阳辐照预报数据列表
@@ -2613,7 +3076,7 @@ components:
           description: 数值
         unit:
           type: string
-          description: 单位
+          description: "[单位](https://dev.qweather.com/docs/resource/unit/)"
 
     getSun:
       type: object
@@ -2699,9 +3162,7 @@ components:
       type: object
       properties:
         metadata:
-          allOf:
-          - "$ref": "#/components/schemas/metaTagObject"
-          description: 当前响应的元数据
+          "$ref": "#/components/schemas/metadataBaseObject"
         asOf:
           "$ref": "#/components/schemas/asOf"
         currency:
@@ -2809,9 +3270,7 @@ components:
       type: object
       properties:
         metadata:
-          allOf:
-          - "$ref": "#/components/schemas/metaTagObject"
-          description: 当前响应的元数据
+          "$ref": "#/components/schemas/metadataBaseObject"
         asOf:
           "$ref": "#/components/schemas/asOf"
         success:
@@ -2845,11 +3304,11 @@ components:
 
     fxDate:
       type: string
-      description: 预报日期，ISO8601 格式
+      description: 预报日期
       format: date
     fxTime:
       type: string
-      description: 预报时间，ISO8601 格式
+      description: 预报时间
       format: date-time
     pubTime:
       type: string
@@ -2861,11 +3320,11 @@ components:
       format: date-time
     forecastStartTime:
       type: string
-      description: 预报数据的开始时间，ISO8601 格式
+      description: 预报数据的开始时间
       format: date-time
     forecastEndTime:
       type: string
-      description: 预报数据的结束时间，ISO8601 格式
+      description: 预报数据的结束时间(不含)
       format: date-time
     statusCode:
       type: string
