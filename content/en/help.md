@@ -50,9 +50,9 @@ Yes, except for GeoAPI data. You can refer to the document [Cache](/en/docs/best
 
 We provide a list of cities in China, please refer to [Location List](/en/docs/resource/location-list/). For other countries and regions around the world, over 500,000 cities have been supported, but the complete city database is not available due to copyright reasons.
 
-### Do you have weather icons?
+### Do you provide weather icons?
 
-Our engineers have provided an open source weather icons that support weather conditions, moon phases and weather warnings. The weather icons are in SVG format, so you can edit the color or style yourself. See [weather icons documentation](/en/docs/resource/icons/) and [Icons](https://icons.qweather.com/).
+Our engineers have provided an open source weather icons that support weather conditions, moon phases and weather warnings. The weather icons are in SVG format, so you can edit the color or style yourself. See [Icons](https://icons.qweather.com/)
 
 ### What is the enum value of the weather condition?
 
