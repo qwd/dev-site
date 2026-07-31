@@ -292,7 +292,9 @@ function requestExample(method, endpoint, parameters) {
   for (const parameter of parameters) {
     const value = String(parameter.example);
     if (parameter.in === "path") requestPath = requestPath.replace(`{${parameter.name}}`, encodeURIComponent(value));
-    if (parameter.in === "query") query.push(`${parameter.name}=${encodeURIComponent(value)}`);
+    if (parameter.in === "query" && parameter.required) {
+      query.push(`${parameter.name}=${encodeURIComponent(value)}`);
+    }
   }
   const url = `https://your-api-host${requestPath}${query.length ? `?${query.join("&")}` : ""}`;
   return `curl -X ${method.toUpperCase()} --compressed \\\n-H 'Authorization: Bearer your_token' \\\n'${url}'`;
