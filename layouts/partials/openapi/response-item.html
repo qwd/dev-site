@@ -9,7 +9,7 @@
       <div class="field-name font-bold">{{ $field.name }}</div>
       <div class="field-property text-qw-neutral-500 text-xs">{{ $field.type }}</div>
     </div>
-    <div class="api-response-description">{{ $field.description | markdownify }}</div>
+    <div class="api-response-description [&>p]:leading-[inherit] [&>p:last-child]:mb-0">{{ $field.description | markdownify }}</div>
     {{/*
       Keep schema metadata in the intermediate model, but do not render it in
       public field descriptions for now. Most nullable fields already explain
