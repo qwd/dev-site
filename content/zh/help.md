@@ -54,9 +54,9 @@ aliases:
 
 城市数据会根据政府规划或其他原因而变更，建议使用[地理信息服务](/docs/api/geoapi/)获取实时城市信息。
 
-### 是否支持天气图标？ {#do-you-have-weather-icons}
+### 是否支持天气图标？ {#do-you-provide-weather-icons}
 
-我们的工程师提供了一套开源的天气图标，支持天气状态、月相和天气预警。天气图标是SVG格式，因此你可以自行修改颜色或样式。访问[天气图标代码文档](/docs/resource/icons/)和[天气图标](https://icons.qweather.com/)。
+我们的工程师提供了一套开源的天气图标，支持天气状态、月相和天气预警。天气图标是SVG格式，因此你可以自行修改颜色或样式。访问[天气图标](https://icons.qweather.com/)
 
 ### 天气状态的枚举值是什么？ {#what-is-the-enum-value-of-the-weather-condition}
 

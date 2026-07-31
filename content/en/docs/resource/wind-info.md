@@ -1,68 +1,70 @@
 ---
 title: Wind Info
-description: Learn about the relationship between wind speed and wind scale (Beaufort
-  scale), and how to read wind direction in degree, wind 16 direction and wind 8 direction.
+description: Learn about wind direction and wind scale (Beaufort scale), including wind direction in degrees and compass directions.
 translationKey: res-wind
 ---
 
-This document will describes the wind direction, wind speed and wind scale in the weather data.
+This document describes wind direction and wind scale in weather data.
 
 ## Wind Direction
 
-Wind direction is generally reported by **the direction from which it originates**. For example, a north or northerly wind blows from the north to the south. In QWeather, we describe the specific wind direction by degree and direction.
+Wind direction refers to **the direction from which the wind originates**. For example, a southeast wind blows from the southeast. QWeather describes wind direction using degrees and compass (or cardinal) directions.
 
-In a geographic coordinate system, the wind has a total of 32 different directions, but only 16 directions are commonly used.
+### Degrees direction
 
-### 16 wind directions
+Wind direction is measured clockwise from true north at 0°, with values ranging from [0, 359]. If there is no prevailing wind direction or the wind direction varies continuously, the wind direction in degrees is returned as `null`.
 
-<img class="w-3/5 mx-auto" src="/assets/images/content/wind-direction-rose.png" alt="16 wind direction rose">
+### Compass direction
 
-16 wind direction:
+Wind direction commonly uses 16 compass points ([diagram](https://dl.qweather.com/sites/dev/wind-direction-compass.png)), dividing 360° into 16 equal sectors: true north = 0° (360°), east = 90°, south = 180°, and west = 270°.
 
-| Direction       | Code | Degree(°) | Degree range(°) |
-| --------------- | ---- | --------- | --------------- |
-| North           | N    | 0         | 348.75 - 11.25  |
-| North-Northeast | NNE  | 22.5      | 11.25 - 33.75   |
-| Northeast       | NE   | 45        | 33.75 - 56.25   |
-| East-Northeast  | ENE  | 67.5      | 56.25 - 78.75   |
-| East            | E    | 90        | 78.75 - 101.25  |
-| East-Southeast  | ESE  | 112.5     | 101.25 - 123.75 |
-| Southeast       | SE   | 135       | 123.75 - 146.25 |
-| South-Southeast | SSE  | 157.5     | 146.25 - 168.75 |
-| South           | S    | 180       | 168.75 - 191.25 |
-| South-Southwest | SSW  | 202.5     | 191.25 - 213.75 |
-| Southwest       | SW   | 225       | 213.75 - 236.25 |
-| West-Southwest  | WSW  | 247.5     | 236.25 - 258.75 |
-| West            | W    | 270       | 258.75 - 281.25 |
-| West-Northwest  | WNW  | 292.5     | 281.25 - 303.75 |
-| Northwest       | NW   | 315       | 303.75 - 326.25 |
-| North-Northwest | NNW  | 337.5     | 326.25 - 348.75 |
+| Direction code | Description     | Degree (°) | Degree range (°) |
+| -------------- | --------------- | ---------- | ---------------- |
+| `n`            | North           | 0          | 348.75 - 11.25   |
+| `nne`          | North-northeast | 22.5       | 11.25 - 33.75    |
+| `ne`           | Northeast       | 45         | 33.75 - 56.25    |
+| `ene`          | East-northeast  | 67.5       | 56.25 - 78.75    |
+| `e`            | East            | 90         | 78.75 - 101.25   |
+| `ese`          | East-southeast  | 112.5      | 101.25 - 123.75  |
+| `se`           | Southeast       | 135        | 123.75 - 146.25  |
+| `sse`          | South-southeast | 157.5      | 146.25 - 168.75  |
+| `s`            | South           | 180        | 168.75 - 191.25  |
+| `ssw`          | South-southwest | 202.5      | 191.25 - 213.75  |
+| `sw`           | Southwest       | 225        | 213.75 - 236.25  |
+| `wsw`          | West-southwest  | 247.5      | 236.25 - 258.75  |
+| `w`            | West            | 270        | 258.75 - 281.25  |
+| `wnw`          | West-northwest  | 292.5      | 281.25 - 303.75  |
+| `nw`           | Northwest       | 315        | 303.75 - 326.25  |
+| `nnw`          | North-northwest | 337.5      | 326.25 - 348.75  |
+| `none`         | No sustained direction | null |                  |
+| `vrb`          | Variable wind direction     | null |                  |
 
-### 8 wind directions
+### Legacy wind direction
 
-8 wind direction is only available for China city weather data.
-
-> **Tips:** In China's city weather, in addition to the 8 wind directions, there are two more wind directions: Rotational wind and no sustained wind direction.
-
-| Direction    | Code       | Degree(°) | Degree range(°) |
-| ------------ | ---------- | --------- | --------------- |
-| North        | N          | 0         | 337.5 - 22.25   |
-| Northeast    | NE         | 45        | 22.25 - 67.5    |
-| East         | E          | 90        | 67.5 - 112.5    |
-| Southeast    | SE         | 135       | 112.5 - 157.5   |
-| South        | S          | 180       | 157.5 - 202.5   |
-| Southwest    | SW         | 225       | 202.5 - 247.5   |
-| West         | W          | 270       | 247.5 - 292.5   |
-| Northwest    | NW         | 315       | 292.5 - 337.5   |
-| Rotational   | Rotational | -999      | -               |
-| No sustained | None       | -1        | -               |
+Weather forecasts in Web API v7 use the following compass directions:
 
 > **Note:** In the `windDir`, if the language is set to Chinese, the Chinese direction name is responded, if it is set to other languages, the direction code is responded.
-{.bqwarning}
 
-## Wind Speed
-
-Unless otherwise noted, wind speed provided by QWeather are at 10 meters above ground level. Wind speed units are defaulted to kilometers per hour.
+| Direction code | Direction       | Degree (°) | Degree range (°) |
+| -------------- | --------------- | ---------- | ---------------- |
+| `N`            | North           | 0          | 348.75 - 11.25   |
+| `NNE`          | North-northeast | 22.5       | 11.25 - 33.75    |
+| `NE`           | Northeast       | 45         | 33.75 - 56.25    |
+| `ENE`          | East-northeast  | 67.5       | 56.25 - 78.75    |
+| `E`            | East            | 90         | 78.75 - 101.25   |
+| `ESE`          | East-southeast  | 112.5      | 101.25 - 123.75  |
+| `SE`           | Southeast       | 135        | 123.75 - 146.25  |
+| `SSE`          | South-southeast | 157.5      | 146.25 - 168.75  |
+| `S`            | South           | 180        | 168.75 - 191.25  |
+| `SSW`          | South-southwest | 202.5      | 191.25 - 213.75  |
+| `SW`           | Southwest       | 225        | 213.75 - 236.25  |
+| `WSW`          | West-southwest  | 247.5      | 236.25 - 258.75  |
+| `W`            | West            | 270        | 258.75 - 281.25  |
+| `WNW`          | West-northwest  | 292.5      | 281.25 - 303.75  |
+| `NW`           | Northwest       | 315        | 303.75 - 326.25  |
+| `NNW`          | North-northwest | 337.5      | 326.25 - 348.75  |
+| `Rotational`   | Rotational      | -999       | -                |
+| `None`         | No sustained    | -1         | -                |
 
 ## Wind Scale
 
@@ -75,8 +77,6 @@ V = 0.836 × B^(3/2)
 ```
 
 Where `V` is the equivalent wind speed at 10 metres above the sea surface and `B` is Beaufort scale number. For example, B = 9.5 is related to 24.5 m/s which is equal to the lower limit of "10 Beaufort".
-
-### Scale description
 
 #### Beaufort scale 0-12
 

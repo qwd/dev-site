@@ -1,0 +1,18 @@
+{{- $rows := partial "csv.html" "weather-conditions" -}}
+{{- $textIndex := cond (eq .Page.Language.Lang "zh") 1 2 -}}
+<table>
+  <thead>
+    <tr>
+      <th><code>condition.code</code></th>
+      <th><code>condition.text</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{- range after 1 $rows }}
+    <tr>
+      <td>{{ index . 0 }}</td>
+      <td>{{ index . $textIndex }}</td>
+    </tr>
+    {{- end }}
+  </tbody>
+</table>

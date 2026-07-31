@@ -1,6 +1,18 @@
 {{- $description := .Description | default (index .Site.Params.description .Language.Lang) -}}
 {{- $seoTitle := cond .IsHome .Site.Title .Title -}}
-{{- $pageTitle := cond .IsHome (printf "%s ~ %s" .Site.Title $description) (printf "%s | %s" .Title .Site.Title) -}}
+{{- $sectionTitle := "" -}}
+{{- with .Parent -}}
+  {{- if and (eq $.Section "docs") (not .IsHome) -}}
+    {{- $sectionTitle = .Title -}}
+  {{- end -}}
+{{- end -}}
+{{- $pageTitle := cond .IsHome
+  (printf "%s ~ %s" .Site.Title $description)
+  (cond $sectionTitle
+    (printf "%s | %s | %s" .Title $sectionTitle .Site.Title)
+    (printf "%s | %s" .Title .Site.Title)
+  )
+-}}
 {{- $type := .Params.seoType | default (cond .IsPage "Article" "WebPage") -}}
 <title>{{ $pageTitle }}</title>
 {{- if or (eq .Params.seo false) .Params.noindex }}

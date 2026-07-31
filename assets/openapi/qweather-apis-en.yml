@@ -1680,7 +1680,7 @@ components:
           description: Daytime [wind scale](https://dev.qweather.com/en/docs/resource/wind-info/#wind-scale)
         windSpeedDay:
           type: string
-          description: Daytime [wind speed](https://dev.qweather.com/en/docs/resource/wind-info/#wind-speed), KM/H
+          description: Daytime wind speed, KM/H
         wind360Night:
           type: string
           description: Nightly [wind direction](https://dev.qweather.com/en/docs/resource/wind-info/#wind-direction) in azimuth degree
@@ -1692,7 +1692,7 @@ components:
           description: Nightly [wind scale](https://dev.qweather.com/en/docs/resource/wind-info/#wind-scale)
         windSpeedNight:
           type: string
-          description: Nightly [wind speed](https://dev.qweather.com/en/docs/resource/wind-info/#wind-speed), KM/H
+          description: Nightly wind speed, KM/H
         humidity:
           type: string
           description: Relative humidity in percent
@@ -1726,7 +1726,7 @@ components:
           description: "[Wind scale](https://dev.qweather.com/en/docs/resource/wind-info/#wind-scale)"
         windSpeed:
           type: string
-          description: "[Wind speed](https://dev.qweather.com/en/docs/resource/wind-info/#wind-speed), km/h"
+          description: "Wind speed, km/h"
         humidity:
           type: string
           description: Relative humidity in percent
@@ -2955,7 +2955,7 @@ components:
                 description: "[Wind scale](https://dev.qweather.com/en/docs/resource/wind-info/#wind-scale)"
               windSpeed:
                 type: string
-                description: "[Wind speed](https://dev.qweather.com/en/docs/resource/wind-info/#wind-speed), km/h"
+                description: "Wind speed, km/h"
               humidity:
                 type: string
                 description: Relative humidity in percent

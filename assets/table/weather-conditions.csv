@@ -1,0 +1,57 @@
+#version:202210191
+code,text_zh,text_en
+100,晴,Sunny
+101,多云,Cloudy
+102,少云,Few Clouds
+103,晴间多云,Partly Cloudy
+104,阴,Overcast
+300,阵雨,Shower Rain
+301,强阵雨,Heavy Shower Rain
+302,雷阵雨,Thundershower
+303,强雷阵雨,Heavy Thunderstorm
+304,雷阵雨伴有冰雹,Thundershower with Hail
+305,小雨,Light Rain
+306,中雨,Moderate Rain
+307,大雨,Heavy Rain
+308,极端降雨,Extreme Rain
+309,毛毛雨/细雨,Drizzle Rain
+310,暴雨,Rainstorm
+311,大暴雨,Heavy Rainstorm
+312,特大暴雨,Severe Rainstorm
+313,冻雨,Freezing Rain
+314,小到中雨,Light to Moderate Rain
+315,中到大雨,Moderate to Heavy Rain
+316,大到暴雨,Heavy Rain to Rainstorm
+317,暴雨到大暴雨,Rainstorm to Heavy Rainstorm
+318,大暴雨到特大暴雨,Heavy to Severe Rainstorm
+350,阵雨,Shower Rain
+399,雨,Rain
+400,小雪,Light Snow
+401,中雪,Moderate Snow
+402,大雪,Heavy Snow
+403,暴雪,Snowstorm
+404,雨夹雪,Sleet
+405,雨雪天气,Rain and Snow
+406,阵雨夹雪,Shower Rain and Snow
+407,阵雪,Snow Flurry
+408,小到中雪,Light to Moderate Snow
+409,中到大雪,Moderate to Heavy Snow
+410,大到暴雪,Heavy Snow to Snowstorm
+499,雪,Snow
+500,薄雾,Mist
+501,雾,Fog
+502,霾,Haze
+503,扬沙,Sand
+504,浮尘,Dust
+507,沙尘暴,Duststorm
+508,强沙尘暴,Sandstorm
+509,浓雾,Dense Fog
+510,强浓雾,Strong Fog
+511,中度霾,Moderate Haze
+512,重度霾,Heavy Haze
+513,严重霾,Severe Haze
+514,大雾,Heavy Fog
+515,特强浓雾,Extra Heavy Fog
+900,热,Hot
+901,冷,Cold
+999,未知,Unknown
