@@ -1,0 +1,242 @@
+{
+  "metadata": {
+    "tag": "dabb37d79f0ba4498d5b92c873d33c862921eb1cb688181b84b3948306ea66bc",
+    "attributions": [
+      "https://developer.qweather.com/attribution.html"
+    ]
+  },
+  "days": [
+    {
+      "forecastStartTime": "2024-08-10T22:00Z",
+      "forecastEndTime": "2024-08-11T22:00Z",
+      "astro": {
+        "sunrise": "2024-08-11T04:22Z",
+        "sunset": "2024-08-11T19:34Z",
+        "astronomicalDawn": "2024-08-11T01:52Z",
+        "nauticalDawn": "2024-08-11T02:54Z",
+        "civilDawn": "2024-08-11T03:44Z",
+        "astronomicalDusk": "2024-08-11T22:04Z",
+        "nauticalDusk": "2024-08-11T21:01Z",
+        "civilDusk": "2024-08-11T20:12Z",
+        "solarNoon": "2024-08-11T11:58Z",
+        "solarMidnight": "2024-08-10T23:58Z",
+        "moonrise": "2024-08-11T20:00Z",
+        "moonset": "2024-08-11T04:57Z",
+        "moonTransit": "2024-08-11T00:19Z",
+        "moonUnderfoot": "2024-08-11T12:19Z",
+        "moonPhase": "waning-gibbous"
+      },
+      "temperatureMax": {
+        "value": 29.94,
+        "unit": "°C"
+      },
+      "temperatureMin": {
+        "value": 20.93,
+        "unit": "°C"
+      },
+      "temperatureAvg": {
+        "value": 25.57,
+        "unit": "°C"
+      },
+      "uvIndexMax": 6,
+      "daytime": {
+        "forecastStartTime": "2024-08-11T05:00Z",
+        "forecastEndTime": "2024-08-11T17:00Z",
+        "condition": {
+          "text": "Light Rain",
+          "code": "305"
+        },
+        "temperatureMax": {
+          "value": 29.94,
+          "unit": "°C"
+        },
+        "temperatureMin": {
+          "value": 20.93,
+          "unit": "°C"
+        },
+        "wind": {
+          "direction": {
+            "degree": 270,
+            "compass": "w"
+          },
+          "speed": {
+            "value": 1.87,
+            "unit": "m/s"
+          },
+          "scale": 2
+        },
+        "windGustMax": {
+          "value": 6.64,
+          "unit": "m/s"
+        },
+        "precipitation": {
+          "amount": {
+            "value": 0.75,
+            "unit": "mm"
+          },
+          "probability": 0.64,
+          "type": "rain"
+        },
+        "cloudCover": 0.32,
+        "humidity": 0.52
+      },
+      "nighttime": {
+        "forecastStartTime": "2024-08-11T17:00Z",
+        "forecastEndTime": "2024-08-12T05:00Z",
+        "condition": {
+          "text": "Partly Cloudy",
+          "code": "103"
+        },
+        "temperatureMax": {
+          "value": 29.8,
+          "unit": "°C"
+        },
+        "temperatureMin": {
+          "value": 19.95,
+          "unit": "°C"
+        },
+        "wind": {
+          "direction": {
+            "degree": 343,
+            "compass": "nnw"
+          },
+          "speed": {
+            "value": 2.33,
+            "unit": "m/s"
+          },
+          "scale": 2
+        },
+        "windGustMax": {
+          "value": 7.16,
+          "unit": "m/s"
+        },
+        "precipitation": {
+          "amount": {
+            "value": 0,
+            "unit": "mm"
+          },
+          "probability": 0,
+          "type": "none"
+        },
+        "cloudCover": 0.34,
+        "humidity": 0.56
+      }
+    },
+    {
+      "forecastStartTime": "2024-08-11T22:00Z",
+      "forecastEndTime": "2024-08-12T22:00Z",
+      "astro": {
+        "sunrise": "2024-08-12T04:23Z",
+        "sunset": "2024-08-12T19:32Z",
+        "astronomicalDawn": "2024-08-12T01:54Z",
+        "nauticalDawn": "2024-08-12T02:56Z",
+        "civilDawn": "2024-08-12T03:45Z",
+        "astronomicalDusk": "2024-08-12T22:01Z",
+        "nauticalDusk": "2024-08-12T20:59Z",
+        "civilDusk": "2024-08-12T20:10Z",
+        "solarNoon": "2024-08-12T11:58Z",
+        "solarMidnight": "2024-08-11T23:58Z",
+        "moonrise": "2024-08-12T20:17Z",
+        "moonset": "2024-08-12T06:10Z",
+        "moonTransit": "2024-08-12T01:05Z",
+        "moonUnderfoot": "2024-08-12T13:05Z",
+        "moonPhase": "waning-gibbous"
+      },
+      "temperatureMax": {
+        "value": 29.24,
+        "unit": "°C"
+      },
+      "temperatureMin": {
+        "value": 19.72,
+        "unit": "°C"
+      },
+      "temperatureAvg": {
+        "value": 23.99,
+        "unit": "°C"
+      },
+      "uvIndexMax": 6,
+      "daytime": {
+        "forecastStartTime": "2024-08-12T05:00Z",
+        "forecastEndTime": "2024-08-12T17:00Z",
+        "condition": {
+          "text": "Cloudy",
+          "code": "101"
+        },
+        "temperatureMax": {
+          "value": 29.24,
+          "unit": "°C"
+        },
+        "temperatureMin": {
+          "value": 19.72,
+          "unit": "°C"
+        },
+        "wind": {
+          "direction": {
+            "degree": 338,
+            "compass": "nnw"
+          },
+          "speed": {
+            "value": 1.6,
+            "unit": "m/s"
+          },
+          "scale": 2
+        },
+        "windGustMax": {
+          "value": 7.03,
+          "unit": "m/s"
+        },
+        "precipitation": {
+          "amount": {
+            "value": 0,
+            "unit": "mm"
+          },
+          "probability": 0,
+          "type": "none"
+        },
+        "cloudCover": 0.51,
+        "humidity": 0.55
+      },
+      "nighttime": {
+        "forecastStartTime": "2024-08-12T17:00Z",
+        "forecastEndTime": "2024-08-13T05:00Z",
+        "condition": {
+          "text": "Partly Cloudy",
+          "code": "103"
+        },
+        "temperatureMax": {
+          "value": 28.68,
+          "unit": "°C"
+        },
+        "temperatureMin": {
+          "value": 18.5,
+          "unit": "°C"
+        },
+        "wind": {
+          "direction": {
+            "degree": 336,
+            "compass": "nnw"
+          },
+          "speed": {
+            "value": 2.97,
+            "unit": "m/s"
+          },
+          "scale": 2
+        },
+        "windGustMax": {
+          "value": 10.21,
+          "unit": "m/s"
+        },
+        "precipitation": {
+          "amount": {
+            "value": 0,
+            "unit": "mm"
+          },
+          "probability": 0,
+          "type": "none"
+        },
+        "cloudCover": 0.41,
+        "humidity": 0.57
+      }
+    }
+  ]
+}

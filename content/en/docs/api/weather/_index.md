@@ -1,8 +1,6 @@
 ---
 title: Weather
-description: The Weather API offers real-time and forecast data for over 200,000 cities
-  worldwide. It also provides model-based numerical weather predictions with a spatial
-  resolution of 3–5 kilometers, covering global coordinates.
+description: QWeather Weather API combines multi-model weather forecasting, station data assimilation, and AI-powered algorithms to deliver global weather forecasts up to 30 days in advance, along with minute-level real-time observations. It provides 1 km resolution weather data for any location worldwide.
 url: "/en/docs/api/weather/"
 translationKey: 0-api-weather
 type: docs-overview

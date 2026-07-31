@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "tag": "dabb37d79f0ba4498d5b92c873d33c862921eb1cb688181b84b3948306ea66bc",
+    "attributions": [
+      "https://developer.qweather.com/attribution.html"
+    ]
+  },
+  "hours": [
+    {
+      "forecastTime": "2024-05-31T03:00Z",
+      "condition": {
+        "text": "Overcast",
+        "code": "104"
+      },
+      "temperature": {
+        "value": 31.12,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 34.31,
+        "unit": "°C"
+      },
+      "humidity": 0.76,
+      "wind": {
+        "direction": {
+          "degree": 215,
+          "compass": "sw"
+        },
+        "speed": {
+          "value": 3.42,
+          "unit": "m/s"
+        },
+        "scale": 3
+      },
+      "windGust": {
+        "value": 8.16,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0.09,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0.09,
+          "unit": "mm/h"
+        },
+        "probability": 0.31,
+        "type": "rain"
+      },
+      "pressure": {
+        "value": 1001.5,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 14780,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 26.44,
+        "unit": "°C"
+      },
+      "cloudCover": 0.92,
+      "uvIndex": 6
+    },
+    {
+      "forecastTime": "2024-05-31T04:00Z",
+      "condition": {
+        "text": "Cloudy",
+        "code": "101"
+      },
+      "temperature": {
+        "value": 31.01,
+        "unit": "°C"
+      },
+      "feelsLike": {
+        "value": 34.34,
+        "unit": "°C"
+      },
+      "humidity": 0.77,
+      "wind": {
+        "direction": {
+          "degree": 217,
+          "compass": "sw"
+        },
+        "speed": {
+          "value": 3.28,
+          "unit": "m/s"
+        },
+        "scale": 2
+      },
+      "windGust": {
+        "value": 8.04,
+        "unit": "m/s"
+      },
+      "precipitation": {
+        "amount": {
+          "value": 0.21,
+          "unit": "mm"
+        },
+        "intensity": {
+          "value": 0.21,
+          "unit": "mm/h"
+        },
+        "probability": 0.3,
+        "type": "rain"
+      },
+      "pressure": {
+        "value": 1000.8,
+        "unit": "hPa"
+      },
+      "visibility": {
+        "value": 14630,
+        "unit": "m"
+      },
+      "dewPoint": {
+        "value": 26.58,
+        "unit": "°C"
+      },
+      "cloudCover": 0.61,
+      "uvIndex": 7
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "tag": "03ec2ded05fa80a43df2664dd9e4a8f48f7cc4f97c6a81dfd736ae17098aba14",
+    "attributions": [
+      "https://developer.qweather.com/attribution.html"
+    ]
+  },
+  "condition": {
+    "text": "少云",
+    "code": "102"
+  },
+  "temperature": {
+    "value": 31.71,
+    "unit": "°C"
+  },
+  "feelsLike": {
+    "value": 33.64,
+    "unit": "°C"
+  },
+  "humidity": 0.69,
+  "wind": {
+    "direction": {
+      "degree": 226,
+      "compass": "sw"
+    },
+    "speed": {
+      "value": 4.74,
+      "unit": "m/s"
+    },
+    "scale": 3
+  },
+  "windGust": {
+    "value": 7.07,
+    "unit": "m/s"
+  },
+  "precipitation": {
+    "amount": {
+      "value": 0,
+      "unit": "mm"
+    },
+    "intensity": {
+      "value": 0,
+      "unit": "mm/h"
+    },
+    "type": "none"
+  },
+  "pressure": {
+    "value": 1001.5,
+    "unit": "hPa"
+  },
+  "visibility": {
+    "value": 29020,
+    "unit": "m"
+  },
+  "dewPoint": {
+    "value": 25.36,
+    "unit": "°C"
+  },
+  "cloudCover": 0.05,
+  "uvIndex": 3
+}
