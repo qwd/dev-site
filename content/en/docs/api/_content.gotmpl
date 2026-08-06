@@ -14,7 +14,10 @@
     (T "request-example")
     (T "response")
   -}}
-  {{- $description := partial "openapi/description-summary.html" .description -}}
+  {{- $description := strings.TrimSpace (.excerpt | default "") -}}
+  {{- if not $description -}}
+    {{- $description = partial "openapi/excerpt-fallback.html" .description -}}
+  {{- end -}}
   {{- $.AddPage (dict
     "aliases" (.aliases | default slice)
     "content" (dict "mediaType" "text/markdown" "value" $content)

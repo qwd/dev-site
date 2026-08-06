@@ -411,11 +411,16 @@ export async function normalizeDocument(source) {
       // externalDocs is the canonical URL for the handwritten document this
       // generated page replaces; strip the site prefix to get the Hugo path.
       const pagePath = pagePathFromExternalDocs(operation.externalDocs.url, baseContext);
+      const excerpt = operation["x-excerpt"];
+      if (excerpt != null && typeof excerpt !== "string") {
+        throw new OpenAPIDiagnostic(baseContext, "x-excerpt", "x-excerpt must be a string");
+      }
 
       operations.push({
         lang: source.lang,
         operationId: operation.operationId,
         summary: operation.summary || operation.operationId,
+        excerpt: excerpt || "",
         description: operation.description || "",
         tags: operation.tags || [],
         aliases: operation["x-aliases"] || [],

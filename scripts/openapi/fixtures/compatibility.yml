@@ -6,6 +6,8 @@ paths:
   /fixture:
     get:
       operationId: getCompatibilityFixture
+      x-excerpt: Explicit fixture excerpt.
+      description: Description fallback should not override the explicit excerpt.
       externalDocs:
         url: https://dev.qweather.com/docs/api/generated/compatibility-fixture/
       responses:
