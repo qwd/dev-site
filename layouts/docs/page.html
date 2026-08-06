@@ -13,7 +13,7 @@
             </section>
             <section class="doc-content">{{ .Content }}</section>
           </div>
-          {{ if and (ne .Params.toc false) (ne .Type "docs-overview") }}
+          {{ if ne .Params.toc false }}
           <aside class="docs-toc sticky top-[61px] z-10 self-start text-sm lg:w-2/12 px-[15px] hidden lg:block [&_ul]:list-none [&_ul]:p-0 [&_ul]:mt-0 [&_ul]:mb-0 [&_li]:mb-[5px] [&_li>ul]:pl-2.5 [&_li>ul]:mt-[5px] [&_ul:last-child]:mb-0 [&_li:last-child]:mb-0">
             <h4 class="mb-2.5">{{ T "tocnav" }}</h4>
             {{ .TableOfContents }}

@@ -1,4 +1,4 @@
-{{- $description := .Description | default (index .Site.Params.description .Language.Lang) -}}
+{{- $description := (.Description | default (index .Site.Params.description .Language.Lang)) | markdownify | plainify -}}
 {{- $seoTitle := cond .IsHome .Site.Title .Title -}}
 {{- $sectionTitle := "" -}}
 {{- with .Parent -}}

@@ -4,7 +4,6 @@ description: Account owners can enable console API permissions for specified cre
   to easily access console data locally for current financial and API traffic metrics.
 url: "/en/docs/api/console/"
 translationKey: 0-api-console
-type: docs-overview
 ---
 
 ## Enable Console API

@@ -5,7 +5,7 @@
 {{- range $model.operations -}}
   {{- /*
     The generated page content only provides headings for Hugo's TableOfContents.
-    The visible API body is rendered by layouts/partials/openapi/operation.html
+    The visible API body is rendered by layouts/_partials/openapi/operation.html
     from the parsed OpenAPI model.
   */ -}}
   {{- $content := printf "## %s {#endpoint}\n## %s {#parameters}\n## %s {#request-example}\n## %s {#response}"
@@ -14,9 +14,11 @@
     (T "request-example")
     (T "response")
   -}}
+  {{- $description := partial "openapi/description-summary.html" .description -}}
   {{- $.AddPage (dict
     "aliases" (.aliases | default slice)
     "content" (dict "mediaType" "text/markdown" "value" $content)
+    "description" $description
     "kind" "page"
     "params" (dict
       "openapiModelSource" $source

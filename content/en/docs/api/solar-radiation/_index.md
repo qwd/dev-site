@@ -5,5 +5,4 @@ description: The Solar Radiation API supports global radiation data, including D
   of 1x1 km.
 url: "/en/docs/api/solar-radiation/"
 translationKey: 0-api-solar-radiation
-type: docs-overview
 ---

@@ -4,5 +4,4 @@ description: Weather Indices includes car wash, clothing, cold, allergy, ultravi
   fishing, etc.
 url: "/en/docs/api/indices/"
 translationKey: 0-api-indices
-type: docs-overview
 ---

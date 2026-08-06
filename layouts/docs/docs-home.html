@@ -1,6 +1,5 @@
 {{ define "main" }}
   {{- $docsNav := index hugo.Data "docs-nav" -}}
-  {{ if eq .TranslationKey "docs-home" }}
   <section class="mb-[30px] pt-[30px] pb-5 text-center bg-[#0B2F94] bg-[linear-gradient(60deg,#0D7FEF,#0456A6,#550DEF)]"><div class="qw-container"><h1 class="text-white mb-[30px] tracking-[1px]">{{ .Title }}</h1><p class="text-center text-qw-cool-white">{{ .Description }}</p></div></section>
   <div class="qw-container pb-[30px]">
     <section class="flex flex-wrap -mx-[15px] mb-5 refer-content">
@@ -57,5 +56,4 @@
       {{- end }}
     </section>
   </div>
-  {{ end }}
 {{ end }}

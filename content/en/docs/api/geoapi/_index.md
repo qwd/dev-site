@@ -4,7 +4,6 @@ description: QWeather GeoAPI provides global geographic location and global city
   services, supports reverse geocoding, multi-language, fuzzy search and other functions.
 url: "/en/docs/api/geoapi/"
 translationKey: 0-api-geo
-type: docs-overview
 ---
 
 Weather data is based on geographic location, so you need to know specific location information before getting the weather. 

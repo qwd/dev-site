@@ -102,3 +102,4 @@ unit-new: Unit (new)
 unit-legacy: Unit (legacy)
 countries-regions: Countries or Regions
 supported-aqis: Supported AQIs
+api-title-get: 'Get {{ .Title }}'

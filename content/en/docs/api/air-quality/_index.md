@@ -5,5 +5,4 @@ description: Global Air Quality API, compatible with local air quality standards
   access to air quality, pollutants, and health advice for a specified location.
 url: "/en/docs/api/air-quality/"
 translationKey: 0-api-aq
-type: docs-overview
 ---
