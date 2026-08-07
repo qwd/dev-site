@@ -98,8 +98,8 @@ code: Code
 event: Event
 name: Name
 full-name: Full name
-unit-new: Unit (new)
-unit-legacy: Unit (legacy)
+unit: Unit
 countries-regions: Countries or Regions
 supported-aqis: Supported AQIs
 api-title-get: 'Get {{ .Title }}'
+reference-doc: Reference

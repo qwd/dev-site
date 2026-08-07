@@ -14,22 +14,57 @@
               {{- else }}
                 {{ with .Description }}<p>{{ . }}</p>{{ end }}
               {{- end }}
-              <div class="subpage-list grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
-                {{- $node := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" .TranslationKey) -}}
-                {{- with $node }}
-                  {{- range .subitems }}
-                    {{- with partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) }}
-                  {{- $subpageTitle := .Title -}}
-                  {{- if eq .Type "openapi-docs" -}}
-                    {{- $subpageTitle = T "api-title-get" (dict "Title" .Title) -}}
+              {{/* Resolve the configured child pages once and preserve their docs-nav order. */}}
+              {{- $subpages := slice -}}
+              {{- $node := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" .TranslationKey) -}}
+              {{- with $node -}}
+                {{- range .subitems -}}
+                  {{- with partial "docs/page-by-key.html" (dict "site" $.Site "key" .key) -}}
+                    {{- $subpages = $subpages | append . -}}
                   {{- end -}}
-                  <div class="subpage-item flex flex-col p-4 rounded-lg border border-qw-neutral-200">
-                    <a class="w-full text-lg mb-2.5" href="{{ .RelPermalink }}">{{ $subpageTitle }}</a>
-                    {{- with .Description }}<p class="text-qw-slate text-sm">{{ . | markdownify | plainify }}</p>{{ end }}
-                  </div>
+                {{- end -}}
+              {{- end -}}
+              {{/* Add labeled groups only when generated OpenAPI pages are present. */}}
+              {{- $groups := slice (dict "pages" $subpages) -}}
+              {{- $openapiSubpages := where $subpages "Type" "openapi-docs" -}}
+              {{- if $openapiSubpages -}}
+                {{- $groups = slice
+                  (dict "pages" $openapiSubpages "title" "API" "icon" "api")
+                  (dict "pages" (where $subpages "Type" "ne" "openapi-docs") "title" (T "reference-doc") "icon" "reference")
+                -}}
+              {{- end -}}
+              <div class="subpage-lists mt-10 space-y-5">
+                {{- range $group := $groups -}}
+                  {{/* Empty groups are omitted, including sections without reference pages. */}}
+                  {{- with $group.pages -}}
+                    {{- with $group.title }}
+                      <div class="flex items-center gap-2 mb-3 text-xl">
+                        {{- if eq $group.icon "api" }}
+                          <svg class="block shrink-0" width="26" height="26" viewBox="0 0 16 16" fill="none" stroke="var(--color-qw-signal-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                            <path d="M6 3.5 2 8l4 4.5m4-9L14 8l-4 4.5"/>
+                          </svg>
+                        {{- else }}
+                          <svg class="block shrink-0" width="26" height="26" viewBox="0 0 16 16" fill="none" stroke="var(--color-qw-signal-purple)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                            <path d="M8 4.5C6.6 2.7 4.1 2.6 2 3.3v8.8c2.1-.7 4.6-.6 6 1.2m0-8.8c1.4-1.8 3.9-1.9 6-1.2v8.8c-2.1-.7-4.6-.6-6 1.2V4.5Z"/>
+                          </svg>
+                        {{- end }}
+                        <span>{{ . }}</span>
+                      </div>
                     {{- end }}
-                  {{- end }}
-                {{- end }}
+                    <div class="subpage-list grid grid-cols-1 md:grid-cols-2 gap-5">
+                      {{- range . -}}
+                        {{- $subpageTitle := .Title -}}
+                        {{- if eq .Type "openapi-docs" -}}
+                          {{- $subpageTitle = T "api-title-get" (dict "Title" .Title) -}}
+                        {{- end -}}
+                        <div class="subpage-item flex flex-col p-4 rounded-lg border border-qw-neutral-200">
+                          <a class="w-full text-lg mb-2.5" href="{{ .RelPermalink }}">{{ $subpageTitle }}</a>
+                          {{- with .Description }}<p class="text-qw-slate text-sm">{{ . | markdownify | plainify }}</p>{{ end }}
+                        </div>
+                      {{- end -}}
+                    </div>
+                  {{- end -}}
+                {{- end -}}
               </div>
             </section>
           </div>

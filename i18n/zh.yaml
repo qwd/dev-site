@@ -103,8 +103,8 @@ code: 代码
 event: 事件
 name: 名称
 full-name: 全称
-unit-new: 单位（新版）
-unit-legacy: 单位（旧版）
+unit: 单位
 countries-regions: 国家或地区
 supported-aqis: 支持的 AQIs
 api-title-get: '获取{{ .Title }}'
+reference-doc: 参考资料
