@@ -6,7 +6,11 @@
 */}}
 {{- $resource := resources.Get .Params.openapiModelSource -}}
 {{- if not $resource }}{{ errorf "OpenAPI intermediate model not found: %s" .Params.openapiModelSource }}{{ end -}}
-{{- $model := transform.Unmarshal $resource -}}
+{{/* Keep the standalone OpenAPI URLs absolute, but render internal documentation
+  links as root-relative URLs so they work in both local and production builds. */}}
+{{- $content := replace $resource.Content "https://dev.qweather.com/" "/" -}}
+{{- $content = replace $content "https://dev.qweather.com" "/" -}}
+{{- $model := transform.Unmarshal $content -}}
 {{- $matches := where $model.operations "operationId" .Params.operationId -}}
 {{- if ne (len $matches) 1 }}{{ errorf "Expected one intermediate operation %s, found %d" .Params.operationId (len $matches) }}{{ end -}}
 {{- $operation := index $matches 0 -}}
