@@ -1,5 +1,6 @@
 ---
 title: 节省计划
+description: 节省计划可以大幅降低长期使用成本，了解节省计划的折扣方式和购买方法。
 aliases:
 - "/docs/finance/saving-plans/"
 translationKey: finance-splans

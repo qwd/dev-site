@@ -1,5 +1,6 @@
 ---
 title: 安全指南
+description: 和风天气提供了多种安全方式保护你的 API 请求和敏感信息。
 aliases:
 - "/docs/best-practices/protect-data-key/"
 translationKey: bp-protact

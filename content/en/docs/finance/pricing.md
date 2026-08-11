@@ -1,5 +1,6 @@
 ---
 title: Pricing
+description: Learn about pay-as-you-go billing standards, tiered pricing rules, and request prices for different data services.
 translationKey: finance-pricing
 ---
 

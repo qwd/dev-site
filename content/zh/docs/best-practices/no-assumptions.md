@@ -1,5 +1,6 @@
 ---
 title: 不要假设
+description: 不能假设天气数据始终完整或固定，应该让程序正确适配字段、枚举值和空值的变化。
 toc: false
 translationKey: bp-na
 ---

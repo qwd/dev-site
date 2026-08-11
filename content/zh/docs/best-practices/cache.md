@@ -1,5 +1,6 @@
 ---
 title: 缓存你的数据
+description: 了解如何为不同天气数据设置合理且弹性的缓存策略，以及推荐的缓存时间和使用限制。
 translationKey: bp-cache
 ---
 

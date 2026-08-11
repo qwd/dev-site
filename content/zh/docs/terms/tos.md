@@ -1,5 +1,6 @@
 ---
 title: 服务条款
+description: 查看使用和风天气开发平台需要同意和遵守的开发者许可协议、隐私政策和免责声明。
 toc: false
 translationKey: terms-tos
 ---

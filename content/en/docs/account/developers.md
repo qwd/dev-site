@@ -1,5 +1,6 @@
 ---
 title: Developer Type
+description: Learn about the differences and requirements for individual and organization developers, and how to update organization information.
 translationKey: account-developers
 ---
 

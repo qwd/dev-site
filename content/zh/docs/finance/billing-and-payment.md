@@ -1,6 +1,6 @@
 ---
 title: 计费方式和支付
-description: 了解和风天气开发服务的账单和支付系统是如何工作的。
+description: 和风天气开发服务采用按量计费，了解相关计费规则和支付方式。
 translationKey: finance-billing
 ---
 

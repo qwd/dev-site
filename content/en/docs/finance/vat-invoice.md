@@ -1,5 +1,6 @@
 ---
 title: VAT Invioce
+description: Learn about the application process and restrictions for VAT invoices available to customers in China.
 translationKey: finance-vat-invoice
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Android SDK配置
+description: 了解如何安装和配置和风天气 Android SDK，以及设置 API Host 和身份认证。
 translationKey: config-android
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Terms of Service
+description: Review the Developer License Agreement, Privacy Policy, and Disclaimer required to use the QWeather developer platform.
 translationKey: terms-tos
 ---
 

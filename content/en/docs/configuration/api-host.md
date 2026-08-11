@@ -1,5 +1,6 @@
 ---
 title: API Host
+description: Learn how to find and use your unique API Host to securely access QWeather APIs.
 translationKey: config-apihost
 ---
 

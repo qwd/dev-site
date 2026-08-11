@@ -1,5 +1,6 @@
 ---
 title: 用户管理
+description: 了解如何注册帐号、管理用户信息、关闭开发服务以及永久删除帐号。
 translationKey: account-manage
 ---
 

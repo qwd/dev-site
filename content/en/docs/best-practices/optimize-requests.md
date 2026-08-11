@@ -1,5 +1,6 @@
 ---
 title: Optimize Requests
+description: Learn how to build valid and secure API requests, handle errors correctly, and reduce unnecessary data requests.
 translationKey: bp-opz
 ---
 

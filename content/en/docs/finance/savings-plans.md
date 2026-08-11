@@ -1,5 +1,6 @@
 ---
 title: Savings plans
+description: Savings Plans can significantly reduce long-term costs. Learn about discounts and how to purchase a plan.
 aliases:
 - "/docs/finance/saving-plans/"
 translationKey: finance-splans

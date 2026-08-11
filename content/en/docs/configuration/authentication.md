@@ -1,5 +1,6 @@
 ---
 title: Authentication
+description: Learn how to authenticate requests to QWeather developer services using JWT or API KEY.
 translationKey: config-auth
 ---
 

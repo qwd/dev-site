@@ -1,5 +1,6 @@
 ---
 title: Inactive Account
+description: Learn when an account is considered inactive and what happens to an inactive account.
 translationKey: account-inactive
 ---
 

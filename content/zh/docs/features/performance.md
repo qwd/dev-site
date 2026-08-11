@@ -1,5 +1,6 @@
 ---
 title: 性能
+description: 了解和风天气开发服务的服务器性能、请求和连接能力，以及服务可用性保障。
 translationKey: feat-performance
 ---
 

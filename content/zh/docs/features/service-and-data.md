@@ -1,5 +1,6 @@
 ---
 title: 服务和数据
+description: 了解和风天气提供的天气、空气质量、天文和海洋等数据服务。
 translationKey: feat-service
 ---
 

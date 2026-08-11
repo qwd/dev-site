@@ -1,5 +1,6 @@
 ---
 title: 通知接收人
+description: 了解如何为帐号添加和删除通知接收人，以便其他联系人接收账单或服务通知。
 translationKey: account-contact
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Recipients
+description: Learn how to add and remove recipients so other contacts can receive billing or service notifications for your account.
 translationKey: account-contact
 ---
 

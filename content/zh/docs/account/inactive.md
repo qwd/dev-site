@@ -1,5 +1,6 @@
 ---
 title: 闲置帐号
+description: 了解帐号被视为闲置的条件和后续处理方式。
 translationKey: account-inactive
 ---
 

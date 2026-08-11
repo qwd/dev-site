@@ -1,5 +1,6 @@
 ---
 title: 使用限制
+description: 了解使用和风天气开发服务时常见的合规要求、请求限制、欠款处理和帐号冻结规则。
 toc: false
 translationKey: terms-restriction
 ---

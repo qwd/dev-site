@@ -1,6 +1,6 @@
 ---
 title: Billing and Payment
-description: Learn how the billing and payment system works for QWeather Develop Services.
+description: QWeather developer services use pay-as-you-go billing. Learn about billing rules and payment methods.
 translationKey: finance-billing
 ---
 

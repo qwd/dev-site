@@ -1,5 +1,6 @@
 ---
 title: Cache
+description: Learn how to set reasonable and flexible caching strategies for different weather data, including recommended cache durations and restrictions.
 translationKey: bp-cache
 ---
 

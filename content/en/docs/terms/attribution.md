@@ -1,5 +1,6 @@
 ---
 title: Attribution
+description: Learn the attribution requirements, display styles, and exceptions when using QWeather and related data in your products.
 translationKey: terms-attribution
 ---
 

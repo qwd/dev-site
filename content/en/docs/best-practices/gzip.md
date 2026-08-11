@@ -1,5 +1,6 @@
 ---
 title: Gzip
+description: QWeather APIs require Gzip compression to reduce network traffic and speed up requests.
 translationKey: bp-gzip
 ---
 

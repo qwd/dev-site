@@ -1,5 +1,6 @@
 ---
 title: Management
+description: Learn how to register an account, manage user information, close developer services, and permanently delete an account.
 translationKey: account-manage
 ---
 

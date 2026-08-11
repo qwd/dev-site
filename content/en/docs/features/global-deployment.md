@@ -1,5 +1,6 @@
 ---
 title: Global Deployment
+description: Learn about multilingual support, global city coverage, and network acceleration in QWeather developer services.
 translationKey: feat-global
 ---
 
@@ -12,12 +13,6 @@ Using the global deployment capability does not require additional configuration
 QWeather Developer Services supports 30+ languages and native languages, you just need to simply add multilingual parameters to your request.
 
 See [Supported languages](/en/docs/resource/language/).
-
-## Unit Conversion
-
-QWeather Developer Services provides options for metric and imperial units, for users in different countries and regions, you can set the appropriate units for them.
-
-See [Unit](/en/docs/resource/unit/).
 
 ## Global City Coverage
 

@@ -1,5 +1,6 @@
 ---
 title: 注明来源
+description: 了解在产品中使用和风天气及相关数据时的来源标注要求、展示样式和适用例外。
 toc: false
 translationKey: terms-attribution
 ---
