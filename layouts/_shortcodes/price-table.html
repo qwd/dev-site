@@ -15,6 +15,7 @@
 </p>
 {{- end }}
 <table><thead><tr><th>{{ T "pi-req-mo" }}</th><th>{{ T "pi-price-req" }}</th></tr></thead><tbody>
-{{- range $group.price }}<tr><td>{{ .tier }}</td><td>{{ if ne (printf "%v" .value) "" }}CNY {{ .value }}{{ else }}{{ T "contact-us" }}{{ end }}</td></tr>{{ end }}
+{{- $lastTier := sub (len $group.price) 1 -}}
+{{- range $index, $price := $group.price }}<tr><td>{{ if eq $index 0 }}0–{{ $price.tier }}{{ else if eq $index $lastTier }}{{ T "over" }} {{ $price.tier }}{{ else }}{{ T "next" }} {{ $price.tier }}{{ end }}</td><td>{{ if ne (printf "%v" $price.value) "" }}CNY {{ $price.value }}{{ else }}{{ T "contact-us" }}{{ end }}</td></tr>{{ end }}
 </tbody></table>
 {{- end }}
