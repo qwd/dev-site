@@ -1,5 +1,6 @@
 ---
 title: 项目和凭据
+description: 了解如何创建和管理项目与凭据。
 translationKey: config-project
 ---
 

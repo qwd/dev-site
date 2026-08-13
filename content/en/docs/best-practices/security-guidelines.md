@@ -1,5 +1,6 @@
 ---
 title: Security Guidelines
+description: QWeather provides multiple security measures to protect your API requests and sensitive information.
 aliases:
 - "/docs/best-practices/protect-data-key/"
 translationKey: bp-protact

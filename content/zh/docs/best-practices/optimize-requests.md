@@ -1,5 +1,6 @@
 ---
 title: 优化请求
+description: 了解如何构建合法且安全的 API 请求、正确处理错误，并减少不必要的数据请求。
 translationKey: bp-opz
 ---
 

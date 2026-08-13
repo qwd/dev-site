@@ -1,5 +1,6 @@
 ---
 title: 身份认证
+description: 了解如何通过 JWT 或 API KEY 对和风天气开发服务的请求进行身份认证。
 aliases:
 - "/docs/authentication/"
 - "/docs/authentication/jwt/"

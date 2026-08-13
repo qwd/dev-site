@@ -1,9 +1,6 @@
 ---
 title: Language
-description: QWeather supports 30+ popular languages and the official language of
-  the country or region where it is located, ​​including Chinese, English, German,
-  French, Spanish, Italian, Japanese, Korean, Russian, Thai, etc., and can be called
-  at any time with the lang parameter.
+description: QWeather supports 30+ popular languages and local official languages. Learn how to query data in different languages.
 aliases:
 - "/docs/start/language/"
 translationKey: res-lang

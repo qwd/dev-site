@@ -1,5 +1,6 @@
 ---
 title: API Host
+description: 了解如何查看和使用开发者专属的 API Host，以安全地访问和风天气 API。
 translationKey: config-apihost
 ---
 

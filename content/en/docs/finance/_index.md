@@ -6,5 +6,4 @@ description: Weather offers a competitive, flexible, and simple pricing model wh
   contact our business sales@qweather.com
 url: "/en/docs/finance/"
 translationKey: finance-overview
-type: docs-overview
 ---

@@ -78,6 +78,8 @@ pi-more-discounts: Need More Requests
 pi-more-vat: Do the pricing include VAT?
 pi-req-mo: Requests(per month)
 pi-price-req: Price(per request)
+next: Next
+over: Over
 si-biref: Welcome to share your code for using QWeather dev service, you can edit <a href="https://github.com/qwd/dev-site/edit/master/data/showcase.yaml" target="_blank" rel="noopener noreferrer">this file</a> and submit a PR.
 si-note: We cannot guarantee the availability of these works, please contact the author.
 fi-q-general: General
@@ -98,7 +100,7 @@ code: Code
 event: Event
 name: Name
 full-name: Full name
-unit-new: Unit (new)
-unit-legacy: Unit (legacy)
+unit: Unit
 countries-regions: Countries or Regions
 supported-aqis: Supported AQIs
+reference-doc: Reference

@@ -24,7 +24,7 @@ aliases:
 
 ### 和风天气服务覆盖了哪些国家和地区？ {#what-countries-and-regions-are-covered-by-the-qweather-service}
 
-不同的数据，覆盖范围有所不同。天气预报、海洋、太阳辐照、天文数据，支持全球范围；天气预警，请参考[预警信息-支持的国家或地区](/docs/resource/warning-info/#supported-regions)；空气质量，请参考[空气质量信息-支持的国家或地区](/docs/resource/air-info/#supported-regions)；分钟降水和热带气旋，支持中国地区。
+不同的数据，覆盖范围有所不同。天气预报、海洋、太阳辐照和天文数据支持全球范围；天气预警请参考[预警的覆盖范围](/docs/api/warning/alert-coverage/)；空气质量请参考[空气质量覆盖范围](/docs/api/air-quality/aqi-coverage/)；分钟降水和热带气旋支持中国地区。
 
 ### 我可以免费试用吗？ {#can-i-try-it-for-free}
 
@@ -60,7 +60,7 @@ aliases:
 
 ### 天气状态的枚举值是什么？ {#what-is-the-enum-value-of-the-weather-condition}
 
-请参考`icon`字段以及[天气图标代码文档](/docs/resource/icons/)。
+请参考 `icon` 字段以及[天气图标代码文档](/docs/api/weather/weather-conditions/#icons)。
 
 ### 你们的TLS版本是什么？ {#what-is-your-tls-version}
 

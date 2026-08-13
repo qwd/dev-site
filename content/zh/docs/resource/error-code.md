@@ -1,6 +1,6 @@
 ---
 title: 错误码
-description: 和风天气API的错误码和错误信息说明，出现错误的时候，请先参考此文档。
+description: 和风天气 API 的错误码和错误信息说明，出现错误的时候，请先参考此文档。
 aliases:
 - "/docs/start/status-code/"
 - "/docs/resource/status-code/"

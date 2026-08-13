@@ -1,0 +1,18 @@
+{{- $summary := "" -}}
+{{- $description := replaceRE `\r\n?` "\n" (strings.TrimSpace .) -}}
+{{- $description = replaceRE `\n[ \t]*\n+` "\n\n" $description -}}
+{{- range split $description "\n\n" -}}
+  {{- if not $summary -}}
+    {{- $block := strings.TrimSpace . -}}
+    {{- $skip := or
+      (strings.HasPrefix $block ">")
+      (strings.HasPrefix $block "```")
+      (strings.HasPrefix $block "~~~")
+      (gt (len (findRE `^(?:#{1,6}[ \t]+|[-+*][ \t]+|[0-9]+[.)][ \t]+|(?:---+|\*\*\*+|___+)[ \t]*$|\|)` $block)) 0)
+    -}}
+    {{- if and $block (not $skip) -}}
+      {{- $summary = $block -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $summary -}}

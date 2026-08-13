@@ -83,6 +83,8 @@ pi-more-discounts: 是否有更多折扣?
 pi-more-vat: 价格是否含税?
 pi-req-mo: 请求量(每月)
 pi-price-req: 价格(每次请求)
+next: 之后的
+over: 超过
 si-biref: 欢迎分享你使用和风天气开发服务的代码，你可以修改<a href="https://github.com/qwd/dev-site/edit/master/data/showcase.yaml" target="_blank" rel="noopener noreferrer">这个文件</a>并提交一个PR。
 si-note: 我们无法确保这些代码的有效性，请与作者联系。如有争议或版权问题，请与我们联系。
 fi-q-general: 一般问题
@@ -103,7 +105,7 @@ code: 代码
 event: 事件
 name: 名称
 full-name: 全称
-unit-new: 单位（新版）
-unit-legacy: 单位（旧版）
+unit: 单位
 countries-regions: 国家或地区
 supported-aqis: 支持的 AQIs
+reference-doc: 参考资料

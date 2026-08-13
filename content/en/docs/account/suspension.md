@@ -1,5 +1,6 @@
 ---
 title: Suspension Account
+description: Learn why accounts are suspended, how suspension affects an account, and how to restore services or submit an appeal.
 translationKey: account-suspension
 ---
 

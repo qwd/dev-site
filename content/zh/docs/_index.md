@@ -7,4 +7,5 @@ aliases:
 - "/docs/sdk/"
 translationKey: docs-home
 type: docs
+layout: docs-home
 ---

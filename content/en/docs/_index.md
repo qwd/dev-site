@@ -5,4 +5,5 @@ image: "/assets/images/hp-feat-devtools.png"
 url: "/en/docs/"
 translationKey: docs-home
 type: docs
+layout: docs-home
 ---

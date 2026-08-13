@@ -1,5 +1,6 @@
 ---
 title: Create API Request
+description: Learn about QWeather API request URLs, authentication, and compression, and build a complete API request.
 translationKey: config-api
 ---
 

@@ -1,8 +1,6 @@
 ---
 title: Glossary
-description: QWeather data service uses many professional terms, and we have adopted
-  mostly international standard formats. Here we will explain in detail what QWeather
-  coordinates, administrative divisions, KEY, time format, data update time, and etc.
+description: Learn the terminology used by QWeather developer services, including coordinates, administrative divisions, and time formats.
 aliases:
 - "/docs/start/glossary/"
 translationKey: res-glossary
@@ -110,6 +108,6 @@ QPM is calculated as separate projects, all data KEYs under one project share QP
 
 The Wind Scale is used for direct display and is not recommended as an enumerated item; for example, if a higher level of wind appears in the future or the standard of the wind level is changed, if the enumeration item is used, it will not be matched. Please use it with caution.
 
-The Wind Scale is based on the wind speed, please refer to [Wind Speed ​​and Wind Speed ​​Comparison](/en/docs/resource/wind-info/), and QWeather uses KM/H as the unit.
+The Wind Scale is based on wind speed. See [Learn About Wind](/en/docs/api/weather/wind-guide/). QWeather uses KM/H as the unit.
 
 When the Wind Scale is 0, the wind direction angle is -1, and the wind direction is **no continuous wind direction**.

@@ -1,8 +1,6 @@
 ---
 title: Tropical Cyclone
-description: Tropical cyclone provides real-time storm data in major ocean basins
-  around the world, including storm location, level, pressure, wind, path and forecast.
+description: The Tropical Cyclone API provides tropical cyclone data for China, including current locations, tracks, and forecasts.
 url: "/en/docs/api/tropical-cyclone/"
 translationKey: 0-api-tropical
-type: docs-overview
 ---

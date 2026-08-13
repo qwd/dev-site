@@ -1,5 +1,6 @@
 ---
 title: Project and Credential
+description: Learn how to create and manage projects and credentials.
 aliases:
 - "/docs/configuration/project-and-key/"
 translationKey: config-project

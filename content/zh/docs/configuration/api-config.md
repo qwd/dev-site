@@ -1,5 +1,6 @@
 ---
 title: API 配置
+description: 了解和风天气 API 的请求地址、身份认证和压缩方式，并构建一个完整的 API 请求。
 translationKey: config-api
 ---
 

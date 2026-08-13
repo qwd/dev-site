@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6500 -5400 13000 10800" role="img" aria-labelledby="title desc">
+  <title id="title">曙暮光分类示意图</title>
+  <desc id="desc">完整的曙暮光示意图。左侧为日落后的民用、航海和天文暮光，右侧为日出前的天文、航海和民用曙光；文字标注太阳低于地平线六度、十二度和十八度的实际边界，图中角度并非按比例绘制，仅为更清晰地展示曙暮光的类型。</desc>
+
+  <metadata>
+    <rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>曙暮光示意图</dc:title>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:creator>QWeather</dc:creator>
+        <dc:source rdf:resource="https://commons.wikimedia.org/wiki/File:Twilight_description_full_day.svg"/>
+        <dc:description>
+          Adapted from works by TWCarlson. Combined, translated, redrawn, and modified for schematic presentation.
+        </dc:description>
+        <cc:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-start" refX="0" refY="5" orient="auto" markerWidth="15" markerHeight="10">
+      <path d="M0 5 15 0 10 5 15 10Z" fill="#FAFAFA"/>
+    </marker>
+    <marker id="arrow-end" refX="15" refY="5" orient="auto" markerWidth="15" markerHeight="10">
+      <path d="M15 5 0 0 5 5 0 10Z" fill="#FAFAFA"/>
+    </marker>
+    <g id="sun">
+      <circle r="160" fill="#FBCF2F" stroke="#2B2B2C" stroke-width="12"/>
+    </g>
+    <style>
+      text { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .outer-label { fill: #2B2B2C; font-size: 210px; }
+      .region-label { fill: #FAFAFA; font-size: 190px; font-weight: 600; }
+      .major-label { font-size: 300px; font-weight: 600; }
+      .degree { fill: #FAFAFA; font-size: 180px; font-weight: 600; }
+      .dimension { fill: none; stroke: #FAFAFA; stroke-width: 12; marker-start: url(#arrow-start); marker-end: url(#arrow-end); }
+    </style>
+  </defs>
+
+  <!-- 白昼、三类曙暮光和夜晚 -->
+  <path d="M0 0-4600 0A4600 4600 0 0 1 4600 0Z" fill="#F0F9FF"/>
+  <path d="M0 0 4600 0A4600 4600 0 0 1 4530.116 798.782Z" fill="#00A6F4"/>
+  <path d="M0 0 4530.116 798.782A4600 4600 0 0 1 4322.586 1573.293Z" fill="#0084D1"/>
+  <path d="M0 0 4322.586 1573.293A4600 4600 0 0 1 3983.717 2300Z" fill="#00598A"/>
+  <path d="M0 0 3983.717 2300A4600 4600 0 0 1-3983.717 2300Z" fill="#052F4A"/>
+  <path d="M0 0-3983.717 2300A4600 4600 0 0 1-4322.586 1573.293Z" fill="#00598A"/>
+  <path d="M0 0-4322.586 1573.293A4600 4600 0 0 1-4530.116 798.782Z" fill="#0084D1"/>
+  <path d="M0 0-4530.116 798.782A4600 4600 0 0 1-4600 0Z" fill="#00A6F4"/>
+  <circle r="4600" fill="none" stroke="#b9bc9a" stroke-width="16"/>
+
+  <!-- 地平线；合并两张半图时不保留中央辅助竖线 -->
+  <line x1="-5800" x2="5800" y1="0" y2="0" stroke="#2B2B2C" stroke-width="16"/>
+
+  <!-- 角度标注 -->
+  <path class="dimension" d="M3250 0A3250 3250 0 0 1 3200.625 564.357"/>
+  <path class="dimension" d="M2800 0A2800 2800 0 0 1 2631.139 957.656"/>
+  <path class="dimension" d="M2350 0A2350 2350 0 0 1 2035.160 1175"/>
+  <text class="degree" x="3250" y="0" dx=".35em" dy=".35em" transform="rotate(5)">6°</text>
+  <text class="degree" x="2800" y="0" dx=".3em" dy=".35em" transform="rotate(10)">12°</text>
+  <text class="degree" x="2350" y="0" dx=".3em" dy=".35em" transform="rotate(15)">18°</text>
+
+  <path class="dimension" d="M-3250 0A3250 3250 0 0 0-3200.625 564.357"/>
+  <path class="dimension" d="M-2800 0A2800 2800 0 0 0-2631.139 957.656"/>
+  <path class="dimension" d="M-2350 0A2350 2350 0 0 0-2035.160 1175"/>
+  <text class="degree" x="-3250" y="0" dx="-.35em" dy=".35em" text-anchor="end" transform="rotate(-5)">6°</text>
+  <text class="degree" x="-2800" y="0" dx="-.3em" dy=".35em" text-anchor="end" transform="rotate(-10)">12°</text>
+  <text class="degree" x="-2350" y="0" dx="-.3em" dy=".35em" text-anchor="end" transform="rotate(-15)">18°</text>
+
+  <!-- 太阳在日出日落和三类曙暮光边界的位置 -->
+  <use xlink:href="#sun" x="4600" transform="rotate(1.993)"/>
+  <use xlink:href="#sun" x="4600" transform="rotate(10)"/>
+  <use xlink:href="#sun" x="4600" transform="rotate(20)"/>
+  <use xlink:href="#sun" x="4600" transform="rotate(30)"/>
+  <use xlink:href="#sun" x="-4600" transform="rotate(-1.993)"/>
+  <use xlink:href="#sun" x="-4600" transform="rotate(-10)"/>
+  <use xlink:href="#sun" x="-4600" transform="rotate(-20)"/>
+  <use xlink:href="#sun" x="-4600" transform="rotate(-30)"/>
+
+  <!-- 图内区域标注 -->
+  <text class="outer-label major-label" x="0" y="-2550" text-anchor="middle">白昼</text>
+  <text class="outer-label" x="0" y="-120" text-anchor="middle" font-style="italic">地平线</text>
+  <text class="region-label" x="4350" y="0" dy=".35em" text-anchor="end" transform="rotate(5)">民用曙光</text>
+  <text class="region-label" x="4350" y="0" dy=".35em" text-anchor="end" transform="rotate(15)">航海曙光</text>
+  <text class="region-label" x="4350" y="0" dy=".35em" text-anchor="end" transform="rotate(25)">天文曙光</text>
+  <text class="region-label" x="-4350" y="0" dy=".35em" text-anchor="start" transform="rotate(-5)">民用暮光</text>
+  <text class="region-label" x="-4350" y="0" dy=".35em" text-anchor="start" transform="rotate(-15)">航海暮光</text>
+  <text class="region-label" x="-4350" y="0" dy=".35em" text-anchor="start" transform="rotate(-25)">天文暮光</text>
+  <text class="region-label major-label" x="0" y="3650" text-anchor="middle">夜晚</text>
+
+  <!-- 圆外事件标注 -->
+  <text class="outer-label" x="4950" y="0" dy=".8em" transform="rotate(.265)">日出</text>
+  <text class="outer-label" x="4950" y="0" dy=".35em" transform="rotate(10)">民用曙光开始</text>
+  <text class="outer-label" x="4950" y="0" dy=".35em" transform="rotate(20)">航海曙光开始</text>
+  <text class="outer-label" x="4950" y="0" dy=".35em" transform="rotate(30)">天文曙光开始</text>
+  <text class="outer-label" x="-4950" y="0" dy=".8em" text-anchor="end" transform="rotate(-.265)">日落</text>
+  <text class="outer-label" x="-4950" y="0" dy=".35em" text-anchor="end" transform="rotate(-10)">民用暮光结束</text>
+  <text class="outer-label" x="-4950" y="0" dy=".35em" text-anchor="end" transform="rotate(-20)">航海暮光结束</text>
+  <text class="outer-label" x="-4950" y="0" dy=".35em" text-anchor="end" transform="rotate(-30)">天文暮光结束</text>
+</svg>

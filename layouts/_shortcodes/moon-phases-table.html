@@ -1,0 +1,48 @@
+{{- $rows := partial "csv.html" "moon-phases" -}}
+{{- $isZh := eq .Page.Language.Lang "zh" -}}
+{{- $nameIndex := cond $isZh 2 1 -}}
+{{- $northIndex := cond $isZh 4 3 -}}
+{{- $southIndex := cond $isZh 6 5 -}}
+{{- partial "icons/moon-phases.html" . -}}
+<table class="text-sm">
+  <thead>
+    <tr>
+      <th>{{ cond $isZh "月相" "Moon phase" }}</th>
+      <th>{{ cond $isZh "北半球" "Northern Hemisphere" }}</th>
+      <th>{{ cond $isZh "南半球" "Southern Hemisphere" }}</th>
+      <th>{{ cond $isZh "平均月升/月落" "Average moonrise/moonset" }}</th>
+      <th>{{ cond $isZh "北半球示意" "Northern Hemisphere illustration" }}</th>
+      <th>{{ cond $isZh "南半球示意" "Southern Hemisphere illustration" }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{- range after 1 $rows }}
+    <tr>
+      <td style="white-space:nowrap">
+        <ul class="list-none p-0 m-0">
+          <li><strong>{{ index . $nameIndex }}</strong></li>
+          <li><code>{{ index . 0 }}</code></li>
+        </ul>
+      </td>
+      <td>{{ index . $northIndex }}</td>
+      <td>{{ index . $southIndex }}</td>
+      <td style="white-space:nowrap">
+        <ul class="list-none p-0 m-0">
+          <li>{{ index . 7 }}</li>
+          <li>{{ index . 8 }}</li>
+        </ul>
+      </td>
+      <td>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" role="img" aria-label="{{ printf "%s · %s" (index . $nameIndex) (cond $isZh "北半球" "Northern Hemisphere") }}">
+          <use href="#moon-phase-icon-{{ index . 9 }}"></use>
+        </svg>
+      </td>
+      <td>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" role="img" aria-label="{{ printf "%s · %s" (index . $nameIndex) (cond $isZh "南半球" "Southern Hemisphere") }}">
+          <use href="#moon-phase-icon-{{ index . 10 }}"></use>
+        </svg>
+      </td>
+    </tr>
+    {{- end }}
+  </tbody>
+</table>

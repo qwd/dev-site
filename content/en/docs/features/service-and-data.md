@@ -1,5 +1,6 @@
 ---
 title: Service and Data
+description: Learn about QWeather data services for weather, air quality, astronomy, ocean conditions, and more.
 translationKey: feat-service
 ---
 

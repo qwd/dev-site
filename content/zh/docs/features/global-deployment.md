@@ -1,5 +1,6 @@
 ---
 title: 全球部署
+description: 了解和风天气开发服务的多语言、全球城市覆盖和网络加速能力。
 translationKey: feat-global
 ---
 
@@ -13,15 +14,9 @@ translationKey: feat-global
 
 查看[我们支持的语言](/docs/resource/language/)。
 
-## 单位转换 {#unit-conversion}
-
-和风天气开发服务提供公制单位和英制单位的选项，对于不同国家和地区的用户，你可以为他们设置合适的单位。
-
-查看[单位](/docs/resource/unit/)。
-
 ## 全球城市覆盖 {#global-city-coverage}
 
-目前我们已经为全球超过20万个城市或地区提供气象服务，使用我们的地理信息服务，可以轻松的获取这些城市的信息。
+目前我们已经为全球超过50万个城市或地区提供气象服务，使用我们的地理信息服务，可以轻松的获取这些城市的信息。
 
 查看[地理信息服务](/docs/api/geoapi/)。
 

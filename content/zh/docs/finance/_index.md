@@ -4,5 +4,4 @@ description: 和风天气服务提供了有竞争力、灵活的、简单的定�
   sales@qweather.com
 url: "/docs/finance/"
 translationKey: finance-overview
-type: docs-overview
 ---

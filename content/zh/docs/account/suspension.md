@@ -1,5 +1,6 @@
 ---
 title: 帐号冻结
+description: 了解帐号被冻结的原因和影响，以及恢复服务或提交申诉的方式。
 translationKey: account-suspension
 ---
 

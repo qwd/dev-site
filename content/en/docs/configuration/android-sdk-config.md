@@ -1,5 +1,6 @@
 ---
 title: Set up Android SDK
+description: Learn how to install and configure the QWeather Android SDK, including the API Host and authentication.
 translationKey: config-android
 ---
 

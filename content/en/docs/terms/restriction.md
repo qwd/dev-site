@@ -1,5 +1,6 @@
 ---
 title: Usage Restriction
+description: Learn about common compliance requirements, request restrictions, overdue payments, and account suspension rules for QWeather developer services.
 translationKey: terms-restriction
 ---
 

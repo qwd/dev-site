@@ -1,0 +1,44 @@
+{{- $current := . -}}
+{{- $docsNav := index hugo.Data "docs-nav" -}}
+{{- range $docsNav -}}
+  {{- $section := . -}}
+  {{- $overview := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
+  {{- with $overview }}
+  <div class="nav-section start mb-2.5 pb-2.5 border-b border-qw-neutral-200 last:border-b-0">
+    <h4 class="mb-2.5"><a class="text-qw-heading hover:text-black" href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+    <ul class="list-none p-0 m-0 text-qw-slate">
+      {{- range $section.subitems }}
+        {{- $item := . -}}
+        {{- $page := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
+        {{- with $page }}
+        <li class="mb-[5px] last:mb-0">
+          <a class="group hover:no-underline block py-0.75 px-2.5 leading-5{{ if eq .RelPermalink $current.RelPermalink }} font-bold text-black hover:text-black bg-qw-info-bg rounded-md{{ else }} text-inherit hover:text-black{{ end }}" href="{{ .RelPermalink }}">
+            <span class="group-hover:underline">{{ .Title }}</span>
+          </a>
+          {{- if and $item.subitems (strings.HasPrefix $current.RelPermalink .RelPermalink) }}
+          <div class="sub-nav border-l border-qw-blue ml-2.5 mt-[5px] pl-2.5">
+            <ul class="list-none p-0 m-0">
+              {{- range $item.subitems }}
+                {{- $subpage := partial "docs/page-by-key.html" (dict "site" $current.Site "key" .key) -}}
+                {{- with $subpage }}
+                {{- $isOpenAPI := eq .Type "openapi-docs" -}}
+                <li class="mb-[5px] last:mb-0">
+                  <a class="group hover:no-underline {{ if $isOpenAPI }}flex items-start gap-1.5{{ else }}block{{ end }} py-0.75 px-2.5 leading-5{{ if eq .RelPermalink $current.RelPermalink }} font-bold text-black hover:text-black bg-qw-info-bg rounded-md{{ else }} text-inherit hover:text-black{{ end }}" href="{{ .RelPermalink }}">
+                    {{- if $isOpenAPI -}}
+                      <span class="inline-flex h-5 shrink-0 items-center font-mono text-xs font-bold leading-none tracking-wide text-qw-signal-green">GET</span>
+                    {{- end -}}
+                    <span class="group-hover:underline">{{ .Title }}</span>
+                  </a>
+                </li>
+                {{- end }}
+              {{- end }}
+            </ul>
+          </div>
+          {{- end }}
+        </li>
+        {{- end }}
+      {{- end }}
+    </ul>
+  </div>
+  {{- end }}
+{{- end }}

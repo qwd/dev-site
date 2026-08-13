@@ -1,6 +1,6 @@
 ---
 title: 元数据
-description: 本篇文档将介绍 API 返回的 metadata 对象包括哪些信息以及它们的用途。
+description: 介绍 API 返回的 metadata 对象包括哪些信息以及它们的用途。
 translationKey: res-meta
 ---
 

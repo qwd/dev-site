@@ -1,0 +1,21 @@
+{{- range hugo.Data.price }}
+{{- $group := . -}}
+{{- $title := index .data $.Page.Language.Lang -}}
+{{- $id := .data.en | urlize -}}
+<h3 id="{{ $id }}">{{ $title }}<a class="ml-[5px] text-qw-neutral-300 hover:text-qw-blue" href="#{{ $id }}" aria-label="{{ T "permalink" }}">#</a></h3>
+{{- with $group.incl }}
+<p class="mb-3">{{ T "doc-incl-data-pricing" }}:
+{{- range $index, $key := . }}
+{{- $page := partial "docs/page-by-key.html" (dict "site" $.Site "key" $key) -}}
+{{- with $page }}
+{{- if gt $index 0 }} <span aria-hidden="true">&bull;</span>{{ end }}
+ <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+{{- end }}
+{{- end }}
+</p>
+{{- end }}
+<table><thead><tr><th>{{ T "pi-req-mo" }}</th><th>{{ T "pi-price-req" }}</th></tr></thead><tbody>
+{{- $lastTier := sub (len $group.price) 1 -}}
+{{- range $index, $price := $group.price }}<tr><td>{{ if eq $index 0 }}0–{{ $price.tier }}{{ else if eq $index $lastTier }}{{ T "over" }} {{ $price.tier }}{{ else }}{{ T "next" }} {{ $price.tier }}{{ end }}</td><td>{{ if ne (printf "%v" $price.value) "" }}CNY {{ $price.value }}{{ else }}{{ T "contact-us" }}{{ end }}</td></tr>{{ end }}
+</tbody></table>
+{{- end }}

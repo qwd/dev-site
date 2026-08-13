@@ -1,5 +1,6 @@
 ---
 title: Performance
+description: Learn about server performance, request and connection capacity, and service availability for QWeather developer services.
 translationKey: feat-performance
 ---
 

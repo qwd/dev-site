@@ -1,5 +1,6 @@
 ---
 title: No Assumptions
+description: Never assume weather data is always complete or fixed; make your application handle changes to fields, enum values, and null values correctly.
 toc: false
 translationKey: bp-na
 ---

@@ -8,6 +8,7 @@ const model = await normalizeDocument({
 const fields = model.operations[0].response.fields.children;
 const byName = Object.fromEntries(fields.map((field) => [field.name, field]));
 
+assert.equal(model.operations[0].excerpt, "Explicit fixture excerpt.");
 assert.deepEqual(fields.map((field) => field.name), [
   "all",
   "one",

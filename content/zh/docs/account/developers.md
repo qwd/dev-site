@@ -1,5 +1,6 @@
 ---
 title: 开发者类型
+description: 了解个人开发者和企业开发者的区别、选择要求，以及企业信息的变更方式。
 translationKey: account-developers
 ---
 

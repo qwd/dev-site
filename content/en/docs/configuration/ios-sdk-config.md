@@ -1,5 +1,6 @@
 ---
 title: Set up iOS SDK
+description: Learn how to install and configure the QWeather iOS SDK, including the API Host and authentication.
 translationKey: config-ios
 ---
 

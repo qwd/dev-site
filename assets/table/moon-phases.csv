@@ -1,0 +1,9 @@
+code,name_en,name_zh,north_en,north_zh,south_en,south_zh,moonrise,moonset,north_icon_code,south_icon_code
+new-moon,New moon,新月（朔月）,Invisible,肉眼几乎不可见，月球近地面没有被太阳直接照亮,Invisible,肉眼几乎不可见，月球近地面没有被太阳直接照亮,06:00,18:00,800,800
+waxing-crescent,Waxing crescent,蛾眉月（娥眉月）,Right side 1–49%,右侧的1–49%可见,Left side 1–49%,左侧的1–49%可见,09:00,21:00,801,807
+first-quarter,First quarter,上弦月,Right side 50%,右侧的50%可见,Left side 50%,左侧的50%可见,12:00,00:00,802,806
+waxing-gibbous,Waxing gibbous,盈凸月,Right side 51–99%,右侧的51–99%可见,Left side 51–99%,左侧的51–99%可见,15:00,03:00,803,805
+full-moon,Full moon,满月（望月）,100%,100%,100%,100%,18:00,06:00,804,804
+waning-gibbous,Waning gibbous,亏凸月,Left side 99–51%,左侧的99–51%可见,Right side 99–51%,右侧的99–51%可见,21:00,09:00,805,803
+last-quarter,Last quarter,下弦月,Left side 50%,左侧的50%可见,Right side 50%,右侧的50%可见,00:00,12:00,806,802
+waning-crescent,Waning crescent,残月,Left side 49–1%,左侧的49–1%可见,Right side 49–1%,右侧的49–1%可见,03:00,15:00,807,801

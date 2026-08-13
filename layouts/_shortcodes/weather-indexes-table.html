@@ -1,0 +1,48 @@
+{{- $rows := partial "csv.html" "weather-indexes" -}}
+{{- $isZh := eq .Page.Language.Lang "zh" -}}
+{{- $nameIndex := cond $isZh 1 0 -}}
+{{- $supportIndex := cond $isZh 3 2 -}}
+{{- $levelNameIndex := cond $isZh 9 8 -}}
+<table class="text-sm">
+  <thead>
+    <tr>
+      <th>{{ cond $isZh "天气指数" "Weather index" }}</th>
+      <th>API type</th>
+      <th>iOS type</th>
+      <th>Android type</th>
+      <th>({{ T "level" }}) {{ T "category" }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{- range after 1 $rows }}
+      {{- $row := . -}}
+      {{- $levels := slice "" -}}
+      {{- $levelNames := slice "" -}}
+      {{- $levelValuesRaw := index $row 7 -}}
+      {{- if $levelValuesRaw -}}
+        {{- $levels = split $levelValuesRaw "|" -}}
+        {{- $levelNames = split (index $row $levelNameIndex) "|" -}}
+      {{- end -}}
+      {{- if ne (len $levels) (len $levelNames) -}}
+        {{- errorf "weather-indexes.csv: %s has %d level values but %d level names" (index $row $nameIndex) (len $levels) (len $levelNames) -}}
+      {{- end -}}
+      {{- range $i, $level := $levels }}
+      {{- $category := index $levelNames $i }}
+    <tr>
+      {{- if eq $i 0 }}
+      <td rowspan="{{ len $levels }}">
+        <ul class="list-none p-0 m-0">
+          <li><strong>{{ index $row $nameIndex }}</strong></li>
+          <li>{{ index $row $supportIndex }}</li>
+        </ul>
+      </td>
+      <td rowspan="{{ len $levels }}"><code>{{ index $row 4 }}</code></td>
+      <td rowspan="{{ len $levels }}"><code>{{ index $row 5 }}</code></td>
+      <td rowspan="{{ len $levels }}"><code>{{ index $row 6 }}</code></td>
+      {{- end }}
+      <td>{{- if and $level $category -}}({{ $level }}) {{ $category }}{{- else if $level -}}{{ $level }}{{- else if $category -}}{{ $category }}{{- end -}}</td>
+    </tr>
+      {{- end -}}
+    {{- end }}
+  </tbody>
+</table>

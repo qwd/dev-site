@@ -6,5 +6,4 @@ description: Browse full QWeather development utility resources, which are essen
   and more.
 url: "/en/docs/resource/"
 translationKey: res-overview
-type: docs-overview
 ---

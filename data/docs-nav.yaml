@@ -36,21 +36,33 @@
         - key: getWeatherNowV7
         - key: getWeatherDailyV7
         - key: getWeatherHourlyV7
+        - key: api-weather-condition
+        - key: api-weather-wind
     - key: 0-api-minutely
       subitems:
         - key: getMinutelyPrecipitation
     - key: 0-api-warning
       subitems:
         - key: getWeatherAlertCurrent
+        - key: api-warning-alert-guide
+        - key: api-warning-event
+        - key: api-warning-coverage
+        - key: api-warning-changes
     - key: 0-api-indices
       subitems:
         - key: getWeatherIndices
+        - key: api-indices-type
     - key: 0-api-aq
       subitems:
         - key: getAirqualityCurrent
         - key: getAirqualityHourlyForecast
         - key: getAirqualityDailyForecast
-        - key: getAirqualityAirStation
+        # - key: getAirqualityAirStation
+        - key: api-aqi-list
+        - key: api-aqi-pollutant
+        - key: api-aqi-coverage
+        - key: api-aqi-health
+        - key: api-aqi-china
     - key: 0-api-time-machine
       subitems:
         - key: getHistoricalWeather
@@ -70,6 +82,8 @@
         - key: getAstronomSun
         - key: getAstronomyMoon
         - key: getAstronomySolarElevationAngle
+        - key: api-astro-sun-guide
+        - key: api-astro-moon-guide
     - key: 0-api-console
       subitems:
         - key: getConsoleFinance
@@ -79,15 +93,14 @@
     - key: res-glossary
     - key: res-status-code
     - key: res-lang
-    - key: res-condition
+    # - key: res-condition
     - key: res-location-list
     - key: res-meta
     - key: res-unit
-    - key: res-wind
-    - key: res-warning
-    - key: res-indices
-    - key: res-air
-    - key: res-sunmoon
+    # - key: res-wind
+    # - key: res-indices
+    # - key: res-air
+    # - key: res-sunmoon
 - key: bp-overview
   subitems:
     - key: bp-na

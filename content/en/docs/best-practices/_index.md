@@ -4,5 +4,4 @@ description: This document provides some common practices and experiences in usi
   our services so that you can access data easily and quickly.
 url: "/en/docs/best-practices/"
 translationKey: bp-overview
-type: docs-overview
 ---

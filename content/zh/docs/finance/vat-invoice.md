@@ -1,5 +1,6 @@
 ---
 title: 增值税发票
+description: 了解中国地区用户申请增值税发票的开具流程和相关限制。
 translationKey: finance-vat-invoice
 ---
 
