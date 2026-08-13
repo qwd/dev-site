@@ -1,0 +1,18 @@
+name_en,name_zh,support_en,support_zh,api_type,ios_enum,android_enum,level_values,level_names_en,level_names_zh
+All indices,全部天气指数,Global,,0,ALL,ALL,,,
+Sports,运动指数,Global,全球,1,SPT,SPT,1|2|3,Excellent|Good|Poor,适宜|较适宜|较不宜
+Car Wash,洗车指数,Global,全球,2,CW,CW,1|2|3|4,Excellent|Good|Poor|Bad,适宜|较适宜|较不宜|不宜
+Dressing,穿衣指数,Global,全球,3,DRSG,DRSG,1|2|3|4|5|6|7,Freezing|Cold|Cooler|Cool|Comfort|Hot|Heat,寒冷|冷|较冷|较舒适|舒适|热|炎热
+Fishing,钓鱼指数,Global,全球,4,FIS,FIS,1|2|3,Good|Moderate|Poor,适宜|较适宜|不宜
+UV Index,紫外线指数,Global,全球,5,UV,UV,1|2|3|4|5,Very Low|Low|Moderate|High|Extreme,最弱|弱|中等|强|很强
+Travel,旅游指数,China,中国,6,TRA,TRA,1|2|3|4|5,Excellent|Good|Moderate|Poor|Bad,适宜|较适宜|一般|较不宜|不适宜
+Allergy,花粉过敏指数,China,中国,7,AG,AG,1|2|3|4|5,Beneficial|Neutral|At Risk|High Risk|Extreme Risk,极不易发|不易发|较易发|易发|极易发
+Comfort,舒适度指数,China,中国,8,COMF,COMF,1|2|3|4|5|6|7,Excellent|Good|Moderate|Poor|Bad|Very Bad|Extremely Bad,舒适|较舒适|较不舒适|很不舒适|极不舒适|不舒适|非常不舒适
+Flu,感冒指数,China,中国,9,FLU,FLU,1|2|3|4,Healthy|Moderate|Unhealthy|Hazardous,少发|较易发|易发|极易发
+Air Pollution,空气污染扩散条件指数,China,中国,10,AP,AP,1|2|3|4|5,Excellent|Good|Moderate|Bad|Very Bad,优|良|中|较差|很差
+Air-Conditioner,空调开启指数,China,中国,11,AC,AC,1|2|3|4,On|Advise|Neutral|Heating Mode,长时间开启|部分时间开启|较少开启|开启制暖空调
+Sun Glasses,太阳镜指数,China,中国,12,GL,GL,1|2|3|4|5,No|Recommend|Advise|Need|Necessary,不需要|需要|必要|很必要|非常必要
+Make Up,化妆指数,China,中国,13,MU,MU,1|2|3|4|5|6|7|8,Hydrating|Moisturizing and sun protection|Oil control and sun protection|Prevent dehydration and sun protection|Oil control|Prevent dehydration|Sun protection|Moisturizing,保湿|保湿防晒|去油防晒|防脱水防晒|去油|防脱水|防晒|滋润保湿
+Air-Cure,晾晒指数,China,中国,14,DC,DC,1|2|3|4|5|6,Excellent|Good|Moderate|Poor|Bad|Very Bad,极适宜|适宜|基本适宜|不太适宜|不宜|不适宜
+Traffic,交通指数,China,中国,15,PTFC,PTFC,1|2|3|4|5,Excellent|Good|Moderate|Bad|Very Bad,良好|较好|一般|较差|很差
+SPF,防晒指数,China,中国,16,SPI,SPI,1|2|3|4|5,Very Low|Low|Moderate|High|Extreme,弱|较弱|中等|强|极强

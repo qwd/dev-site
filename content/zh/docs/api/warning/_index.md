@@ -1,6 +1,6 @@
 ---
 title: 预警
-description: 和风极端天气预警API提供了全球官方发布的极端天气预警服务，覆盖中国及全球国家或地区。
+description: 和风极端天气预警API提供了全球官方发布的极端天气预警服务，覆盖全球大部分国家或地区。
 url: "/docs/api/warning/"
 translationKey: 0-api-warning
 ---

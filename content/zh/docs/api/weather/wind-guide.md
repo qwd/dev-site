@@ -1,7 +1,9 @@
 ---
 title: 风向和等级
 description: 了解风向和风力等级（蒲福风级）的关系，以及风向角度、风向16方位和风向8方位的相关知识。
-translationKey: res-wind
+translationKey: api-weather-wind
+aliases:
+- "/docs/resource/wind-info/"
 ---
 
 本篇文档将介绍在天气数据中关于风向、风速和风力等级的一些信息。

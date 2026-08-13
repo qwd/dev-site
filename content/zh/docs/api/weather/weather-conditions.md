@@ -4,7 +4,8 @@ description: 本文档介绍和风天气 API 中使用的所有天气现象以�
 aliases:
 - "/docs/start/icons/"
 - "/docs/resource/icons/"
-translationKey: res-condition
+- "/docs/resource/weather-conditions/"
+translationKey: api-weather-condition
 ---
 
 本文档介绍和风天气 API 中使用的所有天气现象以及对应的代码和图标。

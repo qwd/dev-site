@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6800 -5400 13600 10800" role="img" aria-labelledby="title desc">
+  <title id="title">Twilight diagram</title>
+  <desc id="desc">A complete twilight diagram. The left side shows civil, nautical, and astronomical dusk after sunset; the right side shows astronomical, nautical, and civil dawn before sunrise. The labels mark the actual boundaries at six, twelve, and eighteen degrees below the horizon, the angles are not to scale so as to show the three twilight categories with more clarity.</desc>
+
+  <metadata>
+    <rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <cc:Work rdf:about="">
+        <dc:title>Twilight diagram</dc:title>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:creator>QWeather</dc:creator>
+        <dc:source rdf:resource="https://commons.wikimedia.org/wiki/File:Twilight_description_full_day.svg"/>
+        <dc:description>
+          Adapted from works by TWCarlson. Combined, translated, redrawn, and modified for schematic presentation.
+        </dc:description>
+        <cc:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-start" refX="0" refY="5" orient="auto" markerWidth="15" markerHeight="10">
+      <path d="M0 5 15 0 10 5 15 10Z" fill="#FAFAFA"/>
+    </marker>
+    <marker id="arrow-end" refX="15" refY="5" orient="auto" markerWidth="15" markerHeight="10">
+      <path d="M15 5 0 0 5 5 0 10Z" fill="#FAFAFA"/>
+    </marker>
+    <g id="sun">
+      <circle r="160" fill="#FBCF2F" stroke="#2B2B2C" stroke-width="12"/>
+    </g>
+    <style>
+      text { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .outer-label { fill: #2B2B2C; font-size: 230px; }
+      .region-label { fill: #FAFAFA; font-size: 210px; font-weight: 600; }
+      .long-region-label { font-size: 200px; }
+      .major-label { font-size: 330px; font-weight: 600; }
+      .degree { fill: #FAFAFA; font-size: 190px; font-weight: 600; }
+      .dimension { fill: none; stroke: #FAFAFA; stroke-width: 12; marker-start: url(#arrow-start); marker-end: url(#arrow-end); }
+    </style>
+  </defs>
+
+  <!-- Daylight, three twilight categories, and night -->
+  <path d="M0 0-4600 0A4600 4600 0 0 1 4600 0Z" fill="#F0F9FF"/>
+  <path d="M0 0 4600 0A4600 4600 0 0 1 4530.116 798.782Z" fill="#00A6F4"/>
+  <path d="M0 0 4530.116 798.782A4600 4600 0 0 1 4322.586 1573.293Z" fill="#0084D1"/>
+  <path d="M0 0 4322.586 1573.293A4600 4600 0 0 1 3983.717 2300Z" fill="#00598A"/>
+  <path d="M0 0 3983.717 2300A4600 4600 0 0 1-3983.717 2300Z" fill="#052F4A"/>
+  <path d="M0 0-3983.717 2300A4600 4600 0 0 1-4322.586 1573.293Z" fill="#00598A"/>
+  <path d="M0 0-4322.586 1573.293A4600 4600 0 0 1-4530.116 798.782Z" fill="#0084D1"/>
+  <path d="M0 0-4530.116 798.782A4600 4600 0 0 1-4600 0Z" fill="#00A6F4"/>
+  <circle r="4600" fill="none" stroke="#b9bc9a" stroke-width="16"/>
+
+  <line x1="-5800" x2="5800" y1="0" y2="0" stroke="#2B2B2C" stroke-width="16"/>
+
+  <!-- Angle annotations. The graphic bands use enlarged schematic angles. -->
+  <path class="dimension" d="M3000 0A3000 3000 0 0 1 2954.423 520.945"/>
+  <path class="dimension" d="M2500 0A2500 2500 0 0 1 2349.232 855.050"/>
+  <path class="dimension" d="M2000 0A2000 2000 0 0 1 1732.051 1000"/>
+  <text class="degree" x="3000" y="0" dx=".35em" dy=".35em" transform="rotate(5)">6°</text>
+  <text class="degree" x="2500" y="0" dx=".3em" dy=".35em" transform="rotate(10)">12°</text>
+  <text class="degree" x="2000" y="0" dx=".3em" dy=".35em" transform="rotate(15)">18°</text>
+
+  <path class="dimension" d="M-3000 0A3000 3000 0 0 0-2954.423 520.945"/>
+  <path class="dimension" d="M-2500 0A2500 2500 0 0 0-2349.232 855.050"/>
+  <path class="dimension" d="M-2000 0A2000 2000 0 0 0-1732.051 1000"/>
+  <text class="degree" x="-3000" y="0" dx="-.35em" dy=".35em" text-anchor="end" transform="rotate(-5)">6°</text>
+  <text class="degree" x="-2500" y="0" dx="-.3em" dy=".35em" text-anchor="end" transform="rotate(-10)">12°</text>
+  <text class="degree" x="-2000" y="0" dx="-.3em" dy=".35em" text-anchor="end" transform="rotate(-15)">18°</text>
+
+  <!-- The sunrise and sunset markers are tangent to the horizon at their upper edge. -->
+  <use xlink:href="#sun" x="4600" transform="rotate(1.993)"/>
+  <use xlink:href="#sun" x="4600" transform="rotate(10)"/>
+  <use xlink:href="#sun" x="4600" transform="rotate(20)"/>
+  <use xlink:href="#sun" x="4600" transform="rotate(30)"/>
+  <use xlink:href="#sun" x="-4600" transform="rotate(-1.993)"/>
+  <use xlink:href="#sun" x="-4600" transform="rotate(-10)"/>
+  <use xlink:href="#sun" x="-4600" transform="rotate(-20)"/>
+  <use xlink:href="#sun" x="-4600" transform="rotate(-30)"/>
+
+  <!-- Labels inside the regions -->
+  <text class="outer-label major-label" x="0" y="-2550" text-anchor="middle">Daytime</text>
+  <text class="outer-label" x="0" y="-120" text-anchor="middle" font-style="italic">Horizon</text>
+  <text class="region-label" x="4500" y="0" dy=".35em" text-anchor="end" transform="rotate(5)">Civil dawn</text>
+  <text class="region-label" x="4500" y="0" dy=".35em" text-anchor="end" transform="rotate(15)">Nautical dawn</text>
+  <text class="region-label long-region-label" x="4500" y="0" dy=".35em" text-anchor="end" transform="rotate(25)">Astronomical dawn</text>
+  <text class="region-label" x="-4500" y="0" dy=".35em" text-anchor="start" transform="rotate(-5)">Civil dusk</text>
+  <text class="region-label" x="-4500" y="0" dy=".35em" text-anchor="start" transform="rotate(-15)">Nautical dusk</text>
+  <text class="region-label long-region-label" x="-4500" y="0" dy=".35em" text-anchor="start" transform="rotate(-25)">Astronomical dusk</text>
+  <text class="region-label major-label" x="0" y="3650" text-anchor="middle">Night</text>
+
+  <!-- Event labels outside the circle -->
+  <text class="outer-label" x="4950" y="0" dy=".8em" transform="rotate(.265)">Sunrise</text>
+  <text class="outer-label" x="4950" y="0" dy=".35em" transform="rotate(10)">Civil dawn begins</text>
+  <text class="outer-label" x="4950" y="0" dy=".35em" transform="rotate(20)">Nautical dawn begins</text>
+  <text class="outer-label long-event-label" x="4950" y="0" transform="rotate(30)">
+    <tspan x="4950" dy=".05em">Astronomical dawn</tspan>
+    <tspan x="4950" dy="1.05em">begins</tspan>
+  </text>
+  <text class="outer-label" x="-4950" y="0" dy=".8em" text-anchor="end" transform="rotate(-.265)">Sunset</text>
+  <text class="outer-label" x="-4950" y="0" dy=".35em" text-anchor="end" transform="rotate(-10)">Civil dusk ends</text>
+  <text class="outer-label" x="-4950" y="0" dy=".35em" text-anchor="end" transform="rotate(-20)">Nautical dusk ends</text>
+  <text class="outer-label" x="-4950" y="0" text-anchor="end" transform="rotate(-30)">
+    <tspan x="-4950" dy=".05em">Astronomical dusk</tspan>
+    <tspan x="-4950" dy="1.05em">ends</tspan>
+  </text>
+</svg>

@@ -4,7 +4,7 @@
   <div class="qw-container pb-[30px]">
     <section class="flex flex-wrap -mx-[15px] mb-5 refer-content">
       <div class="w-full lg:w-5/12 px-[15px] mb-5 lg:mb-0">
-        <div class="start card bg-qw-blue min-h-[330px] max-[991px]:[min-height:auto] rounded-[10px] p-5">
+        <div class="start card bg-qw-blue min-h-[300px] max-[991px]:[min-height:auto] rounded-[10px] p-5">
           {{- $start := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" "start-overview") -}}
           {{- $overview := partial "docs/page-by-key.html" (dict "site" $.Site "key" $start.key) }}
           {{- with $overview }}<h2 class="text-white mb-5"><a class="text-qw-cool-white hover:text-white" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}
@@ -20,7 +20,7 @@
         (dict "overview" "bp-overview" "class" "bp")
       }}
       <div class="w-full md:w-1/2 lg:flex-1 px-[15px] mb-5 md:mb-0 flex">
-        <div class="{{ .class }} w-full flex-1 bg-qw-cool-white min-h-[330px] max-[991px]:[min-height:auto] rounded-[10px] p-5">
+        <div class="{{ .class }} w-full flex-1 bg-qw-cool-white min-h-[300px] max-[991px]:[min-height:auto] rounded-[10px] p-5">
           {{- $node := partial "docs/nav-node-by-key.html" (dict "nodes" $docsNav "key" .overview) -}}
           {{- $overview := partial "docs/page-by-key.html" (dict "site" $.Site "key" $node.key) }}
           {{- with $overview }}<h2 class="mb-5"><a class="text-qw-heading hover:text-black" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ end }}

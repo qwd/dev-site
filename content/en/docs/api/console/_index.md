@@ -1,21 +1,10 @@
 ---
 title: Console API
-description: Account owners can enable console API permissions for specified credentials
-  to easily access console data locally for current financial and API traffic metrics.
+description: The Console API provides account finance and request volume data that you can use to evaluate usage or create billing alerts.
 url: "/en/docs/api/console/"
 translationKey: 0-api-console
 ---
 
-## Enable Console API
+The Console API provides account finance and request volume data that you can use to evaluate usage or create billing alerts.
 
-You must enable the Console API in the credential settings to access it. It is disabled by default.
-
-1. [Go to Console - Project](https://console.qweather.com/project)
-2. Click on the credential that requires the Console API to be enabled.
-3. Scroll down to 'Console data privileges'.
-4. Check the permissions that need to be enabled.
-5. Click the Save button.
-
-## Latency
-
-The data returned by the console API is from the last hour or earlier, and may not match what is shown in the console website, please refer to the `asOf` response for data time.
+For security, credentials cannot access the Console API by default. Enable the required Console API permissions in the credential settings before making a request. Data returned by the Console API is from the previous hour or earlier and may differ from the data shown in the Console. Use the `asOf` field as the data timestamp.

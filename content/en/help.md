@@ -22,7 +22,7 @@ Using the QWeather Develop Service is simple, please refer to [Quick Start](/en/
 
 ### What countries and regions are covered by the QWeather service?
 
-The coverage is varied by data. For Weather/Ocean/Solar Radiation/Astronomy, they are available worldwide. For Warning, refer to [Warning Info - Supported regions](/en/docs/resource/warning-info/#supported-regions). For Air Quality, refer to [Air Quality Info - Supported regions](/en/docs/resource/air-info/#supported-regions). For Minutely Precipitation and Tropical Cyclone, only available in China.
+Coverage varies by data type. Weather, Ocean, Solar Radiation, and Astronomy data are available worldwide. For Warning, see [Alert Coverage](/en/docs/api/warning/alert-coverage/). For Air Quality, see [Air Quality Coverage](/en/docs/api/air-quality/aqi-coverage/). Minutely Precipitation and Tropical Cyclone data are available only in China.
 
 ### Can I try it for free?
 
@@ -56,7 +56,7 @@ Our engineers have provided an open source weather icons that support weather co
 
 ### What is the enum value of the weather condition?
 
-Please refer to the `icon` field and [Weather Icon](/en/docs/resource/icons/).
+Please refer to the `icon` field and [Weather Icons](/en/docs/api/weather/weather-conditions/#icons).
 
 ### What is your TLS version?
 

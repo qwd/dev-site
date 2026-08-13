@@ -1,7 +1,9 @@
 ---
-title: Wind Info
-description: Learn about wind direction and wind scale (Beaufort scale), including wind direction in degrees and compass directions.
-translationKey: res-wind
+title: Learn About Wind
+description: Learn about wind direction and Beaufort scale.
+translationKey: api-weather-wind
+aliases:
+- "/docs/resource/wind-info/"
 ---
 
 This document describes wind direction and wind scale in weather data.

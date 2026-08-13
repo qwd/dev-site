@@ -1,8 +1,6 @@
 ---
 title: Air Quality
-description: Global Air Quality API, compatible with local air quality standards,
-  includes real-time and forecast data at a resolution of 1x1 kilometers, for easy
-  access to air quality, pollutants, and health advice for a specified location.
+description: QWeather Air Quality API provides real-time and forecast air quality data, pollutants, and health advice for any location. It supports local AQI standards in more than 100 countries and regions at 1x1 km resolution.
 url: "/en/docs/api/air-quality/"
 translationKey: 0-api-aq
 ---

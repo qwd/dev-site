@@ -6,4 +6,4 @@ url: "/en/docs/api/warning/"
 translationKey: 0-api-warning
 ---
 
-The Weather Alert API covers China and countries or regions worldwide, and currently includes hundreds of alert events, such as: typhoon, rain, blizzard, cold wave, strong wind, sandstorm, high temperature, drought, thunderstorm, hail, frost, fog, haze, etc.
+QWeather Alert API covers most countries and regions worldwide and currently includes hundreds of alert events, providing details such as alert specifics, severity, urgency, certainty, guidelines, color, criteria and more.
