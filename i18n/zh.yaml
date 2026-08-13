@@ -108,5 +108,4 @@ full-name: 全称
 unit: 单位
 countries-regions: 国家或地区
 supported-aqis: 支持的 AQIs
-api-title-get: '获取{{ .Title }}'
 reference-doc: 参考资料

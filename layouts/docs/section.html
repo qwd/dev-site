@@ -53,12 +53,13 @@
                     {{- end }}
                     <div class="subpage-list grid grid-cols-1 md:grid-cols-2 gap-5">
                       {{- range . -}}
-                        {{- $subpageTitle := .Title -}}
-                        {{- if eq .Type "openapi-docs" -}}
-                          {{- $subpageTitle = T "api-title-get" (dict "Title" .Title) -}}
-                        {{- end -}}
                         <div class="subpage-item flex flex-col p-4 rounded-lg border border-qw-neutral-200">
-                          <a class="w-full text-lg mb-2.5" href="{{ .RelPermalink }}">{{ $subpageTitle }}</a>
+                          <a class="w-full text-lg mb-2.5 flex items-center gap-1.5" href="{{ .RelPermalink }}">
+                            {{- if eq .Type "openapi-docs" -}}
+                              <span class="inline-flex shrink-0 rounded-[3px] border border-qw-signal-green px-1 py-px font-mono text-[12px] font-bold leading-none tracking-wide text-qw-signal-green">GET</span>
+                            {{- end -}}
+                            <span>{{ .Title }}</span>
+                          </a>
                           {{- with .Description }}<p class="text-qw-slate text-sm">{{ . | markdownify | plainify }}</p>{{ end }}
                         </div>
                       {{- end -}}

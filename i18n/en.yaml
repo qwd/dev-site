@@ -103,5 +103,4 @@ full-name: Full name
 unit: Unit
 countries-regions: Countries or Regions
 supported-aqis: Supported AQIs
-api-title-get: 'Get {{ .Title }}'
 reference-doc: Reference
