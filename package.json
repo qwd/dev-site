@@ -16,7 +16,7 @@
     "yaml": "^2.9.0"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.3.2",
+    "@tailwindcss/cli": "^4.3.3",
     "chokidar": "^5.0.0",
     "concurrently": "^10.0.4",
     "tailwindcss": "^4.3.2"
