@@ -1,6 +1,6 @@
 ---
 title: Console API
-description: The Console API provides account finance and request volume data that you can use to evaluate usage or create billing alerts.
+description: The Console API provides near-real-time financial and request volume data that you can use to evaluate usage or create billing alerts.
 url: "/en/docs/api/console/"
 translationKey: 0-api-console
 ---

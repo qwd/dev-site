@@ -1,11 +1,12 @@
 ---
 title: 时光机
-description: 时光机可以获取最近10天的历史天气和空气质量数据。
+description: 时光机可以获取最近10天的历史天气。
 url: "/docs/api/time-machine/"
 aliases:
 - "/docs/histroical/"
 translationKey: 0-api-time-machine
 ---
+时光机可以获取最近10天的历史天气。
 
 > 和风天气额外提供了2000年至今的历史再分析气象数据，通过数据文件的形式发送，如需要长时间的历史气象数据数据，请提供下列信息，发送邮件至sales@qweather.com，我们将有专人与你联系:
 > 

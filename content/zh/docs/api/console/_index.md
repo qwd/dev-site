@@ -1,6 +1,6 @@
 ---
 title: 控制台API
-description: 控制台 API 可以轻松的了解帐号的财物信息和请求量信息，你可以根据这些数据评估使用率或者建立财务预警。
+description: 控制台 API 提供近实时的财务和请求量数据，你可以根据这些数据评估使用率或者建立财务预警。
 url: "/docs/api/console/"
 translationKey: 0-api-console
 ---

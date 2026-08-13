@@ -3,6 +3,8 @@ title: 支持的空气质量指数
 description: 和风空气质量 API 支持的空气质量指数和标准。
 toc: false
 translationKey: api-aqi-list
+aliases:
+- "/docs/resource/air-info/"
 ---
 
 和风天气支持两种 AQI 类型，并在 API 中返回最多两个 AQI 数据：通用 AQI 与本地 AQI。

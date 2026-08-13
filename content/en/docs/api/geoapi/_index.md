@@ -1,19 +1,16 @@
 ---
 title: GeoAPI
-description: QWeather GeoAPI provides global geographic location and global city search
-  services, supports reverse geocoding, multi-language, fuzzy search and other functions.
+description: GeoAPI provides global geographic information, city search, and reverse geocoding.
 url: "/en/docs/api/geoapi/"
 translationKey: 0-api-geo
 ---
 
-Weather data is based on geographic location, so you need to know specific location information before getting the weather. 
+Weather data is location-based, so you need to identify a location before requesting weather data.
 
-QWeather provides a powerful GeoAPI service, which can obtain the basic information of the location that needs to be queried, including the location ID of the city or POI (you need this ID to query the weather), multilingual name, latitude and longitude, time zone, altitude, Rank value, administrative division, etc.
+QWeather provides a powerful location search service: **GeoAPI**. It returns basic information about a city or POI, including its Location ID, multilingual names, latitude and longitude, time zone, elevation, rank, parent administrative areas, and administrative division.
 
 In addition, the GeoAPI service can also help you:
 
-- Avoid the trouble of the same name city
-- Supported fuzzy search
-- Return multiple city results based on the name entered by the user in your APP or website
-- Display popular cities in your APP or website
-- No need to maintain the city list, city information updates are obtained in real time
+- Perform fuzzy name searches
+- Return multiple city results from a name entered in an app or website, allowing users to select the correct city before requesting its weather
+- Avoid maintaining a city list by retrieving updated city information in real time

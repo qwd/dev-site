@@ -3,6 +3,8 @@ title: Supported AQIs
 description: Air quality indexes and standards supported by the QWeather Air Quality API.
 toc: false
 translationKey: api-aqi-list
+aliases:
+- "/docs/resource/air-info/"
 ---
 
 QWeather supports two types of AQI and may return up to two AQI datasets in an API response: QAQI and a local AQI.

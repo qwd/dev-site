@@ -1,8 +1,12 @@
 ---
-title: Learn About Alerts
+title: About Alerts
 description: Learn how to interpret alert lifecycles, time fields, and affected areas.
 translationKey: api-warning-alert-guide
+aliases:
+- "/docs/resource/warning-info/"
 ---
+
+Weather alerts are official messages issued by governments, meteorological services, or other authorized agencies for hazardous weather and related events that are expected, occurring, or likely to have an impact. They typically include the event, severity, affected area, validity period, and recommended actions, helping people and systems understand the risk and take appropriate precautions.
 
 Weather alerts from different countries and regions may follow different rules for event classifications, languages, validity periods, updates, and affected areas. Do not treat an API alert as a fixed message tied only to an administrative area. Display and process it according to its lifecycle, time fields, and actual geographic coverage.
 
@@ -29,9 +33,9 @@ An alert should be considered expired when any of the following occurs:
 - Another alert cancels it
 - Its expiration time has passed
 
-## Alert Updates and Cancellations {#update-and-cancel}
+## Alert Changes {#update-and-cancel}
 
-See [Alert Updates and Cancellations](/en/docs/api/warning/alert-update-cancel/).
+See [Alert Changes](/en/docs/api/warning/alert-changes/).
 
 ## Alert Times {#temporal}
 
@@ -51,7 +55,7 @@ When **the hazardous weather event is expected to begin**. It describes the even
 
 **Expiration time** `expireTime`
 
-When **the alert message is expected to expire**. It defines the validity of the message, not the exact end of the weather event. The weather may end earlier or continue longer than initially expected. See [Alert Updates and Cancellations](/en/docs/api/warning/alert-update-cancel/) for changes to an alert.
+When **the alert message is expected to expire**. It defines the validity of the message, not the exact end of the weather event. The weather may end earlier or continue longer than initially expected. See [Alert Changes](/en/docs/api/warning/alert-changes/) for changes to an alert.
 
 > **These times do not have a required chronological order.** For example, an alert may be issued after a hazardous weather event has already begun.
 

@@ -72,12 +72,11 @@ paths:
     get:
       operationId: getGeoCitylookup
       summary: City Lookup
-      description: |-
-        City Lookup provides reverse geocoding, geolocation lookup services, supports multi-language, fuzzy search and other functions.
+      x-excerpt: Search for cities worldwide or reverse-geocode coordinates and return identifiers, names, administrative divisions, time zones, and related location details.
+      description: |
+        City Lookup provides global geolocation and city search services, including reverse geocoding, multilingual results, and fuzzy search.
 
-        With the City Lookup, you can get the basic information of the city, including the Location ID of the city (you need this ID to get the weather), multilingual name, latitude and longitude, time zone, altitude, rank, administrative, etc.
-
-        In addition, GeoAPI - City Lookup can also help you to implement fuzzy search in your APP, users only need to type 1 or 2 words to get results.
+        Weather data is location-based, so you need to identify a location before requesting weather data. City Lookup returns basic location information, including the Location ID, multilingual names, latitude and longitude, time zone, elevation, rank, and administrative divisions.
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/geoapi/city-lookup/
       tags:
@@ -104,7 +103,8 @@ paths:
     get:
       operationId: getGeoPoilookup
       summary: POI Lookup
-      description: POI Lookup API provides basic information of POI(scenic spot, tide stations, etc.)
+      x-excerpt: Look up points of interest such as scenic spots, railway stations, airports, and ports by keyword or coordinates.
+      description: Look up POI information by keyword or coordinates.
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/geoapi/poi-lookup/
       tags:
@@ -133,6 +133,7 @@ paths:
       tags:
       - Weather
       summary: Current Weather
+      x-excerpt: Get minute-level current weather data for any latitude and longitude worldwide at 1-kilometer resolution.
       description: |
        Returns current weather data for the specified latitude and longitude, with 1-kilometer resolution, global coverage, and minute-level updates.
 
@@ -164,6 +165,7 @@ paths:
       tags:
       - Weather
       summary: Hourly Forecast
+      x-excerpt: Get up to 240 hours of hourly weather forecasts for any latitude and longitude worldwide at 1-kilometer resolution.
       description: |
        Returns an hourly weather forecast for the specified latitude and longitude for up to 240 hours, with 1-kilometer resolution and global coverage.
 
@@ -194,6 +196,7 @@ paths:
       tags:
       - Weather
       summary: Daily Forecast
+      x-excerpt: Get up to 10 days of daily weather forecasts for any latitude and longitude worldwide at 1-kilometer resolution.
       description: |
        Returns a daily weather forecast for the specified latitude and longitude for up to 10 days, with 1-kilometer resolution and global coverage.
 
@@ -224,6 +227,7 @@ paths:
       tags:
       - Weather
       summary: Weather Now (City-based)
+      x-excerpt: Get current weather data for cities worldwide.
       description: |-
         > **Note:** Weather Now (City-based) Web API v7 will be deprecated. Use [Current Weather v1](https://dev.qweather.com/en/docs/api/weather/weather-current/) instead.
 
@@ -251,6 +255,7 @@ paths:
       tags:
       - Weather
       summary: Daily Forecast (City-based)
+      x-excerpt: Get 3 to 30 days of daily weather forecasts for cities worldwide.
       description: |-
         > **Note:** Daily Forecast (City-based) Web API v7 will be deprecated. Use [Daily Forecast v1](https://dev.qweather.com/en/docs/api/weather/weather-daily-forecast/) instead.
 
@@ -279,6 +284,7 @@ paths:
       tags:
       - Weather
       summary: Hourly Forecast (City-based)
+      x-excerpt: Get 24 to 168 hours of hourly weather forecasts for cities worldwide.
       description: |-
         > **Note:** Hourly Forecast (City-based) Web API v7 will be deprecated. Use [Hourly Forecast v1](https://dev.qweather.com/en/docs/api/weather/weather-hourly-forecast/) instead.
 
@@ -307,6 +313,7 @@ paths:
       tags:
       - Weather
       summary: Minutely Precipitation
+      x-excerpt: Get 1-kilometer precipitation forecasts for China every 5 minutes for the next 2 hours.
       description: |-
         Get minute-level precipitation forecast data every 5 minutes for the next 2 hours in China.
 
@@ -334,11 +341,8 @@ paths:
       tags:
       - Weather
       summary: Weather Indices Forecast
-      description: |-
-        Get weather indices forecast data for cities in China and around the world.
-
-        - Weather Indices in China: Comfort Indices, Car Wash Indices, Dressing Indices, Cold Indices, Sports Indices, Travel Indices, UV Indices, Air Pollution Indices, Air Conditioning Indices, Allergy Indices, Sunglasses Indices, Makeup Indices, Sunshine Indices, Traffic Indices, Fishing Indices, Sun Protection Indices
-        - Weather Indices worldwide: Sports Indices, Car Wash Indices, UV Indices, Fishing Indices
+      x-excerpt: Get weather lifestyle index forecasts for cities in China and around the world.
+      description: Get weather lifestyle index forecasts for cities in China and around the world.
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/indices/indices-forecast/
       parameters:
@@ -364,10 +368,8 @@ paths:
       tags:
       - Weather Alert
       summary: Weather Alert
-      description: |-
-        Get officially issued real-time severe weather alert data around the world.
-
-        > **Hint:** For the implementation of weather alert, see [Resource - Alert Info](https://dev.qweather.com/en/docs/resource/warning-info/) in advance.
+      x-excerpt: Get active official weather alerts worldwide for the specified latitude and longitude.
+      description: Get active official weather alerts worldwide for the specified latitude and longitude.
       parameters:
       - "$ref": "#/components/parameters/latPath"
       - "$ref": "#/components/parameters/lonPath"
@@ -391,6 +393,7 @@ paths:
       tags:
       - Weather Alert
       summary: Legacy Weather Warning
+      x-excerpt: Get active weather warnings for a specified city.
       description: This API is deprecated and will be discontinued on September 1, 2026. Use `/weatheralert/v1/current/` instead.
       deprecated: true
       parameters:
@@ -414,16 +417,14 @@ paths:
       tags:
       - Air Quality
       summary: Current Air Quality
+      x-excerpt: Get real-time air quality, pollutant, and health guidance data for a specified location at 1-kilometer resolution.
       description: |-
-        The current air quality (AQI) API provides real-time air quality data for specified locations, data resolution is 1x1 km.
+        The Current Air Quality API provides real-time air quality data worldwide for a specified location at 1-kilometer resolution, including:
 
         - AQI, category, color and primary pollutant based on local standards for each country or region
         - Generic QWeather AQI
-        - Pollutant concentration values and their sub-index.
-        - Health effects and advice
-        - Associated monitoring station information
-
-        We recommend to read [Air Quality Info](https://dev.qweather.com/en/docs/resource/air-info/) to learn about the AQIs, pollutants, supported regions and more.
+        - Pollutant concentrations and sub-indexes
+        - Health guidance
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/air-quality/air-current/
       parameters:
@@ -448,10 +449,8 @@ paths:
       tags:
       - Air Quality
       summary: Air Quality Daily Forecast
-      description: |-
-        Air quality (AQI) dailay forecasts, pollutants, and health advice for the next 3 days.
-
-        We recommend to read [Air Quality Info](https://dev.qweather.com/en/docs/resource/air-info/) to learn about the AQIs, pollutants, supported regions and more.
+      x-excerpt: Get daily air quality, pollutant, and health guidance forecasts for a specified location for the next 3 days.
+      description: Get daily AQI forecasts, pollutant concentrations, and health guidance for the next 3 days.
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/air-quality/air-daily-forecast/
       parameters:
@@ -476,10 +475,8 @@ paths:
       tags:
       - Air Quality
       summary: Air Quality Hourly Forecast
-      description: |-
-        The air quality hourly forecast API provides air quality forecast data for each hour of the next 24 hours, including AQI, pollutants concentration, sub-indexes, health effects and advice.
-
-        We recommend to read [Air Quality Info](https://dev.qweather.com/en/docs/resource/air-info/) to learn about the AQIs, pollutants, supported regions and more.
+      x-excerpt: Get hourly air quality, pollutant, and health guidance forecasts for a specified location for the next 24 hours.
+      description: Get hourly air quality data for the next 24 hours, including AQI, pollutant concentrations, sub-indexes, and health guidance.
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/air-quality/air-hourly-forecast/
       parameters:
@@ -504,6 +501,7 @@ paths:
       tags:
       - Air Quality
       summary: Monitoring Station Data
+      x-excerpt: Get pollutant concentration data from a specified air quality monitoring station.
       description: |-
         Monitoring Station Data API provides pollutant concentration values from air quality monitoring stations in each country or region.
 
@@ -532,6 +530,7 @@ paths:
       tags:
       - Air Quality
       summary: Legacy Current Air Quality
+      x-excerpt: Get current air quality data for cities in China.
       description: This API is deprecated and will be discontinued on June 1, 2026. Use `/airquality/v1/current` instead.
       deprecated: true
       parameters:
@@ -555,6 +554,7 @@ paths:
       tags:
       - Air Quality
       summary: Legacy Air Quality Daily Forecast
+      x-excerpt: Get daily air quality forecasts for cities in China for the next 5 days.
       description: This API is deprecated and will be discontinued on June 1, 2026. Use `/airquality/v1/daily` instead.
       deprecated: true
       parameters:
@@ -578,6 +578,7 @@ paths:
       tags:
       - Storm
       summary: Storm Forecast
+      x-excerpt: Get forecast location, intensity, pressure, and wind data for a specified tropical cyclone in major ocean basins worldwide.
       description: |-
         Storm Forecast API provides tropical cyclones information for a specific tropical cyclone, the data including forecast tropical cyclones location, level, pressure, wind and etc.
 
@@ -604,6 +605,7 @@ paths:
       tags:
       - Storm
       summary: Storm Track
+      x-excerpt: Get current location, intensity, and track data for a specified tropical cyclone in major ocean basins worldwide.
       description: Get the tropical cyclones location, level, pressure, windspeed, and track path of active storm in major ocean basins around the world.
       parameters:
       - "$ref": "#/components/parameters/stormIdQuery"
@@ -627,6 +629,7 @@ paths:
       tags:
       - Storm
       summary: Storm List
+      x-excerpt: Get a list of tropical cyclones from the past 2 years in major ocean basins worldwide.
       description: |-
         Get a list of tropical cyclones for the last 2 years in major ocean basins around the world.
 
@@ -654,6 +657,7 @@ paths:
       tags:
       - Ocean
       summary: Tide
+      x-excerpt: Get tide tables and hourly tidal forecasts worldwide for the next 10 days.
       description: Global tidal data for the next 10 days, including tide table and hourly tide forecast data.
       parameters:
       - "$ref": "#/components/parameters/tideStationIdQuery"
@@ -678,6 +682,7 @@ paths:
       tags:
       - Solar Irradiation
       summary: Solar Radiation Forecast
+      x-excerpt: Get 1-kilometer solar radiation forecasts worldwide at 15-minute intervals for up to 60 hours.
       description: Provide solar radiation forecasts and related data at 15-minute intervals for any location worldwide, up to 60 hours ahead, with a spatial resolution of 1×1 km.
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/solar-radiation/solar-radiation-forecast/
@@ -708,6 +713,7 @@ paths:
       tags:
       - Solar Irradiation
       summary: Legacy Solar Radiation
+      x-excerpt: Get hourly solar radiation data for a specified location.
       deprecated: true
       description: This API is deprecated and will be discontinued on December 31, 2026. Use `/solarradiation/v1/forecast/` instead.
       parameters:
@@ -731,6 +737,7 @@ paths:
       tags:
       - Astronomy
       summary: Moon and Moon Phase
+      x-excerpt: Get moonrise, moonset, and hourly moon phase data worldwide for the next 60 days.
       description: Get moonrise and moonset and hourly moon phase data for the next 60 days at any location worldwide.
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/astronomy/moon-and-moon-phase/
@@ -756,6 +763,7 @@ paths:
       tags:
       - Astronomy
       summary: Sunrise and Sunset
+      x-excerpt: Get sunrise and sunset times worldwide for the next 60 days.
       description: Get the sunrise and sunset times for the next 60 days at any location worldwide.
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/astronomy/sunrise-sunset/
@@ -780,6 +788,7 @@ paths:
       tags:
       - Astronomy
       summary: Solar Elevation Angle
+      x-excerpt: Get solar elevation and azimuth angles worldwide for a specified time and location.
       description: Get global solar elevation angle and azimuth.
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/astronomy/solar-elevation-angle/
@@ -807,6 +816,7 @@ paths:
       tags:
       - Console
       summary: Finance Summary
+      x-excerpt: Get the current account's financial and billing summary.
       description: |-
         Retrieve your financial and billing summary.
 
@@ -841,6 +851,7 @@ paths:
       tags:
       - Console
       summary: Stats
+      x-excerpt: Get API traffic statistics for the current account over the last 24 hours.
       description: |-
         Retrieve your API traffic statistics for the last 24 hours.
 
@@ -883,6 +894,7 @@ paths:
       tags:
       - Geo
       summary: Top City
+      x-excerpt: Get a list of popular cities worldwide.
       description: Get a list of popular cities around the world.
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/geoapi/top-city/
@@ -908,6 +920,7 @@ paths:
       tags:
       - Geo
       summary: POI Range
+      x-excerpt: Get all points of interest within a specified area.
       description: POI Range API provides the ability to query all POI information within a specified area.
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/geoapi/poi-range/
@@ -936,6 +949,7 @@ paths:
       - Weather
       deprecated: true
       summary: Grid Weather Real-time
+      x-excerpt: Get real-time gridded weather data for a specified latitude and longitude.
       description: This API has been deprecated and will be discontinued on February 1, 2027. Please use `/weather/v1/current` instead.
       parameters:
       - "$ref": "#/components/parameters/lonlatQuery"
@@ -962,6 +976,7 @@ paths:
       - Weather
       deprecated: true
       summary: Grid Weather Daily Forecast
+      x-excerpt: Get daily gridded weather forecasts for a specified latitude and longitude.
       description: This API has been deprecated and will be discontinued on February 1, 2027. Please use `/weather/v1/daily` instead.
       parameters:
       - "$ref": "#/components/parameters/days7Path"
@@ -989,6 +1004,7 @@ paths:
       - Weather
       deprecated: true
       summary: Grid Weather Hourly Forecast
+      x-excerpt: Get hourly gridded weather forecasts for a specified latitude and longitude.
       description: This API has been deprecated and will be discontinued on February 1, 2027. Please use `/weather/v1/hourly` instead.
       parameters:
       - "$ref": "#/components/parameters/hours72Path"
@@ -1015,6 +1031,7 @@ paths:
       tags:
       - Weather
       summary: Time Machine for Weather
+      x-excerpt: Get historical weather reanalysis data for the last 10 days.
       description: "Get the last 10 days of weather history data.\n\n> Let's say, today is December 30, you can get historical data from Dec. 20 to Dec. 29.\n\n> QWeather also provides historical reanalysis weather data from 2000 to present. If you need more historical weather data, please provide the following information to <sales@qweather.com>.\n> \n> * Company name\n> * Contact information\n> * City or coordinates\n> * Date range"
       parameters:
       - "$ref": "#/components/parameters/locationIdQuery"
@@ -1043,6 +1060,7 @@ paths:
       tags:
       - Air Quality
       summary: Time Machine for Air Quality (Deprecated)
+      x-excerpt: Get historical air quality reanalysis data for China for the last 10 days.
       deprecated: true
       description: |-
         Get the last 10 days of air quality history data.
@@ -1267,7 +1285,7 @@ components:
     indexTypeQuery:
       name: type
       in: query
-      description: Weather indices type ID, including car wash index, clothing index, fishing index, etc. You can get multiple types of weather indices at one time, and multiple types are separated by comma, e.g., `type=3,5`, and all indices type see [Indices Info](https://dev.qweather.com/en/docs/resource/indices-info/).
+      description: Weather indices type ID, including car wash index, clothing index, fishing index, etc. You can get multiple types of weather indices at one time, and multiple types are separated by comma, e.g., `type=3,5`. For all index types, see [Index Types](https://dev.qweather.com/en/docs/api/indices/indices-type/).
       required: true
       schema:
         type: string
@@ -1748,7 +1766,7 @@ components:
       properties:
         direction:
           type: object
-          description: "[Wind direction](https://dev.qweather.com/en/docs/resource/wind-info/#wind-direction)"
+          description: "[Wind direction](https://dev.qweather.com/en/docs/api/weather/wind-guide/#wind-direction)"
           properties:
             degree:
               type: number
@@ -1769,7 +1787,7 @@ components:
           $ref: "#/components/schemas/valueUnitObject"
         scale:
           type: number
-          description: "[Beaufort wind scale](https://dev.qweather.com/en/docs/resource/wind-info/#wind-scale)"
+          description: "[Beaufort wind scale](https://dev.qweather.com/en/docs/api/weather/wind-guide/#wind-scale)"
           maximum: 17
           minimum: 0
     windGustObject:
@@ -1779,7 +1797,7 @@ components:
       $ref: "#/components/schemas/valueUnitObject"
     weatherConditionObject:
       type: object
-      description: "[Weather condition](https://dev.qweather.com/en/docs/resource/weather-conditions/)"
+      description: "[Weather condition](https://dev.qweather.com/en/docs/api/weather/weather-conditions/)"
       properties:
         text:
           type: string
@@ -2075,22 +2093,22 @@ components:
                     "$ref": "#/components/schemas/fxDate"
                   sunrise:
                     type: string
-                    description: "[Sunrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). Maybe null in high latitude area"
+                    description: "[Sunrise time](https://dev.qweather.com/en/docs/api/astronomy/sun-guide/#sunrise-and-sunset). Maybe null in high latitude area"
                   sunset:
                     type: string
-                    description: "[Sunset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). Maybe null in high latitude area"
+                    description: "[Sunset time](https://dev.qweather.com/en/docs/api/astronomy/sun-guide/#sunrise-and-sunset). Maybe null in high latitude area"
                   moonrise:
                     type: string
-                    description: "[Moonrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) for the forecast date; may be null"
+                    description: "[Moonrise time](https://dev.qweather.com/en/docs/api/astronomy/moon-guide/#moonrise-and-moonset) for the forecast date; may be null"
                   moonset:
                     type: string
-                    description: "[Moonset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) for the forecast date; may be null"
+                    description: "[Moonset time](https://dev.qweather.com/en/docs/api/astronomy/moon-guide/#moonrise-and-moonset) for the forecast date; may be null"
                   moonPhase:
                     type: string
-                    description: "[Moon phase name](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moon-phase)"
+                    description: "[Moon phase name](https://dev.qweather.com/en/docs/api/astronomy/moon-guide/#moon-phase)"
                   moonPhaseIcon:
                     type: string
-                    description: "[Icon code](https://dev.qweather.com/en/docs/resource/icons/) for moon phase"
+                    description: "[Icon code](https://dev.qweather.com/en/docs/api/weather/weather-conditions/#icons) for moon phase"
               - "$ref": "#/components/schemas/weatherDailyBasicObject"
               - type: object
                 properties:
@@ -2142,37 +2160,37 @@ components:
           description: The lowest temperature of the day
         iconDay:
           type: string
-          description: "[Icon code](https://dev.qweather.com/en/docs/resource/icons/) for daytime weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)"
+          description: "[Icon code](https://dev.qweather.com/en/docs/api/weather/weather-conditions/#icons) for daytime weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)"
         textDay:
           type: string
           description: Weather conditions for daytime
         iconNight:
           type: string
-          description: "[Icon code](https://dev.qweather.com/en/docs/resource/icons/) for night weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)"
+          description: "[Icon code](https://dev.qweather.com/en/docs/api/weather/weather-conditions/#icons) for night weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)"
         textNight:
           type: string
           description: Weather conditions for night
         wind360Day:
           type: string
-          description: Daytime [wind direction](https://dev.qweather.com/en/docs/resource/wind-info/#wind-direction) in azimuth degree
+          description: Daytime [wind direction](https://dev.qweather.com/en/docs/api/weather/wind-guide/#wind-direction) in azimuth degree
         windDirDay:
           type: string
-          description: Daytime [wind direction](https://dev.qweather.com/en/docs/resource/wind-info/#wind-direction)
+          description: Daytime [wind direction](https://dev.qweather.com/en/docs/api/weather/wind-guide/#wind-direction)
         windScaleDay:
           type: string
-          description: Daytime [wind scale](https://dev.qweather.com/en/docs/resource/wind-info/#wind-scale)
+          description: Daytime [wind scale](https://dev.qweather.com/en/docs/api/weather/wind-guide/#wind-scale)
         windSpeedDay:
           type: string
           description: Daytime wind speed, KM/H
         wind360Night:
           type: string
-          description: Nightly [wind direction](https://dev.qweather.com/en/docs/resource/wind-info/#wind-direction) in azimuth degree
+          description: Nightly [wind direction](https://dev.qweather.com/en/docs/api/weather/wind-guide/#wind-direction) in azimuth degree
         windDirNight:
           type: string
-          description: Nightly [wind direction](https://dev.qweather.com/en/docs/resource/wind-info/#wind-direction)
+          description: Nightly [wind direction](https://dev.qweather.com/en/docs/api/weather/wind-guide/#wind-direction)
         windScaleNight:
           type: string
-          description: Nightly [wind scale](https://dev.qweather.com/en/docs/resource/wind-info/#wind-scale)
+          description: Nightly [wind scale](https://dev.qweather.com/en/docs/api/weather/wind-guide/#wind-scale)
         windSpeedNight:
           type: string
           description: Nightly wind speed, KM/H
@@ -2194,19 +2212,19 @@ components:
           description: 'Temperature, default unit: Celsius'
         icon:
           type: string
-          description: "[Icon code](https://dev.qweather.com/en/docs/resource/icons/) for weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)"
+          description: "[Icon code](https://dev.qweather.com/en/docs/api/weather/weather-conditions/#icons) for weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)"
         text:
           type: string
           description: Weather condition description
         wind360:
           type: string
-          description: "[Wind direction](https://dev.qweather.com/en/docs/resource/wind-info/#wind-direction) in azimuth degree"
+          description: "[Wind direction](https://dev.qweather.com/en/docs/api/weather/wind-guide/#wind-direction) in azimuth degree"
         windDir:
           type: string
-          description: "[Wind direction](https://dev.qweather.com/en/docs/resource/wind-info/#wind-direction)"
+          description: "[Wind direction](https://dev.qweather.com/en/docs/api/weather/wind-guide/#wind-direction)"
         windScale:
           type: string
-          description: "[Wind scale](https://dev.qweather.com/en/docs/resource/wind-info/#wind-scale)"
+          description: "[Wind scale](https://dev.qweather.com/en/docs/api/weather/wind-guide/#wind-scale)"
         windSpeed:
           type: string
           description: "Wind speed, km/h"
@@ -2316,21 +2334,26 @@ components:
                 description: The time when the original alert message was generated. The actual release or receipt time may be slightly delayed
               messageType:
                 type: object
-                description: "[The nature of the alert message](https://dev.qweather.com/en/docs/resource/warning-info/#message-type)"
+                description: "[Alert message type](https://dev.qweather.com/en/docs/api/warning/alert-changes/)"
                 properties:
                   code:
                     type: string
                     enum: [alert, update, cancel]
-                    description: "Nature code"
+                    description: |
+                      Message type code. Available values:
+
+                      - `alert` The initial, active alert message
+                      - `update` Updates and supersedes the alert messages identified in `messageType.supersedes`
+                      - `cancel` Cancels the alert messages identified in `messageType.supersedes`. A message with the **cancel** type remains valid for 1 hour
                   supersedes:
                     type: array
                     nullable: true
-                    description: Alert IDs that are superseded by this message, return null when it is a new alert.
+                    description: Previous alert messages superseded by this message
                     items:
                       type: string
               eventType:
                 type: object
-                description: "[The type of the alert event](https://dev.qweather.com/en/docs/resource/warning-info/#event-and-code)"
+                description: "[Alert event type](https://dev.qweather.com/en/docs/api/warning/alert-events/)"
                 properties:
                   name:
                     type: string
@@ -2340,18 +2363,39 @@ components:
                     description: "Code of the alert event"
               urgency:
                 type: string
-                description: The [urgency](https://dev.qweather.com/en/docs/resource/warning-info/#urgency) of the alert message, may be null
+                description: |
+                  Urgency of the alert message. Available values:
+
+                  - `immediate` Immediate action is required
+                  - `expected` Action should be taken soon, usually within 1 hour
+                  - `future` Action should be taken in the near future
+                  - `past` The event is no longer occurring
+                  - `unknown` The urgency is unknown
                 nullable: true
               severity:
                 type: string
-                description: The [severity](https://dev.qweather.com/en/docs/resource/warning-info/#severity) of the alert message
+                description: |
+                  Severity of the alert message. Available values:
+
+                  - `unknown` The severity is unknown
+                  - `minor` Minimal or no known threat to life or property
+                  - `moderate` Possible threat to life or property
+                  - `severe` Significant threat to life or property
+                  - `extreme` Extreme threat to life or property
               certainty:
                 type: string
-                description: The [certainty](https://dev.qweather.com/en/docs/resource/warning-info/#certainty) of the alert message, may be null
+                description: |
+                  Certainty of the alert message. Available values:
+
+                  - `observed` The event has occurred or is occurring
+                  - `likely` The probability of occurrence is at least 50%
+                  - `possible` The event may occur, with a probability of no more than 50%
+                  - `unlikely` The event is not expected, with a probability close to 0
+                  - `unknown` The certainty is unknown
                 nullable: true
               icon:
                 type: string
-                description: "[Icon code](https://dev.qweather.com/en/docs/resource/icons/) for this alert"
+                description: Icon code for this alert
               color:
                 type: object
                 description: RGBA color for this alert.
@@ -2359,17 +2403,18 @@ components:
                   - properties:
                       code:
                         type: string
-                        description: "[Color code](https://dev.qweather.com/docs/resource/warning-info/#color) for this alert"
+                        description: "Color code. Available values: `white`, `gray`, `green`, `blue`, `yellow`, `amber`, `orange`, `red`, `purple`, and `black`"
                         enum: [white, gray, green, blue, yellow, amber, orange, red, purple, black]
                   - "$ref": "#/components/schemas/colorObject"
               effectiveTime:
                 type: string
                 format: date-time
-                description: The effective time of the alert message, may be null
+                description: The effective time of the alert message
               onsetTime:
                 type: string
                 format: date-time
-                description: The expected time of the beginning of this alert event, may be null
+                nullable: true
+                description: The expected time of the beginning of this alert event, maybe null
               expireTime:
                 type: string
                 format: date-time
@@ -2383,7 +2428,7 @@ components:
               criteria:
                 type: string
                 nullable: true
-                description: The criteria or condition for triggering this alert. This is for reference only and may out of date with official standard. May be null
+                description: The criteria or conditions that triggered this alert. For reference only and may lag behind official standards, may be null
               responseTypes:
                 type: array
                 description: Type code of recommended action for this alert, may be null
@@ -2400,17 +2445,25 @@ components:
       properties:
         red:
           type: number
-          description: Red component in RGBA, [0, 255]
+          description: Red component, range [0, 255]
+          maximum: 255
+          minimum: 0
         green:
           type: number
-          description: Green component in RGBA, [0, 255]
+          description: Green component, range [0, 255]
+          maximum: 255
+          minimum: 0
         blue:
           type: number
-          description: Blue component in RGBA, [0, 255]
+          description: Blue component, range [0, 255]
+          maximum: 255
+          minimum: 0
         alpha:
           type: number
+          description: Alpha component, range [0, 1]
+          maximum: 1
+          minimum: 0
           nullable: true
-          description: Alpha (opacity) in RGBA, [0, 1]
     getWarning:
       type: object
       properties:
@@ -2466,16 +2519,16 @@ components:
             description: Warning severity color, including "White", "Blue", "Green", "Yellow", "Orange", "Red" and "Black". may be null
           type:
             type: string
-            description: "[Warning event type ID](https://dev.qweather.com/en/docs/resource/warning-info/#event-and-code)"
+            description: "Warning event type ID"
           typeName:
             type: string
-            description: "[Warning event type name](https://dev.qweather.com/en/docs/resource/warning-info/#event-and-code)"
+            description: "Warning event type name"
           urgency:
             type: string
-            description: "[The urgency of the warning message](https://dev.qweather.com/en/docs/resource/warning-info/#urgency), may be null"
+            description: "The urgency of the warning message, may be null"
           certainty:
             type: string
-            description: "[The certainty of the warning message](https://dev.qweather.com/en/docs/resource/warning-info/#certainty), may be null"
+            description: "The certainty of the warning message, may be null"
           text:
             type: string
             description: Description of the warning
@@ -2592,8 +2645,8 @@ components:
           "$ref": "#/components/schemas/aqisArray"
         pollutants:
           "$ref": "#/components/schemas/pollutantSubindexArray"
-        stations:
-          "$ref": "#/components/schemas/aqiStationsArray"
+        # stations:
+        #   "$ref": "#/components/schemas/aqiStationsArray"
 
     getAirQualityDaily:
       type: object
@@ -2646,7 +2699,7 @@ components:
 
     aqisArray:
       type: array
-      description: "[Air quality index](https://dev.qweather.com/en/docs/resource/air-info/#supported-aqis) list"
+      description: Air quality index list. See [Supported AQIs](https://dev.qweather.com/en/docs/api/air-quality/aqi-list/)
       minItems: 1
       maxItems: 2
       items:
@@ -2654,16 +2707,16 @@ components:
         properties:
           code:
             type: string
-            description: Code of air quality index
+            description: Air quality index code
           name:
             type: string
             description: Name of air quality index
           aqi:
             type: number
-            description: "[Value of air quality index](https://dev.qweather.com/en/docs/resource/air-info/#aqi-value)"
+            description: Numeric air quality index value, including a numeric conversion when the standard value contains non-numeric characters, for use in calculations
           aqiDisplay:
             type: string
-            description: "[Display name of the AQI value](https://dev.qweather.com/en/docs/resource/air-info/#aqi-value)"
+            description: Standard display value of the air quality index, which may contain non-numeric characters and is recommended for display to users
           level:
             type: string
             description: Level of air quality index
@@ -2676,12 +2729,12 @@ components:
               - "$ref": "#/components/schemas/colorObject"
           primaryPollutant:
             type: object
-            description: "[Primary pollutant](https://dev.qweather.com/en/docs/resource/air-info/#primary-pollutant). May be NULL"
+            description: The [primary pollutant](https://dev.qweather.com/en/docs/api/air-quality/pollutant-list/#primary-pollutant) is the main component responsible for the current air pollution
             nullable: true
             properties:
               code:
                 type: string
-                description: Code of primary pollutan
+                description: Primary pollutant code
               name:
                 type: string
                 description: Name of primary pollutant
@@ -2691,7 +2744,7 @@ components:
           health:
             type: object
             nullable: true
-            description: "[AQI health information](https://dev.qweather.com/en/docs/resource/air-info/#health-effects-and-advice)"
+            description: Air quality [health effects and guidance](https://dev.qweather.com/en/docs/api/air-quality/health-effect-advice/) for the general and sensitive populations
             properties:
               effect:
                 type: string
@@ -2711,7 +2764,7 @@ components:
       properties:
         code:
           type: string
-          description: "Code of pollutant"
+          description: "Pollutant code. Available values: `pm10`, `pm2p5`, `co`, `no`, `no2`, `so2`, `o3`, and `nmhc`"
         name:
           type: string
           description: Name of pollutant
@@ -2725,7 +2778,7 @@ components:
           allOf:
             - "$ref": "#/components/schemas/valueUnitObject"
     pollutantSubindexArray:
-      description: "[Pollutant](https://dev.qweather.com/en/docs/resource/air-info/#pollutants) list, may be NULL"
+      description: "[Pollutant](https://dev.qweather.com/en/docs/api/air-quality/pollutant-list/) list"
       type: array
       nullable: true
       items:
@@ -2736,13 +2789,13 @@ components:
             subIndexes:
               type: array
               nullable: true
-              description: "[Sub-index](https://dev.qweather.com/en/docs/resource/air-info/#pollutant-sub-index) list, maybe NULL"
+              description: Air quality sub-indexes for the pollutant. The highest pollutant sub-index generally determines the current AQI and the primary pollutant
               items:
                 type: object
                 properties:
                   code:
                     type: string
-                    description: Code of sub-index
+                    description: Air quality index code associated with the sub-index
                   aqi:
                     type: number
                     description: Sub-index value for pollutant
@@ -2751,7 +2804,7 @@ components:
                     description: Sub-index for display
     aqiStationsArray:
       type: array
-      description: Monitoring station for this AQI reference, maybe NULL
+      description: Monitoring stations used to calculate the current AQI, if available. A station may temporarily or permanently stop reporting because of failure, maintenance, or other reasons; do not treat stations as fixed enum values or rely entirely on station data
       items:
         type: object
         properties:
@@ -3094,11 +3147,11 @@ components:
         sunrise:
           type: string
           nullable: true
-          description: "[Sunrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). Maybe null in high latitude area"
+          description: "[Sunrise time](https://dev.qweather.com/en/docs/api/astronomy/sun-guide/#sunrise-and-sunset). Maybe null in high latitude area"
         sunset:
           type: string
           nullable: true
-          description: "[Sunset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). Maybe null in high latitude area"
+          description: "[Sunset time](https://dev.qweather.com/en/docs/api/astronomy/sun-guide/#sunrise-and-sunset). Maybe null in high latitude area"
         refer:
           "$ref": "#/components/schemas/referObject"
 
@@ -3134,11 +3187,11 @@ components:
         moonrise:
           type: string
           nullable: true
-          description: "[Moonrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) for the requested date; may be null"
+          description: "[Moonrise time](https://dev.qweather.com/en/docs/api/astronomy/moon-guide/#moonrise-and-moonset) for the requested date; may be null"
         moonset:
           type: string
           nullable: true
-          description: "[Moonset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) for the requested date; may be null"
+          description: "[Moonset time](https://dev.qweather.com/en/docs/api/astronomy/moon-guide/#moonrise-and-moonset) for the requested date; may be null"
         moonPhase:
           type: array
           description: Moon phase data list
@@ -3154,13 +3207,13 @@ components:
                 description: Moon phase value
               name:
                 type: string
-                description: "[Moon phase name](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moon-phase)"
+                description: "[Moon phase name](https://dev.qweather.com/en/docs/api/astronomy/moon-guide/#moon-phase)"
               illumination:
                 type: string
                 description: Moon illuminance in percent
               icon:
                 type: string
-                description: "[Icon code](https://dev.qweather.com/en/docs/resource/icons/) for moon phase. See also [QWeather Icons](https://icons.qweather.com/en/)"
+                description: "[Icon code](https://dev.qweather.com/en/docs/api/weather/weather-conditions/#icons) for moon phase. See also [QWeather Icons](https://icons.qweather.com/en/)"
         refer:
           "$ref": "#/components/schemas/referObject"
 
@@ -3359,19 +3412,19 @@ components:
               description: Date
             sunrise:
               type: string
-              description: "[Sunrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). Maybe null in high latitude area"
+              description: "[Sunrise time](https://dev.qweather.com/en/docs/api/astronomy/sun-guide/#sunrise-and-sunset). Maybe null in high latitude area"
             sunset:
               type: string
-              description: "[Sunset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#sunrise-and-sunset). Maybe null in high latitude area"
+              description: "[Sunset time](https://dev.qweather.com/en/docs/api/astronomy/sun-guide/#sunrise-and-sunset). Maybe null in high latitude area"
             moonrise:
               type: string
-              description: "[Moonrise time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) for the historical date; may be null"
+              description: "[Moonrise time](https://dev.qweather.com/en/docs/api/astronomy/moon-guide/#moonrise-and-moonset) for the historical date; may be null"
             moonset:
               type: string
-              description: "[Moonset time](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moonrise-and-moonset) for the historical date; may be null"
+              description: "[Moonset time](https://dev.qweather.com/en/docs/api/astronomy/moon-guide/#moonrise-and-moonset) for the historical date; may be null"
             moonPhase:
               type: string
-              description: "[Moon phase name](https://dev.qweather.com/en/docs/resource/sun-moon-info/#moon-phase)"
+              description: "[Moon phase name](https://dev.qweather.com/en/docs/api/astronomy/moon-guide/#moon-phase)"
             tempMax:
               type: string
               description: The highest temperature of the day
@@ -3401,19 +3454,19 @@ components:
                 description: 'Temperature, default unit: Celsius'
               icon:
                 type: string
-                description: "[Icon code](https://dev.qweather.com/en/docs/resource/icons/) for weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)"
+                description: "[Icon code](https://dev.qweather.com/en/docs/api/weather/weather-conditions/#icons) for weather conditions. See also [QWeather Icons](https://icons.qweather.com/en/)"
               text:
                 type: string
                 description: Weather condition description
               wind360:
                 type: string
-                description: "[Wind direction](https://dev.qweather.com/en/docs/resource/wind-info/#wind-direction) in azimuth degree"
+                description: "[Wind direction](https://dev.qweather.com/en/docs/api/weather/wind-guide/#wind-direction) in azimuth degree"
               windDir:
                 type: string
-                description: "[Wind direction](https://dev.qweather.com/en/docs/resource/wind-info/#wind-direction)"
+                description: "[Wind direction](https://dev.qweather.com/en/docs/api/weather/wind-guide/#wind-direction)"
               windScale:
                 type: string
-                description: "[Wind scale](https://dev.qweather.com/en/docs/resource/wind-info/#wind-scale)"
+                description: "[Wind scale](https://dev.qweather.com/en/docs/api/weather/wind-guide/#wind-scale)"
               windSpeed:
                 type: string
                 description: "Wind speed, km/h"
