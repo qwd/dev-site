@@ -1468,7 +1468,7 @@ components:
         type: string
         example: project_123
     kidQuery:
-      name: cred
+      name: credential
       in: query
       description: Specify a Credential ID to get its API traffic stats. Do not pass both `project` and `credential` a single request.
       required: false
