@@ -1470,7 +1470,7 @@ components:
         type: string
         example: project_123
     kidQuery:
-      name: cred
+      name: credential
       in: query
       description: 指定凭据ID以查看该凭据的请求量统计。`credential`与`project`互斥。
       required: false
