@@ -5,7 +5,7 @@
     "build:css": "tailwindcss -i assets/css/main.css -o static/assets/css/style.css --minify",
     "build": "npm run openapi:generate && npm run build:css && hugo --cleanDestinationDir",
     "start": "npm run openapi:generate && concurrently --kill-others --names openapi,tailwind,hugo \"npm:openapi:watch\" \"tailwindcss -i assets/css/main.css -o static/assets/css/style.css --watch\" \"hugo server --disableFastRender\"",
-    "dev": "npm start",
+    "dev": "npm run openapi:generate && concurrently --kill-others --names openapi,tailwind,hugo \"npm:openapi:watch\" \"tailwindcss -i assets/css/main.css -o static/assets/css/style.css --watch\" \"hugo server --bind 0.0.0.0 --disableFastRender\"",
     "openapi:generate": "npm run openapi:generate-docs",
     "openapi:generate-docs": "node scripts/openapi/generate-parsed-openapi.mjs",
     "openapi:watch": "node scripts/openapi/watch.mjs",

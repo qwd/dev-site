@@ -238,9 +238,15 @@
   .main-content .article .faq-content a[href^="http://"]::after,
   .main-content .article .faq-content a[href^="https://"]::after,
   .main-content .article .faq-content a[href^="//"]::after {
-    content: "\2197\fe0e";
-    font-family: system-ui, Arial, Helvetica, sans-serif;
-    margin-left: 2px;
+    --external-link-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2,14L14,2M6,2h8v8' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    content: "";
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    margin: 0 0.15em;
+    background-color: currentColor;
+    -webkit-mask: var(--external-link-icon) center / contain no-repeat;
+    mask: var(--external-link-icon) center / contain no-repeat;
   }
 
   /* reset internal site link icon */
