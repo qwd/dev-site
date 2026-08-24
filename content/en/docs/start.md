@@ -13,21 +13,20 @@ Welcome to QWeather Developer Services, this document will introduce some basic 
 
 You will need to [register for an account](https://id.qweather.com/#/register?redirect=https%3A%2F%2Fconsole.qweather.com) to manage your projects, credentials, finances, etc. Learn more about [Account](/en/docs/account/).
 
-## Configuration
+## Configure API
 
 Before requesting data, some preparations are needed:
 
 - Create [projects and credentials](/en/docs/configuration/project-and-key/) to manage your API.
 - Learn about [authentication](/en/docs/configuration/authentication/). QWeather supports two authentication methods: **JSON Web Token (JWT)** and **API KEY**.
 - Obtain the [API Host](/en/docs/configuration/api-host/), which is your dedicated API domain name.
-- Learn [how to send API requests](/en/docs/configuration/api-config/).
-- Install and setup the [iOS SDK](/en/docs/configuration/ios-sdk-config/) or [Android SDK](/en/docs/configuration/android-sdk-config/).
+- Learn how to [build an API request](/en/docs/configuration/api-config/).
 
-## Coding
+## API Debugging
 
-We provide detailed [Development Documentation](/en/docs/api/) and [Useful Resources](/en/docs/resource/), which can help developers do their work more efficiently.
+We provide a Swagger UI-based [API Explorer](/en/api-explore/). Paste your API Host and credentials to start debugging quickly.
 
-Also, here are some common practices and experiences when using our services so you can get the data quickly and easily. See [Best Practices](/en/docs/best-practices/).
+We also recommend reading the [documentation for each API](/en/docs/api/) before coding, along with the [Useful Resources](/en/docs/resource/) and [Best Practices](/en/docs/best-practices/), to help you work more efficiently.
 
 ## Finance
 

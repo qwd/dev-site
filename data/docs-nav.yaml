@@ -11,8 +11,7 @@
         - key: config-apihost
         - key: config-auth
         - key: config-api
-        - key: config-ios
-        - key: config-android
+        - key: config-sdk
     - key: account-overview
       subitems:
         - key: account-manage

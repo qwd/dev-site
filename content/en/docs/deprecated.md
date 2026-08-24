@@ -12,14 +12,14 @@ Here is the documentation for products that have been deprecated but are still a
 
 - Latest version: 4.20
 - EOL: 2026-09-01
-- Upgrade to: [Android SDK v5](/en/docs/configuration/android-sdk-config/)
+- Upgrade to: [Android SDK v5](https://github.com/qwd/qweather-android-sdk)
 - [Download](https://dl.qweather.com/sites/dev/qweather-sdk-v4-android-doc-en.md)
 
 ### iOS SDK v4
 
 - Latest version: 4.20
 - EOL: 2026-09-01
-- Upgrade to: [iOS SDK v5](/docs/configuration/ios-sdk-config/)
+- Upgrade to: [iOS SDK v5](https://github.com/qwd/qweather-ios-sdk)
 - [Download](https://dl.qweather.com/sites/dev/qweather-sdk-v4-ios-doc-en.md)
 
 ### WebAPI v7

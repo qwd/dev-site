@@ -8,7 +8,7 @@ aliases:
 translationKey: config-auth
 ---
 
-和风天气开发服务使用JWT(JSON Web Token)以及API KEY的方式进行身份认证。我们推荐使用JWT作为首选的身份认证方式，这将极大的提高安全性。
+和风天气开发服务使用 JWT(JSON Web Token) 以及 API KEY 的方式进行身份认证。我们推荐使用JWT作为首选的身份认证方式，这将极大的提高安全性。
 
 ## JSON Web Token
 
@@ -78,7 +78,8 @@ generateEd25519Pem();
 4. 输入凭据名称
 5. 选择身份认证方式JSON Web Token
 6. 使用任意文本编辑器打开公钥文件（比如刚才创建的ed25519-public.pem），复制其中的全部内容，这些内容看起来像是：
-```
+
+   ```
    -----BEGIN PUBLIC KEY-----
    MCowBQYDK2VwAyEAARbeZ5AhklFG4gg1Gx5g5bWxMMdsUd6b2MC4wV0/M9Q=
    -----END PUBLIC KEY-----
@@ -112,8 +113,9 @@ Header包括下列参数并保存为JSON对象格式：
 
 #### Payload
 
-Payload包括下列参数并保存为JSON对象格式：
+Payload 包括下列参数并保存为JSON对象格式：
 
+- `iss` 签发者，这个值是你的开发者ID，开发者ID在[控制台-设置](https://console.qweather.com/setting?lang=zh)中查看，是一个Q开头的10位字母/数字
 - `sub` 签发主体，这个值是凭据的项目ID，项目ID在[控制台-项目管理](https://console.qweather.com/project)中查看
 - `iat` 签发时间，这个值表示JWT签发生效的时间，UNIX时间戳格式。为了防止时间误差，建议你将`iat`设置为当前时间之前的30秒，并确保你的服务器或设备的时间和日期是正确的。
 - `exp` 过期时间，这个值表示JWT在何时过期，UNIX时间戳格式。较长的过期时间可以减轻负载，但是较短的时间可以提高安全性。你应该根据使用场景设置过期时间，例如在服务端，可能适合较长的时间，在前端则适合较短的时间。目前允许的有效期最长为24小时（86400秒）。
@@ -122,6 +124,7 @@ Payload包括下列参数并保存为JSON对象格式：
 
 ```json
 {
+    "iss": "Q12345ABCD",
     "sub": "ABCDE23456",
     "iat": 1703912400,
     "exp": 1703912940
@@ -130,11 +133,12 @@ Payload包括下列参数并保存为JSON对象格式：
 
 > **警告：** 在Header和Payload中的信息是明文传输，所以仅添加上述指定的参数，不要添加任何其他敏感信息和无关参数。
 {.bqdanger}
+
 #### Signature
 
 将Header和Payload分别进行Base64URL编码并用英文句号拼接在一起，使用你的私钥对其进行Ed25519算法的签名，之后对签名结果同样进行Base64URL编码。
 
-> **注意：** 必须使用**Base64URL**编码，而不是Base64，两者有些许差别。
+> **注意：** 必须使用 **Base64URL** 编码，而不是 Base64，两者有些许差别。
 
 #### 拼接在一起
 
@@ -149,7 +153,6 @@ eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6M
 以下是 Header 和 Payload 的保留字段，暂时不参与身份认证。部分 JWT 库可能默认添加这些字段，建议​​移除它们，避免未来启用这些保留字段时影响你的JWT身份认证​​。
 
 - `typ` 如果包含此字段，必须设置为**JWT**
-- `iss`
 - `aud`
 - `nbf`
 
@@ -160,7 +163,7 @@ eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6M
 ```bash
 curl --compressed \
 -H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
-'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
+'https://abcxyz.qweatherapi.com/weather/v1/current/39.92/116.41'
 ```
 
 ### JWT调试 {#jwt-debugging}
@@ -175,7 +178,7 @@ curl --compressed \
 
 - 访问 **<https://jwt.qweather.com>**
 - 复制或下载 Ed25519 密钥，点击“重新生成”或刷新浏览器可生成新的密钥
-- 点击橙色文字，替换为你的 `kid`，`sub`，`iat`，`exp`，并在私钥区域粘贴你的私钥内容，随即生成JWT
+- 点击橙色文字，替换为你的 `kid`，`iss`，`sub`，`iat`，`exp`，并在私钥区域粘贴你的私钥内容，随即生成JWT
 
 **JWT Validator**
 
@@ -189,7 +192,7 @@ curl --compressed \
 
 ### 生成JWT示例 {#jwt-demo}
 
-请将代码中的`YOUR_KEY_ID`，`YOUR_PROJECT_ID`，`YOUR_PRIVATE_KEY`或`PATH_OF_YOUR_PRIVATE_KEY`替换为你的值。
+请将代码中的`YOUR_KEY_ID`，`YOUR_DEVELOPER_ID`，`YOUR_PROJECT_ID`，`YOUR_PRIVATE_KEY`或`PATH_OF_YOUR_PRIVATE_KEY`替换为你的值。
 
 > **提示：** 示例仅供参考和测试，我们不保证在任何环境下可以正常运行，请根据你的开发语言和环境进行适配。
 
@@ -210,7 +213,7 @@ String headerJson = "{\"alg\": \"EdDSA\", \"kid\": \"YOUR_KEY_ID\"}";
 // Payload
 long iat = ZonedDateTime.now(ZoneOffset.UTC).toEpochSecond() - 30;
 long exp = iat + 900;
-String payloadJson = "{\"sub\": \"YOUR_PROJECT_ID\", \"iat\": " + iat + ", \"exp\": " + exp + "}";
+String payloadJson = "{\"iss\": \"YOUR_DEVELOPER_ID\", \"sub\": \"YOUR_PROJECT_ID\", \"iat\": " + iat + ", \"exp\": " + exp + "}";
 
 // Base64url header+payload
 String headerEncoded = Base64.getUrlEncoder().encodeToString(headerJson.getBytes(StandardCharsets.UTF_8));
@@ -258,7 +261,7 @@ String headerJson = "{\"alg\": \"EdDSA\", \"kid\": \"YOUR_KEY_ID\"}";
 // Payload
 long iat = ZonedDateTime.now(ZoneOffset.UTC).toEpochSecond() - 30;
 long exp = iat + 900;
-String payloadJson = "{\"sub\": \"YOUR_PROJECT_ID\", \"iat\": " + iat + ", \"exp\": " + exp + "}";
+String payloadJson = "{\"iss\": \"YOUR_DEVELOPER_ID\", \"sub\": \"YOUR_PROJECT_ID\", \"iat\": " + iat + ", \"exp\": " + exp + "}";
 
 // Base64url header+payload
 String headerEncoded = Base64.getUrlEncoder().encodeToString(headerJson.getBytes(StandardCharsets.UTF_8));
@@ -299,6 +302,7 @@ importPKCS8(YourPrivateKey, 'EdDSA').then((privateKey) => {
   const iat = Math.floor(Date.now() / 1000) - 30;
   const exp = iat + 900;
   const customPayload = {
+    iss: 'YOUR_DEVELOPER_ID',
     sub: 'YOUR_PROJECT_ID',
     iat: iat,
     exp: exp
@@ -324,9 +328,10 @@ import jwt
 private_key = """YOUR_PRIVATE_KEY"""
 
 payload = {
+    'iss': 'YOUR_DEVELOPER_ID',
+    'sub': 'YOUR_PROJECT_ID',
     'iat': int(time.time()) - 30,
-    'exp': int(time.time()) + 900,
-    'sub': 'YOUR_PROJECT_ID'
+    'exp': int(time.time()) + 900
 }
 headers = {
     'kid': 'YOUR_KEY_ID'
@@ -341,11 +346,12 @@ print(f"JWT:  {encoded_jwt}")
 #### PHP8.4+
 
 ```php
-function generateJWT($privateKeyPath, $kid, $sub) {
+function generateJWT($privateKeyPath, $kid, $iss, $sub) {
     $privateKey = file_get_contents($privateKeyPath);
 
     $header = base64_encode(json_encode(['alg' => 'EdDSA', 'kid' => $kid]));
     $payload = base64_encode(json_encode([
+        'iss' => $iss,
         'sub' => $sub,
         'iat' => time() - 30,
         'exp' => time() + 900
@@ -364,7 +370,7 @@ function generateJWT($privateKeyPath, $kid, $sub) {
     return $data . '.' . $signature;
 }
 
-$jwt = generateJWT('YOUR_PRIVATE_KEY_PATH', 'YOUR_KEY_ID', 'YOUR_PROJECT_ID');
+$jwt = generateJWT('YOUR_PRIVATE_KEY_PATH', 'YOUR_KEY_ID', 'YOUR_DEVELOPER_ID', 'YOUR_PROJECT_ID');
 echo $jwt;
 ```
 
@@ -373,8 +379,9 @@ echo $jwt;
 ```bash
 #!/bin/bash
 
-# Set `kid`, `sub` and `private_key_path`
+# Set `kid`, `iss`, `sub` and `private_key_path`
 kid=YOUR_KEY_ID
+iss=YOUR_DEVELOPER_ID
 sub=YOUR_PROJECT_ID
 private_key_path=PATH_OF_YOUR_PRIVATE_KEY
 
@@ -386,7 +393,7 @@ exp=$((iat + 900))
 
 # base64url encoded header and payload
 header_base64=$(printf '{"alg":"EdDSA","kid":"%s"}' "$kid" | openssl base64 -e | tr -d '=' | tr '/+' '_-' | tr -d '\n')
-payload_base64=$(printf '{"sub":"%s","iat":%d,"exp":%d}' "$sub" "$iat" "$exp" | openssl base64 -e | tr -d '=' | tr '/+' '_-' | tr -d '\n')
+payload_base64=$(printf '{"iss":"%s","sub":"%s","iat":%d,"exp":%d}' "$iss" "$sub" "$iat" "$exp" | openssl base64 -e | tr -d '=' | tr '/+' '_-' | tr -d '\n')
 header_payload="${header_base64}.${payload_base64}"
 
 # Save $header_payload as a temporary file for Ed25519 signature
@@ -437,7 +444,7 @@ API KEY是一种常见、操作简单的身份认证方式。相比较JWT而言�
 
 ```bash
 curl -H "X-QW-Api-Key: ABCD1234EFGH" --compressed \
-'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
+'https://abcxyz.qweatherapi.com/weather/v1/current/39.92/116.41'
 ```
 
 #### 请求参数 {#query-parameter}
@@ -446,7 +453,7 @@ curl -H "X-QW-Api-Key: ABCD1234EFGH" --compressed \
 
 ```bash
 curl --compressed \
-'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100&key=ABCD1234EFGH'
+'https://abcxyz.qweatherapi.com/weather/v1/current/39.92/116.41?key=ABCD1234EFGH'
 ```
 
 ## API KEY数字签名 {#api-key-signature}
@@ -458,12 +465,12 @@ API KEY的数字签名方式已经不再被支持。
 
 参考下方表格了解不同服务对身份认证方式的兼容性。
 
-||JWT|API KEY|API KEY数字签名
-|---|---|---|---|
-|API v7|✅|✅|✅ 仅2024-11-01前的凭据可用|
-|GeoAPI v2|✅|✅|✅ 仅2024-11-01前的凭据可用|
-|GeoAPI v3|✅|✅|❌|
-|Air quality API v1|✅|✅|❌|
-|Console API v1|✅|✅|❌|
-|SDK 4+|❌|❌|✅|
-|SDK 5+|✅|❌|❌|
+|        | JWT | API KEY | API KEY数字签名 |
+| ------ | --- | ------- | --------------- |
+| API    | ✅   | ✅       | ❌<sup>1</sup>             |
+| SDK 4+<sup>2</sup>  | ❌   | ❌       | ✅               |
+| SDK 5+ | ✅   | ❌       | ❌               |
+
+*1: 仅2024-11-01前创建的凭据且仅用于2024-11-01前发布的 API，并在2026-12-31后完全停止支持。*
+
+*2: SDK 4.x 将在2026-12-31日停止服务*

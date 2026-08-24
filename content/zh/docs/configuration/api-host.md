@@ -10,19 +10,15 @@ API Host是开发者独立的API地址，用于取代传统的公共API地址，
 
 ### 查看你的API Host {#your-api-host}
 
-你可以在[控制台-设置](https://console.qweather.com/setting)中查看你的API Host，API Host 看起来像是：
+你可以在[控制台-设置](https://console.qweather.com/setting)中查看你的API Host。API Host 由系统随机分配，看起来像是：
 
 ```
-abc1234xyz.def.qweatherapi.com
+h2a9cf3mhs.xy.qweatherapi.com
 ```
 
 ### 使用API Host {#use-api-host}
 
-你需要将API Host粘贴至API请求URL或SDK的配置文件中，请参考：
-
-- [如何发送API请求](/docs/configuration/api-config/)
-- [安装和配置 iOS SDK](/docs/configuration/ios-sdk-config/)
-- [安装和配置 Android SDK](/docs/configuration/android-sdk-config/)
+你需要将 API Host 粘贴至 API 请求 URL，请参考[如何发送API请求](/docs/configuration/api-config/)。
 
 > **警告：** 如果是使用的是原公共API地址，例如`api.qweather.com`、`devapi.qweather.com`或`geoapi.qweather.com`，请尽快更换为你自己的API Host以提供更高的安全性，[原公共API地址将从2026年起逐步停止服务](https://blog.qweather.com/announce/public-api-domain-change-to-api-host/)。
 {.bqdanger}

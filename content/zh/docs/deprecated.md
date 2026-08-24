@@ -12,14 +12,14 @@ type: legacy-docs
 
 - 最后版本: 4.20
 - 停服日期: 2026-09-01
-- 升级至: [Android SDK v5](/docs/configuration/android-sdk-config/)
+- 升级至: [Android SDK v5](https://github.com/qwd/qweather-android-sdk)
 - [下载文档](https://dl.qweather.com/sites/dev/qweather-sdk-v4-android-doc-zh.md)
 
 ### iOS SDK v4
 
 - 最后版本: 4.20
 - 停服日期: 2026-09-01
-- 升级至: [iOS SDK v5](/docs/configuration/ios-sdk-config/)
+- 升级至: [iOS SDK v5](https://github.com/qwd/qweather-ios-sdk)
 - [下载文档](https://dl.qweather.com/sites/dev/qweather-sdk-v4-ios-doc-zh.md)
 
 ### WebAPI v7
