@@ -11,21 +11,20 @@ translationKey: start-overview
 
 你需要[注册一个帐号](https://id.qweather.com/#/register?redirect=https%3A%2F%2Fconsole.qweather.com)，用于管理你的项目、凭据、财务等事宜。请参考[帐号管理](/docs/account/)。
 
-## 配置API和SDK {#configuration}
+## 配置 API {#configure-api}
 
 在请求数据之前，需要一些准备工作：
 
-- 创建[项目和凭据](/docs/configuration/project-and-key/)用来管理你的API。
-- 了解[身份认证](/docs/configuration/authentication/)，和风天气支持两种身份认证方式：**JSON Web Token (JWT)** 以及 **API KEY**。
-- 获取[API Host](/docs/configuration/api-host/)，这是你独立的API请求地址。
-- 如何[发送API请求](/docs/configuration/api-config/)。
-- 安装和配置 [iOS SDK](/docs/configuration/ios-sdk-config/) 或 [Android SDK](/docs/configuration/android-sdk-config/)。
+- 创建[项目和凭据](/docs/configuration/project-and-key/)用来管理你的API
+- 了解[身份认证](/docs/configuration/authentication/)，和风天气支持两种身份认证方式：**JSON Web Token (JWT)** 以及 **API KEY**
+- 获取[API Host](/docs/configuration/api-host/)，这是你独立的API请求地址
+- 了解如何[构建 API 请求](/docs/configuration/api-config/)
 
-## 开发 {#coding}
+## API 调试
 
-我们提供了详尽的[开发文档](/docs/api/)以及[实用资料](/docs/resource/)，可以帮助开发者更高效的完成工作。
+我们提供了基于 Swagger UI 的 [API 调试工具](/api-explore/)，复制粘贴你的 API Host 和凭据，然后开始快速调试。
 
-另一方面，[最佳实践](/docs/best-practices/)介绍了一些常见做法和经验，以便你能够快速的、稳定的获取你需要的数据。
+我们也建议你在编码前阅读每项 [API 的开发文档](/docs/api/)，同时包括[实用资料](/docs/resource/)和[最佳实践](/docs/best-practices/)，可以帮助你更高效的完成工作。
 
 ## 费用 {#finance}
 

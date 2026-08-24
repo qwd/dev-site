@@ -13,10 +13,10 @@ Now, let's assume you've created [project and credential](/en/docs/configuration
 Generally, a complete API request URL consists of scheme, host, port, path and query parameters. (Of course, it may be called differently in different programs, we only refer to [RFC 3986](https://www.rfc-editor.org/rfc/rfc3986))
 
 ```
-https://abcxyz.qweatherapi.com/airquality/v1/station/{LocationID}?lang=en
-\___/   \____________________/\____________________/\___________/\______/
-scheme          host                   path            path       query
-                                                      params      params 
+https://abcxyz.qweatherapi.com/weather/v1/current/{lat}/{lon}?lang=en
+\___/   \____________________/\_________________/\__________/\______/
+scheme          host               path             path       query
+                                                   params      params
 ```
 
 - scheme: only supports HTTPS.
@@ -65,13 +65,13 @@ You can build the final API request with any programming language, here we use c
 
 curl --compressed \
 -H 'Authorization: Bearer 1234.ABCD.5678' \
-'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
+'https://abcxyz.qweatherapi.com/weather/v1/current/39.92/116.41'
 
 # Authentication with API KEY
 
 curl --compressed \
 -H "X-QW-Api-Key: ABCD1234EFGH" \
-'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
+'https://abcxyz.qweatherapi.com/weather/v1/current/39.92/116.41'
 ```
 
 Building an API URL is not difficult for most developers, but we still strongly recommend that you read the [Best Practices- Optimize requests](/en/docs/best-practices/optimize-requests/) for troubleshooting and experience.

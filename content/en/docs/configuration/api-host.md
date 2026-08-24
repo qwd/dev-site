@@ -10,20 +10,15 @@ For each developer account, the API Host is independent and unique. It is also p
 
 ### Your API Host
 
-You can view your API Host in the [Console - Settings](https://console.qweather.com/setting). The API Host looks like this:
+You can view your API Host in the [Console - Settings](https://console.qweather.com/setting). The API Host is randomly assigned by the system and looks like this:
 
 ```
-abc1234xyz.def.qweatherapi.com
+h2a9cf3mhs.xy.qweatherapi.com
 ```
 
 ### Use API Host
 
-You need to paste API Host into the API URL or the SDK configuration file, refer to:
-
-- [How to send API requests](/en/docs/configuration/api-config/)
-- [Install and setup iOS SDK](/en/docs/configuration/ios-sdk-config/)
-- [Install and setup Android SDK](/en/docs/configuration/android-sdk-config/)
-
+Paste the API Host into the API request URL. See [how to build an API request](/en/docs/configuration/api-config/).
 
 > **Warning:** If you are still using the legacy shared API domain, such as `api.qweather.com`, `devapi.qweather.com` or `geoapi.qweather.com`, please switch to your own API Host as soon as possible to ensure higher security. [The legacy shared API domain will be gradually discontinued starting in 2026](https://blog.qweather.com/announce/public-api-domain-change-to-api-host/).
 {.bqdanger}

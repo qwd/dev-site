@@ -70,7 +70,8 @@ Once your Ed25519 keys is generated, you need to add the public key to the QWeat
 4. Enter the credential name.
 5. Select the authentication method: **JSON Web Token**.
 6. Use any text editor to open the public key (like ed25519-public.pem which was generated in the previous step), and copy the entire contents of it. The content looks like:
-```
+
+   ```
    -----BEGIN PUBLIC KEY-----
    MCowBQYDK2VwAyEAARbeZ5AhklFG4gg1Gx5g5bWxMMdsUd6b2MC4wV0/M9Q=
    -----END PUBLIC KEY-----
@@ -106,6 +107,7 @@ For example:
 
 Payload includes the following parameters and saved in JSON object format:
 
+- `iss` Issuer, this value is your Developer ID. You can find your Developer ID in [Console - Settings](https://console.qweather.com/setting?lang=en). It is a 10-character string of letters and numbers beginning with Q.
 - `sub` Subject, this value is your Project ID of the Credential.
 - `iat` Issue time, this value indicates the time when the JWT was generated and effective, in UNIX timestamp format.
 - `exp` expiration time, this value indicates when the JWT expires, in UNIX timestamp format. A longer expiration time reduces overhead, but a shorter time improves security. The maximum expiration time is 24 hours(86400 seconds).
@@ -114,6 +116,7 @@ For example:
 
 ```json
 {
+    "iss": "Q12345ABCD",
     "sub": "ABC2345DEF",
     "iat": 1703912400,
     "exp": 1703912940
@@ -122,6 +125,7 @@ For example:
 
 > **Warning:** Only add the specified parameters above in the Header and Payload, do not add any other sensitive information and irrelevant parameters.
 {.bqdanger}
+
 #### Signature
 
 Encode the Header and Payload using Base64URL and separate them by a dot, then sign them with your private key using the Ed25519 algorithm. Once you have this signature, encode signature with Base64URL as well.
@@ -141,7 +145,6 @@ The following are reserved fields in the JWT Header and Payload, but are not cur
 Some JWT libraries may include these fields by default. We recommend removing them to avoid potential issues when these fields are enforced for authentication in the future.
 
 - `typ` Must be set to **JWT** if it is added.
-- `iss`
 - `aud`
 - `nbf`
 
@@ -152,7 +155,7 @@ Add the Token as a parameter to the `Authorization: Bearer` request header, for 
 ```bash
 curl --compressed \
 -H 'Authorization: Bearer eyJhbGciOiAiRWREU0EiLCJraWQiOiAiQUJDRDEyMzQifQ.eyJpc3MiOiJBQkNEMTIzNCIsImlhdCI6MTcwMzkxMjQwMCwiZXhwIjoxNzAzOTEyOTQwfQ.MEQCIFGLmpmAEwuhB74mR04JWg_odEau6KYHYLRXs8Bp_miIAiBMU5O13vnv9ieEBSK71v4UULMI4K5T9El6bCxBkW4BdA' \
-'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
+'https://abcxyz.qweatherapi.com/weather/v1/current/39.92/116.41'
 ```
 
 ### Debugging
@@ -167,7 +170,7 @@ An open-source, offline JWT debugging tool to generate Ed25519 key and create JW
 
 - Go **<https://jwt.qweather.com>**
 - Copy or download the Ed25519 key. Click “Re-generate” or refresh your browser to generate a new key.
-- Click the orange text, replace it with your `kid`, `sub`, `iat`, and `exp`, paste your private key into the private key field, and the JWT will be generated immediately.
+- Click the orange text, replace it with your `kid`, `iss`, `sub`, `iat`, and `exp`, paste your private key into the private key field, and the JWT will be generated immediately.
 
 **JWT Validator**
 
@@ -181,7 +184,7 @@ If the API returns a [401 error](/en/docs/resource/error-code/#unauthorized), us
 
 ### JWT demo
 
-Please replace `YOUR_KEY_ID`, `YOUR_PROJECT_ID`, `YOUR_PRIVATE_KEY` or `PATH_OF_YOUR_PRIVATE_KEY` in the code with your values.
+Please replace `YOUR_KEY_ID`, `YOUR_DEVELOPER_ID`, `YOUR_PROJECT_ID`, `YOUR_PRIVATE_KEY` or `PATH_OF_YOUR_PRIVATE_KEY` in the code with your values.
 
 > **Hint:** These demos are for reference and test only, we can't guarantee that they will work in any environment.
 
@@ -202,7 +205,7 @@ String headerJson = "{\"alg\": \"EdDSA\", \"kid\": \"YOUR_KEY_ID\"}";
 // Payload
 long iat = ZonedDateTime.now(ZoneOffset.UTC).toEpochSecond() - 30;
 long exp = iat + 900;
-String payloadJson = "{\"sub\": \"YOUR_PROJECT_ID\", \"iat\": " + iat + ", \"exp\": " + exp + "}";
+String payloadJson = "{\"iss\": \"YOUR_DEVELOPER_ID\", \"sub\": \"YOUR_PROJECT_ID\", \"iat\": " + iat + ", \"exp\": " + exp + "}";
 
 // Base64url header+payload
 String headerEncoded = Base64.getUrlEncoder().encodeToString(headerJson.getBytes(StandardCharsets.UTF_8));
@@ -248,7 +251,7 @@ String headerJson = "{\"alg\": \"EdDSA\", \"kid\": \"YOUR_KEY_ID\"}";
 // Payload
 long iat = ZonedDateTime.now(ZoneOffset.UTC).toEpochSecond() - 30;
 long exp = iat + 900;
-String payloadJson = "{\"sub\": \"YOUR_PROJECT_ID\", \"iat\": " + iat + ", \"exp\": " + exp + "}";
+String payloadJson = "{\"iss\": \"YOUR_DEVELOPER_ID\", \"sub\": \"YOUR_PROJECT_ID\", \"iat\": " + iat + ", \"exp\": " + exp + "}";
 
 // Base64url header+payload
 String headerEncoded = Base64.getUrlEncoder().encodeToString(headerJson.getBytes(StandardCharsets.UTF_8));
@@ -289,6 +292,7 @@ importPKCS8(YourPrivateKey, 'EdDSA').then((privateKey) => {
   const iat = Math.floor(Date.now() / 1000) - 30;
   const exp = iat + 900;
   const customPayload = {
+    iss: 'YOUR_DEVELOPER_ID',
     sub: 'YOUR_PROJECT_ID',
     iat: iat,
     exp: exp
@@ -314,9 +318,10 @@ import jwt
 private_key = """YOUR_PRIVATE_KEY"""
 
 payload = {
+    'iss': 'YOUR_DEVELOPER_ID',
+    'sub': 'YOUR_PROJECT_ID',
     'iat': int(time.time()) - 30,
-    'exp': int(time.time()) + 900,
-    'sub': 'YOUR_PROJECT_ID'
+    'exp': int(time.time()) + 900
 }
 headers = {
     'kid': 'YOUR_KEY_ID'
@@ -331,11 +336,12 @@ print(f"JWT:  {encoded_jwt}")
 #### PHP8.4+
 
 ```php
-function generateJWT($privateKeyPath, $kid, $sub) {
+function generateJWT($privateKeyPath, $kid, $iss, $sub) {
     $privateKey = file_get_contents($privateKeyPath);
 
     $header = base64_encode(json_encode(['alg' => 'EdDSA', 'kid' => $kid]));
     $payload = base64_encode(json_encode([
+        'iss' => $iss,
         'sub' => $sub,
         'iat' => time() - 30,
         'exp' => time() + 900
@@ -353,7 +359,7 @@ function generateJWT($privateKeyPath, $kid, $sub) {
     return $data . '.' . $signature;
 }
 
-$jwt = generateJWT('YOUR_PRIVATE_KEY_PATH', 'YOUR_KEY_ID', 'YOUR_PROJECT_ID');
+$jwt = generateJWT('YOUR_PRIVATE_KEY_PATH', 'YOUR_KEY_ID', 'YOUR_DEVELOPER_ID', 'YOUR_PROJECT_ID');
 echo $jwt;
 ```
 
@@ -362,8 +368,9 @@ echo $jwt;
 ```bash
 #!/bin/bash
 
-# Set `kid`, `sub` and `private_key_path`
+# Set `kid`, `iss`, `sub` and `private_key_path`
 kid=YOUR_KEY_ID
+iss=YOUR_DEVELOPER_ID
 sub=YOUR_PROJECT_ID
 private_key_path=PATH_OF_YOUR_PRIVATE_KEY
 
@@ -375,7 +382,7 @@ exp=$((iat + 900))
 
 # base64url encoded header and payload
 header_base64=$(printf '{"alg":"EdDSA","kid":"%s"}' "$kid" | openssl base64 -e | tr -d '=' | tr '/+' '_-' | tr -d '\n')
-payload_base64=$(printf '{"sub":"%s","iat":%d,"exp":%d}' "$sub" "$iat" "$exp" | openssl base64 -e | tr -d '=' | tr '/+' '_-' | tr -d '\n')
+payload_base64=$(printf '{"iss":"%s","sub":"%s","iat":%d,"exp":%d}' "$iss" "$sub" "$iat" "$exp" | openssl base64 -e | tr -d '=' | tr '/+' '_-' | tr -d '\n')
 header_payload="${header_base64}.${payload_base64}"
 
 # Save $header_payload as a temporary file for Ed25519 signature
@@ -426,7 +433,7 @@ Add `X-QW-Api-Key: your-key` to your request Header. For example:
 
 ```bash
 curl -H "X-QW-Api-Key: ABCD1234EFGH" --compressed \
-'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
+'https://abcxyz.qweatherapi.com/weather/v1/current/39.92/116.41'
 ```
 
 #### Query parameter
@@ -435,7 +442,7 @@ Add `key=your-key` to your query parameter. For example:
 
 ```bash
 curl --compressed \
-'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100&key=ABCD1234EFGH'
+'https://abcxyz.qweatherapi.com/weather/v1/current/39.92/116.41?key=ABCD1234EFGH'
 ```
 
 ## API KEY signature
@@ -446,12 +453,12 @@ API KEY signature authentication is no longer supported.
 
 Refer to the table below for compatibility of authentication methods for various services.
 
-||JWT|API KEY|API KEY signature
-|---|---|---|---|
-|API v7|✅|✅|✅ Only credentials created before 2024-11-01|
-|GeoAPI v2|✅|✅|✅ Only credentials created before 2024-11-01|
-|GeoAPI v3|✅|✅|❌|
-|Air quality API v1|✅|✅|❌|
-|Console API v1|✅|✅|❌|
-|SDK 4+|❌|❌|✅|
-|SDK 5+|✅|❌|❌|
+|        | JWT | API KEY | API KEY signature |
+| ------ | --- | ------- | ----------------- |
+| API    | ✅   | ✅       | ❌<sup>1</sup>     |
+| SDK 4+<sup>2</sup> | ❌   | ❌       | ✅                |
+| SDK 5+ | ✅   | ❌       | ❌                |
+
+*1: Available only for credentials created before 2024-11-01 and APIs released before 2024-11-01. Support will end entirely after 2026-12-31.*
+
+*2: SDK 4.x will be discontinued on 2026-12-31.*

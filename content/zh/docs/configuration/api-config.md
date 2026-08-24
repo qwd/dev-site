@@ -1,5 +1,5 @@
 ---
-title: API 配置
+title: 构建 API 请求
 description: 了解和风天气 API 的请求地址、身份认证和压缩方式，并构建一个完整的 API 请求。
 translationKey: config-api
 ---
@@ -13,10 +13,10 @@ translationKey: config-api
 通常来讲，一个完整的API请求URL由scheme，host，path，path parameters和query parameters组成：
 
 ```
-https://abcxyz.qweatherapi.com/airquality/v1/station/{LocationID}?lang=en
-\___/   \____________________/\____________________/\___________/\______/
-scheme           host                  path              path      query
-                                                        params     params 
+https://abcxyz.qweatherapi.com/weather/v1/current/{lat}/{lon}?lang=en
+\___/   \____________________/\_________________/\__________/\______/
+scheme          host               path             path       query
+                                                   params      params
 ```
 
 - **scheme:** 仅支持HTTPS协议。
@@ -66,13 +66,13 @@ X-QW-Api-Key: ABCD1234EFGH
 
 curl --compressed \
 -H 'Authorization: Bearer 1234.ABCD.5678' \
-'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
+'https://abcxyz.qweatherapi.com/weather/v1/current/39.92/116.41'
 
 # API KEY 身份认证
 
 curl --compressed \
 -H "X-QW-Api-Key: ABCD1234EFGH" \
-'https://abcxyz.qweatherapi.com/v7/weather/now?location=101010100'
+'https://abcxyz.qweatherapi.com/weather/v1/current/39.92/116.41'
 ```
 
 对于大部分开发者来说，构建一个API URL并非难事，但我们仍然强烈建议你阅读[最佳实践-优化请求](/docs/best-practices/optimize-requests/)文档，了解发送API请求的一些常见问题和经验。
