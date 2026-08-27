@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ partial "seo.html" . }}
+    {{ partial "gtm.html" . }}
     <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
     <link rel="stylesheet" href="/assets/swagger-ui/swagger-ui.css?{{ readFile "static/assets/swagger-ui/swagger-ui.css" | md5 }}">
     <link rel="stylesheet" href="/assets/swagger-ui/qweather-overrides.css?{{ readFile "static/assets/swagger-ui/qweather-overrides.css" | md5 }}">
