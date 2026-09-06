@@ -167,6 +167,10 @@
       author: daya0576
       code: https://github.com/daya0576/he-weather-bot
       description: 基于和风 API 的 Telegram 天气预报机器人。Telegram weather robot based on QWeather API.
+    - name: QWeather Pro for Home Assistant
+      code: https://github.com/PraxiGEN/ha_qweather_pro
+      author: PraxiGEN
+      description: Home Assistant 和风天气自定义集成：支持 JWT(Ed25519)/API Key 双认证、零依赖原生 SVG 天气卡片、12 种语言；含天气/空气质量/预警/生活指数等实体与服务。QWeather custom integration for Home Assistant.
     - name: api-QWeather
       author: Ayayaneru
       code: https://github.com/Ayayaneru/api-QWeather
