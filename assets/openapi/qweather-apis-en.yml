@@ -682,8 +682,8 @@ paths:
       tags:
       - Solar Irradiation
       summary: Solar Radiation Forecast
-      x-excerpt: Get 1-kilometer solar radiation forecasts worldwide at 15-minute intervals for up to 60 hours.
-      description: Provide solar radiation forecasts and related data at 15-minute intervals for any location worldwide, up to 60 hours ahead, with a spatial resolution of 1×1 km.
+      x-excerpt: Get 1-kilometer solar radiation forecasts worldwide at 15-minute intervals for up to 72 hours.
+      description: Provide solar radiation forecasts and related data at 15-minute intervals for any location worldwide, up to 72 hours ahead, with a spatial resolution of 1×1 km.
       externalDocs:
         url: https://dev.qweather.com/en/docs/api/solar-radiation/solar-radiation-forecast/
       parameters:
@@ -1305,7 +1305,7 @@ components:
     solarRadiationHoursQuery:
       name: hours
       in: query
-      description: 'Forecast hours, supports 1-60 hours, default is `24`. For example: `hours=12`'
+      description: 'Forecast hours, supports 1-72 hours, default is `24`. For example: `hours=12`'
       required: false
       schema:
         type: integer
