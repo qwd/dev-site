@@ -71,7 +71,7 @@ We support weather data services in China (including Hong Kong, Macau and Taiwan
 
 | Data                     | Update interval | Time step | Time range | Geographic |
 | ------------------------ | --------------- | --------- | ---------- | ---------- |
-| Solar Radiation Forecast | 1 hr            | 15 min    | 1-60 hrs   | Global     |
+| Solar Radiation Forecast | 1 hr            | 15 min    | 1-72 hrs   | Global     |
 
 ### Astronomy
 

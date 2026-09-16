@@ -741,8 +741,8 @@ paths:
       tags:
       - Solar Irradiation
       summary: 太阳辐射预报
-      x-excerpt: 获取全球任意坐标的逐15分钟太阳辐射预报及相关数据，最多支持未来60小时预报，分辨率为1x1公里。
-      description: 获取全球任意坐标的逐15分钟太阳辐射预报及相关数据，最多支持未来60小时预报，分辨率为1x1公里。
+      x-excerpt: 获取全球任意坐标的逐15分钟太阳辐射预报及相关数据，最多支持未来72小时预报，分辨率为1x1公里。
+      description: 获取全球任意坐标的逐15分钟太阳辐射预报及相关数据，最多支持未来72小时预报，分辨率为1x1公里。
       externalDocs:
         url: https://dev.qweather.com/docs/api/solar-radiation/solar-radiation-forecast/
       parameters:
@@ -1307,7 +1307,7 @@ components:
     solarRadiationHoursQuery:
       name: hours
       in: query
-      description: 预报小时数，可选1-60，默认`24`。例如： `hours=12`
+      description: 预报小时数，可选1-72，默认`24`。例如： `hours=12`
       required: false
       schema:
         type: integer
