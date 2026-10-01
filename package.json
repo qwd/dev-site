@@ -12,8 +12,8 @@
     "openapi:test": "node scripts/openapi/test-compatibility.mjs"
   },
   "dependencies": {
-    "@apidevtools/swagger-parser": "^12.1.0",
-    "yaml": "^2.9.0"
+    "@apidevtools/swagger-parser": "^13.1.0",
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",
