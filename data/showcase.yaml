@@ -175,6 +175,10 @@
       author: Zeyu Zhang
       code: https://github.com/InTereSTingHE/QWeatherAPI-Python
       description: 和风天气API调用python实现。
+    - name: qwx
+      author: KanoCifer
+      code: https://github.com/KanoCifer/qwx-py
+      description: Qweather API 的非官方Python SDK，使用pydantic与httpx，支持异步同步客户端和类型化响应
 - language: Rust
   works:
     - name: QWeather-SDK
