@@ -45,7 +45,7 @@ https://abcxyz.qweatherapi.com/path/to/data
 
 ## 安全的请求 {#secure-requests}
 
-请不要共享完整的请求URL，这有可能泄露你的敏感信息，使用HTTPS、JWT身份认证等方式发送安全的API请求。关于如果保护API安全，请参考[安全指南](/docs/best-practices/security-guidelines/)。
+请不要共享完整的请求URL，这有可能泄露你的敏感信息，使用HTTPS、JWT身份认证等方式发送安全的API请求。关于如何保护API安全，请参考[安全指南](/docs/best-practices/security-guidelines/)。
 
 ## 处理错误 {#handle-errors}
 
