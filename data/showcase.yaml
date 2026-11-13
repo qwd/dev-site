@@ -111,6 +111,10 @@
       author: equationzhao
       code: https://github.com/Equationzhao/qweather-go
       description: 和风天气 go SDK
+    - name: qwx
+      author: KanoCifer
+      code: https://github.com/KanoCifer/qwx
+      description: 和风天气社区版Golang SDK，适配新v1接口，请求缓存可插拔
 - language: JavaScript
   works:
     - name: Météo weather
