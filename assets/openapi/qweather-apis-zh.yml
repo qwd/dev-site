@@ -1543,6 +1543,8 @@ components:
           properties:
             metadata:
               $ref: "#/components/schemas/metadataBaseObject"
+            validTime:
+              $ref: "#/components/schemas/validTime"
         - $ref: "#/components/schemas/weatherBaseObject"
         - type: object
           properties:
@@ -3382,6 +3384,10 @@ components:
     obsTime:
       type: string
       description: 观测时间
+      format: date-time
+    validTime:
+      type: string
+      description: 数据所对应的时间
       format: date-time
     forecastStartTime:
       type: string

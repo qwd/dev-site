@@ -5,6 +5,7 @@
       "https://developer.qweather.com/attribution.html"
     ]
   },
+  "validTime": "2024-05-31T03:15Z",
   "condition": {
     "text": "Few Clouds",
     "code": "102"

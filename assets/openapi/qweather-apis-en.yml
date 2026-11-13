@@ -1541,6 +1541,8 @@ components:
           properties:
             metadata:
               $ref: "#/components/schemas/metadataBaseObject"
+            validTime:
+              $ref: "#/components/schemas/validTime"
         - $ref: "#/components/schemas/weatherBaseObject"
         - type: object
           properties:
@@ -3375,6 +3377,10 @@ components:
     obsTime:
       type: string
       description: Observation time
+      format: date-time
+    validTime:
+      type: string
+      description: The time the data represents
       format: date-time
     forecastStartTime:
       type: string
