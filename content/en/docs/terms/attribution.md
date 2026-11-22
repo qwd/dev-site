@@ -1,34 +1,27 @@
 ---
 title: Attribution
-description: Learn the attribution requirements, display styles, and exceptions when using QWeather and related data in your products.
+description: Learn what attribution to display with QWeather data and where to place it in your app or website.
 translationKey: terms-attribution
 ---
 
-You need to give attribution for products that use the our service. For example, if you have a page in your app that shows weather data from us, you should display something like "Weather service powered by QWeather" on that page.
+As required by our [EULA](https://www.qweather.com/en/terms/developers-eula) and the data provider, if you use the QWeather Developer Services in your product, you must provide attribution and the necessary data source information as described below.
 
 ## Attribution requirements
 
-If you use our services in your products (such as APP, website, etc.), you need to clearly display our name: **QWeather**, and add URL `https://www.qweather.com`. We recommend as follow:
+When you use the QWeather Developer Services in your apps, websites or any products, you must clearly display the following attribution:
 
-```
-Weather service by QWeather
-```
+- QWeather
+- All content in the API response [`metadata.attributions`](/en/docs/resource/metadata/#attributions) (if any) including the data provider names, notices, URLs or other information, must not be omitted or modified. For example, in weather alerts, you must display the issuing agency’s name and any notices.
 
-In addition, if you use the following data, you need to add additional source information.
+## Display guidelines
 
-**Weather Warning**
+There are no specific style requirements, but you should follow these guidelines:
 
-You must display all contents of `refer.sources` in your products that use weather warning data, and cannot modify this content in any way.
-
-
-## Attribution style
-
-There are no explicit requirements regarding the style of attribution, but please follow the guidance below:
-
-- **Visibility:** Please ensure that the attribution is visible, the font style, font size or color is not too difficult to read.
-- **No confusion:** Attribution should be placed separately, not mixed in with the content of your product, or misleading. For example, "Weather Services by QWeather" should not appear in a paragraph in the body of the page, or next to an advertisement (to avoid the misinterpretation that the advertisement is provided by the source).
+- **Placement** — Show all required attribution on the page or view where users see the corresponding data.
+- **Readability** — Choose a font, text size, and color that make the attribution easy to read. If clickable links are unavailable, display the URLs as plain text.
+- **Separation from other content** — Keep the attribution visually distinct from your product's main content and ads. The placement must avoid giving users the impression that a data provider endorses your product or ads.
 - **Non-offensive:** In the context of attribution, content that is offensive or likely to be offensive or negatively impact the source should not appear.
 
-## Exceptions
+## Exceptions {#exceptions}
 
-If you are using our separate commercial license, the terms of this document may not apply, or if your product can not display the attribution on a particular device, please contact us to discuss how to deal such exceptional circumstances.
+If your product runs on a device that cannot meet these display requirements, contact us to confirm an appropriate way to show the attribution on that device.
