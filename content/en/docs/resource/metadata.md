@@ -8,14 +8,12 @@ In API responses, we use the `metadata` object to describe the metadata for the 
 
 ## tag
 
-`tag` is a unique identifier for the current data, used to trace the data’s source and to help developers determine whether the data has been updated.
+`tag` is a unique identifier for the current data. It is used to identify the batch that produced the data and also helps developers determine whether the data has been updated.
 
 ## attributions
 
-`attributions[]` contains attribution information or statements for the current data. In accordance with our Developer License Agreement and the requirements of other copyright holders, you must display the contents of this array in your product or service.
+`attributions` is an array of strings that includes attribution links, data provider names or other required information. You must display “QWeather” in products that use our service and display all items in the array completely. See [Attribution](/en/docs/terms/attribution/) to learn more.
 
 ## zeroResult
 
-`zeroResult` indicates whether data is being returned. When `“zeroResult”: true`, it means the request was successful but there is no data to return. For example, when querying weather alerts for a specific coordinate, this indicates that there are no alerts for that location.
-
-
+When `zeroResult` is `true`, the request succeeded and there is no available data to return. For example, a weather alert query can return `zeroResult: true` when there are no alerts for the requested coordinates.
